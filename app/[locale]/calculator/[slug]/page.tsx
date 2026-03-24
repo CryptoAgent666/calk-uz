@@ -6,9 +6,25 @@ import { Link } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { CALCULATORS, getCalculatorBySlug } from "@/lib/data/calculators"
 import { CATEGORIES } from "@/lib/data/categories"
+import { CALCULATOR_COMPONENTS } from "@/lib/data/calculator-components"
 import type { CategoryId } from "@/lib/types/calculator"
 import { ChevronRight, Home, ArrowRight, Calculator } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+
+function CalculatorRenderer({ slug }: { slug: string }) {
+  const Component = CALCULATOR_COMPONENTS[slug]
+
+  if (!Component) {
+    return (
+      <div className="text-center py-12 text-muted-foreground">
+        <Calculator className="h-12 w-12 mx-auto mb-4 opacity-50" />
+        <p>Calculator component not found for: {slug}</p>
+      </div>
+    )
+  }
+
+  return <Component />
+}
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = []
@@ -126,30 +142,9 @@ export default async function CalculatorPage({
               </p>
             </div>
 
-            {/* Calculator Placeholder */}
-            <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
-              <div className="flex flex-col items-center justify-center text-center py-12">
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 mb-6">
-                  <Calculator className="h-10 w-10 text-primary" />
-                </div>
-                <h2 className="text-xl font-semibold mb-2">
-                  {locale === "uz"
-                    ? "Kalkulyator tez orada tayyor bo'ladi"
-                    : "Калькулятор скоро будет готов"}
-                </h2>
-                <p className="text-muted-foreground max-w-md mb-6">
-                  {locale === "uz"
-                    ? "Biz ushbu kalkulyatorni ishlab chiqmoqdamiz. Tez orada foydalanishingiz mumkin bo'ladi."
-                    : "Мы работаем над этим калькулятором. Скоро он будет доступен для использования."}
-                </p>
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
-                >
-                  {locale === "uz" ? "Bosh sahifaga qaytish" : "Вернуться на главную"}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
+            {/* Calculator Component */}
+            <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+              <CalculatorRenderer slug={slug} />
             </div>
           </div>
 
