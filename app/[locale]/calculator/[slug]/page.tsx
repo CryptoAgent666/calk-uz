@@ -7,9 +7,21 @@ import { routing } from "@/i18n/routing"
 import { CALCULATORS, getCalculatorBySlug } from "@/lib/data/calculators"
 import { CATEGORIES } from "@/lib/data/categories"
 import { CALCULATOR_COMPONENTS } from "@/lib/data/calculator-components"
+import { getCalculatorArticle } from "@/lib/data/calculator-articles"
 import type { CategoryId } from "@/lib/types/calculator"
-import { ChevronRight, Home, ArrowRight, Calculator } from "lucide-react"
+import { ChevronRight, Home, ArrowRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { DynamicIcon } from "@/components/calculator/DynamicIcon"
+import { ErrorBoundary } from "@/components/calculator/ErrorBoundary"
+import { SharePrintButtons } from "@/components/calculator/SharePrintButtons"
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion"
+
+const BASE_URL = "https://calk.uz"
 
 function CalculatorRenderer({ slug }: { slug: string }) {
   const Component = CALCULATOR_COMPONENTS[slug]
@@ -17,7 +29,7 @@ function CalculatorRenderer({ slug }: { slug: string }) {
   if (!Component) {
     return (
       <div className="text-center py-12 text-muted-foreground">
-        <Calculator className="h-12 w-12 mx-auto mb-4 opacity-50" />
+        <DynamicIcon name="Calculator" className="h-12 w-12 mx-auto mb-4 opacity-50" />
         <p>Calculator component not found for: {slug}</p>
       </div>
     )
@@ -50,16 +62,32 @@ export async function generateMetadata({
 
   const title = locale === "uz" ? calc.titleUz : calc.titleRu
   const description = locale === "uz" ? calc.descriptionUz : calc.descriptionRu
+  const canonicalUrl = `${BASE_URL}/${locale}/calculator/${slug}`
 
   return {
     title,
     description,
     keywords: calc.keywords,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        ru: `${BASE_URL}/ru/calculator/${slug}`,
+        uz: `${BASE_URL}/uz/calculator/${slug}`,
+      },
+    },
     openGraph: {
       title: `${title} | Calk.UZ`,
       description,
       type: "website",
       locale: locale === "uz" ? "uz_UZ" : "ru_RU",
+      alternateLocale: locale === "uz" ? "ru_RU" : "uz_UZ",
+      url: canonicalUrl,
+      siteName: "Calk.UZ",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Calk.UZ`,
+      description,
     },
   }
 }
@@ -90,8 +118,101 @@ export default async function CalculatorPage({
     .sort((a, b) => a.priority - b.priority)
     .slice(0, 4)
 
+  // Get article data
+  const article = getCalculatorArticle(slug)
+  const articleParagraphs = article
+    ? locale === "uz"
+      ? article.paragraphsUz
+      : article.paragraphsRu
+    : null
+  const faqItems = article
+    ? article.faq.map((item) => ({
+        question: locale === "uz" ? item.questionUz : item.questionRu,
+        answer: locale === "uz" ? item.answerUz : item.answerRu,
+      }))
+    : null
+
+  // Schema.org JSON-LD
+  const canonicalUrl = `${BASE_URL}/${locale}/calculator/${slug}`
+
+  const webApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: title,
+    description,
+    url: canonicalUrl,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "All",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "UZS",
+    },
+    inLanguage: locale === "uz" ? "uz" : "ru",
+    publisher: {
+      "@type": "Organization",
+      name: "Calk.UZ",
+      url: BASE_URL,
+    },
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: t("breadcrumb_home"),
+        item: `${BASE_URL}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: categoryName,
+        item: `${BASE_URL}/${locale}#${calc.category}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: title,
+        item: canonicalUrl,
+      },
+    ],
+  }
+
+  const faqSchema =
+    faqItems && faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const jsonLdArray: Record<string, any>[] = [webApplicationSchema, breadcrumbSchema]
+  if (faqSchema) {
+    jsonLdArray.push(faqSchema)
+  }
+
   return (
     <div className="min-h-screen">
+      {/* Schema.org JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdArray),
+        }}
+      />
+
       {/* Breadcrumbs */}
       <div className="border-b border-border bg-muted/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
@@ -128,24 +249,71 @@ export default async function CalculatorPage({
                 <div
                   className={`flex h-12 w-12 items-center justify-center rounded-xl ${category.color}`}
                 >
-                  <Calculator className={`h-6 w-6 ${category.iconColor}`} />
+                  <DynamicIcon
+                    name={calc.icon}
+                    className={`h-6 w-6 ${category.iconColor}`}
+                  />
                 </div>
                 <div>
                   <Badge variant="secondary" className="mb-1">
                     {categoryName}
                   </Badge>
-                  <h1 className="text-2xl sm:text-3xl font-bold text-foreground">{title}</h1>
+                  <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+                    {title}
+                  </h1>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-2xl">
                 {description}
               </p>
+              <div className="mt-3">
+                <SharePrintButtons />
+              </div>
             </div>
 
             {/* Calculator Component */}
             <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-              <CalculatorRenderer slug={slug} />
+              <ErrorBoundary locale={locale}>
+                <CalculatorRenderer slug={slug} />
+              </ErrorBoundary>
             </div>
+
+            {/* SEO Article Section */}
+            {articleParagraphs && articleParagraphs.length > 0 && (
+              <div className="mt-10">
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
+                  {t("article_heading")}
+                </h2>
+                <div className="prose prose-sm sm:prose-base max-w-none text-muted-foreground space-y-4">
+                  {articleParagraphs.map((paragraph, index) => (
+                    <p key={index} className="leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
+                {/* FAQ Accordion */}
+                {faqItems && faqItems.length > 0 && (
+                  <div className="mt-8">
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-4">
+                      {t("faq_heading")}
+                    </h3>
+                    <Accordion className="rounded-xl border border-border bg-card px-4">
+                      {faqItems.map((item, index) => (
+                        <AccordionItem key={index} value={`faq-${index}`}>
+                          <AccordionTrigger className="text-left text-foreground">
+                            {item.question}
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <p className="text-muted-foreground">{item.answer}</p>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Sidebar */}
@@ -154,7 +322,7 @@ export default async function CalculatorPage({
             {relatedCalculators.length > 0 && (
               <div className="rounded-2xl border border-border bg-card p-6">
                 <h3 className="font-semibold text-foreground mb-4">
-                  {locale === "uz" ? "Tegishli kalkulyatorlar" : "Похожие калькуляторы"}
+                  {t("related_title")}
                 </h3>
                 <div className="space-y-3">
                   {relatedCalculators.map((related) => {
@@ -169,7 +337,8 @@ export default async function CalculatorPage({
                         <div
                           className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${category.color}`}
                         >
-                          <Calculator
+                          <DynamicIcon
+                            name={related.icon}
                             className={`h-4 w-4 ${category.iconColor}`}
                           />
                         </div>
@@ -189,7 +358,7 @@ export default async function CalculatorPage({
             {/* SEO Info */}
             <div className="rounded-2xl border border-border bg-card p-6">
               <h3 className="font-semibold text-foreground mb-3">
-                {locale === "uz" ? "Kalkulyator haqida" : "О калькуляторе"}
+                {t("calculator_about")}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {description}

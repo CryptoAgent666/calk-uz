@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl"
 import { getMessages, setRequestLocale } from "next-intl/server"
 import { routing } from "@/i18n/routing"
 import { ThemeProvider } from "@/components/layout/ThemeProvider"
+import { ToastProvider } from "@/components/ui/toast-simple"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import "@/app/globals.css"
@@ -106,7 +107,9 @@ export default async function LocaleLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NextIntlClientProvider messages={messages}>
             <Header />
-            <main className="flex-1">{children}</main>
+            <ToastProvider>
+              <main className="flex-1">{children}</main>
+            </ToastProvider>
             <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
