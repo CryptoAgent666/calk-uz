@@ -29,6 +29,7 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "48x48" },
     ],
+    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   manifest: "/manifest.json",
 }
