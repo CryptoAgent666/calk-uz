@@ -149,10 +149,7 @@ export default async function CalculatorPage({
       : article.paragraphsRu
     : null
   const faqItems = article
-    ? article.faq.map((item) => ({
-        question: locale === "uz" ? item.questionUz : item.questionRu,
-        answer: locale === "uz" ? item.answerUz : item.answerRu,
-      }))
+    ? (locale === "uz" ? article.faqUz : article.faqRu)
     : null
 
   // Schema.org JSON-LD — always use localized canonical URL
@@ -474,7 +471,7 @@ export default async function CalculatorPage({
                       className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
                     >
                       <ExternalLink className="h-3.5 w-3.5 shrink-0 group-hover:text-primary" />
-                      <span>{locale === "uz" ? source.nameUz : source.nameRu}</span>
+                      <span>{source.name}</span>
                     </a>
                   ))}
                 </div>
