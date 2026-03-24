@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { ChevronRight, Home } from 'lucide-react'
 import { CALCULATORS } from '@/lib/data/calculators'
 import { CATEGORIES } from '@/lib/data/categories'
+import { getSlugByLocale } from '@/lib/data/calculator-slugs'
 import { RelatedCalculators } from './RelatedCalculators'
 import type { CategoryId } from '@/lib/types/calculator'
 
@@ -36,7 +37,7 @@ export function CalculatorLayout({
     '@type': 'WebApplication',
     name: title,
     description,
-    url: `https://calk.uz/${locale}/calculator/${slug}`,
+    url: `https://calk.uz/${locale}/calculator/${getSlugByLocale(slug, locale)}`,
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Any',
     offers: {

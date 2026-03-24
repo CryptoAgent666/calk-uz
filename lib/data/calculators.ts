@@ -1,4 +1,5 @@
 import type { CalculatorMeta } from '@/lib/types/calculator'
+import { CALCULATOR_SLUGS } from './calculator-slugs'
 
 export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
@@ -6,6 +7,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'income-tax',
+    slugRu: CALCULATOR_SLUGS['income-tax'].ru,
+    slugUz: CALCULATOR_SLUGS['income-tax'].uz,
     titleRu: 'Калькулятор НДФЛ',
     titleUz: 'JSHSHS kalkulyatori',
     descriptionRu:
@@ -19,6 +22,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'vat',
+    slugRu: CALCULATOR_SLUGS['vat'].ru,
+    slugUz: CALCULATOR_SLUGS['vat'].uz,
     titleRu: 'Калькулятор НДС',
     titleUz: 'QQS kalkulyatori',
     descriptionRu:
@@ -32,6 +37,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'vat-threshold',
+    slugRu: CALCULATOR_SLUGS['vat-threshold'].ru,
+    slugUz: CALCULATOR_SLUGS['vat-threshold'].uz,
     titleRu: 'Порог НДС',
     titleUz: 'QQS chegarasi',
     descriptionRu:
@@ -45,6 +52,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'property-tax',
+    slugRu: CALCULATOR_SLUGS['property-tax'].ru,
+    slugUz: CALCULATOR_SLUGS['property-tax'].uz,
     titleRu: 'Налог на имущество',
     titleUz: "Mol-mulk solig'i",
     descriptionRu:
@@ -58,6 +67,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'land-tax',
+    slugRu: CALCULATOR_SLUGS['land-tax'].ru,
+    slugUz: CALCULATOR_SLUGS['land-tax'].uz,
     titleRu: 'Земельный налог',
     titleUz: "Yer solig'i",
     descriptionRu:
@@ -71,6 +82,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'vehicle-tax',
+    slugRu: CALCULATOR_SLUGS['vehicle-tax'].ru,
+    slugUz: CALCULATOR_SLUGS['vehicle-tax'].uz,
     titleRu: 'Транспортный налог',
     titleUz: "Transport solig'i",
     descriptionRu:
@@ -84,6 +97,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'corporate-tax',
+    slugRu: CALCULATOR_SLUGS['corporate-tax'].ru,
+    slugUz: CALCULATOR_SLUGS['corporate-tax'].uz,
     titleRu: 'Налог на прибыль',
     titleUz: "Foyda solig'i",
     descriptionRu:
@@ -97,6 +112,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'tax-penalty',
+    slugRu: CALCULATOR_SLUGS['tax-penalty'].ru,
+    slugUz: CALCULATOR_SLUGS['tax-penalty'].uz,
     titleRu: 'Пени по налогам',
     titleUz: 'Soliq peniyasi',
     descriptionRu:
@@ -110,6 +127,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'self-employed',
+    slugRu: CALCULATOR_SLUGS['self-employed'].ru,
+    slugUz: CALCULATOR_SLUGS['self-employed'].uz,
     titleRu: 'Налог самозанятых',
     titleUz: "O'z-o'zini band qilganlar solig'i",
     descriptionRu:
@@ -123,6 +142,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'turnover-tax',
+    slugRu: CALCULATOR_SLUGS['turnover-tax'].ru,
+    slugUz: CALCULATOR_SLUGS['turnover-tax'].uz,
     titleRu: 'Налог с оборота',
     titleUz: "Aylanma solig'i",
     descriptionRu:
@@ -140,6 +161,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'salary',
+    slugRu: CALCULATOR_SLUGS['salary'].ru,
+    slugUz: CALCULATOR_SLUGS['salary'].uz,
     titleRu: 'Зарплатный калькулятор',
     titleUz: 'Ish haqi kalkulyatori',
     descriptionRu:
@@ -153,6 +176,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'vacation-pay',
+    slugRu: CALCULATOR_SLUGS['vacation-pay'].ru,
+    slugUz: CALCULATOR_SLUGS['vacation-pay'].uz,
     titleRu: 'Отпускные',
     titleUz: "Ta'til puli",
     descriptionRu:
@@ -166,6 +191,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'sick-leave',
+    slugRu: CALCULATOR_SLUGS['sick-leave'].ru,
+    slugUz: CALCULATOR_SLUGS['sick-leave'].uz,
     titleRu: 'Больничный',
     titleUz: 'Kasallik varaqasi',
     descriptionRu:
@@ -179,6 +206,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'maternity',
+    slugRu: CALCULATOR_SLUGS['maternity'].ru,
+    slugUz: CALCULATOR_SLUGS['maternity'].uz,
     titleRu: 'Декретные',
     titleUz: "Tug'ruq ta'tili",
     descriptionRu:
@@ -192,6 +221,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'severance',
+    slugRu: CALCULATOR_SLUGS['severance'].ru,
+    slugUz: CALCULATOR_SLUGS['severance'].uz,
     titleRu: 'Компенсация при увольнении',
     titleUz: "Ishdan bo'shatish kompensatsiyasi",
     descriptionRu:
@@ -205,6 +236,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'alimony',
+    slugRu: CALCULATOR_SLUGS['alimony'].ru,
+    slugUz: CALCULATOR_SLUGS['alimony'].uz,
     titleRu: 'Алименты',
     titleUz: 'Nafaqa',
     descriptionRu:
@@ -218,6 +251,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'overtime',
+    slugRu: CALCULATOR_SLUGS['overtime'].ru,
+    slugUz: CALCULATOR_SLUGS['overtime'].uz,
     titleRu: 'Сверхурочные',
     titleUz: 'Ortiqcha ish vaqti',
     descriptionRu:
@@ -231,6 +266,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'pension',
+    slugRu: CALCULATOR_SLUGS['pension'].ru,
+    slugUz: CALCULATOR_SLUGS['pension'].uz,
     titleRu: 'Пенсия',
     titleUz: 'Pensiya',
     descriptionRu:
@@ -248,6 +285,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'credit',
+    slugRu: CALCULATOR_SLUGS['credit'].ru,
+    slugUz: CALCULATOR_SLUGS['credit'].uz,
     titleRu: 'Кредитный калькулятор',
     titleUz: 'Kredit kalkulyatori',
     descriptionRu:
@@ -261,6 +300,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'mortgage',
+    slugRu: CALCULATOR_SLUGS['mortgage'].ru,
+    slugUz: CALCULATOR_SLUGS['mortgage'].uz,
     titleRu: 'Ипотечный калькулятор',
     titleUz: 'Ipoteka kalkulyatori',
     descriptionRu:
@@ -274,6 +315,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'auto-credit',
+    slugRu: CALCULATOR_SLUGS['auto-credit'].ru,
+    slugUz: CALCULATOR_SLUGS['auto-credit'].uz,
     titleRu: 'Автокредит',
     titleUz: 'Avtokredit',
     descriptionRu:
@@ -287,6 +330,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'installment',
+    slugRu: CALCULATOR_SLUGS['installment'].ru,
+    slugUz: CALCULATOR_SLUGS['installment'].uz,
     titleRu: 'Рассрочка',
     titleUz: "Bo'lib to'lash",
     descriptionRu:
@@ -300,6 +345,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'early-repayment',
+    slugRu: CALCULATOR_SLUGS['early-repayment'].ru,
+    slugUz: CALCULATOR_SLUGS['early-repayment'].uz,
     titleRu: 'Досрочное погашение',
     titleUz: "Muddatidan oldin to'lash",
     descriptionRu:
@@ -313,6 +360,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'refinancing',
+    slugRu: CALCULATOR_SLUGS['refinancing'].ru,
+    slugUz: CALCULATOR_SLUGS['refinancing'].uz,
     titleRu: 'Рефинансирование',
     titleUz: 'Qayta moliyalashtirish',
     descriptionRu:
@@ -330,6 +379,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'deposit',
+    slugRu: CALCULATOR_SLUGS['deposit'].ru,
+    slugUz: CALCULATOR_SLUGS['deposit'].uz,
     titleRu: 'Калькулятор депозита',
     titleUz: 'Depozit kalkulyatori',
     descriptionRu:
@@ -343,6 +394,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'compound-interest',
+    slugRu: CALCULATOR_SLUGS['compound-interest'].ru,
+    slugUz: CALCULATOR_SLUGS['compound-interest'].uz,
     titleRu: 'Сложный процент',
     titleUz: 'Murakkab foiz',
     descriptionRu:
@@ -356,6 +409,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'deposit-comparison',
+    slugRu: CALCULATOR_SLUGS['deposit-comparison'].ru,
+    slugUz: CALCULATOR_SLUGS['deposit-comparison'].uz,
     titleRu: 'Сравнение депозитов',
     titleUz: 'Depozitlarni solishtirish',
     descriptionRu:
@@ -373,6 +428,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'currency-converter',
+    slugRu: CALCULATOR_SLUGS['currency-converter'].ru,
+    slugUz: CALCULATOR_SLUGS['currency-converter'].uz,
     titleRu: 'Конвертер валют',
     titleUz: 'Valyuta konvertori',
     descriptionRu:
@@ -386,6 +443,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'bank-rates',
+    slugRu: CALCULATOR_SLUGS['bank-rates'].ru,
+    slugUz: CALCULATOR_SLUGS['bank-rates'].uz,
     titleRu: 'Курсы банков',
     titleUz: 'Bank kurslari',
     descriptionRu:
@@ -399,6 +458,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'money-transfer',
+    slugRu: CALCULATOR_SLUGS['money-transfer'].ru,
+    slugUz: CALCULATOR_SLUGS['money-transfer'].uz,
     titleRu: 'Денежные переводы',
     titleUz: "Pul o'tkazmalari",
     descriptionRu:
@@ -416,6 +477,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'customs',
+    slugRu: CALCULATOR_SLUGS['customs'].ru,
+    slugUz: CALCULATOR_SLUGS['customs'].uz,
     titleRu: 'Растаможка авто',
     titleUz: 'Avto rastamozhka',
     descriptionRu:
@@ -429,6 +492,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'osago',
+    slugRu: CALCULATOR_SLUGS['osago'].ru,
+    slugUz: CALCULATOR_SLUGS['osago'].uz,
     titleRu: 'ОСАГО калькулятор',
     titleUz: 'OSAGO kalkulyatori',
     descriptionRu:
@@ -442,6 +507,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'fuel-consumption',
+    slugRu: CALCULATOR_SLUGS['fuel-consumption'].ru,
+    slugUz: CALCULATOR_SLUGS['fuel-consumption'].uz,
     titleRu: 'Расход топлива',
     titleUz: "Yoqilg'i sarfi",
     descriptionRu:
@@ -455,6 +522,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'trip-cost',
+    slugRu: CALCULATOR_SLUGS['trip-cost'].ru,
+    slugUz: CALCULATOR_SLUGS['trip-cost'].uz,
     titleRu: 'Стоимость поездки',
     titleUz: 'Sayohat narxi',
     descriptionRu:
@@ -468,6 +537,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'car-leasing',
+    slugRu: CALCULATOR_SLUGS['car-leasing'].ru,
+    slugUz: CALCULATOR_SLUGS['car-leasing'].uz,
     titleRu: 'Лизинг авто',
     titleUz: 'Avto lizing',
     descriptionRu:
@@ -485,6 +556,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'electricity',
+    slugRu: CALCULATOR_SLUGS['electricity'].ru,
+    slugUz: CALCULATOR_SLUGS['electricity'].uz,
     titleRu: 'Электроэнергия',
     titleUz: 'Elektr energiya',
     descriptionRu:
@@ -498,6 +571,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'gas',
+    slugRu: CALCULATOR_SLUGS['gas'].ru,
+    slugUz: CALCULATOR_SLUGS['gas'].uz,
     titleRu: 'Газ',
     titleUz: 'Gaz',
     descriptionRu:
@@ -511,6 +586,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'water',
+    slugRu: CALCULATOR_SLUGS['water'].ru,
+    slugUz: CALCULATOR_SLUGS['water'].uz,
     titleRu: 'Вода',
     titleUz: 'Suv',
     descriptionRu:
@@ -524,6 +601,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'heating',
+    slugRu: CALCULATOR_SLUGS['heating'].ru,
+    slugUz: CALCULATOR_SLUGS['heating'].uz,
     titleRu: 'Отопление',
     titleUz: 'Isitish',
     descriptionRu:
@@ -537,6 +616,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'internet',
+    slugRu: CALCULATOR_SLUGS['internet'].ru,
+    slugUz: CALCULATOR_SLUGS['internet'].uz,
     titleRu: 'Интернет',
     titleUz: 'Internet',
     descriptionRu:
@@ -550,6 +631,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'utilities-total',
+    slugRu: CALCULATOR_SLUGS['utilities-total'].ru,
+    slugUz: CALCULATOR_SLUGS['utilities-total'].uz,
     titleRu: 'Общая коммуналка',
     titleUz: 'Umumiy kommunal',
     descriptionRu:
@@ -567,6 +650,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'apartment-cost',
+    slugRu: CALCULATOR_SLUGS['apartment-cost'].ru,
+    slugUz: CALCULATOR_SLUGS['apartment-cost'].uz,
     titleRu: 'Стоимость квартиры',
     titleUz: 'Kvartira narxi',
     descriptionRu:
@@ -580,6 +665,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'rental',
+    slugRu: CALCULATOR_SLUGS['rental'].ru,
+    slugUz: CALCULATOR_SLUGS['rental'].uz,
     titleRu: 'Аренда vs покупка',
     titleUz: 'Ijara vs sotib olish',
     descriptionRu:
@@ -593,6 +680,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'renovation',
+    slugRu: CALCULATOR_SLUGS['renovation'].ru,
+    slugUz: CALCULATOR_SLUGS['renovation'].uz,
     titleRu: 'Стоимость ремонта',
     titleUz: "Ta'mirlash narxi",
     descriptionRu:
@@ -606,6 +695,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'moving',
+    slugRu: CALCULATOR_SLUGS['moving'].ru,
+    slugUz: CALCULATOR_SLUGS['moving'].uz,
     titleRu: 'Стоимость переезда',
     titleUz: "Ko'chish narxi",
     descriptionRu:
@@ -623,6 +714,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'ip-calculator',
+    slugRu: CALCULATOR_SLUGS['ip-calculator'].ru,
+    slugUz: CALCULATOR_SLUGS['ip-calculator'].uz,
     titleRu: 'Калькулятор для ИП',
     titleUz: 'YaTT kalkulyatori',
     descriptionRu:
@@ -636,6 +729,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'llc-calculator',
+    slugRu: CALCULATOR_SLUGS['llc-calculator'].ru,
+    slugUz: CALCULATOR_SLUGS['llc-calculator'].uz,
     titleRu: 'Калькулятор для ООО',
     titleUz: 'MChJ kalkulyatori',
     descriptionRu:
@@ -649,6 +744,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'margin',
+    slugRu: CALCULATOR_SLUGS['margin'].ru,
+    slugUz: CALCULATOR_SLUGS['margin'].uz,
     titleRu: 'Маржинальность',
     titleUz: 'Marjinallik',
     descriptionRu:
@@ -662,6 +759,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'break-even',
+    slugRu: CALCULATOR_SLUGS['break-even'].ru,
+    slugUz: CALCULATOR_SLUGS['break-even'].uz,
     titleRu: 'Точка безубыточности',
     titleUz: 'Zararsizlik nuqtasi',
     descriptionRu:
@@ -675,6 +774,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'roi',
+    slugRu: CALCULATOR_SLUGS['roi'].ru,
+    slugUz: CALCULATOR_SLUGS['roi'].uz,
     titleRu: 'Возврат инвестиций',
     titleUz: 'Investitsiya qaytimi',
     descriptionRu:
@@ -688,6 +789,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'employer-cost',
+    slugRu: CALCULATOR_SLUGS['employer-cost'].ru,
+    slugUz: CALCULATOR_SLUGS['employer-cost'].uz,
     titleRu: 'Стоимость сотрудника',
     titleUz: 'Xodim narxi',
     descriptionRu:
@@ -705,6 +808,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'calories',
+    slugRu: CALCULATOR_SLUGS['calories'].ru,
+    slugUz: CALCULATOR_SLUGS['calories'].uz,
     titleRu: 'Калькулятор калорий',
     titleUz: 'Kaloriya kalkulyatori',
     descriptionRu:
@@ -718,6 +823,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'bmi',
+    slugRu: CALCULATOR_SLUGS['bmi'].ru,
+    slugUz: CALCULATOR_SLUGS['bmi'].uz,
     titleRu: 'Индекс массы тела',
     titleUz: 'Tana massa indeksi',
     descriptionRu:
@@ -731,6 +838,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'ideal-weight',
+    slugRu: CALCULATOR_SLUGS['ideal-weight'].ru,
+    slugUz: CALCULATOR_SLUGS['ideal-weight'].uz,
     titleRu: 'Идеальный вес',
     titleUz: 'Ideal vazn',
     descriptionRu:
@@ -744,6 +853,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'macros',
+    slugRu: CALCULATOR_SLUGS['macros'].ru,
+    slugUz: CALCULATOR_SLUGS['macros'].uz,
     titleRu: 'Калькулятор БЖУ',
     titleUz: 'OYU kalkulyatori',
     descriptionRu:
@@ -757,6 +868,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'pregnancy',
+    slugRu: CALCULATOR_SLUGS['pregnancy'].ru,
+    slugUz: CALCULATOR_SLUGS['pregnancy'].uz,
     titleRu: 'Калькулятор беременности',
     titleUz: 'Homiladorlik kalkulyatori',
     descriptionRu:
@@ -774,6 +887,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'tuition',
+    slugRu: CALCULATOR_SLUGS['tuition'].ru,
+    slugUz: CALCULATOR_SLUGS['tuition'].uz,
     titleRu: 'Стоимость обучения',
     titleUz: "O'qish narxi",
     descriptionRu:
@@ -787,6 +902,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'education-loan',
+    slugRu: CALCULATOR_SLUGS['education-loan'].ru,
+    slugUz: CALCULATOR_SLUGS['education-loan'].uz,
     titleRu: 'Образовательный кредит',
     titleUz: "Ta'lim krediti",
     descriptionRu:
@@ -800,6 +917,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'gpa',
+    slugRu: CALCULATOR_SLUGS['gpa'].ru,
+    slugUz: CALCULATOR_SLUGS['gpa'].uz,
     titleRu: 'Калькулятор GPA',
     titleUz: 'GPA kalkulyatori',
     descriptionRu:
@@ -817,6 +936,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'zakat',
+    slugRu: CALCULATOR_SLUGS['zakat'].ru,
+    slugUz: CALCULATOR_SLUGS['zakat'].uz,
     titleRu: 'Калькулятор закята',
     titleUz: 'Zakot kalkulyatori',
     descriptionRu:
@@ -830,6 +951,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'fitr-sadaka',
+    slugRu: CALCULATOR_SLUGS['fitr-sadaka'].ru,
+    slugUz: CALCULATOR_SLUGS['fitr-sadaka'].uz,
     titleRu: 'Фитр садака',
     titleUz: 'Fitr sadaqa',
     descriptionRu:
@@ -843,6 +966,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'fidiya-sadaka',
+    slugRu: CALCULATOR_SLUGS['fidiya-sadaka'].ru,
+    slugUz: CALCULATOR_SLUGS['fidiya-sadaka'].uz,
     titleRu: 'Фидия садака',
     titleUz: 'Fidiya sadaqa',
     descriptionRu:
@@ -856,6 +981,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'kurban',
+    slugRu: CALCULATOR_SLUGS['kurban'].ru,
+    slugUz: CALCULATOR_SLUGS['kurban'].uz,
     titleRu: 'Калькулятор курбан',
     titleUz: 'Qurbon kalkulyatori',
     descriptionRu:
@@ -873,6 +1000,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'percentage',
+    slugRu: CALCULATOR_SLUGS['percentage'].ru,
+    slugUz: CALCULATOR_SLUGS['percentage'].uz,
     titleRu: 'Калькулятор процентов',
     titleUz: 'Foiz kalkulyatori',
     descriptionRu:
@@ -886,6 +1015,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'discount',
+    slugRu: CALCULATOR_SLUGS['discount'].ru,
+    slugUz: CALCULATOR_SLUGS['discount'].uz,
     titleRu: 'Калькулятор скидок',
     titleUz: 'Chegirma kalkulyatori',
     descriptionRu:
@@ -899,6 +1030,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'date-calc',
+    slugRu: CALCULATOR_SLUGS['date-calc'].ru,
+    slugUz: CALCULATOR_SLUGS['date-calc'].uz,
     titleRu: 'Калькулятор дат',
     titleUz: 'Sana kalkulyatori',
     descriptionRu:
@@ -912,6 +1045,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'area',
+    slugRu: CALCULATOR_SLUGS['area'].ru,
+    slugUz: CALCULATOR_SLUGS['area'].uz,
     titleRu: 'Калькулятор площади',
     titleUz: 'Maydon kalkulyatori',
     descriptionRu:
@@ -925,6 +1060,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'unit-converter',
+    slugRu: CALCULATOR_SLUGS['unit-converter'].ru,
+    slugUz: CALCULATOR_SLUGS['unit-converter'].uz,
     titleRu: 'Конвертер единиц',
     titleUz: 'Birlik konvertori',
     descriptionRu:
@@ -938,6 +1075,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'number-to-words',
+    slugRu: CALCULATOR_SLUGS['number-to-words'].ru,
+    slugUz: CALCULATOR_SLUGS['number-to-words'].uz,
     titleRu: 'Число прописью',
     titleUz: "Sonni so'z bilan yozish",
     descriptionRu:
@@ -951,6 +1090,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'age',
+    slugRu: CALCULATOR_SLUGS['age'].ru,
+    slugUz: CALCULATOR_SLUGS['age'].uz,
     titleRu: 'Калькулятор возраста',
     titleUz: 'Yosh kalkulyatori',
     descriptionRu:
@@ -964,6 +1105,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'random',
+    slugRu: CALCULATOR_SLUGS['random'].ru,
+    slugUz: CALCULATOR_SLUGS['random'].uz,
     titleRu: 'Генератор чисел',
     titleUz: 'Son generatori',
     descriptionRu:
@@ -981,6 +1124,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   // =============================================
   {
     slug: 'passport-fees',
+    slugRu: CALCULATOR_SLUGS['passport-fees'].ru,
+    slugUz: CALCULATOR_SLUGS['passport-fees'].uz,
     titleRu: 'Паспортные сборы',
     titleUz: "Pasport yig'imlari",
     descriptionRu:
@@ -994,6 +1139,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'state-duties',
+    slugRu: CALCULATOR_SLUGS['state-duties'].ru,
+    slugUz: CALCULATOR_SLUGS['state-duties'].uz,
     titleRu: 'Госпошлины',
     titleUz: 'Davlat boji',
     descriptionRu:
@@ -1007,6 +1154,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'wedding',
+    slugRu: CALCULATOR_SLUGS['wedding'].ru,
+    slugUz: CALCULATOR_SLUGS['wedding'].uz,
     titleRu: 'Калькулятор свадьбы',
     titleUz: "To'y kalkulyatori",
     descriptionRu:
@@ -1020,6 +1169,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'cotton-yield',
+    slugRu: CALCULATOR_SLUGS['cotton-yield'].ru,
+    slugUz: CALCULATOR_SLUGS['cotton-yield'].uz,
     titleRu: 'Урожайность хлопка',
     titleUz: 'Paxta hosildorligi',
     descriptionRu:
@@ -1033,6 +1184,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'remittances',
+    slugRu: CALCULATOR_SLUGS['remittances'].ru,
+    slugUz: CALCULATOR_SLUGS['remittances'].uz,
     titleRu: 'Переводы из-за рубежа',
     titleUz: "Xorijdan pul o'tkazmalari",
     descriptionRu:
@@ -1046,6 +1199,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'visa-cost',
+    slugRu: CALCULATOR_SLUGS['visa-cost'].ru,
+    slugUz: CALCULATOR_SLUGS['visa-cost'].uz,
     titleRu: 'Стоимость визы',
     titleUz: 'Viza narxi',
     descriptionRu:
@@ -1059,6 +1214,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'brv',
+    slugRu: CALCULATOR_SLUGS['brv'].ru,
+    slugUz: CALCULATOR_SLUGS['brv'].uz,
     titleRu: 'Базовая расчётная величина',
     titleUz: 'Bazaviy hisoblash miqdori',
     descriptionRu:
@@ -1072,9 +1229,11 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
 ]
 
-/** Look up a calculator by slug */
+/** Look up a calculator by slug (supports english, russian, and uzbek slugs) */
 export function getCalculatorBySlug(slug: string): CalculatorMeta | undefined {
-  return CALCULATORS.find((c) => c.slug === slug)
+  return CALCULATORS.find(
+    (c) => c.slug === slug || c.slugRu === slug || c.slugUz === slug
+  )
 }
 
 /** Get all calculators for a given category */

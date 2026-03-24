@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { DynamicIcon } from './DynamicIcon'
 import { CATEGORIES } from '@/lib/data/categories'
+import { getSlugByLocale } from '@/lib/data/calculator-slugs'
 import type { CategoryId } from '@/lib/types/calculator'
 
 interface CalculatorCardProps {
@@ -33,6 +34,7 @@ export function CalculatorCard({
   const description = locale === 'uz' ? descriptionUz : descriptionRu
   const cat = CATEGORIES[category as CategoryId]
   const categoryName = locale === 'uz' ? cat?.nameUz : cat?.nameRu
+  const localizedSlug = getSlugByLocale(slug, locale)
 
   return (
     <motion.div
@@ -41,7 +43,7 @@ export function CalculatorCard({
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
       <Link
-        href={`/${locale}/calculator/${slug}`}
+        href={`/${locale}/calculator/${localizedSlug}`}
         className="block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-xl"
       >
         <Card className="h-full transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/5 group cursor-pointer">

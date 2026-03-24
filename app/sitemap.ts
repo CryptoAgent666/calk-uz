@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { CALCULATORS } from "@/lib/data/calculators"
+import { getSlugByLocale } from "@/lib/data/calculator-slugs"
 
 const BASE_URL = "https://calk.uz"
 const LOCALES = ["ru", "uz"]
@@ -30,11 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // All 78 calculators for each locale
+  // All 78 calculators for each locale — use localized slugs
   for (const calc of CALCULATORS) {
     for (const locale of LOCALES) {
+      const localizedSlug = getSlugByLocale(calc.slug, locale)
       entries.push({
-        url: `${BASE_URL}/${locale}/calculator/${calc.slug}`,
+        url: `${BASE_URL}/${locale}/calculator/${localizedSlug}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: calc.priority === 1 ? 0.9 : calc.priority === 2 ? 0.7 : 0.6,

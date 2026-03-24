@@ -16,6 +16,8 @@ export type CategoryId =
 
 export interface CalculatorMeta {
   slug: string
+  slugRu?: string
+  slugUz?: string
   titleRu: string
   titleUz: string
   descriptionRu: string

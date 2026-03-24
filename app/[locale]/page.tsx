@@ -28,6 +28,8 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { CALCULATORS } from "@/lib/data/calculators"
 import { CATEGORIES } from "@/lib/data/categories"
+import { getSlugByLocale } from "@/lib/data/calculator-slugs"
+import { LazyCalculatorCard } from "@/components/calculator/LazyCalculatorCard"
 import type { CategoryId, CalculatorMeta } from "@/lib/types/calculator"
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -66,18 +68,6 @@ const CATEGORY_ICONS: Record<CategoryId, React.ComponentType<{ className?: strin
   unique: Star,
 }
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.03 },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-}
 
 export default function HomePage() {
   const t = useTranslations()
@@ -270,21 +260,19 @@ export default function HomePage() {
               </p>
             </div>
           ) : (
-            <motion.div
-              variants={container}
-              initial="hidden"
-              animate="show"
+            <div
               key={`${activeCategory}-${search}`}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
             >
-              {filteredCalculators.map((calc) => {
+              {filteredCalculators.map((calc, index) => {
                 const cat = CATEGORIES[calc.category]
                 const CatIcon = CATEGORY_ICONS[calc.category]
+                const localizedSlug = getSlugByLocale(calc.slug, locale)
 
                 return (
-                  <motion.div key={calc.slug} variants={item}>
+                  <LazyCalculatorCard key={calc.slug} index={index}>
                     <Link
-                      href={`/calculator/${calc.slug}`}
+                      href={`/calculator/${localizedSlug}`}
                       className="group block h-full"
                     >
                       <div className="relative h-full rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1">
@@ -321,10 +309,10 @@ export default function HomePage() {
                         </div>
                       </div>
                     </Link>
-                  </motion.div>
+                  </LazyCalculatorCard>
                 )
               })}
-            </motion.div>
+            </div>
           )}
         </div>
       </section>
