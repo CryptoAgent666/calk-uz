@@ -6,8 +6,11 @@ import {
   Smartphone,
   Moon,
   CheckCircle,
-  Users,
   Sparkles,
+  BookOpen,
+  ShieldCheck,
+  ExternalLink,
+  BarChart3,
 } from "lucide-react"
 
 export async function generateMetadata({
@@ -28,6 +31,9 @@ export async function generateMetadata({
         uz: "/uz/about",
       },
     },
+    other: {
+      "article:modified_time": "2026-03-24T00:00:00+05:00",
+    },
   }
 }
 
@@ -47,6 +53,14 @@ const FEATURES_KEYS = [
   "about_feature_mobile",
   "about_feature_dark",
   "about_feature_free",
+] as const
+
+const DATA_SOURCES = [
+  { key: "about_source_lex", url: "https://lex.uz", domain: "lex.uz" },
+  { key: "about_source_cbu", url: "https://cbu.uz", domain: "cbu.uz" },
+  { key: "about_source_soliq", url: "https://soliq.uz", domain: "soliq.uz" },
+  { key: "about_source_stat", url: "https://stat.uz", domain: "stat.uz" },
+  { key: "about_source_mf", url: "https://mf.uz", domain: "mf.uz" },
 ] as const
 
 export default async function AboutPage({
@@ -84,8 +98,11 @@ export default async function AboutPage({
               <h2 className="text-xl font-semibold text-foreground mb-3">
                 {locale === "uz" ? "Bizning maqsadimiz" : "Наша миссия"}
               </h2>
+              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+                {t("about_mission_p1")}
+              </p>
               <p className="text-muted-foreground leading-relaxed text-base">
-                {t("about_mission")}
+                {t("about_mission_p2")}
               </p>
             </div>
           </div>
@@ -117,20 +134,101 @@ export default async function AboutPage({
         </div>
       </section>
 
-      {/* Team placeholder */}
+      {/* Methodology */}
+      <section className="mb-16">
+        <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
+          <div className="flex items-start gap-4 mb-6">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-900/30">
+              <ShieldCheck className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold text-foreground mb-3">
+                {t("about_methodology_title")}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+                {t("about_methodology_p1")}
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-base">
+                {t("about_methodology_p2")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Editorial Policy */}
+      <section className="mb-16">
+        <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
+          <div className="flex items-start gap-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-purple-100 dark:bg-purple-900/30">
+              <BookOpen className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold text-foreground mb-3">
+                {t("about_editorial_title")}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-base">
+                {t("about_editorial_p1")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Data Sources */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+          {t("about_sources_title")}
+        </h2>
+        <div className="space-y-3">
+          {DATA_SOURCES.map((source) => (
+            <a
+              key={source.key}
+              href={source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/30 group"
+            >
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
+                <ExternalLink className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-medium text-foreground leading-relaxed group-hover:text-primary transition-colors">
+                  {t(source.key)}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Statistics */}
       <section>
         <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
-          {locale === "uz" ? "Bizning jamoa" : "Наша команда"}
+          {t("about_stats_title")}
         </h2>
-        <div className="rounded-2xl border border-dashed border-border bg-muted/30 p-10 text-center">
-          <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-muted mb-4">
-            <Users className="h-7 w-7 text-muted-foreground" />
-          </div>
-          <p className="text-muted-foreground text-sm">
-            {locale === "uz"
-              ? "Jamoa haqida ma'lumot tez orada qo'shiladi."
-              : "Информация о команде скоро появится."}
-          </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {[
+            { key: "about_stats_calculators", icon: Calculator },
+            { key: "about_stats_categories", icon: BarChart3 },
+            { key: "about_stats_updates", icon: CheckCircle },
+            { key: "about_stats_languages", icon: Globe },
+          ].map((stat) => {
+            const Icon = stat.icon
+            return (
+              <div
+                key={stat.key}
+                className="flex flex-col items-center gap-2 rounded-xl border border-border bg-card p-6 text-center"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
+                  <Icon className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <p className="text-sm font-semibold text-foreground">
+                  {t(stat.key)}
+                </p>
+              </div>
+            )
+          })}
         </div>
       </section>
     </div>

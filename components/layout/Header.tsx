@@ -130,7 +130,7 @@ export function Header() {
               return (
                 <Link
                   key={catId}
-                  href={`/#${catId}`}
+                  href={`/category/${catId}`}
                   className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground rounded-lg hover:text-foreground hover:bg-accent transition-colors"
                 >
                   <Icon className="h-4 w-4" />
@@ -165,7 +165,7 @@ export function Header() {
                       return (
                         <Link
                           key={catId}
-                          href={`/#${catId}`}
+                          href={`/category/${catId}`}
                           className="flex items-center gap-2.5 px-3 py-2.5 text-sm rounded-lg hover:bg-accent transition-colors"
                         >
                           <div
@@ -274,7 +274,7 @@ export function Header() {
                       return (
                         <Link
                           key={catId}
-                          href={`/#${catId}`}
+                          href={`/category/${catId}`}
                           className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium hover:bg-accent transition-colors"
                           onClick={() => setMobileOpen(false)}
                         >

@@ -8,8 +8,9 @@ import { CATEGORIES } from "@/lib/data/categories"
 import { CALCULATOR_COMPONENTS } from "@/lib/data/calculator-components"
 import { getCalculatorArticle } from "@/lib/data/calculator-articles"
 import { getSlugByLocale, getEnglishSlug, getAllLocalizedSlugs } from "@/lib/data/calculator-slugs"
+import { CROSS_LINKS } from "@/lib/data/calculator-crosslinks"
 import type { CategoryId } from "@/lib/types/calculator"
-import { ChevronRight, Home, ArrowRight } from "lucide-react"
+import { ChevronRight, Home, ArrowRight, Calendar, ExternalLink, ShieldCheck } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { DynamicIcon } from "@/components/calculator/DynamicIcon"
 import { ErrorBoundary } from "@/components/calculator/ErrorBoundary"
@@ -57,8 +58,10 @@ export async function generateMetadata({
     return { title: "404" }
   }
 
+  const article = getCalculatorArticle(englishSlug)
   const title = locale === "uz" ? calc.titleUz : calc.titleRu
   const description = locale === "uz" ? calc.descriptionUz : calc.descriptionRu
+  const lastUpdated = article?.lastUpdated || "2026-01-01"
 
   // Canonical URL always uses the localized slug
   const localizedSlugRu = getSlugByLocale(calc.slug, 'ru')
@@ -90,6 +93,10 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${title} | Calk.UZ`,
       description,
+    },
+    other: {
+      "article:published_time": "2025-01-01T00:00:00+05:00",
+      "article:modified_time": `${lastUpdated}T00:00:00+05:00`,
     },
   }
 }
@@ -127,6 +134,12 @@ export default async function CalculatorPage({
   )
     .sort((a, b) => a.priority - b.priority)
     .slice(0, 4)
+
+  // Get cross-category links
+  const crossLinkSlugs = CROSS_LINKS[calc.slug] ?? []
+  const crossLinkedCalculators = crossLinkSlugs
+    .map((slug) => CALCULATORS.find((c) => c.slug === slug))
+    .filter((c): c is NonNullable<typeof c> => c != null)
 
   // Get article data
   const article = getCalculatorArticle(calc.slug)
@@ -180,7 +193,7 @@ export default async function CalculatorPage({
         "@type": "ListItem",
         position: 2,
         name: categoryName,
-        item: `${BASE_URL}/${locale}#${calc.category}`,
+        item: `${BASE_URL}/${locale}/category/${calc.category}`,
       },
       {
         "@type": "ListItem",
@@ -207,10 +220,43 @@ export default async function CalculatorPage({
         }
       : null
 
+  const articleLastUpdated = article?.lastUpdated || "2026-01-01"
+
+  const techArticleSchema = articleParagraphs
+    ? {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        headline: title,
+        description,
+        url: canonicalUrl,
+        datePublished: "2025-01-01",
+        dateModified: articleLastUpdated,
+        author: {
+          "@type": "Organization",
+          name: "Calk.UZ",
+          url: BASE_URL,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Calk.UZ",
+          url: BASE_URL,
+          logo: {
+            "@type": "ImageObject",
+            url: `${BASE_URL}/favicon.svg`,
+          },
+        },
+        inLanguage: locale === "uz" ? "uz" : "ru",
+        mainEntityOfPage: canonicalUrl,
+      }
+    : null
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jsonLdArray: Record<string, any>[] = [webApplicationSchema, breadcrumbSchema]
   if (faqSchema) {
     jsonLdArray.push(faqSchema)
+  }
+  if (techArticleSchema) {
+    jsonLdArray.push(techArticleSchema)
   }
 
   return (
@@ -236,7 +282,7 @@ export default async function CalculatorPage({
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
             <Link
-              href={`/#${calc.category}`}
+              href={`/category/${calc.category}`}
               className="hover:text-foreground transition-colors"
             >
               {categoryName}
@@ -276,8 +322,14 @@ export default async function CalculatorPage({
               <p className="text-muted-foreground leading-relaxed max-w-2xl">
                 {description}
               </p>
-              <div className="mt-3">
+              <div className="mt-3 flex flex-wrap items-center gap-4">
                 <SharePrintButtons />
+                {article?.lastUpdated && (
+                  <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Calendar className="h-3.5 w-3.5" />
+                    {t("last_updated")}: {article.lastUpdated}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -287,6 +339,40 @@ export default async function CalculatorPage({
                 <CalculatorRenderer slug={calc.slug} />
               </ErrorBoundary>
             </div>
+
+            {/* Cross-category links */}
+            {crossLinkedCalculators.length > 0 && (
+              <div className="mt-6 p-4 rounded-xl bg-muted/30 border border-border">
+                <h3 className="font-semibold text-foreground mb-3">
+                  {t("see_also")}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {crossLinkedCalculators.map((linked) => {
+                    const linkedTitle = locale === "uz" ? linked.titleUz : linked.titleRu
+                    const linkedSlug = getSlugByLocale(linked.slug, locale)
+                    const linkedCategory = CATEGORIES[linked.category]
+                    return (
+                      <Link
+                        key={linked.slug}
+                        href={`/calculator/${linkedSlug}`}
+                        className="inline-block"
+                      >
+                        <Badge
+                          variant="secondary"
+                          className="cursor-pointer hover:bg-accent transition-colors"
+                        >
+                          <DynamicIcon
+                            name={linkedCategory.icon}
+                            className={`h-3 w-3 mr-1.5 ${linkedCategory.iconColor}`}
+                          />
+                          {linkedTitle}
+                        </Badge>
+                      </Link>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* SEO Article Section */}
             {articleParagraphs && articleParagraphs.length > 0 && (
@@ -322,6 +408,12 @@ export default async function CalculatorPage({
                     </Accordion>
                   </div>
                 )}
+
+                {/* Reviewed by */}
+                <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
+                  <ShieldCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                  <span>{t("reviewed_by")}</span>
+                </div>
               </div>
             )}
           </div>
@@ -362,6 +454,29 @@ export default async function CalculatorPage({
                       </Link>
                     )
                   })}
+                </div>
+              </div>
+            )}
+
+            {/* Sources */}
+            {article?.sources && article.sources.length > 0 && (
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <h3 className="font-semibold text-foreground mb-4">
+                  {t("sources_title")}
+                </h3>
+                <div className="space-y-2.5">
+                  {article.sources.map((source, idx) => (
+                    <a
+                      key={idx}
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5 shrink-0 group-hover:text-primary" />
+                      <span>{locale === "uz" ? source.nameUz : source.nameRu}</span>
+                    </a>
+                  ))}
                 </div>
               </div>
             )}

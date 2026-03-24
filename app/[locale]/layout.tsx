@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/layout/ThemeProvider"
 import { ToastProvider } from "@/components/ui/toast-simple"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
+import { CookieConsent } from "@/components/CookieConsent"
 import "@/app/globals.css"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-sans" })
@@ -32,23 +33,40 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 }
 
-function OrganizationJsonLd() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Calk.UZ",
-    url: "https://calk.uz",
-    logo: "https://calk.uz/favicon.svg",
-    description:
-      "Бесплатные онлайн-калькуляторы для жителей Узбекистана. Налоги, зарплата, кредиты, вклады и другие финансовые расчёты.",
-    sameAs: ["https://t.me/calkuz"],
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "info@calk.uz",
-      contactType: "customer service",
-      availableLanguage: ["Russian", "Uzbek"],
+function OrganizationJsonLd({ locale }: { locale: string }) {
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Calk.UZ",
+      url: "https://calk.uz",
+      logo: "https://calk.uz/favicon.svg",
+      description:
+        "Бесплатные онлайн-калькуляторы для жителей Узбекистана. Налоги, зарплата, кредиты, вклады и другие финансовые расчёты.",
+      dateModified: "2026-03-24",
+      sameAs: ["https://t.me/calkuz", "https://calk.uz/ru/methodology"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "info@calk.uz",
+        contactType: "customer service",
+        availableLanguage: ["Russian", "Uzbek"],
+      },
     },
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Calk.UZ",
+      url: "https://calk.uz",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `https://calk.uz/${locale}?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ]
 
   return (
     <script
@@ -72,7 +90,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} antialiased`} suppressHydrationWarning>
       <head>
-        <OrganizationJsonLd />
+        <OrganizationJsonLd locale={locale} />
 
         {/* Google Analytics 4 */}
         {GA_ID && (
@@ -111,6 +129,7 @@ export default async function LocaleLayout({
               <main className="flex-1">{children}</main>
             </ToastProvider>
             <Footer />
+            <CookieConsent />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

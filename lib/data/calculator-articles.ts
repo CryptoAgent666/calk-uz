@@ -5,10 +5,18 @@ export interface FAQItem {
   answerUz: string
 }
 
+export interface ArticleSource {
+  nameRu: string
+  nameUz: string
+  url: string
+}
+
 export interface CalculatorArticle {
   paragraphsRu: string[]
   paragraphsUz: string[]
   faq: FAQItem[]
+  lastUpdated?: string
+  sources?: ArticleSource[]
 }
 
 const articles: Record<string, CalculatorArticle> = {
@@ -51,6 +59,11 @@ const articles: Record<string, CalculatorArticle> = {
         answerUz: "Soliqqa tortilmaydi: nafaqa, pensiya, stipendiya, normalar doirasidagi moddiy yordam va boshqa ayrim to'lovlar.",
       },
     ],
+    lastUpdated: "2026-03-01",
+    sources: [
+      { nameRu: "Налоговый кодекс РУз — Глава НДФЛ", nameUz: "O'zR Soliq kodeksi — JShShS bobi", url: "https://lex.uz/ru/docs/4674902" },
+      { nameRu: "Государственный налоговый комитет", nameUz: "Davlat soliq qo'mitasi", url: "https://soliq.uz" },
+    ],
   },
 
   'vat': {
@@ -90,6 +103,11 @@ const articles: Record<string, CalculatorArticle> = {
         answerUz: "Ayrim oziq-ovqat mahsulotlari, tibbiy xizmatlar, ta'lim va moliyaviy xizmatlar QQSdan ozod qilingan.",
       },
     ],
+    lastUpdated: "2026-03-01",
+    sources: [
+      { nameRu: "Налоговый кодекс РУз — Глава НДС", nameUz: "O'zR Soliq kodeksi — QQS bobi", url: "https://lex.uz/ru/docs/4674902" },
+      { nameRu: "Государственный налоговый комитет", nameUz: "Davlat soliq qo'mitasi", url: "https://soliq.uz" },
+    ],
   },
 
   'salary': {
@@ -128,6 +146,12 @@ const articles: Record<string, CalculatorArticle> = {
         answerRu: 'Минимальная зарплата пересматривается дважды в год. Актуальную сумму можно узнать на сайте Минфина.',
         answerUz: "Eng kam ish haqi yiliga ikki marta qayta ko'rib chiqiladi. Dolzarb summani Moliya vazirligi saytida bilish mumkin.",
       },
+    ],
+    lastUpdated: "2026-03-01",
+    sources: [
+      { nameRu: "Налоговый кодекс РУз", nameUz: "O'zR Soliq kodeksi", url: "https://lex.uz/ru/docs/4674902" },
+      { nameRu: "Трудовой кодекс РУз", nameUz: "O'zR Mehnat kodeksi", url: "https://lex.uz/ru/docs/5765376" },
+      { nameRu: "Министерство финансов", nameUz: "Moliya vazirligi", url: "https://mf.uz" },
     ],
   },
 
@@ -200,6 +224,10 @@ const articles: Record<string, CalculatorArticle> = {
         answerRu: 'Полная стоимость кредита включает тело кредита, все проценты, комиссии и страховки.',
         answerUz: "Kreditning to'liq qiymati kredit tanasi, barcha foizlar, komissiyalar va sug'urtalarni o'z ichiga oladi.",
       },
+    ],
+    lastUpdated: "2026-03-01",
+    sources: [
+      { nameRu: "Центральный банк РУз — Ставка рефинансирования", nameUz: "O'zR Markaziy banki — Qayta moliyalash stavkasi", url: "https://cbu.uz" },
     ],
   },
 

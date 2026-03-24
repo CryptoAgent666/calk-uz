@@ -53,7 +53,7 @@ export async function Footer() {
                 return (
                   <li key={catId}>
                     <Link
-                      href={`/#${catId}`}
+                      href={`/category/${catId}`}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {name}
@@ -80,7 +80,7 @@ export async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#tax"
+                  href="/category/tax"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {t("nav_tax")}
@@ -88,7 +88,7 @@ export async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#credit"
+                  href="/category/credit"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {t("nav_credit")}
@@ -96,7 +96,7 @@ export async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#salary"
+                  href="/category/salary"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {t("nav_salary")}
@@ -104,7 +104,7 @@ export async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#utilities"
+                  href="/category/utilities"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {t("nav_utilities")}
@@ -135,6 +135,14 @@ export async function Footer() {
                   {t("footer_terms")}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/methodology"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {t("footer_methodology")}
+                </Link>
+              </li>
             </ul>
             <p className="text-xs text-muted-foreground/70 leading-relaxed pt-2">
               {t("footer_disclaimer")}
@@ -147,11 +155,15 @@ export async function Footer() {
           <p className="text-sm text-muted-foreground">
             {t("footer_copyright", { year: `2025-${currentYear}` })}
           </p>
-          <p className="text-xs text-muted-foreground/60">
-            {locale === "uz"
-              ? "O'zbekiston aholisi uchun bepul onlayn kalkulyatorlar"
-              : "Бесплатные онлайн-калькуляторы для жителей Узбекистана"}
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 text-xs text-muted-foreground/60">
+            <p>{t("footer_data_verified")}</p>
+            <span className="hidden sm:inline">|</span>
+            <p>
+              {locale === "uz"
+                ? "O'zbekiston aholisi uchun bepul onlayn kalkulyatorlar"
+                : "Бесплатные онлайн-калькуляторы для жителей Узбекистана"}
+            </p>
+          </div>
         </div>
       </div>
     </footer>

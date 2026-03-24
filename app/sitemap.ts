@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { CALCULATORS } from "@/lib/data/calculators"
+import { CATEGORY_IDS } from "@/lib/data/categories"
 import { getSlugByLocale } from "@/lib/data/calculator-slugs"
 
 const BASE_URL = "https://calk.uz"
@@ -27,6 +28,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.5,
+      })
+    }
+  }
+
+  // Category pages for each locale
+  for (const catId of CATEGORY_IDS) {
+    for (const locale of LOCALES) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/category/${catId}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.8,
       })
     }
   }
