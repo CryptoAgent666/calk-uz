@@ -63,7 +63,13 @@ export default function GpaCalculator() {
           <p className="text-4xl font-bold text-primary mt-2">{gpa.toFixed(2)}</p>
           <div className="mt-2">
             <Badge variant={gpa >= 3.5 ? 'default' : gpa >= 2.5 ? 'secondary' : 'destructive'}>
-              {gpa >= 3.5 ? 'Cum Laude' : gpa >= 3.0 ? 'Good' : gpa >= 2.0 ? 'Satisfactory' : 'Below Average'}
+              {gpa >= 3.5
+                ? (locale === 'uz' ? 'A\'lo' : 'Отлично')
+                : gpa >= 3.0
+                ? (locale === 'uz' ? 'Yaxshi' : 'Хорошо')
+                : gpa >= 2.0
+                ? (locale === 'uz' ? 'Qoniqarli' : 'Удовлетворительно')
+                : (locale === 'uz' ? 'O\'rtachadan past' : 'Ниже среднего')}
             </Badge>
           </div>
         </CardContent>

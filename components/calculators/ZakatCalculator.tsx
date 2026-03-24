@@ -21,7 +21,10 @@ export default function ZakatCalculator() {
   const result = useMemo(() => {
     const c = parseFloat(cash.replace(/\s/g, '')) || 0
     const bd = parseFloat(bankDeposits.replace(/\s/g, '')) || 0
-    if (c <= 0 && bd <= 0) return null
+    const g = parseFloat(goldGrams) || 0
+    const inv = parseFloat(investments.replace(/\s/g, '')) || 0
+    const bi = parseFloat(businessInventory.replace(/\s/g, '')) || 0
+    if (c <= 0 && bd <= 0 && g <= 0 && inv <= 0 && bi <= 0) return null
     return calculateZakat({
       cash: c, bankDeposits: bd, goldGrams: parseFloat(goldGrams) || 0,
       silverGrams: 0, investments: parseFloat(investments.replace(/\s/g, '')) || 0,

@@ -471,6 +471,722 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
       { name: 'Marja va ustamani oling', text: "«Hisoblash» tugmasini bosing — marjani (%), ustamani (%) va foydani ko'ring." },
     ],
   },
+  {
+    slug: 'vat-threshold',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите выручку', text: 'Укажите годовую выручку вашего бизнеса в сумах.' },
+      { name: 'Выберите тип деятельности', text: 'Укажите вид деятельности для определения порога НДС.' },
+      { name: 'Получите результат', text: 'Нажмите «Рассчитать» — узнайте, обязаны ли вы платить НДС при текущей выручке.' },
+    ],
+    stepsUz: [
+      { name: 'Tushumni kiriting', text: "Biznesingizning yillik tushumini so'mda kiriting." },
+      { name: 'Faoliyat turini tanlang', text: "QQS chegarasini aniqlash uchun faoliyat turini ko'rsating." },
+      { name: 'Natijani oling', text: "«Hisoblash» tugmasini bosing — joriy tushum bilan QQS to'lash majburiyatingiz borligini bilib oling." },
+    ],
+  },
+  {
+    slug: 'land-tax',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Укажите местоположение', text: 'Выберите область и район расположения земельного участка.' },
+      { name: 'Введите площадь участка', text: 'Укажите площадь земельного участка в квадратных метрах или гектарах.' },
+      { name: 'Выберите назначение земли', text: 'Укажите целевое назначение участка (жилой, сельскохозяйственный, коммерческий).' },
+      { name: 'Получите расчёт налога', text: 'Нажмите «Рассчитать» — узнайте годовой земельный налог.' },
+    ],
+    stepsUz: [
+      { name: "Joylashuvni ko'rsating", text: "Yer uchastkasi joylashgan viloyat va tumanni tanlang." },
+      { name: "Uchastka maydonini kiriting", text: "Yer uchastkasi maydonini kvadrat metr yoki gektarda kiriting." },
+      { name: "Yer maqsadini tanlang", text: "Uchastkaning maqsadli tayinlanishini ko'rsating (turar-joy, qishloq xo'jalik, tijorat)." },
+      { name: 'Soliq hisobini oling', text: "«Hisoblash» tugmasini bosing — yillik yer solig'ini bilib oling." },
+    ],
+  },
+  {
+    slug: 'corporate-tax',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите доходы предприятия', text: 'Укажите совокупный доход юридического лица за период.' },
+      { name: 'Укажите вычитаемые расходы', text: 'Введите сумму расходов, подлежащих вычету.' },
+      { name: 'Выберите налоговый режим', text: 'Укажите систему налогообложения (общая, упрощённая, IT Park).' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — получите сумму налога на прибыль и эффективную ставку.' },
+    ],
+    stepsUz: [
+      { name: 'Korxona daromadini kiriting', text: "Yuridik shaxsning davr uchun jami daromadini ko'rsating." },
+      { name: "Chegiriladigan xarajatlarni ko'rsating", text: "Chegirmaga tegishli xarajatlar summasini kiriting." },
+      { name: 'Soliq rejimini tanlang', text: "Soliqqa tortish tizimini ko'rsating (umumiy, soddalashtirilgan, IT Park)." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — foyda solig'i summasini va samarali stavkani ko'ring." },
+    ],
+  },
+  {
+    slug: 'tax-penalty',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите сумму задолженности', text: 'Укажите сумму неуплаченного налога в сумах.' },
+      { name: 'Укажите даты', text: 'Введите дату крайнего срока уплаты и текущую дату.' },
+      { name: 'Выберите вид налога', text: 'Выберите вид налога, по которому образовалась задолженность.' },
+      { name: 'Получите расчёт пени', text: 'Нажмите «Рассчитать» — узнайте сумму пени и штрафа за просрочку.' },
+    ],
+    stepsUz: [
+      { name: "Qarzdorlik summasini kiriting", text: "To'lanmagan soliq summasini so'mda kiriting." },
+      { name: "Sanalarni ko'rsating", text: "To'lash muddati va joriy sanani kiriting." },
+      { name: 'Soliq turini tanlang', text: "Qarzdorlik paydo bo'lgan soliq turini tanlang." },
+      { name: "Penya hisobini oling", text: "«Hisoblash» tugmasini bosing — kechikish uchun penya va jarima summasini bilib oling." },
+    ],
+  },
+  {
+    slug: 'self-employed',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите доход', text: 'Укажите ежемесячный или годовой доход от самозанятости.' },
+      { name: 'Выберите вид деятельности', text: 'Укажите вид деятельности для определения ставки налога.' },
+      { name: 'Укажите регион', text: 'Выберите регион ведения деятельности.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте налоги и взносы самозанятого.' },
+    ],
+    stepsUz: [
+      { name: 'Daromadni kiriting', text: "O'z-o'zini band qilishdan oylik yoki yillik daromadni kiriting." },
+      { name: 'Faoliyat turini tanlang', text: "Soliq stavkasini aniqlash uchun faoliyat turini ko'rsating." },
+      { name: "Hududni ko'rsating", text: "Faoliyat yuritiladigan hududni tanlang." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — o'z-o'zini band qilganlarning soliq va badallarini bilib oling." },
+    ],
+  },
+  {
+    slug: 'turnover-tax',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите оборот', text: 'Укажите совокупный оборот предприятия за период в сумах.' },
+      { name: 'Выберите вид деятельности', text: 'Укажите вид деятельности для определения ставки налога с оборота.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте сумму налога с оборота.' },
+    ],
+    stepsUz: [
+      { name: 'Aylanmani kiriting', text: "Korxonaning davr uchun jami aylanmasini so'mda kiriting." },
+      { name: 'Faoliyat turini tanlang', text: "Aylanma solig'i stavkasini aniqlash uchun faoliyat turini ko'rsating." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — aylanma solig'i summasini bilib oling." },
+    ],
+  },
+  {
+    slug: 'severance',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите среднюю зарплату', text: 'Укажите среднемесячную зарплату за последние 3 месяца.' },
+      { name: 'Укажите стаж работы', text: 'Введите стаж работы на последнем месте.' },
+      { name: 'Выберите основание увольнения', text: 'Укажите причину увольнения (сокращение, соглашение сторон и др.).' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте размер выходного пособия.' },
+    ],
+    stepsUz: [
+      { name: "O'rtacha ish haqini kiriting", text: "Oxirgi 3 oydagi o'rtacha oylik ish haqini kiriting." },
+      { name: "Ish stajini ko'rsating", text: "Oxirgi ish joyidagi stajni kiriting." },
+      { name: "Ishdan bo'shatish asosini tanlang", text: "Ishdan bo'shatish sababini ko'rsating (qisqartirish, tomonlar kelishuvi va boshq.)." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — ishdan bo'shatish nafaqasi miqdorini bilib oling." },
+    ],
+  },
+  {
+    slug: 'overtime',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите оклад', text: 'Укажите ваш ежемесячный должностной оклад.' },
+      { name: 'Укажите часы переработки', text: 'Введите количество часов сверхурочной работы.' },
+      { name: 'Выберите тип переработки', text: 'Укажите — работа в будни, выходные или праздничные дни.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте доплату за сверхурочные часы.' },
+    ],
+    stepsUz: [
+      { name: 'Maoshni kiriting', text: "Oylik lavozim maoshingizni ko'rsating." },
+      { name: "Ortiqcha soatlarni ko'rsating", text: "Ortiqcha ishlangan soatlar sonini kiriting." },
+      { name: "Ortiqcha ish turini tanlang", text: "Ish kunlari, dam olish yoki bayram kunlaridagi ishni ko'rsating." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — ortiqcha soatlar uchun qo'shimcha haqni bilib oling." },
+    ],
+  },
+  {
+    slug: 'installment',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите стоимость товара', text: 'Укажите полную стоимость товара, приобретаемого в рассрочку.' },
+      { name: 'Укажите первоначальный взнос', text: 'Введите сумму или процент первоначального взноса.' },
+      { name: 'Выберите срок рассрочки', text: 'Укажите количество месяцев рассрочки.' },
+      { name: 'Получите график платежей', text: 'Нажмите «Рассчитать» — получите ежемесячный платёж и полный график.' },
+    ],
+    stepsUz: [
+      { name: 'Tovar narxini kiriting', text: "Bo'lib to'lashda sotiladigan tovarning to'liq narxini kiriting." },
+      { name: "Boshlang'ich badalni ko'rsating", text: "Boshlang'ich badal summasini yoki foizini kiriting." },
+      { name: "Bo'lib to'lash muddatini tanlang", text: "Bo'lib to'lash oylar sonini ko'rsating." },
+      { name: "To'lov jadvalini oling", text: "«Hisoblash» tugmasini bosing — oylik to'lov va to'liq jadvalni ko'ring." },
+    ],
+  },
+  {
+    slug: 'early-repayment',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите параметры кредита', text: 'Укажите остаток долга, процентную ставку и оставшийся срок.' },
+      { name: 'Укажите сумму досрочного платежа', text: 'Введите сумму, которую хотите внести досрочно.' },
+      { name: 'Выберите тип досрочного погашения', text: 'Выберите: уменьшить срок кредита или ежемесячный платёж.' },
+      { name: 'Получите расчёт экономии', text: 'Нажмите «Рассчитать» — узнайте экономию на процентах и новый график.' },
+    ],
+    stepsUz: [
+      { name: 'Kredit parametrlarini kiriting', text: "Qarz qoldig'i, foiz stavkasi va qolgan muddatni ko'rsating." },
+      { name: "Muddatidan oldin to'lov summasini kiriting", text: "Muddatidan oldin kiritmoqchi bo'lgan summani kiriting." },
+      { name: "Muddatidan oldin to'lash turini tanlang", text: "Tanlang: kredit muddatini qisqartirish yoki oylik to'lovni kamaytirish." },
+      { name: 'Tejamkorlik hisobini oling', text: "«Hisoblash» tugmasini bosing — foizlar bo'yicha tejamkorlik va yangi jadvalni ko'ring." },
+    ],
+  },
+  {
+    slug: 'refinancing',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите текущий кредит', text: 'Укажите остаток долга, ставку и оставшийся срок текущего кредита.' },
+      { name: 'Укажите условия нового кредита', text: 'Введите процентную ставку и срок нового кредита.' },
+      { name: 'Получите сравнение', text: 'Нажмите «Рассчитать» — сравните переплату по текущему и новому кредиту.' },
+    ],
+    stepsUz: [
+      { name: 'Joriy kreditni kiriting', text: "Qarz qoldig'i, stavka va joriy kreditning qolgan muddatini ko'rsating." },
+      { name: "Yangi kredit shartlarini ko'rsating", text: "Yangi kreditning foiz stavkasi va muddatini kiriting." },
+      { name: 'Solishtirishni oling', text: "«Hisoblash» tugmasini bosing — joriy va yangi kredit bo'yicha ortiqcha to'lovlarni solishtiring." },
+    ],
+  },
+  {
+    slug: 'deposit-comparison',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите сумму вклада', text: 'Укажите сумму, которую планируете разместить.' },
+      { name: 'Укажите условия банков', text: 'Введите ставки и сроки по вкладам разных банков (до 3).' },
+      { name: 'Получите сравнение', text: 'Нажмите «Рассчитать» — сравните доходность вкладов и выберите лучший вариант.' },
+    ],
+    stepsUz: [
+      { name: 'Omonat summasini kiriting', text: "Joylashtirmoqchi bo'lgan summangizni kiriting." },
+      { name: "Banklar shartlarini ko'rsating", text: "Turli banklarning (3 tagacha) omonat stavkalari va muddatlarini kiriting." },
+      { name: 'Solishtirishni oling', text: "«Hisoblash» tugmasini bosing — omonatlar daromadliligini solishtiring va eng yaxshisini tanlang." },
+    ],
+  },
+  {
+    slug: 'bank-rates',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите тип продукта', text: 'Укажите: вклад, кредит или ипотека.' },
+      { name: 'Укажите сумму и срок', text: 'Введите желаемую сумму и срок для поиска лучших ставок.' },
+      { name: 'Изучите результат', text: 'Получите сравнительную таблицу ставок банков Узбекистана.' },
+    ],
+    stepsUz: [
+      { name: 'Mahsulot turini tanlang', text: "Ko'rsating: omonat, kredit yoki ipoteka." },
+      { name: "Summa va muddatni ko'rsating", text: "Eng yaxshi stavkalarni topish uchun kerakli summa va muddatni kiriting." },
+      { name: "Natijani o'rganing", text: "O'zbekiston banklari stavkalarining qiyosiy jadvalini oling." },
+    ],
+  },
+  {
+    slug: 'money-transfer',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите направление перевода', text: 'Укажите страну отправления и получения.' },
+      { name: 'Введите сумму перевода', text: 'Укажите сумму в валюте отправления.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте комиссию и сумму к получению.' },
+    ],
+    stepsUz: [
+      { name: "O'tkazma yo'nalishini tanlang", text: "Jo'natuvchi va qabul qiluvchi mamlakatni ko'rsating." },
+      { name: "O'tkazma summasini kiriting", text: "Jo'natish valyutasida summani kiriting." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — komissiya va qabul qilinadigan summani bilib oling." },
+    ],
+  },
+  {
+    slug: 'trip-cost',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Укажите маршрут', text: 'Введите пункт отправления и пункт назначения.' },
+      { name: 'Выберите транспорт', text: 'Укажите тип транспорта (автомобиль, автобус, поезд).' },
+      { name: 'Укажите расход топлива', text: 'Для авто введите средний расход (л/100 км) и цену топлива.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте стоимость поездки.' },
+    ],
+    stepsUz: [
+      { name: "Yo'nalishni ko'rsating", text: "Jo'nab chiqish va borish manzilini kiriting." },
+      { name: 'Transportni tanlang', text: "Transport turini ko'rsating (avtomobil, avtobus, poyezd)." },
+      { name: "Yoqilg'i sarfini ko'rsating", text: "Avto uchun o'rtacha sarfni (l/100 km) va yoqilg'i narxini kiriting." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — sayohat narxini bilib oling." },
+    ],
+  },
+  {
+    slug: 'car-leasing',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите стоимость автомобиля', text: 'Укажите полную стоимость автомобиля в лизинге.' },
+      { name: 'Укажите аванс и срок', text: 'Введите авансовый платёж и срок лизинга в месяцах.' },
+      { name: 'Укажите удорожание', text: 'Введите процент удорожания или ставку лизинга.' },
+      { name: 'Получите график платежей', text: 'Нажмите «Рассчитать» — получите ежемесячный платёж и полную стоимость лизинга.' },
+    ],
+    stepsUz: [
+      { name: 'Avtomobil narxini kiriting', text: "Lizingdagi avtomobilning to'liq narxini kiriting." },
+      { name: "Avans va muddatni ko'rsating", text: "Avans to'lov va lizing muddatini oylarda kiriting." },
+      { name: "Qimmatlanishni ko'rsating", text: "Qimmatlanish foizi yoki lizing stavkasini kiriting." },
+      { name: "To'lov jadvalini oling", text: "«Hisoblash» tugmasini bosing — oylik to'lov va lizingning to'liq narxini ko'ring." },
+    ],
+  },
+  {
+    slug: 'internet',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите провайдера', text: 'Выберите интернет-провайдера из списка (Uztelecom, Turon и др.).' },
+      { name: 'Укажите параметры', text: 'Выберите желаемую скорость интернета и объём трафика.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте ежемесячную стоимость интернета.' },
+    ],
+    stepsUz: [
+      { name: 'Provayderni tanlang', text: "Ro'yxatdan internet-provayderni tanlang (Uztelecom, Turon va boshq.)." },
+      { name: "Parametrlarni ko'rsating", text: "Kerakli internet tezligi va trafik hajmini tanlang." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — oylik internet narxini bilib oling." },
+    ],
+  },
+  {
+    slug: 'utilities-total',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите показания счётчиков', text: 'Укажите потребление электричества (кВт·ч), газа (м³) и воды (м³).' },
+      { name: 'Укажите площадь жилья', text: 'Введите площадь квартиры для расчёта отопления и вывоза мусора.' },
+      { name: 'Выберите тарифы', text: 'Выберите применимые тарифы (бытовой, льготный).' },
+      { name: 'Получите общую сумму', text: 'Нажмите «Рассчитать» — узнайте общую сумму коммунальных платежей за месяц.' },
+    ],
+    stepsUz: [
+      { name: "Hisoblagich ko'rsatkichlarini kiriting", text: "Elektr (kVt·s), gaz (m³) va suv (m³) sarfini ko'rsating." },
+      { name: "Uy-joy maydonini ko'rsating", text: "Isitish va chiqindi chiqarish hisobi uchun kvartira maydonini kiriting." },
+      { name: 'Tariflarni tanlang', text: "Tegishli tariflarni tanlang (maishiy, imtiyozli)." },
+      { name: "Umumiy summani oling", text: "«Hisoblash» tugmasini bosing — oylik kommunal to'lovlarning umumiy summasini bilib oling." },
+    ],
+  },
+  {
+    slug: 'apartment-cost',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Выберите город и район', text: 'Укажите город и район, где хотите приобрести квартиру.' },
+      { name: 'Укажите площадь', text: 'Введите площадь квартиры в квадратных метрах.' },
+      { name: 'Выберите тип жилья', text: 'Укажите: новостройка или вторичное жильё.' },
+      { name: 'Получите оценку стоимости', text: 'Нажмите «Рассчитать» — узнайте примерную стоимость квартиры.' },
+    ],
+    stepsUz: [
+      { name: 'Shahar va tumanni tanlang', text: "Kvartira sotib olmoqchi bo'lgan shahar va tumanni ko'rsating." },
+      { name: "Maydonni ko'rsating", text: "Kvartira maydonini kvadrat metrlarda kiriting." },
+      { name: "Uy-joy turini tanlang", text: "Ko'rsating: yangi qurilish yoki ikkilamchi uy-joy." },
+      { name: 'Narx baholashini oling', text: "«Hisoblash» tugmasini bosing — kvartiraning taxminiy narxini bilib oling." },
+    ],
+  },
+  {
+    slug: 'rental',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите тип жилья', text: 'Укажите тип аренды: квартира, дом, комната.' },
+      { name: 'Укажите район и площадь', text: 'Выберите район и введите площадь жилья.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте рекомендуемую стоимость аренды.' },
+    ],
+    stepsUz: [
+      { name: "Uy-joy turini tanlang", text: "Ijara turini ko'rsating: kvartira, uy, xona." },
+      { name: "Tuman va maydonni ko'rsating", text: "Tumanni tanlang va uy-joy maydonini kiriting." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — tavsiya etilgan ijara narxini bilib oling." },
+    ],
+  },
+  {
+    slug: 'renovation',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите площадь помещения', text: 'Укажите общую площадь ремонтируемого помещения в кв. м.' },
+      { name: 'Выберите тип ремонта', text: 'Укажите тип: косметический, капитальный или евроремонт.' },
+      { name: 'Укажите дополнительные работы', text: 'Отметьте нужные работы (сантехника, электрика, мебель).' },
+      { name: 'Получите смету', text: 'Нажмите «Рассчитать» — получите примерную стоимость ремонта.' },
+    ],
+    stepsUz: [
+      { name: "Xona maydonini kiriting", text: "Ta'mirlanadigan xonaning umumiy maydonini kv.m da kiriting." },
+      { name: "Ta'mir turini tanlang", text: "Turini ko'rsating: kosmetik, kapital yoki yevrota'mir." },
+      { name: "Qo'shimcha ishlarni ko'rsating", text: "Kerakli ishlarni belgilang (santexnika, elektrika, mebel)." },
+      { name: 'Smetani oling', text: "«Hisoblash» tugmasini bosing — ta'mirning taxminiy narxini ko'ring." },
+    ],
+  },
+  {
+    slug: 'moving',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Укажите маршрут', text: 'Введите адрес отправления и назначения.' },
+      { name: 'Опишите объём вещей', text: 'Укажите количество комнат или примерный объём груза.' },
+      { name: 'Выберите дополнительные услуги', text: 'Отметьте услуги (грузчики, упаковка, подъём на этаж).' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте примерную стоимость переезда.' },
+    ],
+    stepsUz: [
+      { name: "Yo'nalishni ko'rsating", text: "Jo'natish va yetkazish manzilini kiriting." },
+      { name: "Yuk hajmini tavsiflang", text: "Xonalar sonini yoki yuk hajmini taxminiy ko'rsating." },
+      { name: "Qo'shimcha xizmatlarni tanlang", text: "Xizmatlarni belgilang (yukchilar, qadoqlash, qavatga ko'tarish)." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — ko'chishning taxminiy narxini bilib oling." },
+    ],
+  },
+  {
+    slug: 'llc-calculator',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Выберите вид деятельности', text: 'Укажите планируемый вид деятельности ООО.' },
+      { name: 'Укажите уставный капитал', text: 'Введите размер уставного капитала.' },
+      { name: 'Укажите количество учредителей', text: 'Введите число учредителей компании.' },
+      { name: 'Получите расчёт расходов', text: 'Нажмите «Рассчитать» — узнайте затраты на регистрацию ООО.' },
+    ],
+    stepsUz: [
+      { name: 'Faoliyat turini tanlang', text: "MChJning rejalashtirilgan faoliyat turini ko'rsating." },
+      { name: "Ustav kapitalini ko'rsating", text: "Ustav kapitali miqdorini kiriting." },
+      { name: "Ta'sischilar sonini ko'rsating", text: "Kompaniya ta'sischilar sonini kiriting." },
+      { name: 'Xarajatlar hisobini oling', text: "«Hisoblash» tugmasini bosing — MChJ ro'yxatdan o'tkazish xarajatlarini bilib oling." },
+    ],
+  },
+  {
+    slug: 'break-even',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите постоянные расходы', text: 'Укажите ежемесячные постоянные расходы бизнеса (аренда, зарплаты и др.).' },
+      { name: 'Укажите переменные расходы', text: 'Введите переменные расходы на единицу продукции.' },
+      { name: 'Введите цену продажи', text: 'Укажите цену реализации единицы товара или услуги.' },
+      { name: 'Получите точку безубыточности', text: 'Нажмите «Рассчитать» — узнайте объём продаж для выхода в ноль.' },
+    ],
+    stepsUz: [
+      { name: "Doimiy xarajatlarni kiriting", text: "Biznesning oylik doimiy xarajatlarini ko'rsating (ijara, ish haqi va boshq.)." },
+      { name: "O'zgaruvchan xarajatlarni ko'rsating", text: "Bir birlik mahsulot uchun o'zgaruvchan xarajatlarni kiriting." },
+      { name: 'Sotuv narxini kiriting', text: "Tovar yoki xizmat birligining sotuv narxini ko'rsating." },
+      { name: "Zararsizlik nuqtasini oling", text: "«Hisoblash» tugmasini bosing — nolga chiqish uchun kerakli sotuv hajmini bilib oling." },
+    ],
+  },
+  {
+    slug: 'roi',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите сумму инвестиции', text: 'Укажите начальную сумму вложений.' },
+      { name: 'Укажите полученный доход', text: 'Введите сумму дохода или прибыли от инвестиции.' },
+      { name: 'Укажите период', text: 'Введите срок инвестирования в месяцах или годах.' },
+      { name: 'Получите ROI', text: 'Нажмите «Рассчитать» — узнайте рентабельность инвестиции в процентах.' },
+    ],
+    stepsUz: [
+      { name: 'Investitsiya summasini kiriting', text: "Boshlang'ich qo'yilma summasini kiriting." },
+      { name: "Olingan daromadni ko'rsating", text: "Investitsiyadan olingan daromad yoki foyda summasini kiriting." },
+      { name: "Davrni ko'rsating", text: "Investitsiya muddatini oylar yoki yillarda kiriting." },
+      { name: 'ROI ni oling', text: "«Hisoblash» tugmasini bosing — investitsiya rentabelligini foizda bilib oling." },
+    ],
+  },
+  {
+    slug: 'employer-cost',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите зарплату сотрудника', text: 'Укажите начисленную заработную плату работника.' },
+      { name: 'Укажите количество сотрудников', text: 'Введите число работников для расчёта.' },
+      { name: 'Выберите льготы', text: 'Отметьте применимые льготы и особые условия.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте полную стоимость сотрудника для работодателя.' },
+    ],
+    stepsUz: [
+      { name: 'Xodim ish haqini kiriting', text: "Xodimning hisoblangan ish haqini ko'rsating." },
+      { name: "Xodimlar sonini ko'rsating", text: "Hisoblash uchun ishchilar sonini kiriting." },
+      { name: 'Imtiyozlarni tanlang', text: "Tegishli imtiyozlar va maxsus shartlarni belgilang." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — ish beruvchi uchun xodimning to'liq qiymatini bilib oling." },
+    ],
+  },
+  {
+    slug: 'ideal-weight',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите рост', text: 'Укажите ваш рост в сантиметрах.' },
+      { name: 'Выберите пол и возраст', text: 'Укажите пол и возраст для точного расчёта.' },
+      { name: 'Получите результат', text: 'Нажмите «Рассчитать» — узнайте идеальный вес по нескольким формулам.' },
+    ],
+    stepsUz: [
+      { name: "Bo'yingizni kiriting", text: "Bo'yingizni santimetrlarda ko'rsating." },
+      { name: 'Jins va yoshni tanlang', text: "Aniq hisoblash uchun jins va yoshni ko'rsating." },
+      { name: 'Natijani oling', text: "«Hisoblash» tugmasini bosing — bir necha formula bo'yicha ideal vaznni bilib oling." },
+    ],
+  },
+  {
+    slug: 'macros',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите личные данные', text: 'Укажите возраст, пол, рост и вес.' },
+      { name: 'Выберите цель', text: 'Укажите цель: похудение, поддержание веса или набор массы.' },
+      { name: 'Укажите уровень активности', text: 'Выберите уровень физической активности.' },
+      { name: 'Получите нормы БЖУ', text: 'Нажмите «Рассчитать» — получите суточные нормы белков, жиров и углеводов.' },
+    ],
+    stepsUz: [
+      { name: "Shaxsiy ma'lumotlarni kiriting", text: "Yosh, jins, bo'y va vaznni ko'rsating." },
+      { name: 'Maqsadni tanlang', text: "Maqsadni ko'rsating: ozish, vaznni saqlash yoki massa yig'ish." },
+      { name: "Faollik darajasini ko'rsating", text: "Jismoniy faollik darajasini tanlang." },
+      { name: 'OYU normalarini oling', text: "«Hisoblash» tugmasini bosing — kunlik oqsil, yog' va uglevodlar normasini oling." },
+    ],
+  },
+  {
+    slug: 'pregnancy',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Укажите дату', text: 'Введите дату первого дня последней менструации или дату зачатия.' },
+      { name: 'Выберите метод расчёта', text: 'Выберите расчёт по дате менструации или по дате зачатия.' },
+      { name: 'Получите результат', text: 'Нажмите «Рассчитать» — узнайте предполагаемую дату родов и срок беременности.' },
+    ],
+    stepsUz: [
+      { name: 'Sanani kiriting', text: "Oxirgi hayz birinchi kuni yoki homiladorlik sanasini kiriting." },
+      { name: 'Hisoblash usulini tanlang', text: "Hayz sanasi yoki homiladorlik sanasi bo'yicha hisoblashni tanlang." },
+      { name: 'Natijani oling', text: "«Hisoblash» tugmasini bosing — taxminiy tug'ilish sanasi va homiladorlik muddatini bilib oling." },
+    ],
+  },
+  {
+    slug: 'tuition',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Выберите университет', text: 'Выберите вуз из списка университетов Узбекистана.' },
+      { name: 'Укажите специальность', text: 'Выберите направление обучения и форму (очная, заочная).' },
+      { name: 'Выберите курс', text: 'Укажите текущий или планируемый курс обучения.' },
+      { name: 'Получите стоимость', text: 'Нажмите «Рассчитать» — узнайте стоимость контракта за год.' },
+    ],
+    stepsUz: [
+      { name: 'Universitetni tanlang', text: "O'zbekiston universitetlari ro'yxatidan OTMni tanlang." },
+      { name: "Mutaxassislikni ko'rsating", text: "Ta'lim yo'nalishi va shakli (kunduzgi, sirtqi) ni tanlang." },
+      { name: 'Kursni tanlang', text: "Joriy yoki rejalashtirilgan o'quv kursni ko'rsating." },
+      { name: 'Narxni oling', text: "«Hisoblash» tugmasini bosing — yillik kontrakt narxini bilib oling." },
+    ],
+  },
+  {
+    slug: 'education-loan',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Введите стоимость обучения', text: 'Укажите годовую стоимость контракта.' },
+      { name: 'Укажите срок обучения', text: 'Введите количество лет обучения.' },
+      { name: 'Выберите условия кредита', text: 'Укажите процентную ставку и срок погашения.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте ежемесячный платёж и общую стоимость кредита.' },
+    ],
+    stepsUz: [
+      { name: "O'qish narxini kiriting", text: "Yillik kontrakt narxini kiriting." },
+      { name: "O'qish muddatini ko'rsating", text: "O'qish yillar sonini kiriting." },
+      { name: 'Kredit shartlarini tanlang', text: "Foiz stavkasi va to'lash muddatini ko'rsating." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — oylik to'lov va kreditning umumiy narxini bilib oling." },
+    ],
+  },
+  {
+    slug: 'gpa',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите предметы', text: 'Добавьте названия предметов и полученные оценки.' },
+      { name: 'Укажите кредиты', text: 'Введите количество кредитов (часов) по каждому предмету.' },
+      { name: 'Получите GPA', text: 'Нажмите «Рассчитать» — узнайте средний балл (GPA) по всем предметам.' },
+    ],
+    stepsUz: [
+      { name: 'Fanlarni kiriting', text: "Fan nomlarini va olingan baholarni qo'shing." },
+      { name: "Kreditlarni ko'rsating", text: "Har bir fan bo'yicha kreditlar (soatlar) sonini kiriting." },
+      { name: 'GPA ni oling', text: "«Hisoblash» tugmasini bosing — barcha fanlar bo'yicha o'rtacha ballni (GPA) bilib oling." },
+    ],
+  },
+  {
+    slug: 'fitr-sadaka',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите продукт', text: 'Укажите продукт для расчёта фитр-садака (пшеница, рис, мука и др.).' },
+      { name: 'Укажите количество членов семьи', text: 'Введите число человек, за которых выплачивается садака.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте сумму фитр-садака на каждого человека.' },
+    ],
+    stepsUz: [
+      { name: 'Mahsulotni tanlang', text: "Fitr-sadaqa hisoblash uchun mahsulotni ko'rsating (bug'doy, guruch, un va boshq.)." },
+      { name: "Oila a'zolari sonini ko'rsating", text: "Sadaqa to'lanadigan kishilar sonini kiriting." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — har bir kishi uchun fitr-sadaqa summasini bilib oling." },
+    ],
+  },
+  {
+    slug: 'fidiya-sadaka',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Укажите количество дней', text: 'Введите число пропущенных дней поста.' },
+      { name: 'Выберите продукт', text: 'Укажите продукт для расчёта фидия-садака.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте общую сумму фидия-садака.' },
+    ],
+    stepsUz: [
+      { name: "Kunlar sonini ko'rsating", text: "O'tkazib yuborilgan ro'za kunlari sonini kiriting." },
+      { name: 'Mahsulotni tanlang', text: "Fidiya-sadaqa hisoblash uchun mahsulotni ko'rsating." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — fidiya-sadaqaning umumiy summasini bilib oling." },
+    ],
+  },
+  {
+    slug: 'kurban',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите тип животного', text: 'Укажите вид жертвенного животного (баран, корова, верблюд).' },
+      { name: 'Укажите количество долей', text: 'Введите число долей (для крупного животного до 7 долей).' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте стоимость курбана и вашу долю.' },
+    ],
+    stepsUz: [
+      { name: 'Hayvon turini tanlang', text: "Qurbonlik hayvoni turini ko'rsating (qo'y, sigir, tuya)." },
+      { name: "Ulushlar sonini ko'rsating", text: "Ulushlar sonini kiriting (yirik hayvon uchun 7 taga)." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — qurbonlik narxi va sizning ulushingizni bilib oling." },
+    ],
+  },
+  {
+    slug: 'date-calc',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите начальную дату', text: 'Укажите дату, от которой нужно вести расчёт.' },
+      { name: 'Выберите операцию', text: 'Выберите: добавить/вычесть дни или найти разницу между датами.' },
+      { name: 'Получите результат', text: 'Нажмите «Рассчитать» — получите итоговую дату или количество дней.' },
+    ],
+    stepsUz: [
+      { name: "Boshlang'ich sanani kiriting", text: "Hisob-kitob qilinadigan sanani kiriting." },
+      { name: 'Amalni tanlang', text: "Tanlang: kunlar qo'shish/ayirish yoki sanalar orasidagi farqni topish." },
+      { name: 'Natijani oling', text: "«Hisoblash» tugmasini bosing — yakuniy sana yoki kunlar sonini oling." },
+    ],
+  },
+  {
+    slug: 'area',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите фигуру', text: 'Выберите геометрическую фигуру (круг, прямоугольник, треугольник и др.).' },
+      { name: 'Введите размеры', text: 'Укажите необходимые параметры (длину, ширину, радиус).' },
+      { name: 'Получите площадь', text: 'Нажмите «Рассчитать» — получите площадь и периметр фигуры.' },
+    ],
+    stepsUz: [
+      { name: 'Shaklni tanlang', text: "Geometrik shaklni tanlang (doira, to'g'ri to'rtburchak, uchburchak va boshq.)." },
+      { name: "O'lchamlarni kiriting", text: "Kerakli parametrlarni (uzunlik, kenglik, radius) kiriting." },
+      { name: 'Yuzani oling', text: "«Hisoblash» tugmasini bosing — shaklning yuzi va perimetrini oling." },
+    ],
+  },
+  {
+    slug: 'unit-converter',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите категорию', text: 'Выберите категорию единиц (длина, масса, объём, температура и др.).' },
+      { name: 'Введите значение', text: 'Укажите числовое значение и исходную единицу измерения.' },
+      { name: 'Получите результат', text: 'Результат конвертации в целевую единицу отобразится мгновенно.' },
+    ],
+    stepsUz: [
+      { name: 'Kategoriyani tanlang', text: "Birliklar kategoriyasini tanlang (uzunlik, massa, hajm, harorat va boshq.)." },
+      { name: 'Qiymatni kiriting', text: "Raqamli qiymat va boshlang'ich o'lchov birligini ko'rsating." },
+      { name: 'Natijani oling', text: "Maqsad birligiga konvertatsiya natijasi darhol ko'rinadi." },
+    ],
+  },
+  {
+    slug: 'number-to-words',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите число', text: 'Укажите число, которое нужно записать прописью.' },
+      { name: 'Выберите язык и валюту', text: 'Выберите язык (русский, узбекский) и валюту (сум, доллар).' },
+      { name: 'Получите результат', text: 'Число прописью и сумма в валюте отобразятся автоматически.' },
+    ],
+    stepsUz: [
+      { name: 'Raqamni kiriting', text: "Yozma shaklda yozilishi kerak bo'lgan raqamni kiriting." },
+      { name: "Til va valyutani tanlang", text: "Tilni (rus, o'zbek) va valyutani (so'm, dollar) tanlang." },
+      { name: 'Natijani oling', text: "Raqam yozma shaklda va valyutadagi summa avtomatik ko'rinadi." },
+    ],
+  },
+  {
+    slug: 'age',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите дату рождения', text: 'Укажите дату рождения в формате ДД.ММ.ГГГГ.' },
+      { name: 'Получите результат', text: 'Нажмите «Рассчитать» — узнайте точный возраст в годах, месяцах и днях.' },
+    ],
+    stepsUz: [
+      { name: "Tug'ilgan sanani kiriting", text: "Tug'ilgan sanani KK.OO.YYYY formatida kiriting." },
+      { name: 'Natijani oling', text: "«Hisoblash» tugmasini bosing — aniq yoshni yillar, oylar va kunlarda bilib oling." },
+    ],
+  },
+  {
+    slug: 'random',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Укажите диапазон', text: 'Введите минимальное и максимальное значения.' },
+      { name: 'Выберите количество', text: 'Укажите, сколько случайных чисел нужно сгенерировать.' },
+      { name: 'Получите результат', text: 'Нажмите «Сгенерировать» — получите случайные числа из указанного диапазона.' },
+    ],
+    stepsUz: [
+      { name: 'Diapazonni kiriting', text: "Minimal va maksimal qiymatlarni kiriting." },
+      { name: "Miqdorni tanlang", text: "Nechta tasodifiy son kerakligini ko'rsating." },
+      { name: 'Natijani oling', text: "«Generatsiya» tugmasini bosing — ko'rsatilgan diapazondagi tasodifiy sonlarni oling." },
+    ],
+  },
+  {
+    slug: 'passport-fees',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите тип паспорта', text: 'Укажите тип: биометрический, служебный, дипломатический.' },
+      { name: 'Укажите срочность', text: 'Выберите срок оформления (обычный, ускоренный, срочный).' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте госпошлину за оформление паспорта.' },
+    ],
+    stepsUz: [
+      { name: 'Pasport turini tanlang', text: "Turni ko'rsating: biometrik, xizmat, diplomatik." },
+      { name: "Shoshilinchligini ko'rsating", text: "Rasmiylashtirish muddatini tanlang (oddiy, tezlashtirilgan, shoshilinch)." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — pasport rasmiylashtirishning davlat boji summasini bilib oling." },
+    ],
+  },
+  {
+    slug: 'state-duties',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите вид услуги', text: 'Укажите государственную услугу (регистрация, лицензирование и др.).' },
+      { name: 'Укажите параметры', text: 'Введите дополнительные параметры, если требуется.' },
+      { name: 'Получите сумму пошлины', text: 'Нажмите «Рассчитать» — узнайте размер государственной пошлины.' },
+    ],
+    stepsUz: [
+      { name: 'Xizmat turini tanlang', text: "Davlat xizmatini ko'rsating (ro'yxatga olish, litsenziyalash va boshq.)." },
+      { name: "Parametrlarni ko'rsating", text: "Agar kerak bo'lsa, qo'shimcha parametrlarni kiriting." },
+      { name: 'Boj summasini oling', text: "«Hisoblash» tugmasini bosing — davlat boji miqdorini bilib oling." },
+    ],
+  },
+  {
+    slug: 'wedding',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Укажите количество гостей', text: 'Введите ожидаемое число гостей на свадьбу.' },
+      { name: 'Выберите формат мероприятия', text: 'Укажите тип: ресторан, банкетный зал, дома.' },
+      { name: 'Отметьте дополнительные расходы', text: 'Добавьте расходы: фото/видео, музыка, декор, транспорт и др.' },
+      { name: 'Получите смету', text: 'Нажмите «Рассчитать» — получите примерный бюджет свадьбы.' },
+    ],
+    stepsUz: [
+      { name: "Mehmonlar sonini ko'rsating", text: "To'yga kutilayotgan mehmonlar sonini kiriting." },
+      { name: "Tadbir formatini tanlang", text: "Turini ko'rsating: restoran, banket zali, uyda." },
+      { name: "Qo'shimcha xarajatlarni belgilang", text: "Xarajatlarni qo'shing: foto/video, musiqa, bezak, transport va boshq." },
+      { name: 'Smetani oling', text: "«Hisoblash» tugmasini bosing — to'yning taxminiy byudjetini ko'ring." },
+    ],
+  },
+  {
+    slug: 'cotton-yield',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите площадь посева', text: 'Укажите площадь хлопкового поля в гектарах.' },
+      { name: 'Укажите урожайность', text: 'Введите ожидаемую урожайность (ц/га) или используйте среднюю по региону.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте ожидаемый объём урожая и его стоимость.' },
+    ],
+    stepsUz: [
+      { name: "Ekish maydonini kiriting", text: "Paxta dala maydonini gektarlarda kiriting." },
+      { name: "Hosildorlikni ko'rsating", text: "Kutilayotgan hosildorlikni (s/ga) kiriting yoki hudud bo'yicha o'rtachadan foydalaning." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — kutilayotgan hosil hajmi va narxini bilib oling." },
+    ],
+  },
+  {
+    slug: 'remittances',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Выберите страну отправки', text: 'Укажите страну, из которой отправляется перевод.' },
+      { name: 'Введите сумму', text: 'Укажите сумму перевода в валюте отправления.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте сумму к получению в сумах с учётом комиссии.' },
+    ],
+    stepsUz: [
+      { name: "Jo'natish mamlakatini tanlang", text: "Pul o'tkazma jo'natiladigan mamlakatni ko'rsating." },
+      { name: 'Summani kiriting', text: "Jo'natish valyutasida o'tkazma summasini kiriting." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — komissiyani hisobga olgan holda so'mda qabul qilinadigan summani bilib oling." },
+    ],
+  },
+  {
+    slug: 'visa-cost',
+    totalTimeMinutes: 2,
+    stepsRu: [
+      { name: 'Выберите страну', text: 'Укажите страну, для которой оформляется виза.' },
+      { name: 'Выберите тип визы', text: 'Укажите тип: туристическая, рабочая, студенческая, транзитная.' },
+      { name: 'Укажите срочность', text: 'Выберите обычный или ускоренный срок оформления.' },
+      { name: 'Получите расчёт', text: 'Нажмите «Рассчитать» — узнайте консульский сбор и общие расходы на визу.' },
+    ],
+    stepsUz: [
+      { name: 'Mamlakatni tanlang', text: "Viza rasmiylashtirilayotgan mamlakatni ko'rsating." },
+      { name: 'Viza turini tanlang', text: "Turini ko'rsating: turistik, ishchi, talaba, tranzit." },
+      { name: "Shoshilinchligini ko'rsating", text: "Oddiy yoki tezlashtirilgan rasmiylashtirish muddatini tanlang." },
+      { name: 'Hisobni oling', text: "«Hisoblash» tugmasini bosing — konsullik yig'imi va viza uchun umumiy xarajatlarni bilib oling." },
+    ],
+  },
+  {
+    slug: 'brv',
+    totalTimeMinutes: 1,
+    stepsRu: [
+      { name: 'Введите количество БРВ', text: 'Укажите количество базовых расчётных величин.' },
+      { name: 'Выберите период', text: 'Выберите год для определения актуального размера БРВ.' },
+      { name: 'Получите сумму', text: 'Нажмите «Рассчитать» — узнайте сумму в сумах для указанного количества БРВ.' },
+    ],
+    stepsUz: [
+      { name: 'BHM miqdorini kiriting', text: "Bazaviy hisoblash miqdorlari sonini ko'rsating." },
+      { name: 'Davrni tanlang', text: "Dolzarb BHM miqdorini aniqlash uchun yilni tanlang." },
+      { name: 'Summani oling', text: "«Hisoblash» tugmasini bosing — ko'rsatilgan BHM soni uchun so'mdagi summani bilib oling." },
+    ],
+  },
 ]
 
 export function getCalculatorHowTo(slug: string): CalculatorHowTo | undefined {
