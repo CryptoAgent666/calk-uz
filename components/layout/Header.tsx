@@ -146,7 +146,7 @@ export function Header() {
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground rounded-lg hover:text-foreground hover:bg-accent transition-colors">
-                <span>{locale === "uz" ? "Yana" : "Ещё"}</span>
+                <span>{t("more_dropdown")}</span>
                 <ChevronDown
                   className={`h-3.5 w-3.5 transition-transform ${openDropdown === "more" ? "rotate-180" : ""}`}
                 />
@@ -236,7 +236,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-80 p-0">
                 <SheetTitle className="sr-only">
-                  {locale === "uz" ? "Navigatsiya menyusi" : "Навигация"}
+                  {t("mobile_menu_title")}
                 </SheetTitle>
                 <div className="flex flex-col h-full">
                   {/* Mobile Header */}

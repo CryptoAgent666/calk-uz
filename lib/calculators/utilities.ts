@@ -25,9 +25,18 @@ const GAS_SUMMER_TIERS: TariffTier[] = [
   { upTo: Infinity, rate: 3000 },
 ]
 
+const GAS_WINTER_TIERS: TariffTier[] = [
+  { upTo: 500, rate: 1000 },
+  { upTo: 2500, rate: 1800 },
+  { upTo: 5000, rate: 2100 },
+  { upTo: 10000, rate: 2500 },
+  { upTo: Infinity, rate: 3000 },
+]
+
 const WATER_RATES = {
   cold: 3808,
   hot: 8928.67,
+  sewage: 2182,
 }
 
 const HEATING_RATE_PER_M2_PER_DAY = 241.44
@@ -83,7 +92,7 @@ export interface GasResult {
 }
 
 export function calculateGas(consumptionM3: number, isSummer: boolean = true): GasResult {
-  const tiers = isSummer ? GAS_SUMMER_TIERS : GAS_SUMMER_TIERS // Winter tiers TBD — using summer for now
+  const tiers = isSummer ? GAS_SUMMER_TIERS : GAS_WINTER_TIERS
   const result = calculateTiered(consumptionM3, tiers)
   return {
     consumption: consumptionM3,
@@ -98,13 +107,15 @@ export interface WaterResult {
   hotConsumption: number
   coldCost: number
   hotCost: number
+  sewageCost: number
   total: number
 }
 
 export function calculateWater(coldM3: number, hotM3: number): WaterResult {
   const coldCost = coldM3 * WATER_RATES.cold
   const hotCost = hotM3 * WATER_RATES.hot
-  return { coldConsumption: coldM3, hotConsumption: hotM3, coldCost, hotCost, total: coldCost + hotCost }
+  const sewageCost = (coldM3 + hotM3) * WATER_RATES.sewage
+  return { coldConsumption: coldM3, hotConsumption: hotM3, coldCost, hotCost, sewageCost, total: coldCost + hotCost + sewageCost }
 }
 
 export interface HeatingResult {
