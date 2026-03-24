@@ -167,6 +167,17 @@
   "last_updated": "Oxirgi yangilanish",
   "sources_title": "Manbalar",
   "reviewed_by": "Calk.UZ tahririyati tomonidan tekshirilgan",
+  "article_h3_how_it_works": "Kalkulyator qanday ishlaydi",
+  "article_h3_formula": "Hisoblash formulasi",
+  "article_h3_example": "Hisoblash misoli",
+  "article_h3_considerations": "Nimalarni hisobga olish kerak",
+  "article_h3_tips": "Foydali maslahatlar",
+  "article_tables_heading": "Ma'lumotnoma va tariflar",
   "footer_data_verified": "Ma'lumotlar rasmiy manbalar bo'yicha tekshirilgan",
-  "footer_methodology": "Metodologiya"
+  "footer_methodology": "Metodologiya",
+
+  "howto_heading": "Qanday foydalanish",
+  "howto_step": "Qadam",
+  "howto_time": "Hisoblash vaqti",
+  "howto_minutes": "daq."
 }

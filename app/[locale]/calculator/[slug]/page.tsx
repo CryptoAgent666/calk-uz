@@ -7,8 +7,10 @@ import { CALCULATORS, getCalculatorBySlug } from "@/lib/data/calculators"
 import { CATEGORIES } from "@/lib/data/categories"
 import { CALCULATOR_COMPONENTS } from "@/lib/data/calculator-components"
 import { getCalculatorArticle } from "@/lib/data/calculator-articles"
+import { getCalculatorHowTo } from "@/lib/data/calculator-howto"
 import { getSlugByLocale, getEnglishSlug, getAllLocalizedSlugs } from "@/lib/data/calculator-slugs"
 import { CROSS_LINKS } from "@/lib/data/calculator-crosslinks"
+import { getTablesForCategory } from "@/lib/data/calculator-tables"
 import type { CategoryId } from "@/lib/types/calculator"
 import { ChevronRight, Home, ArrowRight, Calendar, ExternalLink, ShieldCheck } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -152,6 +154,12 @@ export default async function CalculatorPage({
     ? (locale === "uz" ? article.faqUz : article.faqRu)
     : null
 
+  // Get HowTo data
+  const howTo = getCalculatorHowTo(calc.slug)
+  const howToSteps = howTo
+    ? locale === "uz" ? howTo.stepsUz : howTo.stepsRu
+    : null
+
   // Schema.org JSON-LD — always use localized canonical URL
   const canonicalUrl = `${BASE_URL}/${locale}/calculator/${localizedSlug}`
 
@@ -256,6 +264,23 @@ export default async function CalculatorPage({
     jsonLdArray.push(techArticleSchema)
   }
 
+  if (howTo && howToSteps) {
+    const howToSchema = {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: `${t("howto_heading")}: ${title}`,
+      description,
+      totalTime: `PT${howTo.totalTimeMinutes}M`,
+      step: howToSteps.map((step, index) => ({
+        "@type": "HowToStep",
+        position: index + 1,
+        name: step.name,
+        text: step.text,
+      })),
+    }
+    jsonLdArray.push(howToSchema)
+  }
+
   return (
     <div className="min-h-screen">
       {/* Schema.org JSON-LD */}
@@ -337,6 +362,31 @@ export default async function CalculatorPage({
               </ErrorBoundary>
             </div>
 
+            {/* HowTo Steps */}
+            {howToSteps && howToSteps.length > 0 && (
+              <div className="mt-8 rounded-2xl border border-border bg-card p-6 sm:p-8">
+                <h2 className="text-lg sm:text-xl font-bold text-foreground mb-1">
+                  {t("howto_heading")}
+                </h2>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {t("howto_time")}: ~{howTo!.totalTimeMinutes} {t("howto_minutes")}
+                </p>
+                <ol className="space-y-3">
+                  {howToSteps.map((step, index) => (
+                    <li key={index} className="flex gap-3">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                        {index + 1}
+                      </span>
+                      <div className="pt-0.5">
+                        <p className="font-medium text-foreground">{step.name}</p>
+                        <p className="text-sm text-muted-foreground mt-0.5">{step.text}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
             {/* Cross-category links */}
             {crossLinkedCalculators.length > 0 && (
               <div className="mt-6 p-4 rounded-xl bg-muted/30 border border-border">
@@ -378,12 +428,81 @@ export default async function CalculatorPage({
                   {t("article_heading")}
                 </h2>
                 <div className="prose prose-sm sm:prose-base max-w-none text-muted-foreground space-y-4">
-                  {articleParagraphs.map((paragraph, index) => (
-                    <p key={index} className="leading-relaxed">
-                      {paragraph}
-                    </p>
-                  ))}
+                  {articleParagraphs.map((paragraph, index) => {
+                    const subheadingKeys = [
+                      "article_h3_how_it_works",
+                      "article_h3_formula",
+                      "article_h3_example",
+                      "article_h3_considerations",
+                      "article_h3_tips",
+                    ]
+                    const subheadingKey = subheadingKeys[index]
+                    return (
+                      <div key={index}>
+                        {subheadingKey && (
+                          <h3 className="text-lg font-semibold text-foreground mt-6 mb-2">
+                            {t(subheadingKey)}
+                          </h3>
+                        )}
+                        <p className="leading-relaxed">{paragraph}</p>
+                      </div>
+                    )
+                  })}
                 </div>
+
+                {/* Data Tables */}
+                {(() => {
+                  const tables = getTablesForCategory(calc.category)
+                  if (tables.length === 0) return null
+                  return (
+                    <div className="mt-8 space-y-6">
+                      <h3 className="text-lg sm:text-xl font-semibold text-foreground">
+                        {t("article_tables_heading")}
+                      </h3>
+                      {tables.map((table, tIdx) => (
+                        <div key={tIdx} className="overflow-x-auto rounded-xl border border-border">
+                          <table className="w-full text-sm">
+                            <caption className="px-4 py-2 text-left font-medium text-foreground bg-muted/50 border-b border-border">
+                              {locale === "uz" ? table.titleUz : table.titleRu}
+                            </caption>
+                            <thead>
+                              <tr className="bg-muted/30">
+                                {table.headers.map((h, hIdx) => (
+                                  <th
+                                    key={hIdx}
+                                    className="px-4 py-2.5 text-left font-medium text-foreground border-b border-border"
+                                  >
+                                    {locale === "uz" ? h.uz : h.ru}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {table.rows.map((row, rIdx) => {
+                                const cells = locale === "uz" ? row.uz : row.ru
+                                return (
+                                  <tr
+                                    key={rIdx}
+                                    className={rIdx % 2 === 0 ? "bg-card" : "bg-muted/20"}
+                                  >
+                                    {cells.map((cell, cIdx) => (
+                                      <td
+                                        key={cIdx}
+                                        className="px-4 py-2 text-muted-foreground border-b border-border last:border-b-0"
+                                      >
+                                        {cell}
+                                      </td>
+                                    ))}
+                                  </tr>
+                                )
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      ))}
+                    </div>
+                  )
+                })()}
 
                 {/* FAQ Accordion */}
                 {faqItems && faqItems.length > 0 && (

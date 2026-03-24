@@ -167,6 +167,17 @@
   "last_updated": "Последнее обновление",
   "sources_title": "Источники",
   "reviewed_by": "Проверено редакцией Calk.UZ",
+  "article_h3_how_it_works": "Как работает калькулятор",
+  "article_h3_formula": "Формула расчёта",
+  "article_h3_example": "Пример расчёта",
+  "article_h3_considerations": "Что учитывать",
+  "article_h3_tips": "Полезные советы",
+  "article_tables_heading": "Справочные данные и тарифы",
   "footer_data_verified": "Данные проверены по официальным источникам",
-  "footer_methodology": "Методология"
+  "footer_methodology": "Методология",
+
+  "howto_heading": "Как пользоваться",
+  "howto_step": "Шаг",
+  "howto_time": "Время расчёта",
+  "howto_minutes": "мин."
 }
