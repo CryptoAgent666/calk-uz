@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import Script from "next/script"
 import { NextIntlClientProvider } from "next-intl"
@@ -15,6 +15,16 @@ const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-sans" })
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ""
 const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || ""
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#059669' },
+    { media: '(prefers-color-scheme: dark)', color: '#0A0F1C' },
+  ],
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))

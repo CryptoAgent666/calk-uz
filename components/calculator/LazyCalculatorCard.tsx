@@ -1,6 +1,5 @@
 'use client'
 import { useRef, useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 
 interface LazyCalculatorCardProps {
   children: React.ReactNode
@@ -12,6 +11,9 @@ export function LazyCalculatorCard({ children, index }: LazyCalculatorCardProps)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -21,23 +23,19 @@ export function LazyCalculatorCard({ children, index }: LazyCalculatorCardProps)
       },
       { rootMargin: '100px', threshold: 0.1 }
     )
-    if (ref.current) observer.observe(ref.current)
+    observer.observe(el)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <div ref={ref}>
-      {isVisible ? (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: Math.min(index * 0.05, 0.3) }}
-        >
-          {children}
-        </motion.div>
-      ) : (
-        <div className="h-[180px] rounded-xl bg-muted/30 animate-pulse" />
-      )}
+    <div
+      ref={ref}
+      className={`transition-all duration-300 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+      }`}
+      style={{ transitionDelay: isVisible ? `${Math.min(index * 50, 300)}ms` : '0ms' }}
+    >
+      {children}
     </div>
   )
 }

@@ -79,6 +79,7 @@ export async function generateMetadata({
       languages: {
         ru: `${BASE_URL}/ru/calculator/${localizedSlugRu}`,
         uz: `${BASE_URL}/uz/calculator/${localizedSlugUz}`,
+        "x-default": `${BASE_URL}/ru/calculator/${localizedSlugRu}`,
       },
     },
     openGraph: {

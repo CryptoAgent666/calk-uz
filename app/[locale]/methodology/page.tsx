@@ -25,6 +25,7 @@ export async function generateMetadata({
       languages: {
         ru: "/ru/methodology",
         uz: "/uz/methodology",
+        "x-default": "/ru/methodology",
       },
     },
     other: {

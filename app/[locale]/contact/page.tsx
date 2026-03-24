@@ -18,6 +18,7 @@ export async function generateMetadata({
       languages: {
         ru: "/ru/contact",
         uz: "/uz/contact",
+        "x-default": "/ru/contact",
       },
     },
   }

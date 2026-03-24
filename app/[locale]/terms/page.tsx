@@ -21,6 +21,7 @@ export async function generateMetadata({
       languages: {
         ru: "/ru/terms",
         uz: "/uz/terms",
+        "x-default": "/ru/terms",
       },
     },
   }

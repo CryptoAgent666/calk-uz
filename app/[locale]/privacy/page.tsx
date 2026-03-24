@@ -21,6 +21,7 @@ export async function generateMetadata({
       languages: {
         ru: "/ru/privacy",
         uz: "/uz/privacy",
+        "x-default": "/ru/privacy",
       },
     },
   }
