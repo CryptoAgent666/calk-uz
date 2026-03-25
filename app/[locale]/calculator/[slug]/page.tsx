@@ -265,22 +265,7 @@ export default async function CalculatorPage({
     jsonLdArray.push(techArticleSchema)
   }
 
-  if (howTo && howToSteps) {
-    const howToSchema = {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      name: `${t("howto_heading")}: ${title}`,
-      description,
-      totalTime: `PT${howTo.totalTimeMinutes}M`,
-      step: howToSteps.map((step, index) => ({
-        "@type": "HowToStep",
-        position: index + 1,
-        name: step.name,
-        text: step.text,
-      })),
-    }
-    jsonLdArray.push(howToSchema)
-  }
+
 
   return (
     <div className="min-h-screen">

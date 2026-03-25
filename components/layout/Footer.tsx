@@ -1,6 +1,6 @@
 import { getTranslations, getLocale } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
-import { Calculator } from "lucide-react"
+import { Calculator, Mail, Send } from "lucide-react"
 import { CATEGORIES } from "@/lib/data/categories"
 import type { CategoryId } from "@/lib/types/calculator"
 
@@ -39,6 +39,24 @@ export async function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t("footer_description")}
             </p>
+            <div className="space-y-2 pt-2">
+              <a
+                href="mailto:info@calk.uz"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Mail className="h-4 w-4" />
+                info@calk.uz
+              </a>
+              <a
+                href="https://t.me/calkuz_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Send className="h-4 w-4" />
+                Telegram @calkuz_bot
+              </a>
+            </div>
           </div>
 
           {/* Categories */}
@@ -141,6 +159,14 @@ export async function Footer() {
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {t("footer_methodology")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {t("contact_title")}
                 </Link>
               </li>
             </ul>

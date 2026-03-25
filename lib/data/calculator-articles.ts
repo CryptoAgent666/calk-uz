@@ -15,49 +15,49 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'income-tax',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
       { name: 'IT Park', url: 'https://it-park.uz' },
     ],
     paragraphsRu: [
-      'По состоянию на 2025 год ставка налога на доходы физических лиц (НДФЛ) в Узбекистане составляет 12%. Это единая плоская ставка, которая применяется ко всем видам доходов резидентов: заработной плате, дивидендам, доходам от предпринимательской деятельности, роялти и прочим выплатам. Нерезиденты уплачивают НДФЛ по ставке 20% с доходов, полученных из источников в Узбекистане. Для резидентов IT Park действует льготная ставка 7,5%, что делает Узбекистан одной из наиболее привлекательных юрисдикций для IT-специалистов в Центральной Азии. Налог удерживается работодателем (налоговым агентом) ежемесячно при выплате заработной платы и перечисляется в бюджет не позднее даты фактической выплаты дохода.',
+      'По состоянию на 2026 год ставка налога на доходы физических лиц (НДФЛ) в Узбекистане составляет 12%. Это единая плоская ставка, которая применяется ко всем видам доходов резидентов: заработной плате, дивидендам, доходам от предпринимательской деятельности, роялти и прочим выплатам. Нерезиденты уплачивают НДФЛ по ставке 20% с доходов, полученных из источников в Узбекистане. Для резидентов IT Park действует льготная ставка 7,5%, что делает Узбекистан одной из наиболее привлекательных юрисдикций для IT-специалистов в Центральной Азии. Налог удерживается работодателем (налоговым агентом) ежемесячно при выплате заработной платы и перечисляется в бюджет не позднее даты фактической выплаты дохода.',
       'Помимо НДФЛ, с заработной платы в Узбекистане удерживаются обязательные отчисления: социальный налог в размере 12% (для бюджетных организаций — 25%), а также взнос в индивидуальный накопительный пенсионный счёт (ИНПС) — 0,1% от начисленной зарплаты. Таким образом, совокупная налоговая нагрузка на фонд оплаты труда составляет значительную долю. Работодатель уплачивает социальный налог за свой счёт, а НДФЛ и ИНПС удерживаются из зарплаты работника. Базовая расчётная величина (БРВ) с августа 2025 года равна 412 000 сум и используется для расчёта различных нормативов и вычетов.',
       'Рассмотрим пример расчёта. Если ваша начисленная заработная плата составляет 10 000 000 сум в месяц, то: НДФЛ = 10 000 000 × 12% = 1 200 000 сум; ИНПС = 10 000 000 × 0,1% = 10 000 сум; итого удержания = 1 210 000 сум; на руки вы получите 8 790 000 сум. Дополнительно работодатель уплатит социальный налог: 10 000 000 × 12% = 1 200 000 сум. Для сотрудника IT Park с той же зарплатой: НДФЛ = 10 000 000 × 7,5% = 750 000 сум, на руки — 9 240 000 сум — разница составляет 450 000 сум ежемесячно.',
       'Налоговый кодекс предусматривает ряд вычетов и освобождений. Не облагаются НДФЛ: алименты, государственные пенсии, стипендии, материальная помощь в пределах 4,22 БРВ (1 738 640 сум) в год от работодателя, компенсации за неиспользованный отпуск при увольнении, страховые выплаты. Также предусмотрен имущественный вычет при покупке жилья — до 500 БРВ (206 000 000 сум). Индивидуальные предприниматели на общей системе налогообложения уплачивают НДФЛ с чистого дохода (доходы минус документально подтверждённые расходы).',
-      'Декларацию по НДФЛ обязаны подавать физические лица, получающие доходы из нескольких источников, от сдачи имущества в аренду, из-за рубежа, а также при получении имущественного вычета. Срок подачи декларации — до 1 апреля года, следующего за отчётным. Декларация подаётся через портал my.soliq.uz или в налоговую инспекцию по месту жительства. За несвоевременную уплату НДФЛ начисляется пеня в размере 0,05% от суммы задолженности за каждый день просрочки. Наш калькулятор НДФЛ автоматически рассчитает сумму налога и чистый доход с учётом всех удержаний — просто введите размер начисленной зарплаты.',
+      'Декларацию по НДФЛ обязаны подавать физические лица, получающие доходы из нескольких источников, от сдачи имущества в аренду, из-за рубежа, а также при получении имущественного вычета. Срок подачи декларации — до 1 апреля года, следующего за отчётным. Декларация подаётся через портал my.soliq.uz или в налоговую инспекцию по месту жительства. За несвоевременную уплату НДФЛ начисляется пеня в размере 1/300 ставки рефинансирования ЦБ за каждый день просрочки (при ставке ЦБ 14% это 0,047%/день, или 17,0% годовых). Наш калькулятор НДФЛ автоматически рассчитает сумму налога и чистый доход с учётом всех удержаний — просто введите размер начисленной зарплаты.',
     ],
     paragraphsUz: [
-      "2025-yilga ko'ra O'zbekistonda jismoniy shaxslarning daromad solig'i (JShShS) stavkasi 12% ni tashkil etadi. Bu barcha turdagi daromadlarga — ish haqi, dividendlar, tadbirkorlik faoliyatidan olingan daromadlar, royalti va boshqa to'lovlarga qo'llaniladigan yagona tekis stavkadir. Norezidentlar O'zbekistondagi manbalardan olingan daromadlardan 20% stavkada JShShS to'laydilar. IT Park rezidentlari uchun imtiyozli 7,5% stavka amal qiladi, bu O'zbekistonni Markaziy Osiyoda IT-mutaxassislar uchun eng jozibador yurisdiktsiyalardan biriga aylantiradi. Soliq ish beruvchi (soliq agenti) tomonidan har oy ish haqi to'lanayotganda ushlab qolinadi.",
+      "2026-yilga ko'ra O'zbekistonda jismoniy shaxslarning daromad solig'i (JShShS) stavkasi 12% ni tashkil etadi. Bu barcha turdagi daromadlarga — ish haqi, dividendlar, tadbirkorlik faoliyatidan olingan daromadlar, royalti va boshqa to'lovlarga qo'llaniladigan yagona tekis stavkadir. Norezidentlar O'zbekistondagi manbalardan olingan daromadlardan 20% stavkada JShShS to'laydilar. IT Park rezidentlari uchun imtiyozli 7,5% stavka amal qiladi, bu O'zbekistonni Markaziy Osiyoda IT-mutaxassislar uchun eng jozibador yurisdiktsiyalardan biriga aylantiradi. Soliq ish beruvchi (soliq agenti) tomonidan har oy ish haqi to'lanayotganda ushlab qolinadi.",
       "JShShSdan tashqari, O'zbekistonda ish haqidan majburiy ajratmalar ushlab qolinadi: 12% miqdorida ijtimoiy soliq (byudjet tashkilotlari uchun — 25%), shuningdek individual jamg'arma pensiya hisobvarag'iga (IJPH) to'lov — hisoblangan ish haqining 0,1%. Shunday qilib, ish haqi fondiga umumiy soliq yuki sezilarli ulushni tashkil etadi. Ish beruvchi ijtimoiy soliqni o'z hisobidan to'laydi, JShShS va IJPH esa xodimning ish haqidan ushlab qolinadi. 2025-yil avgustidan boshlab bazaviy hisoblash kattaligi (BHK) 412 000 so'm ga teng.",
       "Hisoblash misolini ko'rib chiqaylik. Agar sizning hisoblangan oylik ish haqingiz 10 000 000 so'm bo'lsa: JShShS = 10 000 000 × 12% = 1 200 000 so'm; IJPH = 10 000 000 × 0,1% = 10 000 so'm; jami ushlanmalar = 1 210 000 so'm; qo'lingizga 8 790 000 so'm tushadi. Qo'shimcha ravishda ish beruvchi ijtimoiy soliq to'laydi: 10 000 000 × 12% = 1 200 000 so'm. IT Park xodimi uchun xuddi shu ish haqida: JShShS = 10 000 000 × 7,5% = 750 000 so'm, qo'lga — 9 240 000 so'm — farq oyiga 450 000 so'm.",
       "Soliq kodeksida bir qator chegirmalar va ozod qilishlar nazarda tutilgan. JShShSga tortilmaydi: nafaqa, davlat pensiyalari, stipendiyalar, ish beruvchidan yiliga 4,22 BHK (1 738 640 so'm) doirasidagi moddiy yordam, ishdan bo'shatilganda foydalanilmagan ta'til uchun kompensatsiya, sug'urta to'lovlari. Shuningdek, uy-joy sotib olganda mulkiy chegirma — 500 BHK gacha (206 000 000 so'm) nazarda tutilgan.",
-      "JShShS deklaratsiyasini bir nechta manbadan daromad oluvchi, mol-mulkni ijaraga beruvchi, xorijdan daromad oluvchi jismoniy shaxslar topshirishi shart. Deklaratsiya topshirish muddati — hisobot yilidan keyingi yilning 1-aprelgacha. Deklaratsiya my.soliq.uz portali orqali yoki yashash joyi bo'yicha soliq inspektsiyasiga topshiriladi. JShShSni o'z vaqtida to'lamaganligi uchun har bir kechiktirilgan kun uchun qarzdorlik summasining 0,05% miqdorida penya hisoblanadi.",
+      "JShShS deklaratsiyasini bir nechta manbadan daromad oluvchi, mol-mulkni ijaraga beruvchi, xorijdan daromad oluvchi jismoniy shaxslar topshirishi shart. Deklaratsiya topshirish muddati — hisobot yilidan keyingi yilning 1-aprelgacha. Deklaratsiya my.soliq.uz portali orqali yoki yashash joyi bo'yicha soliq inspektsiyasiga topshiriladi. JShShSni o'z vaqtida to'lamaganligi uchun har bir kechiktirilgan kun uchun MB qayta moliyalash stavkasining 1/300 qismi miqdorida penya hisoblanadi (MB stavkasi 14% da bu 0,047%/kun, yoki yillik 17,0%).",
     ],
     faqRu: [
-      { question: 'Какая ставка НДФЛ в Узбекистане в 2025 году?', answer: 'Стандартная ставка НДФЛ составляет 12% для резидентов и 20% для нерезидентов. Для резидентов IT Park — льготная ставка 7,5%.' },
+      { question: 'Какая ставка НДФЛ в Узбекистане в 2026 году?', answer: 'Стандартная ставка НДФЛ составляет 12% для резидентов и 20% для нерезидентов. Для резидентов IT Park — льготная ставка 7,5%.' },
       { question: 'Как рассчитать НДФЛ с зарплаты?', answer: 'Умножьте начисленную зарплату на 0,12. Например, при зарплате 10 000 000 сум НДФЛ составит 1 200 000 сум. Также удерживается ИНПС 0,1% (10 000 сум).' },
       { question: 'Какие доходы не облагаются НДФЛ?', answer: 'Не облагаются: алименты, пенсии, стипендии, материальная помощь до 4,22 БРВ в год (1 738 640 сум), компенсации при увольнении, страховые выплаты.' },
       { question: 'Когда подавать декларацию по НДФЛ?', answer: 'До 1 апреля года, следующего за отчётным. Декларация обязательна при доходах из нескольких источников, от аренды или из-за рубежа. Подаётся через my.soliq.uz.' },
       { question: 'Какой размер имущественного вычета при покупке жилья?', answer: 'Вычет составляет до 500 БРВ (206 000 000 сум с августа 2025 года). Предоставляется один раз в жизни при покупке жилья на территории Узбекистана.' },
       { question: 'Чем отличается НДФЛ для сотрудников IT Park?', answer: 'Резиденты IT Park платят НДФЛ по ставке 7,5% вместо 12%. При зарплате 10 млн сум экономия составляет 450 000 сум в месяц.' },
-      { question: 'Какой штраф за неуплату НДФЛ?', answer: 'За несвоевременную уплату начисляется пеня 0,05% от суммы задолженности за каждый день просрочки.' },
+      { question: 'Какой штраф за неуплату НДФЛ?', answer: 'За несвоевременную уплату начисляется пеня в размере 1/300 ставки рефинансирования ЦБ за каждый день просрочки (при ставке 14% — 0,047%/день, 17,0% годовых).' },
     ],
     faqUz: [
-      { question: "2025-yilda O'zbekistonda JShShS stavkasi qancha?", answer: "Rezidentlar uchun standart JShShS stavkasi 12%, norezidentlar uchun 20%. IT Park rezidentlari uchun imtiyozli stavka 7,5%." },
+      { question: "2026-yilda O'zbekistonda JShShS stavkasi qancha?", answer: "Rezidentlar uchun standart JShShS stavkasi 12%, norezidentlar uchun 20%. IT Park rezidentlari uchun imtiyozli stavka 7,5%." },
       { question: "Ish haqidan JShShSni qanday hisoblash mumkin?", answer: "Hisoblangan ish haqini 0,12 ga ko'paytiring. Masalan, 10 000 000 so'm ish haqida JShShS 1 200 000 so'm. Shuningdek IJPH 0,1% (10 000 so'm) ushlab qolinadi." },
       { question: "Qanday daromadlar JShShSga tortilmaydi?", answer: "Tortilmaydi: nafaqa, pensiya, stipendiya, yiliga 4,22 BHK gacha moddiy yordam (1 738 640 so'm), ishdan bo'shatilgandagi kompensatsiya, sug'urta to'lovlari." },
       { question: "JShShS deklaratsiyasini qachon topshirish kerak?", answer: "Hisobot yilidan keyingi yilning 1-aprelgacha. Bir nechta manbadan daromad olganlar uchun majburiy. my.soliq.uz orqali topshiriladi." },
       { question: "Uy-joy sotib olganda mulkiy chegirma qancha?", answer: "Chegirma 500 BHK gacha (2025-yil avgustidan 206 000 000 so'm). Umr davomida bir marta beriladi." },
       { question: "IT Park xodimlari uchun JShShS qanday farq qiladi?", answer: "IT Park rezidentlari 12% o'rniga 7,5% stavkada JShShS to'laydilar. 10 mln so'm ish haqida oylik tejamkorlik 450 000 so'm." },
-      { question: "JShShSni to'lamaganlik uchun jarima qancha?", answer: "O'z vaqtida to'lamaganlik uchun har bir kechiktirilgan kun uchun qarzdorlik summasining 0,05% miqdorida penya hisoblanadi." },
+      { question: "JShShSni to'lamaganlik uchun jarima qancha?", answer: "O'z vaqtida to'lamaganlik uchun har bir kechiktirilgan kun uchun MB qayta moliyalash stavkasining 1/300 qismi miqdorida penya hisoblanadi (MB stavkasi 14% da — 0,047%/kun, yillik 17,0%)." },
     ],
   },
 
   {
     slug: 'vat',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -67,14 +67,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Калькулятор НДС выполняет два основных расчёта. Выделение НДС из суммы: если известна цена с НДС, то сумма НДС = Цена с НДС × 12 / 112, а цена без НДС = Цена с НДС × 100 / 112. Начисление НДС на сумму: если известна цена без НДС, то НДС = Цена без НДС × 12 / 100, а цена с НДС = Цена без НДС × 112 / 100. Например, если товар стоит 1 000 000 сум с НДС, то сумма НДС = 1 000 000 × 12 / 112 = 107 143 сум, а цена без НДС = 892 857 сум.',
       'Отчётный период по НДС зависит от объёма выручки: крупные плательщики (с оборотом свыше 100 млрд сум) отчитываются ежемесячно, остальные — ежеквартально. Декларация подаётся через систему my.soliq.uz не позднее 20-го числа месяца, следующего за отчётным периодом. Уплата НДС производится не позднее даты подачи декларации. К нулевой ставке НДС (0%) относится экспорт товаров и ряд международных услуг. Освобождены от НДС: образовательные и медицинские услуги, финансовые услуги, аренда жилых помещений, ритуальные услуги.',
       'Механизм зачёта (входящего НДС) позволяет вычесть из начисленного НДС ту сумму налога, которая была уплачена поставщикам при покупке товаров и услуг для предпринимательской деятельности. НДС к уплате = Исходящий НДС − Входящий НДС. Если входящий НДС превышает исходящий, разница переносится на следующий период или возмещается из бюджета в установленном порядке. Электронные счета-фактуры оформляются через систему faktura.soliq.uz и являются обязательным условием для зачёта входящего НДС.',
-      'С 2026 года самозанятые лица, не зарегистрированные как ИП, будут уплачивать налог с оборота по ставке 1% — они не являются плательщиками НДС вне зависимости от объёма оборота. Для ИП на упрощённой системе ставка налога с оборота составляет 4%, и они также не уплачивают НДС, если их оборот не превышает установленный порог. Наш калькулятор поможет быстро выделить или начислить НДС в повседневных расчётах — введите сумму и выберите нужный режим.',
+      'С 2026 года самозанятые лица, не зарегистрированные как ИП, будут уплачивать налог с оборота по ставке 1% — они не являются плательщиками НДС вне зависимости от объёма оборота. Для ИП на упрощённой системе с оборотом до 1 млрд сум ставка налога с оборота составляет 1% (с 2026 года), а при обороте свыше 1 млрд — 4%; они также не уплачивают НДС, если их оборот не превышает установленный порог. Наш калькулятор поможет быстро выделить или начислить НДС в повседневных расчётах — введите сумму и выберите нужный режим.',
     ],
     paragraphsUz: [
       "O'zbekistonda qo'shilgan qiymat solig'i (QQS) stavkasi 12% — MDHdagi eng past stavkalardan biri. QQS tovarlar va xizmatlar narxiga kiritilgan bilvosita soliq bo'lib, amalda yakuniy iste'molchi tomonidan to'lanadi. QQSni hisoblash va to'lash majburiyati ketma-ket 12 oy davomida umumiy aylanmasi 60 000 BHK (2025-yil avgust holatiga ko'ra 24 720 000 000 so'm) chegarasidan oshgan yuridik shaxslar va yakka tartibdagi tadbirkorlarga yuklatiladi.",
       "QQS kalkulyatori ikkita asosiy hisoblashni bajaradi. Summadan QQSni ajratish: QQS bilan narx ma'lum bo'lsa, QQS summasi = QQS bilan narx × 12 / 112, QQSsiz narx = QQS bilan narx × 100 / 112. Summaga QQS hisoblash: QQSsiz narx ma'lum bo'lsa, QQS = QQSsiz narx × 12 / 100, QQS bilan narx = QQSsiz narx × 112 / 100. Masalan, tovar QQS bilan 1 000 000 so'm tursa, QQS summasi = 107 143 so'm, QQSsiz narx = 892 857 so'm.",
       "QQS bo'yicha hisobot davri tushum hajmiga bog'liq: yirik to'lovchilar (100 mlrd so'mdan ortiq aylanma) har oy, qolganlari har chorakda hisobot beradi. Deklaratsiya my.soliq.uz tizimi orqali hisobot davridan keyingi oyning 20-sanasigacha topshiriladi. Tovarlar eksporti va bir qator xalqaro xizmatlarga nol (0%) QQS stavkasi qo'llaniladi. QQSdan ozod: ta'lim va tibbiy xizmatlar, moliyaviy xizmatlar, turar-joy ijarasi.",
       "Hisob-kitob (kirish QQS) mexanizmi hisoblangan QQSdan tadbirkorlik faoliyati uchun tovar va xizmatlar sotib olishda yetkazib beruvchilarga to'langan soliq summasini chegirib tashlash imkonini beradi. To'lanadigan QQS = Chiqish QQS − Kirish QQS. Elektron hisob-fakturalar faktura.soliq.uz tizimi orqali rasmiylashtiriladi va kirish QQSni hisobga olish uchun majburiy shartdir.",
-      "2026-yildan boshlab YaTT sifatida ro'yxatdan o'tmagan o'z-o'zini band qilgan shaxslar aylanmadan 1% stavkada soliq to'laydilar — ular aylanma hajmidan qat'i nazar QQS to'lovchilari hisoblanmaydi. Soddalashtilgan tizimda YaTTlar uchun aylanma solig'i stavkasi 4% bo'lib, ularning aylanmasi chegaradan oshmasa QQS to'lamaydilar.",
+      "2026-yildan boshlab YaTT sifatida ro'yxatdan o'tmagan o'z-o'zini band qilgan shaxslar aylanmadan 1% stavkada soliq to'laydilar — ular aylanma hajmidan qat'i nazar QQS to'lovchilari hisoblanmaydi. Soddalashtilgan tizimda aylanmasi 1 mlrd so'mgacha YaTTlar uchun aylanma solig'i stavkasi 1% (2026-yildan), aylanmasi 1 mlrd dan ortiq bo'lganda esa 4% bo'lib, ularning aylanmasi chegaradan oshmasa QQS to'lamaydilar.",
     ],
     faqRu: [
       { question: 'Какая ставка НДС в Узбекистане?', answer: 'Стандартная ставка НДС составляет 12%. Экспорт облагается по ставке 0%.' },
@@ -96,28 +96,28 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'salary',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
     ],
     paragraphsRu: [
-      'Минимальная заработная плата в Узбекистане с 2025 года установлена на уровне 1 271 000 сум в месяц. Калькулятор зарплаты позволяет рассчитать чистую сумму «на руки» из начисленной (гросс) зарплаты с учётом всех обязательных удержаний: НДФЛ 12%, ИНПС 0,1%, а также определить расходы работодателя на социальный налог 12%. При расчёте «от обратного» — из суммы на руки — калькулятор определит необходимую начисленную зарплату.',
+      'Минимальная заработная плата в Узбекистане составляет 1 271 000 сум в месяц (размер действует с 2025 года и сохраняется в 2026 году). Калькулятор зарплаты позволяет рассчитать чистую сумму «на руки» из начисленной (гросс) зарплаты с учётом всех обязательных удержаний: НДФЛ 12%, ИНПС 0,1%, а также определить расходы работодателя на социальный налог 12%. При расчёте «от обратного» — из суммы на руки — калькулятор определит необходимую начисленную зарплату.',
       'Структура удержаний из заработной платы: НДФЛ удерживается по ставке 12% (7,5% для резидентов IT Park) от начисленной суммы; взнос в ИНПС — 0,1% от начисленной суммы. Итого работник получает на руки 87,9% от начисленной зарплаты (92,4% для IT Park). Работодатель дополнительно уплачивает социальный налог 12% от фонда оплаты труда (25% для бюджетных организаций). Таким образом, полная стоимость сотрудника для работодателя = Начисленная зарплата × 1,12.',
       'Пример расчёта: начисленная зарплата 15 000 000 сум. НДФЛ: 15 000 000 × 12% = 1 800 000 сум. ИНПС: 15 000 000 × 0,1% = 15 000 сум. На руки: 15 000 000 − 1 800 000 − 15 000 = 13 185 000 сум. Расходы работодателя (соц. налог): 15 000 000 × 12% = 1 800 000 сум. Полная стоимость сотрудника: 15 000 000 + 1 800 000 = 16 800 000 сум в месяц.',
       'Заработная плата в Узбекистане выплачивается не реже двух раз в месяц — аванс (как правило, 40-50% оклада) и расчёт. Работодатель обязан перечислить НДФЛ в бюджет не позднее дня фактической выплаты зарплаты. Задержка выплаты зарплаты влечёт ответственность работодателя: за каждый день задержки начисляется компенсация в размере 1/300 ставки рефинансирования ЦБ. Ключевая ставка Центрального банка с 2025 года составляет 14%, что соответствует 0,047% в день.',
       'Для расчёта зарплаты при работе неполный месяц используется формула: Зарплата = Оклад / Количество рабочих дней в месяце × Количество отработанных дней. Рабочих дней в месяце обычно 22 (пятидневная рабочая неделя) или 26 (шестидневная). Сверхурочная работа оплачивается: первые 2 часа — в полуторном размере, далее — в двойном. Работа в выходные и праздничные дни — в двойном размере или с предоставлением дополнительного дня отдыха.',
     ],
     paragraphsUz: [
-      "O'zbekistonda 2025-yildan boshlab minimal ish haqi oyiga 1 271 000 so'm miqdorida belgilangan. Ish haqi kalkulyatori hisoblangan (gross) ish haqidan barcha majburiy ushlanmalarni — JShShS 12%, IJPH 0,1% — hisobga olgan holda «qo'lga» tegadigan sof summani hisoblash imkonini beradi, shuningdek ish beruvchining ijtimoiy soliq 12% bo'yicha xarajatlarini aniqlaydi.",
+      "O'zbekistonda minimal ish haqi oyiga 1 271 000 so'm miqdorida belgilangan (2025-yildan amal qiladi va 2026-yilda ham saqlanmoqda). Ish haqi kalkulyatori hisoblangan (gross) ish haqidan barcha majburiy ushlanmalarni — JShShS 12%, IJPH 0,1% — hisobga olgan holda «qo'lga» tegadigan sof summani hisoblash imkonini beradi, shuningdek ish beruvchining ijtimoiy soliq 12% bo'yicha xarajatlarini aniqlaydi.",
       "Ish haqidan ushlanmalar tarkibi: JShShS hisoblangan summadan 12% stavkada (IT Park rezidentlari uchun 7,5%) ushlab qolinadi; IJPH to'lovi — hisoblangan summaning 0,1%. Jami xodim qo'liga hisoblangan ish haqining 87,9% ni oladi (IT Park uchun 92,4%). Ish beruvchi qo'shimcha ravishda ish haqi fondidan 12% ijtimoiy soliq to'laydi (byudjet tashkilotlari uchun 25%).",
       "Hisoblash misoli: hisoblangan ish haqi 15 000 000 so'm. JShShS: 15 000 000 × 12% = 1 800 000 so'm. IJPH: 15 000 000 × 0,1% = 15 000 so'm. Qo'lga: 15 000 000 − 1 800 000 − 15 000 = 13 185 000 so'm. Ish beruvchi xarajatlari (ijtimoiy soliq): 15 000 000 × 12% = 1 800 000 so'm. Xodimning to'liq qiymati: 16 800 000 so'm/oy.",
       "O'zbekistonda ish haqi oyiga kamida ikki marta to'lanadi — avans (odatda okladning 40-50%) va hisob-kitob. Ish beruvchi ish haqi kechiktirilganlik uchun javobgardir: har bir kechiktirilgan kun uchun MB qayta moliyalash stavkasining 1/300 miqdorida kompensatsiya hisoblanadi. Markaziy bankning kalit stavkasi 2025-yildan 14%.",
       "To'liq bo'lmagan oy uchun ish haqi formulasi: Ish haqi = Oklad / Oydagi ish kunlari soni × Ishlangan kunlar soni. Ortiqcha ish haqi: dastlabki 2 soat — yarim baravar, keyin — ikki baravar. Dam olish va bayram kunlaridagi ish — ikki baravar yoki qo'shimcha dam olish kuni beriladi.",
     ],
     faqRu: [
-      { question: 'Какая минимальная зарплата в Узбекистане в 2025 году?', answer: 'Минимальная заработная плата составляет 1 271 000 сум в месяц.' },
+      { question: 'Какая минимальная зарплата в Узбекистане в 2026 году?', answer: 'Минимальная заработная плата составляет 1 271 000 сум в месяц (размер действует с 2025 года, сохраняется в 2026 году).' },
       { question: 'Сколько процентов удерживается с зарплаты?', answer: 'НДФЛ 12% + ИНПС 0,1% = 12,1% от начисленной зарплаты. Для IT Park: 7,5% + 0,1% = 7,6%.' },
       { question: 'Как рассчитать зарплату «на руки»?', answer: 'Зарплата на руки = Начисленная × (100% − 12% − 0,1%) = Начисленная × 0,879. Например, 10 000 000 × 0,879 = 8 790 000 сум.' },
       { question: 'Сколько работодатель платит сверх зарплаты?', answer: 'Социальный налог 12% от ФОТ (25% для бюджетных). При зарплате 10 млн сум доп. расходы = 1 200 000 сум.' },
@@ -125,7 +125,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Как часто должна выплачиваться зарплата?', answer: 'Не реже двух раз в месяц. За задержку — компенсация 1/300 ставки рефинансирования ЦБ (14%) за каждый день просрочки.' },
     ],
     faqUz: [
-      { question: "2025-yilda O'zbekistonda minimal ish haqi qancha?", answer: "Minimal ish haqi oyiga 1 271 000 so'm." },
+      { question: "2026-yilda O'zbekistonda minimal ish haqi qancha?", answer: "Minimal ish haqi oyiga 1 271 000 so'm (2025-yildan amal qiladi, 2026-yilda ham saqlanmoqda)." },
       { question: "Ish haqidan necha foiz ushlab qolinadi?", answer: "JShShS 12% + IJPH 0,1% = hisoblangan ish haqining 12,1%. IT Park uchun: 7,5% + 0,1% = 7,6%." },
       { question: "Qo'lga tegadigan ish haqini qanday hisoblash mumkin?", answer: "Qo'lga = Hisoblangan × 0,879. Masalan, 10 000 000 × 0,879 = 8 790 000 so'm." },
       { question: "Ish beruvchi ish haqidan tashqari qancha to'laydi?", answer: "Ish haqi fondidan 12% ijtimoiy soliq (byudjet uchun 25%). 10 mln so'm ish haqida qo'shimcha = 1 200 000 so'm." },
@@ -136,7 +136,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'vacation-pay',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
@@ -175,27 +175,27 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'credit',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Банковское законодательство', url: 'https://lex.uz/docs/5765051' },
     ],
     paragraphsRu: [
-      'Ключевая ставка Центрального банка Узбекистана составляет 14% годовых, что формирует базу для кредитных ставок коммерческих банков. Средние ставки по потребительским кредитам в 2025 году варьируются от 18% до 28% годовых в зависимости от банка, срока кредита и кредитной истории заёмщика. Калькулятор кредита рассчитывает ежемесячный платёж, общую сумму выплат и переплату по аннуитетной или дифференцированной схеме погашения.',
+      'Ключевая ставка Центрального банка Узбекистана составляет 14% годовых, что формирует базу для кредитных ставок коммерческих банков. Средние ставки по потребительским кредитам в 2025 году варьируются от 22% до 33% годовых в зависимости от банка, срока кредита и кредитной истории заёмщика. Калькулятор кредита рассчитывает ежемесячный платёж, общую сумму выплат и переплату по аннуитетной или дифференцированной схеме погашения.',
       'Аннуитетный платёж — фиксированная сумма каждый месяц. Формула: ЕП = С × (r × (1+r)^n) / ((1+r)^n − 1), где С — сумма кредита, r — месячная ставка (годовая/12), n — количество месяцев. Дифференцированный платёж — убывающий, так как проценты начисляются на остаток долга. Формула: ЕП = С/n + (С − С×(m−1)/n) × r, где m — номер месяца. Аннуитет удобнее для планирования бюджета, дифференцированная схема выгоднее по общей переплате.',
       'Пример расчёта: кредит 50 000 000 сум на 3 года (36 месяцев) под 22% годовых. Аннуитетный платёж: месячная ставка = 22/12 = 1,833%, ежемесячный платёж ≈ 1 920 000 сум, общая сумма выплат ≈ 69 120 000 сум, переплата ≈ 19 120 000 сум (38,2% от суммы кредита). При дифференцированной схеме: первый платёж ≈ 2 306 000 сум, последний ≈ 1 414 000 сум, переплата ≈ 17 028 000 сум (34,1%).',
       'При оформлении кредита банки учитывают платёжеспособность заёмщика: ежемесячный платёж не должен превышать 50% чистого дохода. Требуются документы: паспорт, справка о доходах (форма с места работы или выписка из my.soliq.uz), кредитная история из бюро кредитных историй. Обеспечение может быть в виде поручительства, залога имущества или без залога (для зарплатных клиентов банка).',
       'Досрочное погашение кредита в Узбекистане разрешено без штрафных санкций с 2020 года (согласно Закону о банковской деятельности). При досрочном погашении пересчитываются проценты — вы платите только за фактический срок пользования кредитом. Рекомендуется уведомить банк за 30 дней до планируемого досрочного погашения. Рефинансирование существующего кредита под более низкую ставку может быть выгодным при снижении ключевой ставки ЦБ.',
     ],
     paragraphsUz: [
-      "O'zbekiston Markaziy bankining kalit stavkasi yillik 14% ni tashkil etadi, bu tijorat banklarining kredit stavkalari uchun asos yaratadi. 2025-yilda iste'mol kreditlari bo'yicha o'rtacha stavkalar bank, kredit muddati va qarz oluvchining kredit tarixiga qarab yillik 18% dan 28% gacha o'zgaradi. Kredit kalkulyatori annuitet yoki differentsial to'lov sxemasi bo'yicha oylik to'lov, umumiy to'lovlar summasi va ortiqcha to'lovni hisoblaydi.",
+      "O'zbekiston Markaziy bankining kalit stavkasi yillik 14% ni tashkil etadi, bu tijorat banklarining kredit stavkalari uchun asos yaratadi. 2025-yilda iste'mol kreditlari bo'yicha o'rtacha stavkalar bank, kredit muddati va qarz oluvchining kredit tarixiga qarab yillik 22% dan 33% gacha o'zgaradi. Kredit kalkulyatori annuitet yoki differentsial to'lov sxemasi bo'yicha oylik to'lov, umumiy to'lovlar summasi va ortiqcha to'lovni hisoblaydi.",
       "Annuitet to'lov — har oy bir xil summa. Formula: OT = S × (r × (1+r)^n) / ((1+r)^n − 1), bunda S — kredit summasi, r — oylik stavka (yillik/12), n — oylar soni. Differentsial to'lov — kamayib boruvchi, chunki foizlar qoldiq qarzga hisoblanadi. Annuitet byudjetni rejalashtirish uchun qulayroq, differentsial sxema umumiy ortiqcha to'lov bo'yicha foydaliroq.",
       "Hisoblash misoli: 50 000 000 so'mlik kredit 3 yilga (36 oy) yillik 22% da. Annuitet to'lov: oylik stavka = 1,833%, oylik to'lov ≈ 1 920 000 so'm, umumiy to'lovlar ≈ 69 120 000 so'm, ortiqcha to'lov ≈ 19 120 000 so'm (38,2%). Differentsial sxemada: birinchi to'lov ≈ 2 306 000 so'm, oxirgi ≈ 1 414 000 so'm, ortiqcha to'lov ≈ 17 028 000 so'm (34,1%).",
       "Kredit rasmiylashtirishda banklar qarz oluvchining to'lov qobiliyatini hisobga oladi: oylik to'lov sof daromadning 50% dan oshmasligi kerak. Talab qilinadigan hujjatlar: pasport, daromad to'g'risida ma'lumotnoma, kredit tarixi. Ta'minot — kafil, mulk garovi yoki garovsiz (bank ish haqi mijozlari uchun).",
       "O'zbekistonda kreditni muddatidan oldin to'lash 2020-yildan boshlab jarimasisz ruxsat etilgan. Muddatidan oldin to'laganda foizlar qayta hisoblanadi — siz faqat kreditdan haqiqiy foydalanish muddati uchun to'laysiz. Mavjud kreditni pastroq stavkada qayta moliyalash MB kalit stavkasi pasayganida foydali bo'lishi mumkin.",
     ],
     faqRu: [
-      { question: 'Какая средняя ставка по кредитам в Узбекистане?', answer: 'Ключевая ставка ЦБ — 14%. Потребительские кредиты: 18-28% годовых. Ипотека: 14-18%. Автокредит: 16-24%.' },
+      { question: 'Какая средняя ставка по кредитам в Узбекистане?', answer: 'Ключевая ставка ЦБ — 14%. Потребительские кредиты: 22-33% годовых. Ипотека: 17-22% (субсидированная) / 23-31% (коммерческая). Автокредит: 22-33%.' },
       { question: 'Что такое аннуитетный и дифференцированный платёж?', answer: 'Аннуитет — одинаковая сумма каждый месяц. Дифференцированный — убывающий платёж, больше в начале, меньше в конце. Дифференцированный выгоднее по переплате.' },
       { question: 'Можно ли досрочно погасить кредит?', answer: 'Да, с 2020 года досрочное погашение разрешено без штрафов. Проценты пересчитываются за фактический срок.' },
       { question: 'Какой максимальный размер платежа по кредиту?', answer: 'Банки ограничивают ежемесячный платёж 50% от чистого дохода заёмщика.' },
@@ -203,7 +203,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Как уменьшить переплату по кредиту?', answer: 'Выбирайте дифференцированную схему, сокращайте срок кредита, делайте частичные досрочные погашения, рассмотрите рефинансирование при снижении ставок.' },
     ],
     faqUz: [
-      { question: "O'zbekistonda kreditlar bo'yicha o'rtacha stavka qancha?", answer: "MB kalit stavkasi — 14%. Iste'mol kreditlari: yillik 18-28%. Ipoteka: 14-18%. Avtokredit: 16-24%." },
+      { question: "O'zbekistonda kreditlar bo'yicha o'rtacha stavka qancha?", answer: "MB kalit stavkasi — 14%. Iste'mol kreditlari: yillik 22-33%. Ipoteka: 17-22% (subsidiyali) / 23-31% (tijorat). Avtokredit: 22-33%." },
       { question: "Annuitet va differentsial to'lov nima?", answer: "Annuitet — har oy bir xil summa. Differentsial — kamayib boruvchi to'lov. Differentsial ortiqcha to'lov bo'yicha foydaliroq." },
       { question: "Kreditni muddatidan oldin to'lash mumkinmi?", answer: "Ha, 2020-yildan jarimasisz ruxsat etilgan. Foizlar haqiqiy muddat uchun qayta hisoblanadi." },
       { question: "Kredit bo'yicha maksimal to'lov miqdori qancha?", answer: "Banklar oylik to'lovni qarz oluvchining sof daromadining 50% bilan cheklaydi." },
@@ -214,27 +214,27 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'mortgage',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Государственная программа ипотеки', url: 'https://lex.uz/docs/5765051' },
     ],
     paragraphsRu: [
-      'Ипотечное кредитование в Узбекистане активно развивается: ставки по ипотеке в 2025 году варьируются от 14% (субсидированная государственная ипотека) до 22% (коммерческая ипотека). По государственным программам льготной ипотеки ставка для определённых категорий граждан (молодые семьи, многодетные, бюджетные работники) может составлять от 7% до 14%. Максимальный срок ипотеки — до 20 лет, первоначальный взнос — от 15% до 30% стоимости жилья.',
+      'Ипотечное кредитование в Узбекистане активно развивается: ставки по ипотеке в 2025 году варьируются от 17% (субсидированная ипотека по формуле ставка ЦБ + 6% ≈ 20%) до 23-31% (коммерческая ипотека). По государственным программам льготной ипотеки ставка для определённых категорий граждан (молодые семьи, многодетные, бюджетные работники) может составлять от 7% до 14%. Максимальный срок ипотеки — до 20 лет, первоначальный взнос — от 15% до 30% стоимости жилья.',
       'Калькулятор ипотеки рассчитывает ежемесячный платёж по аннуитетной схеме (наиболее распространённой для ипотеки), общую сумму выплат и переплату за весь период. Формула расчёта аналогична обычному кредиту: ЕП = С × (r × (1+r)^n) / ((1+r)^n − 1). Пример: квартира стоимостью 500 000 000 сум, первоначальный взнос 20% (100 000 000 сум), сумма ипотеки 400 000 000 сум на 15 лет под 16%. Ежемесячный платёж ≈ 6 120 000 сум, переплата за 15 лет ≈ 701 600 000 сум.',
       'Для получения ипотеки необходимо: стаж работы не менее 6 месяцев на текущем месте, официальный доход, позволяющий обслуживать кредит (платёж не более 50% дохода), положительная кредитная история, возраст от 21 до 55 лет (65 для мужчин). Банки требуют страхование объекта недвижимости на весь срок ипотеки. Некоторые банки предлагают ипотеку на первичное и вторичное жильё, коммерческую недвижимость.',
       'Средняя стоимость квадратного метра жилья в Ташкенте в 2025 году составляет от 8 000 000 до 15 000 000 сум в зависимости от района и класса жилья. В Чиланзарском, Юнусабадском и Мирабадском районах цены выше, в пригородах — значительно ниже. Для расчёта стоимости квартиры смотрите наш калькулятор стоимости квартиры. При покупке жилья также учтите расходы на оформление: нотариальные сборы, госпошлина, оценка недвижимости — суммарно 1-3% от стоимости.',
       'Государственная программа «Обод кишлок» и аналогичные инициативы предоставляют субсидированную ипотеку для строительства индивидуального жилья в сельской местности. Ставки — от 7% годовых, срок — до 20 лет, первоначальный взнос — от 15%. Программа «Ёш оила» предоставляет льготные условия молодым семьям. Для получения субсидированной ипотеки необходимо обратиться в ипотечный банк или коммерческий банк, участвующий в программе.',
     ],
     paragraphsUz: [
-      "O'zbekistonda ipoteka kreditlash jadal rivojlanmoqda: 2025-yilda ipoteka stavkalari 14% (davlat subsidiyali ipoteka) dan 22% (tijorat ipotekasi) gacha o'zgaradi. Davlat imtiyozli ipoteka dasturlari bo'yicha ma'lum toifadagi fuqarolar (yosh oilalar, ko'p bolalilar, byudjet xodimlari) uchun stavka 7% dan 14% gacha. Maksimal ipoteka muddati — 20 yilgacha, boshlang'ich to'lov — uy-joy qiymatining 15% dan 30% gacha.",
+      "O'zbekistonda ipoteka kreditlash jadal rivojlanmoqda: 2025-yilda ipoteka stavkalari 17% (subsidiyali ipoteka, formula: MB stavkasi + 6% ≈ 20%) dan 23-31% (tijorat ipotekasi) gacha o'zgaradi. Davlat imtiyozli ipoteka dasturlari bo'yicha ma'lum toifadagi fuqarolar (yosh oilalar, ko'p bolalilar, byudjet xodimlari) uchun stavka 7% dan 14% gacha. Maksimal ipoteka muddati — 20 yilgacha, boshlang'ich to'lov — uy-joy qiymatining 15% dan 30% gacha.",
       "Ipoteka kalkulyatori annuitet sxema bo'yicha oylik to'lov, umumiy to'lovlar summasi va butun davr uchun ortiqcha to'lovni hisoblaydi. Misol: 500 000 000 so'mlik kvartira, boshlang'ich to'lov 20% (100 000 000 so'm), ipoteka summasi 400 000 000 so'm 15 yilga 16% da. Oylik to'lov ≈ 6 120 000 so'm, 15 yildagi ortiqcha to'lov ≈ 701 600 000 so'm.",
       "Ipoteka olish uchun zarur: joriy ish joyida kamida 6 oylik ish staji, kreditni xizmat qilish imkonini beruvchi rasmiy daromad (to'lov daromadning 50% dan ko'p emas), ijobiy kredit tarixi, 21 dan 55 yoshgacha (erkaklar uchun 65). Banklar butun ipoteka muddatiga ko'chmas mulkni sug'urtashni talab qiladi.",
       "2025-yilda Toshkentda turar-joy kvadrat metrining o'rtacha narxi tuman va uy-joy sinfiga qarab 8 000 000 dan 15 000 000 so'mgacha. Uy-joy sotib olishda rasmiylash xarajatlarini ham hisobga oling: notarial yig'imlar, davlat boji, ko'chmas mulk baholash — jami qiymatning 1-3%.",
       "«Obod qishloq» davlat dasturi va shunga o'xshash tashabbuslar qishloq joylarida individual uy-joy qurish uchun subsidiyali ipoteka taqdim etadi. Stavkalar — yillik 7% dan, muddat — 20 yilgacha. «Yosh oila» dasturi yosh oilalarga imtiyozli shartlar beradi. Subsidiyali ipoteka olish uchun ipoteka bankiga yoki dasturda ishtirok etuvchi tijorat bankiga murojaat qiling.",
     ],
     faqRu: [
-      { question: 'Какая ставка по ипотеке в Узбекистане?', answer: 'Коммерческая ипотека: 16-22%. Субсидированная государственная: 7-14% для льготных категорий (молодые семьи, многодетные, бюджетные работники).' },
+      { question: 'Какая ставка по ипотеке в Узбекистане?', answer: 'Коммерческая ипотека: 23-31%. Субсидированная: 17-22% (формула ставка ЦБ + 6% ≈ 20%). Льготные категории (молодые семьи, многодетные, бюджетные работники): 7-14%.' },
       { question: 'Какой первоначальный взнос нужен для ипотеки?', answer: 'От 15% до 30% стоимости жилья в зависимости от банка и программы.' },
       { question: 'На какой максимальный срок дают ипотеку?', answer: 'До 20 лет. Наиболее распространённые сроки: 10-15 лет.' },
       { question: 'Какие документы нужны для ипотеки?', answer: 'Паспорт, справка о доходах, кредитная история, документы на приобретаемое жильё, оценка недвижимости, страховка объекта.' },
@@ -242,7 +242,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Сколько стоит квадратный метр жилья в Ташкенте?', answer: 'В 2025 году: от 8 до 15 млн сум/м² в зависимости от района. Центр и популярные районы — дороже, пригороды — дешевле.' },
     ],
     faqUz: [
-      { question: "O'zbekistonda ipoteka stavkasi qancha?", answer: "Tijorat ipotekasi: 16-22%. Davlat subsidiyali: imtiyozli toifalar uchun 7-14% (yosh oilalar, ko'p bolalilar, byudjet xodimlari)." },
+      { question: "O'zbekistonda ipoteka stavkasi qancha?", answer: "Tijorat ipotekasi: 23-31%. Subsidiyali: 17-22% (formula: MB stavkasi + 6% ≈ 20%). Imtiyozli toifalar (yosh oilalar, ko'p bolalilar, byudjet xodimlari): 7-14%." },
       { question: "Ipoteka uchun boshlang'ich to'lov qancha kerak?", answer: "Bank va dasturga qarab uy-joy qiymatining 15% dan 30% gacha." },
       { question: "Ipoteka maksimal necha yilga beriladi?", answer: "20 yilgacha. Eng keng tarqalgan muddatlar: 10-15 yil." },
       { question: "Ipoteka uchun qanday hujjatlar kerak?", answer: "Pasport, daromad ma'lumotnomasi, kredit tarixi, sotib olinadigan uy-joy hujjatlari, ko'chmas mulk baholash, ob'ekt sug'urtasi." },
@@ -253,27 +253,27 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'auto-credit',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Банковское законодательство', url: 'https://lex.uz/docs/5765051' },
     ],
     paragraphsRu: [
-      'Автокредитование в Узбекистане предлагают большинство коммерческих банков по ставкам от 16% до 24% годовых. Ставки зависят от срока кредита (1-7 лет), первоначального взноса, марки автомобиля (новый или б/у), а также от кредитной истории заёмщика. Для автомобилей отечественного производства (UzAuto Motors — Chevrolet) часто действуют специальные программы со сниженными ставками от 14-18% и увеличенным сроком кредита. Калькулятор автокредита рассчитает точный ежемесячный платёж и переплату.',
+      'Автокредитование в Узбекистане предлагают большинство коммерческих банков по ставкам от 22% до 33% годовых. Ставки зависят от срока кредита (1-7 лет), первоначального взноса, марки автомобиля (новый или б/у), а также от кредитной истории заёмщика. Для автомобилей отечественного производства (UzAuto Motors — Chevrolet) часто действуют специальные программы со ставками 19-24% (отдельные программы UzAuto — от 0% рассрочка) и увеличенным сроком кредита. Калькулятор автокредита рассчитает точный ежемесячный платёж и переплату.',
       'Расчёт автокредита аналогичен потребительскому кредиту — используется аннуитетная формула. Пример: покупка Chevrolet Onix стоимостью 280 000 000 сум. Первоначальный взнос 30% = 84 000 000 сум. Сумма кредита: 196 000 000 сум на 5 лет (60 месяцев) под 20% годовых. Ежемесячный платёж ≈ 5 200 000 сум. Общая сумма выплат: 312 000 000 сум. Переплата: 116 000 000 сум (59% от суммы кредита).',
       'Для получения автокредита необходимы: паспорт, справка о доходах (платёж не должен превышать 50% чистого дохода), кредитная история, водительское удостоверение (некоторые банки). Залогом по автокредиту является приобретаемый автомобиль — ПТС (техпаспорт) хранится в банке до полного погашения кредита. Обязательно страхование автомобиля (КАСКО) на весь срок кредитования, стоимость которого составляет 2-5% от стоимости авто в год.',
       'Для уменьшения ежемесячного платежа рекомендуется увеличить первоначальный взнос: при 50% взносе вместо 30% ежемесячный платёж уменьшится примерно на 30%. Также выгоднее брать кредит на более короткий срок — при 3 годах вместо 5 переплата снижается примерно на 40%. Досрочное погашение автокредита разрешено без штрафов. При необходимости можно рефинансировать автокредит в другом банке, если там предложат более низкую ставку.',
       'Помимо стоимости автомобиля и кредита учтите дополнительные расходы: обязательное страхование ОСАГО (от 65 000 сум), регистрация в ГАИ, установка GPS-трекера (требование некоторых банков), ежегодный налог на транспорт. Рассчитать ОСАГО можно с помощью нашего калькулятора ОСАГО. Для сравнения условий лизинга автомобиля воспользуйтесь калькулятором автолизинга.',
     ],
     paragraphsUz: [
-      "O'zbekistonda avtokredit berish ko'pchilik tijorat banklari tomonidan yillik 16% dan 24% gacha stavkalarda taklif etiladi. Stavkalar kredit muddati (1-7 yil), boshlang'ich to'lov, avtomobil markasi (yangi yoki ishlatilgan) va qarz oluvchining kredit tarixiga bog'liq. Mahalliy ishlab chiqarish avtomobillari (UzAuto Motors — Chevrolet) uchun ko'pincha 14-18% dan pasaytirilgan stavkalar bilan maxsus dasturlar amal qiladi.",
+      "O'zbekistonda avtokredit berish ko'pchilik tijorat banklari tomonidan yillik 22% dan 33% gacha stavkalarda taklif etiladi. Stavkalar kredit muddati (1-7 yil), boshlang'ich to'lov, avtomobil markasi (yangi yoki ishlatilgan) va qarz oluvchining kredit tarixiga bog'liq. Mahalliy ishlab chiqarish avtomobillari (UzAuto Motors — Chevrolet) uchun ko'pincha 19-24% stavkalar bilan maxsus dasturlar amal qiladi (alohida UzAuto dasturlari — 0% bo'lib to'lash).",
       "Avtokredit hisoblash iste'mol kreditiga o'xshash — annuitet formulasi qo'llaniladi. Misol: 280 000 000 so'mlik Chevrolet Onix sotib olish. Boshlang'ich to'lov 30% = 84 000 000 so'm. Kredit summasi: 196 000 000 so'm 5 yilga (60 oy) yillik 20% da. Oylik to'lov ≈ 5 200 000 so'm. Umumiy to'lovlar: 312 000 000 so'm. Ortiqcha to'lov: 116 000 000 so'm (59%).",
       "Avtokredit olish uchun kerak: pasport, daromad ma'lumotnomasi (to'lov sof daromadning 50% dan ko'p bo'lmasligi kerak), kredit tarixi. Avtokredit bo'yicha garov — sotib olinayotgan avtomobil. KASKO sug'urtasi butun kredit muddatiga majburiy, narxi avtomobil qiymatining yiliga 2-5%.",
       "Oylik to'lovni kamaytirish uchun boshlang'ich to'lovni oshiring: 30% o'rniga 50% da oylik to'lov taxminan 30% ga kamayadi. Qisqaroq muddatga kredit olish ham foydaliroq — 5 yil o'rniga 3 yilda ortiqcha to'lov taxminan 40% ga kamayadi. Avtokreditni muddatidan oldin to'lash jarimasisz ruxsat etilgan.",
       "Avtomobil va kredit qiymatidan tashqari qo'shimcha xarajatlarni hisobga oling: majburiy OSAGO sug'urtasi (65 000 so'mdan), YHXda ro'yxatdan o'tish, GPS-treker o'rnatish, yillik transport solig'i. OSAGOni bizning OSAGO kalkulyatorimiz yordamida hisoblashingiz mumkin.",
     ],
     faqRu: [
-      { question: 'Какие ставки по автокредитам в Узбекистане?', answer: 'От 14-18% (отечественные авто по спецпрограммам) до 24% (коммерческие ставки). Средняя — 18-22% годовых.' },
+      { question: 'Какие ставки по автокредитам в Узбекистане?', answer: 'От 19-24% (отечественные авто по спецпрограммам, UzAuto — от 0% рассрочка) до 33% (коммерческие ставки). Средняя — 22-28% годовых.' },
       { question: 'Какой первоначальный взнос нужен для автокредита?', answer: 'Обычно от 20% до 40% стоимости авто. Чем больше взнос, тем ниже ставка и переплата.' },
       { question: 'Обязательно ли КАСКО при автокредите?', answer: 'Да, большинство банков требуют КАСКО на весь срок кредита. Стоимость: 2-5% от стоимости авто в год.' },
       { question: 'Можно ли досрочно погасить автокредит?', answer: 'Да, без штрафов. Проценты пересчитываются за фактический срок использования кредита.' },
@@ -281,7 +281,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Какие дополнительные расходы при покупке авто в кредит?', answer: 'КАСКО (2-5%/год), ОСАГО (от 65 000 сум), регистрация в ГАИ, GPS-трекер, транспортный налог.' },
     ],
     faqUz: [
-      { question: "O'zbekistonda avtokredit stavkalari qanday?", answer: "14-18% dan (mahalliy avto maxsus dasturlari) 24% gacha (tijorat stavkalari). O'rtacha — yillik 18-22%." },
+      { question: "O'zbekistonda avtokredit stavkalari qanday?", answer: "19-24% dan (mahalliy avto maxsus dasturlari, UzAuto — 0% bo'lib to'lash) 33% gacha (tijorat stavkalari). O'rtacha — yillik 22-28%." },
       { question: "Avtokredit uchun boshlang'ich to'lov qancha kerak?", answer: "Odatda avtomobil qiymatining 20% dan 40% gacha. Qancha ko'p to'lov — shuncha past stavka va ortiqcha to'lov." },
       { question: "Avtokreditda KASKO majburiymi?", answer: "Ha, ko'pchilik banklar butun kredit muddatiga KASKO talab qiladi. Narxi: avtomobil qiymatining yiliga 2-5%." },
       { question: "Avtokreditni muddatidan oldin to'lash mumkinmi?", answer: "Ha, jarimasisz. Foizlar haqiqiy foydalanish muddati uchun qayta hisoblanadi." },
@@ -292,7 +292,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'deposit',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Фонд гарантирования вкладов', url: 'https://dif.uz' },
@@ -301,19 +301,19 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Ставки по банковским вкладам в Узбекистане в 2025 году составляют от 20% до 26% годовых в национальной валюте (сум) и от 4% до 7% годовых в иностранной валюте (доллар/евро). Высокие ставки в сумах обусловлены ключевой ставкой ЦБ 14% и необходимостью компенсировать инфляцию. Калькулятор депозита рассчитывает доход по вкладу с учётом капитализации процентов, срока и условий размещения.',
       'Виды вкладов: срочный (с фиксированной ставкой, без досрочного снятия), накопительный (с возможностью пополнения), до востребования (низкая ставка, свободный доступ). Расчёт простых процентов: Доход = Сумма × Ставка × Срок(дней) / 365. Расчёт с ежемесячной капитализацией: Итого = Сумма × (1 + Ставка/12)^Месяцы. Капитализация увеличивает доходность за счёт начисления процентов на проценты.',
       'Пример расчёта: вклад 100 000 000 сум на 12 месяцев под 24% годовых. Без капитализации: доход = 100 000 000 × 24% = 24 000 000 сум, итого 124 000 000 сум. С ежемесячной капитализацией: итого = 100 000 000 × (1 + 0,02)^12 = 126 824 179 сум, доход = 26 824 179 сум — на 2 824 179 сум больше. Эффективная ставка при капитализации: 26,82% вместо номинальных 24%.',
-      'Проценты по вкладам в Узбекистане не облагаются НДФЛ — это важное преимущество для вкладчиков. Вклады физических лиц гарантированы Фондом гарантирования вкладов граждан в банках на сумму до 200 000 000 сум (эквивалент) на одного вкладчика в одном банке. Это означает, что даже при банкротстве банка вкладчик получит возмещение в пределах гарантированной суммы.',
-      'Для максимизации дохода рекомендуется: выбирать вклады с ежемесячной капитализацией; сравнивать ставки нескольких банков (наш калькулятор сравнения вкладов поможет); распределять крупные суммы между банками в пределах гарантии (200 млн сум на банк); учитывать реальную доходность с поправкой на инфляцию. При инфляции 10% и ставке 24% реальная доходность составляет около 14%. Для вкладов в валюте следите за курсом через наш конвертер валют.',
+      'Проценты по депозитам облагаются НДФЛ по ставке 5% для резидентов (10% для нерезидентов). Банк удерживает налог автоматически при выплате процентов. Вклады физических лиц гарантированы Фондом гарантирования вкладов граждан в банках на сумму до 200 000 000 сум (эквивалент) на одного вкладчика в одном банке. Это означает, что даже при банкротстве банка вкладчик получит возмещение в пределах гарантированной суммы.',
+      'Для максимизации дохода рекомендуется: выбирать вклады с ежемесячной капитализацией; сравнивать ставки нескольких банков (наш калькулятор сравнения вкладов поможет); распределять крупные суммы между банками в пределах гарантии (200 млн сум на банк); учитывать реальную доходность с поправкой на инфляцию. При инфляции 7,3% и ставке 24% реальная доходность составляет около 16,7%. Для вкладов в валюте следите за курсом через наш конвертер валют.',
     ],
     paragraphsUz: [
       "O'zbekistonda bank omonatlar bo'yicha stavkalar 2025-yilda milliy valyutada (so'm) yillik 20% dan 26% gacha va xorijiy valyutada (dollar/yevro) yillik 4% dan 7% gacha. So'mdagi yuqori stavkalar MB kalit stavkasi 14% va inflyatsiyani qoplash zarurati bilan bog'liq. Depozit kalkulyatori foizlar kapitalizatsiyasi, muddat va joylashtirish shartlarini hisobga olgan holda omonat bo'yicha daromadni hisoblaydi.",
       "Omonat turlari: muddatli (qat'iy stavka, muddatidan oldin yechib olishsiz), jamg'arma (to'ldirish imkoniyati bilan), talab qilib olinguncha (past stavka, erkin foydalanish). Oddiy foizlar hisobi: Daromad = Summa × Stavka × Muddat(kun) / 365. Oylik kapitalizatsiya bilan: Jami = Summa × (1 + Stavka/12)^Oylar.",
       "Hisoblash misoli: 100 000 000 so'mlik omonat 12 oyga yillik 24% da. Kapitalizatsiyasiz: daromad = 24 000 000 so'm, jami 124 000 000 so'm. Oylik kapitalizatsiya bilan: jami = 126 824 179 so'm, daromad = 26 824 179 so'm — 2 824 179 so'mga ko'proq. Kapitalizatsiyada samarali stavka: nominal 24% o'rniga 26,82%.",
-      "O'zbekistonda omonat foizlari JShShSga tortilmaydi — bu omonatchillar uchun muhim afzallik. Jismoniy shaxslar omonatlari Banklardagi fuqarolar omonatlarini kafolatlash fondi tomonidan bir omonatchiga bir bankda 200 000 000 so'mgacha (ekvivalent) miqdorda kafolatlanadi.",
-      "Daromadni maksimallashtirish uchun tavsiya etiladi: oylik kapitalizatsiyali omonatlarni tanlash; bir nechta banklarning stavkalarini solishtirish; yirik summalarni banklar o'rtasida kafolat chegarasida (bank boshiga 200 mln so'm) taqsimlash; inflyatsiyani hisobga olgan holda real daromadlilikni baholash. 10% inflyatsiya va 24% stavkada real daromadlilik taxminan 14%.",
+      "Depozit foizlari rezidentlar uchun 5% (norezidentlar uchun 10%) stavkada JShShSga tortiladi. Bank foizlarni to'lashda soliqni avtomatik ravishda ushlab qoladi. Jismoniy shaxslar omonatlari Banklardagi fuqarolar omonatlarini kafolatlash fondi tomonidan bir omonatchiga bir bankda 200 000 000 so'mgacha (ekvivalent) miqdorda kafolatlanadi.",
+      "Daromadni maksimallashtirish uchun tavsiya etiladi: oylik kapitalizatsiyali omonatlarni tanlash; bir nechta banklarning stavkalarini solishtirish; yirik summalarni banklar o'rtasida kafolat chegarasida (bank boshiga 200 mln so'm) taqsimlash; inflyatsiyani hisobga olgan holda real daromadlilikni baholash. 7,3% inflyatsiya va 24% stavkada real daromadlilik taxminan 16,7%.",
     ],
     faqRu: [
       { question: 'Какие ставки по вкладам в сумах в 2025 году?', answer: 'От 20% до 26% годовых в зависимости от банка и срока. Наиболее выгодные ставки — по срочным вкладам на 12-24 месяца.' },
-      { question: 'Облагаются ли проценты по вкладам налогом?', answer: 'Нет, проценты по банковским вкладам в Узбекистане не облагаются НДФЛ.' },
+      { question: 'Облагаются ли проценты по вкладам налогом?', answer: 'Да, проценты по депозитам облагаются НДФЛ по ставке 5% для резидентов (10% для нерезидентов). Банк удерживает налог автоматически при выплате процентов.' },
       { question: 'Какая сумма гарантирована по вкладам?', answer: 'До 200 000 000 сум на одного вкладчика в одном банке. Гарантируется Фондом гарантирования вкладов.' },
       { question: 'Что такое капитализация процентов?', answer: 'Начисление процентов на ранее начисленные проценты. При ежемесячной капитализации эффективная ставка выше номинальной (24% → 26,82%).' },
       { question: 'Какие ставки по валютным вкладам?', answer: 'От 4% до 7% годовых в долларах/евро. Ниже, чем в сумах, но без валютного риска.' },
@@ -321,7 +321,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     ],
     faqUz: [
       { question: "2025-yilda so'mdagi omonat stavkalari qanday?", answer: "Bank va muddatga qarab yillik 20% dan 26% gacha. Eng foydali stavkalar — 12-24 oylik muddatli omonatlarda." },
-      { question: "Omonat foizlari soliqqa tortiladimi?", answer: "Yo'q, O'zbekistonda bank omonatlari foizlari JShShSga tortilmaydi." },
+      { question: "Omonat foizlari soliqqa tortiladimi?", answer: "Ha, depozit foizlari rezidentlar uchun 5% (norezidentlar uchun 10%) stavkada JShShSga tortiladi. Bank foizlarni to'lashda soliqni avtomatik ravishda ushlab qoladi." },
       { question: "Omonatlar bo'yicha qancha summa kafolatlanadi?", answer: "Bir omonatchiga bir bankda 200 000 000 so'mgacha. Omonatlarni kafolatlash fondi tomonidan kafolatlanadi." },
       { question: "Foizlar kapitalizatsiyasi nima?", answer: "Avval hisoblangan foizlarga foiz hisoblash. Oylik kapitalizatsiyada samarali stavka nominaldan yuqori (24% → 26,82%)." },
       { question: "Valyutali omonat stavkalari qanday?", answer: "Dollar/yevroda yillik 4% dan 7% gacha. So'mdagiga qaraganda past, lekin valyuta xavfisiz." },
@@ -330,33 +330,33 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'currency-converter',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз — курсы валют', url: 'https://cbu.uz/uz/arkhiv-kursov-valyut/' },
     ],
     paragraphsRu: [
-      'Официальный курс валют в Узбекистане устанавливается Центральным банком ежедневно на основе межбанковских торгов. По состоянию на 2025 год курс доллара США колеблется в районе 12 800–13 200 сум, евро — 13 500–14 000 сум, российского рубля — 130–145 сум. Конвертер валют позволяет мгновенно пересчитать суммы между узбекским сумом и основными мировыми валютами по актуальному курсу ЦБ.',
+      'Официальный курс валют в Узбекистане устанавливается Центральным банком ежедневно на основе межбанковских торгов. По состоянию на 2025 год курс доллара США колеблется в районе 12 100–12 500 сум, евро — 13 500–14 000 сум, российского рубля — 130–145 сум. Конвертер валют позволяет мгновенно пересчитать суммы между узбекским сумом и основными мировыми валютами по актуальному курсу ЦБ.',
       'ЦБ Узбекистана публикует официальный курс на своём сайте cbu.uz ежедневно до 16:00 по ташкентскому времени. Этот курс используется для бухгалтерских целей, расчёта таможенных пошлин и налогов. Коммерческие банки и обменные пункты устанавливают собственные курсы покупки и продажи с небольшим спредом относительно официального курса (обычно 0,5-1,5%). Для сравнения курсов банков используйте наш калькулятор банковских курсов.',
       'Конвертер поддерживает основные валюты: USD (доллар США), EUR (евро), RUB (российский рубль), GBP (фунт стерлингов), CNY (китайский юань), KZT (казахстанский тенге), KRW (южнокорейская вона), JPY (японская иена), TRY (турецкая лира). Для каждой валюты показывается курс покупки и продажи. Расчёт производится по формуле: Сумма в UZS = Сумма в валюте × Курс.',
       'При обмене крупных сумм (от 1 000 USD и выше) коммерческие банки могут предложить более выгодный курс, чем обменные пункты. Для переводов за рубеж и получения денежных переводов важно учитывать не только курс обмена, но и комиссии за перевод — обычно 1-3% от суммы. Подробнее о стоимости международных переводов — в нашем калькуляторе денежных переводов.',
       'Узбекский сум является свободно конвертируемой валютой с 2017 года, когда была проведена либерализация валютного рынка. Физические лица могут свободно покупать и продавать иностранную валюту без ограничений. Юридические лица обязаны конвертировать валютную выручку в установленном порядке. Для планирования поездок и покупок рекомендуется отслеживать динамику курса за последние месяцы.',
     ],
     paragraphsUz: [
-      "O'zbekistonda rasmiy valyuta kursi Markaziy bank tomonidan banklar aro savdolar asosida har kuni belgilanadi. 2025-yil holatiga ko'ra AQSh dollari kursi 12 800–13 200 so'm atrofida, yevro — 13 500–14 000 so'm, rus rubli — 130–145 so'm. Valyuta konverteri MB ning dolzarb kursi bo'yicha o'zbek so'mi va asosiy jahon valyutalari o'rtasida summalarni bir zumda qayta hisoblash imkonini beradi.",
+      "O'zbekistonda rasmiy valyuta kursi Markaziy bank tomonidan banklar aro savdolar asosida har kuni belgilanadi. 2025-yil holatiga ko'ra AQSh dollari kursi 12 100–12 500 so'm atrofida, yevro — 13 500–14 000 so'm, rus rubli — 130–145 so'm. Valyuta konverteri MB ning dolzarb kursi bo'yicha o'zbek so'mi va asosiy jahon valyutalari o'rtasida summalarni bir zumda qayta hisoblash imkonini beradi.",
       "O'zbekiston MB rasmiy kursni o'z veb-saytida cbu.uz da har kuni Toshkent vaqti bilan 16:00 gacha e'lon qiladi. Bu kurs buxgalteriya maqsadlari, bojxona boji va soliqlar hisobi uchun qo'llaniladi. Tijorat banklari va ayirboshlash punktlari rasmiy kursga nisbatan kichik spred bilan (odatda 0,5-1,5%) o'z sotib olish va sotish kurslarini belgilaydi.",
       "Konverter asosiy valyutalarni qo'llab-quvvatlaydi: USD, EUR, RUB, GBP, CNY, KZT, KRW, JPY, TRY. Har bir valyuta uchun sotib olish va sotish kursi ko'rsatiladi. Hisoblash formulasi: UZS dagi summa = Valyutadagi summa × Kurs.",
       "Yirik summalarni (1 000 USD va undan ko'p) ayirboshlashda tijorat banklari ayirboshlash punktlariga qaraganda foydaliroq kurs taklif qilishi mumkin. Chet elga pul o'tkazish va pul o'tkazmalarini olishda nafaqat ayirboshlash kursini, balki o'tkazma komissiyasini ham hisobga oling — odatda summaning 1-3%.",
       "O'zbek so'mi 2017-yildan boshlab erkin konvertatsiya qilinadigan valyuta hisoblanadi. Jismoniy shaxslar xorijiy valyutani cheklovsiz erkin sotib olishi va sotishi mumkin. Yuridik shaxslar valyuta tushumini belgilangan tartibda konvertatsiya qilishi shart.",
     ],
     faqRu: [
-      { question: 'Какой курс доллара в Узбекистане?', answer: 'По состоянию на 2025 год — около 12 800–13 200 сум за 1 доллар. Актуальный курс ежедневно публикуется на cbu.uz.' },
+      { question: 'Какой курс доллара в Узбекистане?', answer: 'По состоянию на 2025 год — около 12 100–12 500 сум за 1 доллар. Актуальный курс ежедневно публикуется на cbu.uz.' },
       { question: 'Где выгоднее менять валюту?', answer: 'Крупные суммы (от $1000) — в банках по договорному курсу. Мелкие суммы — в обменных пунктах. Спред обычно 0,5-1,5% от курса ЦБ.' },
       { question: 'Когда обновляется курс ЦБ?', answer: 'Ежедневно до 16:00 по ташкентскому времени на сайте cbu.uz.' },
       { question: 'Можно ли свободно покупать валюту?', answer: 'Да, с 2017 года физические лица могут свободно покупать и продавать иностранную валюту без ограничений.' },
       { question: 'Какие валюты можно обменять в Узбекистане?', answer: 'Основные: USD, EUR, RUB, GBP, CNY, KZT. Менее распространённые валюты можно обменять в крупных банках.' },
     ],
     faqUz: [
-      { question: "O'zbekistonda dollar kursi qancha?", answer: "2025-yil holatiga ko'ra — 1 dollar uchun taxminan 12 800–13 200 so'm. Dolzarb kurs cbu.uz da har kuni e'lon qilinadi." },
+      { question: "O'zbekistonda dollar kursi qancha?", answer: "2025-yil holatiga ko'ra — 1 dollar uchun taxminan 12 100–12 500 so'm. Dolzarb kurs cbu.uz da har kuni e'lon qilinadi." },
       { question: "Valyutani qayerda foydaliroq ayirboshlash mumkin?", answer: "Yirik summalar ($1000 dan) — banklarda kelishilgan kursda. Kichik summalar — ayirboshlash punktlarida. Spred odatda MB kursidan 0,5-1,5%." },
       { question: "MB kursi qachon yangilanadi?", answer: "Har kuni Toshkent vaqti bilan 16:00 gacha cbu.uz saytida." },
       { question: "Valyutani erkin sotib olish mumkinmi?", answer: "Ha, 2017-yildan jismoniy shaxslar xorijiy valyutani cheklovsiz erkin sotib olishi mumkin." },
@@ -366,7 +366,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'bank-rates',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
     ],
@@ -402,35 +402,35 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'customs',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Таможенный кодекс РУз', url: 'https://lex.uz/docs/6365764' },
       { name: 'Государственный таможенный комитет', url: 'https://customs.uz' },
     ],
     paragraphsRu: [
       'Таможенные платежи при ввозе товаров в Узбекистан состоят из нескольких компонентов: таможенная пошлина (0-30% от таможенной стоимости), НДС (12% от суммы таможенной стоимости и пошлины), акцизный налог (для подакцизных товаров), сбор за таможенное оформление. Ставки таможенных пошлин различаются в зависимости от категории товара и страны происхождения. Калькулятор таможенных платежей рассчитает полную сумму всех платежей при ввозе товаров.',
-      'Для физических лиц действуют нормы беспошлинного ввоза: при пересечении границы — товары стоимостью до 2 000 USD и весом до 50 кг; почтовые посылки — до 1 000 USD в месяц; интернет-заказы — до определённых лимитов в зависимости от способа доставки. При превышении норм уплачивается таможенная пошлина и НДС.',
+      'Для физических лиц действуют нормы беспошлинного ввоза (с 1 мая 2025 года): при перемещении воздушным транспортом — товары стоимостью до 1 000 USD и весом до 50 кг; железнодорожным/речным транспортом — до 500 USD; автомобильным транспортом или пешком — до 300 USD; международной курьерской почтой — до 200 USD в месяц; почтовые посылки — до 100 USD. С 20 июля 2025 года действуют требования по минимальному сроку пребывания за рубежом: 2 дня при въезде автомобилем, 3 дня при въезде самолётом. При превышении норм уплачивается таможенная пошлина и НДС.',
       'Пример расчёта таможенных платежей для юридического лица: ввоз оборудования стоимостью 100 000 USD (по курсу ЦБ ≈ 1 300 000 000 сум). Таможенная пошлина 10%: 130 000 000 сум. НДС 12% от (стоимость + пошлина): (1 300 000 000 + 130 000 000) × 12% = 171 600 000 сум. Сбор за оформление: 0,2% от стоимости = 2 600 000 сум. Итого таможенные платежи: 304 200 000 сум (23,4% от стоимости товара).',
       'Для ряда товаров действуют льготы и освобождения: технологическое оборудование, не производимое в Узбекистане, может ввозиться без пошлины; инвесторы с определённым объёмом инвестиций получают преференции; товары из стран ЕАЭС (по отдельным соглашениям) могут иметь пониженные ставки; участники свободных экономических зон освобождены от таможенных пошлин на ввоз оборудования и сырья.',
       'Таможенное оформление осуществляется через систему «Единое окно» (singlewindow.uz). Для расчёта пошлин необходимо определить код ТН ВЭД товара (гармонизированная система классификации). Ставки пошлин регулярно пересматриваются и публикуются Государственным таможенным комитетом. При определении таможенной стоимости используется курс ЦБ на дату подачи таможенной декларации.',
     ],
     paragraphsUz: [
       "O'zbekistonga tovarlarni kiritishda bojxona to'lovlari bir nechta komponentdan iborat: bojxona boji (bojxona qiymatidan 0-30%), QQS (bojxona qiymati va boj yig'indisidan 12%), aksiz solig'i (aksiz tovarlar uchun), bojxona rasmiylash yig'imi. Bojxona boj stavkalari tovar toifasi va kelib chiqqan mamlakatga qarab farqlanadi.",
-      "Jismoniy shaxslar uchun bojsiz olib kirish normalari amal qiladi: chegara kesib o'tishda — 2 000 AQSh dollarigacha va 50 kg gacha; pochta jo'natmalari — oyiga 1 000 AQSh dollarigacha. Normalardan oshganda bojxona boji va QQS to'lanadi.",
+      "Jismoniy shaxslar uchun bojsiz olib kirish normalari amal qiladi (2025-yil 1-maydan): havo transporti orqali — 1 000 AQSh dollarigacha va 50 kg gacha; temir yo'l/daryo transporti orqali — 500 AQSh dollarigacha; avtomobil yoki piyoda — 300 AQSh dollarigacha; xalqaro kuryer pochtasi — oyiga 200 AQSh dollarigacha; pochta jo'natmalari — 100 AQSh dollarigacha. 2025-yil 20-iyuldan chet elda minimal bo'lish muddati talablari kuchga kirdi: avtomobilda kirishda 2 kun, samolyotda kirishda 3 kun. Normalardan oshganda bojxona boji va QQS to'lanadi.",
       "Yuridik shaxs uchun bojxona to'lovlari hisoblash misoli: 100 000 AQSh dollarlik (MB kursi bo'yicha ≈ 1 300 000 000 so'm) uskunani olib kirish. Bojxona boji 10%: 130 000 000 so'm. QQS 12%: (1 300 000 000 + 130 000 000) × 12% = 171 600 000 so'm. Rasmiylash yig'imi: 2 600 000 so'm. Jami: 304 200 000 so'm (tovar qiymatining 23,4%).",
       "Bir qator tovarlarga imtiyozlar amal qiladi: O'zbekistonda ishlab chiqarilmaydigan texnologik uskunalar bojsiz olib kirilishi mumkin; ma'lum hajmdagi investitsiyalarga ega investorlar preferentsiyalar oladi; erkin iqtisodiy zonalar ishtirokchilari uskuna va xom-ashyo olib kirishda bojxona bojlaridan ozod.",
       "Bojxona rasmiylash «Yagona darcha» (singlewindow.uz) tizimi orqali amalga oshiriladi. Boj hisoblash uchun tovarning TIF TN kodini aniqlash kerak. Bojxona qiymatini aniqlashda bojxona deklaratsiyasi topshirilgan sanadagi MB kursi qo'llaniladi.",
     ],
     faqRu: [
       { question: 'Из чего состоят таможенные платежи?', answer: 'Таможенная пошлина (0-30%), НДС (12% от стоимости+пошлина), акциз (для подакцизных товаров), сбор за оформление (0,2%).' },
-      { question: 'Сколько товаров можно ввезти без пошлины?', answer: 'Физические лица: при пересечении границы — до $2 000 и 50 кг; почтовые посылки — до $1 000/месяц.' },
+      { question: 'Сколько товаров можно ввезти без пошлины?', answer: 'С 1 мая 2025: самолётом — до $1 000 и 50 кг; поездом/по воде — до $500; на авто/пешком — до $300; курьерской почтой — до $200/мес; посылки — до $100. Требуется минимальное пребывание за рубежом: 2 дня (авто), 3 дня (самолёт).' },
       { question: 'Как определить размер таможенной пошлины?', answer: 'По коду ТН ВЭД товара. Ставки публикуются Государственным таможенным комитетом. Средние ставки: 0-5% на оборудование, 10-20% на потребительские товары, до 30% на подакцизные.' },
       { question: 'Какой курс валюты используется для расчёта пошлин?', answer: 'Официальный курс ЦБ на дату подачи таможенной декларации.' },
       { question: 'Есть ли льготы по таможенным платежам?', answer: 'Да: технологическое оборудование (не производимое в РУз), товары для СЭЗ, инвестиционные проекты. Льготы устанавливаются отдельными постановлениями.' },
     ],
     faqUz: [
       { question: "Bojxona to'lovlari nimalardan iborat?", answer: "Bojxona boji (0-30%), QQS (qiymat+bojdan 12%), aksiz (aksiz tovarlar uchun), rasmiylash yig'imi (0,2%)." },
-      { question: "Bojsiz qancha tovar olib kirish mumkin?", answer: "Jismoniy shaxslar: chegara kesishda — $2 000 gacha va 50 kg; pochta jo'natmalari — $1 000/oy." },
+      { question: "Bojsiz qancha tovar olib kirish mumkin?", answer: "2025-yil 1-maydan: samolyotda — $1 000 gacha va 50 kg; poyezdda/suv orqali — $500 gacha; avtoda/piyoda — $300 gacha; kuryer pochtasi — $200/oy; jo'natmalar — $100. Chet elda minimal bo'lish muddati: 2 kun (avto), 3 kun (samolyot)." },
       { question: "Bojxona boji miqdorini qanday aniqlash mumkin?", answer: "Tovarning TIF TN kodi bo'yicha. Stavkalar Davlat bojxona qo'mitasi tomonidan e'lon qilinadi." },
       { question: "Boj hisobi uchun qaysi valyuta kursi ishlatiladi?", answer: "Bojxona deklaratsiyasi topshirilgan sanadagi MB rasmiy kursi." },
       { question: "Bojxona to'lovlari bo'yicha imtiyozlar bormi?", answer: "Ha: texnologik uskunalar (O'zbekistonda ishlab chiqarilmaydigan), EIZ uchun tovarlar, investitsiya loyihalari." },
@@ -439,7 +439,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'osago',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Закон об ОСАГО', url: 'https://lex.uz/docs/5765051' },
       { name: 'Агентство страхового надзора', url: 'https://mf.uz' },
@@ -476,34 +476,34 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'electricity',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Постановление о тарифах на электроэнергию', url: 'https://lex.uz' },
       { name: 'Узэнерго', url: 'https://uzenergy.uz' },
     ],
     paragraphsRu: [
       'Тарифы на электроэнергию для населения Узбекистана в 2025 году установлены по 6-ступенчатой шкале: чем больше потребление, тем выше тариф за кВт·ч. Первые 200 кВт·ч в месяц обходятся дешевле всего, а потребление свыше 1 001 кВт·ч — по максимальному тарифу. Такая система стимулирует экономное потребление электроэнергии. Калькулятор электроэнергии рассчитает точную стоимость вашего ежемесячного потребления с учётом всех ступеней тарифа.',
-      'Тарифная сетка для населения (2025): Тиер 1 (0-200 кВт·ч) — 600 сум/кВт·ч; Тиер 2 (201-500 кВт·ч) — 800 сум/кВт·ч; Тиер 3 (501-800 кВт·ч) — 1 200 сум/кВт·ч; Тиер 4 (801-1000 кВт·ч) — 1 500 сум/кВт·ч; Тиер 5 (1001-1500 кВт·ч) — 1 800 сум/кВт·ч; Тиер 6 (свыше 1500 кВт·ч) — 2 000 сум/кВт·ч. Тарифы могут пересматриваться постановлениями правительства.',
-      'Пример расчёта: потребление 700 кВт·ч в месяц. Тиер 1: 200 × 600 = 120 000 сум. Тиер 2: 300 × 800 = 240 000 сум. Тиер 3: 200 × 1 200 = 240 000 сум. Итого: 600 000 сум. Средняя цена: 600 000 / 700 = 857 сум/кВт·ч. Для сравнения, если бы потребление составило всего 200 кВт·ч, оплата была бы 120 000 сум (600 сум/кВт·ч), а при 1 500 кВт·ч — 1 740 000 сум (1 160 сум/кВт·ч в среднем).',
+      'Тарифная сетка для населения (2025): Тиер 1 (0-200 кВт·ч) — 600 сум/кВт·ч; Тиер 2 (201-500 кВт·ч) — 800 сум/кВт·ч; Тиер 3 (501-1 000 кВт·ч) — 1 000 сум/кВт·ч; Тиер 4 (1 001-5 000 кВт·ч) — 1 500 сум/кВт·ч; Тиер 5 (5 001-10 000 кВт·ч) — 1 750 сум/кВт·ч; Тиер 6 (свыше 10 000 кВт·ч) — 2 000 сум/кВт·ч. Тарифы могут пересматриваться постановлениями правительства.',
+      'Пример расчёта: потребление 700 кВт·ч в месяц. Тиер 1: 200 × 600 = 120 000 сум. Тиер 2: 300 × 800 = 240 000 сум. Тиер 3: 200 × 1 000 = 200 000 сум. Итого: 560 000 сум. Средняя цена: 560 000 / 700 = 800 сум/кВт·ч. Для сравнения, если бы потребление составило всего 200 кВт·ч, оплата была бы 120 000 сум (600 сум/кВт·ч), а при 1 500 кВт·ч — 1 360 000 сум (907 сум/кВт·ч в среднем).',
       'Для юридических лиц действуют иные тарифы — единая ставка в зависимости от категории потребителя и времени суток (для крупных предприятий с дифференцированным учётом). Промышленные предприятия платят в среднем 700-1 200 сум/кВт·ч. Коммерческие организации — 800-1 500 сум/кВт·ч.',
       'Для снижения расходов на электроэнергию рекомендуется: использовать энергосберегающие LED-лампы (экономия до 80%); устанавливать таймеры на электроприборы; утеплять помещения для снижения расходов на обогрев; рассмотреть установку солнечных панелей (окупаемость 3-5 лет). Для расчёта полных коммунальных расходов воспользуйтесь калькулятором коммунальных услуг, который включает электроэнергию, газ и воду.',
     ],
     paragraphsUz: [
       "O'zbekiston aholisi uchun elektr energiya tariflari 2025-yilda 6 bosqichli shkala bo'yicha belgilangan: iste'mol qancha ko'p bo'lsa, kVt·soat uchun tarif shuncha yuqori. Oyiga birinchi 200 kVt·soat eng arzon, 1 001 kVt·soatdan ortiq iste'mol — maksimal tarif bo'yicha. Bunday tizim elektr energiyani tejab iste'mol qilishga rag'batlantiradi.",
-      "Aholi uchun tarif setkasi (2025): 1-bosqich (0-200 kVt·soat) — 600 so'm/kVt·soat; 2-bosqich (201-500) — 800 so'm; 3-bosqich (501-800) — 1 200 so'm; 4-bosqich (801-1000) — 1 500 so'm; 5-bosqich (1001-1500) — 1 800 so'm; 6-bosqich (1500 dan ortiq) — 2 000 so'm/kVt·soat.",
-      "Hisoblash misoli: oyiga 700 kVt·soat iste'mol. 1-bosqich: 200 × 600 = 120 000 so'm. 2-bosqich: 300 × 800 = 240 000 so'm. 3-bosqich: 200 × 1 200 = 240 000 so'm. Jami: 600 000 so'm. O'rtacha narx: 857 so'm/kVt·soat.",
+      "Aholi uchun tarif setkasi (2025): 1-bosqich (0-200 kVt·soat) — 600 so'm/kVt·soat; 2-bosqich (201-500) — 800 so'm; 3-bosqich (501-1 000) — 1 000 so'm; 4-bosqich (1 001-5 000) — 1 500 so'm; 5-bosqich (5 001-10 000) — 1 750 so'm; 6-bosqich (10 000 dan ortiq) — 2 000 so'm/kVt·soat.",
+      "Hisoblash misoli: oyiga 700 kVt·soat iste'mol. 1-bosqich: 200 × 600 = 120 000 so'm. 2-bosqich: 300 × 800 = 240 000 so'm. 3-bosqich: 200 × 1 000 = 200 000 so'm. Jami: 560 000 so'm. O'rtacha narx: 800 so'm/kVt·soat.",
       "Yuridik shaxslar uchun boshqa tariflar amal qiladi — iste'molchi toifasi va kunning vaqtiga qarab yagona stavka. Sanoat korxonalari o'rtacha 700-1 200 so'm/kVt·soat, tijorat tashkilotlari — 800-1 500 so'm/kVt·soat to'laydi.",
       "Elektr energiya xarajatlarini kamaytirish uchun tavsiya etiladi: energiya tejovchi LED-lampalarni ishlatish (80% gacha tejash); elektr asboblarga taymerlar o'rnatish; binolarni izolyatsiya qilish; quyosh panellarini o'rnatishni ko'rib chiqish (o'zini oqlash 3-5 yil). To'liq kommunal xarajatlarni hisoblash uchun kommunal xizmatlar kalkulyatoridan foydalaning.",
     ],
     faqRu: [
-      { question: 'Сколько стоит электроэнергия в Узбекистане?', answer: 'По 6-ступенчатой шкале: от 600 сум/кВт·ч (до 200 кВт·ч) до 2 000 сум/кВт·ч (свыше 1500 кВт·ч). Чем больше потребление, тем дороже.' },
+      { question: 'Сколько стоит электроэнергия в Узбекистане?', answer: 'По 6-ступенчатой шкале: от 600 сум/кВт·ч (до 200 кВт·ч) до 2 000 сум/кВт·ч (свыше 10 000 кВт·ч). Чем больше потребление, тем дороже.' },
       { question: 'Как рассчитать стоимость электроэнергии?', answer: 'Потребление разбивается по ступеням: первые 200 кВт·ч по 600 сум, следующие 300 по 800 сум и т.д. Наш калькулятор сделает это автоматически.' },
       { question: 'Какое среднее потребление электроэнергии в квартире?', answer: 'Для 2-комнатной квартиры: 200-400 кВт·ч летом, 300-600 кВт·ч зимой (с электрообогревом). Средний счёт: 150 000 - 500 000 сум.' },
       { question: 'Почему тарифы ступенчатые?', answer: 'Для стимулирования энергосбережения. Базовое потребление (до 200 кВт·ч) оплачивается по низкому тарифу, избыточное — по повышенному.' },
       { question: 'Как снизить расходы на электроэнергию?', answer: 'LED-лампы (экономия 80%), таймеры, утепление, солнечные панели. Стремитесь удержать потребление в пределах 500 кВт·ч для тарифов 1-2 ступеней.' },
     ],
     faqUz: [
-      { question: "O'zbekistonda elektr energiya qancha turadi?", answer: "6 bosqichli shkala bo'yicha: 600 so'm/kVt·soat (200 kVt·soatgacha) dan 2 000 so'm/kVt·soat (1500 dan ortiq). Iste'mol qancha ko'p — shuncha qimmat." },
+      { question: "O'zbekistonda elektr energiya qancha turadi?", answer: "6 bosqichli shkala bo'yicha: 600 so'm/kVt·soat (200 kVt·soatgacha) dan 2 000 so'm/kVt·soat (10 000 dan ortiq). Iste'mol qancha ko'p — shuncha qimmat." },
       { question: "Elektr energiya narxini qanday hisoblash mumkin?", answer: "Iste'mol bosqichlarga bo'linadi: birinchi 200 kVt·soat 600 so'mdan, keyingi 300 ta 800 so'mdan va h.k. Kalkulyatorimiz buni avtomatik qiladi." },
       { question: "Kvartirada o'rtacha elektr energiya iste'moli qancha?", answer: "2 xonali kvartira uchun: yozda 200-400 kVt·soat, qishda 300-600 kVt·soat. O'rtacha hisob: 150 000 - 500 000 so'm." },
       { question: "Nima uchun tariflar bosqichli?", answer: "Energiya tejashni rag'batlantirish uchun. Asosiy iste'mol (200 kVt·soatgacha) past tarif bo'yicha, ortiqchasi — yuqori tarif bo'yicha to'lanadi." },
@@ -513,36 +513,36 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'gas',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Постановление о тарифах на газ', url: 'https://lex.uz' },
       { name: 'Худудгазтаъминот', url: 'https://hududgaz.uz' },
     ],
     paragraphsRu: [
-      'Тарифы на природный газ для населения Узбекистана в 2025 году установлены по 5-ступенчатой шкале, аналогично электроэнергии. Стоимость кубометра газа растёт с увеличением объёма потребления. В зимний период (октябрь-март) потребление газа значительно возрастает за счёт отопления, что существенно увеличивает ежемесячные платежи. Калькулятор газа рассчитает точную стоимость на основе вашего потребления.',
-      'Тарифная сетка для населения (2025): Тиер 1 (0-500 м³/год, ≈42 м³/мес) — 1 000 сум/м³; Тиер 2 (501-1000 м³/год) — 1 500 сум/м³; Тиер 3 (1001-2000 м³/год) — 2 000 сум/м³; Тиер 4 (2001-3000 м³/год) — 2 500 сум/м³; Тиер 5 (свыше 3000 м³/год) — 3 000 сум/м³. Потребление отслеживается нарастающим итогом с начала года.',
+      'Тарифы на природный газ для населения Узбекистана в 2025 году установлены по системе социальных норм с сезонной дифференциацией. Базовая ставка составляет 1 000 сум/м³. Социальная норма: до 100 м³/мес в тёплый период (март-октябрь) и до 500 м³/мес в холодный период (ноябрь-февраль). При превышении социальной нормы применяется повышенный тариф. Калькулятор газа рассчитает точную стоимость на основе вашего потребления.',
+      'Тарифная система для населения (2025): базовая ставка — 1 000 сум/м³ в пределах социальной нормы. Социальная норма в тёплый период (март-октябрь): до 100 м³/мес; в холодный период (ноябрь-февраль): до 500 м³/мес. При потреблении сверх социальной нормы применяется повышенный тариф. Такая система учитывает сезонные потребности населения в газе для отопления.',
       'Пример расчёта: зимнее потребление 300 м³ в месяц (при годовом накопленном потреблении 1 500 м³). Расчёт ведётся по текущему тиеру: если за предыдущие месяцы потреблено 1 200 м³, то первые 800 м³ (до 2000) — по 2 000 сум = 1 600 000 сум, оставшиеся 200 м³ (2001-3000) — по 2 500 сум = 500 000 сум. В летний период потребление обычно 20-50 м³/мес (только готовка и горячая вода).',
       'Среднее потребление газа для частного дома с газовым отоплением: 2 000-4 000 м³ в год; для квартиры без газового отопления (только плита и колонка): 300-800 м³ в год. Стоимость газа в год для частного дома: от 2 500 000 до 9 000 000 сум; для квартиры: от 300 000 до 1 200 000 сум. Значительная часть расходов приходится на зимние месяцы.',
       'Для экономии газа рекомендуется: утеплить стены и окна (экономия 30-50%); установить программируемый термостат; использовать конденсационный газовый котёл (КПД до 95%); регулярно обслуживать газовое оборудование. При использовании газа для отопления также рассмотрите альтернативу — электрическое отопление с тепловым насосом. Рассчитать все коммунальные расходы можно в нашем калькуляторе коммунальных услуг.',
     ],
     paragraphsUz: [
-      "O'zbekiston aholisi uchun tabiiy gaz tariflari 2025-yilda elektr energiyaga o'xshab 5 bosqichli shkala bo'yicha belgilangan. Gaz kub metrining narxi iste'mol hajmi oshishi bilan o'sadi. Qish davrida (oktyabr-mart) isitish hisobiga gaz iste'moli sezilarli ortadi. Gaz kalkulyatori iste'molingiz asosida aniq narxni hisoblaydi.",
-      "Aholi uchun tarif setkasi (2025): 1-bosqich (0-500 m³/yil, ≈42 m³/oy) — 1 000 so'm/m³; 2-bosqich (501-1000 m³/yil) — 1 500 so'm/m³; 3-bosqich (1001-2000 m³/yil) — 2 000 so'm/m³; 4-bosqich (2001-3000 m³/yil) — 2 500 so'm/m³; 5-bosqich (3000 dan ortiq m³/yil) — 3 000 so'm/m³.",
+      "O'zbekiston aholisi uchun tabiiy gaz tariflari 2025-yilda mavsumiy ijtimoiy normalar tizimi bo'yicha belgilangan. Bazaviy stavka 1 000 so'm/m³ ni tashkil etadi. Ijtimoiy norma: iliq davrda (mart-oktyabr) oyiga 100 m³ gacha, sovuq davrda (noyabr-fevral) oyiga 500 m³ gacha. Ijtimoiy normadan oshganda yuqori tarif qo'llaniladi. Gaz kalkulyatori iste'molingiz asosida aniq narxni hisoblaydi.",
+      "Aholi uchun tarif tizimi (2025): bazaviy stavka — ijtimoiy norma doirasida 1 000 so'm/m³. Iliq davrda (mart-oktyabr) ijtimoiy norma: oyiga 100 m³ gacha; sovuq davrda (noyabr-fevral): oyiga 500 m³ gacha. Ijtimoiy normadan ortiq iste'molda yuqori tarif qo'llaniladi. Bunday tizim aholining isitish uchun gaz ehtiyojlarini mavsumiy hisobga oladi.",
       "Hisoblash misoli: qishda oyiga 300 m³ iste'mol (yillik jamlanma iste'mol 1 500 m³ da). Hisob joriy bosqich bo'yicha yuritiladi. Yozgi davrda iste'mol odatda 20-50 m³/oy (faqat ovqat pishirish va issiq suv).",
       "Gaz isitishli xususiy uy uchun o'rtacha gaz iste'moli: yiliga 2 000-4 000 m³; gaz isitishisiz kvartira uchun (faqat plita va kolonka): yiliga 300-800 m³. Yillik gaz narxi xususiy uy uchun: 2 500 000 dan 9 000 000 so'mgacha; kvartira uchun: 300 000 dan 1 200 000 so'mgacha.",
       "Gazni tejash uchun tavsiya etiladi: devor va derazalarni izolyatsiya qilish (30-50% tejash); dasturlashtiriladigan termostat o'rnatish; kondensatsion gaz qozonidan foydalanish (FIK 95% gacha); gaz uskunalarini muntazam xizmat qilish. Barcha kommunal xarajatlarni kommunal xizmatlar kalkulyatorimizda hisoblashingiz mumkin.",
     ],
     faqRu: [
-      { question: 'Сколько стоит газ в Узбекистане?', answer: 'По 5-ступенчатой шкале: от 1 000 сум/м³ (до 500 м³/год) до 3 000 сум/м³ (свыше 3 000 м³/год).' },
+      { question: 'Сколько стоит газ в Узбекистане?', answer: 'Базовая ставка — 1 000 сум/м³ в пределах социальной нормы (до 100 м³/мес летом, до 500 м³/мес зимой). При превышении нормы — повышенный тариф.' },
       { question: 'Сколько газа потребляет частный дом?', answer: 'С газовым отоплением: 2 000-4 000 м³/год. Без отопления (только плита): 300-800 м³/год. Основное потребление — зимой.' },
-      { question: 'Как рассчитывается оплата за газ?', answer: 'По накопительной системе: потребление суммируется с начала года. Чем больше годовое потребление, тем выше тариф за каждый следующий кубометр.' },
+      { question: 'Как рассчитывается оплата за газ?', answer: 'По системе социальных норм: в пределах месячной нормы (100 м³ летом / 500 м³ зимой) — базовая ставка 1 000 сум/м³; сверх нормы — повышенный тариф.' },
       { question: 'Сколько платить за газ зимой?', answer: 'Для дома с отоплением: 300-500 м³/мес × 2 000-2 500 сум = 600 000-1 250 000 сум/мес зимой. Летом: 20-50 м³ × 1 000 сум = 20 000-50 000 сум.' },
       { question: 'Как сэкономить на газе?', answer: 'Утепление стен и окон (30-50% экономия), программируемый термостат, регулярное обслуживание котла, конденсационный котёл (КПД 95%).' },
     ],
     faqUz: [
-      { question: "O'zbekistonda gaz qancha turadi?", answer: "5 bosqichli shkala bo'yicha: 1 000 so'm/m³ (500 m³/yilgacha) dan 3 000 so'm/m³ (3 000 m³/yildan ortiq) gacha." },
+      { question: "O'zbekistonda gaz qancha turadi?", answer: "Bazaviy stavka — ijtimoiy norma doirasida 1 000 so'm/m³ (yozda oyiga 100 m³ gacha, qishda 500 m³ gacha). Normadan oshganda — yuqori tarif." },
       { question: "Xususiy uy qancha gaz iste'mol qiladi?", answer: "Gaz isitishi bilan: yiliga 2 000-4 000 m³. Isitishsiz (faqat plita): yiliga 300-800 m³. Asosiy iste'mol — qishda." },
-      { question: "Gaz uchun to'lov qanday hisoblanadi?", answer: "Jamlanma tizim bo'yicha: iste'mol yil boshidan summalanadi. Yillik iste'mol qancha ko'p bo'lsa, har keyingi kub metr uchun tarif shuncha yuqori." },
+      { question: "Gaz uchun to'lov qanday hisoblanadi?", answer: "Ijtimoiy normalar tizimi bo'yicha: oylik norma doirasida (yozda 100 m³ / qishda 500 m³) — bazaviy stavka 1 000 so'm/m³; normadan ortiqda — yuqori tarif." },
       { question: "Qishda gaz uchun qancha to'lash kerak?", answer: "Isitishli uy uchun: oyiga 300-500 m³ × 2 000-2 500 so'm = 600 000-1 250 000 so'm/oy. Yozda: 20-50 m³ × 1 000 so'm = 20 000-50 000 so'm." },
       { question: "Gazni qanday tejash mumkin?", answer: "Devor va derazalarni izolyatsiya qilish (30-50% tejash), dasturlashtiriladigan termostat, qozonni muntazam xizmat qilish, kondensatsion qozon (FIK 95%)." },
     ],
@@ -550,7 +550,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'water',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Постановление о тарифах на воду', url: 'https://lex.uz' },
       { name: 'Узсувтаъминот', url: 'https://suvtaminot.uz' },
@@ -587,7 +587,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'utilities-total',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Тарифы на коммунальные услуги', url: 'https://lex.uz' },
     ],
@@ -623,7 +623,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'apartment-cost',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Рынок недвижимости Узбекистана', url: 'https://lex.uz' },
     ],
@@ -659,36 +659,36 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'ip-calculator',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
     ],
     paragraphsRu: [
-      'Индивидуальные предприниматели (ИП) в Узбекистане уплачивают налог с оборота по ставке 4% от валового дохода (выручки). Это упрощённая система налогообложения, не предусматривающая вычет расходов. ИП не являются плательщиками НДС, если их оборот не превышает порог в 60 000 БРВ (24 720 000 000 сум). С 2026 года для самозанятых лиц вводится отдельная ставка — 1% от оборота. Калькулятор ИП рассчитает налоговые обязательства на основе вашего дохода.',
-      'Структура налогов для ИП: налог с оборота — 4% от выручки; социальный налог — фиксированная сумма (1 БРВ = 412 000 сум в месяц); ИНПС — 0,1% от дохода. ИП могут работать с наличным и безналичным расчётом, но обязаны использовать контрольно-кассовую технику (ККТ) или виртуальную кассу. Отчётность подаётся ежеквартально через my.soliq.uz.',
+      'Индивидуальные предприниматели (ИП) в Узбекистане с 2026 года уплачивают налог с оборота по ставке 1% от валового дохода (выручки) при обороте до 1 000 000 000 сум в год. При обороте свыше 1 млрд сум ставка составляет 4%. Это упрощённая система налогообложения, не предусматривающая вычет расходов. ИП не являются плательщиками НДС, если их оборот не превышает порог в 60 000 БРВ (24 720 000 000 сум). Самозанятые лица также уплачивают 1% от оборота. Калькулятор ИП рассчитает налоговые обязательства на основе вашего дохода.',
+      'Структура налогов для ИП: налог с оборота — 1% от выручки (при обороте до 1 млрд сум) или 4% (при обороте свыше 1 млрд); социальный налог — фиксированная сумма (1 БРВ = 412 000 сум в месяц); ИНПС — 0,1% от дохода. ИП могут работать с наличным и безналичным расчётом, но обязаны использовать контрольно-кассовую технику (ККТ) или виртуальную кассу. Отчётность подаётся ежеквартально через my.soliq.uz.',
       'Пример расчёта: ИП с ежемесячной выручкой 30 000 000 сум. Налог с оборота: 30 000 000 × 4% = 1 200 000 сум. Социальный налог: 412 000 сум (фиксированный). ИНПС: 30 000 000 × 0,1% = 30 000 сум. Итого налогов: 1 642 000 сум/мес (5,5% от выручки). Годовые налоги: 19 704 000 сум при годовом обороте 360 000 000 сум.',
       'Для регистрации ИП необходимо: подать заявление через my.gov.uz или в налоговую инспекцию; получить ИНН (автоматически); открыть расчётный счёт в банке; установить ККТ или подключить виртуальную кассу. Регистрация бесплатна и занимает 1-3 рабочих дня. ИП может нанимать до 10 работников (с 2025 года — до 25 для отдельных видов деятельности).',
-      'Сравнение ИП и самозанятого (с 2026 года): ИП — 4% от оборота, может нанимать работников, может работать с юрлицами по безналу; самозанятый — 1% от оборота, не может нанимать работников, ограничен годовым оборотом до 100 000 000 сум. Если ваш бизнес предполагает значительные расходы (более 50% выручки), рассмотрите регистрацию ООО с общей системой налогообложения. Рассчитать налоги ООО можно в нашем калькуляторе ООО.',
+      'Сравнение ИП и самозанятого (с 2026 года): ИП — 1% от оборота (до 1 млрд), может нанимать работников, может работать с юрлицами по безналу; самозанятый — 1% от оборота, не может нанимать работников, ограничен годовым оборотом до 1 000 000 000 сум. Если ваш бизнес предполагает значительные расходы (более 50% выручки), рассмотрите регистрацию ООО с общей системой налогообложения. Рассчитать налоги ООО можно в нашем калькуляторе ООО.',
     ],
     paragraphsUz: [
-      "O'zbekistonda yakka tartibdagi tadbirkorlar (YaTT) yalpi daromaddan (tushum) 4% stavkada aylanma solig'ini to'laydilar. Bu xarajatlarni chegirib tashlashni nazarda tutmaydigan soddalashtilgan soliqqa tortish tizimi. YaTTlar aylanmasi 60 000 BHK (24 720 000 000 so'm) chegarasidan oshmasa QQS to'lovchisi hisoblanmaydi. 2026-yildan o'z-o'zini band qilgan shaxslar uchun alohida stavka — aylanmaning 1% joriy etiladi.",
-      "YaTT uchun soliqlar tarkibi: aylanma solig'i — tushumning 4%; ijtimoiy soliq — qat'iy summa (oyiga 1 BHK = 412 000 so'm); IJPH — daromadning 0,1%. YaTTlar naqd va naqdsiz hisob-kitoblar bilan ishlashi mumkin, lekin nazorat-kassa texnikasini (NKT) yoki virtual kassani ishlatishi shart. Hisobot har chorakda my.soliq.uz orqali topshiriladi.",
+      "O'zbekistonda yakka tartibdagi tadbirkorlar (YaTT) 2026-yildan boshlab aylanmasi yiliga 1 mlrd so'mgacha bo'lganda yalpi daromaddan (tushum) 1% stavkada, aylanmasi 1 mlrd dan ortiq bo'lganda esa 4% stavkada aylanma solig'ini to'laydilar. Bu xarajatlarni chegirib tashlashni nazarda tutmaydigan soddalashtilgan soliqqa tortish tizimi. YaTTlar aylanmasi 60 000 BHK (24 720 000 000 so'm) chegarasidan oshmasa QQS to'lovchisi hisoblanmaydi. O'z-o'zini band qilgan shaxslar ham aylanmadan 1% to'laydilar.",
+      "YaTT uchun soliqlar tarkibi: aylanma solig'i — tushumning 1% (aylanma 1 mlrd so'mgacha) yoki 4% (1 mlrd dan ortiq); ijtimoiy soliq — qat'iy summa (oyiga 1 BHK = 412 000 so'm); IJPH — daromadning 0,1%. YaTTlar naqd va naqdsiz hisob-kitoblar bilan ishlashi mumkin, lekin nazorat-kassa texnikasini (NKT) yoki virtual kassani ishlatishi shart. Hisobot har chorakda my.soliq.uz orqali topshiriladi.",
       "Hisoblash misoli: oylik tushumli 30 000 000 so'mlik YaTT. Aylanma solig'i: 30 000 000 × 4% = 1 200 000 so'm. Ijtimoiy soliq: 412 000 so'm (qat'iy). IJPH: 30 000 000 × 0,1% = 30 000 so'm. Jami soliqlar: 1 642 000 so'm/oy (tushumning 5,5%). Yillik soliqlar: yillik 360 000 000 so'm aylanmada 19 704 000 so'm.",
       "YaTT ro'yxatdan o'tish uchun kerak: my.gov.uz yoki soliq inspektsiyasiga ariza topshirish; STIR olish (avtomatik); bankda hisob-kitob schyoti ochish; NKT yoki virtual kassa ulash. Ro'yxatdan o'tish bepul va 1-3 ish kunida amalga oshadi. YaTT 10 tagacha xodim yollashi mumkin (2025-yildan ayrim faoliyat turlari uchun 25 tagacha).",
-      "YaTT va o'z-o'zini band qilgan (2026-yildan) solishtirilishi: YaTT — aylanmaning 4%, xodim yollashi mumkin, yuridik shaxslar bilan naqdsiz ishlashi mumkin; o'z-o'zini band qilgan — aylanmaning 1%, xodim yollay olmaydi, yillik aylanma 100 000 000 so'mgacha cheklangan. Biznesingiz sezilarli xarajatlarni (tushumning 50% dan ortiq) nazarda tutsa, umumiy soliqqa tortish tizimidagi MChJni ro'yxatdan o'tkazishni ko'rib chiqing.",
+      "YaTT va o'z-o'zini band qilgan (2026-yildan) solishtirilishi: YaTT — aylanmaning 1% (1 mlrd gacha), xodim yollashi mumkin, yuridik shaxslar bilan naqdsiz ishlashi mumkin; o'z-o'zini band qilgan — aylanmaning 1%, xodim yollay olmaydi, yillik aylanma 1 000 000 000 so'mgacha cheklangan. Biznesingiz sezilarli xarajatlarni (tushumning 50% dan ortiq) nazarda tutsa, umumiy soliqqa tortish tizimidagi MChJni ro'yxatdan o'tkazishni ko'rib chiqing.",
     ],
     faqRu: [
-      { question: 'Сколько налогов платит ИП в Узбекистане?', answer: 'Налог с оборота 4% + социальный налог 412 000 сум/мес + ИНПС 0,1%. Эффективная ставка: около 5,5% от выручки.' },
-      { question: 'Чем ИП отличается от самозанятого?', answer: 'ИП: 4% налог, может нанимать до 10 работников. Самозанятый (с 2026): 1% налог, без работников, оборот до 100 млн/год.' },
+      { question: 'Сколько налогов платит ИП в Узбекистане?', answer: 'Налог с оборота 1% (при обороте до 1 млрд сум) или 4% (свыше 1 млрд) + социальный налог 412 000 сум/мес + ИНПС 0,1%.' },
+      { question: 'Чем ИП отличается от самозанятого?', answer: 'ИП: 1% налог (до 1 млрд оборота), может нанимать до 10 работников. Самозанятый (с 2026): 1% налог, без работников, оборот до 1 млрд/год.' },
       { question: 'Нужна ли ИП касса?', answer: 'Да, ИП обязаны использовать ККТ или виртуальную кассу при приёме наличных и карточных платежей.' },
       { question: 'Какой порог для уплаты НДС?', answer: '60 000 БРВ (24,72 млрд сум) за 12 месяцев. Ниже этого порога ИП не платит НДС.' },
       { question: 'Как зарегистрировать ИП?', answer: 'Через my.gov.uz или налоговую. Бесплатно, 1-3 дня. Нужен паспорт, ИНН выдаётся автоматически.' },
       { question: 'Сколько работников может нанять ИП?', answer: 'До 10 человек (с 2025 года — до 25 для отдельных видов деятельности).' },
     ],
     faqUz: [
-      { question: "O'zbekistonda YaTT qancha soliq to'laydi?", answer: "Aylanma solig'i 4% + ijtimoiy soliq 412 000 so'm/oy + IJPH 0,1%. Samarali stavka: tushumning taxminan 5,5%." },
-      { question: "YaTT o'z-o'zini band qilgandan nimasi bilan farq qiladi?", answer: "YaTT: 4% soliq, 10 tagacha xodim yollashi mumkin. O'z-o'zini band qilgan (2026-yildan): 1% soliq, xodimsiz, aylanma 100 mln/yilgacha." },
+      { question: "O'zbekistonda YaTT qancha soliq to'laydi?", answer: "Aylanma solig'i 1% (aylanma 1 mlrd so'mgacha) yoki 4% (1 mlrd dan ortiq) + ijtimoiy soliq 412 000 so'm/oy + IJPH 0,1%." },
+      { question: "YaTT o'z-o'zini band qilgandan nimasi bilan farq qiladi?", answer: "YaTT: 1% soliq (1 mlrd gacha), 10 tagacha xodim yollashi mumkin. O'z-o'zini band qilgan (2026-yildan): 1% soliq, xodimsiz, aylanma 1 mlrd/yilgacha." },
       { question: "YaTTga kassa kerakmi?", answer: "Ha, YaTTlar naqd va karta to'lovlarini qabul qilishda NKT yoki virtual kassadan foydalanishi shart." },
       { question: "QQS to'lash uchun chegara qancha?", answer: "12 oy davomida 60 000 BHK (24,72 mlrd so'm). Bu chegaradan past bo'lsa YaTT QQS to'lamaydi." },
       { question: "YaTTni qanday ro'yxatdan o'tkazish mumkin?", answer: "my.gov.uz yoki soliq inspektsiyasi orqali. Bepul, 1-3 kun. Pasport kerak, STIR avtomatik beriladi." },
@@ -698,7 +698,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'employer-cost',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
@@ -735,7 +735,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'brv',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Указ Президента о БРВ', url: 'https://lex.uz' },
     ],
@@ -775,17 +775,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'llc-calculator',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [{ name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' }],
     paragraphsRu: [
-      'ООО (общество с ограниченной ответственностью) в Узбекистане может работать на общей или упрощённой системе налогообложения. На общей системе: налог на прибыль — 15%, НДС — 12% (при обороте более 60 000 БРВ). На упрощённой: налог с оборота — 4% без вычета расходов.',
-      'Структура налогов ООО на общей системе: налог на прибыль 15% (чистая прибыль = доходы − расходы); НДС 12% (при обороте >24,72 млрд сум); социальный налог 12% от ФОТ; НДФЛ 12% с зарплат сотрудников (удерживается). Дивиденды облагаются НДФЛ по ставке 5%.',
-      'Пример: ООО с выручкой 1 млрд сум/мес, расходами 700 млн сум. Прибыль: 300 млн. Налог на прибыль: 45 млн. НДС к уплате (разница входящего и исходящего): ~20-30 млн. Общая система выгоднее при расходах более 60% выручки, упрощённая — при расходах менее 40%.',
+      'Калькулятор ООО помогает предпринимателям в Узбекистане рассчитать налоговую нагрузку при различных системах налогообложения. Общество с ограниченной ответственностью (ООО) — самая распространённая форма ведения бизнеса в стране. Согласно Налоговому кодексу, ООО может работать на общей системе (налог на прибыль 15% + НДС 12%) или на упрощённой (налог с оборота 4% без вычета расходов).',
+      'На общей системе налогообложения ООО уплачивает: налог на прибыль — 15% от чистой прибыли (доходы минус документально подтверждённые расходы); НДС — 12% при обороте свыше 60 000 БРВ (около 24,72 млрд сум); социальный налог — 12% от фонда оплаты труда; НДФЛ — 12% с зарплат сотрудников (удерживается из зарплаты). Дивиденды учредителям облагаются НДФЛ по ставке 5%.',
+      'Выбор между системами зависит от доли расходов в выручке. Если расходы составляют более 60% от выручки, общая система выгоднее — вы платите 15% только с разницы. Если расходы менее 40%, упрощённая система (4% от оборота) обходится дешевле. Наш калькулятор позволяет ввести прогнозные доходы и расходы и мгновенно увидеть, какая система оптимальна для вашего бизнеса.',
+      'Регистрация ООО в Узбекистане осуществляется через портал my.gov.uz и занимает 1–3 рабочих дня. Минимальный уставный капитал не установлен. Госпошлина за регистрацию — около 1 БРВ (412 000 сум). После регистрации необходимо открыть расчётный счёт в банке, зарегистрироваться в налоговых органах через my.soliq.uz и получить электронную цифровую подпись для сдачи отчётности.',
+      'Наш калькулятор ООО рассчитывает полную налоговую нагрузку для обеих систем: введите ожидаемую выручку, расходы, фонд оплаты труда и количество сотрудников — и получите детальный расчёт всех налогов с рекомендацией по оптимальной системе. Это незаменимый инструмент для начинающих предпринимателей и действующих владельцев бизнеса, планирующих оптимизацию.',
     ],
     paragraphsUz: [
-      "O'zbekistonda MChJ (mas'uliyati cheklangan jamiyat) umumiy yoki soddalashtilgan soliqqa tortish tizimida ishlashi mumkin. Umumiy tizimda: foyda solig'i — 15%, QQS — 12% (aylanma 60 000 BHKdan ortiqda). Soddalashtirilda: aylanma solig'i — xarajatlarni chegirmasdan 4%.",
-      "Umumiy tizimdagi MChJ soliqlar tarkibi: foyda solig'i 15% (sof foyda = daromadlar − xarajatlar); QQS 12% (aylanma >24,72 mlrd so'mda); ijtimoiy soliq IHFdan 12%; xodimlar ish haqidan JShShS 12% (ushlab qolinadi). Dividendlar 5% stavkada JShShSga tortiladi.",
-      "Misol: oylik 1 mlrd so'm tushumli, 700 mln so'm xarajatli MChJ. Foyda: 300 mln. Foyda solig'i: 45 mln. Umumiy tizim xarajatlar tushumning 60% dan ortiq bo'lganda, soddalashtilgan — xarajatlar 40% dan kam bo'lganda foydaliroq.",
+      "MChJ kalkulyatori O'zbekistondagi tadbirkorlarga turli soliqqa tortish tizimlarida soliq yukini hisoblashga yordam beradi. Mas'uliyati cheklangan jamiyat (MChJ) — mamlakatda biznes yuritishning eng keng tarqalgan shakli. Soliq kodeksiga ko'ra, MChJ umumiy tizimda (foyda solig'i 15% + QQS 12%) yoki soddalashtilgan tizimda (xarajatlarni chegirmasdan aylanma solig'i 4%) ishlashi mumkin.",
+      "Umumiy soliqqa tortish tizimida MChJ quyidagilarni to'laydi: foyda solig'i — sof foydaning 15% (daromadlar minus hujjat bilan tasdiqlangan xarajatlar); QQS — aylanma 60 000 BHK (taxminan 24,72 mlrd so'm) dan oshganda 12%; ijtimoiy soliq — ish haqi fondining 12%; JShShS — xodimlar ish haqidan 12% (ish haqidan ushlab qolinadi). Ta'sischilar dividendlari 5% stavkada JShShSga tortiladi.",
+      "Tizimlar o'rtasidagi tanlov tushumdagi xarajatlar ulushiga bog'liq. Agar xarajatlar tushumning 60% dan ortiq bo'lsa, umumiy tizim foydaliroq — siz faqat farqning 15% ini to'laysiz. Xarajatlar 40% dan kam bo'lsa, soddalashtilgan tizim (aylanmaning 4%) arzonroq. Kalkulyatorimiz prognoz daromadlar va xarajatlarni kiritish va qaysi tizim biznesingiz uchun optimal ekanligini bir zumda ko'rish imkonini beradi.",
+      "O'zbekistonda MChJni ro'yxatdan o'tkazish my.gov.uz portali orqali amalga oshiriladi va 1–3 ish kunini oladi. Minimal ustav kapitali belgilanmagan. Ro'yxatdan o'tkazish uchun davlat boji — taxminan 1 BHK (412 000 so'm). Ro'yxatdan o'tganidan keyin bankda hisob-kitob raqamini ochish, my.soliq.uz orqali soliq organlarida ro'yxatdan o'tish va hisobot topshirish uchun elektron raqamli imzoni olish kerak.",
+      "Bizning MChJ kalkulyatorimiz ikkala tizim uchun to'liq soliq yukini hisoblaydi: kutilayotgan tushum, xarajatlar, ish haqi fondi va xodimlar sonini kiriting — barcha soliqlarning batafsil hisobi va optimal tizim bo'yicha tavsiya oling. Bu boshlang'ich tadbirkorlar va optimallashtirish rejalashtiruvchi amaldagi biznes egalari uchun almastirib bo'lmas vosita.",
     ],
     faqRu: [
       { question: 'Какой налог на прибыль ООО?', answer: '15% на общей системе. На упрощённой — 4% от оборота (без вычета расходов).' },
@@ -914,7 +918,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'percentage',
-    lastUpdated: '2025-05-25',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз — Ставки', url: 'https://cbu.uz' },
     ],
@@ -922,14 +926,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Калькулятор процентов выполняет все основные операции: найти процент от числа, определить какой процент одно число составляет от другого, прибавить или вычесть процент, рассчитать процентное изменение. Это универсальный инструмент для повседневных расчётов, бизнеса, торговли и образования в Узбекистане.',
       'Основные формулы: X% от числа A = A × X / 100. Число A составляет (A / B × 100)% от числа B. Число A с прибавкой X% = A × (1 + X/100). Число A с вычетом X% = A × (1 − X/100). Процентное изменение = (Новое − Старое) / Старое × 100%. Все формулы работают с любыми суммами в узбекских сумах.',
       'Практические примеры для Узбекистана: НДС 12% от суммы 10 000 000 сум = 1 200 000 сум. НДФЛ 12% от зарплаты 8 000 000 = 960 000 сум. Торговая наценка 30% на товар стоимостью 500 000 сум: 500 000 × 1,30 = 650 000 сум. Скидка 25% от цены 2 000 000 сум: 2 000 000 × 0,75 = 1 500 000 сум.',
-      'Проценты используются в банковской сфере Узбекистана: ставка рефинансирования ЦБ РУз — 13,5% годовых (2025), средняя ставка по вкладам — 22-25% в сумах, по кредитам — 22-28%. Инфляция в 2024 году составила около 10%. Калькулятор процентов поможет быстро рассчитать доход по вкладу, переплату по кредиту или реальную доходность инвестиций с учётом инфляции.',
+      'Проценты используются в банковской сфере Узбекистана: ставка рефинансирования ЦБ РУз — 14% годовых (2025), средняя ставка по вкладам — 22-25% в сумах, по кредитам — 22-28%. Инфляция в 2024 году составила около 10%. Калькулятор процентов поможет быстро рассчитать доход по вкладу, переплату по кредиту или реальную доходность инвестиций с учётом инфляции.',
       'Наш калькулятор процентов незаменим для предпринимателей на базарах и в торговых точках Узбекистана: расчёт наценки, себестоимости, маржи, НДС и скидок. Учителя математики используют его для проверки задач, бухгалтеры — для расчёта налогов и пеней. Введите числа и выберите нужную операцию — результат будет мгновенным.',
     ],
     paragraphsUz: [
       "Foiz kalkulyatori barcha asosiy amallarni bajaradi: sondan foizni topish, bir son ikkinchisidan necha foizligini aniqlash, foizni qo'shish yoki ayirish, foiz o'zgarishini hisoblash. Bu O'zbekistonda kundalik hisob-kitoblar, biznes, savdo va ta'lim uchun universal vosita.",
       "Asosiy formulalar: A sondan X% = A × X / 100. A soni B sondan (A / B × 100)% ni tashkil etadi. A soniga X% qo'shish = A × (1 + X/100). A sondan X% ayirish = A × (1 − X/100). Foiz o'zgarishi = (Yangi − Eski) / Eski × 100%. Barcha formulalar o'zbek so'midagi har qanday summalar bilan ishlaydi.",
       "O'zbekiston uchun amaliy misollar: 10 000 000 so'mdan 12% QQS = 1 200 000 so'm. 8 000 000 ish haqidan 12% JShDS = 960 000 so'm. 500 000 so'mlik tovarga 30% ustama: 500 000 × 1,30 = 650 000 so'm. 2 000 000 so'mlik narxdan 25% chegirma: 2 000 000 × 0,75 = 1 500 000 so'm.",
-      "Foizlar O'zbekiston bank sohasida ishlatiladi: O'zbekiston MB qayta moliyalash stavkasi — yillik 13,5% (2025), omonatlarga o'rtacha stavka — so'mda 22-25%, kreditlarga — 22-28%. 2024-yilda inflyatsiya taxminan 10% ni tashkil etdi. Foiz kalkulyatori omonatdan daromadni, kredit bo'yicha ortiqcha to'lovni yoki inflyatsiyani hisobga olgan holda investitsiyalarning real daromadliligini tezda hisoblashga yordam beradi.",
+      "Foizlar O'zbekiston bank sohasida ishlatiladi: O'zbekiston MB qayta moliyalash stavkasi — yillik 14% (2025), omonatlarga o'rtacha stavka — so'mda 22-25%, kreditlarga — 22-28%. 2024-yilda inflyatsiya taxminan 10% ni tashkil etdi. Foiz kalkulyatori omonatdan daromadni, kredit bo'yicha ortiqcha to'lovni yoki inflyatsiyani hisobga olgan holda investitsiyalarning real daromadliligini tezda hisoblashga yordam beradi.",
       "Foiz kalkulyatorimiz O'zbekiston bozor va savdo nuqtalaridagi tadbirkorlar uchun ajralmas vosita: ustama, tannarx, marja, QQS va chegirmalarni hisoblash. Matematika o'qituvchilari uni masalalarni tekshirish uchun, buxgalterlar esa soliqlar va penyalarni hisoblash uchun ishlatadi. Sonlarni kiriting va kerakli amalni tanlang — natija bir zumda tayyor bo'ladi.",
     ],
     faqRu: [
@@ -1097,7 +1101,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'vat-threshold',
-    lastUpdated: '2025-09-10',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -1106,14 +1110,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Порог обязательной регистрации плательщиком НДС в Узбекистане составляет 60 000 БРВ, что по состоянию на август 2025 года равно 24 720 000 000 сум. Если совокупный оборот предприятия за 12 последовательных месяцев превышает эту сумму, регистрация в качестве плательщика НДС обязательна. Калькулятор порога НДС отслеживает текущий оборот вашего бизнеса и показывает, какой процент от порога вы достигли. Важно учитывать именно скользящий 12-месячный период, а не календарный год.',
       'При приближении к порогу (80% и более) рекомендуется заранее подготовиться к переходу на режим НДС. Необходимо изучить механизм входящего и исходящего НДС, настроить бухгалтерский учёт для раздельного учёта сумм налога, зарегистрироваться на платформе faktura.soliq.uz для выставления электронных счетов-фактур. Также следует провести инвентаризацию товарных запасов, так как НДС по остаткам можно будет принять к вычету. Подготовка занимает 1-2 месяца, поэтому начинать следует заблаговременно.',
       'Добровольная регистрация возможна при любом обороте — ограничений нет. Это выгодно, если ваши основные клиенты являются плательщиками НДС: они смогут принять ваш НДС к зачёту и таким образом получат экономию. Для бизнеса B2B добровольная регистрация повышает конкурентоспособность. Однако для бизнеса B2C (розничная торговля, услуги населению) регистрация как плательщика НДС может привести к повышению цен на 12%, что снизит спрос.',
-      'Расчёт оборота для определения порога включает все виды доходов от реализации товаров, работ и услуг, за исключением необлагаемых операций. Не учитываются: субсидии, безвозмездные поступления, курсовые разницы. Важно: при ведении нескольких видов деятельности обороты суммируются. Для микрофирм с оборотом до 1 млрд сум/год упрощённая система с налогом 4% от оборота зачастую выгоднее, чем общая система с НДС.',
+      'Расчёт оборота для определения порога включает все виды доходов от реализации товаров, работ и услуг, за исключением необлагаемых операций. Не учитываются: субсидии, безвозмездные поступления, курсовые разницы. Важно: при ведении нескольких видов деятельности обороты суммируются. Для ИП с оборотом до 1 млрд сум/год упрощённая система с налогом 1% от оборота (с 2026 года) зачастую выгоднее, чем общая система с НДС.',
       'Наш калькулятор порога НДС рассчитывает текущий процент от порога, прогнозирует дату достижения порога на основе динамики оборота и помогает оценить финансовый эффект перехода на режим НДС. Введите ежемесячные обороты за последние 12 месяцев — калькулятор покажет, нужно ли вам регистрироваться и когда это может потребоваться.',
     ],
     paragraphsUz: [
       "O'zbekistonda QQS to'lovchisi sifatida majburiy ro'yxatdan o'tish chegarasi 60 000 BHK ni tashkil etadi, bu 2025-yil avgustiga ko'ra 24 720 000 000 so'mga teng. Agar korxonaning ketma-ket 12 oy davomidagi umumiy aylanmasi bu summadan oshsa, QQS to'lovchisi sifatida ro'yxatdan o'tish majburiydir. QQS chegarasi kalkulyatori biznesingizning joriy aylanmasini kuzatib boradi va chegaraning necha foiziga yetganingizni ko'rsatadi. Kalendar yil emas, aynan sirpanuvchi 12 oylik davrni hisobga olish muhimdir.",
       "Chegaraga yaqinlashganda (80% va undan ortiq) QQS rejimiga o'tishga oldindan tayyorlanish tavsiya etiladi. Kirish va chiqish QQS mexanizmini o'rganish, soliq summasini alohida hisobga olish uchun buxgalteriya hisobini sozlash, elektron hisob-fakturalarni taqdim etish uchun faktura.soliq.uz platformasida ro'yxatdan o'tish zarur. Shuningdek, tovar zaxiralarining inventarizatsiyasini o'tkazish kerak, chunki qoldiqlar bo'yicha QQSni chegirishga olish mumkin bo'ladi. Tayyorgarlik 1-2 oy vaqt oladi.",
       "Ixtiyoriy ro'yxatdan o'tish har qanday aylanmada mumkin — cheklovlar yo'q. Bu asosiy mijozlaringiz QQS to'lovchilari bo'lsa foydali: ular sizning QQSni hisobga olishi mumkin va shu tariqa tejashga erishadi. B2B biznesi uchun ixtiyoriy ro'yxatdan o'tish raqobatbardoshlikni oshiradi. Lekin B2C biznesi (chakana savdo, aholiga xizmatlar) uchun QQS to'lovchisi sifatida ro'yxatdan o'tish narxlarning 12% ga oshishiga olib kelishi mumkin.",
-      "Chegarani aniqlash uchun aylanma hisobi tovarlar, ishlar va xizmatlarni sotishdan olingan barcha turdagi daromadlarni o'z ichiga oladi, soliqqa tortilmaydigan operatsiyalar bundan mustasno. Hisobga olinmaydi: subsidiyalar, beg'araz tushumlar, valyuta kursi farqlari. Muhim: bir nechta faoliyat turlari yuritilganda aylanmalar jamlanadi. Yillik aylanmasi 1 mlrd so'mgacha bo'lgan mikrofirmalar uchun aylanmadan 4% soddalashtilgan tizim ko'pincha QQS bilan umumiy tizimdan foydaliroq.",
+      "Chegarani aniqlash uchun aylanma hisobi tovarlar, ishlar va xizmatlarni sotishdan olingan barcha turdagi daromadlarni o'z ichiga oladi, soliqqa tortilmaydigan operatsiyalar bundan mustasno. Hisobga olinmaydi: subsidiyalar, beg'araz tushumlar, valyuta kursi farqlari. Muhim: bir nechta faoliyat turlari yuritilganda aylanmalar jamlanadi. Yillik aylanmasi 1 mlrd so'mgacha bo'lgan YaTTlar uchun aylanmadan 1% (2026-yildan) soddalashtilgan tizim ko'pincha QQS bilan umumiy tizimdan foydaliroq.",
       "Bizning QQS chegarasi kalkulyatorimiz chegaraning joriy foizini hisoblaydi, aylanma dinamikasiga asoslanib chegaraga yetish sanasini prognozlaydi va QQS rejimiga o'tishning moliyaviy ta'sirini baholashga yordam beradi. Oxirgi 12 oydagi oylik aylanmalarni kiriting — kalkulyator ro'yxatdan o'tish zarurmi va qachon kerak bo'lishi mumkinligini ko'rsatadi.",
     ],
     faqRu: [
@@ -1134,36 +1138,36 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'property-tax',
-    lastUpdated: '2025-10-05',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Кадастровая палата', url: 'https://kadastr.uz' },
     ],
     paragraphsRu: [
-      'Налог на имущество физических лиц в Узбекистане рассчитывается от кадастровой стоимости объекта недвижимости. Ставки дифференцированы: жилые помещения площадью до нормативной облагаются по ставке 0,34% от кадастровой стоимости, при площади от 100 до 200 м² ставка составляет 0,45%, а свыше 200 м² — 0,6%. Кадастровая стоимость определяется Государственной кадастровой палатой и пересматривается периодически.',
-      'Налог уплачивается ежегодно до 1 декабря текущего года. Уведомление о сумме налога направляется через личный кабинет на my.soliq.uz или в территориальную налоговую инспекцию. При неуплате в срок начисляется пеня 0,05% за каждый день просрочки. Налогоплательщик вправе оспорить кадастровую стоимость в комиссии при Кадастровой палате, если она существенно превышает рыночную.',
+      'Налог на имущество физических лиц в Узбекистане рассчитывается от кадастровой стоимости объекта недвижимости. С 2026 года базовые ставки проиндексированы на 7%. Ставки дифференцированы: жилые помещения площадью до нормативной облагаются по ставке 0,36% от кадастровой стоимости, при площади от 100 до 200 м² ставка составляет 0,48%, а свыше 200 м² — 0,64%. Пониженная ставка для отдельных категорий составляет 0,70% (ранее 0,65%). Кадастровая стоимость определяется Государственной кадастровой палатой и пересматривается периодически.',
+      'Налог уплачивается ежегодно до 1 декабря текущего года. Уведомление о сумме налога направляется через личный кабинет на my.soliq.uz или в территориальную налоговую инспекцию. При неуплате в срок начисляется пеня в размере 1/300 ставки рефинансирования ЦБ за каждый день просрочки (при ставке ЦБ 14% — 0,047%/день). Налогоплательщик вправе оспорить кадастровую стоимость в комиссии при Кадастровой палате, если она существенно превышает рыночную.',
       'Законодательство предусматривает ряд льгот по налогу на имущество. Освобождаются: пенсионеры по возрасту (по одному объекту недвижимости), инвалиды I и II группы, участники войны, многодетные семьи (4 и более детей), одинокие пенсионеры. Для получения льготы необходимо подать заявление в налоговую инспекцию с приложением подтверждающих документов.',
       'Для юридических лиц налог на имущество составляет 1,5% от среднегодовой остаточной стоимости основных средств. Освобождены от налога: предприятия свободных экономических зон (СЭЗ) в рамках льготного периода, социальные объекты (школы, больницы, детские сады), религиозные организации. Авансовые платежи уплачиваются ежеквартально — по 25% годовой суммы.',
       'Пример расчёта: квартира в Ташкенте площадью 80 м², кадастровая стоимость 500 000 000 сум. Ставка 0,34%. Налог = 500 000 000 × 0,0034 = 1 700 000 сум в год. Для загородного дома 250 м² с кадастровой стоимостью 1 200 000 000 сум ставка составит 0,6%: налог = 1 200 000 000 × 0,006 = 7 200 000 сум/год. Наш калькулятор определит точную сумму налога с учётом площади и льгот.',
     ],
     paragraphsUz: [
-      "O'zbekistonda jismoniy shaxslarning mol-mulk solig'i ko'chmas mulk ob'ektining kadastr qiymatidan hisoblanadi. Stavkalar differentsiyalangan: normativ maydongacha turar-joy binolari kadastr qiymatining 0,34% stavkada, 100 dan 200 m² gacha maydon uchun 0,45%, 200 m² dan ortiq — 0,6%. Kadastr qiymati Davlat kadastr palatasi tomonidan aniqlanadi va davriy ravishda qayta ko'rib chiqiladi.",
-      "Soliq har yili joriy yilning 1-dekabrigacha to'lanadi. Soliq summasi haqidagi bildirishnoma my.soliq.uz dagi shaxsiy kabinet yoki hududiy soliq inspektsiyasi orqali yuboriladi. Muddatida to'lanmaganda har kechiktirilgan kun uchun 0,05% penya hisoblanadi. Soliq to'lovchi kadastr qiymati bozor qiymatidan sezilarli darajada oshib ketgan bo'lsa, Kadastr palatasi huzuridagi komissiyada unga e'tiroz bildirishi mumkin.",
+      "O'zbekistonda jismoniy shaxslarning mol-mulk solig'i ko'chmas mulk ob'ektining kadastr qiymatidan hisoblanadi. 2026-yildan bazaviy stavkalar 7% ga indeksatsiya qilindi. Stavkalar differentsiyalangan: normativ maydongacha turar-joy binolari kadastr qiymatining 0,36% stavkada, 100 dan 200 m² gacha maydon uchun 0,48%, 200 m² dan ortiq — 0,64%. Ayrim toifalar uchun pasaytirilgan stavka 0,70% (avval 0,65%). Kadastr qiymati Davlat kadastr palatasi tomonidan aniqlanadi va davriy ravishda qayta ko'rib chiqiladi.",
+      "Soliq har yili joriy yilning 1-dekabrigacha to'lanadi. Soliq summasi haqidagi bildirishnoma my.soliq.uz dagi shaxsiy kabinet yoki hududiy soliq inspektsiyasi orqali yuboriladi. Muddatida to'lanmaganda har kechiktirilgan kun uchun MB qayta moliyalash stavkasining 1/300 qismi miqdorida penya hisoblanadi (MB stavkasi 14% da — 0,047%/kun). Soliq to'lovchi kadastr qiymati bozor qiymatidan sezilarli darajada oshib ketgan bo'lsa, Kadastr palatasi huzuridagi komissiyada unga e'tiroz bildirishi mumkin.",
       "Qonunchilik mol-mulk solig'i bo'yicha bir qator imtiyozlarni nazarda tutadi. Ozod qilinganlar: yoshi bo'yicha pensionerlar (bitta ko'chmas mulk ob'ekti bo'yicha), I va II guruh nogironlari, urush ishtirokchilari, ko'p bolali oilalar (4 va undan ortiq bola), yolg'iz pensionerlar. Imtiyozni olish uchun tasdiqlash hujjatlari bilan soliq inspektsiyasiga ariza topshirish kerak.",
       "Yuridik shaxslar uchun mol-mulk solig'i asosiy vositalarning yillik o'rtacha qoldiq qiymatidan 1,5% ni tashkil etadi. Soliqdan ozod: erkin iqtisodiy zonalar (EIZ) korxonalari imtiyozli davr doirasida, ijtimoiy ob'ektlar (maktablar, kasalxonalar, bolalar bog'chalari), diniy tashkilotlar. Avans to'lovlari har chorakda — yillik summaning 25% dan to'lanadi.",
       "Hisoblash misoli: Toshkentda 80 m² kvartira, kadastr qiymati 500 000 000 so'm. Stavka 0,34%. Soliq = 500 000 000 × 0,0034 = 1 700 000 so'm/yil. Shahar atrofidagi 250 m² uy, kadastr qiymati 1 200 000 000 so'm uchun stavka 0,6%: soliq = 1 200 000 000 × 0,006 = 7 200 000 so'm/yil. Kalkulyatorimiz maydon va imtiyozlarni hisobga olgan holda aniq soliq summasini aniqlaydi.",
     ],
     faqRu: [
-      { question: 'Какая ставка налога на имущество?', answer: 'Для физлиц: 0,34% (до 100 м²), 0,45% (100-200 м²), 0,6% (свыше 200 м²) от кадастровой стоимости. Для юрлиц: 1,5% от остаточной стоимости.' },
+      { question: 'Какая ставка налога на имущество?', answer: 'Для физлиц (с 2026, +7% индексация): 0,36% (до 100 м²), 0,48% (100-200 м²), 0,64% (свыше 200 м²) от кадастровой стоимости. Пониженная — 0,70%. Для юрлиц: 1,5% от остаточной стоимости.' },
       { question: 'Кто освобождён от налога на имущество?', answer: 'Пенсионеры по возрасту (по одному объекту), инвалиды I-II группы, участники войны, многодетные семьи (4+ детей), одинокие пенсионеры.' },
-      { question: 'Когда нужно платить?', answer: 'До 1 декабря текущего года. При просрочке — пеня 0,05% в день от суммы задолженности.' },
+      { question: 'Когда нужно платить?', answer: 'До 1 декабря текущего года. При просрочке — пеня 1/300 ставки рефинансирования ЦБ в день (при ставке 14% — 0,047%/день).' },
       { question: 'Как узнать кадастровую стоимость?', answer: 'Через портал kadastr.uz или в территориальном отделении Кадастровой палаты. Стоимость можно оспорить, если она завышена.' },
       { question: 'Облагаются ли квартиры в новостройках?', answer: 'Да, после получения кадастрового номера. Кадастровая стоимость новостроек обычно близка к цене покупки.' },
     ],
     faqUz: [
-      { question: "Mol-mulk solig'i stavkasi qancha?", answer: "Jismoniy shaxslar uchun: 0,34% (100 m² gacha), 0,45% (100-200 m²), 0,6% (200 m² dan ortiq) kadastr qiymatidan. Yuridik shaxslar uchun: qoldiq qiymatdan 1,5%." },
+      { question: "Mol-mulk solig'i stavkasi qancha?", answer: "Jismoniy shaxslar uchun (2026-yildan, +7% indeksatsiya): 0,36% (100 m² gacha), 0,48% (100-200 m²), 0,64% (200 m² dan ortiq) kadastr qiymatidan. Pasaytirilgan — 0,70%. Yuridik shaxslar uchun: qoldiq qiymatdan 1,5%." },
       { question: "Kim mol-mulk solig'idan ozod?", answer: "Yoshi bo'yicha pensionerlar (bitta ob'ekt), I-II guruh nogironlari, urush ishtirokchilari, ko'p bolali oilalar (4+ bola), yolg'iz pensionerlar." },
-      { question: "Qachon to'lash kerak?", answer: "Joriy yilning 1-dekabrigacha. Kechiktirilganda — qarzdorlik summasidan kuniga 0,05% penya." },
+      { question: "Qachon to'lash kerak?", answer: "Joriy yilning 1-dekabrigacha. Kechiktirilganda — MB qayta moliyalash stavkasining 1/300 qismi kuniga penya (MB stavkasi 14% da — 0,047%/kun)." },
       { question: "Kadastr qiymatini qanday bilish mumkin?", answer: "kadastr.uz portali yoki Kadastr palatasining hududiy bo'linmasi orqali. Oshirib ko'rsatilgan bo'lsa qiymatga e'tiroz bildirilishi mumkin." },
       { question: "Yangi qurilgan uy-joylar soliqqa tortiladimi?", answer: "Ha, kadastr raqami olingandan keyin. Yangi qurilishlar kadastr qiymati odatda sotib olish narxiga yaqin bo'ladi." },
     ],
@@ -1171,20 +1175,20 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'land-tax',
-    lastUpdated: '2025-09-18',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Кадастровая палата', url: 'https://kadastr.uz' },
     ],
     paragraphsRu: [
-      'Земельный налог в Узбекистане взимается с собственников и постоянных пользователей земельных участков. Ставка зависит от категории земли, местоположения и площади участка. Для приусадебных и дачных участков физических лиц применяются ставки от 0,1% до 0,3% кадастровой стоимости в зависимости от зоны расположения. Для сельскохозяйственных угодий ставки значительно ниже — от 0,01% до 0,05%, что стимулирует развитие фермерского хозяйства.',
+      'Земельный налог в Узбекистане взимается с собственников и постоянных пользователей земельных участков. С 2026 года базовые ставки проиндексированы на 7%. Ставка зависит от категории земли, местоположения и площади участка. Для приусадебных и дачных участков физических лиц применяются ставки от 0,1% до 0,3% кадастровой стоимости в зависимости от зоны расположения (с учётом 7% индексации). Для сельскохозяйственных угодий ставки значительно ниже — от 0,01% до 0,05%, что стимулирует развитие фермерского хозяйства.',
       'Земельный налог уплачивается ежегодно до 1 декабря. Кадастровая стоимость земельного участка определяется Государственной кадастровой палатой и зависит от региона: в Ташкенте цена 1 сотки (100 м²) в среднем составляет 30-80 млн сум, в областных центрах — 5-20 млн, в сельской местности — 1-5 млн сум. Уведомление о сумме налога можно получить через портал my.soliq.uz или в местной налоговой инспекции.',
       'Законодательство предусматривает льготы по земельному налогу. Освобождаются: фермерские хозяйства в первые 2 года деятельности, участки, используемые для освоения целинных и залежных земель (на 5 лет), земли религиозных организаций, кладбища, парки и скверы. Инвалиды I и II группы, участники войны и одинокие пенсионеры освобождены по одному земельному участку площадью до 6 соток.',
       'Для юридических лиц земельный налог рассчитывается по фиксированным ставкам за 1 гектар в зависимости от категории земли и зоны. Промышленные предприятия, торговые объекты, автозаправки и рестораны уплачивают повышенные ставки. Земли свободных экономических зон (СЭЗ) могут быть освобождены от налога в рамках инвестиционных соглашений сроком до 10 лет.',
       'Пример расчёта: приусадебный участок 6 соток в Юнусабадском районе Ташкента, кадастровая стоимость 300 млн сум, зона 1, ставка 0,3%. Налог = 300 000 000 × 0,003 = 900 000 сум/год. Для сравнения, аналогичный участок в Янгиюле (Ташкентская область), кадастровая стоимость 60 млн сум, ставка 0,2%: налог = 60 000 000 × 0,002 = 120 000 сум/год — в 7,5 раз меньше.',
     ],
     paragraphsUz: [
-      "O'zbekistonda yer solig'i yer uchastkasi egalari va doimiy foydalanuvchilaridan olinadi. Stavka yer toifasi, joylashuvi va maydoniga bog'liq. Jismoniy shaxslarning hovli va dala uchastkalarida joylashuv zonasiga qarab kadastr qiymatining 0,1% dan 0,3% gacha stavkalar qo'llaniladi. Qishloq xo'jaligi yerlari uchun stavkalar ancha past — 0,01% dan 0,05% gacha bo'lib, fermerlik xo'jaligini rivojlantirishni rag'batlantiradi.",
+      "O'zbekistonda yer solig'i yer uchastkasi egalari va doimiy foydalanuvchilaridan olinadi. 2026-yildan bazaviy stavkalar 7% ga indeksatsiya qilindi. Stavka yer toifasi, joylashuvi va maydoniga bog'liq. Jismoniy shaxslarning hovli va dala uchastkalarida joylashuv zonasiga qarab kadastr qiymatining 0,1% dan 0,3% gacha stavkalar qo'llaniladi (7% indeksatsiya bilan). Qishloq xo'jaligi yerlari uchun stavkalar ancha past — 0,01% dan 0,05% gacha bo'lib, fermerlik xo'jaligini rivojlantirishni rag'batlantiradi.",
       "Yer solig'i har yili 1-dekabrgacha to'lanadi. Yer uchastkasining kadastr qiymati Davlat kadastr palatasi tomonidan aniqlanadi va hududga bog'liq: Toshkentda 1 sotixning (100 m²) o'rtacha narxi 30-80 mln so'm, viloyat markazlarida — 5-20 mln, qishloq joylarda — 1-5 mln so'm. Soliq summasi haqidagi bildirishnomani my.soliq.uz portali yoki mahalliy soliq inspektsiyasida olish mumkin.",
       "Qonunchilik yer solig'i bo'yicha imtiyozlarni nazarda tutadi. Ozod qilinganlar: faoliyatining dastlabki 2 yilidagi fermer xo'jaliklari, bo'z va tashlandiq yerlarni o'zlashtirish uchun ishlatiladigan uchastkalar (5 yilga), diniy tashkilotlar yerlari, qabristonlar, bog'lar va istirohat bog'lari. I va II guruh nogironlari, urush ishtirokchilari va yolg'iz pensionerlar 6 sotixgacha bitta yer uchastkasi bo'yicha ozod.",
       "Yuridik shaxslar uchun yer solig'i yer toifasi va zonasiga qarab 1 gektar uchun belgilangan stavkalarda hisoblanadi. Sanoat korxonalari, savdo ob'ektlari, yoqilg'i quyish shoxobchalari va restoranlar yuqori stavkalar bo'yicha to'laydi. Erkin iqtisodiy zonalar (EIZ) yerlari investitsiya shartnomalari doirasida 10 yilgacha soliqdan ozod qilinishi mumkin.",
@@ -1195,20 +1199,20 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Кто платит земельный налог?', answer: 'Собственники и постоянные пользователи земельных участков. Арендаторы государственной земли платят арендную плату, не налог.' },
       { question: 'Есть ли льготы по земельному налогу?', answer: 'Фермеры (первые 2 года), освоение целинных земель (5 лет), инвалиды I-II группы, участники войны, одинокие пенсионеры — по 1 участку до 6 соток.' },
       { question: 'Как узнать кадастровую стоимость земли?', answer: 'Через портал kadastr.uz или в территориальном отделении Кадастровой палаты. Стоимость зависит от региона и назначения участка.' },
-      { question: 'Когда платить земельный налог?', answer: 'До 1 декабря текущего года. При просрочке начисляется пеня 0,05% в день.' },
+      { question: 'Когда платить земельный налог?', answer: 'До 1 декабря текущего года. При просрочке начисляется пеня 1/300 ставки рефинансирования ЦБ в день (при ставке 14% — 0,047%/день).' },
     ],
     faqUz: [
       { question: "Yer solig'i stavkasi qancha?", answer: "Hovli yerlari: zonaga qarab kadastr qiymatining 0,1-0,3%. Qishloq xo'jaligi yerlari: 0,01-0,05%." },
       { question: "Kim yer solig'i to'laydi?", answer: "Yer uchastkalarining egalari va doimiy foydalanuvchilari. Davlat yerini ijaraga oluvchilar soliq emas, ijara haqi to'laydi." },
       { question: "Yer solig'i bo'yicha imtiyozlar bormi?", answer: "Fermerlar (dastlabki 2 yil), bo'z yerlarni o'zlashtirish (5 yil), I-II guruh nogironlari, urush ishtirokchilari, yolg'iz pensionerlar — 6 sotixgacha 1 uchastka bo'yicha." },
       { question: "Yerning kadastr qiymatini qanday bilish mumkin?", answer: "kadastr.uz portali yoki Kadastr palatasining hududiy bo'linmasi orqali. Qiymat hudud va uchastka maqsadiga bog'liq." },
-      { question: "Yer solig'ini qachon to'lash kerak?", answer: "Joriy yilning 1-dekabrigacha. Kechiktirilganda kuniga 0,05% penya hisoblanadi." },
+      { question: "Yer solig'ini qachon to'lash kerak?", answer: "Joriy yilning 1-dekabrigacha. Kechiktirilganda MB qayta moliyalash stavkasining 1/300 qismi kuniga penya hisoblanadi (MB stavkasi 14% da — 0,047%/kun)." },
     ],
   },
 
   {
     slug: 'vehicle-tax',
-    lastUpdated: '2025-10-12',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -1217,14 +1221,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Транспортный налог в Узбекистане взимается ежегодно с владельцев автотранспортных средств. Ставка зависит от объёма двигателя и определяется в базовых расчётных величинах (БРВ). Для легковых автомобилей: до 1,5 л — 1,5 БРВ (618 000 сум); 1,5-2,0 л — 3 БРВ (1 236 000 сум); 2,0-3,0 л — 5 БРВ (2 060 000 сум); свыше 3,0 л — 7,5 БРВ (3 090 000 сум). Грузовые автомобили и спецтехника облагаются по отдельным ставкам.',
       'Электромобили в Узбекистане получили значительные налоговые льготы в рамках государственной программы развития электротранспорта. Электрокары полностью освобождены от транспортного налога до 2030 года, что вместе с отсутствием таможенных пошлин при ввозе делает их привлекательным вариантом. Гибридные автомобили облагаются по ставке 50% от базовой для соответствующего объёма двигателя. Количество электромобилей в Узбекистане в 2025 году превысило 30 000 единиц.',
       'Для мотоциклов и мопедов ставка составляет 0,5 БРВ (206 000 сум/год). Автобусы облагаются по ставкам от 5 до 14 БРВ в зависимости от количества посадочных мест. Грузовые автомобили: до 2 тонн — 3 БРВ, 2-5 тонн — 5 БРВ, свыше 5 тонн — 7 БРВ. Прицепы и полуприцепы — 1,5 БРВ. Сельскохозяйственная техника фермерских хозяйств освобождена от налога.',
-      'Налог уплачивается до 1 декабря текущего года. Оплата возможна через my.soliq.uz, мобильные приложения Click и Payme, а также через банковские терминалы. При продаже автомобиля налог за текущий год уплачивает продавец. При покупке нового авто — налог рассчитывается пропорционально оставшимся месяцам года. При неуплате в срок начисляется пеня 0,05% за каждый день просрочки.',
+      'Налог уплачивается до 1 декабря текущего года. Оплата возможна через my.soliq.uz, мобильные приложения Click и Payme, а также через банковские терминалы. При продаже автомобиля налог за текущий год уплачивает продавец. При покупке нового авто — налог рассчитывается пропорционально оставшимся месяцам года. При неуплате в срок начисляется пеня в размере 1/300 ставки рефинансирования ЦБ за каждый день просрочки (при ставке ЦБ 14% — 0,047%/день).',
       'Пример расчёта: Chevrolet Malibu с двигателем 1,5 л турбо — формально до 1,5 л, поэтому ставка 1,5 БРВ = 618 000 сум/год. Chevrolet Tracker (1,5 л) — аналогично 618 000 сум. Chevrolet Tahoe (5,3 л) — 7,5 БРВ = 3 090 000 сум/год. BYD Song Plus (электро) — 0 сум (освобождён до 2030). Наш калькулятор определит точную сумму налога по марке и объёму двигателя вашего автомобиля.',
     ],
     paragraphsUz: [
       "O'zbekistonda transport solig'i avtotransport vositalari egalaridan har yili olinadi. Stavka dvigatel hajmiga bog'liq va bazaviy hisoblash kattaligida (BHK) belgilanadi. Yengil avtomobillar uchun: 1,5 l gacha — 1,5 BHK (618 000 so'm); 1,5-2,0 l — 3 BHK (1 236 000 so'm); 2,0-3,0 l — 5 BHK (2 060 000 so'm); 3,0 l dan ortiq — 7,5 BHK (3 090 000 so'm). Yuk avtomobillari va maxsus texnika alohida stavkalarda soliqqa tortiladi.",
       "Elektromobillar O'zbekistonda elektr transportni rivojlantirish davlat dasturi doirasida sezilarli soliq imtiyozlarini oldi. Elektrokarlar 2030-yilgacha transport solig'idan to'liq ozod qilingan bo'lib, bu import qilishda bojxona boji yo'qligi bilan birga ularni jozibador variantga aylantiradi. Gibrid avtomobillar tegishli dvigatel hajmi uchun bazaviy stavkaning 50% stavkasida soliqqa tortiladi. 2025-yilda O'zbekistondagi elektromobillar soni 30 000 birlikdan oshdi.",
       "Mototsikl va mopedlar uchun stavka 0,5 BHK (206 000 so'm/yil). Avtobuslar o'rindiqlar soniga qarab 5 dan 14 BHKgacha stavkalarda soliqqa tortiladi. Yuk avtomobillari: 2 tonnagacha — 3 BHK, 2-5 tonna — 5 BHK, 5 tonnadan ortiq — 7 BHK. Tirkamalar va yarim tirkamalar — 1,5 BHK. Fermer xo'jaliklarining qishloq xo'jaligi texnikasi soliqdan ozod.",
-      "Soliq joriy yilning 1-dekabrigacha to'lanadi. To'lov my.soliq.uz, Click va Payme mobil ilovalari, shuningdek bank terminallari orqali amalga oshirilishi mumkin. Avtomobil sotilganda joriy yil uchun soliqni sotuvchi to'laydi. Yangi avto sotib olinganda — soliq yilning qolgan oylariga mutanosib hisoblanadi. Muddatida to'lanmaganda har kechiktirilgan kun uchun 0,05% penya hisoblanadi.",
+      "Soliq joriy yilning 1-dekabrigacha to'lanadi. To'lov my.soliq.uz, Click va Payme mobil ilovalari, shuningdek bank terminallari orqali amalga oshirilishi mumkin. Avtomobil sotilganda joriy yil uchun soliqni sotuvchi to'laydi. Yangi avto sotib olinganda — soliq yilning qolgan oylariga mutanosib hisoblanadi. Muddatida to'lanmaganda har kechiktirilgan kun uchun MB qayta moliyalash stavkasining 1/300 qismi miqdorida penya hisoblanadi (MB stavkasi 14% da — 0,047%/kun).",
       "Hisoblash misoli: Chevrolet Malibu 1,5 l turbo dvigatel bilan — rasman 1,5 l gacha, shuning uchun stavka 1,5 BHK = 618 000 so'm/yil. Chevrolet Tracker (1,5 l) — xuddi shunday 618 000 so'm. Chevrolet Tahoe (5,3 l) — 7,5 BHK = 3 090 000 so'm/yil. BYD Song Plus (elektr) — 0 so'm (2030-yilgacha ozod). Kalkulyatorimiz avtomobilingizning markasi va dvigatel hajmi bo'yicha aniq soliq summasini aniqlaydi.",
     ],
     faqRu: [
@@ -1245,34 +1249,34 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'corporate-tax',
-    lastUpdated: '2025-09-25',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
     ],
     paragraphsRu: [
-      'Ставка налога на прибыль юридических лиц в Узбекистане составляет 15% от чистой прибыли — доходы минус документально подтверждённые расходы. Для банков и страховых компаний предусмотрена повышенная ставка 20%. Операторы мобильной связи также облагаются по ставке 20%. Налогооблагаемая база определяется по данным бухгалтерского учёта с корректировками, предусмотренными Налоговым кодексом.',
-      'Предприятия с годовой выручкой до 10 млрд сум могут выбрать упрощённую систему налогообложения — налог с оборота по ставке 4% без вычета расходов. Это выгодно при низкой доле расходов в выручке (менее 40%). Переход между системами возможен с начала календарного года при уведомлении налогового органа. Компании на общей системе с оборотом свыше 60 000 БРВ (24,72 млрд сум) автоматически становятся плательщиками НДС.',
+      'Ставка налога на прибыль юридических лиц в Узбекистане составляет 15% от чистой прибыли — доходы минус документально подтверждённые расходы. Для банков и страховых компаний предусмотрена повышенная ставка 20%. Операторы мобильной связи также облагаются по ставке 20%. С 2026 года ставка для предприятий электронной коммерции повышена с 10% до 15%. Согласно Закону ZRU-1104, для высокотехнологичных производств установлена ставка 0% по налогу на прибыль. Предприятия, переходящие с налога с оборота на общую систему с НДС/налогом на прибыль, получают 1-летнее освобождение от налога на прибыль. Налогооблагаемая база определяется по данным бухгалтерского учёта с корректировками, предусмотренными Налоговым кодексом.',
+      'Предприятия с годовой выручкой до 10 млрд сум могут выбрать упрощённую систему налогообложения — налог с оборота по ставке 4% (для юрлиц и ИП с оборотом свыше 1 млрд) или 1% (для ИП с оборотом до 1 млрд) без вычета расходов. Это выгодно при низкой доле расходов в выручке. Переход между системами возможен с начала календарного года при уведомлении налогового органа. Компании на общей системе с оборотом свыше 60 000 БРВ (24,72 млрд сум) автоматически становятся плательщиками НДС.',
       'Авансовые платежи по налогу на прибыль уплачиваются ежеквартально — не позднее 25-го числа первого месяца каждого квартала. Годовая декларация подаётся до 1 апреля следующего года через систему my.soliq.uz. Убытки можно переносить на последующие 5 налоговых периодов, уменьшая налогооблагаемую прибыль будущих лет. Дивиденды, выплачиваемые учредителям-физлицам, облагаются НДФЛ по ставке 5%.',
       'Законодательство предусматривает значительные льготы. Резиденты свободных экономических зон (СЭЗ) — Навои, Ангрен, Джизак, Ургут и другие — освобождены от налога на прибыль до 10 лет в зависимости от объёма инвестиций. Резиденты IT Park уплачивают 1% от выручки (единый налоговый платёж). Предприятия, инвестирующие в социальную инфраструктуру, могут получить пониженные ставки. Экспортёры имеют право на дополнительные вычеты.',
       'Пример расчёта: ООО с годовой выручкой 5 млрд сум и расходами 3,5 млрд. На общей системе: прибыль = 1,5 млрд, налог = 1 500 000 000 × 15% = 225 000 000 сум. На упрощённой: налог = 5 000 000 000 × 4% = 200 000 000 сум. В данном случае упрощённая система выгоднее на 25 млн. При расходах 4 млрд: общая система = 150 млн, упрощённая = 200 млн — общая выгоднее.',
     ],
     paragraphsUz: [
-      "O'zbekistonda yuridik shaxslarning foyda solig'i stavkasi sof foydaning 15% ni tashkil etadi — daromadlar minus hujjat bilan tasdiqlangan xarajatlar. Banklar va sug'urta kompaniyalari uchun 20% stavka belgilangan. Mobil aloqa operatorlari ham 20% stavkada soliqqa tortiladi. Soliq bazasi buxgalteriya hisobi ma'lumotlari asosida Soliq kodeksida nazarda tutilgan tuzatishlar bilan aniqlanadi.",
-      "Yillik tushumi 10 mlrd so'mgacha bo'lgan korxonalar soddalashtilgan soliqqa tortish tizimini tanlashi mumkin — xarajatlarni chegirmasdan aylanmadan 4% stavkada soliq. Bu xarajatlar ulushi tushumda past bo'lganda (40% dan kam) foydali. Tizimlar o'rtasida o'tish kalendar yili boshidan soliq organiga xabar berish sharti bilan mumkin. Umumiy tizimdagi aylanmasi 60 000 BHK (24,72 mlrd so'm) dan ortiq kompaniyalar avtomatik ravishda QQS to'lovchilariga aylanadi.",
+      "O'zbekistonda yuridik shaxslarning foyda solig'i stavkasi sof foydaning 15% ni tashkil etadi — daromadlar minus hujjat bilan tasdiqlangan xarajatlar. Banklar va sug'urta kompaniyalari uchun 20% stavka belgilangan. Mobil aloqa operatorlari ham 20% stavkada soliqqa tortiladi. 2026-yildan elektron tijorat korxonalari uchun stavka 10% dan 15% ga oshirildi. ZRU-1104 Qonuniga ko'ra, yuqori texnologiyali ishlab chiqarishlar uchun foyda solig'i stavkasi 0% belgilangan. Aylanma solig'idan QQS/foyda solig'i bilan umumiy tizimga o'tayotgan korxonalar 1 yillik foyda solig'idan ozod qilinadi. Soliq bazasi buxgalteriya hisobi ma'lumotlari asosida Soliq kodeksida nazarda tutilgan tuzatishlar bilan aniqlanadi.",
+      "Yillik tushumi 10 mlrd so'mgacha bo'lgan korxonalar soddalashtilgan soliqqa tortish tizimini tanlashi mumkin — xarajatlarni chegirmasdan aylanmadan 4% (yuridik shaxslar va aylanmasi 1 mlrd dan ortiq YaTTlar uchun) yoki 1% (aylanmasi 1 mlrd gacha YaTTlar uchun) stavkada soliq. Bu xarajatlar ulushi tushumda past bo'lganda foydali. Tizimlar o'rtasida o'tish kalendar yili boshidan soliq organiga xabar berish sharti bilan mumkin. Umumiy tizimdagi aylanmasi 60 000 BHK (24,72 mlrd so'm) dan ortiq kompaniyalar avtomatik ravishda QQS to'lovchilariga aylanadi.",
       "Foyda solig'i bo'yicha avans to'lovlari har chorakda — har chorak birinchi oyining 25-sanasidan kechiktirmay to'lanadi. Yillik deklaratsiya keyingi yilning 1-aprelgacha my.soliq.uz tizimi orqali topshiriladi. Zararlarni keyingi 5 soliq davriga o'tkazish, kelajakdagi yillarning soliqqa tortiladigan foydasini kamaytirish mumkin. Ta'sischilar-jismoniy shaxslarga to'lanadigan dividendlar 5% stavkada JShShSga tortiladi.",
       "Qonunchilik sezilarli imtiyozlarni nazarda tutadi. Erkin iqtisodiy zonalar (EIZ) rezidentlari — Navoiy, Angren, Jizzax, Urgut va boshqalar — investitsiya hajmiga qarab 10 yilgacha foyda solig'idan ozod. IT Park rezidentlari tushumdan 1% (yagona soliq to'lovi) to'laydi. Ijtimoiy infratuzilmaga sarmoya kiritayotgan korxonalar pasaytirilgan stavkalar olishi mumkin. Eksportchilar qo'shimcha chegirmalarga haqli.",
       "Hisoblash misoli: yillik tushumi 5 mlrd so'm va xarajatlari 3,5 mlrd bo'lgan MChJ. Umumiy tizimda: foyda = 1,5 mlrd, soliq = 1 500 000 000 × 15% = 225 000 000 so'm. Soddalashtirilda: soliq = 5 000 000 000 × 4% = 200 000 000 so'm. Bu holatda soddalashtilgan tizim 25 mln ga foydaliroq. Xarajatlar 4 mlrd bo'lganda: umumiy tizim = 150 mln, soddalashtilgan = 200 mln — umumiy foydaliroq.",
     ],
     faqRu: [
-      { question: 'Какая ставка налога на прибыль?', answer: '15% для обычных юрлиц, 20% для банков, страховых и мобильных операторов. На упрощённой системе — 4% от оборота.' },
+      { question: 'Какая ставка налога на прибыль?', answer: '15% для обычных юрлиц (в т.ч. e-commerce с 2026), 20% для банков, страховых и мобильных операторов, 0% для высокотехнологичных производств (ZRU-1104). На упрощённой — 4% от оборота (юрлица), 1% (ИП до 1 млрд).' },
       { question: 'Можно ли перенести убытки?', answer: 'Да, убытки переносятся на последующие 5 налоговых периодов, уменьшая прибыль будущих лет.' },
       { question: 'Какие льготы по налогу на прибыль?', answer: 'СЭЗ (до 10 лет освобождение), IT Park (1% от выручки), инвесторы в социальные проекты — пониженные ставки.' },
       { question: 'Когда подавать декларацию?', answer: 'До 1 апреля года, следующего за отчётным. Авансовые платежи — ежеквартально до 25-го числа первого месяца квартала.' },
       { question: 'Какой налог на дивиденды?', answer: 'НДФЛ 5% с дивидендов, выплачиваемых учредителям — физическим лицам. Для юридических лиц-учредителей — 5%.' },
     ],
     faqUz: [
-      { question: "Foyda solig'i stavkasi qancha?", answer: "Oddiy yuridik shaxslar uchun 15%, banklar, sug'urta va mobil operatorlar uchun 20%. Soddalashtirilda — aylanmadan 4%." },
+      { question: "Foyda solig'i stavkasi qancha?", answer: "Oddiy yuridik shaxslar uchun 15% (shu jumladan 2026-yildan e-tijorat), banklar, sug'urta va mobil operatorlar uchun 20%, yuqori texnologiyali ishlab chiqarish uchun 0% (ZRU-1104). Soddalashtirilda — aylanmadan 4% (yuridik shaxslar), 1% (1 mlrd gacha YaTTlar)." },
       { question: "Zararlarni o'tkazish mumkinmi?", answer: "Ha, zararlar keyingi 5 soliq davriga o'tkaziladi, kelajakdagi yillar foydasini kamaytiradi." },
       { question: "Foyda solig'i bo'yicha qanday imtiyozlar bor?", answer: "EIZ (10 yilgacha ozod qilish), IT Park (tushumdan 1%), ijtimoiy loyihalarga investorlar — pasaytirilgan stavkalar." },
       { question: "Deklaratsiyani qachon topshirish kerak?", answer: "Hisobot yilidan keyingi yilning 1-aprelgacha. Avans to'lovlari — har chorak birinchi oyining 25-sanasigacha." },
@@ -1282,35 +1286,35 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'tax-penalty',
-    lastUpdated: '2025-10-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
     ],
     paragraphsRu: [
-      'Калькулятор налоговых пеней рассчитывает размер пени за несвоевременную уплату налогов в Узбекистане. Пеня начисляется автоматически в размере 0,05% от суммы задолженности за каждый день просрочки, что эквивалентно 18,25% годовых. Пеня начисляется с первого дня, следующего за установленным сроком уплаты, до дня фактической оплаты включительно. Калькулятор определит точную сумму пени по вашим данным.',
-      'Формула расчёта: Пеня = Сумма долга × 0,05% × Количество дней просрочки. Пример: задолженность по НДФЛ 5 000 000 сум, просрочка 60 дней. Пеня = 5 000 000 × 0,0005 × 60 = 150 000 сум. Для крупных сумм пеня набегает быстро: при задолженности 100 млн сум пеня за месяц составит 1 500 000 сум, за квартал — 4 500 000 сум, за год — 18 250 000 сум.',
+      'Калькулятор налоговых пеней рассчитывает размер пени за несвоевременную уплату налогов в Узбекистане. Пеня начисляется автоматически в размере 1/300 ставки рефинансирования Центрального банка от суммы задолженности за каждый день просрочки. При текущей ставке ЦБ 14% это составляет 14%/300 = 0,047%/день (17,0% годовых). Пеня начисляется с первого дня, следующего за установленным сроком уплаты, до дня фактической оплаты включительно. Калькулятор определит точную сумму пени по вашим данным.',
+      'Формула расчёта: Пеня = Сумма долга × (ставка ЦБ / 300) × Количество дней просрочки. При ставке ЦБ 14%: дневная ставка = 14%/300 = 0,0467%. Пример: задолженность по НДФЛ 5 000 000 сум, просрочка 60 дней. Пеня = 5 000 000 × 0,000467 × 60 = 140 000 сум. Для крупных сумм пеня набегает быстро: при задолженности 100 млн сум пеня за месяц составит около 1 400 000 сум, за год — около 17 000 000 сум.',
       'Помимо пени, за налоговые правонарушения предусмотрены штрафы. За несвоевременную подачу налоговой декларации: 5 БРВ (2 060 000 сум) за первое нарушение, 10 БРВ (4 120 000 сум) за повторное в течение года. За занижение налоговой базы: 20% от суммы недоплаченного налога. За ведение деятельности без регистрации: от 10 до 30 БРВ. За непредставление документов по запросу налогового органа: 5 БРВ.',
       'Налоговый кодекс предусматривает возможность списания пени при определённых обстоятельствах. Если налогоплательщик добровольно обнаружил и исправил ошибку, подав уточнённую декларацию до начала налоговой проверки, штраф за занижение базы не применяется (но пеня всё равно начисляется). При реструктуризации задолженности возможна рассрочка уплаты пени. Налоговые споры рассматриваются в административном порядке через вышестоящий налоговый орган или через суд.',
-      'Наш калькулятор пеней позволяет ввести сумму задолженности, дату начала просрочки и дату планируемого погашения — и мгновенно получить сумму пени и общую сумму к уплате. Также калькулятор показывает разбивку по дням и помесячный рост пени. Рекомендуем погашать задолженность как можно скорее: при ставке 0,05%/день пеня за год составляет 18,25% — больше ставки по многим кредитам.',
+      'Наш калькулятор пеней позволяет ввести сумму задолженности, дату начала просрочки и дату планируемого погашения — и мгновенно получить сумму пени и общую сумму к уплате. Также калькулятор показывает разбивку по дням и помесячный рост пени. Рекомендуем погашать задолженность как можно скорее: при текущей ставке ЦБ 14% пеня за год составляет 17,0% — близко к ставке по многим кредитам.',
     ],
     paragraphsUz: [
-      "Soliq peniyalari kalkulyatori O'zbekistonda soliqlarni o'z vaqtida to'lamaganligi uchun penya miqdorini hisoblaydi. Penya avtomatik ravishda qarzdorlik summasining har bir kechiktirilgan kun uchun 0,05% miqdorida hisoblanadi, bu yillik 18,25% ga teng. Penya belgilangan to'lov muddatidan keyingi birinchi kundan boshlab haqiqiy to'lov kunigacha hisoblanadi. Kalkulyator sizning ma'lumotlaringiz bo'yicha aniq penya summasini aniqlaydi.",
-      "Hisoblash formulasi: Penya = Qarz summasi × 0,05% × Kechikish kunlari soni. Misol: JShShS bo'yicha 5 000 000 so'm qarzdorlik, 60 kun kechikish. Penya = 5 000 000 × 0,0005 × 60 = 150 000 so'm. Katta summalarda penya tez yig'iladi: 100 mln so'm qarzdorlikda oylik penya 1 500 000 so'm, choraklik — 4 500 000 so'm, yillik — 18 250 000 so'm.",
+      "Soliq peniyalari kalkulyatori O'zbekistonda soliqlarni o'z vaqtida to'lamaganligi uchun penya miqdorini hisoblaydi. Penya avtomatik ravishda Markaziy bankning qayta moliyalash stavkasining 1/300 qismi miqdorida har bir kechiktirilgan kun uchun hisoblanadi. Joriy MB stavkasi 14% da bu 14%/300 = 0,047%/kun (yillik 17,0%) ni tashkil etadi. Penya belgilangan to'lov muddatidan keyingi birinchi kundan boshlab haqiqiy to'lov kunigacha hisoblanadi. Kalkulyator sizning ma'lumotlaringiz bo'yicha aniq penya summasini aniqlaydi.",
+      "Hisoblash formulasi: Penya = Qarz summasi × (MB stavkasi / 300) × Kechikish kunlari soni. MB stavkasi 14% da: kunlik stavka = 14%/300 = 0,0467%. Misol: JShShS bo'yicha 5 000 000 so'm qarzdorlik, 60 kun kechikish. Penya = 5 000 000 × 0,000467 × 60 = 140 000 so'm. Katta summalarda penya tez yig'iladi: 100 mln so'm qarzdorlikda oylik penya taxminan 1 400 000 so'm, yillik — taxminan 17 000 000 so'm.",
       "Penyadan tashqari, soliq huquqbuzarliklari uchun jarimalar nazarda tutilgan. Soliq deklaratsiyasini kechiktirganlik uchun: birinchi buzilish uchun 5 BHK (2 060 000 so'm), yil ichida takroriy uchun 10 BHK (4 120 000 so'm). Soliq bazasini kamaytirganligi uchun: kam to'langan soliq summasining 20%. Ro'yxatdan o'tmasdan faoliyat yuritganligi uchun: 10 dan 30 BHKgacha. Soliq organining so'rovi bo'yicha hujjatlarni taqdim etmaganligi uchun: 5 BHK.",
       "Soliq kodeksi muayyan hollarda penyani hisobdan chiqarish imkoniyatini nazarda tutadi. Agar soliq to'lovchi soliq tekshiruvigacha xatoni mustaqil aniqlagan va aniqlashtirilgan deklaratsiya topshirgan bo'lsa, bazani kamaytirganlik uchun jarima qo'llanilmaydi (lekin penya baribir hisoblanadi). Qarzdorlikni qayta tuzilashda penya bo'lib to'lash mumkin. Soliq nizolari yuqori turuvchi soliq organi orqali ma'muriy tartibda yoki sud orqali ko'rib chiqiladi.",
-      "Bizning penya kalkulyatorimiz qarzdorlik summasini, kechikish boshlanish sanasini va rejalashtirilgan to'lov sanasini kiritish va bir zumda penya summasini hamda umumiy to'lanadigan summani olish imkonini beradi. Kalkulyator kunlik taqsimot va oylik penya o'sishini ham ko'rsatadi. Qarzdorlikni iloji boricha tezroq to'lashni tavsiya etamiz: kuniga 0,05% stavkada yillik penya 18,25% ni tashkil etadi.",
+      "Bizning penya kalkulyatorimiz qarzdorlik summasini, kechikish boshlanish sanasini va rejalashtirilgan to'lov sanasini kiritish va bir zumda penya summasini hamda umumiy to'lanadigan summani olish imkonini beradi. Kalkulyator kunlik taqsimot va oylik penya o'sishini ham ko'rsatadi. Qarzdorlikni iloji boricha tezroq to'lashni tavsiya etamiz: joriy MB stavkasi 14% da yillik penya 17,0% ni tashkil etadi.",
     ],
     faqRu: [
-      { question: 'Какая пеня за просрочку уплаты налогов?', answer: '0,05% от суммы задолженности за каждый день просрочки (18,25% годовых).' },
-      { question: 'Как рассчитать пеню?', answer: 'Сумма долга × 0,0005 × количество дней. Пример: 10 млн × 0,0005 × 30 = 150 000 сум.' },
+      { question: 'Какая пеня за просрочку уплаты налогов?', answer: '1/300 ставки рефинансирования ЦБ от суммы задолженности за каждый день просрочки. При ставке ЦБ 14%: 0,047%/день (17,0% годовых).' },
+      { question: 'Как рассчитать пеню?', answer: 'Сумма долга × (ставка ЦБ / 300) × количество дней. При ставке 14%: 10 млн × 0,000467 × 30 = 140 000 сум.' },
       { question: 'Какие штрафы за налоговые нарушения?', answer: 'Непредставление декларации: 5-10 БРВ. Занижение базы: 20% недоплаты. Деятельность без регистрации: 10-30 БРВ.' },
       { question: 'Можно ли уменьшить пеню?', answer: 'Пеня начисляется автоматически и не уменьшается. Но штраф за занижение базы можно избежать, подав уточнённую декларацию до налоговой проверки.' },
       { question: 'С какого дня начинается пеня?', answer: 'Со следующего дня после установленного срока уплаты налога. Заканчивается в день фактической оплаты.' },
     ],
     faqUz: [
-      { question: "Soliq kechiktirilganligi uchun penya qancha?", answer: "Qarzdorlik summasining har kechiktirilgan kun uchun 0,05% (yillik 18,25%)." },
-      { question: "Penyani qanday hisoblash mumkin?", answer: "Qarz summasi × 0,0005 × kunlar soni. Misol: 10 mln × 0,0005 × 30 = 150 000 so'm." },
+      { question: "Soliq kechiktirilganligi uchun penya qancha?", answer: "MB qayta moliyalash stavkasining 1/300 qismi har kechiktirilgan kun uchun. MB stavkasi 14% da: 0,047%/kun (yillik 17,0%)." },
+      { question: "Penyani qanday hisoblash mumkin?", answer: "Qarz summasi × (MB stavkasi / 300) × kunlar soni. MB stavkasi 14% da: 10 mln × 0,000467 × 30 = 140 000 so'm." },
       { question: "Soliq huquqbuzarliklari uchun qanday jarimalar bor?", answer: "Deklaratsiya topshirmaslik: 5-10 BHK. Bazani kamaytirish: kam to'langan summaning 20%. Ro'yxatdan o'tmasdan faoliyat: 10-30 BHK." },
       { question: "Penyani kamaytirish mumkinmi?", answer: "Penya avtomatik hisoblanadi va kamaytirilmaydi. Lekin soliq tekshiruvigacha aniqlashtirilgan deklaratsiya topshirilsa, bazani kamaytirganlik uchun jarimadan qochish mumkin." },
       { question: "Penya qaysi kundan boshlanadi?", answer: "Soliq to'lashning belgilangan muddatidan keyingi kundan. Haqiqiy to'lov kunida tugaydi." },
@@ -1319,36 +1323,36 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'self-employed',
-    lastUpdated: '2025-11-15',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
     ],
     paragraphsRu: [
       'С 2026 года в Узбекистане вводится официальный статус самозанятого лица с налогом 1% от оборота — это самая низкая налоговая ставка среди всех режимов налогообложения в стране. Самозанятые не являются индивидуальными предпринимателями: им не требуется регистрация в едином реестре предпринимателей, а отчётность сведена к минимуму. Регистрация осуществляется через мобильное приложение или портал my.soliq.uz буквально за несколько минут.',
-      'Ограничения для самозанятых: годовой оборот не должен превышать 100 000 000 сум (примерно $7 800), нанимать работников запрещено, и существуют ограничения по видам деятельности — нельзя заниматься производством подакцизных товаров, оптовой торговлей и некоторыми лицензируемыми видами деятельности. Статус самозанятого идеально подходит для фрилансеров, репетиторов, мастеров handmade, водителей такси, фотографов, парикмахеров на дому и других индивидуальных специалистов.',
+      'Ограничения для самозанятых: годовой оборот не должен превышать 1 000 000 000 сум (1 млрд, примерно $78 000). С 2026 года прежнее ограничение в 100 млн сум отменено, и все самозанятые уплачивают 1% вне зависимости от суммы оборота в пределах лимита. Нанимать работников запрещено, и существуют ограничения по видам деятельности — нельзя заниматься производством подакцизных товаров, оптовой торговлей и некоторыми лицензируемыми видами деятельности. Статус самозанятого идеально подходит для фрилансеров, репетиторов, мастеров handmade, водителей такси, фотографов, парикмахеров на дому и других индивидуальных специалистов.',
       'Налог уплачивается ежемесячно до 15 числа следующего месяца через my.soliq.uz или мобильные платёжные приложения. Сумма налога фиксируется автоматически на основе поступлений на привязанную банковскую карту или по добровольной декларации дохода. Социальный налог (12%) и взнос в ИНПС (0,1%) для самозанятых не начисляются, но это означает отсутствие пенсионного стажа — для формирования пенсии рекомендуется делать добровольные взносы.',
-      'Сравнение режимов: самозанятый — 1% от оборота (до 100 млн/год); ИП на упрощённой системе — 4% от оборота (без ограничения оборота, до 10 работников); ООО на общей системе — 15% от прибыли + НДС 12% при обороте свыше 24,72 млрд. При чистой марже менее 25% ИП выгоднее ООО. При обороте менее 100 млн/год и отсутствии наёмных работников самозанятый — безусловно оптимальный выбор с точки зрения налоговой нагрузки.',
+      'Сравнение режимов: самозанятый — 1% от оборота (до 1 млрд/год); ИП — 1% от оборота (до 1 млрд, без ограничения оборота для 4%, до 10 работников); ООО на общей системе — 15% от прибыли + НДС 12% при обороте свыше 24,72 млрд. При чистой марже менее 25% ИП выгоднее ООО. При обороте менее 1 млрд/год и отсутствии наёмных работников самозанятый — безусловно оптимальный выбор с точки зрения налоговой нагрузки.',
       'Калькулятор самозанятого на нашем сайте рассчитает ваш ежемесячный налог, сравнит его с альтернативными режимами (ИП, ООО) и покажет экономию. Введите примерный месячный доход — калькулятор мгновенно покажет результат. Пример: при доходе 8 000 000 сум/мес налог самозанятого = 80 000 сум, ИП = 320 000, разница — 240 000 сум в месяц или 2 880 000 в год.',
     ],
     paragraphsUz: [
       "2026-yildan O'zbekistonda o'z-o'zini band qilgan shaxsning rasmiy maqomi aylanmadan 1% soliq bilan joriy etiladi — bu mamlakatdagi barcha soliqqa tortish rejimlari orasida eng past soliq stavkasi. O'z-o'zini band qilganlar yakka tartibdagi tadbirkor hisoblanmaydi: tadbirkorlarning yagona reyestrida ro'yxatdan o'tish talab qilinmaydi, hisobot minimal. Ro'yxatdan o'tish mobil ilova yoki my.soliq.uz portali orqali bir necha daqiqada amalga oshiriladi.",
-      "O'z-o'zini band qilganlar uchun cheklovlar: yillik aylanma 100 000 000 so'mdan (taxminan $7 800) oshmasligi kerak, xodim yollash taqiqlangan va faoliyat turlari bo'yicha cheklovlar mavjud — aksiz tovarlarini ishlab chiqarish, ulgurji savdo va ba'zi litsenziyalanadigan faoliyat turlari bilan shug'ullanib bo'lmaydi. Maqom frilanserlar, repetitorlar, handmade ustalari, taksi haydovchilari, fotosuratchilar, uyda sartaroshlar va boshqa yakka mutaxassislar uchun ideal.",
+      "O'z-o'zini band qilganlar uchun cheklovlar: yillik aylanma 1 000 000 000 so'mdan (1 mlrd, taxminan $78 000) oshmasligi kerak. 2026-yildan avvalgi 100 mln so'mlik cheklov bekor qilindi va barcha o'z-o'zini band qilganlar limit doirasida aylanmadan qat'i nazar 1% to'laydilar. Xodim yollash taqiqlangan va faoliyat turlari bo'yicha cheklovlar mavjud — aksiz tovarlarini ishlab chiqarish, ulgurji savdo va ba'zi litsenziyalanadigan faoliyat turlari bilan shug'ullanib bo'lmaydi. Maqom frilanserlar, repetitorlar, handmade ustalari, taksi haydovchilari, fotosuratchilar, uyda sartaroshlar va boshqa yakka mutaxassislar uchun ideal.",
       "Soliq har oy keyingi oyning 15-sanasigacha my.soliq.uz yoki mobil to'lov ilovalari orqali to'lanadi. Soliq summasi bog'langan bank kartasiga tushgan mablag'lar asosida yoki daromadni ixtiyoriy deklaratsiya qilish orqali avtomatik ravishda belgilanadi. O'z-o'zini band qilganlar uchun ijtimoiy soliq (12%) va IJPH to'lovi (0,1%) hisoblanmaydi, lekin bu pensiya stajining yo'qligini anglatadi — pensiya shakllantirish uchun ixtiyoriy badal to'lash tavsiya etiladi.",
-      "Rejimlarni solishtirish: o'z-o'zini band qilgan — aylanmadan 1% (100 mln/yilgacha); soddalashtilgan tizimdagi YaTT — aylanmadan 4% (aylanma cheklovisiz, 10 tagacha xodim); umumiy tizimdagi MChJ — foydadan 15% + aylanma 24,72 mlrd dan ortiqda QQS 12%. Sof marja 25% dan kam bo'lganda YaTT MChJdan foydaliroq. Yillik aylanma 100 mln dan kam va yollama xodimlar bo'lmaganda o'z-o'zini band qilgan — soliq yuki nuqtai nazaridan shubhasiz optimal tanlov.",
+      "Rejimlarni solishtirish: o'z-o'zini band qilgan — aylanmadan 1% (1 mlrd/yilgacha); YaTT — aylanmadan 1% (1 mlrd gacha), aylanma cheklovisiz 4%, 10 tagacha xodim; umumiy tizimdagi MChJ — foydadan 15% + aylanma 24,72 mlrd dan ortiqda QQS 12%. Sof marja 25% dan kam bo'lganda YaTT MChJdan foydaliroq. Yillik aylanma 1 mlrd dan kam va yollama xodimlar bo'lmaganda o'z-o'zini band qilgan — soliq yuki nuqtai nazaridan shubhasiz optimal tanlov.",
       "Saytimizda o'z-o'zini band qilgan kalkulyatori oylik solig'ingizni hisoblaydi, muqobil rejimlar (YaTT, MChJ) bilan solishtiradi va tejashni ko'rsatadi. Taxminiy oylik daromadni kiriting — kalkulyator bir zumda natijani ko'rsatadi. Misol: oylik 8 000 000 so'm daromadda o'z-o'zini band qilgan solig'i = 80 000 so'm, YaTT = 320 000, farq — oyiga 240 000 so'm yoki yiliga 2 880 000.",
     ],
     faqRu: [
       { question: 'Какой налог у самозанятого?', answer: '1% от оборота (с 2026 года). Самая низкая ставка среди всех режимов в Узбекистане.' },
-      { question: 'Кто может стать самозанятым?', answer: 'Физические лица с оборотом до 100 млн сум/год, без наёмных работников, с разрешёнными видами деятельности.' },
-      { question: 'Чем самозанятый отличается от ИП?', answer: 'Самозанятый: 1% налог, без работников, до 100 млн/год, минимум отчётности. ИП: 4%, до 10 работников, без ограничения оборота.' },
+      { question: 'Кто может стать самозанятым?', answer: 'Физические лица с оборотом до 1 млрд сум/год (с 2026 года лимит увеличен с 100 млн до 1 млрд), без наёмных работников, с разрешёнными видами деятельности.' },
+      { question: 'Чем самозанятый отличается от ИП?', answer: 'Самозанятый: 1% налог, без работников, до 1 млрд/год, минимум отчётности. ИП: 1% (до 1 млрд) или 4% (свыше), до 10 работников, без ограничения оборота.' },
       { question: 'Идёт ли пенсионный стаж у самозанятого?', answer: 'Нет, социальный налог и ИНПС не начисляются. Для пенсии рекомендуется делать добровольные взносы.' },
       { question: 'Как зарегистрироваться самозанятым?', answer: 'Через мобильное приложение или my.soliq.uz. Регистрация занимает несколько минут, без посещения офисов.' },
     ],
     faqUz: [
       { question: "O'z-o'zini band qilganlik solig'i qancha?", answer: "Aylanmaning 1% (2026-yildan). O'zbekistondagi barcha rejimlar orasida eng past stavka." },
-      { question: "Kim o'z-o'zini band qilgan bo'lishi mumkin?", answer: "Yillik aylanmasi 100 mln so'mgacha, yollama xodimsiz, ruxsat etilgan faoliyat turlari bilan jismoniy shaxslar." },
-      { question: "O'z-o'zini band qilgan YaTTdan nimasi bilan farq qiladi?", answer: "O'z-o'zini band qilgan: 1% soliq, xodimsiz, 100 mln/yilgacha, minimal hisobot. YaTT: 4%, 10 tagacha xodim, aylanma cheklovisiz." },
+      { question: "Kim o'z-o'zini band qilgan bo'lishi mumkin?", answer: "Yillik aylanmasi 1 mlrd so'mgacha (2026-yildan limit 100 mln dan 1 mlrd ga oshirildi), yollama xodimsiz, ruxsat etilgan faoliyat turlari bilan jismoniy shaxslar." },
+      { question: "O'z-o'zini band qilgan YaTTdan nimasi bilan farq qiladi?", answer: "O'z-o'zini band qilgan: 1% soliq, xodimsiz, 1 mlrd/yilgacha, minimal hisobot. YaTT: 1% (1 mlrd gacha) yoki 4% (ortiq), 10 tagacha xodim, aylanma cheklovisiz." },
       { question: "O'z-o'zini band qilganda pensiya staji boradimi?", answer: "Yo'q, ijtimoiy soliq va IJPH hisoblanmaydi. Pensiya uchun ixtiyoriy badal to'lash tavsiya etiladi." },
       { question: "O'z-o'zini band qilgan sifatida qanday ro'yxatdan o'tish mumkin?", answer: "Mobil ilova yoki my.soliq.uz orqali. Ro'yxatdan o'tish bir necha daqiqa oladi, ofislarga borish shart emas." },
     ],
@@ -1356,34 +1360,34 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'turnover-tax',
-    lastUpdated: '2025-09-20',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
     ],
     paragraphsRu: [
-      'Налог с оборота — упрощённый режим налогообложения для индивидуальных предпринимателей и юридических лиц с совокупным оборотом менее 60 000 БРВ (24 720 000 000 сум с августа 2025). Ставка составляет 4% от валового дохода без вычета расходов. Этот режим заменяет налог на прибыль и НДС, что существенно упрощает бухгалтерский учёт и снижает административную нагрузку на малый бизнес.',
+      'Налог с оборота — упрощённый режим налогообложения для индивидуальных предпринимателей и юридических лиц с совокупным оборотом менее 60 000 БРВ (24 720 000 000 сум с августа 2025). С 2026 года ставки дифференцированы: для ИП и самозанятых с оборотом до 1 млрд сум — 1% от валового дохода, для юридических лиц и ИП с оборотом свыше 1 млрд — 4%. Расходы не вычитаются. Этот режим заменяет налог на прибыль и НДС, что существенно упрощает бухгалтерский учёт и снижает административную нагрузку на малый бизнес.',
       'Основные преимущества упрощённой системы: простота ведения учёта (не нужно документировать расходы), минимальная отчётность (квартальная декларация через my.soliq.uz), отсутствие НДС и необходимости вести учёт счетов-фактур. Однако есть существенный недостаток: расходы не уменьшают налоговую базу. Это делает режим невыгодным для бизнеса с высокой долей затрат — производство, строительство, торговля с низкой маржей.',
       'Налог уплачивается ежеквартально не позднее 25-го числа месяца, следующего за отчётным кварталом. Авансовые платежи не предусмотрены. Декларация подаётся в электронном виде через портал my.soliq.uz. Помимо налога с оборота, ИП на упрощённой системе уплачивает социальный налог — фиксированный платёж 1 БРВ (412 000 сум) в месяц, а также НДФЛ 12% с зарплат наёмных работников (если они есть).',
       'Точка переключения между режимами: при марже (прибыль/выручка) менее 27% общая система (15% от прибыли) выгоднее упрощённой (4% от оборота). Пример: выручка 500 млн/год, расходы 350 млн. Упрощённая: 500 × 4% = 20 млн. Общая: (500 − 350) × 15% = 22,5 млн — упрощённая выгоднее. Но если расходы 400 млн: общая = 15 млн, а упрощённая = 20 млн — общая выгоднее на 5 млн.',
-      'При приближении оборота к порогу 60 000 БРВ необходимо заблаговременно готовиться к переходу на общую систему с НДС. Альтернатива для физлиц с оборотом до 100 млн/год: с 2026 года доступен статус самозанятого с налогом всего 1% от оборота. Наш калькулятор рассчитает сумму налога с оборота и сравнит с альтернативными режимами — введите ваш оборот и примерные расходы.',
+      'При приближении оборота к порогу 60 000 БРВ необходимо заблаговременно готовиться к переходу на общую систему с НДС. Альтернатива для физлиц с оборотом до 1 млрд/год: с 2026 года доступен статус самозанятого с налогом 1% от оборота. Наш калькулятор рассчитает сумму налога с оборота и сравнит с альтернативными режимами — введите ваш оборот и примерные расходы.',
     ],
     paragraphsUz: [
-      "Aylanma solig'i — umumiy aylanmasi 60 000 BHK (2025-yil avgustidan 24 720 000 000 so'm) dan kam yakka tartibdagi tadbirkorlar va yuridik shaxslar uchun soddalashtilgan soliqqa tortish rejimi. Stavka xarajatlarni chegirmasdan yalpi daromadning 4% ni tashkil etadi. Bu rejim foyda solig'i va QQS o'rnini bosadi, bu buxgalteriya hisobini sezilarli darajada soddalashtiradi va kichik biznesga ma'muriy yukni kamaytiradi.",
+      "Aylanma solig'i — umumiy aylanmasi 60 000 BHK (2025-yil avgustidan 24 720 000 000 so'm) dan kam yakka tartibdagi tadbirkorlar va yuridik shaxslar uchun soddalashtilgan soliqqa tortish rejimi. 2026-yildan stavkalar differentsiyalangan: aylanmasi 1 mlrd so'mgacha YaTT va o'z-o'zini band qilganlar uchun yalpi daromadning 1%, yuridik shaxslar va aylanmasi 1 mlrd dan ortiq YaTTlar uchun 4%. Xarajatlar chegirilmaydi. Bu rejim foyda solig'i va QQS o'rnini bosadi, bu buxgalteriya hisobini sezilarli darajada soddalashtiradi va kichik biznesga ma'muriy yukni kamaytiradi.",
       "Soddalashtilgan tizimning asosiy afzalliklari: hisobni yuritish soddaligi (xarajatlarni hujjatlashtirish shart emas), minimal hisobot (my.soliq.uz orqali choraklik deklaratsiya), QQS yo'qligi va hisob-fakturalar hisobini yuritish zarurati yo'qligi. Lekin muhim kamchilik bor: xarajatlar soliq bazasini kamaytirmaydi. Bu rejimni xarajatlar ulushi yuqori biznes uchun foydasiz qiladi — ishlab chiqarish, qurilish, past marjali savdo.",
       "Soliq har chorakda hisobot choragidan keyingi oyning 25-sanasidan kechiktirmay to'lanadi. Avans to'lovlari nazarda tutilmagan. Deklaratsiya my.soliq.uz portali orqali elektron shaklda topshiriladi. Aylanma solig'idan tashqari, soddalashtilgan tizimdagi YaTT ijtimoiy soliq — oyiga 1 BHK (412 000 so'm) qat'iy to'lov, shuningdek yollama xodimlar (bor bo'lsa) ish haqidan JShShS 12% to'laydi.",
       "Rejimlar o'rtasida almashtirish nuqtasi: marja (foyda/tushum) 27% dan kam bo'lganda umumiy tizim (foydadan 15%) soddalashtirgan (aylanmadan 4%) dan foydaliroq. Misol: yillik tushum 500 mln, xarajatlar 350 mln. Soddalashtilgan: 500 × 4% = 20 mln. Umumiy: (500 − 350) × 15% = 22,5 mln — soddalashtilgan foydaliroq. Lekin xarajatlar 400 mln bo'lsa: umumiy = 15 mln, soddalashtilgan = 20 mln — umumiy 5 mln ga foydaliroq.",
-      "Aylanma 60 000 BHK chegarasiga yaqinlashganda QQS bilan umumiy tizimga o'tishga oldindan tayyorlanish kerak. Yillik aylanmasi 100 mln gacha bo'lgan jismoniy shaxslar uchun muqobil: 2026-yildan aylanmadan atigi 1% soliq bilan o'z-o'zini band qilgan maqomi mavjud. Kalkulyatorimiz aylanma solig'i summasini hisoblaydi va muqobil rejimlar bilan solishtiradi — aylanma va taxminiy xarajatlaringizni kiriting.",
+      "Aylanma 60 000 BHK chegarasiga yaqinlashganda QQS bilan umumiy tizimga o'tishga oldindan tayyorlanish kerak. Yillik aylanmasi 1 mlrd gacha bo'lgan jismoniy shaxslar uchun muqobil: 2026-yildan aylanmadan atigi 1% soliq bilan o'z-o'zini band qilgan maqomi mavjud. Kalkulyatorimiz aylanma solig'i summasini hisoblaydi va muqobil rejimlar bilan solishtiradi — aylanma va taxminiy xarajatlaringizni kiriting.",
     ],
     faqRu: [
-      { question: 'Какая ставка налога с оборота?', answer: '4% от валового дохода. Расходы не вычитаются. Заменяет налог на прибыль и НДС.' },
+      { question: 'Какая ставка налога с оборота?', answer: 'С 2026 года: 1% для ИП и самозанятых с оборотом до 1 млрд сум; 4% для юрлиц и ИП с оборотом свыше 1 млрд. Расходы не вычитаются. Заменяет налог на прибыль и НДС.' },
       { question: 'Кто платит налог с оборота?', answer: 'ИП и юрлица на упрощённой системе с оборотом менее 60 000 БРВ (24,72 млрд сум за 12 месяцев).' },
       { question: 'Когда выгодна упрощённая система?', answer: 'При марже более 27% (расходы менее 73% от выручки). При более высоких расходах — общая система (15% от прибыли) выгоднее.' },
       { question: 'Когда платить налог с оборота?', answer: 'Ежеквартально до 25-го числа месяца, следующего за кварталом. Декларация через my.soliq.uz.' },
       { question: 'Можно ли совмещать с НДС?', answer: 'Нет. На упрощённой системе НДС не уплачивается. При превышении порога 60 000 БРВ необходимо перейти на общую систему с НДС.' },
     ],
     faqUz: [
-      { question: "Aylanma solig'i stavkasi qancha?", answer: "Yalpi daromadning 4%. Xarajatlar chegirilmaydi. Foyda solig'i va QQS o'rnini bosadi." },
+      { question: "Aylanma solig'i stavkasi qancha?", answer: "2026-yildan: aylanmasi 1 mlrd so'mgacha YaTT va o'z-o'zini band qilganlar uchun 1%; yuridik shaxslar va aylanmasi 1 mlrd dan ortiq YaTTlar uchun 4%. Xarajatlar chegirilmaydi." },
       { question: "Aylanma solig'ini kim to'laydi?", answer: "Soddalashtilgan tizimdagi 60 000 BHK (12 oyda 24,72 mlrd so'm) dan kam aylanmali YaTT va yuridik shaxslar." },
       { question: "Soddalashtilgan tizim qachon foydali?", answer: "Marja 27% dan yuqori bo'lganda (xarajatlar tushumning 73% dan kam). Yuqori xarajatlarda — umumiy tizim (foydadan 15%) foydaliroq." },
       { question: "Aylanma solig'ini qachon to'lash kerak?", answer: "Har chorakda chorakdan keyin oyning 25-sanasigacha. Deklaratsiya my.soliq.uz orqali." },
@@ -1393,36 +1397,36 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'sick-leave',
-    lastUpdated: '2025-10-08',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
-      { name: 'Фонд социального страхования', url: 'https://lex.uz' },
+      { name: 'Закон о государственном социальном страховании (№1101)', url: 'https://lex.uz' },
     ],
     paragraphsRu: [
-      'Больничный лист в Узбекистане оплачивается в зависимости от трудового стажа работника. Первые 10 рабочих дней оплачивает работодатель из собственных средств, далее — из фонда государственного социального страхования. Размер оплаты: при стаже до 5 лет — 60% среднего заработка, от 5 до 8 лет — 80%, свыше 8 лет — 100%. Больничный лист оформляется в поликлинике по месту прикрепления.',
-      'Средний дневной заработок для расчёта определяется путём деления суммы начисленной зарплаты за последние 12 месяцев на количество рабочих дней в этом периоде. Если работник проработал менее 12 месяцев, берётся фактический период работы. Минимальный размер оплаты больничного не может быть ниже расчёта из минимальной заработной платы (1 271 000 сум/мес).',
-      'Максимальный срок оплачиваемого больничного — до 120 календарных дней подряд. При заболевании туберкулёзом — до 180 дней. После истечения этого срока вопрос решается МСЭК: продление больничного или установление инвалидности. При уходе за больным ребёнком до 14 лет больничный оплачивается до 14 календарных дней, за ребёнком-инвалидом — до 30 дней.',
+      'Больничный лист в Узбекистане с 1 июля 2026 года оплачивается по новой системе, основанной на страховом стаже (стаже уплаты взносов в ГССФ). Работодатель оплачивает первые 5 календарных дней нетрудоспособности в календарном году из собственных средств, а начиная с 6-го дня оплату производит непосредственно Государственный страховой социальный фонд (ГССФ). Для получения права на оплату больничного необходим минимальный страховой стаж не менее 6 месяцев. Размер оплаты определяется страховым стажем: при стаже до 5 лет — 60% среднего заработка, от 5 до 8 лет — 80%, свыше 8 лет — 100%. Больничный лист оформляется в поликлинике по месту прикрепления.',
+      'Средний дневной заработок для расчёта определяется путём деления суммы начисленной зарплаты за последние 12 месяцев на количество рабочих дней в этом периоде. Если работник проработал менее 12 месяцев, берётся фактический период работы. Минимальный размер оплаты больничного не может быть ниже расчёта из минимальной заработной платы (1 271 000 сум/мес). Обратите внимание: с 1 января 2026 года пособия по беременности и родам уже выплачиваются напрямую из средств ГССФ, а пособия по временной нетрудоспособности (больничные) переходят на прямые выплаты ГССФ с 1 июля 2026 года.',
+      'Максимальный срок оплачиваемого больничного — до 182 календарных дней в год. При заболевании туберкулёзом — до 240 дней. После истечения этого срока вопрос решается МСЭК: продление больничного или установление инвалидности. При уходе за больным ребёнком до 14 лет больничный оплачивается до 14 календарных дней, за ребёнком-инвалидом — до 30 дней.',
       'Выплаты по больничному листу облагаются НДФЛ 12% и ИНПС 0,1%, но не облагаются социальным налогом. Больничный не оплачивается, если нетрудоспособность наступила в результате умышленного причинения вреда здоровью, при нахождении под арестом или в период отпуска без сохранения зарплаты. Работодатель обязан принять больничный лист и произвести расчёт в течение 10 рабочих дней.',
-      'Пример расчёта: стаж 6 лет, средняя зарплата 10 000 000 сум/мес, среднедневной заработок ≈ 455 000 сум, больничный 15 рабочих дней. Оплата: 455 000 × 80% × 15 = 5 460 000 сум (10 дней = 3 640 000 — работодатель, 5 дней = 1 820 000 — соцстрах). Минус НДФЛ 12%: чистая выплата ≈ 4 805 000 сум.',
+      'Пример расчёта: страховой стаж 6 лет, средняя зарплата 10 000 000 сум/мес, среднедневной заработок ≈ 455 000 сум, больничный 15 рабочих дней. Оплата: 455 000 × 80% × 15 = 5 460 000 сум (первые 5 дней = 1 820 000 — работодатель, с 6-го дня = 3 640 000 — ГССФ). Минус НДФЛ 12%: чистая выплата ≈ 4 805 000 сум.',
     ],
     paragraphsUz: [
-      "O'zbekistonda kasallik varag'i xodimning ish stajiga qarab to'lanadi. Birinchi 10 ish kuni ish beruvchi o'z mablag'laridan to'laydi, keyin — davlat ijtimoiy sug'urta fondidan. To'lov miqdori: 5 yilgacha stajda — o'rtacha ish haqining 60%, 5 dan 8 yilgacha — 80%, 8 yildan ortiq — 100%. Kasallik varag'i biriktirilgan poliklinikada rasmiylashtiriladi.",
-      "Hisoblash uchun o'rtacha kunlik ish haqi oxirgi 12 oydagi hisoblangan ish haqi summasini shu davrdagi ish kunlari soniga bo'lish orqali aniqlanadi. Agar xodim 12 oydan kam ishlagan bo'lsa, haqiqiy ish davri olinadi. Kasallik to'lovining minimal miqdori minimal ish haqidan (1 271 000 so'm/oy) hisoblashdan past bo'lishi mumkin emas.",
-      "To'lanadigan kasallik varag'ining maksimal muddati — ketma-ket 120 kalendar kungacha. Sil kasalligi bo'lsa — 180 kungacha. Bu muddat tugagandan keyin TIEK qaror qabul qiladi: kasallikni uzaytirish yoki nogironlikni belgilash. 14 yoshgacha kasal bolaga qarov uchun 14 kalendar kungacha, nogiron bolaga — 30 kungacha to'lanadi.",
+      "O'zbekistonda kasallik varag'i 2026-yil 1-iyuldan boshlab sug'urta stajiga (DSSF ga badallar to'lash stajiga) asoslangan yangi tizim bo'yicha to'lanadi. Ish beruvchi kalendar yilda mehnatga layoqatsizlikning birinchi 5 kalendar kunini o'z mablag'laridan to'laydi, 6-kundan boshlab to'lovni bevosita Davlat sug'urta ijtimoiy fondi (DSSF) amalga oshiradi. Kasallik to'lovini olish huquqiga ega bo'lish uchun kamida 6 oylik sug'urta staji talab qilinadi. To'lov miqdori sug'urta stajiga qarab belgilanadi: 5 yilgacha stajda — o'rtacha ish haqining 60%, 5 dan 8 yilgacha — 80%, 8 yildan ortiq — 100%. Kasallik varag'i biriktirilgan poliklinikada rasmiylashtiriladi.",
+      "Hisoblash uchun o'rtacha kunlik ish haqi oxirgi 12 oydagi hisoblangan ish haqi summasini shu davrdagi ish kunlari soniga bo'lish orqali aniqlanadi. Agar xodim 12 oydan kam ishlagan bo'lsa, haqiqiy ish davri olinadi. Kasallik to'lovining minimal miqdori minimal ish haqidan (1 271 000 so'm/oy) hisoblashdan past bo'lishi mumkin emas. Eslatma: 2026-yil 1-yanvardan homiladorlik va tug'ish nafaqalari bevosita DSSF mablag'laridan to'lanmoqda, vaqtinchalik mehnatga layoqatsizlik nafaqalari (kasallik varag'i) esa 2026-yil 1-iyuldan DSSFning to'g'ridan-to'g'ri to'lovlariga o'tmoqda.",
+      "To'lanadigan kasallik varag'ining maksimal muddati — yiliga 182 kalendar kungacha. Sil kasalligi bo'lsa — 240 kungacha. Bu muddat tugagandan keyin TIEK qaror qabul qiladi: kasallikni uzaytirish yoki nogironlikni belgilash. 14 yoshgacha kasal bolaga qarov uchun 14 kalendar kungacha, nogiron bolaga — 30 kungacha to'lanadi.",
       "Kasallik varag'i bo'yicha to'lovlar JShShS 12% va IJPH 0,1% ga tortiladi, lekin ijtimoiy soliqqa tortilmaydi. Kasallik varag'i to'lanmaydi: sog'liqqa qasddan zarar yetkazish natijasida yuzaga kelgan bo'lsa, hibsda bo'lgan davrda, ish haqi saqlanmagan ta'til davrida. Ish beruvchi kasallik varag'ini qabul qilishi va 10 ish kuni ichida hisob-kitob qilishi shart.",
-      "Hisoblash misoli: staj 6 yil, o'rtacha ish haqi 10 000 000 so'm/oy, o'rtacha kunlik ish haqi ≈ 455 000 so'm, kasallik 15 ish kuni. To'lov: 455 000 × 80% × 15 = 5 460 000 so'm (10 kun = 3 640 000 — ish beruvchi, 5 kun = 1 820 000 — sotsstrax). Minus JShShS 12%: sof to'lov ≈ 4 805 000 so'm.",
+      "Hisoblash misoli: sug'urta staji 6 yil, o'rtacha ish haqi 10 000 000 so'm/oy, o'rtacha kunlik ish haqi ≈ 455 000 so'm, kasallik 15 ish kuni. To'lov: 455 000 × 80% × 15 = 5 460 000 so'm (birinchi 5 kun = 1 820 000 — ish beruvchi, 6-kundan = 3 640 000 — DSSF). Minus JShShS 12%: sof to'lov ≈ 4 805 000 so'm.",
     ],
     faqRu: [
-      { question: 'Как оплачивается больничный?', answer: 'В зависимости от стажа: до 5 лет — 60%, 5-8 лет — 80%, более 8 лет — 100% среднего заработка.' },
-      { question: 'Кто оплачивает больничный?', answer: 'Первые 10 рабочих дней — работодатель, далее — фонд социального страхования.' },
-      { question: 'Какой максимальный срок больничного?', answer: 'До 120 календарных дней подряд (при туберкулёзе — до 180). Далее решает МСЭК.' },
+      { question: 'Как оплачивается больничный?', answer: 'В зависимости от страхового стажа: до 5 лет — 60%, 5-8 лет — 80%, более 8 лет — 100% среднего заработка. Минимальный страховой стаж для получения выплат — 6 месяцев.' },
+      { question: 'Кто оплачивает больничный?', answer: 'С 1 июля 2026 года: первые 5 календарных дней в году — работодатель, с 6-го дня — напрямую ГССФ (Государственный страховой социальный фонд).' },
+      { question: 'Какой максимальный срок больничного?', answer: 'До 182 календарных дней в год (при туберкулёзе — до 240). Далее решает МСЭК.' },
       { question: 'Облагается ли больничный налогом?', answer: 'Да, НДФЛ 12% и ИНПС 0,1% удерживаются. Социальный налог не начисляется.' },
       { question: 'Как оплачивается больничный по уходу за ребёнком?', answer: 'До 14 календарных дней за ребёнком до 14 лет, до 30 дней за ребёнком-инвалидом.' },
     ],
     faqUz: [
-      { question: "Kasallik varag'i qanday to'lanadi?", answer: "Stajga qarab: 5 yilgacha — 60%, 5-8 yil — 80%, 8 yildan ortiq — o'rtacha ish haqining 100%." },
-      { question: "Kasallik varag'ini kim to'laydi?", answer: "Birinchi 10 ish kuni — ish beruvchi, keyin — ijtimoiy sug'urta fondi." },
-      { question: "Kasallik varag'ining maksimal muddati qancha?", answer: "Ketma-ket 120 kalendar kungacha (silda — 180 gacha). Keyin TIEK qaror qabul qiladi." },
+      { question: "Kasallik varag'i qanday to'lanadi?", answer: "Sug'urta stajiga qarab: 5 yilgacha — 60%, 5-8 yil — 80%, 8 yildan ortiq — o'rtacha ish haqining 100%. To'lovlarni olish uchun minimal sug'urta staji — 6 oy." },
+      { question: "Kasallik varag'ini kim to'laydi?", answer: "2026-yil 1-iyuldan: yildagi birinchi 5 kalendar kun — ish beruvchi, 6-kundan — bevosita DSSF (Davlat sug'urta ijtimoiy fondi)." },
+      { question: "Kasallik varag'ining maksimal muddati qancha?", answer: "Yiliga 182 kalendar kungacha (silda — 240 gacha). Keyin TIEK qaror qabul qiladi." },
       { question: "Kasallik varag'i soliqqa tortiladimi?", answer: "Ha, JShShS 12% va IJPH 0,1% ushlab qolinadi. Ijtimoiy soliq hisoblanmaydi." },
       { question: "Bolaga qarov uchun kasallik varag'i qanday to'lanadi?", answer: "14 yoshgacha bolaga 14 kalendar kungacha, nogiron bolaga 30 kungacha." },
     ],
@@ -1430,34 +1434,34 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'maternity',
-    lastUpdated: '2025-09-12',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Минтруд РУз', url: 'https://mehnat.uz' },
     ],
     paragraphsRu: [
-      'Отпуск по беременности и родам в Узбекистане составляет 126 календарных дней: 70 дней до родов и 56 после. При осложнённых родах или многоплодной беременности послеродовая часть увеличивается до 70 дней (итого 140 дней). Пособие по беременности и родам выплачивается в размере 100% среднего заработка независимо от стажа работы. Пособие полностью финансируется из средств фонда социального страхования.',
+      'Отпуск по беременности и родам в Узбекистане составляет 126 календарных дней: 70 дней до родов и 56 после. При осложнённых родах или многоплодной беременности послеродовая часть увеличивается до 70 дней (итого 140 дней). С 1 января 2026 года пособие по беременности и родам выплачивается напрямую из средств ГССФ (Государственного страхового социального фонда). Размер пособия зависит от страхового стажа: при стаже 10-24 месяца — 75% среднего заработка, 25-60 месяцев — 85%, 61 месяц и более — 100%. Для получения пособия необходим минимальный страховой стаж не менее 10 месяцев.',
       'Пособие по уходу за ребёнком до 2 лет составляет 50% от среднемесячного заработка, но не менее 50% минимальной заработной платы (635 500 сум). Отпуск по уходу до 2 лет предоставляется с сохранением рабочего места, до 3 лет — без сохранения, но с правом вернуться на прежнюю должность. Отпуск может взять не только мать, но и отец, бабушка, дедушка или другой родственник, фактически осуществляющий уход.',
       'Единовременное пособие при рождении ребёнка выплачивается из средств работодателя: на первого ребёнка — 2 БРВ (824 000 сум), на второго — 3 БРВ (1 236 000 сум), на третьего и последующих — 4 БРВ (1 648 000 сум). Дополнительно государство выплачивает ежемесячное пособие семьям с детьми до 2 лет через систему социальной защиты — размер зависит от дохода семьи и количества детей.',
       'Декретное пособие не облагается НДФЛ и социальным налогом. Средний заработок для расчёта определяется за последние 12 месяцев, предшествующих месяцу ухода в декрет. Если женщина работала менее 12 месяцев, берётся фактический период. При совмещении нескольких мест работы пособие рассчитывается по каждому месту отдельно.',
-      'Пример расчёта декретного пособия: средний заработок 15 000 000 сум/мес, среднедневной ≈ 500 000 сум. Пособие по беременности и родам = 500 000 × 126 = 63 000 000 сум (налогом не облагается). Пособие по уходу до 2 лет = 15 000 000 × 50% = 7 500 000 сум/мес (24 месяца = 180 000 000 сум). Единовременное (1-й ребёнок) = 824 000 сум. Итого за весь период: ~244 млн сум.',
+      'Пример расчёта декретного пособия (при страховом стаже более 61 месяца — 100%): средний заработок 15 000 000 сум/мес, среднедневной ≈ 500 000 сум. Пособие по беременности и родам = 500 000 × 126 = 63 000 000 сум (налогом не облагается). При стаже 25-60 месяцев (85%) пособие составит 53 550 000 сум, при стаже 10-24 месяца (75%) — 47 250 000 сум. Пособие по уходу до 2 лет = 15 000 000 × 50% = 7 500 000 сум/мес (24 месяца = 180 000 000 сум). Единовременное (1-й ребёнок) = 824 000 сум. Итого за весь период: ~244 млн сум.',
     ],
     paragraphsUz: [
-      "O'zbekistonda homiladorlik va tug'ish ta'tili 126 kalendar kun: tug'ishdan 70 kun oldin va 56 kun keyin. Asoratli tug'ish yoki ko'p homilada tug'ishdan keyingi qism 70 kungacha oshiriladi (jami 140 kun). Homiladorlik va tug'ish nafaqasi ish stajidan qat'i nazar o'rtacha ish haqining 100% miqdorida to'lanadi. Nafaqa to'liq ijtimoiy sug'urta fondi mablag'laridan moliyalashtiriladi.",
+      "O'zbekistonda homiladorlik va tug'ish ta'tili 126 kalendar kun: tug'ishdan 70 kun oldin va 56 kun keyin. Asoratli tug'ish yoki ko'p homilada tug'ishdan keyingi qism 70 kungacha oshiriladi (jami 140 kun). 2026-yil 1-yanvardan homiladorlik va tug'ish nafaqasi bevosita DSSF (Davlat sug'urta ijtimoiy fondi) mablag'laridan to'lanadi. Nafaqa miqdori sug'urta stajiga bog'liq: 10-24 oy stajda — o'rtacha ish haqining 75%, 25-60 oy — 85%, 61 oy va undan ko'p — 100%. Nafaqa olish uchun kamida 10 oylik sug'urta staji talab qilinadi.",
       "2 yoshgacha bolaga qarashuv nafaqasi o'rtacha oylik ish haqining 50% ni tashkil etadi, lekin minimal ish haqining 50% (635 500 so'm) dan kam emas. 2 yilgacha qarashuv ta'tili ish joyini saqlash bilan, 3 yilgacha — saqlashsiz, lekin avvalgi lavozimga qaytish huquqi bilan beriladi. Ta'tilni nafaqat ona, balki ota, buvi, bobo yoki bolaga haqiqatda qarayotgan boshqa qarindosh ham olishi mumkin.",
       "Bola tug'ilganda bir martalik nafaqa ish beruvchi mablag'laridan to'lanadi: birinchi bolaga — 2 BHK (824 000 so'm), ikkinchiga — 3 BHK (1 236 000 so'm), uchinchi va keyingilarga — 4 BHK (1 648 000 so'm). Qo'shimcha ravishda davlat ijtimoiy himoya tizimi orqali 2 yoshgacha bolali oilalarga oylik nafaqa to'laydi — miqdori oila daromadi va bolalar soniga bog'liq.",
       "Dekret nafaqasi JShShS va ijtimoiy soliqqa tortilmaydi. Hisoblash uchun o'rtacha ish haqi dekretga chiqqan oydan oldingi oxirgi 12 oy uchun aniqlanadi. Agar ayol 12 oydan kam ishlagan bo'lsa, haqiqiy davr olinadi. Bir nechta ish joyini qo'shib olib borsangiz, nafaqa har bir ish joyi bo'yicha alohida hisoblanadi.",
-      "Dekret nafaqasini hisoblash misoli: o'rtacha ish haqi 15 000 000 so'm/oy, o'rtacha kunlik ≈ 500 000 so'm. Homiladorlik va tug'ish nafaqasi = 500 000 × 126 = 63 000 000 so'm (soliqqa tortilmaydi). 2 yilgacha qarashuv nafaqasi = 15 000 000 × 50% = 7 500 000 so'm/oy (24 oy = 180 000 000 so'm). Bir martalik (1-bola) = 824 000 so'm. Butun davr uchun jami: ~244 mln so'm.",
+      "Dekret nafaqasini hisoblash misoli (sug'urta staji 61 oydan ortiq — 100%): o'rtacha ish haqi 15 000 000 so'm/oy, o'rtacha kunlik ≈ 500 000 so'm. Homiladorlik va tug'ish nafaqasi = 500 000 × 126 = 63 000 000 so'm (soliqqa tortilmaydi). 25-60 oy stajda (85%) nafaqa 53 550 000 so'm, 10-24 oy stajda (75%) — 47 250 000 so'm bo'ladi. 2 yilgacha qarashuv nafaqasi = 15 000 000 × 50% = 7 500 000 so'm/oy (24 oy = 180 000 000 so'm). Bir martalik (1-bola) = 824 000 so'm. Butun davr uchun jami: ~244 mln so'm.",
     ],
     faqRu: [
-      { question: 'Сколько длится декретный отпуск?', answer: '126 дней (70 до + 56 после родов). При осложнениях: 140 дней (70 + 70).' },
+      { question: 'Сколько длится декретный отпуск?', answer: '126 дней (70 до + 56 после родов). При осложнениях: 140 дней (70 + 70). С 2026 года пособие выплачивает ГССФ напрямую.' },
       { question: 'Какое пособие по уходу за ребёнком?', answer: '50% от среднего заработка до 2 лет. Минимум — 50% МЗП (635 500 сум).' },
       { question: 'Какое единовременное пособие при рождении?', answer: '1-й ребёнок: 2 БРВ (824 000), 2-й: 3 БРВ (1 236 000), 3-й+: 4 БРВ (1 648 000 сум).' },
       { question: 'Облагается ли декретное пособие налогом?', answer: 'Нет, пособие по беременности и родам не облагается НДФЛ и социальным налогом.' },
       { question: 'Может ли отец взять отпуск по уходу?', answer: 'Да, отпуск по уходу за ребёнком может взять отец, бабушка, дедушка или другой родственник.' },
     ],
     faqUz: [
-      { question: "Dekret ta'tili qancha davom etadi?", answer: "126 kun (tug'ishdan oldin 70 + keyin 56). Asoratlarda: 140 kun (70 + 70)." },
+      { question: "Dekret ta'tili qancha davom etadi?", answer: "126 kun (tug'ishdan oldin 70 + keyin 56). Asoratlarda: 140 kun (70 + 70). 2026-yildan nafaqani DSSF bevosita to'laydi." },
       { question: "Bolaga qarashuv nafaqasi qancha?", answer: "2 yilgacha o'rtacha ish haqining 50%. Minimum — MIHning 50% (635 500 so'm)." },
       { question: "Tug'ilganda bir martalik nafaqa qancha?", answer: "1-bola: 2 BHK (824 000), 2-bola: 3 BHK (1 236 000), 3+: 4 BHK (1 648 000 so'm)." },
       { question: "Dekret nafaqasi soliqqa tortiladimi?", answer: "Yo'q, homiladorlik va tug'ish nafaqasi JShShS va ijtimoiy soliqqa tortilmaydi." },
@@ -1467,36 +1471,36 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'severance',
-    lastUpdated: '2025-09-28',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Минтруд РУз', url: 'https://mehnat.uz' },
     ],
     paragraphsRu: [
-      'Выходное пособие при увольнении в Узбекистане зависит от основания увольнения. При сокращении штата работнику выплачивается не менее одного среднемесячного заработка. При ликвидации организации — среднемесячный заработок плюс сохранение заработной платы на период трудоустройства до 2 месяцев (до 3 месяцев при регистрации в службе занятости в течение 10 дней после увольнения). Минимальная заработная плата в Узбекистане с 2025 года составляет 1 271 000 сум.',
+      'Выходное пособие при увольнении в Узбекистане зависит от основания увольнения и стажа работы в организации. При сокращении штата размер выходного пособия определяется по градуированной шкале: при стаже до 3 лет — 50% среднемесячного заработка, от 3 до 5 лет — 75%, от 5 до 10 лет — 100%, от 10 до 15 лет — 150%, свыше 15 лет — 200% (2 среднемесячных заработка). При ликвидации организации дополнительно сохраняется заработная плата на период трудоустройства до 2 месяцев (до 3 месяцев при регистрации в службе занятости в течение 10 дней после увольнения). Минимальная заработная плата в Узбекистане составляет 1 271 000 сум.',
       'Компенсация за неиспользованный отпуск выплачивается при увольнении по любому основанию. Базовый трудовой отпуск в Узбекистане — 15 рабочих дней (для отдельных категорий — до 30 дней). Расчёт: средний дневной заработок × количество неиспользованных дней. Средний дневной заработок определяется за последние 3 месяца работы. Если отпуск использован авансом — сумма удерживается при расчёте.',
       'При увольнении по собственному желанию выходное пособие не выплачивается — работник получает только компенсацию за неиспользованный отпуск и зарплату за отработанные дни. При увольнении по соглашению сторон — размер выплат определяется договорённостью и фиксируется в письменном соглашении. Судебная практика в Узбекистане признаёт такие соглашения обязательными для исполнения.',
       'Все выплаты при увольнении производятся в последний рабочий день. За задержку расчёта работодатель выплачивает компенсацию в размере среднего заработка за каждый день просрочки. Компенсация за неиспользованный отпуск облагается НДФЛ 12%, но не облагается социальным налогом. Выходное пособие при сокращении также облагается НДФЛ, за исключением сумм, не превышающих 4,22 БРВ (1 738 640 сум).',
-      'Пример расчёта при сокращении: зарплата 10 000 000 сум/мес, неиспользованный отпуск 10 дней. Выходное пособие: 10 000 000 сум. Компенсация за отпуск: (10 000 000 / 21,7) × 10 = 4 608 295 сум. Зарплата за отработанные дни (15 дней): 6 912 442 сум. Итого начислено: 21 520 737 сум. Минус НДФЛ 12%: чистая выплата ≈ 18 938 249 сум.',
+      'Пример расчёта при сокращении: зарплата 10 000 000 сум/мес, стаж 7 лет (100% по шкале), неиспользованный отпуск 10 дней. Выходное пособие: 10 000 000 × 100% = 10 000 000 сум. Компенсация за отпуск: (10 000 000 / 21,7) × 10 = 4 608 295 сум. Зарплата за отработанные дни (15 дней): 6 912 442 сум. Итого начислено: 21 520 737 сум. Минус НДФЛ 12%: чистая выплата ≈ 18 938 249 сум.',
     ],
     paragraphsUz: [
-      "O'zbekistonda ishdan bo'shatishda chiqish nafaqasi ishdan bo'shatish asosiga bog'liq. Shtatni qisqartirishda xodimga kamida bitta o'rtacha oylik ish haqi to'lanadi. Tashkilotni tugatishda — o'rtacha oylik ish haqi hamda ish topish davri uchun 2 oygacha (ishdan bo'shatilgandan keyin 10 kun ichida bandlik xizmatiga ro'yxatdan o'tganda 3 oygacha) ish haqi saqlanadi. 2025-yildan O'zbekistonda minimal ish haqi 1 271 000 so'm.",
+      "O'zbekistonda ishdan bo'shatishda chiqish nafaqasi ishdan bo'shatish asosiga va tashkilotdagi ish stajiga bog'liq. Shtatni qisqartirishda chiqish nafaqasi miqdori graduatsiyalangan shkala bo'yicha belgilanadi: 3 yilgacha stajda — o'rtacha oylik ish haqining 50%, 3 dan 5 yilgacha — 75%, 5 dan 10 yilgacha — 100%, 10 dan 15 yilgacha — 150%, 15 yildan ortiq — 200% (2 o'rtacha oylik ish haqi). Tashkilotni tugatishda qo'shimcha ravishda ish topish davri uchun 2 oygacha (ishdan bo'shatilgandan keyin 10 kun ichida bandlik xizmatiga ro'yxatdan o'tganda 3 oygacha) ish haqi saqlanadi. O'zbekistonda minimal ish haqi 1 271 000 so'm.",
       "Foydalanilmagan ta'til uchun kompensatsiya har qanday asosda ishdan bo'shatishda to'lanadi. O'zbekistonda asosiy mehnat ta'tili — 15 ish kuni (ayrim toifalar uchun — 30 kungacha). Hisob: o'rtacha kunlik ish haqi × foydalanilmagan kunlar soni. O'rtacha kunlik ish haqi oxirgi 3 oy uchun aniqlanadi. Ta'til avans bilan ishlatilgan bo'lsa — hisob-kitobda ushlab qolinadi.",
       "O'z xohishi bilan ishdan bo'shaganda chiqish nafaqasi to'lanmaydi — xodim faqat foydalanilmagan ta'til kompensatsiyasi va ishlagan kunlar uchun ish haqini oladi. Tomonlar kelishuvi bo'yicha ishdan bo'shatishda — to'lovlar miqdori kelishuv bilan aniqlanadi va yozma kelishuvda belgilanadi. O'zbekistondagi sud amaliyoti bunday kelishuvlarni bajarish uchun majburiy deb tan oladi.",
       "Ishdan bo'shatishdagi barcha to'lovlar oxirgi ish kunida amalga oshiriladi. Hisob-kitobni kechiktirganlik uchun ish beruvchi har kechiktirilgan kun uchun o'rtacha ish haqi miqdorida kompensatsiya to'laydi. Foydalanilmagan ta'til kompensatsiyasi JShShS 12% ga tortiladi, lekin ijtimoiy soliqqa tortilmaydi. Qisqartirish vaqtidagi chiqish nafaqasi ham 4,22 BHK (1 738 640 so'm) dan oshgan summada JShShSga tortiladi.",
-      "Qisqartirishda hisoblash misoli: ish haqi 10 000 000 so'm/oy, foydalanilmagan ta'til 10 kun. Chiqish nafaqasi: 10 000 000 so'm. Ta'til kompensatsiyasi: (10 000 000 / 21,7) × 10 = 4 608 295 so'm. Ishlangan kunlar uchun ish haqi (15 kun): 6 912 442 so'm. Jami hisoblangan: 21 520 737 so'm. Minus JShShS 12%: sof to'lov ≈ 18 938 249 so'm.",
+      "Qisqartirishda hisoblash misoli: ish haqi 10 000 000 so'm/oy, staj 7 yil (shkala bo'yicha 100%), foydalanilmagan ta'til 10 kun. Chiqish nafaqasi: 10 000 000 × 100% = 10 000 000 so'm. Ta'til kompensatsiyasi: (10 000 000 / 21,7) × 10 = 4 608 295 so'm. Ishlangan kunlar uchun ish haqi (15 kun): 6 912 442 so'm. Jami hisoblangan: 21 520 737 so'm. Minus JShShS 12%: sof to'lov ≈ 18 938 249 so'm.",
     ],
     faqRu: [
-      { question: 'Положено ли выходное пособие при увольнении?', answer: 'При сокращении/ликвидации — да (от 1 среднемесячного заработка). По собственному желанию — нет (только компенсация за отпуск).' },
+      { question: 'Положено ли выходное пособие при увольнении?', answer: 'При сокращении — да, по градуированной шкале: до 3 лет стажа — 50%, 3-5 лет — 75%, 5-10 лет — 100%, 10-15 лет — 150%, 15+ лет — 200% среднемесячного заработка. По собственному желанию — нет (только компенсация за отпуск).' },
       { question: 'Как рассчитать компенсацию за неиспользованный отпуск?', answer: 'Средний дневной заработок (за 3 мес.) × количество неиспользованных дней отпуска.' },
-      { question: 'Какие выплаты при сокращении?', answer: 'Выходное пособие (≥1 среднемесячный) + компенсация за отпуск + сохранение зарплаты на трудоустройство (до 2-3 мес.).' },
+      { question: 'Какие выплаты при сокращении?', answer: 'Выходное пособие (по шкале от 50% до 200% среднемесячного в зависимости от стажа) + компенсация за отпуск + сохранение зарплаты на трудоустройство (до 2-3 мес.).' },
       { question: 'В какой срок должны рассчитать при увольнении?', answer: 'В последний рабочий день. За каждый день просрочки — компенсация в размере среднего заработка.' },
       { question: 'Облагаются ли выплаты при увольнении налогом?', answer: 'Компенсация за отпуск — НДФЛ 12%. Выходное пособие — НДФЛ с суммы свыше 4,22 БРВ (1 738 640 сум).' },
     ],
     faqUz: [
-      { question: "Ishdan bo'shatishda chiqish nafaqasi beriladimi?", answer: "Qisqartirish/tugatishda — ha (kamida 1 o'rtacha oylik). O'z xohishi bilan — yo'q (faqat ta'til kompensatsiyasi)." },
+      { question: "Ishdan bo'shatishda chiqish nafaqasi beriladimi?", answer: "Qisqartirishda — ha, graduatsiyalangan shkala bo'yicha: 3 yilgacha staj — 50%, 3-5 yil — 75%, 5-10 yil — 100%, 10-15 yil — 150%, 15+ yil — o'rtacha oylik ish haqining 200%. O'z xohishi bilan — yo'q (faqat ta'til kompensatsiyasi)." },
       { question: "Foydalanilmagan ta'til kompensatsiyasini qanday hisoblash mumkin?", answer: "O'rtacha kunlik ish haqi (3 oy uchun) × foydalanilmagan kunlar soni." },
-      { question: "Qisqartirish vaqtida qanday to'lovlar bor?", answer: "Chiqish nafaqasi (≥1 o'rtacha oylik) + ta'til kompensatsiyasi + ish topish davri uchun ish haqi (2-3 oygacha)." },
+      { question: "Qisqartirish vaqtida qanday to'lovlar bor?", answer: "Chiqish nafaqasi (stajga qarab o'rtacha oylikning 50% dan 200% gacha shkala bo'yicha) + ta'til kompensatsiyasi + ish topish davri uchun ish haqi (2-3 oygacha)." },
       { question: "Ishdan bo'shatishda qancha muddatda hisob-kitob qilishlari kerak?", answer: "Oxirgi ish kunida. Har kechiktirilgan kun uchun o'rtacha ish haqi miqdorida kompensatsiya." },
       { question: "Ishdan bo'shatish to'lovlari soliqqa tortiladimi?", answer: "Ta'til kompensatsiyasi — JShShS 12%. Chiqish nafaqasi — 4,22 BHK (1 738 640 so'm) dan ortiq summadan JShShS." },
     ],
@@ -1578,34 +1582,35 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'pension',
-    lastUpdated: '2025-10-15',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Закон о пенсионном обеспечении', url: 'https://lex.uz' },
       { name: 'Пенсионный фонд РУз', url: 'https://pfru.uz' },
+      { name: 'Закон о государственном социальном страховании (№1101)', url: 'https://lex.uz' },
     ],
     paragraphsRu: [
-      'Пенсионный возраст в Узбекистане: мужчины — 60 лет, женщины — 55 лет. Для получения полной пенсии по возрасту необходим минимальный трудовой стаж: 25 лет для мужчин и 20 лет для женщин. При недостаточном стаже (но не менее 7 лет) назначается пенсия в пропорциональном размере. Минимальная пенсия в 2025 году составляет около 1 БРВ (412 000 сум).',
+      'Пенсионный возраст в Узбекистане: мужчины — 60 лет, женщины — 55 лет. С июня 2026 года женщины с трудовым стажем 20 и более лет получают право выйти на пенсию на 1 год раньше — в 54 года. Для получения полной пенсии по возрасту необходим минимальный трудовой стаж: 25 лет для мужчин и 20 лет для женщин. При недостаточном стаже (но не менее 7 лет) назначается пенсия в пропорциональном размере. С 1 января 2026 года вступил в силу Закон №1101 о государственном социальном страховании, который реформирует систему социальных выплат, включая пенсионное обеспечение. Минимальная пенсия составляет около 1 БРВ (412 000 сум).',
       'Формула расчёта пенсии: Пенсия = Средний заработок за лучшие 5 последовательных лет × (55% + 1% за каждый год стажа сверх минимального). Максимальный размер — 75% от среднего заработка. При стаже 25 лет: 55% + 0% = 55%. При стаже 35 лет: 55% + 10% = 65%. При стаже 45 лет: 55% + 20% = 75% (максимум). Средний заработок индексируется с учётом роста минимальной зарплаты.',
       'С 2023 года в Узбекистане действует накопительная пенсионная система — индивидуальный накопительный пенсионный счёт (ИНПС). Обязательный взнос составляет 0,1% от начисленной заработной платы и удерживается работодателем. Накопления являются личной собственностью работника, наследуются и не подлежат изъятию. При выходе на пенсию накопленная сумма выплачивается единовременно или в рассрочку по выбору пенсионера.',
       'Досрочная пенсия предусмотрена для ряда категорий: работники вредных производств (списки 1 и 2), педагоги (при стаже 25 лет), медработники (при стаже 25-30 лет), многодетные матери (5+ детей — с 50 лет). Военнослужащие и сотрудники силовых структур выходят на пенсию по выслуге лет (20 лет). Пенсии индексируются ежегодно в соответствии с ростом прожиточного минимума.',
       'Пример расчёта: мужчина, стаж 30 лет, средний заработок за лучшие 5 лет — 8 000 000 сум/мес. Пенсия = 8 000 000 × (55% + 5%) = 8 000 000 × 60% = 4 800 000 сум/мес. С учётом индексации и ИНПС фактическая пенсия может быть выше. Наш калькулятор рассчитает вашу будущую пенсию по введённым данным о стаже, заработке и возрасте.',
     ],
     paragraphsUz: [
-      "O'zbekistonda pensiya yoshi: erkaklar — 60 yosh, ayollar — 55 yosh. Yoshi bo'yicha to'liq pensiya olish uchun minimal ish staji zarur: erkaklar uchun 25 yil va ayollar uchun 20 yil. Staj yetarli bo'lmaganda (lekin 7 yildan kam bo'lmasa) mutanosib miqdorda pensiya tayinlanadi. 2025-yilda minimal pensiya taxminan 1 BHK (412 000 so'm) ni tashkil etadi.",
+      "O'zbekistonda pensiya yoshi: erkaklar — 60 yosh, ayollar — 55 yosh. 2026-yil iyunidan boshlab 20 yil va undan ko'p ish stajiga ega ayollar 1 yil erta — 54 yoshda pensiyaga chiqish huquqiga ega bo'ladi. Yoshi bo'yicha to'liq pensiya olish uchun minimal ish staji zarur: erkaklar uchun 25 yil va ayollar uchun 20 yil. Staj yetarli bo'lmaganda (lekin 7 yildan kam bo'lmasa) mutanosib miqdorda pensiya tayinlanadi. 2026-yil 1-yanvardan davlat ijtimoiy sug'urta to'g'risidagi №1101-son Qonun kuchga kirdi, u ijtimoiy to'lovlar tizimini, jumladan pensiya ta'minotini isloh qiladi. Minimal pensiya taxminan 1 BHK (412 000 so'm) ni tashkil etadi.",
       "Pensiya hisoblash formulasi: Pensiya = Eng yaxshi ketma-ket 5 yildagi o'rtacha ish haqi × (55% + minimaldan ortiq har yil staj uchun 1%). Maksimal miqdor — o'rtacha ish haqining 75%. 25 yil stajda: 55% + 0% = 55%. 35 yil stajda: 55% + 10% = 65%. 45 yil stajda: 55% + 20% = 75% (maksimum). O'rtacha ish haqi minimal ish haqi o'sishini hisobga olgan holda indeksatsiya qilinadi.",
       "2023-yildan O'zbekistonda jamg'arma pensiya tizimi — individual jamg'arma pensiya hisobvarag'i (IJPH) amal qilmoqda. Majburiy to'lov hisoblangan ish haqining 0,1% ni tashkil etadi va ish beruvchi tomonidan ushlab qolinadi. Jamg'armalar xodimning shaxsiy mulki, meros qilib qoldiriladi va tortib olinishi mumkin emas. Pensiyaga chiqqanda yig'ilgan summa pensionerning tanloviga ko'ra bir martalik yoki bo'lib to'lanadi.",
       "Bir qator toifalar uchun muddatidan oldingi pensiya nazarda tutilgan: zararli ishlab chiqarish xodimlari (1 va 2-ro'yxatlar), pedagoglar (25 yil stajda), tibbiyot xodimlari (25-30 yil stajda), ko'p bolali onalar (5+ bola — 50 yoshdan). Harbiylar va kuch tuzilmalari xodimlari xizmat muddati bo'yicha (20 yil) pensiyaga chiqadilar. Pensiyalar har yili yashash minimumi o'sishiga muvofiq indeksatsiya qilinadi.",
       "Hisoblash misoli: erkak, staj 30 yil, eng yaxshi 5 yildagi o'rtacha ish haqi — 8 000 000 so'm/oy. Pensiya = 8 000 000 × (55% + 5%) = 8 000 000 × 60% = 4 800 000 so'm/oy. Indeksatsiya va IJPHni hisobga olsak, haqiqiy pensiya yuqoriroq bo'lishi mumkin. Kalkulyatorimiz staj, ish haqi va yosh haqidagi kiritilgan ma'lumotlar bo'yicha kelajakdagi pensiyangizni hisoblaydi.",
     ],
     faqRu: [
-      { question: 'Какой пенсионный возраст в Узбекистане?', answer: 'Мужчины — 60 лет, женщины — 55 лет. Есть категории с правом на досрочную пенсию.' },
+      { question: 'Какой пенсионный возраст в Узбекистане?', answer: 'Мужчины — 60 лет, женщины — 55 лет. С июня 2026 года женщины со стажем 20+ лет могут выйти на пенсию в 54 года. Есть и другие категории с правом на досрочную пенсию.' },
       { question: 'Какая минимальная пенсия?', answer: 'Около 1 БРВ (412 000 сум). Конкретный размер зависит от стажа и среднего заработка.' },
       { question: 'Что такое ИНПС?', answer: 'Индивидуальный накопительный пенсионный счёт. Взнос 0,1% от зарплаты. Личная собственность, наследуется.' },
       { question: 'Какой стаж нужен для полной пенсии?', answer: 'Мужчины — 25 лет, женщины — 20 лет. При меньшем стаже (от 7 лет) — пропорциональная пенсия.' },
       { question: 'Кто имеет право на досрочную пенсию?', answer: 'Работники вредных производств, педагоги (25 лет стажа), медработники (25-30 лет), многодетные матери (5+ детей — с 50 лет).' },
     ],
     faqUz: [
-      { question: "O'zbekistonda pensiya yoshi necha?", answer: "Erkaklar — 60 yosh, ayollar — 55 yosh. Muddatidan oldingi pensiya huquqiga ega toifalar bor." },
+      { question: "O'zbekistonda pensiya yoshi necha?", answer: "Erkaklar — 60 yosh, ayollar — 55 yosh. 2026-yil iyunidan 20+ yil stajli ayollar 54 yoshda pensiyaga chiqishi mumkin. Muddatidan oldingi pensiya huquqiga ega boshqa toifalar ham bor." },
       { question: "Minimal pensiya qancha?", answer: "Taxminan 1 BHK (412 000 so'm). Aniq miqdor staj va o'rtacha ish haqiga bog'liq." },
       { question: "IJPH nima?", answer: "Individual jamg'arma pensiya hisobvarag'i. To'lov ish haqining 0,1%. Shaxsiy mulk, meros qilib qoldiriladi." },
       { question: "To'liq pensiya uchun qancha staj kerak?", answer: "Erkaklar — 25 yil, ayollar — 20 yil. Kam stajda (7 yildan) — mutanosib pensiya." },
@@ -1615,17 +1620,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'installment',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
     paragraphsRu: [
-      'Калькулятор рассрочки рассчитывает ежемесячный платёж при покупке товара в рассрочку. В отличие от кредита, рассрочка обычно предоставляется без процентов (0%) — переплата отсутствует. Однако цена товара в рассрочку может отличаться от цены за наличные.',
-      'Формула: Ежемесячный платёж = (Цена − Первоначальный взнос) / Количество месяцев. Пример: телефон 8 000 000 сум, взнос 0%, рассрочка 12 месяцев. Платёж = 8 000 000 / 12 = 666 667 сум/мес.',
-      'Рассрочку предлагают магазины электроники, мебели, одежды через банковские карты (Uzum, Click). Сроки: обычно 3, 6, 12, 18, 24 месяца.',
+      'Калькулятор рассрочки рассчитывает ежемесячный платёж при покупке товара в рассрочку без процентов. В Узбекистане рассрочка стала одним из самых популярных способов приобретения техники, мебели и бытовых товаров. В отличие от потребительского кредита, рассрочка предоставляется под 0% — переплата формально отсутствует, хотя цена товара в рассрочку может быть выше, чем при оплате наличными.',
+      'Формула расчёта проста: ежемесячный платёж = (цена товара − первоначальный взнос) / количество месяцев. Пример: смартфон стоимостью 8 000 000 сум без первоначального взноса на 12 месяцев — платёж составит 666 667 сум в месяц. При рассрочке на 6 месяцев платёж вырастет до 1 333 333 сум, но общая сумма останется прежней — никаких процентов.',
+      'Рассрочку в Узбекистане оформляют через банковские карты платёжных систем Uzum, Click, Payme, Anor, а также через банки-партнёры крупных торговых сетей — Mediapark, Texnomart, Artel. Доступные сроки зависят от категории товара и магазина: электроника — обычно 3, 6 или 12 месяцев; мебель и бытовая техника — до 18–24 месяцев; одежда и аксессуары — 3–6 месяцев.',
+      'Важно учитывать скрытые особенности рассрочки. Некоторые магазины устанавливают разные цены для наличной покупки и рассрочки — разница может достигать 5–15%. Перед оформлением сравните цену товара в нескольких магазинах и уточните, есть ли скидка за полную оплату. Также обращайте внимание на условия досрочного погашения и возможные комиссии за обслуживание карты рассрочки.',
+      'Наш калькулятор рассрочки поможет быстро рассчитать ежемесячный платёж для любого товара: введите стоимость, размер первоначального взноса и срок — и получите точную сумму ежемесячного платежа. Это позволит оценить нагрузку на бюджет и выбрать оптимальный срок рассрочки, чтобы покупка была комфортной и не привела к финансовым затруднениям.',
     ],
     paragraphsUz: [
-      "Bo'lib to'lash kalkulyatori tovarni bo'lib to'lashda oylik to'lovni hisoblaydi. Kreditdan farqli, bo'lib to'lash odatda foizsiz (0%) — ortiqcha to'lov yo'q. Lekin bo'lib to'lashdagi tovar narxi naqd narxdan farq qilishi mumkin.",
-      "Formula: Oylik to'lov = (Narx − Boshlang'ich to'lov) / Oylar soni. Misol: telefon 8 000 000 so'm, to'lov 0%, 12 oyga. To'lov = 8 000 000 / 12 = 666 667 so'm/oy.",
-      "Bo'lib to'lashni elektronika, mebel, kiyim do'konlari bank kartalari (Uzum, Click) orqali taklif etadi. Muddatlar: odatda 3, 6, 12, 18, 24 oy.",
+      "Bo'lib to'lash kalkulyatori foizsiz bo'lib to'lashda tovarning oylik to'lovini hisoblaydi. O'zbekistonda bo'lib to'lash texnika, mebel va maishiy tovarlarni sotib olishning eng mashhur usullaridan biriga aylangan. Iste'mol kreditidan farqli, bo'lib to'lash 0% da beriladi — rasman ortiqcha to'lov yo'q, garchi bo'lib to'lashdagi tovar narxi naqd to'lovga qaraganda yuqoriroq bo'lishi mumkin.",
+      "Hisoblash formulasi oddiy: oylik to'lov = (tovar narxi − boshlang'ich to'lov) / oylar soni. Misol: 8 000 000 so'mlik smartfon boshlang'ich to'lovsiz 12 oyga — to'lov 666 667 so'm/oy. 6 oyga bo'lib to'lashda to'lov 1 333 333 so'mga oshadi, lekin umumiy summa o'sha-o'sha qoladi — hech qanday foiz yo'q.",
+      "O'zbekistonda bo'lib to'lash Uzum, Click, Payme, Anor to'lov tizimlari bank kartalari orqali, shuningdek yirik savdo tarmoqlari — Mediapark, Texnomart, Artel hamkor banklari orqali rasmiylashtiriladi. Mavjud muddatlar tovar toifasi va do'konga bog'liq: elektronika — odatda 3, 6 yoki 12 oy; mebel va maishiy texnika — 18–24 oygacha; kiyim va aksessuarlar — 3–6 oy.",
+      "Bo'lib to'lashning yashirin xususiyatlarini hisobga olish muhim. Ba'zi do'konlar naqd xarid va bo'lib to'lash uchun turli narxlar belgilaydi — farq 5–15% ga yetishi mumkin. Rasmiylashtirish oldidan tovar narxini bir necha do'konlarda solishtiring va to'liq to'lov uchun chegirma borligini aniqlang. Shuningdek, muddatidan oldin to'lash shartlari va bo'lib to'lash kartasi xizmat komissiyasiga e'tibor bering.",
+      "Bizning bo'lib to'lash kalkulyatorimiz har qanday tovar uchun oylik to'lovni tezda hisoblashga yordam beradi: qiymatini, boshlang'ich to'lov miqdorini va muddatni kiriting — aniq oylik to'lov summasini olasiz. Bu byudjetga yukni baholash va xarid qulay bo'lishi hamda moliyaviy qiyinchiliklarga olib kelmasligi uchun optimal bo'lib to'lash muddatini tanlash imkonini beradi.",
     ],
     faqRu: [
       { question: 'Есть ли переплата при рассрочке?', answer: 'При 0% рассрочке — нет. Но цена товара может отличаться от наличной.' },
@@ -1641,17 +1650,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'early-repayment',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [{ name: 'Закон о банковской деятельности', url: 'https://lex.uz/docs/5765051' }],
     paragraphsRu: [
-      'Калькулятор досрочного погашения кредита показывает, сколько вы сэкономите на процентах при частичном или полном досрочном погашении. С 2020 года в Узбекистане досрочное погашение разрешено без штрафов.',
-      'Два варианта после частичного погашения: уменьшение ежемесячного платежа (срок сохраняется) или сокращение срока кредита (платёж сохраняется). Сокращение срока выгоднее по общей переплате.',
-      'Пример: кредит 100 млн сум, 22% годовых, 5 лет. Через 1 год вносите 20 млн досрочно. Экономия при сокращении срока: ~12 млн сум процентов. При уменьшении платежа: ~8 млн сум.',
+      'Калькулятор досрочного погашения кредита показывает, сколько вы сэкономите на процентах при частичном или полном внеочередном внесении средств. Согласно Закону Республики Узбекистан «О банках и банковской деятельности», заёмщик имеет право на досрочное погашение потребительского кредита без уплаты штрафов и комиссий. Это правило действует с 2020 года и распространяется на все банки страны.',
+      'После частичного досрочного погашения банк предлагает два варианта пересчёта графика: сокращение срока кредита при сохранении размера ежемесячного платежа или уменьшение платежа при сохранении первоначального срока. Математически сокращение срока всегда выгоднее, поскольку уменьшается период начисления процентов, а значит, общая переплата снижается значительнее.',
+      'Рассмотрим практический пример. Кредит 100 млн сум под 22% годовых на 5 лет, аннуитетные платежи — около 2 780 000 сум в месяц. Через 12 месяцев вы вносите 20 млн досрочно. При сокращении срока кредит закроется на 15 месяцев раньше, экономия на процентах составит порядка 12 млн сум. При уменьшении платежа ежемесячный взнос снизится до ~2 200 000 сум, но экономия составит лишь ~8 млн.',
+      'Оптимальная стратегия досрочного погашения зависит от ваших целей. Если приоритет — минимизация переплаты, выбирайте сокращение срока и вносите средства как можно раньше (процентная нагрузка наибольшая в первые годы кредита). Если важнее снизить текущую финансовую нагрузку — уменьшайте платёж. Многие заёмщики комбинируют: сначала снижают платёж до комфортного уровня, затем сокращают срок.',
+      'Наш калькулятор досрочного погашения рассчитает оба сценария одновременно: покажет новый график платежей, оставшийся срок, экономию на процентах и сравнение с первоначальным планом. Просто введите параметры кредита, дату и сумму досрочного взноса — и получите детальный расчёт за секунды. Рекомендуется уведомлять банк о намерении минимум за 30 дней.',
     ],
     paragraphsUz: [
-      "Kreditni muddatidan oldin to'lash kalkulyatori qisman yoki to'liq muddatidan oldin to'lashda foizlarda qancha tejashingizni ko'rsatadi. 2020-yildan O'zbekistonda muddatidan oldin to'lash jarimasisz ruxsat etilgan.",
-      "Qisman to'lashdan keyin ikki variant: oylik to'lovni kamaytirish (muddat saqlanadi) yoki kredit muddatini qisqartirish (to'lov saqlanadi). Muddatni qisqartirish umumiy ortiqcha to'lov bo'yicha foydaliroq.",
-      "Misol: 100 mln so'mlik kredit, yillik 22%, 5 yil. 1 yildan keyin 20 mln muddatidan oldin to'lovingiz. Muddat qisqartirishda tejash: ~12 mln so'm foiz. To'lov kamaytirishda: ~8 mln so'm.",
+      "Kreditni muddatidan oldin to'lash kalkulyatori qisman yoki to'liq navbatdan tashqari mablag' kiritishda foizlarda qancha tejashingizni ko'rsatadi. O'zbekiston Respublikasining «Banklar va bank faoliyati to'g'risida»gi qonuniga ko'ra, qarz oluvchi iste'mol kreditini jarima va komissiyalarsiz muddatidan oldin to'lash huquqiga ega. Bu qoida 2020-yildan amal qiladi va mamlakatdagi barcha banklarga taalluqli.",
+      "Qisman muddatidan oldin to'lashdan keyin bank jadval bo'yicha ikki variant taklif etadi: oylik to'lov miqdorini saqlab kredit muddatini qisqartirish yoki dastlabki muddatni saqlab to'lovni kamaytirish. Matematik jihatdan muddatni qisqartirish doimo foydaliroq, chunki foiz hisoblash davri qisqaradi va umumiy ortiqcha to'lov ko'proq kamayadi.",
+      "Amaliy misolni ko'rib chiqaylik. 100 mln so'mlik kredit yillik 22% da 5 yilga, annuitet to'lovlari — oyiga taxminan 2 780 000 so'm. 12 oydan keyin 20 mln muddatidan oldin kiritasiz. Muddatni qisqartirishda kredit 15 oy oldin yopiladi, foizlardagi tejash taxminan 12 mln so'm. To'lovni kamaytirishda oylik to'lov ~2 200 000 so'mga tushadi, lekin tejash atigi ~8 mln.",
+      "Muddatidan oldin to'lashning optimal strategiyasi maqsadlaringizga bog'liq. Agar ustuvorlik ortiqcha to'lovni minimallashtirish bo'lsa — muddatni qisqartiring va mablag'ni iloji boricha ertaroq kiriting (foiz yuki kreditning dastlabki yillarida eng katta). Agar joriy moliyaviy yukni kamaytirish muhimroq bo'lsa — to'lovni kamaytiring. Ko'p qarz oluvchilar aralashtiradi: avval to'lovni qulay darajaga tushiradi, keyin muddatni qisqartiradi.",
+      "Bizning muddatidan oldin to'lash kalkulyatorimiz ikkala senariyni bir vaqtda hisoblaydi: yangi to'lov jadvalini, qolgan muddatni, foizlardagi tejashni va dastlabki reja bilan solishtirishni ko'rsatadi. Kredit parametrlarini, muddatidan oldin to'lov sanasi va summasini kiriting — bir necha soniyada batafsil hisob oling. Bankni kamida 30 kun oldin xabardor qilish tavsiya etiladi.",
     ],
     faqRu: [
       { question: 'Можно ли досрочно погасить кредит без штрафа?', answer: 'Да, с 2020 года — без штрафов и комиссий.' },
@@ -1667,17 +1680,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'refinancing',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [{ name: 'Центральный банк РУз', url: 'https://cbu.uz' }],
-    paragraphsRu: [
-      'Рефинансирование кредита — получение нового кредита по более выгодной ставке для погашения существующего. Выгодно при снижении ключевой ставки ЦБ (14% в 2025). Калькулятор покажет экономию при рефинансировании.',
-      'Рефинансирование выгодно, если: разница в ставках ≥2%; оставшийся срок кредита >1 года; нет штрафов за досрочное погашение. Учтите расходы: оценка залога, комиссия нового банка, страховка.',
-      'Пример: остаток кредита 80 млн, текущая ставка 24%, осталось 3 года. Рефинансирование под 18%: экономия ≈ 7 млн сум на процентах за 3 года.',
+        paragraphsRu: [
+      'Рефинансирование кредита — получение нового кредита на более выгодных условиях для погашения существующего. В Узбекистане эта услуга особенно актуальна: ключевая ставка Центрального банка в 2026 году составляет 14%, и многие заёмщики, оформившие кредиты при ставке 20–24%, могут значительно снизить переплату. Калькулятор рефинансирования покажет точную сумму экономии и поможет принять обоснованное решение.',
+      'Рефинансирование выгодно при соблюдении нескольких условий: разница между текущей и новой ставкой составляет не менее 2–3 процентных пунктов; оставшийся срок кредита превышает 1 год; отсутствуют штрафы за досрочное погашение (по законодательству Узбекистана банки не вправе запрещать досрочное погашение потребительских кредитов). Также учтите сопутствующие расходы: переоценка залогового имущества, комиссия нового банка, переоформление страхового полиса.',
+      'Пример расчёта: остаток ипотечного кредита 150 млн сум, текущая ставка 22%, осталось 5 лет. При рефинансировании под 17% ежемесячный платёж снизится с 4 200 000 до 3 700 000 сум — экономия 500 000 сум в месяц. За 5 лет общая экономия составит около 30 млн сум, даже с учётом расходов на переоформление (3–5 млн сум). Рефинансирование особенно выгодно для ипотечных кредитов с длительным сроком.',
+      'Рефинансирование в Узбекистане предлагают крупнейшие банки: Ипотека-банк, Капиталбанк, Хамкорбанк, Узнацбанк и другие. Некоторые банки проводят акции со сниженными ставками для рефинансирования. Возможно также внутреннее рефинансирование — снижение ставки в текущем банке без смены кредитора, что экономит время и расходы на переоформление документов.',
+      'Наш калькулятор сравнивает текущий и новый кредит по всем параметрам: ежемесячный платёж, общая переплата, процентная экономия, срок окупаемости расходов на рефинансирование. Введите остаток кредита, текущую ставку, новую ставку и оставшийся срок — и получите детальный расчёт. Помните: рефинансирование не увеличивает долг, а лишь меняет условия его обслуживания на более выгодные.',
     ],
     paragraphsUz: [
-      "Kreditni qayta moliyalash — mavjudini to'lash uchun foydaliroq stavkada yangi kredit olish. MB kalit stavkasi pasayganda (2025-yilda 14%) foydali. Kalkulyator qayta moliyalashdagi tejashni ko'rsatadi.",
-      "Qayta moliyalash foydali: stavkalar farqi ≥2%; kreditning qolgan muddati >1 yil; muddatidan oldin to'lash uchun jarimalar yo'q. Xarajatlarni hisobga oling: garov baholash, yangi bank komissiyasi, sug'urta.",
-      "Misol: kredit qoldig'i 80 mln, joriy stavka 24%, 3 yil qolgan. 18% da qayta moliyalash: 3 yilda foizlarda tejash ≈ 7 mln so'm.",
+      "Kreditni qayta moliyalash — mavjud kreditni to'lash uchun yangi, foydaliroq shartlardagi kredit olish. O'zbekistonda bu xizmat ayniqsa dolzarb: Markaziy bankning 2026-yildagi kalit stavkasi 14% ni tashkil etadi va stavka 20–24% da kredit rasmiylashtirgan ko'plab qarz oluvchilar ortiqcha to'lovni sezilarli kamaytirishi mumkin. Qayta moliyalash kalkulyatori aniq tejash summasini ko'rsatadi va asoslangan qaror qabul qilishga yordam beradi.",
+      "Qayta moliyalash bir necha shart bajarilganda foydali: joriy va yangi stavka o'rtasidagi farq kamida 2–3 foiz punkt; kreditning qolgan muddati 1 yildan ortiq; muddatidan oldin to'lash uchun jarimalar yo'q (O'zbekiston qonunchiligiga ko'ra banklar iste'mol kreditlarini muddatidan oldin to'lashni taqiqlash huquqiga ega emas). Qo'shimcha xarajatlarni ham hisobga oling: garov mulkni qayta baholash, yangi bank komissiyasi, sug'urta polisini qayta rasmiylashtirish.",
+      "Hisoblash misoli: ipoteka krediti qoldig'i 150 mln so'm, joriy stavka 22%, 5 yil qolgan. 17% da qayta moliyalashda oylik to'lov 4 200 000 dan 3 700 000 so'mga tushadi — oyiga 500 000 so'm tejash. 5 yilda umumiy tejash taxminan 30 mln so'mni tashkil etadi, hatto qayta rasmiylashtirish xarajatlarini (3–5 mln so'm) hisobga olganda ham. Qayta moliyalash uzoq muddatli ipoteka kreditlari uchun ayniqsa foydali.",
+      "O'zbekistonda qayta moliyalashni yirik banklar taklif etadi: Ipoteka-bank, Kapitalbank, Hamkorbank, O'zMilliybank va boshqalar. Ba'zi banklar qayta moliyalash uchun pasaytirilgan stavkalar bo'yicha aksiyalar o'tkazadi. Ichki qayta moliyalash ham mumkin — kreditorni almashtirmasdan joriy bankda stavkani pasaytirish, bu hujjatlarni qayta rasmiylashtirish uchun vaqt va xarajatlarni tejaydi.",
+      "Bizning kalkulyatorimiz joriy va yangi kreditni barcha parametrlar bo'yicha solishtiradi: oylik to'lov, umumiy ortiqcha to'lov, foiz tejash, qayta moliyalash xarajatlarining o'zini oqlash muddati. Kredit qoldig'i, joriy stavka, yangi stavka va qolgan muddatni kiriting — batafsil hisob-kitobni olasiz. Esda tuting: qayta moliyalash qarzni oshirmaydi, faqat uning xizmat ko'rsatish shartlarini foydaliroqqa o'zgartiradi.",
     ],
     faqRu: [
       { question: 'Когда выгодно рефинансировать?', answer: 'При разнице ставок ≥2%, остаточном сроке >1 года, отсутствии штрафов за досрочное погашение.' },
@@ -1693,7 +1710,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'compound-interest',
-    lastUpdated: '2025-09-05',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
     ],
@@ -1701,35 +1718,35 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Калькулятор сложных процентов показывает рост капитала с учётом капитализации — начисления процентов на ранее начисленные проценты. Формула: FV = PV × (1 + r/n)^(n×t), где PV — начальная сумма, r — годовая ставка, n — частота капитализации (12 для ежемесячной, 4 для квартальной, 1 для годовой), t — срок в годах. Сложные проценты — основа долгосрочного инвестирования и накопления.',
       'В банках Узбекистана (2025) ставки по сумовым вкладам составляют 20-26% годовых, по валютным — 4-7%. При таких ставках сложные проценты дают колоссальный эффект: вклад 50 млн сум под 24% на 5 лет с ежемесячной капитализацией вырастет до 163,4 млн (прирост 226,9%), тогда как без капитализации (простые проценты) было бы 110 млн (прирост 120%). Разница — более 53 млн сум.',
       'Частота капитализации существенно влияет на доходность. При ставке 24% годовых и сроке 5 лет: годовая капитализация даёт +193,2%; квартальная — +211,5%; ежемесячная — +226,9%; ежедневная — +231,8%. Разница между годовой и ежемесячной капитализацией составляет 33,7 процентных пунктов — на вкладе 50 млн это дополнительные 16,8 млн сум.',
-      'Для реальной оценки дохода от вклада необходимо учитывать инфляцию. В Узбекистане инфляция в 2025 году составляет около 10%. Реальная доходность вклада под 24% = 24% − 10% = 14% годовых. Тем не менее, это значительно выше инфляции, и сложные проценты усиливают эффект. Также доход по вкладам физлиц не облагается НДФЛ, что делает депозиты привлекательным инструментом.',
+      'Для реальной оценки дохода от вклада необходимо учитывать инфляцию. В Узбекистане инфляция в 2025 году составляет около 7,3%. Реальная доходность вклада под 24% = 24% − 7,3% = 16,7% годовых. Тем не менее, это значительно выше инфляции, и сложные проценты усиливают эффект. При этом с дохода по вкладам физлиц удерживается НДФЛ 5% для резидентов (10% для нерезидентов) — банк удерживает налог автоматически при выплате процентов.',
       'Наш калькулятор сложных процентов позволяет задать начальную сумму, годовую ставку, частоту капитализации, срок и ежемесячные пополнения — и мгновенно получить итоговую сумму, общий доход и график роста капитала по месяцам. Используйте его для планирования накоплений, сравнения вкладов и оценки инвестиций.',
     ],
     paragraphsUz: [
       "Murakkab foizlar kalkulyatori avval hisoblangan foizlarga foiz hisoblash — kapitalizatsiyani hisobga olgan holda kapitalning o'sishini ko'rsatadi. Formula: FV = PV × (1 + r/n)^(n×t), bunda PV — boshlang'ich summa, r — yillik stavka, n — kapitalizatsiya chastotasi (oylik uchun 12, choraklik 4, yillik 1), t — yillardagi muddat. Murakkab foizlar — uzoq muddatli investitsiyalash va jamg'arishning asosi.",
       "O'zbekiston banklarida (2025) so'mdagi omonat stavkalari yillik 20-26%, valyutada 4-7%. Bunday stavkalarda murakkab foizlar ulkan ta'sir beradi: 50 mln so'mlik omonat yillik 24% da 5 yilga oylik kapitalizatsiya bilan 163,4 mln gacha o'sadi (o'sish 226,9%), holbuki kapitalizatsiyasiz (oddiy foizlar) 110 mln bo'lardi (o'sish 120%). Farq — 53 mln so'mdan ortiq.",
       "Kapitalizatsiya chastotasi daromadlilikka sezilarli ta'sir qiladi. Yillik 24% stavka va 5 yil muddatda: yillik kapitalizatsiya +193,2%; choraklik — +211,5%; oylik — +226,9%; kunlik — +231,8% beradi. Yillik va oylik kapitalizatsiya o'rtasidagi farq 33,7 foiz punktni tashkil etadi — 50 mln omonatda bu qo'shimcha 16,8 mln so'm.",
-      "Omonatdan haqiqiy daromadni baholash uchun inflyatsiyani hisobga olish kerak. O'zbekistonda 2025-yilda inflyatsiya taxminan 10% ni tashkil etadi. 24% omonatning real daromadliligi = 24% − 10% = yillik 14%. Shunga qaramay, bu inflyatsiyadan ancha yuqori va murakkab foizlar ta'sirni kuchaytiradi. Shuningdek, jismoniy shaxslarning omonat daromadi JShShSga tortilmaydi, bu depozitlarni jozibador vositaga aylantiradi.",
+      "Omonatdan haqiqiy daromadni baholash uchun inflyatsiyani hisobga olish kerak. O'zbekistonda 2025-yilda inflyatsiya taxminan 7,3% ni tashkil etadi. 24% omonatning real daromadliligi = 24% − 7,3% = yillik 16,7%. Shunga qaramay, bu inflyatsiyadan ancha yuqori va murakkab foizlar ta'sirni kuchaytiradi. Bunda jismoniy shaxslarning omonat daromadidan rezidentlar uchun 5% (norezidentlar uchun 10%) JShShS ushlab qolinadi — bank foizlarni to'lashda soliqni avtomatik ravishda ushlab qoladi.",
       "Bizning murakkab foizlar kalkulyatorimiz boshlang'ich summa, yillik stavka, kapitalizatsiya chastotasi, muddat va oylik to'ldirishlarni kiritish va bir zumda yakuniy summa, umumiy daromad va oylar bo'yicha kapital o'sish jadvalini olish imkonini beradi. Jamg'armalarni rejalashtirish, omonatlarni solishtirish va investitsiyalarni baholash uchun foydalaning.",
     ],
     faqRu: [
       { question: 'Чем сложные проценты отличаются от простых?', answer: 'Простые: проценты только на начальную сумму. Сложные: проценты на начальную сумму плюс ранее начисленные проценты (капитализация).' },
       { question: 'Как капитализация влияет на доход?', answer: 'При 24% годовых за 5 лет: без капитализации — +120%, с ежемесячной — +226,9%. Разница на 50 млн сум — более 53 млн.' },
       { question: 'Как часто лучше капитализировать?', answer: 'Чем чаще, тем выгоднее. Ежемесячная капитализация при 24% даёт на 33,7% больше годовой за 5 лет.' },
-      { question: 'Облагается ли доход по вкладам налогом?', answer: 'Нет, доход физических лиц по банковским вкладам в Узбекистане не облагается НДФЛ.' },
-      { question: 'Какая реальная доходность вкладов?', answer: 'Номинальная 20-26% минус инфляция ~10% = реальная доходность 10-16% годовых.' },
+      { question: 'Облагается ли доход по вкладам налогом?', answer: 'Да, с дохода по вкладам удерживается НДФЛ 5% для резидентов (10% для нерезидентов). Банк удерживает налог автоматически при выплате процентов.' },
+      { question: 'Какая реальная доходность вкладов?', answer: 'Номинальная 20-26% минус инфляция ~7,3% = реальная доходность 13-19% годовых (до вычета 5% НДФЛ на проценты).' },
     ],
     faqUz: [
       { question: "Murakkab foizlar oddiydan nimasi bilan farq qiladi?", answer: "Oddiy: faqat boshlang'ich summaga foiz. Murakkab: boshlang'ich summa hamda avval hisoblangan foizlarga foiz (kapitalizatsiya)." },
       { question: "Kapitalizatsiya daromadga qanday ta'sir qiladi?", answer: "Yillik 24% da 5 yilga: kapitalizatsiyasiz — +120%, oylik bilan — +226,9%. 50 mln so'mda farq — 53 mln dan ortiq." },
       { question: "Qanchalik tez-tez kapitalizatsiya qilgan yaxshi?", answer: "Qanchalik tez-tez — shunchalik foydali. 24% da oylik kapitalizatsiya 5 yilda yillikdan 33,7% ko'proq beradi." },
-      { question: "Omonat daromadi soliqqa tortiladimi?", answer: "Yo'q, O'zbekistonda jismoniy shaxslarning bank omonatlari daromadi JShShSga tortilmaydi." },
-      { question: "Omonatlarning real daromadliligi qancha?", answer: "Nominal 20-26% minus inflyatsiya ~10% = real daromadlilik yillik 10-16%." },
+      { question: "Omonat daromadi soliqqa tortiladimi?", answer: "Ha, omonat daromadidan rezidentlar uchun 5% (norezidentlar uchun 10%) JShShS ushlab qolinadi. Bank foizlarni to'lashda soliqni avtomatik ravishda ushlab qoladi." },
+      { question: "Omonatlarning real daromadliligi qancha?", answer: "Nominal 20-26% minus inflyatsiya ~7,3% = real daromadlilik yillik 13-19% (foizlarga 5% JShShS chegirilgunicha)." },
     ],
   },
 
   {
     slug: 'deposit-comparison',
-    lastUpdated: '2025-10-10',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Фонд гарантирования вкладов', url: 'https://dif.uz' },
@@ -1738,29 +1755,29 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Калькулятор сравнения вкладов позволяет сопоставить условия депозитов в разных банках Узбекистана по эффективной доходности с учётом капитализации, возможности пополнения и условий досрочного снятия. Для объективного сравнения важно использовать эффективную годовую ставку (ЭГС), а не номинальную — вклад под 23% с ежемесячной капитализацией может быть выгоднее вклада под 24% с выплатой в конце срока.',
       'Ставки по вкладам в банках Узбекистана (2025): в сумах — 20-26% годовых (топ-ставки у Ипотека-банк, Капиталбанк, Давр Банк); в долларах США — 4-7% (Узнацбанк, Асакабанк); в евро — 2-4%. Срок вкладов: от 3 месяцев до 3 лет. Минимальная сумма: от 100 000 сум до 1 000 000 сум в зависимости от банка.',
       'Ключевые параметры для сравнения: номинальная ставка, частота капитализации (ежемесячная выгоднее квартальной на 1-2%), возможность пополнения, условия досрочного снятия (потеря процентов — полная или частичная), минимальная сумма и минимальный срок. Некоторые вклады с высокой ставкой не допускают досрочное снятие или пополнение.',
-      'Все вклады физических лиц в банках Узбекистана гарантированы Фондом гарантирования вкладов граждан. Максимальная сумма возмещения — полная сумма вклада (без ограничений). Это означает, что вклады в любом лицензированном банке одинаково защищены. Доход по вкладам физлиц не облагается НДФЛ.',
+      'Все вклады физических лиц в банках Узбекистана гарантированы Фондом гарантирования вкладов граждан. Максимальная сумма возмещения — до 200 млн сум на одного вкладчика в одном банке. Проценты по депозитам облагаются НДФЛ по ставке 5% для резидентов (10% для нерезидентов). Банк удерживает налог автоматически при выплате процентов.',
       'Наш калькулятор сравнения вкладов позволяет ввести параметры двух и более вкладов и увидеть: эффективную ставку, итоговый доход, разницу между вкладами в абсолютных числах. Пример: Вклад А — 24% с годовой капитализацией (ЭГС 24%). Вклад Б — 23% с ежемесячной капитализацией (ЭГС 25,59%). На 50 млн за 1 год: А принесёт 12 000 000, Б — 12 795 000. Разница: 795 000 сум в пользу Б.',
     ],
     paragraphsUz: [
       "Omonatlarni solishtirish kalkulyatori O'zbekiston turli banklaridagi depozit shartlarini kapitalizatsiya, to'ldirish imkoniyati va muddatidan oldin yechib olish shartlarini hisobga olgan holda samarali daromadlilik bo'yicha solishtirish imkonini beradi. Ob'ektiv solishtirish uchun nominal emas, samarali yillik stavkani (SYS) ishlatish muhim — oylik kapitalizatsiyali 23% omonat muddat oxiridagi to'lovli 24% omonatdan foydaliroq bo'lishi mumkin.",
       "O'zbekiston banklarida omonat stavkalari (2025): so'mda — yillik 20-26% (eng yuqori stavkalar Ipoteka-bank, Kapitalbank, Davr Bank da); AQSh dollarida — 4-7% (O'zmilliybank, Asakabank); yevroda — 2-4%. Omonat muddatlari: 3 oydan 3 yilgacha. Minimal summa: bankga qarab 100 000 so'mdan 1 000 000 so'mgacha.",
       "Solishtirish uchun asosiy parametrlar: nominal stavka, kapitalizatsiya chastotasi (oylik choraklikdan 1-2% foydaliroq), to'ldirish imkoniyati, muddatidan oldin yechib olish shartlari (foizlarni yo'qotish — to'liq yoki qisman), minimal summa va minimal muddat. Yuqori stavkali ba'zi omonatlar muddatidan oldin yechib olish yoki to'ldirishga ruxsat bermaydi.",
-      "O'zbekiston banklaridagi jismoniy shaxslarning barcha omonatlari Fuqarolar omonatlarini kafolatlash fondi tomonidan kafolatlangan. Maksimal qoplov summasi — omonatning to'liq summasi (cheklovsiz). Bu har qanday litsenziyalangan bankdagi omonatlar bir xil himoyalanganligini anglatadi. Jismoniy shaxslarning omonat daromadi JShShSga tortilmaydi.",
+      "O'zbekiston banklaridagi jismoniy shaxslarning barcha omonatlari Fuqarolar omonatlarini kafolatlash fondi tomonidan kafolatlangan. Maksimal qoplov summasi — bir omonatchiga bir bankda 200 mln so'mgacha. Depozit foizlari rezidentlar uchun 5% (norezidentlar uchun 10%) stavkada JShShSga tortiladi. Bank foizlarni to'lashda soliqni avtomatik ravishda ushlab qoladi.",
       "Bizning omonatlarni solishtirish kalkulyatorimiz ikki va undan ortiq omonat parametrlarini kiritish va ko'rish imkonini beradi: samarali stavka, yakuniy daromad, omonatlar orasidagi farqni mutlaq raqamlarda. Misol: A omonat — yillik kapitalizatsiyali 24% (SYS 24%). B omonat — oylik kapitalizatsiyali 23% (SYS 25,59%). 50 mln ga 1 yilga: A 12 000 000 keltiradi, B — 12 795 000. Farq: B foydasiga 795 000 so'm.",
     ],
     faqRu: [
       { question: 'Как сравнить вклады в разных банках?', answer: 'По эффективной годовой ставке (с учётом капитализации), а не по номинальной. Наш калькулятор покажет реальный доход.' },
       { question: 'Какие ставки по вкладам в 2025?', answer: 'В сумах: 20-26% годовых. В долларах: 4-7%. В евро: 2-4%. Зависит от банка и срока.' },
       { question: 'Лучше ежемесячная капитализация или выплата в конце?', answer: 'Ежемесячная капитализация выгоднее: повышает эффективную ставку на 1-3% в зависимости от номинальной ставки.' },
-      { question: 'Застрахованы ли вклады?', answer: 'Да, все вклады физлиц гарантированы Фондом гарантирования без ограничения суммы.' },
-      { question: 'Облагается ли доход по вкладам налогом?', answer: 'Нет, доход физических лиц по банковским вкладам в Узбекистане не облагается НДФЛ.' },
+      { question: 'Застрахованы ли вклады?', answer: 'Да, все вклады физлиц гарантированы Фондом гарантирования до 200 млн сум на одного вкладчика в одном банке.' },
+      { question: 'Облагается ли доход по вкладам налогом?', answer: 'Да, с дохода по вкладам удерживается НДФЛ 5% для резидентов (10% для нерезидентов). Банк удерживает налог автоматически при выплате процентов.' },
     ],
     faqUz: [
       { question: "Turli banklardagi omonatlarni qanday solishtirish mumkin?", answer: "Nominal emas, samarali yillik stavka (kapitalizatsiyani hisobga olgan holda) bo'yicha. Kalkulyatorimiz haqiqiy daromadni ko'rsatadi." },
       { question: "2025-yilda omonat stavkalari qanday?", answer: "So'mda: yillik 20-26%. Dollarda: 4-7%. Yevroda: 2-4%. Bank va muddatga bog'liq." },
       { question: "Oylik kapitalizatsiya yoki oxirida to'lov yaxshiroqmi?", answer: "Oylik kapitalizatsiya foydaliroq: nominal stavkaga qarab samarali stavkani 1-3% ga oshiradi." },
-      { question: "Omonatlar sug'urtalanganmi?", answer: "Ha, barcha jismoniy shaxs omonatlari Kafolatlash fondi tomonidan summa cheklovisiz kafolatlangan." },
-      { question: "Omonat daromadi soliqqa tortiladimi?", answer: "Yo'q, O'zbekistonda jismoniy shaxslarning bank omonatlari daromadi JShShSga tortilmaydi." },
+      { question: "Omonatlar sug'urtalanganmi?", answer: "Ha, barcha jismoniy shaxs omonatlari Kafolatlash fondi tomonidan bir omonatchiga bir bankda 200 mln so'mgacha kafolatlangan." },
+      { question: "Omonat daromadi soliqqa tortiladimi?", answer: "Ha, depozit foizlari rezidentlar uchun 5% (norezidentlar uchun 10%) JShShSga tortiladi. Bank foizlarni to'lashda soliqni avtomatik ravishda ushlab qoladi." },
     ],
   },
 
@@ -1803,43 +1820,51 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'fuel-consumption',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
     paragraphsRu: [
-      'Калькулятор расхода топлива рассчитывает стоимость поездки и средний расход бензина/газа на 100 км. Цены на бензин в Узбекистане (2025): АИ-80 — 9 500 сум/л, АИ-91 — 12 500 сум/л, АИ-95 — 14 500 сум/л. Метан — 4 200 сум/м³.',
-      'Формула: Расход на поездку = (Расстояние / 100) × Расход на 100 км × Цена литра. Средний расход легкового авто: 7-10 л/100 км (бензин), 6-9 м³/100 км (метан).',
-      'Пример: Ташкент — Самарканд (300 км), расход 8 л/100 км, АИ-91. Расход: (300/100) × 8 × 12 500 = 300 000 сум. На метане: (300/100) × 7 × 4 200 = 88 200 сум — в 3,4 раза дешевле.',
+      'Калькулятор расхода топлива рассчитывает стоимость поездки и средний расход бензина или газа на 100 км пути. В Узбекистане топливный рынок отличается широким распространением метана (сжатого природного газа) — около 70% легковых автомобилей оборудованы газобаллонным оборудованием. Актуальные цены на топливо: АИ-91 — ~12 500 сум/л, АИ-95 — ~14 500 сум/л, пропан — ~7 000-8 000 сум/л, метан — ~5 200 сум/м³. Бензин АИ-80 был снят с производства 1 декабря 2025 года.',
+      'Формула расчёта: стоимость поездки = (расстояние / 100) × расход на 100 км × цена за литр (или м³). Средний расход популярных узбекистанских автомобилей: Chevrolet Cobalt — 7–8 л/100 км, Chevrolet Nexia — 8–9 л/100 км, Chevrolet Tracker — 9–10 л/100 км. На метане расход тех же моделей: 6–9 м³/100 км. Расход увеличивается при городской езде, использовании кондиционера и перегрузке.',
+      'Пример: маршрут Ташкент — Самарканд (300 км) на Chevrolet Cobalt с расходом 8 л/100 км на бензине АИ-91 обойдётся в 300 000 сум. На метане та же поездка стоит всего 109 200 сум — экономия в 3,4 раза. При ежедневных поездках на работу (30 км в день, 22 рабочих дня) месячные расходы на бензин составят около 660 000 сум, а на метане — лишь 240 000 сум.',
+      'Переход на метан — одно из самых выгодных решений для автомобилиста в Узбекистане. Стоимость установки газобаллонного оборудования составляет 3–5 млн сум и окупается за 6–12 месяцев при среднем пробеге. В стране действует развитая сеть газозаправочных станций (АГНКС), особенно вдоль основных междугородних трасс. Однако следует учитывать, что мощность двигателя на газе снижается на 10–15%.',
+      'Наш калькулятор расхода топлива позволяет точно рассчитать затраты для любого маршрута: введите расстояние, расход вашего автомобиля и тип топлива — и мгновенно узнайте стоимость поездки. Калькулятор также сравнивает расходы на бензин и метан, помогая оценить выгоду от перехода на газ для вашего конкретного режима эксплуатации.',
     ],
     paragraphsUz: [
-      "Yoqilg'i sarfi kalkulyatori sayohat narxini va 100 km ga benzin/gaz o'rtacha sarfini hisoblaydi. O'zbekistonda benzin narxlari (2025): AI-80 — 9 500 so'm/l, AI-91 — 12 500 so'm/l, AI-95 — 14 500 so'm/l. Metan — 4 200 so'm/m³.",
-      "Formula: Sayohat sarfi = (Masofa / 100) × 100 km ga sarf × Litr narxi. Yengil avtomobilning o'rtacha sarfi: 7-10 l/100 km (benzin), 6-9 m³/100 km (metan).",
-      "Misol: Toshkent — Samarqand (300 km), sarf 8 l/100 km, AI-91. Sarf: (300/100) × 8 × 12 500 = 300 000 so'm. Metanda: (300/100) × 7 × 4 200 = 88 200 so'm — 3,4 marta arzon.",
+      "Yoqilg'i sarfi kalkulyatori sayohat narxini va 100 km yo'lga benzin yoki gaz o'rtacha sarfini hisoblaydi. O'zbekistonda yoqilg'i bozori metan (siqilgan tabiiy gaz) ning keng tarqalganligi bilan ajralib turadi — yengil avtomobillarning taxminan 70% gaz uskunasi bilan jihozlangan. Joriy yoqilg'i narxlari: AI-91 — ~12 500 so'm/l, AI-95 — ~14 500 so'm/l, propan — ~7 000-8 000 so'm/l, metan — ~5 200 so'm/m³. AI-80 benzini 2025-yil 1-dekabrdan ishlab chiqarishdan chiqarilgan.",
+      "Hisoblash formulasi: sayohat narxi = (masofa / 100) × 100 km ga sarf × litr (yoki m³) narxi. O'zbekistonda mashhur avtomobillarning o'rtacha sarfi: Chevrolet Cobalt — 7–8 l/100 km, Chevrolet Nexia — 8–9 l/100 km, Chevrolet Tracker — 9–10 l/100 km. Metanda xuddi shu modellarning sarfi: 6–9 m³/100 km. Shahar ichida haydash, konditsioner ishlatish va ortiqcha yuklashda sarf oshadi.",
+      "Misol: Toshkent — Samarqand marshruti (300 km) Chevrolet Cobalt da AI-91 benzinda 8 l/100 km sarfda 300 000 so'mga tushadi. Metanda xuddi shu sayohat atigi 109 200 so'm — 2,7 marta tejash. Har kungi ishga sayohatlarda (kuniga 30 km, 22 ish kuni) oylik benzin xarajatlari taxminan 660 000 so'm, metanda esa atigi 240 000 so'm.",
+      "Metanga o'tish — O'zbekistondagi avtomobilist uchun eng foydali qarorlardan biri. Gaz uskunasini o'rnatish narxi 3–5 mln so'm bo'lib, o'rtacha yurishda 6–12 oyda o'zini oqlaydi. Mamlakatda rivojlangan gaz to'ldirish stansiyalari (AGNKS) tarmog'i mavjud, ayniqsa asosiy shaharlararo trassalar bo'ylab. Biroq, gazdagi dvigatel quvvati 10–15% ga kamayishini hisobga olish kerak.",
+      "Bizning yoqilg'i sarfi kalkulyatorimiz har qanday marshrut uchun xarajatlarni aniq hisoblash imkonini beradi: masofani, avtomobilingizning sarfini va yoqilg'i turini kiriting — sayohat narxini bir zumda bilib olasiz. Kalkulyator shuningdek benzin va metan xarajatlarini solishtiradi, bu sizning aniq foydalanish rejimingiz uchun gazga o'tish foydasini baholashga yordam beradi.",
     ],
     faqRu: [
-      { question: 'Сколько стоит бензин в Узбекистане?', answer: 'АИ-80: 9 500 сум/л, АИ-91: 12 500, АИ-95: 14 500 сум/л. Метан: 4 200 сум/м³.' },
-      { question: 'Сколько стоит поездка Ташкент — Самарканд?', answer: 'На бензине (АИ-91): ~300 000 сум. На метане: ~88 000 сум. Расстояние 300 км.' },
+      { question: 'Сколько стоит бензин в Узбекистане?', answer: 'АИ-91: ~12 500 сум/л, АИ-95: ~14 500 сум/л, пропан: ~7 000-8 000 сум/л, метан: ~5 200 сум/м³. АИ-80 снят с производства с декабря 2025.' },
+      { question: 'Сколько стоит поездка Ташкент — Самарканд?', answer: 'На бензине (АИ-91): ~300 000 сум. На метане: ~109 000 сум. Расстояние 300 км.' },
       { question: 'Выгоднее ли метан?', answer: 'Да, в 3-4 раза дешевле бензина. Расходы на переоборудование (3-5 млн сум) окупаются за 6-12 месяцев.' },
     ],
     faqUz: [
-      { question: "O'zbekistonda benzin qancha turadi?", answer: "AI-80: 9 500 so'm/l, AI-91: 12 500, AI-95: 14 500 so'm/l. Metan: 4 200 so'm/m³." },
-      { question: "Toshkent — Samarqand sayohati qancha turadi?", answer: "Benzinda (AI-91): ~300 000 so'm. Metanda: ~88 000 so'm. Masofa 300 km." },
+      { question: "O'zbekistonda benzin qancha turadi?", answer: "AI-91: ~12 500 so'm/l, AI-95: ~14 500 so'm/l, propan: ~7 000-8 000 so'm/l, metan: ~5 200 so'm/m³. AI-80 2025-yil dekabrdan ishlab chiqarilmaydi." },
+      { question: "Toshkent — Samarqand sayohati qancha turadi?", answer: "Benzinda (AI-91): ~300 000 so'm. Metanda: ~109 000 so'm. Masofa 300 km." },
       { question: "Metan foydaliroqmi?", answer: "Ha, benzindan 3-4 marta arzon. Qayta jihozlash xarajatlari (3-5 mln so'm) 6-12 oyda o'zini oqlaydi." },
     ],
   },
 
   {
     slug: 'trip-cost',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
     paragraphsRu: [
-      'Калькулятор стоимости поездки рассчитывает общие расходы на автомобильную поездку с учётом топлива, дорожных сборов и износа автомобиля. Позволяет сравнить с альтернативами: поезд, самолёт, такси.',
-      'Структура расходов: топливо (основная статья), амортизация (~3 сум/км для бюджетного авто), обслуживание (~1 сум/км), платные дороги (если применимо). Расход топлива зависит от стиля вождения и загрузки.',
-      'Пример: Ташкент — Бухара (600 км), расход 9 л/100 км, АИ-91. Топливо: 675 000 сум. Амортизация+обслуживание: ~240 000 сум. Итого: ~915 000 сум на авто vs ~400 000 сум поезд vs ~800 000 сум самолёт.',
+      'Калькулятор стоимости поездки помогает заранее оценить расходы на автомобильное путешествие по Узбекистану. Дорожная сеть страны насчитывает более 180 000 км дорог, связывающих все регионы — от Ташкента до Нукуса. Калькулятор учитывает стоимость топлива, амортизацию автомобиля, затраты на обслуживание и позволяет сравнить поездку на авто с альтернативами: поездом, самолётом или междугородним такси.',
+      'Структура расходов на автомобильную поездку: топливо составляет 70–80% общей стоимости, амортизация автомобиля — около 15–20% (~3 000 сум/км для бюджетных моделей Chevrolet Cobalt/Nexia), техническое обслуживание — 5–10% (~1 000 сум/км). Расход топлива существенно зависит от стиля вождения, загрузки автомобиля, состояния дороги и скоростного режима — на трассе расход ниже, чем в городе.',
+      'Пример расчёта маршрута Ташкент — Бухара (600 км): при расходе 9 л/100 км на бензине АИ-91 (12 500 сум/л) стоимость топлива составит 675 000 сум, амортизация и обслуживание — ещё ~240 000 сум, итого около 915 000 сум. На метане та же поездка обойдётся в ~483 000 сум за топливо. Для сравнения: билет на поезд «Afrosiyob» — от 400 000 сум, авиабилет — от 800 000 сум.',
+      'При поездке на автомобиле с пассажирами стоимость на одного человека существенно снижается. Если в машине 4 человека, расходы в ~915 000 сум делятся на четверых — всего ~229 000 сум на каждого, что дешевле любого альтернативного транспорта. Это делает автомобильные поездки особенно выгодными для семей и компаний, путешествующих по популярным маршрутам Узбекистана.',
+      'Наш калькулятор стоимости поездки позволяет ввести маршрут, марку автомобиля, тип топлива и число пассажиров — и мгновенно получить полную смету расходов. Результат включает разбивку по статьям и сравнение с общественным транспортом. Используйте его для планирования отпуска, деловых поездок или регулярных маршрутов между городами.',
     ],
     paragraphsUz: [
-      "Sayohat narxi kalkulyatori yoqilg'i, yo'l to'lovlari va avtomobil eskirishini hisobga olgan holda avtomobil sayohatining umumiy xarajatlarini hisoblaydi. Muqobillar bilan solishtirish imkonini beradi: poyezd, samolyot, taksi.",
-      "Xarajatlar tarkibi: yoqilg'i (asosiy modda), amortizatsiya (~3 so'm/km byudjet avto uchun), xizmat (~1 so'm/km), pullik yo'llar (agar qo'llansa). Yoqilg'i sarfi haydash uslubi va yukga bog'liq.",
-      "Misol: Toshkent — Buxoro (600 km), sarf 9 l/100 km, AI-91. Yoqilg'i: 675 000 so'm. Amortizatsiya+xizmat: ~240 000 so'm. Jami: ~915 000 so'm avtoda vs ~400 000 so'm poyezd vs ~800 000 so'm samolyot.",
+      "Sayohat narxi kalkulyatori O'zbekiston bo'ylab avtomobil sayohatining xarajatlarini oldindan baholashga yordam beradi. Mamlakatning yo'l tarmog'i 180 000 km dan ortiq yo'llarni o'z ichiga oladi va barcha hududlarni — Toshkentdan Nukusgacha bog'laydi. Kalkulyator yoqilg'i narxini, avtomobil amortizatsiyasini, xizmat xarajatlarini hisobga oladi va avtomobilda sayohatni muqobillar bilan solishtirish imkonini beradi: poyezd, samolyot yoki shaharlararo taksi.",
+      "Avtomobil sayohati xarajatlarining tarkibi: yoqilg'i umumiy qiymatning 70–80% ini tashkil etadi, avtomobil amortizatsiyasi — taxminan 15–20% (~3 000 so'm/km byudjet Chevrolet Cobalt/Nexia modellari uchun), texnik xizmat — 5–10% (~1 000 so'm/km). Yoqilg'i sarfi haydash uslubi, avtomobil yuklanishi, yo'l holati va tezlik rejimiga sezilarli bog'liq — trassada sarf shaharga qaraganda pastroq.",
+      "Toshkent — Buxoro marshruti (600 km) hisob-kitobi: 9 l/100 km sarfda AI-91 benzinda (12 500 so'm/l) yoqilg'i narxi 675 000 so'm, amortizatsiya va xizmat — yana ~240 000 so'm, jami taxminan 915 000 so'm. Metanda xuddi shu sayohat yoqilg'iga ~483 000 so'm tushadi. Solishtirish uchun: «Afrosiyob» poyezd chiptasi — 400 000 so'mdan, aviabilet — 800 000 so'mdan.",
+      "Avtomobilda yo'lovchilar bilan sayohat qilganda bir kishiga narx sezilarli kamayadi. Mashinada 4 kishi bo'lsa, ~915 000 so'mlik xarajatlar to'rtga bo'linadi — har biriga atigi ~229 000 so'm, bu har qanday muqobil transportdan arzon. Bu avtomobil sayohatlarini O'zbekistonning mashhur marshrutlari bo'ylab sayohat qiluvchi oilalar va guruhlar uchun ayniqsa foydali qiladi.",
+      "Bizning sayohat narxi kalkulyatorimiz marshrut, avtomobil markasi, yoqilg'i turi va yo'lovchilar sonini kiritish imkonini beradi — va bir zumda xarajatlarning to'liq smetasini olasiz. Natija moddalar bo'yicha taqsimot va jamoat transporti bilan solishtirishni o'z ichiga oladi. Uni ta'til rejalashtirish, ishbilarmonlik safarlari yoki shaharlar orasidagi muntazam marshrutlar uchun ishlating.",
     ],
     faqRu: [
       { question: 'Из чего складывается стоимость поездки на авто?', answer: 'Топливо (70-80%), амортизация авто (15-20%), обслуживание (5-10%), платные дороги.' },
@@ -1855,17 +1880,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'car-leasing',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
     paragraphsRu: [
-      'Автолизинг — аренда автомобиля с правом последующего выкупа. В Узбекистане лизинговые компании предлагают ставки от 18% до 26% годовых. Аванс: от 20% стоимости. Срок: 2-7 лет. Лизинговые платежи можно отнести на расходы для юрлиц.',
-      'Отличие от кредита: автомобиль остаётся собственностью лизинговой компании до полного выкупа. Преимущества: ускоренная амортизация, налоговая оптимизация для бизнеса, включённое обслуживание.',
-      'Пример: Chevrolet Tracker 350 млн сум, аванс 30% (105 млн), лизинг 245 млн на 5 лет под 22%. Платёж ≈ 6 500 000 сум/мес. Переплата ≈ 145 млн сум.',
+      'Автолизинг в Узбекистане — это аренда транспортного средства с правом последующего выкупа, регулируемая Законом «О лизинге». Лизинговые компании — Uzautolizing, O\'zlizing, Imkon Lizing и другие — предлагают ставки от 18% до 26% годовых в зависимости от марки автомобиля, срока договора и размера авансового платежа. Минимальный аванс обычно составляет 20–30% от стоимости транспортного средства.',
+      'Ключевое отличие автолизинга от автокредита в том, что автомобиль остаётся на балансе лизинговой компании до полного выкупа. Для бизнеса это выгодно: лизинговые платежи целиком относятся на расходы и уменьшают налогооблагаемую прибыль. Кроме того, применяется ускоренная амортизация с коэффициентом до 3, что позволяет быстрее списать стоимость актива. НДС по лизинговым платежам подлежит зачёту.',
+      'Для физических лиц автолизинг привлекателен упрощённой процедурой оформления по сравнению с банковским кредитом: меньше требований к документам, решение принимается быстрее. Многие лизинговые компании включают в договор страхование КАСКО и техническое обслуживание, что избавляет от дополнительных хлопот. Популярные модели в лизинг — Chevrolet, Kia, Hyundai узбекистанской сборки.',
+      'Рассмотрим пример: Chevrolet Tracker стоимостью 350 млн сум, аванс 30% (105 млн), лизинг 245 млн на 5 лет под 22% годовых. Ежемесячный платёж составит около 6 800 000 сум, общая переплата — порядка 163 млн сум. Для сравнения: автокредит под 24% с тем же авансом даст платёж ~7 100 000 сум, но автомобиль сразу оформляется в собственность заёмщика.',
+      'Наш калькулятор автолизинга позволяет быстро рассчитать ежемесячный платёж, общую переплату и сравнить условия различных лизинговых программ. Введите стоимость автомобиля, размер аванса, срок и процентную ставку — калькулятор покажет полный график платежей. Это поможет принять взвешенное решение между лизингом и кредитом с учётом вашей налоговой ситуации.',
     ],
     paragraphsUz: [
-      "Avtolizing — keyinchalik sotib olish huquqi bilan avtomobil ijarasi. O'zbekistonda lizing kompaniyalari yillik 18% dan 26% gacha stavkalar taklif etadi. Avans: qiymatning 20% dan. Muddat: 2-7 yil. Lizing to'lovlarini yuridik shaxslar xarajatlarga kiritishi mumkin.",
-      "Kreditdan farqi: avtomobil to'liq sotib olingunga qadar lizing kompaniyasi mulki bo'lib qoladi. Afzalliklari: tezlashtirilgan amortizatsiya, biznes uchun soliq optimallashtirish, kiritilgan xizmat.",
-      "Misol: Chevrolet Tracker 350 mln so'm, avans 30% (105 mln), lizing 245 mln 5 yilga 22% da. To'lov ≈ 6 500 000 so'm/oy. Ortiqcha to'lov ≈ 145 mln so'm.",
+      "O'zbekistonda avtolizing — «Lizing to'g'risida»gi qonun bilan tartibga solingan, keyinchalik sotib olish huquqi bilan transport vositasini ijaraga olishdir. Uzautolizing, O'zlizing, Imkon Lizing va boshqa lizing kompaniyalari avtomobil markasi, shartnoma muddati va avans miqdoriga qarab yillik 18% dan 26% gacha stavkalar taklif etadi. Minimal avans odatda transport vositasi qiymatining 20–30% ini tashkil etadi.",
+      "Avtolizingning avtokredit dan asosiy farqi shundaki, avtomobil to'liq sotib olingunga qadar lizing kompaniyasi balansida qoladi. Biznes uchun bu foydali: lizing to'lovlari to'liq xarajatlarga kiritiladi va soliqqa tortiladigan foydani kamaytiradi. Bundan tashqari, 3 gacha koeffitsientli tezlashtirilgan amortizatsiya qo'llaniladi, bu aktivning qiymatini tezroq hisobdan chiqarish imkonini beradi. Lizing to'lovlari bo'yicha QQS hisobga olinadi.",
+      "Jismoniy shaxslar uchun avtolizing bank kreditiga nisbatan soddalashtirilgan rasmiylashtirish tartibi bilan jozibali: hujjatlarga kamroq talablar, qaror tezroq qabul qilinadi. Ko'p lizing kompaniyalari shartnomaga KASKO sug'urtasi va texnik xizmatni kiritadi, bu qo'shimcha tashvishlardan xalos etadi. Lizingda mashhur modellar — O'zbekiston yig'ilishidagi Chevrolet, Kia, Hyundai.",
+      "Misolni ko'rib chiqamiz: 350 mln so'mlik Chevrolet Tracker, avans 30% (105 mln), lizing 245 mln 5 yilga yillik 22% da. Oylik to'lov taxminan 6 800 000 so'm, umumiy ortiqcha to'lov — 163 mln so'm atrofida. Solishtirish uchun: xuddi shu avansli 24% avtokredit ~7 100 000 so'm to'lov beradi, lekin avtomobil darhol qarz oluvchi mulkiga rasmiylashtiriladi.",
+      "Bizning avtolizing kalkulyatorimiz oylik to'lovni, umumiy ortiqcha to'lovni tezda hisoblash va turli lizing dasturlari shartlarini solishtirish imkonini beradi. Avtomobil qiymatini, avans miqdorini, muddatni va foiz stavkasini kiriting — kalkulyator to'liq to'lov jadvalini ko'rsatadi. Bu soliq vaziyatingizni hisobga olgan holda lizing va kredit o'rtasida og'ilona qaror qabul qilishga yordam beradi.",
     ],
     faqRu: [
       { question: 'Чем лизинг отличается от кредита?', answer: 'Авто в собственности лизинговой компании. Плюсы: налоговая оптимизация для бизнеса, ускоренная амортизация.' },
@@ -1881,21 +1910,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'heating',
-    lastUpdated: '2025-10-25',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Узтрансгаз — Тарифы', url: 'https://uztransgaz.uz' },
       { name: 'Узбекэнерго — Тарифы', url: 'https://uzbekenergo.uz' },
     ],
     paragraphsRu: [
       'Калькулятор отопления рассчитывает стоимость обогрева жилья в Узбекистане различными способами: центральное отопление, газовый котёл, электрический обогреватель, тепловой насос. Отопительный сезон в Узбекистане длится с октября по март (около 180 дней), а средняя температура зимой составляет 0-5°C в Ташкенте и до −10°C в Каракалпакстане.',
-      'Стоимость отопления за сезон 2025-2026 (квартира 60 м² в Ташкенте): центральное отопление — 1 800 000-2 500 000 сум (плата по нормативу ~420 000 сум/мес); индивидуальный газовый котёл — 2 500 000-4 500 000 сум (расход газа 300-500 м³/мес по тарифу ~950 сум/м³); электрические обогреватели — 4 000 000-7 000 000 сум (расход 2 000-3 500 кВт·ч/мес по тарифу ~450 сум/кВт·ч).',
+      'Стоимость отопления за сезон 2025-2026 (квартира 60 м² в Ташкенте): центральное отопление — 1 800 000-2 500 000 сум (плата по нормативу ~420 000 сум/мес); индивидуальный газовый котёл — 2 500 000-4 500 000 сум (расход газа 300-500 м³/мес по тарифу ~1 000 сум/м³); электрические обогреватели — 4 000 000-7 000 000 сум (расход 2 000-3 500 кВт·ч/мес по тарифу ~600 сум/кВт·ч).',
       'Для частного дома (100 м²) расходы существенно выше: газовый котёл — 5 000 000-10 000 000 сум за сезон в зависимости от утепления и теплопотерь. Угольное отопление (распространено в сельской местности): 3 000 000-6 000 000 сум (расход 3-5 тонн угля по цене ~1 200 000 сум/тонна). Тепловой насос — начальные инвестиции от $3 000-5 000, но эксплуатация дешевле электрического на 60-70%.',
       'Утепление дома — самый эффективный способ снизить расходы на отопление. Замена старых деревянных окон на стеклопакеты экономит 20-30% тепла (стоимость от 3 000 000 сум за окно). Утепление фасада пенопластом — от 120 000 сум/м², экономия 30-40% тепла. Утепление крыши — экономия 15-20%. Суммарно вложения в утепление окупаются за 2-3 отопительных сезона.',
       'Калькулятор отопления на нашем сайте учитывает площадь помещения, тип здания (квартира, частный дом), способ отопления, регион Узбекистана и степень утепления. Введите параметры — получите расчёт стоимости за месяц и за весь сезон. Это поможет выбрать оптимальный способ обогрева и спланировать семейный бюджет на зимний период.',
     ],
     paragraphsUz: [
       "Isitish kalkulyatori O'zbekistonda turli usullarda uy-joyni isitish narxini hisoblaydi: markaziy isitish, gaz qozoni, elektr isitgich, issiqlik pompasi. O'zbekistonda isitish mavsumi oktyabrdan martgacha davom etadi (taxminan 180 kun), qishda o'rtacha harorat Toshkentda 0-5°C, Qoraqalpog'istonda −10°C gacha tushadi.",
-      "2025-2026 mavsumi uchun isitish narxi (Toshkentda 60 m² kvartira): markaziy isitish — 1 800 000-2 500 000 so'm (normativ bo'yicha to'lov ~420 000 so'm/oy); individual gaz qozoni — 2 500 000-4 500 000 so'm (oyiga 300-500 m³ gaz sarfi, tarif ~950 so'm/m³); elektr isitgichlar — 4 000 000-7 000 000 so'm (oyiga 2 000-3 500 kVt·soat sarfi, tarif ~450 so'm/kVt·soat).",
+      "2025-2026 mavsumi uchun isitish narxi (Toshkentda 60 m² kvartira): markaziy isitish — 1 800 000-2 500 000 so'm (normativ bo'yicha to'lov ~420 000 so'm/oy); individual gaz qozoni — 2 500 000-4 500 000 so'm (oyiga 300-500 m³ gaz sarfi, tarif ~1 000 so'm/m³); elektr isitgichlar — 4 000 000-7 000 000 so'm (oyiga 2 000-3 500 kVt·soat sarfi, tarif ~600 so'm/kVt·soat).",
       "Xususiy uy (100 m²) uchun xarajatlar ancha yuqori: gaz qozoni — izolyatsiya va issiqlik yo'qotishlariga qarab mavsumiga 5 000 000-10 000 000 so'm. Ko'mir bilan isitish (qishloq joylarda keng tarqalgan): 3 000 000-6 000 000 so'm (3-5 tonna ko'mir sarfi, narxi ~1 200 000 so'm/tonna). Issiqlik pompasi — boshlang'ich investitsiya $3 000-5 000 dan, lekin foydalanish elektrdan 60-70% arzon.",
       "Uyni izolyatsiya qilish — isitish xarajatlarini kamaytirishning eng samarali usuli. Eski yog'och derazalarni steklopaketlarga almashtirish 20-30% issiqlikni tejaydi (narxi derazasiga 3 000 000 so'mdan). Fasadni penoplast bilan izolyatsiya qilish — 120 000 so'm/m² dan, 30-40% issiqlik tejash. Tomni izolyatsiya qilish — 15-20% tejash. Jami izolyatsiyaga sarmoyalar 2-3 isitish mavsumida qoplanadi.",
       "Saytimizda isitish kalkulyatori xona maydonini, bino turini (kvartira, xususiy uy), isitish usulini, O'zbekiston hududini va izolyatsiya darajasini hisobga oladi. Parametrlarni kiriting — oylik va butun mavsumga narx hisobini olasiz. Bu optimal isitish usulini tanlash va qishki davrga oilaviy byudjetni rejalashtirishga yordam beradi.",
@@ -1904,14 +1933,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Какой самый дешёвый способ отопления?', answer: 'Центральное отопление (~2 млн за сезон). Газовый котёл — средний (3-5 млн). Электрический — самый дорогой (5-7 млн для 60 м²).' },
       { question: 'Сколько стоит отопление квартиры за сезон?', answer: 'Квартира 60 м² в Ташкенте: центральное — 1,8-2,5 млн, газ — 2,5-4,5 млн, электричество — 4-7 млн сум.' },
       { question: 'Как снизить расходы на отопление?', answer: 'Утепление стен (экономия 30-40%), замена окон (20-30%), утепление крыши (15-20%). Окупается за 2-3 сезона.' },
-      { question: 'Сколько газа расходует котёл?', answer: 'Для квартиры 60 м²: 300-500 м³/мес. Для дома 100 м²: 600-1000 м³/мес. Тариф ~950 сум/м³.' },
+      { question: 'Сколько газа расходует котёл?', answer: 'Для квартиры 60 м²: 300-500 м³/мес. Для дома 100 м²: 600-1000 м³/мес. Тариф ~1 000 сум/м³.' },
       { question: 'Когда начинается отопительный сезон?', answer: 'С октября по март (около 180 дней). Центральное отопление включают при среднесуточной температуре ниже +8°C.' },
     ],
     faqUz: [
       { question: "Eng arzon isitish usuli qanday?", answer: "Markaziy isitish (~2 mln mavsumiga). Gaz qozoni — o'rtacha (3-5 mln). Elektr — eng qimmat (60 m² uchun 5-7 mln)." },
       { question: "Kvartirani mavsumiga isitish qancha turadi?", answer: "Toshkentda 60 m² kvartira: markaziy — 1,8-2,5 mln, gaz — 2,5-4,5 mln, elektr — 4-7 mln so'm." },
       { question: "Isitish xarajatlarini qanday kamaytirish mumkin?", answer: "Devorlarni izolyatsiya qilish (30-40% tejash), derazalarni almashtirish (20-30%), tomni izolyatsiya qilish (15-20%). 2-3 mavsumda qoplanadi." },
-      { question: "Gaz qozoni qancha gaz sarflaydi?", answer: "60 m² kvartira uchun: oyiga 300-500 m³. 100 m² uy uchun: oyiga 600-1000 m³. Tarif ~950 so'm/m³." },
+      { question: "Gaz qozoni qancha gaz sarflaydi?", answer: "60 m² kvartira uchun: oyiga 300-500 m³. 100 m² uy uchun: oyiga 600-1000 m³. Tarif ~1 000 so'm/m³." },
       { question: "Isitish mavsumi qachon boshlanadi?", answer: "Oktyabrdan martgacha (taxminan 180 kun). Markaziy isitish o'rtacha sutkalik harorat +8°C dan past bo'lganda yoqiladi." },
     ],
   },
@@ -1955,17 +1984,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'rental',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: [
-      'Калькулятор аренды рассчитывает полную стоимость аренды жилья с учётом коммунальных услуг, обслуживания и дополнительных расходов. Средние цены аренды в Ташкенте (2025): 1-комн — 3-5 млн сум/мес, 2-комн — 5-8 млн, 3-комн — 7-12 млн.',
-      'В стоимость аренды обычно не включены: коммунальные услуги (400 000-1 200 000 сум), интернет (100 000-300 000), обслуживание дома (50 000-150 000). Депозит: 1-2 месячных платежа.',
-      'Районы Ташкента по стоимости аренды: Мирабад, Юнусабад — дорого; Чиланзар — средне; Сергели, Бектемир — доступно.',
+        paragraphsRu: [
+      'Калькулятор аренды недвижимости рассчитывает полную ежемесячную стоимость аренды жилья в Узбекистане с учётом всех сопутствующих расходов. Арендный рынок Ташкента активно развивается: по данным агентств недвижимости, спрос на съёмное жильё ежегодно растёт на 15–20%. Средние цены аренды в 2026 году: однокомнатная квартира — 3,5–6 млн сум/мес, двухкомнатная — 5,5–9 млн, трёхкомнатная — 8–14 млн в зависимости от района и состояния.',
+      'Помимо арендной платы, необходимо учитывать дополнительные расходы: коммунальные услуги (газ, электричество, вода, отопление) — от 500 000 до 1 500 000 сум в месяц в зависимости от сезона и площади; интернет — 100 000–350 000 сум; обслуживание дома (в новостройках) — 50 000–200 000 сум; вывоз мусора — 30 000–50 000 сум. Летом добавляются расходы на кондиционер (электроэнергия может вырасти на 300 000–600 000 сум).',
+      'Стоимость аренды значительно различается по районам Ташкента. Премиальные районы: Мирабад, Юнусабад, Шайхантахур (центр) — самые дорогие, здесь расположены новостройки бизнес-класса. Средний сегмент: Чиланзар, Яккасарай, Мирзо-Улугбекский — хороший баланс цены и качества. Бюджетные районы: Сергели, Бектемир, Олмазор — на 30–50% дешевле центра, но дальше от деловых кварталов.',
+      'При аренде в Узбекистане стандартная практика — залоговый депозит в размере 1–2 месячных платежей, который возвращается при выезде за вычетом ущерба. Договор аренды рекомендуется оформлять письменно с указанием срока, суммы, условий расторжения и ответственности сторон. Согласно Гражданскому кодексу РУз (глава 34), арендодатель обязан передать жильё в пригодном состоянии и проводить капитальный ремонт.',
+      'Калькулятор аренды позволяет ввести базовую арендную плату, площадь квартиры, район и получить расчёт полной стоимости проживания с учётом всех дополнительных расходов. Это помогает сравнить варианты аренды и понять реальный бюджет. Для арендодателей калькулятор полезен при определении справедливой арендной ставки с учётом окупаемости инвестиций в недвижимость.',
     ],
     paragraphsUz: [
-      "Ijara kalkulyatori kommunal xizmatlar, xizmat ko'rsatish va qo'shimcha xarajatlarni hisobga olgan holda uy-joy ijarasining to'liq qiymatini hisoblaydi. Toshkentda o'rtacha ijara narxlari (2025): 1 xonali — 3-5 mln so'm/oy, 2 xonali — 5-8 mln, 3 xonali — 7-12 mln.",
-      "Ijara narxiga odatda kiritilmaydi: kommunal xizmatlar (400 000-1 200 000 so'm), internet (100 000-300 000), uy xizmati (50 000-150 000). Depozit: 1-2 oylik to'lov.",
-      "Toshkent tumanlari ijara narxi bo'yicha: Mirobod, Yunusobod — qimmat; Chilonzor — o'rtacha; Sergeli, Bektemir — qulay.",
+      "Ijara kalkulyatori O'zbekistonda uy-joy ijarasining barcha qo'shimcha xarajatlarni hisobga olgan holda to'liq oylik qiymatini hisoblaydi. Toshkentning ijara bozori jadal rivojlanmoqda: ko'chmas mulk agentliklari ma'lumotlariga ko'ra, ijaraga bo'lgan talab har yili 15–20% ga o'sib bormoqda. 2026-yildagi o'rtacha ijara narxlari: bir xonali kvartira — 3,5–6 mln so'm/oy, ikki xonali — 5,5–9 mln, uch xonali — tuman va holatiga qarab 8–14 mln.",
+      "Ijara to'lovidan tashqari qo'shimcha xarajatlarni hisobga olish kerak: kommunal xizmatlar (gaz, elektr, suv, isitish) — mavsumga va maydonga qarab oyiga 500 000 dan 1 500 000 so'mgacha; internet — 100 000–350 000 so'm; uy xizmati (yangi qurilishlarda) — 50 000–200 000 so'm; chiqindi chiqarish — 30 000–50 000 so'm. Yozda konditsioner xarajatlari qo'shiladi (elektr energiya 300 000–600 000 so'mga oshishi mumkin).",
+      "Ijara narxi Toshkent tumanlari bo'yicha sezilarli farq qiladi. Premium tumanlar: Mirobod, Yunusobod, Shayxontohur (markaz) — eng qimmat, bu yerda biznes-sinf yangi qurilishlar joylashgan. O'rtacha segment: Chilonzor, Yakkasaroy, Mirzo Ulug'bek — narx va sifatning yaxshi muvozanati. Byudjet tumanlar: Sergeli, Bektemir, Olmazor — markazdan 30–50% arzonroq, lekin ishbilarmonlik tumanlaridan uzoqroq.",
+      "O'zbekistonda ijaraga olishda standart amaliyot — 1–2 oylik to'lov miqdorida garov depoziti, u chiqib ketishda zarar chegirilgan holda qaytariladi. Ijara shartnomasini yozma ravishda tuzish tavsiya etiladi — muddat, summa, bekor qilish shartlari va tomonlar javobgarligi ko'rsatilishi kerak. O'zbekiston Fuqarolik kodeksining 34-bobiga ko'ra, ijaraga beruvchi uy-joyni yaroqli holatda topshirishi va kapital ta'mir o'tkazishi shart.",
+      "Ijara kalkulyatori asosiy ijara to'lovini, kvartira maydonini, tumanni kiritish va barcha qo'shimcha xarajatlarni hisobga olgan holda yashashning to'liq qiymatini olish imkonini beradi. Bu ijara variantlarini solishtirish va real byudjetni tushunishga yordam beradi. Ijaraga beruvchilar uchun kalkulyator ko'chmas mulkka investitsiyalar o'zini oqlashini hisobga olgan holda adolatli ijara stavkasini aniqlashda foydali.",
     ],
     faqRu: [
       { question: 'Сколько стоит аренда квартиры в Ташкенте?', answer: '1-комн: 3-5 млн, 2-комн: 5-8 млн, 3-комн: 7-12 млн сум/мес. Зависит от района.' },
@@ -1981,17 +2014,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'renovation',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: [
-      'Калькулятор ремонта рассчитывает стоимость ремонта квартиры в Узбекистане по категориям: косметический, стандартный, евроремонт, дизайнерский. Средние цены за м² (2025): косметический — 1,5-3 млн сум, стандартный — 3-5 млн, евроремонт — 5-8 млн, дизайнерский — 8-15 млн.',
-      'Основные статьи расходов: черновые работы (20-30%), чистовые материалы (30-40%), сантехника (10-15%), электрика (5-10%), мебель (15-25%).',
-      'Пример: ремонт квартиры 60 м² (стандартный). Стоимость: 60 × 4 000 000 = 240 000 000 сум. С мебелью: ~300 000 000 сум.',
+        paragraphsRu: [
+      'Калькулятор ремонта квартиры рассчитывает полную стоимость ремонтных работ в Узбекистане с учётом площади, типа ремонта и региона. Выделяют четыре категории: косметический (обои, покраска, замена напольного покрытия), стандартный (с заменой сантехники и электрики), евроремонт (качественные материалы, выравнивание стен) и дизайнерский (авторский проект, премиальная отделка). Средние цены за м² в 2026 году: косметический — 2–3,5 млн сум, стандартный — 3,5–6 млн, евроремонт — 6–10 млн, дизайнерский — 10–18 млн.',
+      'Основные статьи расходов при ремонте: черновые работы — демонтаж, выравнивание стен и полов, стяжка (20–30% бюджета); чистовые материалы — плитка, ламинат, обои, краска (30–40%); сантехника — ванна, унитаз, смесители, трубы (10–15%); электрика — проводка, розетки, освещение (5–10%); мебель и встроенные шкафы (15–25%). Стоимость работы мастеров составляет в среднем 40–50% от цены материалов.',
+      'Рынок стройматериалов в Узбекистане представлен крупными базарами (Джами, Ипподром в Ташкенте) и сетевыми магазинами (Korzinka Build, Makro). Импортная плитка и сантехника (Турция, Китай, Россия) дороже местной на 30–60%, но часто превосходит по качеству. При планировании бюджета заложите 10–15% сверх расчётной суммы на непредвиденные расходы — скрытые дефекты стен, замену труб или перенос розеток.',
+      'Пример расчёта: стандартный ремонт двухкомнатной квартиры 65 м² в новостройке Ташкента. Черновые работы: 65 × 1 500 000 = 97,5 млн. Чистовые материалы: 65 × 1 800 000 = 117 млн. Сантехника: 30 млн. Электрика: 15 млн. Итого без мебели: ~260 млн сум. С базовой мебелью и кухней: ~340 млн сум. Сроки: 2–4 месяца в зависимости от объёма работ.',
+      'Калькулятор позволяет рассчитать стоимость ремонта для любого типа жилья: квартиры в новостройке, вторичного жилья, частного дома. Учитывается специфика узбекистанского рынка: сезонность (материалы дешевле зимой), колебания курса доллара, региональные различия в стоимости работ. Результаты расчёта можно использовать при оформлении потребительского кредита на ремонт в банках Узбекистана.',
     ],
     paragraphsUz: [
-      "Ta'mir kalkulyatori O'zbekistonda kvartirani ta'mirlash narxini toifalari bo'yicha hisoblaydi: kosmetik, standart, yevrota'mir, dizaynerlik. M² uchun o'rtacha narxlar (2025): kosmetik — 1,5-3 mln so'm, standart — 3-5 mln, yevrota'mir — 5-8 mln, dizaynerlik — 8-15 mln.",
-      "Asosiy xarajat moddalari: qora ishlar (20-30%), toza materiallar (30-40%), santexnika (10-15%), elektrika (5-10%), mebel (15-25%).",
-      "Misol: 60 m² kvartirani ta'mirlash (standart). Narxi: 60 × 4 000 000 = 240 000 000 so'm. Mebel bilan: ~300 000 000 so'm.",
+      "Ta'mir kalkulyatori O'zbekistonda kvartira ta'mirlashning to'liq narxini maydon, ta'mir turi va hududni hisobga olgan holda hisoblaydi. To'rt toifa ajratiladi: kosmetik (oboylar, bo'yash, pol qoplamasi almashtirish), standart (santexnika va elektrikani almashtirish bilan), yevrota'mir (sifatli materiallar, devorlarni tekislash) va dizaynerlik (mualliflik loyiha, premium pardozlash). 2026-yilda m² uchun o'rtacha narxlar: kosmetik — 2–3,5 mln, standart — 3,5–6 mln, yevrota'mir — 6–10 mln, dizaynerlik — 10–18 mln so'm.",
+      "Ta'mirdagi asosiy xarajat moddalari: qora ishlar — demontaj, devor va pollarni tekislash, styajka (byudjetning 20–30%); toza materiallar — plitka, laminat, oboy, bo'yoq (30–40%); santexnika — vanna, unitaz, smesitellar, quvurlar (10–15%); elektrika — simlar, rozetkalar, yoritish (5–10%); mebel va o'rnatma shkaflar (15–25%). Ustalarning ish narxi o'rtacha materiallar narxining 40–50% ini tashkil etadi.",
+      "O'zbekiston qurilish materiallari bozori yirik bozorlar (Toshkentdagi Jomi, Ippodrom) va tarmoq do'konlari (Korzinka Build, Makro) bilan ifodalangan. Import plitka va santexnika (Turkiya, Xitoy, Rossiya) mahalliyga qaraganda 30–60% ga qimmatroq, lekin ko'pincha sifat jihatdan ustun. Byudjetni rejalashtirishda hisoblangan summadan 10–15% qo'shimcha ajrating — devorlarning yashirin nuqsonlari, quvurlar almashtirish yoki rozetkalarni ko'chirish uchun.",
+      "Hisoblash misoli: Toshkentdagi yangi qurilishda 65 m² ikki xonali kvartiraning standart ta'miri. Qora ishlar: 65 × 1 500 000 = 97,5 mln. Toza materiallar: 65 × 1 800 000 = 117 mln. Santexnika: 30 mln. Elektrika: 15 mln. Mebelsiz jami: ~260 mln so'm. Asosiy mebel va oshxona bilan: ~340 mln so'm. Muddatlar: ishlar hajmiga qarab 2–4 oy.",
+      "Kalkulyator har qanday turdagi uy-joy uchun ta'mir narxini hisoblash imkonini beradi: yangi qurilishdagi kvartira, ikkinchi bozor uyi, xususiy uy. O'zbekiston bozorining o'ziga xosligi hisobga olinadi: mavsumiylik (materiallar qishda arzonroq), dollar kursi tebranishlari, ish narxidagi hududiy farqlar. Hisoblash natijalarini O'zbekiston banklarida ta'mir uchun iste'mol krediti rasmiylashtirishda foydalanish mumkin.",
     ],
     faqRu: [
       { question: 'Сколько стоит ремонт квартиры?', answer: 'От 1,5 до 15 млн сум/м². Стандартный ремонт 60 м²: ~240 млн сум.' },
@@ -2007,17 +2044,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'moving',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
     paragraphsRu: [
-      'Калькулятор переезда рассчитывает стоимость переезда с учётом объёма вещей, расстояния, количества грузчиков и дополнительных услуг. Стоимость переезда в пределах Ташкента: от 500 000 до 3 000 000 сум.',
-      'Факторы стоимости: объём вещей (количество комнат), этаж (наличие лифта), расстояние, упаковка, разборка/сборка мебели. Грузчик: от 200 000 сум/день. Транспорт: от 300 000 сум.',
-      'Пример: переезд 2-комнатной квартиры в пределах Ташкента с 5 этажа на 3. 2 грузчика + газель: ~1 200 000 сум. С упаковкой: ~1 800 000 сум.',
+      'Калькулятор переезда помогает заранее рассчитать стоимость перевозки вещей в пределах Ташкента или между городами Узбекистана. Рынок грузоперевозок в стране активно развивается: помимо традиционных «газелей» действуют специализированные сервисы заказа грузчиков через приложения. Средняя стоимость переезда в пределах Ташкента составляет от 500 000 до 3 000 000 сум в зависимости от объёма и расстояния.',
+      'На итоговую цену влияют несколько ключевых факторов: количество комнат определяет объём вещей и необходимое число рейсов; этаж погрузки и выгрузки — при отсутствии лифта стоимость возрастает на 20–40%; расстояние — междугородние переезды рассчитываются по тарифу за километр. Разборка и сборка мебели, упаковка хрупких предметов и необходимость специальной техники для крупногабаритных грузов оплачиваются отдельно.',
+      'Типичные расценки на услуги переезда в 2026 году: работа одного грузчика — от 200 000 сум за смену, аренда грузового транспорта (газель) — от 300 000 сум, фургон повышенной вместимости — от 500 000 сум. Упаковка квартиры «под ключ» стоит от 400 000 до 1 000 000 сум. Междугородние перевозки, например Ташкент — Самарканд, обойдутся от 3 000 000 до 6 000 000 сум.',
+      'При организации переезда рекомендуется заключать письменный договор с указанием перечня вещей и их состояния — это защитит вас в случае повреждения имущества. Согласно Гражданскому кодексу Узбекистана, перевозчик несёт ответственность за сохранность груза. Полезно фотографировать ценные предметы перед погрузкой и уточнять наличие страховки у транспортной компании.',
+      'Наш калькулятор переезда учитывает все основные параметры: количество комнат, этаж, наличие лифта, расстояние и перечень дополнительных услуг. Введите данные — и получите ориентировочную стоимость за считанные секунды. Это поможет спланировать бюджет и сравнить предложения нескольких компаний перед принятием решения.',
     ],
     paragraphsUz: [
-      "Ko'chish kalkulyatori buyumlar hajmi, masofa, yuk tashuvchilar soni va qo'shimcha xizmatlarni hisobga olgan holda ko'chish narxini hisoblaydi. Toshkent ichida ko'chish narxi: 500 000 dan 3 000 000 so'mgacha.",
-      "Narx omillari: buyumlar hajmi (xonalar soni), qavat (lift mavjudligi), masofa, qadoqlash, mebelni yig'ish/qo'yish. Yuk tashuvchi: 200 000 so'm/kundan. Transport: 300 000 so'mdan.",
-      "Misol: Toshkent ichida 2 xonali kvartirani 5-qavatdan 3-qavatga ko'chirish. 2 yuk tashuvchi + gazel: ~1 200 000 so'm. Qadoqlash bilan: ~1 800 000 so'm.",
+      "Ko'chish kalkulyatori Toshkent ichida yoki O'zbekiston shaharlari o'rtasida buyumlarni tashish narxini oldindan hisoblashga yordam beradi. Mamlakatda yuk tashish bozori jadal rivojlanmoqda: an'anaviy «gazel»lardan tashqari ilovalar orqali yuk tashuvchilarni buyurtma qilish xizmatlari faoliyat yuritmoqda. Toshkent ichida ko'chishning o'rtacha narxi hajm va masofaga qarab 500 000 dan 3 000 000 so'mgacha.",
+      "Yakuniy narxga bir necha asosiy omillar ta'sir qiladi: xonalar soni buyumlar hajmi va kerakli reyslar sonini belgilaydi; yuklash va tushirish qavati — lift bo'lmaganda narx 20–40% ga oshadi; masofa — shaharlararo ko'chishlar kilometr bo'yicha tarifda hisoblanadi. Mebelni yig'ish va qo'yish, mo'rt buyumlarni qadoqlash hamda katta o'lchamli yuklar uchun maxsus texnika alohida to'lanadi.",
+      "2026-yilda ko'chish xizmatlarining odatiy narxlari: bir yuk tashuvchining ishi — smenasiga 200 000 so'mdan, yuk transporti (gazel) ijarasi — 300 000 so'mdan, katta sig'imli furgon — 500 000 so'mdan. Kvartirani «kalit topshirguncha» qadoqlash 400 000 dan 1 000 000 so'mgacha turadi. Shaharlararo tashishlar, masalan Toshkent — Samarqand, 3 000 000 dan 6 000 000 so'mgacha tushadi.",
+      "Ko'chishni tashkil etishda buyumlar ro'yxati va holati ko'rsatilgan yozma shartnoma tuzish tavsiya etiladi — bu mol-mulk shikastlanganda sizni himoya qiladi. O'zbekiston Fuqarolik kodeksiga ko'ra, tashuvchi yukning saqlanishi uchun javobgardir. Yuklashdan oldin qimmatbaho buyumlarni suratga olish va transport kompaniyasida sug'urta mavjudligini aniqlash foydalidir.",
+      "Bizning ko'chish kalkulyatorimiz barcha asosiy parametrlarni hisobga oladi: xonalar soni, qavat, lift mavjudligi, masofa va qo'shimcha xizmatlar ro'yxati. Ma'lumotlarni kiriting — bir necha soniyada taxminiy narxni oling. Bu byudjetni rejalashtirish va qaror qabul qilishdan oldin bir necha kompaniyalar takliflarini solishtirish imkonini beradi.",
     ],
     faqRu: [
       { question: 'Сколько стоит переезд?', answer: 'В пределах Ташкента: 500 000 − 3 000 000 сум. Зависит от объёма, этажа и доп. услуг.' },
@@ -2033,20 +2074,32 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'margin',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Калькулятор маржи рассчитывает маржу (наценку) и маржинальность товара или услуги. Маржа = Цена продажи − Себестоимость. Маржинальность = (Маржа / Цена продажи) × 100%. Наценка = (Маржа / Себестоимость) × 100%.', 'Пример: себестоимость 500 000, цена продажи 800 000. Маржа = 300 000 сум. Маржинальность = 37,5%. Наценка = 60%.', 'Важно не путать маржинальность и наценку. Маржинальность всегда меньше 100%, наценка может быть любой.'],
-    paragraphsUz: ["Marja kalkulyatori tovar yoki xizmatning marjasini (ustama) va marjinalligini hisoblaydi. Marja = Sotish narxi − Tannarx. Marjinallik = (Marja / Sotish narxi) × 100%. Ustama = (Marja / Tannarx) × 100%.", "Misol: tannarx 500 000, sotish narxi 800 000. Marja = 300 000 so'm. Marjinallik = 37,5%. Ustama = 60%.", "Marjinallik va ustamani aralashtirib yubormaslik muhim. Marjinallik doimo 100% dan kam, ustama har qanday bo'lishi mumkin."],
+    paragraphsRu: ['Калькулятор маржи рассчитывает ключевые показатели прибыльности бизнеса: маржу (разницу между ценой продажи и себестоимостью), маржинальность (долю маржи в выручке) и наценку (долю маржи в себестоимости). Эти показатели необходимы каждому предпринимателю в Узбекистане для ценообразования, анализа рентабельности и принятия управленческих решений.', 'Формулы расчёта: Маржа = Цена продажи − Себестоимость. Маржинальность = (Маржа / Цена продажи) × 100%. Наценка = (Маржа / Себестоимость) × 100%. Важно различать эти понятия: маржинальность всегда меньше 100%, тогда как наценка может быть любой. Например, при себестоимости 500 000 и цене 800 000 сум маржа составит 300 000, маржинальность — 37,5%, наценка — 60%.', 'Средняя маржинальность по отраслям в Узбекистане: розничная торговля продуктами — 15-25%, одежда и обувь — 30-50%, общественное питание — 40-65%, IT-услуги — 50-70%, строительные материалы — 20-35%. Знание отраслевых норм помогает понять, конкурентоспособен ли ваш бизнес и есть ли резервы для повышения прибыльности.', 'Для малого бизнеса и индивидуальных предпринимателей в Узбекистане калькулятор маржи — инструмент ежедневного использования. При закупке товаров на оптовом рынке «Абу Сахий» или «Ипподром» в Ташкенте важно заранее рассчитать наценку, чтобы покрыть аренду, зарплату продавцов, налоги (4% для ИП на упрощённой системе) и получить желаемую прибыль.', 'Калькулятор работает в двух режимах: прямой расчёт (от себестоимости и цены продажи к марже) и обратный (от желаемой маржинальности к необходимой цене продажи). Второй режим особенно полезен при формировании прайс-листа: задайте себестоимость и целевую маржинальность 30% — калькулятор покажет минимальную цену продажи. Это помогает выстроить устойчивую ценовую политику.'],
+    paragraphsUz: ["Marja kalkulyatori biznes rentabelligining asosiy ko'rsatkichlarini hisoblaydi: marja (sotish narxi va tannarx orasidagi farq), marjinallik (tushumdagi marja ulushi) va ustama (tannarxdagi marja ulushi). Bu ko'rsatkichlar O'zbekistondagi har bir tadbirkorga narx belgilash, rentabellik tahlili va boshqaruv qarorlarini qabul qilish uchun zarur.", "Hisoblash formulalari: Marja = Sotish narxi − Tannarx. Marjinallik = (Marja / Sotish narxi) × 100%. Ustama = (Marja / Tannarx) × 100%. Bu tushunchalarni farqlash muhim: marjinallik doimo 100% dan kam, ustama esa istalgan qiymatda bo'lishi mumkin. Masalan, tannarx 500 000, narx 800 000 so'mda marja 300 000, marjinallik — 37,5%, ustama — 60% bo'ladi.", "O'zbekistonda tarmoqlar bo'yicha o'rtacha marjinallik: oziq-ovqat chakana savdosi — 15-25%, kiyim-kechak — 30-50%, umumiy ovqatlanish — 40-65%, IT-xizmatlar — 50-70%, qurilish materiallari — 20-35%. Tarmoq me'yorlarini bilish biznesingiz raqobatbardoshligini va rentabellikni oshirish zaxiralarini tushunishga yordam beradi.", "O'zbekistondagi kichik biznes va yakka tartibdagi tadbirkorlar uchun marja kalkulyatori kundalik vosita hisoblanadi. Toshkentdagi «Abu Sahiy» yoki «Ippodrom» ulgurji bozoridan tovar sotib olayotganda, ijara, sotuvchilar ish haqi, soliqlar (soddalashtilgan tizimda YaTT uchun 4%) va kerakli foydani qoplash uchun ustamani oldindan hisoblash muhim.", "Kalkulyator ikki rejimda ishlaydi: to'g'ridan-to'g'ri hisoblash (tannarx va sotish narxidan marjaga) va teskari hisoblash (kerakli marjinallikdan zarur sotish narxiga). Ikkinchi rejim narxlar ro'yxatini shakllantirishda ayniqsa qulay: tannarxni va maqsadli 30% marjinallikni kiriting — kalkulyator minimal sotish narxini ko'rsatadi. Bu barqaror narx siyosatini shakllantirishga yordam beradi."],
     faqRu: [{ question: 'Чем маржа отличается от наценки?', answer: 'Маржа считается от цены продажи, наценка — от себестоимости. При одинаковых числах наценка всегда больше маржинальности.' }, { question: 'Какая нормальная маржинальность?', answer: 'Зависит от отрасли. Торговля: 20-40%. Услуги: 40-70%. Производство: 15-30%.' }, { question: 'Как рассчитать наценку?', answer: '(Цена − Себестоимость) / Себестоимость × 100%.' }],
     faqUz: [{ question: "Marja ustamadan nimasi bilan farq qiladi?", answer: "Marja sotish narxidan, ustama tannarxdan hisoblanadi. Bir xil raqamlarda ustama doimo marjinallikdan katta." }, { question: "Normal marjinallik qancha?", answer: "Tarmoqqa bog'liq. Savdo: 20-40%. Xizmatlar: 40-70%. Ishlab chiqarish: 15-30%." }, { question: "Ustamani qanday hisoblash mumkin?", answer: "(Narx − Tannarx) / Tannarx × 100%." }],
   },
 
   {
     slug: 'break-even',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Калькулятор точки безубыточности определяет объём продаж, при котором доходы покрывают все расходы. Формула: Точка безубыточности (шт) = Постоянные расходы / (Цена за единицу − Переменные расходы на единицу).', 'Пример: аренда+зарплаты 20 млн сум/мес, цена товара 50 000 сум, себестоимость 30 000 сум. ТБУ = 20 000 000 / (50 000 − 30 000) = 1 000 штук/мес.', 'Зная ТБУ, вы понимаете минимально необходимый объём продаж для покрытия расходов и начала получения прибыли.'],
-    paragraphsUz: ["Zararsizlik nuqtasi kalkulyatori daromadlar barcha xarajatlarni qoplovchi sotish hajmini aniqlaydi. Formula: Zararsizlik nuqtasi (dona) = Doimiy xarajatlar / (Birlik narxi − Birlik uchun o'zgaruvchan xarajatlar).", "Misol: ijara+ish haqi 20 mln so'm/oy, tovar narxi 50 000 so'm, tannarx 30 000 so'm. ZN = 20 000 000 / (50 000 − 30 000) = 1 000 dona/oy.", "ZNni bilsangiz, xarajatlarni qoplash va foyda olishni boshlash uchun minimal zarur sotish hajmini tushunasiz."],
+        paragraphsRu: [
+      'Калькулятор точки безубыточности (ТБУ) — ключевой инструмент для любого предпринимателя в Узбекистане. Он определяет минимальный объём продаж, при котором доходы полностью покрывают все постоянные и переменные расходы. Формула расчёта: ТБУ (шт) = Постоянные расходы / (Цена за единицу − Переменные расходы на единицу). Знание точки безубыточности позволяет оценить реалистичность бизнес-плана ещё до вложения средств.',
+      'Постоянные расходы — это затраты, которые не зависят от объёма производства: аренда помещения, зарплаты сотрудников, коммунальные платежи, налоги на имущество, страховка. В Узбекистане аренда торгового помещения в Ташкенте обходится от 3 до 15 млн сум в месяц в зависимости от локации, а минимальная заработная плата в 2026 году составляет 1 155 000 сум. Эти расходы необходимо покрывать вне зависимости от продаж.',
+      'Переменные расходы растут пропорционально объёму продаж: себестоимость товара, упаковка, доставка, комиссия маркетплейсов (Uzum Market, Sello берут 5–15%). Разница между ценой продажи и переменными расходами на единицу называется маржинальной прибылью — именно она покрывает постоянные расходы. Чем выше маржа, тем быстрее бизнес выходит на окупаемость.',
+      'Рассмотрим пример: вы открываете пекарню в Ташкенте. Постоянные расходы: аренда 5 млн, зарплаты 8 млн, коммуналка 2 млн — итого 15 млн сум в месяц. Себестоимость буханки хлеба 4 000 сум, цена продажи 8 000 сум. ТБУ = 15 000 000 / (8 000 − 4 000) = 3 750 штук в месяц, или примерно 125 буханок в день. Всё, что продано сверх этого — ваша чистая прибыль.',
+      'Калькулятор также рассчитывает ТБУ в денежном выражении (сум), запас прочности и срок выхода на окупаемость. Это особенно важно при подаче заявки на кредит: банки Узбекистана (Ипотека-банк, Асака-банк) требуют бизнес-план с обоснованием окупаемости. Регулярный пересчёт ТБУ помогает адаптировать ценовую политику при изменении курса доллара или стоимости сырья.',
+    ],
+    paragraphsUz: [
+      "Zararsizlik nuqtasi (ZN) kalkulyatori O'zbekistondagi har qanday tadbirkor uchun muhim vosita hisoblanadi. U daromadlar barcha doimiy va o'zgaruvchan xarajatlarni to'liq qoplovchi minimal sotish hajmini aniqlaydi. Hisoblash formulasi: ZN (dona) = Doimiy xarajatlar / (Birlik narxi − Birlik uchun o'zgaruvchan xarajatlar). Zararsizlik nuqtasini bilish mablag' kiritishdan oldin biznes-rejaning realligini baholash imkonini beradi.",
+      "Doimiy xarajatlar — ishlab chiqarish hajmiga bog'liq bo'lmagan xarajatlar: binoni ijaraga olish, xodimlar ish haqi, kommunal to'lovlar, mol-mulk soliqlari, sug'urta. O'zbekistonda Toshkentda savdo binosi ijarasi joylashuviga qarab oyiga 3 dan 15 mln so'mgacha, 2026-yilda eng kam ish haqi esa 1 155 000 so'mni tashkil etadi. Bu xarajatlar sotish hajmidan qat'i nazar qoplanishi shart.",
+      "O'zgaruvchan xarajatlar sotish hajmiga mutanosib ravishda o'sadi: tovar tannarxi, qadoqlash, yetkazib berish, marketpleyslar komissiyasi (Uzum Market, Sello 5–15% oladi). Sotish narxi va birlik uchun o'zgaruvchan xarajatlar o'rtasidagi farq marjinal foyda deyiladi — aynan shu doimiy xarajatlarni qoplaydi. Marja qanchalik yuqori bo'lsa, biznes shunchalik tez o'zini oqlaydi.",
+      "Misolni ko'rib chiqaylik: Toshkentda novvoyxona ochmoqchisiz. Doimiy xarajatlar: ijara 5 mln, ish haqi 8 mln, kommunal 2 mln — jami oyiga 15 mln so'm. Non tannarxi 4 000 so'm, sotish narxi 8 000 so'm. ZN = 15 000 000 / (8 000 − 4 000) = oyiga 3 750 dona, ya'ni kuniga taxminan 125 dona non. Bundan ortiq sotilgan har bir non — sof foydangiz.",
+      "Kalkulyator shuningdek pul ifodasida (so'mda) ZNni, xavfsizlik zaxirasini va o'zini oqlash muddatini hisoblaydi. Bu kredit uchun ariza berishda ayniqsa muhim: O'zbekiston banklari (Ipoteka-bank, Asaka-bank) o'zini oqlash asoslanmasi bilan biznes-rejani talab qiladi. ZNni muntazam qayta hisoblash dollar kursi yoki xom ashyo narxi o'zgarganda narx siyosatini moslashtirishga yordam beradi.",
+    ],
     faqRu: [{ question: 'Что такое точка безубыточности?', answer: 'Объём продаж, при котором доход = расходы. Ниже ТБУ — убыток, выше — прибыль.' }, { question: 'Как рассчитать ТБУ?', answer: 'Постоянные расходы / (Цена − Переменные расходы на единицу).' }, { question: 'Зачем считать ТБУ?', answer: 'Чтобы понять минимальный объём продаж для выхода в прибыль и оценить реалистичность бизнес-плана.' }],
     faqUz: [{ question: 'Zararsizlik nuqtasi nima?', answer: "Daromad = xarajatlar bo'ladigan sotish hajmi. ZNdan past — zarar, yuqori — foyda." }, { question: "ZNni qanday hisoblash mumkin?", answer: "Doimiy xarajatlar / (Narx − Birlik uchun o'zgaruvchan xarajatlar)." }, { question: "ZNni nima uchun hisoblash kerak?", answer: "Foydaga chiqish uchun minimal sotish hajmini tushunish va biznes-rejaning realligini baholash uchun." }],
   },
@@ -2238,7 +2291,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'education-loan',
-    lastUpdated: '2025-10-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Ipoteka bank — Образовательные кредиты', url: 'https://ipotekabank.uz' },
@@ -2248,24 +2301,24 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Условия кредитования (2025): сумма — до 100% стоимости обучения (максимум зависит от банка, до 200 млн сум); ставка — 14-18% годовых; срок — до 7 лет (4 года обучение + 3 года погашение); льготный период — в течение обучения платятся только проценты (или полная отсрочка у некоторых банков). Обеспечение: поручительство родителей или третьих лиц.',
       'Пример расчёта: обучение в ТМА (медицинский) — 30 млн/год × 6 лет = 180 млн сум. Кредит под 16% на 9 лет (6 лет учёбы + 3 года погашение). Во время учёбы: проценты ≈ 2 400 000 сум/мес (первый год). После учёбы: аннуитетный платёж ≈ 7 500 000 сум/мес в течение 3 лет. Общая переплата: ~95 млн сум (53%).',
       'Требования к заёмщику: поступление в аккредитованный вуз Узбекистана (или одобренный зарубежный), возраст 17-30 лет, поручитель (родитель или опекун) со стабильным доходом, чистая кредитная история поручителя. Документы: справка о зачислении, паспорт студента и поручителя, справка о доходах поручителя, договор с вузом.',
-      'Калькулятор образовательного кредита рассчитает ежемесячные платежи в период обучения и после, общую переплату и сравнит условия разных банков. Введите стоимость обучения, срок и ставку — получите подробный график платежей. Не забудьте учесть, что ставки могут меняться: привязка к ставке рефинансирования ЦБ РУз (13,5% в 2025).',
+      'Калькулятор образовательного кредита рассчитает ежемесячные платежи в период обучения и после, общую переплату и сравнит условия разных банков. Введите стоимость обучения, срок и ставку — получите подробный график платежей. Не забудьте учесть, что ставки могут меняться: привязка к ставке рефинансирования ЦБ РУз (14% в 2025).',
     ],
     paragraphsUz: [
       "O'zbekistonda ta'lim kreditlari — akkreditatsiyalangan OTMlarda o'qish uchun to'lovni imtiyozli shartlarda taqdim etuvchi maxsus bank mahsulotlari. Stavka: yillik 14-18% (bozor stavkalaridan 22-28% ancha past). Muddat: imtiyozli davr bilan 7 yilgacha. Asosiy kredit beruvchi banklar: Ipoteka bank, Kapitalbank, Mikrokreditbank, Davr bank. Har yili 50 000 dan ortiq talaba ta'lim kreditlaridan foydalanadi.",
       "Kreditlash shartlari (2025): summa — o'qish qiymatining 100% gacha (maksimum bankka bog'liq, 200 mln so'mgacha); stavka — yillik 14-18%; muddat — 7 yilgacha (4 yil o'qish + 3 yil qaytarish); imtiyozli davr — o'qish davrida faqat foizlar to'lanadi (yoki ba'zi banklarda to'liq kechiktirish). Ta'minot: ota-onalar yoki uchinchi shaxslarning kafillik.",
       "Hisoblash misoli: TTAda (tibbiyot) o'qish — yiliga 30 mln × 6 yil = 180 mln so'm. 16% da 9 yilga kredit (6 yil o'qish + 3 yil qaytarish). O'qish davomida: foizlar ≈ oyiga 2 400 000 so'm (birinchi yil). O'qishdan keyin: annuitetli to'lov ≈ 3 yil davomida oyiga 7 500 000 so'm. Umumiy ortiqcha to'lov: ~95 mln so'm (53%).",
       "Qarz oluvchiga talablar: O'zbekistonning akkreditatsiyalangan OTMiga (yoki tasdiqlangan xorijiy) qabul qilinish, yoshi 17-30, barqaror daromadli kafil (ota-ona yoki vasiy), kafilning toza kredit tarixi. Hujjatlar: ro'yxatga olish to'g'risida ma'lumotnoma, talaba va kafil pasporti, kafil daromadlari to'g'risida ma'lumotnoma, OTM bilan shartnoma.",
-      "Ta'lim krediti kalkulyatori o'qish davrida va undan keyin oylik to'lovlarni, umumiy ortiqcha to'lovni hisoblaydi va turli banklar shartlarini solishtiradi. O'qish narxi, muddat va stavkani kiriting — batafsil to'lov jadvalini olasiz. Stavkalar o'zgarishi mumkinligini unutmang: O'zbekiston MB qayta moliyalash stavkasiga bog'lanish (2025-yilda 13,5%).",
+      "Ta'lim krediti kalkulyatori o'qish davrida va undan keyin oylik to'lovlarni, umumiy ortiqcha to'lovni hisoblaydi va turli banklar shartlarini solishtiradi. O'qish narxi, muddat va stavkani kiriting — batafsil to'lov jadvalini olasiz. Stavkalar o'zgarishi mumkinligini unutmang: O'zbekiston MB qayta moliyalash stavkasiga bog'lanish (2025-yilda 14%).",
     ],
     faqRu: [
-      { question: 'Какие ставки по образовательным кредитам?', answer: '14-18% годовых — значительно ниже рыночных 22-28%. Ставка привязана к ставке ЦБ (13,5% в 2025).' },
+      { question: 'Какие ставки по образовательным кредитам?', answer: '14-18% годовых — значительно ниже рыночных 22-28%. Ставка привязана к ставке ЦБ (14% в 2025).' },
       { question: 'Когда начинать погашение?', answer: 'После окончания учёбы. Во время обучения — только проценты (1-3 млн сум/мес) или полная отсрочка у некоторых банков.' },
       { question: 'Какие документы нужны?', answer: 'Справка о зачислении, паспорт, поручитель с доходами, справка о доходах поручителя, договор с вузом.' },
       { question: 'Какую сумму можно получить?', answer: 'До 100% стоимости обучения, максимум до 200 млн сум в зависимости от банка и вуза.' },
       { question: 'Какая переплата по кредиту?', answer: 'При ставке 16% и сроке 7 лет — переплата составит около 50-60% от суммы кредита. Используйте калькулятор для точного расчёта.' },
     ],
     faqUz: [
-      { question: "Ta'lim kreditlari stavkalari qanday?", answer: "Yillik 14-18% — bozor stavkalaridan 22-28% ancha past. Stavka MB stavkasiga (2025-yilda 13,5%) bog'langan." },
+      { question: "Ta'lim kreditlari stavkalari qanday?", answer: "Yillik 14-18% — bozor stavkalaridan 22-28% ancha past. Stavka MB stavkasiga (2025-yilda 14%) bog'langan." },
       { question: "Qaytarishni qachon boshlash kerak?", answer: "O'qish tugaganidan keyin. O'qish davrida — faqat foizlar (oyiga 1-3 mln so'm) yoki ba'zi banklarda to'liq kechiktirish." },
       { question: "Qanday hujjatlar kerak?", answer: "Ro'yxatga olish ma'lumotnomasi, pasport, daromadli kafil, kafil daromadlari ma'lumotnomasi, OTM bilan shartnoma." },
       { question: "Qancha summa olish mumkin?", answer: "O'qish qiymatining 100% gacha, bank va OTMga qarab maksimum 200 mln so'mgacha." },
@@ -2386,97 +2439,133 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'kurban',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [{ name: 'Управление мусульман Узбекистана', url: 'https://muslim.uz' }],
-    paragraphsRu: ['Калькулятор курбана рассчитывает стоимость жертвенного животного для праздника Ид аль-Адха (Курбан хайит). Стоимость барана (2025): 2 500 000 − 5 000 000 сум. Быка (корова): 15 000 000 − 30 000 000 сум (делится на 7 долей).', 'Требования к животному: баран — от 6 месяцев, бык — от 2 лет, здоровое, без существенных изъянов. Одна доля быка = примерно стоимости одного барана.', 'Мясо распределяется на 3 части: 1/3 семье, 1/3 родственникам/соседям, 1/3 нуждающимся.'],
-    paragraphsUz: ["Qurbon kalkulyatori Iyd al-Adho (Qurbon hayiti) bayrami uchun qurbonlik hayvonining narxini hisoblaydi. Qo'y narxi (2025): 2 500 000 − 5 000 000 so'm. Buqa (sigir): 15 000 000 − 30 000 000 so'm (7 ulushga bo'linadi).", "Hayvonga talablar: qo'y — 6 oydan, buqa — 2 yoshdan, sog'lom, sezilarli nuqsonlarsiz. Buqaning bitta ulushi ≈ bitta qo'y narxi.", "Go'sht 3 qismga taqsimlanadi: 1/3 oilaga, 1/3 qarindosh/qo'shnilarga, 1/3 muhtojlarga."],
+        paragraphsRu: [
+      'Калькулятор курбана помогает рассчитать стоимость жертвоприношения на праздник Ид аль-Адха (Курбан хайит) — один из главных религиозных праздников в Узбекистане. По данным Управления мусульман Узбекистана, ежегодно миллионы семей совершают обряд курбан. Калькулятор учитывает вид животного (баран, бык, корова), текущие рыночные цены и количество долей, позволяя заранее спланировать бюджет на праздник.',
+      'Стоимость жертвенных животных в 2026 году в Узбекистане: баран — от 3 000 000 до 6 000 000 сум в зависимости от породы и веса; бык или корова — от 18 000 000 до 35 000 000 сум. Крупный рогатый скот делится на 7 долей (улушей), поэтому стоимость одной доли быка составляет 2 500 000–5 000 000 сум — сопоставимо с ценой одного барана. Цены варьируются по регионам: в Ферганской долине и Сурхандарье обычно ниже, чем в Ташкенте.',
+      'Шариат предъявляет чёткие требования к животному для курбана. Баран (овца) должен быть не младше 6 месяцев и выглядеть годовалым, козёл — от 1 года, бык и корова — от 2 лет, верблюд — от 5 лет. Животное должно быть здоровым, упитанным, без серьёзных дефектов: хромоты, слепоты на один или оба глаза, сломанных рогов с повреждением корня, болезней. Жертвоприношение совершается с 10 по 12 зуль-хиджа.',
+      'Мясо курбана по сунне распределяется на три равные части: одна треть остаётся семье, одна треть раздаётся родственникам и соседям, одна треть передаётся нуждающимся (факирам и мискинам). В Узбекистане распространена традиция совместного приготовления курбанного мяса на махаллинских сходах, где блюда из жертвенного мяса (шурпа, плов) раздаются всем жителям махалли.',
+      'Обряд курбана обязателен (ваджиб по ханафитскому мазхабу) для совершеннолетнего мусульманина, чьё имущество превышает нисаб — эквивалент 85 граммов золота или 595 граммов серебра. Наш калькулятор рассчитает стоимость курбана, покажет распределение мяса по долям и поможет организовать совместную покупку быка на 7 семей, что является наиболее экономичным вариантом.',
+    ],
+    paragraphsUz: [
+      "Qurbon kalkulyatori Iyd al-Adho (Qurbon hayiti) — O'zbekistondagi eng muhim diniy bayramlardan biri uchun qurbonlik narxini hisoblashga yordam beradi. O'zbekiston musulmonlari boshqarmasi ma'lumotlariga ko'ra, har yili millionlab oilalar qurbon marosimini bajaradi. Kalkulyator hayvon turini (qo'y, buqa, sigir), joriy bozor narxlarini va ulushlar sonini hisobga olib, bayramga byudjetni oldindan rejalashtirish imkonini beradi.",
+      "2026-yilda O'zbekistonda qurbonlik hayvonlarining narxi: qo'y — zoti va vazniga qarab 3 000 000 dan 6 000 000 so'mgacha; buqa yoki sigir — 18 000 000 dan 35 000 000 so'mgacha. Yirik shoxli mol 7 ta ulushga bo'linadi, shuning uchun buqaning bir ulushi 2 500 000–5 000 000 so'm — bitta qo'y narxiga teng. Narxlar hududlarga qarab farq qiladi: Farg'ona vodiysi va Surxondaryoda odatda Toshkentga qaraganda arzonroq.",
+      "Shariat qurbonlik hayvoniga aniq talablar qo'yadi. Qo'y (sovliq) kamida 6 oylik va bir yoshdek ko'rinishi kerak, echki — 1 yoshdan, buqa va sigir — 2 yoshdan, tuya — 5 yoshdan. Hayvon sog'lom, semiz, jiddiy nuqsonlarsiz bo'lishi shart: oqsoqlik, bir yoki ikkala ko'zdan ko'rlik, ildizi shikastlangan singan shoxlar, kasalliklar bo'lmasligi kerak. Qurbonlik 10-dan 12-zulhijjagacha bajariladi.",
+      "Qurbon go'shti sunnatga ko'ra uchta teng qismga taqsimlanadi: uchdan bir qismi oilaga qoladi, uchdan bir qismi qarindosh va qo'shnilarga ulashiladi, uchdan bir qismi muhtojlarga (faqir va miskinlarga) beriladi. O'zbekistonda qurbon go'shtini mahalla yig'inlarida birgalikda tayyorlash an'anasi keng tarqalgan — qurbonlik go'shtidan taomlar (sho'rva, palov) mahalla aholisiga tarqatiladi.",
+      "Qurbon marosimi hanafiy mazhabiga ko'ra balog'atga yetgan, mol-mulki nisob — 85 gramm oltin yoki 595 gramm kumush ekvivalentidan ortiq bo'lgan musulmonga vojib hisoblanadi. Bizning kalkulyatorimiz qurbon narxini hisoblaydi, go'shtni ulushlar bo'yicha taqsimlashni ko'rsatadi va 7 ta oila uchun birgalikda buqa sotib olishni tashkil qilishga yordam beradi — bu eng tejamkor variant.",
+    ],
     faqRu: [{ question: 'Сколько стоит курбан в 2025?', answer: 'Баран: 2,5-5 млн сум. Бык: 15-30 млн (7 долей, ~2,1-4,3 млн за долю).' }, { question: 'Кто обязан резать курбан?', answer: 'Совершеннолетний мусульманин, обладающий нисабом (имущество > 85 г золота).' }, { question: 'Как делится мясо?', answer: '1/3 семье, 1/3 родным/соседям, 1/3 нуждающимся.' }],
     faqUz: [{ question: "2025-yilda qurbon qancha turadi?", answer: "Qo'y: 2,5-5 mln so'm. Buqa: 15-30 mln (7 ulush, ulushiga ~2,1-4,3 mln)." }, { question: "Qurbon qilish kimga vojib?", answer: "Nisobga (85 g oltindan ortiq mol-mulk) ega balog'atga yetgan musulmon." }, { question: "Go'sht qanday taqsimlanadi?", answer: "1/3 oilaga, 1/3 qarindosh/qo'shnilarga, 1/3 muhtojlarga." }],
   },
 
   {
     slug: 'date-calc',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Калькулятор дат вычисляет разницу между двумя датами в днях, неделях, месяцах и годах. Также позволяет прибавить или вычесть определённое количество дней из даты.', 'Примеры использования: расчёт срока договора, определение возраста в днях, планирование событий, расчёт просрочки платежей.', 'Формулы учитывают високосные годы (29 февраля). Все расчёты производятся по григорианскому календарю.'],
-    paragraphsUz: ["Sana kalkulyatori ikki sana o'rtasidagi farqni kunlar, haftalar, oylar va yillarda hisoblaydi. Shuningdek, sanaga ma'lum kunlar sonini qo'shish yoki ayirish imkonini beradi.", "Foydalanish misollari: shartnoma muddatini hisoblash, kunlardagi yoshni aniqlash, tadbirlarni rejalashtirish, to'lov kechikishini hisoblash.", "Formulalar kabisa yillarini (29-fevral) hisobga oladi. Barcha hisob-kitoblar grigoriy taqvimi bo'yicha amalga oshiriladi."],
+    paragraphsRu: ['Калькулятор дат — удобный инструмент для вычисления разницы между двумя датами в днях, неделях, месяцах и годах, а также для прибавления или вычитания определённого количества дней из любой даты. Инструмент незаменим при работе с договорами, графиками платежей, кадровым учётом и планированием мероприятий. Все вычисления ведутся по григорианскому календарю с учётом високосных лет.', 'В Узбекистане калькулятор дат особенно востребован для расчёта сроков исполнения договоров и контрактов. Согласно Гражданскому кодексу Республики Узбекистан, сроки исчисляются в календарных днях, и если последний день срока приходится на выходной, днём окончания считается ближайший рабочий день. Калькулятор помогает безошибочно определить такие даты с учётом государственных праздников.', 'Практическое применение для бизнеса: расчёт 30-дневного срока оплаты по счёту-фактуре, определение даты истечения гарантийного срока товара (обычно 12 или 24 месяца), вычисление периода просрочки для начисления пени. Например, если договор подписан 15 января, а срок исполнения — 90 календарных дней, калькулятор покажет точную дату окончания — 15 апреля.', 'Для кадровых служб инструмент полезен при расчёте трудового стажа сотрудников, определении дат выхода из отпуска по уходу за ребёнком, вычислении срока испытательного периода. По Трудовому кодексу Узбекистана испытательный срок не может превышать трёх месяцев. Калькулятор точно определит дату окончания испытания для любого сотрудника.', 'В повседневной жизни калькулятор дат помогает узнать, сколько дней осталось до важного события — свадьбы, экзамена, Навруза (21 марта) или Дня независимости (1 сентября). Также можно вычислить возраст в днях, определить день недели для любой даты в прошлом или будущем. Инструмент учитывает все високосные годы и корректно обрабатывает переходы между месяцами разной длины.'],
+    paragraphsUz: ["Sana kalkulyatori ikki sana o'rtasidagi farqni kunlar, haftalar, oylar va yillarda hisoblash, shuningdek istalgan sanaga kunlar qo'shish yoki ayirish uchun qulay vosita. Shartnomalar, to'lov jadvallari, kadrlar hisobi va tadbirlarni rejalashtirish ishlarida bu kalkulyator ayniqsa zarur. Barcha hisob-kitoblar kabisa yillarini hisobga olib, grigoriy taqvimi asosida amalga oshiriladi.", "O'zbekistonda sana kalkulyatori shartnoma va kontrakt muddatlarini hisoblashda keng qo'llaniladi. Fuqarolik kodeksiga ko'ra, muddatlar kalendar kunlarda hisoblanadi va agar muddatning oxirgi kuni dam olish kuniga to'g'ri kelsa, eng yaqin ish kuni muddat tugash sanasi hisoblanadi. Kalkulyator davlat bayramlarini hisobga olib, bunday sanalarni xatosiz aniqlashga yordam beradi.", "Biznes uchun amaliy qo'llanilishi: hisob-faktura bo'yicha 30 kunlik to'lov muddatini hisoblash, tovar kafolat muddati tugash sanasini aniqlash (odatda 12 yoki 24 oy), penya hisoblash uchun kechikish davrini belgilash. Masalan, shartnoma 15-yanvarda imzolangan bo'lib, ijro muddati 90 kalendar kun bo'lsa, kalkulyator tugash sanasini — 15-aprelni ko'rsatadi.", "Kadrlar xizmati uchun bu vosita xodimlarning ish stajini hisoblash, bola parvarishi ta'tilidan qaytish sanalarini aniqlash, sinov muddati tugashini belgilashda foydali. O'zbekiston Mehnat kodeksiga ko'ra, sinov muddati uch oydan oshmasligi kerak. Kalkulyator har qanday xodim uchun sinov tugash sanasini aniq hisoblaydi.", "Kundalik hayotda sana kalkulyatori muhim voqeagacha — to'y, imtihon, Navro'z (21-mart) yoki Mustaqillik kuni (1-sentabr) gacha qancha kun qolganini bilishga yordam beradi. Yoshni kunlarda hisoblash, o'tmish yoki kelajakdagi istalgan sana uchun hafta kunini aniqlash ham mumkin. Vosita barcha kabisa yillarini hisobga oladi va turli uzunlikdagi oylar orasidagi o'tishlarni to'g'ri ishlaydi."],
     faqRu: [{ question: 'Как узнать разницу между датами?', answer: 'Введите две даты — калькулятор покажет разницу в днях, неделях, месяцах и годах.' }, { question: 'Учитываются ли високосные годы?', answer: 'Да, все расчёты учитывают високосные годы (366 дней).' }, { question: 'Можно ли прибавить дни к дате?', answer: 'Да, введите дату и количество дней — получите результирующую дату.' }],
     faqUz: [{ question: "Sanalar o'rtasidagi farqni qanday bilish mumkin?", answer: "Ikkita sanani kiriting — kalkulyator kunlar, haftalar, oylar va yillardagi farqni ko'rsatadi." }, { question: "Kabisa yillari hisobga olinadimi?", answer: "Ha, barcha hisob-kitoblar kabisa yillarini (366 kun) hisobga oladi." }, { question: "Sanaga kunlar qo'shish mumkinmi?", answer: "Ha, sana va kunlar sonini kiriting — natija sanani olasiz." }],
   },
 
   {
     slug: 'area',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Калькулятор площади вычисляет площадь различных геометрических фигур: прямоугольник, круг, треугольник, трапеция, параллелограмм, эллипс. Также конвертирует единицы: м², сотка (100 м²), гектар (10 000 м²), акр.', 'Формулы: прямоугольник = a × b; круг = π × r²; треугольник = ½ × a × h; трапеция = ½ × (a + b) × h.', 'Часто используется для: расчёта площади комнат (ремонт), земельных участков, строительных площадок.'],
-    paragraphsUz: ["Maydon kalkulyatori turli geometrik shakllarning maydonini hisoblaydi: to'g'ri to'rtburchak, aylana, uchburchak, trapetsiya, parallelogramm, ellips. Birliklarni ham o'giradi: m², sotix (100 m²), gektar (10 000 m²), akr.", "Formulalar: to'g'ri to'rtburchak = a × b; aylana = π × r²; uchburchak = ½ × a × h; trapetsiya = ½ × (a + b) × h.", "Ko'p ishlatiladigan maqsadlar: xonalar maydonini hisoblash (ta'mir), yer uchastkalar, qurilish maydonchalari."],
+    paragraphsRu: ['Калькулятор площади вычисляет площадь различных геометрических фигур — прямоугольника, круга, треугольника, трапеции, параллелограмма и эллипса — и конвертирует единицы измерения: квадратные метры, сотки (100 м²), гектары (10 000 м²), акры. Инструмент необходим при строительстве, ремонте, покупке земли и оформлении документов на недвижимость в Узбекистане.', 'При покупке или аренде земельного участка в Узбекистане площадь указывается в гектарах или сотках. Согласно Земельному кодексу, приусадебные участки для ведения личного подсобного хозяйства выделяются площадью до 0,06 га (6 соток) в сельской местности и до 0,04 га (4 сотки) в городской. Калькулятор поможет быстро перевести эти величины в квадратные метры для планировки.', 'Для ремонта квартиры калькулятор незаменим: зная площадь стен и пола, вы точно рассчитаете количество ламината, плитки, обоев и краски. Например, комната 4 × 5 м с высотой потолков 2,7 м имеет площадь пола 20 м² и площадь стен 48,6 м². Это позволяет заказать материалы с запасом 10% и избежать лишних расходов на строительном рынке.', 'Строители и проектировщики в Узбекистане используют калькулятор площади при подготовке смет и проектной документации. Площадь застройки, полезная площадь здания и площадь озеленения определяются по нормам ШНК (строительные нормы и правила Узбекистана). Для нестандартных форм участков калькулятор позволяет разбить фигуру на простые части и сложить результаты.', 'Калькулятор поддерживает все основные формулы: прямоугольник (a × b), круг (π × r²), треугольник (½ × a × h или по формуле Герона), трапеция (½ × (a + b) × h). Введите размеры в метрах — результат отобразится в м², сотках и гектарах. Инструмент удобен для фермеров, рассчитывающих площадь полей, и для владельцев квартир, планирующих ремонт.'],
+    paragraphsUz: ["Maydon kalkulyatori turli geometrik shakllar — to'g'ri to'rtburchak, aylana, uchburchak, trapetsiya, parallelogramm va ellips — maydonini hisoblaydi hamda o'lchov birliklarini o'giradi: kvadrat metr, sotix (100 m²), gektar (10 000 m²), akr. Bu vosita qurilish, ta'mirlash, yer sotib olish va O'zbekistonda ko'chmas mulk hujjatlarini rasmiylashtirish uchun zarur.", "O'zbekistonda yer uchastkasi sotib olish yoki ijaraga olishda maydon gektar yoki sotixda ko'rsatiladi. Yer kodeksiga ko'ra, qishloq joylarda shaxsiy yordamchi xo'jalik uchun 0,06 gektargacha (6 sotix), shaharlarda esa 0,04 gektargacha (4 sotix) tomorqa yer ajratiladi. Kalkulyator bu qiymatlarni uchastkani rejalashtirish uchun tezda kvadrat metrlarga o'giradi.", "Kvartira ta'mirlash uchun kalkulyator juda zarur: devor va pol maydonini bilib, laminat, plitka, oboylar va bo'yoq miqdorini aniq hisoblash mumkin. Masalan, 4 × 5 m xona shift balandligi 2,7 m bo'lsa, pol maydoni 20 m², devorlar maydoni 48,6 m² bo'ladi. Bu materiallarni 10% zaxira bilan buyurtma qilish va ortiqcha xarajatlardan qochish imkonini beradi.", "O'zbekistonda quruvchilar va loyihachilar smeta va loyiha hujjatlarini tayyorlashda maydon kalkulyatoridan foydalanadi. Qurilish maydoni, binoning foydali maydoni va ko'kalamzorlashtirish maydoni ShNK (O'zbekiston qurilish me'yorlari va qoidalari) talablariga muvofiq aniqlanadi. Nostandart shakldagi uchastkalar uchun shaklni sodda qismlarga bo'lib hisoblash mumkin.", "Kalkulyator barcha asosiy formulalarni qo'llab-quvvatlaydi: to'g'ri to'rtburchak (a × b), aylana (π × r²), uchburchak (½ × a × h yoki Geron formulasi), trapetsiya (½ × (a + b) × h). O'lchamlarni metrlarda kiriting — natija m², sotix va gektarlarda ko'rsatiladi. Dalalar maydonini hisoblaydigan fermerlar va ta'mir rejalashtiruvchi kvartira egalari uchun qulay."],
     faqRu: [{ question: 'Как перевести сотки в м²?', answer: '1 сотка = 100 м². 6 соток = 600 м². 1 гектар = 100 соток = 10 000 м².' }, { question: 'Как рассчитать площадь комнаты?', answer: 'Длина × Ширина. Для комнаты 4×5 м: площадь = 20 м².' }, { question: 'Сколько соток в гектаре?', answer: '100 соток = 1 гектар = 10 000 м².' }],
     faqUz: [{ question: "Sotixni m² ga qanday o'girish mumkin?", answer: "1 sotix = 100 m². 6 sotix = 600 m². 1 gektar = 100 sotix = 10 000 m²." }, { question: "Xona maydonini qanday hisoblash mumkin?", answer: "Uzunlik × Kenglik. 4×5 m xona uchun: maydon = 20 m²." }, { question: "Gektarda nechta sotix bor?", answer: "100 sotix = 1 gektar = 10 000 m²." }],
   },
 
   {
     slug: 'unit-converter',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Универсальный конвертер единиц измерения: длина (м, км, мили, футы), масса (кг, фунты, унции), объём (литры, галлоны), температура (°C, °F, K), скорость, давление и другие.', 'Наиболее используемые конвертации: км ↔ мили (1 миля = 1,609 км), кг ↔ фунты (1 фунт = 0,454 кг), литры ↔ галлоны (1 галлон = 3,785 л), °C ↔ °F (°F = °C × 9/5 + 32).', 'Полезно для: международной торговли, путешествий, технических расчётов, кулинарных рецептов.'],
-    paragraphsUz: ["Universal o'lchov birliklari konverteri: uzunlik (m, km, mil, fut), massa (kg, funt, unsiya), hajm (litr, gallon), harorat (°C, °F, K), tezlik, bosim va boshqalar.", "Eng ko'p ishlatiladigan konvertatsiyalar: km ↔ mil (1 mil = 1,609 km), kg ↔ funt (1 funt = 0,454 kg), litr ↔ gallon (1 gallon = 3,785 l), °C ↔ °F (°F = °C × 9/5 + 32).", "Foydalanish sohalari: xalqaro savdo, sayohatlar, texnik hisob-kitoblar, pazandachilik retseptlari."],
+        paragraphsRu: [
+      'Универсальный конвертер единиц измерения — незаменимый инструмент для повседневных и профессиональных расчётов. Он поддерживает все основные категории: длина (метры, километры, мили, футы, дюймы), масса (килограммы, граммы, фунты, унции), объём (литры, миллилитры, галлоны), температура (°C, °F, K), скорость, давление, площадь и энергия. Просто выберите категорию, единицу-источник и единицу-цель — результат появится мгновенно.',
+      'Для жителей Узбекистана конвертер особенно полезен при работе с международными партнёрами и зарубежными интернет-магазинами. Товары из США указываются в фунтах и дюймах, из Великобритании — в стоунах и милях, а рецепты часто приводят объёмы в чашках и унциях. При импорте строительных материалов важно точно переводить футы в метры, а при экспорте хлопка и текстиля — тонны в короткие тонны или фунты.',
+      'Наиболее востребованные конвертации: километры в мили (1 миля = 1,609 км) — для навигации и автомобильных расстояний; килограммы в фунты (1 фунт = 0,454 кг) — для торговли; литры в галлоны (1 американский галлон = 3,785 л) — для расчёта расхода топлива; градусы Цельсия в Фаренгейты (°F = °C × 9/5 + 32) — для чтения прогнозов погоды в зарубежных источниках и настройки импортного оборудования.',
+      'В Узбекистане официально принята метрическая система (СИ), закреплённая Законом «Об обеспечении единства измерений». Тем не менее в быту и сельском хозяйстве встречаются традиционные единицы: сотка (100 м²) для земельных участков, пуд (16,38 кг) на базарах, а площадь квартир нередко указывается и в квадратных метрах, и в квадратных футах для иностранных покупателей на рынке недвижимости.',
+      'Конвертер пригодится студентам при решении задач по физике и химии, инженерам при работе с технической документацией разных стран, кулинарам для пересчёта зарубежных рецептов, а путешественникам — для понимания местных единиц за рубежом. Все формулы встроены в калькулятор и пересчитываются автоматически с высокой точностью до шести знаков после запятой.',
+    ],
+    paragraphsUz: [
+      "Universal o'lchov birliklari konverteri kundalik va kasbiy hisob-kitoblar uchun ajralmas vosita hisoblanadi. U barcha asosiy toifalarni qo'llab-quvvatlaydi: uzunlik (metr, kilometr, mil, fut, dyuym), massa (kilogramm, gramm, funt, unsiya), hajm (litr, millilitr, gallon), harorat (°C, °F, K), tezlik, bosim, maydon va energiya. Toifani, manba va maqsad birligini tanlang — natija bir zumda chiqadi.",
+      "O'zbekiston aholisi uchun konverter xalqaro hamkorlar va xorijiy onlayn-do'konlar bilan ishlashda ayniqsa foydali. AQShdan kelgan tovarlar funt va dyuymda, Buyuk Britaniyadan — stoun va milda ko'rsatiladi, retseptlarda hajmlar ko'pincha stakan va unsiyada beriladi. Qurilish materiallarini import qilishda futni metrga, paxta va to'qimachilik eksportida tonnani funt yoki qisqa tonnaga aniq o'girish muhim.",
+      "Eng ko'p talab qilinadigan konvertatsiyalar: kilometrni milga (1 mil = 1,609 km) — navigatsiya va avtomobil masofalarini hisoblash uchun; kilogrammni funtga (1 funt = 0,454 kg) — savdo-sotiq uchun; litrni gallonga (1 Amerika galloni = 3,785 l) — yoqilg'i sarfini hisoblash uchun; Selsiy darajasini Farengaytga (°F = °C × 9/5 + 32) — xorijiy ob-havo prognozlarini o'qish va import uskunalarini sozlash uchun.",
+      "O'zbekistonda rasmiy ravishda «O'lchashlar birligini ta'minlash to'g'risida»gi Qonun bilan mustahkamlangan metrik tizim (SI) qo'llaniladi. Shunga qaramay, kundalik hayot va qishloq xo'jaligida an'anaviy birliklar uchraydi: yer uchastkasi uchun sotix (100 m²), bozorda pud (16,38 kg), kvartiralar maydoni esa ko'chmas mulk bozorida xorijiy xaridorlar uchun kvadrat futda ham ko'rsatiladi.",
+      "Konverter talabalarga fizika va kimyo masalalarini yechishda, muhandislarga turli mamlakatlarning texnik hujjatlari bilan ishlashda, oshpazlarga xorijiy retseptlarni qayta hisoblashda, sayohatchilarga esa chet eldagi mahalliy birliklarni tushunishda yordam beradi. Barcha formulalar kalkulyatorga o'rnatilgan bo'lib, verguldan keyin olti xonagacha aniqlikda avtomatik qayta hisoblanadi.",
+    ],
     faqRu: [{ question: 'Сколько км в миле?', answer: '1 миля = 1,609 км. 1 км = 0,621 мили.' }, { question: 'Как перевести °C в °F?', answer: '°F = °C × 9/5 + 32. Например, 20°C = 68°F.' }, { question: 'Сколько литров в галлоне?', answer: '1 американский галлон = 3,785 л.' }],
     faqUz: [{ question: "Bir milda necha km bor?", answer: "1 mil = 1,609 km. 1 km = 0,621 mil." }, { question: "°Cni °Fga qanday o'girish mumkin?", answer: "°F = °C × 9/5 + 32. Masalan, 20°C = 68°F." }, { question: "Bir gallonda necha litr bor?", answer: "1 Amerika galloni = 3,785 l." }],
   },
 
   {
     slug: 'number-to-words',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Конвертер числа в пропись переводит числовые суммы в текстовое представление на русском и узбекском языках. Необходим для заполнения финансовых документов, договоров, счетов и актов.', 'Поддерживает суммы до триллионов. Пример: 1 234 567 → «один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь». С валютой: «1 234 567 сум 00 тийин».', 'Автоматически добавляет валюту (сум, тийин / доллар, цент). Учитывает правила склонения числительных.'],
-    paragraphsUz: ["Sonni yozuvga o'giruvchi raqamli summalarni o'zbek va rus tillarida matnli ko'rinishga o'giradi. Moliyaviy hujjatlar, shartnomalar, hisob-fakturalar va dalolatnomalarni to'ldirish uchun zarur.", "Trilliongacha summalarni qo'llab-quvvatlaydi. Misol: 1 234 567 → «bir million ikki yuz o'ttiz to'rt ming besh yuz oltmish yetti». Valyuta bilan: «1 234 567 so'm 00 tiyin».", "Avtomatik ravishda valyutani qo'shadi (so'm, tiyin / dollar, sent). Son turlanishi qoidalarini hisobga oladi."],
+    paragraphsRu: ['Конвертер числа в пропись переводит числовые суммы в текстовое представление на русском и узбекском языках. Этот инструмент необходим бухгалтерам, юристам и предпринимателям в Узбекистане для заполнения договоров, счетов-фактур, доверенностей, актов выполненных работ и платёжных поручений, где сумма обязательно указывается прописью.', 'Согласно требованиям бухгалтерского учёта в Узбекистане, в первичных документах сумма указывается цифрами и дублируется прописью. Ошибка в написании суммы прописью может привести к отказу в приёме документа банком или налоговой инспекцией. Конвертер исключает подобные ошибки, автоматически формируя корректную запись с учётом правил склонения числительных.', 'Инструмент поддерживает суммы от 0 до триллионов и работает с тремя валютами: узбекский сум (сум/тийин), доллар США (доллар/цент) и евро. Пример: 15 750 000 → «пятнадцать миллионов семьсот пятьдесят тысяч сум 00 тийин». Для узбекского языка формируется запись на латинице: «o\'n besh million yetti yuz ellik ming so\'m 00 tiyin».', 'Практические сценарии использования: оформление трудового договора с указанием оклада прописью, подготовка счёта на оплату для контрагента, заполнение доверенности на получение товарно-материальных ценностей, составление расписки о получении денежных средств. Во всех этих случаях конвертер экономит время и гарантирует грамматическую точность.', 'Конвертер корректно обрабатывает особенности русского и узбекского языков: в русском — склонение по родам (одна тысяча, два миллиона, пять тысяч), в узбекском — правильное написание составных числительных. Просто введите число — результат можно скопировать и вставить в любой документ. Инструмент работает мгновенно и не требует подключения к интернету после загрузки страницы.'],
+    paragraphsUz: ["Sonni yozuvga o'giruvchi raqamli summalarni o'zbek va rus tillarida matnli ko'rinishga aylantiradi. Bu vosita O'zbekistondagi buxgalterlar, yuristlar va tadbirkorlarga shartnomalar, hisob-fakturalar, ishonchnomalar, bajarilgan ishlar dalolatnomalari va to'lov topshiriqnomalarini to'ldirishda zarur — bu hujjatlarda summa yozuv bilan ko'rsatilishi shart.", "O'zbekistonda buxgalteriya hisobi talablariga ko'ra, birlamchi hujjatlarda summa raqamlar bilan yoziladi va yozuv bilan takrorlanadi. Summa yozuvidagi xatolik hujjatning bank yoki soliq inspektsiyasi tomonidan rad etilishiga olib kelishi mumkin. Konverter bunday xatolarni bartaraf etib, son turlanishi qoidalarini hisobga olgan holda to'g'ri yozuvni avtomatik shakllantiradi.", "Vosita 0 dan trilliongacha summalarni qo'llab-quvvatlaydi va uchta valyuta bilan ishlaydi: o'zbek so'mi (so'm/tiyin), AQSh dollari (dollar/sent) va yevro. Misol: 15 750 000 → «o'n besh million yetti yuz ellik ming so'm 00 tiyin». Rus tilida ham to'g'ri shakl hosil bo'ladi: «пятнадцать миллионов семьсот пятьдесят тысяч сум 00 тийин».", "Amaliy foydalanish holatlari: ish haqi ko'rsatilgan mehnat shartnomasini rasmiylashtirish, kontragent uchun to'lov hisob-fakturasini tayyorlash, tovar-moddiy boyliklarni olish uchun ishonchnoma to'ldirish, pul mablag'larini olish haqida tilxat tuzish. Bu holatlarning barchasida konverter vaqtni tejaydi va grammatik aniqlikni kafolatlaydi.", "Konverter rus va o'zbek tillarining xususiyatlarini to'g'ri qayta ishlaydi: rus tilida — jins bo'yicha turlanish (одна тысяча, два миллиона, пять тысяч), o'zbek tilida — qo'shma sonlarning to'g'ri yozilishi. Raqamni kiriting — natijani nusxalab istalgan hujjatga qo'yish mumkin. Vosita bir lahzada ishlaydi va sahifa yuklangandan keyin internet ulanishini talab qilmaydi."],
     faqRu: [{ question: 'Зачем нужен конвертер числа в пропись?', answer: 'Для заполнения финансовых документов, где сумма должна быть указана прописью.' }, { question: 'Какие языки поддерживаются?', answer: 'Русский и узбекский (латиница).' }, { question: 'Какие валюты поддерживаются?', answer: 'Узбекский сум (сум/тийин), доллар США (доллар/цент), евро.' }],
     faqUz: [{ question: "Sonni yozuvga o'giruvchi nima uchun kerak?", answer: "Summa yozuv bilan ko'rsatilishi kerak bo'lgan moliyaviy hujjatlarni to'ldirish uchun." }, { question: "Qanday tillar qo'llab-quvvatlanadi?", answer: "Rus va o'zbek (lotin yozuvi)." }, { question: "Qanday valyutalar qo'llab-quvvatlanadi?", answer: "O'zbek so'mi (so'm/tiyin), AQSh dollari (dollar/sent), yevro." }],
   },
 
   {
     slug: 'age',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Калькулятор возраста определяет точный возраст в годах, месяцах и днях, а также общее количество прожитых дней. Введите дату рождения — калькулятор покажет полный возраст и ближайший день рождения.', 'Дополнительно показывает: возраст в месяцах, неделях, днях, часах. Полезно для: определения возраста для документов, расчёта пенсионного возраста, знаков зодиака.', 'Пример: дата рождения 15.03.1990, текущая дата 01.08.2025. Возраст: 35 лет 4 месяца 17 дней. Прожито: 12 922 дня.'],
-    paragraphsUz: ["Yosh kalkulyatori yillar, oylar va kunlardagi aniq yoshni, shuningdek yashagan kunlarning umumiy sonini aniqlaydi. Tug'ilgan sanani kiriting — kalkulyator to'liq yosh va eng yaqin tug'ilgan kunni ko'rsatadi.", "Qo'shimcha ko'rsatadi: oylar, haftalar, kunlar, soatlardagi yosh. Foydalanish sohalari: hujjatlar uchun yoshni aniqlash, pensiya yoshini hisoblash, burjlar.", "Misol: tug'ilgan sana 15.03.1990, joriy sana 01.08.2025. Yosh: 35 yil 4 oy 17 kun. Yashagan: 12 922 kun."],
+    paragraphsRu: ['Калькулятор возраста определяет точный возраст человека в годах, месяцах и днях на любую дату, а также показывает общее количество прожитых дней, недель и часов. Достаточно ввести дату рождения — инструмент мгновенно рассчитает полный возраст и покажет, сколько дней осталось до ближайшего дня рождения. Калькулятор полезен при заполнении анкет, документов и заявлений.', 'В Узбекистане точный расчёт возраста необходим для множества юридических процедур. Пенсионный возраст составляет 60 лет для мужчин и 55 лет для женщин, и калькулятор поможет определить точную дату выхода на пенсию. Для оформления ID-карты (биометрического паспорта) возраст должен быть указан на дату обращения, а при подаче документов на загранпаспорт — на дату выдачи.', 'Калькулятор возраста востребован родителями при определении возраста ребёнка для поступления в школу или детский сад. Согласно законодательству Узбекистана, в первый класс принимаются дети, достигшие 6 лет на 1 сентября текущего года. Калькулятор точно покажет, исполнится ли ребёнку 6 лет к началу учебного года, что избавит от ошибок.', 'Дополнительные функции: расчёт возраста между двумя произвольными датами (например, стаж работы), определение знака зодиака по дате рождения, подсчёт количества прожитых високосных лет. Пример: при дате рождения 15.03.1990 и текущей дате 25.03.2026 возраст составляет 36 лет 0 месяцев 10 дней, а общее число прожитых дней — 13 159.', 'Калькулятор также используется в медицинских целях: педиатры определяют точный возраст ребёнка в месяцах для назначения прививок по национальному календарю вакцинации Узбекистана. Спортивные тренеры используют его для определения возрастной категории спортсмена на соревнованиях. Введите дату рождения — и получите исчерпывающую информацию о возрасте в любых единицах измерения.'],
+    paragraphsUz: ["Yosh kalkulyatori istalgan sanada insonning aniq yoshini yillar, oylar va kunlarda aniqlaydi, shuningdek yashagan kunlar, haftalar va soatlarning umumiy sonini ko'rsatadi. Tug'ilgan sanani kiriting — vosita to'liq yoshni bir lahzada hisoblaydi va eng yaqin tug'ilgan kungacha qancha kun qolganini ko'rsatadi. Anketalar, hujjatlar va arizalarni to'ldirishda foydali.", "O'zbekistonda aniq yosh hisoblash ko'plab yuridik jarayonlar uchun zarur. Pensiya yoshi erkaklar uchun 60, ayollar uchun 55 yoshni tashkil etadi va kalkulyator pensiyaga chiqish sanasini aniq belgilashga yordam beradi. ID-karta (biometrik pasport) rasmiylashtirish uchun yosh murojaat sanasida, xorijga chiqish pasporti olishda esa berish sanasida ko'rsatilishi kerak.", "Yosh kalkulyatori bolani maktab yoki bog'chaga qabul qilish yoshini aniqlashda ota-onalar uchun zarur. O'zbekiston qonunchiligiga ko'ra, birinchi sinfga joriy yilning 1-sentabriga 6 yoshga to'lgan bolalar qabul qilinadi. Kalkulyator o'quv yili boshiga bolaga 6 yosh to'lish-to'lmasligini aniq ko'rsatib, xatolardan xalos qiladi.", "Qo'shimcha funksiyalar: ikki ixtiyoriy sana orasidagi yoshni hisoblash (masalan, ish staji), tug'ilgan sana bo'yicha burjni aniqlash, yashagan kabisa yillar sonini hisoblash. Misol: tug'ilgan sana 15.03.1990, joriy sana 25.03.2026 — yosh 36 yil 0 oy 10 kun, yashagan kunlar soni — 13 159.", "Kalkulyator tibbiy maqsadlarda ham qo'llaniladi: pediatrlar O'zbekiston milliy emlash taqvimiga muvofiq emlash tayinlash uchun bolaning oylar bo'yicha aniq yoshini aniqlaydi. Sport murabbiylari sportchining musobaqa uchun yosh toifasini belgilashda foydalanadi. Tug'ilgan sanani kiriting — yoshingiz haqida istalgan o'lchov birligida to'liq ma'lumot oling."],
     faqRu: [{ question: 'Как узнать точный возраст?', answer: 'Введите дату рождения. Калькулятор покажет полный возраст в годах, месяцах и днях.' }, { question: 'Сколько дней в году?', answer: '365 дней (366 в високосном году).' }, { question: 'Как определить знак зодиака?', answer: 'По дате рождения. Калькулятор автоматически показывает знак зодиака.' }],
     faqUz: [{ question: "Aniq yoshni qanday bilish mumkin?", answer: "Tug'ilgan sanani kiriting. Kalkulyator yillar, oylar va kunlardagi to'liq yoshni ko'rsatadi." }, { question: "Bir yilda necha kun bor?", answer: "365 kun (kabisa yilida 366)." }, { question: "Burjni qanday aniqlash mumkin?", answer: "Tug'ilgan sana bo'yicha. Kalkulyator avtomatik ravishda burjni ko'rsatadi." }],
   },
 
   {
     slug: 'random',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Генератор случайных чисел создаёт одно или несколько случайных чисел в заданном диапазоне. Поддерживает: целые и дробные числа, уникальные (без повторений) и с повторениями.', 'Применение: лотереи, розыгрыши, случайный выбор, генерация паролей, статистические эксперименты, игры. Генерация основана на криптографически стойком алгоритме.', 'Пример: 6 уникальных чисел от 1 до 49 (лотерея). Или случайное число от 1 до 100 для розыгрыша среди подписчиков.'],
-    paragraphsUz: ["Tasodifiy sonlar generatori berilgan diapazon ichida bir yoki bir nechta tasodifiy sonlarni yaratadi. Qo'llab-quvvatlaydi: butun va kasr sonlar, noyob (takrorsiz) va takrorli.", "Qo'llanilishi: lotereya, o'yin sovrinlari, tasodifiy tanlash, parol yaratish, statistik tajribalar, o'yinlar. Kriptografik jihatdan mustahkam algoritmga asoslangan.", "Misol: 1 dan 49 gacha 6 ta noyob son (lotereya). Yoki obunachilar o'rtasida o'yin sovrini uchun 1 dan 100 gacha tasodifiy son."],
+    paragraphsRu: ['Генератор случайных чисел создаёт одно или несколько случайных чисел в заданном диапазоне. Инструмент поддерживает целые и дробные числа, генерацию уникальных (без повторений) и с повторениями. Алгоритм основан на криптографически стойком генераторе Web Crypto API, что гарантирует высокое качество случайности для любых задач — от игр до статистических экспериментов.', 'Генератор широко применяется для проведения розыгрышей и лотерей в Узбекистане. Блогеры и владельцы Telegram-каналов используют его для честного определения победителей среди подписчиков — достаточно задать диапазон от 1 до числа участников и сгенерировать одно случайное число. Прозрачность процесса повышает доверие аудитории к результатам розыгрыша.', 'В образовательной среде генератор случайных чисел полезен преподавателям вузов и школ Узбекистана: формирование вариантов контрольных работ, случайное распределение студентов по группам, выбор порядка выступлений на семинарах. Также инструмент помогает при изучении теории вероятностей — студенты могут проводить эксперименты по проверке закона больших чисел.', 'Для предпринимателей генератор полезен при создании промокодов, временных паролей и уникальных идентификаторов. Например, можно сгенерировать набор случайных чисел для номеров скидочных купонов в акции магазина. Сгенерированные числа можно скопировать одним нажатием и использовать в любом приложении или документе.', 'Инструмент позволяет генерировать до 1 000 чисел за один запрос в любом целочисленном диапазоне. Режим уникальных чисел идеален для лотерей: например, 6 уникальных чисел от 1 до 49 или 5 чисел от 1 до 36. Для настольных игр удобен режим имитации кубика — диапазон от 1 до 6 с возможностью бросить несколько кубиков одновременно. Результаты генерации нигде не сохраняются.'],
+    paragraphsUz: ["Tasodifiy sonlar generatori berilgan diapazon ichida bir yoki bir nechta tasodifiy sonlarni yaratadi. Vosita butun va kasr sonlarni, noyob (takrorsiz) va takrorli generatsiyani qo'llab-quvvatlaydi. Algoritm kriptografik jihatdan mustahkam Web Crypto API generatoriga asoslangan bo'lib, har qanday vazifa uchun — o'yinlardan tortib statistik tajribalargacha — yuqori sifatli tasodifiylikni kafolatlaydi.", "Generator O'zbekistonda o'yin sovrinlari va lotereya o'tkazishda keng qo'llaniladi. Blogerlar va Telegram-kanal egalari obunachilar orasida g'olibni halol aniqlash uchun undan foydalanadi — ishtirokchilar sonigacha diapazon belgilab, bitta tasodifiy son yaratish kifoya. Jarayonning shaffofligi auditoriyaning o'yin sovrini natijalariga ishonchini oshiradi.", "Ta'lim sohasida tasodifiy sonlar generatori O'zbekiston oliy ta'lim muassasalari va maktab o'qituvchilari uchun foydali: nazorat ishlarining variantlarini shakllantirish, talabalarni guruhlarga tasodifiy taqsimlash, seminarlarda chiqish tartibini belgilash. Shuningdek, vosita ehtimollar nazariyasini o'rganishda yordam beradi — talabalar katta sonlar qonunini tekshirish uchun tajribalar o'tkazishi mumkin.", "Tadbirkorlar uchun generator promokodlar, vaqtinchalik parollar va noyob identifikatorlar yaratishda foydali. Masalan, do'kon aksiyasida chegirma kuponlari raqamlari uchun tasodifiy sonlar to'plamini yaratish mumkin. Yaratilgan sonlarni bir bosish bilan nusxalab, istalgan ilova yoki hujjatda foydalanish mumkin.", "Vosita istalgan butun sonli diapazonda bir so'rovda 1 000 tagacha son yaratish imkonini beradi. Noyob sonlar rejimi lotereya uchun ideal: masalan, 1 dan 49 gacha 6 ta noyob son yoki 1 dan 36 gacha 5 ta son. Stol o'yinlari uchun zar tashlash rejimi qulay — 1 dan 6 gacha diapazon, bir vaqtda bir nechta zar tashlash imkoniyati bilan. Generatsiya natijalari hech qayerda saqlanmaydi."],
     faqRu: [{ question: 'Действительно ли числа случайные?', answer: 'Да, используется криптографически стойкий генератор псевдослучайных чисел.' }, { question: 'Можно ли генерировать без повторений?', answer: 'Да, включите опцию «уникальные числа».' }, { question: 'Какой максимальный диапазон?', answer: 'Любой целочисленный диапазон. Количество чисел — до 1 000 за раз.' }],
     faqUz: [{ question: "Sonlar haqiqatan ham tasodifiymi?", answer: "Ha, kriptografik jihatdan mustahkam soxta-tasodifiy sonlar generatori ishlatiladi." }, { question: "Takrorsiz yaratish mumkinmi?", answer: "Ha, «noyob sonlar» opsiyasini yoqing." }, { question: "Maksimal diapazon qancha?", answer: "Har qanday butun sonli diapazon. Sonlar soni — bir martada 1 000 tagacha." }],
   },
 
   {
     slug: 'wedding',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Калькулятор свадебного бюджета в Узбекистане рассчитывает примерную стоимость торжества. Средний бюджет (2025): от 30 до 100+ млн сум в зависимости от количества гостей и уровня проведения.', 'Основные статьи расходов: ресторан/тўйхона (40-50% бюджета), одежда невесты и жениха (15-20%), украшения/оформление (10%), фото/видео (5-10%), транспорт (5%), музыка (5%).', 'Пример: 300 гостей, средний ресторан. Ресторан: 150 000 × 300 = 45 млн. Одежда: 10 млн. Фото/видео: 5 млн. Декор: 5 млн. Транспорт: 3 млн. Итого: ~68 млн сум.'],
-    paragraphsUz: ["O'zbekistondagi to'y byudjeti kalkulyatori marosimning taxminiy narxini hisoblaydi. O'rtacha byudjet (2025): mehmonlar soni va o'tkazish darajasiga qarab 30 dan 100+ mln so'mgacha.", "Asosiy xarajat moddalari: restoran/to'yxona (byudjetning 40-50%), kelin va kuyov kiyimlari (15-20%), bezaklar/dizayn (10%), foto/video (5-10%), transport (5%), musiqa (5%).", "Misol: 300 mehmon, o'rtacha restoran. Restoran: 150 000 × 300 = 45 mln. Kiyim: 10 mln. Foto/video: 5 mln. Dekor: 5 mln. Transport: 3 mln. Jami: ~68 mln so'm."],
+        paragraphsRu: [
+      'Калькулятор свадебного бюджета помогает спланировать расходы на тўй (свадебное торжество) в Узбекистане — одно из самых значимых семейных событий. Согласно Постановлению Кабинета Министров, количество гостей на свадьбе ограничено 200 персонами, однако на практике число приглашённых часто достигает 300–400 человек. Средний бюджет свадьбы в 2026 году: от 40 до 120 млн сум, в зависимости от города, количества гостей и уровня проведения.',
+      'Самая крупная статья расходов — аренда тўйхоны (свадебного зала) и банкет, которые составляют 40–50% всего бюджета. Стоимость одного гостя в тўйхоне Ташкента: от 150 000 до 300 000 сум (эконом и средний уровень) и до 500 000+ сум в премиальных залах. В регионах цены ниже на 30–50%. В стоимость обычно входит меню (плов, шашлык, салаты, фрукты), обслуживание и базовое оформление зала.',
+      'Другие статьи расходов: наряды невесты и жениха — от 8 до 25 млн сум (свадебное платье, костюм, сарпа — подарки от жениха); золотые украшения невесте — от 10 до 30 млн сум (традиция, обязательная во многих семьях); фото и видеосъёмка — 4–10 млн сум; транспорт (свадебный кортеж) — 2–5 млн; музыканты или DJ — 3–8 млн; оформление и декор — 3–7 млн сум.',
+      'Узбекская свадьба включает несколько обязательных этапов: фотиха-туй (помолвка), никох (религиозная церемония в ЗАГСе или мечети), утренний плов (эрталабки ош) и вечерний банкет. Каждый этап требует отдельного бюджета. Утренний плов на 500–1000 человек обходится в 15–30 млн сум и является важной частью свадебных расходов, которую часто упускают при планировании.',
+      'Калькулятор учитывает все этапы узбекской свадьбы и позволяет гибко настроить параметры: количество гостей, город проведения, уровень зала, расходы на сарпу и золото. Также рассчитывается примерный размер обратных подарков (конвертов) от гостей, который в Ташкенте составляет 200 000–500 000 сум с человека. Это помогает оценить чистые расходы на торжество с учётом возвратных средств.',
+    ],
+    paragraphsUz: [
+      "To'y byudjeti kalkulyatori O'zbekistondagi eng muhim oilaviy tadbirlardan biri — to'y marosimi xarajatlarini rejalashtirishga yordam beradi. Vazirlar Mahkamasi qaroriga ko'ra, to'ydagi mehmonlar soni 200 kishi bilan cheklangan, ammo amalda taklif etilganlar ko'pincha 300–400 kishiga yetadi. 2026-yilda to'yning o'rtacha byudjeti: shahar, mehmonlar soni va o'tkazish darajasiga qarab 40 dan 120 mln so'mgacha.",
+      "Eng katta xarajat moddasi — to'yxona ijarasi va ziyofat bo'lib, ular butun byudjetning 40–50% ini tashkil etadi. Toshkentdagi to'yxonalarda bir mehmonga narx: 150 000 dan 300 000 so'mgacha (tejamkor va o'rtacha daraja), premium zallarda esa 500 000+ so'm. Hududlarda narxlar 30–50% ga pastroq. Narxga odatda menyu (palov, kabob, salatlar, mevalar), xizmat ko'rsatish va asosiy bezak kiradi.",
+      "Boshqa xarajat moddalari: kelin va kuyov kiyimlari — 8 dan 25 mln so'mgacha (to'y ko'ylagi, kostyum, sarpo — kuyov tomonidan sovg'alar); keliniga oltin taqinchoqlar — 10 dan 30 mln so'mgacha (ko'p oilalarda majburiy an'ana); foto va videosyomka — 4–10 mln; transport (to'y kortej) — 2–5 mln; musiqachilar yoki DJ — 3–8 mln; bezatish va dekor — 3–7 mln so'm.",
+      "O'zbek to'yi bir necha majburiy bosqichlarni o'z ichiga oladi: fotiha-to'y (unashtiruv), nikoh (ZAGSda yoki masjidda diniy marosim), ertalabki osh va kechki ziyofat. Har bir bosqich alohida byudjetni talab qiladi. 500–1000 kishiga ertalabki osh 15–30 mln so'mga tushadi va to'y xarajatlarining muhim qismi hisoblanadi — uni rejalashtirishda ko'pincha e'tibordan chetda qoldiradilar.",
+      "Kalkulyator o'zbek to'yining barcha bosqichlarini hisobga oladi va parametrlarni moslashuvchan sozlash imkonini beradi: mehmonlar soni, o'tkazish shahri, zal darajasi, sarpo va oltin xarajatlari. Shuningdek, mehmonlardan qaytariladigan sovg'alar (konvertlar) taxminiy miqdori hisoblanadi — Toshkentda bu kishiga 200 000–500 000 so'mni tashkil etadi. Bu qaytariladigan mablag'larni hisobga olgan holda sof xarajatlarni baholashga yordam beradi.",
+    ],
     faqRu: [{ question: 'Сколько стоит свадьба в Узбекистане?', answer: 'От 30 до 100+ млн сум. Средний бюджет на 300 гостей: ~60-80 млн.' }, { question: 'Какая самая большая статья расходов?', answer: 'Ресторан/тўйхона — 40-50% бюджета (150 000-250 000 сум на гостя).' }, { question: 'Как сэкономить на свадьбе?', answer: 'Будний день (скидка 20-30%), сезон не май-июнь, меньше гостей, декор своими руками.' }],
     faqUz: [{ question: "O'zbekistonda to'y qancha turadi?", answer: "30 dan 100+ mln so'mgacha. 300 mehmonga o'rtacha byudjet: ~60-80 mln." }, { question: "Eng katta xarajat moddasi qanday?", answer: "Restoran/to'yxona — byudjetning 40-50% (mehmonga 150 000-250 000 so'm)." }, { question: "To'yda qanday tejash mumkin?", answer: "Ish kuni (20-30% chegirma), may-iyun bo'lmagan mavsum, kamroq mehmon, o'z qo'li bilan bezash." }],
   },
 
   {
     slug: 'cotton-yield',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [],
-    paragraphsRu: ['Калькулятор урожайности хлопка рассчитывает ожидаемый урожай и доход от выращивания хлопка-сырца в Узбекистане. Средняя урожайность: 25-30 центнеров с гектара в зависимости от сорта, региона и условий.', 'Факторы урожайности: сорт, климат, полив, удобрения, сроки посева. Основные регионы: Кашкадарья, Сурхандарья, Бухара, Навои. Цена хлопка-сырца: определяется ежегодно.', 'Пример: 10 гектаров, урожайность 28 ц/га. Урожай: 28 тонн хлопка-сырца. При цене 10 000 сум/кг: доход = 280 000 000 сум.'],
-    paragraphsUz: ["Paxta hosildorligi kalkulyatori O'zbekistonda xom paxta yetishtirishdan kutilayotgan hosilni va daromadni hisoblaydi. O'rtacha hosildorlik: nav, hudud va sharoitlarga qarab gektaridan 25-30 sentner.", "Hosildorlik omillari: nav, iqlim, sug'orish, o'g'itlar, ekish muddatlari. Asosiy hududlar: Qashqadaryo, Surxondaryo, Buxoro, Navoiy. Xom paxta narxi: har yili belgilanadi.", "Misol: 10 gektar, hosildorlik 28 s/ga. Hosil: 28 tonna xom paxta. 10 000 so'm/kg narxida: daromad = 280 000 000 so'm."],
+    paragraphsRu: ['Калькулятор урожайности хлопка рассчитывает ожидаемый урожай и потенциальный доход от выращивания хлопка-сырца в Узбекистане — одном из крупнейших хлопкопроизводителей мира. Узбекистан занимает 5-6 место в мире по производству хлопка, ежегодно выращивая около 3 млн тонн хлопка-сырца. Средняя урожайность составляет 25-30 центнеров с гектара в зависимости от сорта, региона и агротехнических условий.', 'Основные хлопкосеющие регионы Узбекистана: Кашкадарья, Сурхандарья, Бухара, Навои, Джизак и Сырдарья. Наиболее высокая урожайность отмечается в Сурхандарье (до 35 ц/га) благодаря тёплому климату и развитой ирригации. Районированные сорта — Бухара-6, Наманган-77, С-6524 — адаптированы к местным условиям и обеспечивают стабильный урожай при соблюдении агротехнологий.', 'На урожайность влияют ключевые факторы: оптимальные сроки посева (середина апреля — начало мая), режим полива (4-6 поливов за сезон, 800-1200 м³ воды на гектар за полив), внесение удобрений (азот, фосфор, калий по нормам для каждого региона), а также своевременная обработка от вредителей — хлопковой совки и паутинного клеща. Несоблюдение любого из этих факторов снижает урожайность на 15-30%.', 'Пример расчёта: фермер обрабатывает 10 гектаров в Кашкадарьинской области, ожидаемая урожайность — 28 ц/га. Общий урожай: 28 тонн хлопка-сырца. При закупочной цене 10 000 сум/кг валовой доход составит 280 млн сум. За вычетом расходов на семена, удобрения, полив и аренду техники (примерно 120-150 млн сум) чистая прибыль — около 130-160 млн сум.', 'С 2020 года в Узбекистане полностью отменён государственный план по хлопку, и фермеры свободно продают урожай на бирже или напрямую текстильным предприятиям. Биржевые торги хлопком проходят на Узбекской республиканской товарно-сырьевой бирже (УЗРТСБ). Калькулятор поможет спрогнозировать доход при различных сценариях урожайности и цен, что важно для планирования бюджета фермерского хозяйства.'],
+    paragraphsUz: ["Paxta hosildorligi kalkulyatori dunyodagi eng yirik paxtakor mamlakatlardan biri — O'zbekistonda xom paxta yetishtirishdan kutilayotgan hosil va potentsial daromadni hisoblaydi. O'zbekiston paxta ishlab chiqarish bo'yicha dunyoda 5-6-o'rinni egallaydi va har yili taxminan 3 mln tonna xom paxta yetishtiradi. O'rtacha hosildorlik nav, hudud va agrotexnik sharoitlarga qarab gektaridan 25-30 sentnerni tashkil etadi.", "O'zbekistonning asosiy paxtakor hududlari: Qashqadaryo, Surxondaryo, Buxoro, Navoiy, Jizzax va Sirdaryo. Eng yuqori hosildorlik iliq iqlim va rivojlangan irrigatsiya tufayli Surxondaryoda kuzatiladi (35 s/ga gacha). Rayonlashtirilgan navlar — Buxoro-6, Namangan-77, S-6524 — mahalliy sharoitlarga moslashtirilgan va agrotexnologiyalarga rioya qilinganda barqaror hosil beradi.", "Hosildorlikka asosiy omillar ta'sir qiladi: optimal ekish muddatlari (aprel o'rtasi — may boshi), sug'orish rejimi (mavsumda 4-6 marta sug'orish, bir sug'orishda gektariga 800-1200 m³ suv), o'g'itlar kiritish (har bir hudud uchun me'yorlar bo'yicha azot, fosfor, kaliy), shuningdek zararkunandalar — paxta tunlami va o'rgimchak kanasiga o'z vaqtida ishlov berish. Bu omillarning birortasiga rioya qilmaslik hosildorlikni 15-30% ga kamaytiradi.", "Hisoblash misoli: fermer Qashqadaryo viloyatida 10 gektar maydonni ishlaydi, kutilayotgan hosildorlik — 28 s/ga. Umumiy hosil: 28 tonna xom paxta. 10 000 so'm/kg sotib olish narxida yalpi daromad 280 mln so'mni tashkil etadi. Urug'lik, o'g'it, sug'orish va texnika ijarasi xarajatlari (taxminan 120-150 mln so'm) chegirilgandan keyin sof foyda — 130-160 mln so'm atrofida.", "2020-yildan boshlab O'zbekistonda paxta bo'yicha davlat rejasi to'liq bekor qilindi va fermerlar hosilni birjada yoki to'g'ridan-to'g'ri to'qimachilik korxonalariga erkin sotadi. Paxta birja savdolari O'zbekiston respublika tovar-xom ashyo birjasida (O'zRTXB) o'tkaziladi. Kalkulyator turli hosildorlik va narx stsenariylarida daromadni prognozlashga yordam beradi, bu fermer xo'jaligi byudjetini rejalashtirishda muhim."],
     faqRu: [{ question: 'Какова средняя урожайность хлопка?', answer: '25-30 центнеров с гектара в Узбекистане.' }, { question: 'Какие факторы влияют на урожайность?', answer: 'Сорт, климат, полив, удобрения, сроки посева и обработки.' }, { question: 'В каких регионах выращивают хлопок?', answer: 'Кашкадарья, Сурхандарья, Бухара, Навои — основные хлопкосеющие регионы.' }],
     faqUz: [{ question: "Paxtaning o'rtacha hosildorligi qancha?", answer: "O'zbekistonda gektaridan 25-30 sentner." }, { question: "Hosildorlikka qanday omillar ta'sir qiladi?", answer: "Nav, iqlim, sug'orish, o'g'itlar, ekish va ishlov berish muddatlari." }, { question: "Qaysi hududlarda paxta yetishtiriladi?", answer: "Qashqadaryo, Surxondaryo, Buxoro, Navoiy — asosiy paxtakor hududlar." }],
   },
 
   {
     slug: 'visa-cost',
-    lastUpdated: '2025-08-01',
+    lastUpdated: '2026-03-25',
     sources: [
       { name: 'МИД Узбекистана', url: 'https://mfa.uz' },
       { name: 'Единый портал интерактивных услуг', url: 'https://my.gov.uz' },

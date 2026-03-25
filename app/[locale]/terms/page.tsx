@@ -49,7 +49,7 @@ export default async function TermsPage({
           {t("terms_title")}
         </h1>
         <p className="text-sm text-muted-foreground">
-          {isUz ? "Oxirgi yangilanish: 2025-yil mart" : "Последнее обновление: март 2025"}
+          {isUz ? "Oxirgi yangilanish: 2026-yil mart" : "Последнее обновление: март 2026"}
         </p>
       </div>
 
@@ -100,6 +100,11 @@ export default async function TermsPage({
                 ? "Calk.UZ kalkulyator natijalariga asoslangan qarorlar uchun javobgar emas. Stavkalar va tariflar o'zgarishi mumkin — biz ularni yangilab turishga harakat qilamiz, lekin to'liq aniqlikni kafolatlay olmaymiz."
                 : "Calk.UZ не несёт ответственности за решения, принятые на основе результатов калькуляторов. Ставки и тарифы могут изменяться — мы стараемся поддерживать их актуальность, но не можем гарантировать полную точность."}
             </p>
+            <p>
+              {isUz
+                ? "Sayt «qanday bo'lsa, shunday» asosida taqdim etiladi, hech qanday aniq yoki nazarda tutilgan kafolatlarsiz. Foydalanuvchi saytdan foydalanish bilan bog'liq barcha xavflarni o'z zimmasiga oladi."
+                : "Сайт предоставляется «как есть», без каких-либо явных или подразумеваемых гарантий. Пользователь принимает на себя все риски, связанные с использованием сайта."}
+            </p>
           </div>
         </section>
 
@@ -141,13 +146,30 @@ export default async function TermsPage({
                 ? "Sayt materiallarini mualliflik huquqini buzgan holda ishlatmaslik"
                 : "Не использовать материалы Сайта с нарушением авторских прав"}
             </li>
+            <li>
+              {isUz
+                ? "Saytga avtomatlashtirilgan so'rovlarni yubormaslik (agar oldindan kelishilmagan bo'lsa)"
+                : "Не отправлять автоматизированные запросы к Сайту (без предварительного согласования)"}
+            </li>
           </ul>
+        </section>
+
+        {/* Third-party links */}
+        <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            {isUz ? "6. Tashqi havolalar" : "6. Ссылки на сторонние ресурсы"}
+          </h2>
+          <p className="text-muted-foreground leading-relaxed text-sm">
+            {isUz
+              ? "Saytda uchinchi tomon veb-saytlariga havolalar bo'lishi mumkin (rasmiy davlat organlari saytlari, Markaziy bank va boshqalar). Calk.UZ tashqi saytlarning kontenti, maxfiylik siyosati yoki xavfsizligi uchun javobgar emas. Tashqi havolalarga o'tish foydalanuvchining o'z xavfi va ixtiyoriga ko'ra amalga oshiriladi."
+              : "Сайт может содержать ссылки на сторонние веб-ресурсы (официальные сайты государственных органов, Центрального банка и др.). Calk.UZ не несёт ответственности за содержание, политику конфиденциальности или безопасность внешних сайтов. Переход по внешним ссылкам осуществляется на усмотрение и риск пользователя."}
+          </p>
         </section>
 
         {/* Changes to terms */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "6. Shartlarni o'zgartirish" : "6. Изменение условий"}
+            {isUz ? "7. Shartlarni o'zgartirish" : "7. Изменение условий"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz
@@ -156,15 +178,32 @@ export default async function TermsPage({
           </p>
         </section>
 
+        {/* Governing law */}
+        <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            {isUz ? "8. Qo'llaniladigan huquq" : "8. Применимое право"}
+          </h2>
+          <p className="text-muted-foreground leading-relaxed text-sm mb-3">
+            {isUz
+              ? "Ushbu foydalanish shartlari O'zbekiston Respublikasi qonunchiligiga muvofiq tartibga solinadi va talqin qilinadi."
+              : "Настоящие Условия использования регулируются и толкуются в соответствии с законодательством Республики Узбекистан."}
+          </p>
+          <p className="text-muted-foreground leading-relaxed text-sm">
+            {isUz
+              ? "Ushbu shartlar bilan bog'liq har qanday kelishmovchiliklar muzokaralar yo'li bilan hal qilinadi. Muzokaralar natija bermaganida, nizolar O'zbekiston Respublikasi qonunchiligida belgilangan tartibda hal qilinadi."
+              : "Все споры, связанные с настоящими условиями, решаются путём переговоров. При невозможности достижения согласия споры разрешаются в порядке, установленном законодательством Республики Узбекистан."}
+          </p>
+        </section>
+
         {/* Contact */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "7. Bog'lanish" : "7. Контакты"}
+            {isUz ? "9. Bog'lanish" : "9. Контакты"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz
-              ? "Foydalanish shartlari bo'yicha savollar bo'lsa, info@calk.uz manzilga yozing."
-              : "По вопросам, связанным с условиями использования, пишите на info@calk.uz."}
+              ? "Foydalanish shartlari bo'yicha savollar bo'lsa, info@calk.uz manzilga yozing yoki Telegram @calkuz_bot orqali murojaat qiling."
+              : "По вопросам, связанным с условиями использования, пишите на info@calk.uz или обращайтесь через Telegram @calkuz_bot."}
           </p>
         </section>
       </div>

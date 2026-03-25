@@ -32,29 +32,8 @@ export function CalculatorLayout({
   const categoryName =
     locale === 'uz' ? category?.nameUz : category?.nameRu
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: title,
-    description,
-    url: `https://calk.uz/${locale}/calculator/${getSlugByLocale(slug, locale)}`,
-    applicationCategory: 'FinanceApplication',
-    operatingSystem: 'Any',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'UZS',
-    },
-    inLanguage: locale === 'uz' ? 'uz-Latn' : 'ru',
-  }
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Breadcrumbs */}
         <nav

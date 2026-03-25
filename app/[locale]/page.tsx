@@ -54,5 +54,27 @@ export default async function HomePage({
   const { locale } = await params
   setRequestLocale(locale)
 
-  return <HomePageClient />
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: locale === "uz"
+      ? "Calk.UZ — O'zbekiston uchun 78 ta bepul onlayn kalkulyator"
+      : "Calk.UZ — 78 бесплатных онлайн-калькуляторов для Узбекистана",
+    description: locale === "uz"
+      ? "O'zbekiston uchun onlayn kalkulyatorlar: ish haqi, soliqlar, kreditlar, ipoteka, kommunal xizmatlar, valyuta va boshqa hisob-kitoblar."
+      : "Онлайн-калькуляторы для Узбекистана: зарплата, налоги, кредиты, ипотека, коммунальные услуги, валюта и другие расчёты.",
+    url: `${BASE_URL}/${locale}`,
+    isPartOf: { "@type": "WebSite", name: "Calk.UZ", url: BASE_URL },
+    inLanguage: locale === "uz" ? "uz" : "ru",
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <HomePageClient />
+    </>
+  )
 }
