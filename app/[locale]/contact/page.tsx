@@ -83,7 +83,7 @@ export default async function ContactPage({
 
         {/* Telegram */}
         <a
-          href="https://t.me/calkuz"
+          href="https://t.me/calkuz_bot"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
@@ -96,7 +96,7 @@ export default async function ContactPage({
               {t("contact_telegram")}
             </h2>
             <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
-              @calkuz
+              @calkuz_bot
             </p>
           </div>
         </a>

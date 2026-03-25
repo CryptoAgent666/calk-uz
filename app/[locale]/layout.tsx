@@ -55,7 +55,7 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
       description:
         "Бесплатные онлайн-калькуляторы для жителей Узбекистана. Налоги, зарплата, кредиты, вклады и другие финансовые расчёты.",
       dateModified: "2026-03-24",
-      sameAs: ["https://t.me/calkuz", "https://calk.uz/ru/methodology"],
+      sameAs: ["https://t.me/calkuz_bot", "https://calk.uz/ru/methodology"],
       contactPoint: {
         "@type": "ContactPoint",
         email: "info@calk.uz",

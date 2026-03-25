@@ -252,8 +252,8 @@ export default async function PrivacyPage({
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz
-              ? "Maxfiylik siyosati bo'yicha savollar bo'lsa, info@calk.uz manzilga yozing yoki Telegram @calkuz orqali murojaat qiling."
-              : "По вопросам, связанным с политикой конфиденциальности, пишите на info@calk.uz или обращайтесь через Telegram @calkuz."}
+              ? "Maxfiylik siyosati bo'yicha savollar bo'lsa, info@calk.uz manzilga yozing yoki Telegram @calkuz_bot orqali murojaat qiling."
+              : "По вопросам, связанным с политикой конфиденциальности, пишите на info@calk.uz или обращайтесь через Telegram @calkuz_bot."}
           </p>
         </section>
       </div>

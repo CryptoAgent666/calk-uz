@@ -202,8 +202,8 @@ export default async function TermsPage({
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz
-              ? "Foydalanish shartlari bo'yicha savollar bo'lsa, info@calk.uz manzilga yozing yoki Telegram @calkuz orqali murojaat qiling."
-              : "По вопросам, связанным с условиями использования, пишите на info@calk.uz или обращайтесь через Telegram @calkuz."}
+              ? "Foydalanish shartlari bo'yicha savollar bo'lsa, info@calk.uz manzilga yozing yoki Telegram @calkuz_bot orqali murojaat qiling."
+              : "По вопросам, связанным с условиями использования, пишите на info@calk.uz или обращайтесь через Telegram @calkuz_bot."}
           </p>
         </section>
       </div>
