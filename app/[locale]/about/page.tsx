@@ -78,8 +78,32 @@ export default async function AboutPage({
   setRequestLocale(locale)
   const t = await getTranslations({ locale })
 
+  const aboutSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: t("about_title"),
+      description: t("about_description"),
+      url: `https://calk.uz/${locale}/about`,
+      isPartOf: { "@type": "WebSite", name: "Calk.UZ", url: "https://calk.uz" },
+      inLanguage: locale === "uz" ? "uz" : "ru",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: t("breadcrumb_home"), item: `https://calk.uz/${locale}` },
+        { "@type": "ListItem", position: 2, name: t("about_title"), item: `https://calk.uz/${locale}/about` },
+      ],
+    },
+  ]
+
   return (
     <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 shadow-lg shadow-emerald-500/25 mb-6">

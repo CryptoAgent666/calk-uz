@@ -14,20 +14,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({
       url: `${BASE_URL}/${locale}`,
       lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
     })
   }
 
   // Static pages
-  const staticPages = ["about", "contact", "privacy", "terms"]
+  const staticPages = ["about", "contact", "privacy", "terms", "methodology"]
   for (const page of staticPages) {
     for (const locale of LOCALES) {
       entries.push({
         url: `${BASE_URL}/${locale}/${page}`,
         lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.5,
       })
     }
   }
@@ -38,8 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${BASE_URL}/${locale}/category/${catId}`,
         lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.8,
       })
     }
   }
@@ -51,8 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${BASE_URL}/${locale}/calculator/${localizedSlug}`,
         lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: calc.priority === 1 ? 0.9 : calc.priority === 2 ? 0.7 : 0.6,
       })
     }
   }

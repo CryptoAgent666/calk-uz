@@ -33,6 +33,26 @@ export default async function ContactPage({
   setRequestLocale(locale)
   const t = await getTranslations({ locale })
 
+  const contactSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      name: t("contact_title"),
+      description: t("contact_description"),
+      url: `https://calk.uz/${locale}/contact`,
+      isPartOf: { "@type": "WebSite", name: "Calk.UZ", url: "https://calk.uz" },
+      inLanguage: locale === "uz" ? "uz" : "ru",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: t("breadcrumb_home"), item: `https://calk.uz/${locale}` },
+        { "@type": "ListItem", position: 2, name: t("contact_title"), item: `https://calk.uz/${locale}/contact` },
+      ],
+    },
+  ]
+
   const faqs = [
     { q: t("contact_faq_accuracy_q"), a: t("contact_faq_accuracy_a") },
     { q: t("contact_faq_update_q"), a: t("contact_faq_update_a") },
@@ -48,6 +68,10 @@ export default async function ContactPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 shadow-lg shadow-emerald-500/25 mb-6">

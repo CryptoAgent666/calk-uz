@@ -51,11 +51,15 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
       "@type": "Organization",
       name: "Calk.UZ",
       url: "https://calk.uz",
-      logo: "https://calk.uz/favicon.svg",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://calk.uz/favicon.svg",
+        width: 512,
+        height: 512,
+      },
       description:
         "Бесплатные онлайн-калькуляторы для жителей Узбекистана. Налоги, зарплата, кредиты, вклады и другие финансовые расчёты.",
-      dateModified: "2026-03-24",
-      sameAs: ["https://t.me/calkuz_bot", "https://calk.uz/ru/methodology"],
+      sameAs: ["https://t.me/calkuz_bot"],
       contactPoint: {
         "@type": "ContactPoint",
         email: "info@calk.uz",

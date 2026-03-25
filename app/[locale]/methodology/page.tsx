@@ -53,8 +53,36 @@ export default async function MethodologyPage({
 
   const isUz = locale === "uz"
 
+  const methodologySchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: t("methodology_title"),
+      description: t("methodology_description"),
+      url: `https://calk.uz/${locale}/methodology`,
+      datePublished: "2025-01-01T00:00:00+05:00",
+      dateModified: "2026-03-25T00:00:00+05:00",
+      author: { "@type": "Organization", name: "Calk.UZ", url: "https://calk.uz" },
+      publisher: { "@type": "Organization", name: "Calk.UZ", url: "https://calk.uz" },
+      inLanguage: isUz ? "uz" : "ru",
+      mainEntityOfPage: `https://calk.uz/${locale}/methodology`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: t("breadcrumb_home"), item: `https://calk.uz/${locale}` },
+        { "@type": "ListItem", position: 2, name: t("methodology_title"), item: `https://calk.uz/${locale}/methodology` },
+      ],
+    },
+  ]
+
   return (
     <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(methodologySchema) }}
+      />
       {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-500/25 mb-6">
