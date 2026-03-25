@@ -31,6 +31,7 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://calk.uz"),
   title: { template: "%s | Calk.UZ", default: "Calk.UZ — Онлайн калькуляторы для Узбекистана" },
   description:
     "78 бесплатных онлайн калькуляторов для Узбекистана: налоги, кредиты, зарплата, ипотека, коммунальные услуги, валюта и многое другое.",
