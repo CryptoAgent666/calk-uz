@@ -129,6 +129,11 @@ export default async function LocaleLayout({
         )}
 
         {/* Google AdSense */}
+        {/* Service Worker for offline support */}
+        <Script id="sw-register" strategy="afterInteractive">
+          {`if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}`}
+        </Script>
+
         {ADSENSE_ID && (
           <Script
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
