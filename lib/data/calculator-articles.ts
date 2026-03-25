@@ -188,7 +188,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Досрочное погашение кредита в Узбекистане разрешено без штрафных санкций с 2020 года (согласно Закону о банковской деятельности). При досрочном погашении пересчитываются проценты — вы платите только за фактический срок пользования кредитом. Рекомендуется уведомить банк за 30 дней до планируемого досрочного погашения. Рефинансирование существующего кредита под более низкую ставку может быть выгодным при снижении ключевой ставки ЦБ.',
     ],
     paragraphsUz: [
-      "O'zbekiston Markaziy bankining kalit stavkasi yillik 14% ni tashkil etadi, bu tijorat banklarining kredit stavkalari uchun asos yaratadi. 2025-yilda iste'mol kreditlari bo'yicha o'rtacha stavkalar bank, kredit muddati va qarz oluvchining kredit tarixiga qarab yillik 22% dan 33% gacha o'zgaradi. Kredit kalkulyatori annuitet yoki differentsial to'lov sxemasi bo'yicha oylik to'lov, umumiy to'lovlar summasi va ortiqcha to'lovni hisoblaydi.",
+      "O'zbekiston Markaziy bankining kalit stavkasi yillik 14% ni tashkil etadi, bu tijorat banklarining kredit stavkalari uchun asos yaratadi. iste'mol kreditlari bo'yicha o'rtacha stavkalar bank, kredit muddati va qarz oluvchining kredit tarixiga qarab yillik 22% dan 33% gacha o'zgaradi. Kredit kalkulyatori annuitet yoki differentsial to'lov sxemasi bo'yicha oylik to'lov, umumiy to'lovlar summasi va ortiqcha to'lovni hisoblaydi.",
       "Annuitet to'lov — har oy bir xil summa. Formula: OT = S × (r × (1+r)^n) / ((1+r)^n − 1), bunda S — kredit summasi, r — oylik stavka (yillik/12), n — oylar soni. Differentsial to'lov — kamayib boruvchi, chunki foizlar qoldiq qarzga hisoblanadi. Annuitet byudjetni rejalashtirish uchun qulayroq, differentsial sxema umumiy ortiqcha to'lov bo'yicha foydaliroq.",
       "Hisoblash misoli: 50 000 000 so'mlik kredit 3 yilga (36 oy) yillik 22% da. Annuitet to'lov: oylik stavka = 1,833%, oylik to'lov ≈ 1 920 000 so'm, umumiy to'lovlar ≈ 69 120 000 so'm, ortiqcha to'lov ≈ 19 120 000 so'm (38,2%). Differentsial sxemada: birinchi to'lov ≈ 2 306 000 so'm, oxirgi ≈ 1 414 000 so'm, ortiqcha to'lov ≈ 17 028 000 so'm (34,1%).",
       "Kredit rasmiylashtirishda banklar qarz oluvchining to'lov qobiliyatini hisobga oladi: oylik to'lov sof daromadning 50% dan oshmasligi kerak. Talab qilinadigan hujjatlar: pasport, daromad to'g'risida ma'lumotnoma, kredit tarixi. Ta'minot — kafil, mulk garovi yoki garovsiz (bank ish haqi mijozlari uchun).",
@@ -227,7 +227,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Государственная программа «Обод кишлок» и аналогичные инициативы предоставляют субсидированную ипотеку для строительства индивидуального жилья в сельской местности. Ставки — от 7% годовых, срок — до 20 лет, первоначальный взнос — от 15%. Программа «Ёш оила» предоставляет льготные условия молодым семьям. Для получения субсидированной ипотеки необходимо обратиться в ипотечный банк или коммерческий банк, участвующий в программе.',
     ],
     paragraphsUz: [
-      "O'zbekistonda ipoteka kreditlash jadal rivojlanmoqda: 2025-yilda ipoteka stavkalari 17% (subsidiyali ipoteka, formula: MB stavkasi + 6% ≈ 20%) dan 23-31% (tijorat ipotekasi) gacha o'zgaradi. Davlat imtiyozli ipoteka dasturlari bo'yicha ma'lum toifadagi fuqarolar (yosh oilalar, ko'p bolalilar, byudjet xodimlari) uchun stavka 7% dan 14% gacha. Maksimal ipoteka muddati — 20 yilgacha, boshlang'ich to'lov — uy-joy qiymatining 15% dan 30% gacha.",
+      "O'zbekistonda ipoteka kreditlash jadal rivojlanmoqda: ipoteka stavkalari 17% (subsidiyali ipoteka, formula: MB stavkasi + 6% ≈ 20%) dan 23-31% (tijorat ipotekasi) gacha o'zgaradi. Davlat imtiyozli ipoteka dasturlari bo'yicha ma'lum toifadagi fuqarolar (yosh oilalar, ko'p bolalilar, byudjet xodimlari) uchun stavka 7% dan 14% gacha. Maksimal ipoteka muddati — 20 yilgacha, boshlang'ich to'lov — uy-joy qiymatining 15% dan 30% gacha.",
       "Ipoteka kalkulyatori annuitet sxema bo'yicha oylik to'lov, umumiy to'lovlar summasi va butun davr uchun ortiqcha to'lovni hisoblaydi. Misol: 500 000 000 so'mlik kvartira, boshlang'ich to'lov 20% (100 000 000 so'm), ipoteka summasi 400 000 000 so'm 15 yilga 16% da. Oylik to'lov ≈ 6 120 000 so'm, 15 yildagi ortiqcha to'lov ≈ 701 600 000 so'm.",
       "Ipoteka olish uchun zarur: joriy ish joyida kamida 6 oylik ish staji, kreditni xizmat qilish imkonini beruvchi rasmiy daromad (to'lov daromadning 50% dan ko'p emas), ijobiy kredit tarixi, 21 dan 55 yoshgacha (erkaklar uchun 65). Banklar butun ipoteka muddatiga ko'chmas mulkni sug'urtashni talab qiladi.",
       "2025-yilda Toshkentda turar-joy kvadrat metrining o'rtacha narxi tuman va uy-joy sinfiga qarab 8 000 000 dan 15 000 000 so'mgacha. Uy-joy sotib olishda rasmiylash xarajatlarini ham hisobga oling: notarial yig'imlar, davlat boji, ko'chmas mulk baholash — jami qiymatning 1-3%.",
@@ -239,7 +239,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'На какой максимальный срок дают ипотеку?', answer: 'До 20 лет. Наиболее распространённые сроки: 10-15 лет.' },
       { question: 'Какие документы нужны для ипотеки?', answer: 'Паспорт, справка о доходах, кредитная история, документы на приобретаемое жильё, оценка недвижимости, страховка объекта.' },
       { question: 'Какие есть льготные ипотечные программы?', answer: '«Ёш оила» для молодых семей, «Обод кишлок» для сельской местности, программы для бюджетных работников — ставки от 7% годовых.' },
-      { question: 'Сколько стоит квадратный метр жилья в Ташкенте?', answer: 'В 2025 году: от 8 до 15 млн сум/м² в зависимости от района. Центр и популярные районы — дороже, пригороды — дешевле.' },
+      { question: 'Сколько стоит квадратный метр жилья в Ташкенте?', answer: 'От 8 до 15 млн сум/м² в зависимости от района. Центр и популярные районы — дороже, пригороды — дешевле.' },
     ],
     faqUz: [
       { question: "O'zbekistonda ipoteka stavkasi qancha?", answer: "Tijorat ipotekasi: 23-31%. Subsidiyali: 17-22% (formula: MB stavkasi + 6% ≈ 20%). Imtiyozli toifalar (yosh oilalar, ko'p bolalilar, byudjet xodimlari): 7-14%." },
@@ -305,14 +305,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Для максимизации дохода рекомендуется: выбирать вклады с ежемесячной капитализацией; сравнивать ставки нескольких банков (наш калькулятор сравнения вкладов поможет); распределять крупные суммы между банками в пределах гарантии (200 млн сум на банк); учитывать реальную доходность с поправкой на инфляцию. При инфляции 7,3% и ставке 24% реальная доходность составляет около 16,7%. Для вкладов в валюте следите за курсом через наш конвертер валют.',
     ],
     paragraphsUz: [
-      "O'zbekistonda bank omonatlar bo'yicha stavkalar 2025-yilda milliy valyutada (so'm) yillik 20% dan 26% gacha va xorijiy valyutada (dollar/yevro) yillik 4% dan 7% gacha. So'mdagi yuqori stavkalar MB kalit stavkasi 14% va inflyatsiyani qoplash zarurati bilan bog'liq. Depozit kalkulyatori foizlar kapitalizatsiyasi, muddat va joylashtirish shartlarini hisobga olgan holda omonat bo'yicha daromadni hisoblaydi.",
+      "O'zbekistonda bank omonatlar bo'yicha stavkalar milliy valyutada (so'm) yillik 20% dan 26% gacha va xorijiy valyutada (dollar/yevro) yillik 4% dan 7% gacha. So'mdagi yuqori stavkalar MB kalit stavkasi 14% va inflyatsiyani qoplash zarurati bilan bog'liq. Depozit kalkulyatori foizlar kapitalizatsiyasi, muddat va joylashtirish shartlarini hisobga olgan holda omonat bo'yicha daromadni hisoblaydi.",
       "Omonat turlari: muddatli (qat'iy stavka, muddatidan oldin yechib olishsiz), jamg'arma (to'ldirish imkoniyati bilan), talab qilib olinguncha (past stavka, erkin foydalanish). Oddiy foizlar hisobi: Daromad = Summa × Stavka × Muddat(kun) / 365. Oylik kapitalizatsiya bilan: Jami = Summa × (1 + Stavka/12)^Oylar.",
       "Hisoblash misoli: 100 000 000 so'mlik omonat 12 oyga yillik 24% da. Kapitalizatsiyasiz: daromad = 24 000 000 so'm, jami 124 000 000 so'm. Oylik kapitalizatsiya bilan: jami = 126 824 179 so'm, daromad = 26 824 179 so'm — 2 824 179 so'mga ko'proq. Kapitalizatsiyada samarali stavka: nominal 24% o'rniga 26,82%.",
       "Depozit foizlari rezidentlar uchun 5% (norezidentlar uchun 10%) stavkada JShShSga tortiladi. Bank foizlarni to'lashda soliqni avtomatik ravishda ushlab qoladi. Jismoniy shaxslar omonatlari Banklardagi fuqarolar omonatlarini kafolatlash fondi tomonidan bir omonatchiga bir bankda 200 000 000 so'mgacha (ekvivalent) miqdorda kafolatlanadi.",
       "Daromadni maksimallashtirish uchun tavsiya etiladi: oylik kapitalizatsiyali omonatlarni tanlash; bir nechta banklarning stavkalarini solishtirish; yirik summalarni banklar o'rtasida kafolat chegarasida (bank boshiga 200 mln so'm) taqsimlash; inflyatsiyani hisobga olgan holda real daromadlilikni baholash. 7,3% inflyatsiya va 24% stavkada real daromadlilik taxminan 16,7%.",
     ],
     faqRu: [
-      { question: 'Какие ставки по вкладам в сумах в 2025 году?', answer: 'От 20% до 26% годовых в зависимости от банка и срока. Наиболее выгодные ставки — по срочным вкладам на 12-24 месяца.' },
+      { question: 'Какие ставки по вкладам в сумах в 2026 году?', answer: 'От 20% до 26% годовых в зависимости от банка и срока. Наиболее выгодные ставки — по срочным вкладам на 12-24 месяца.' },
       { question: 'Облагаются ли проценты по вкладам налогом?', answer: 'Да, проценты по депозитам облагаются НДФЛ по ставке 5% для резидентов (10% для нерезидентов). Банк удерживает налог автоматически при выплате процентов.' },
       { question: 'Какая сумма гарантирована по вкладам?', answer: 'До 200 000 000 сум на одного вкладчика в одном банке. Гарантируется Фондом гарантирования вкладов.' },
       { question: 'Что такое капитализация процентов?', answer: 'Начисление процентов на ранее начисленные проценты. При ежемесячной капитализации эффективная ставка выше номинальной (24% → 26,82%).' },
@@ -320,7 +320,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Как выбрать лучший вклад?', answer: 'Сравните ставки, учтите капитализацию, проверьте условия досрочного снятия и пополнения. Распределите средства между банками в пределах гарантии.' },
     ],
     faqUz: [
-      { question: "2025-yilda so'mdagi omonat stavkalari qanday?", answer: "Bank va muddatga qarab yillik 20% dan 26% gacha. Eng foydali stavkalar — 12-24 oylik muddatli omonatlarda." },
+      { question: "2026-yilda so'mdagi omonat stavkalari qanday?", answer: "Bank va muddatga qarab yillik 20% dan 26% gacha. Eng foydali stavkalar — 12-24 oylik muddatli omonatlarda." },
       { question: "Omonat foizlari soliqqa tortiladimi?", answer: "Ha, depozit foizlari rezidentlar uchun 5% (norezidentlar uchun 10%) stavkada JShShSga tortiladi. Bank foizlarni to'lashda soliqni avtomatik ravishda ushlab qoladi." },
       { question: "Omonatlar bo'yicha qancha summa kafolatlanadi?", answer: "Bir omonatchiga bir bankda 200 000 000 so'mgacha. Omonatlarni kafolatlash fondi tomonidan kafolatlanadi." },
       { question: "Foizlar kapitalizatsiyasi nima?", answer: "Avval hisoblangan foizlarga foiz hisoblash. Oylik kapitalizatsiyada samarali stavka nominaldan yuqori (24% → 26,82%)." },
@@ -349,7 +349,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       "O'zbek so'mi 2017-yildan boshlab erkin konvertatsiya qilinadigan valyuta hisoblanadi. Jismoniy shaxslar xorijiy valyutani cheklovsiz erkin sotib olishi va sotishi mumkin. Yuridik shaxslar valyuta tushumini belgilangan tartibda konvertatsiya qilishi shart.",
     ],
     faqRu: [
-      { question: 'Какой курс доллара в Узбекистане?', answer: 'По состоянию на 2025 год — около 12 100–12 500 сум за 1 доллар. Актуальный курс ежедневно публикуется на cbu.uz.' },
+      { question: 'Какой курс доллара в Узбекистане?', answer: 'По состоянию на март 2026 года — около 12 100–12 500 сум за 1 доллар. Актуальный курс ежедневно публикуется на cbu.uz.' },
       { question: 'Где выгоднее менять валюту?', answer: 'Крупные суммы (от $1000) — в банках по договорному курсу. Мелкие суммы — в обменных пунктах. Спред обычно 0,5-1,5% от курса ЦБ.' },
       { question: 'Когда обновляется курс ЦБ?', answer: 'Ежедневно до 16:00 по ташкентскому времени на сайте cbu.uz.' },
       { question: 'Можно ли свободно покупать валюту?', answer: 'Да, с 2017 года физические лица могут свободно покупать и продавать иностранную валюту без ограничений.' },
@@ -460,7 +460,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     ],
     faqRu: [
       { question: 'Сколько стоит ОСАГО в Узбекистане?', answer: 'От 65 000 сум (базовый тариф). С учётом коэффициентов: в Ташкенте для опытного водителя — около 94 000 сум/год, для новичка — до 199 000 сум/год.' },
-      { question: 'Какой штраф за езду без ОСАГО?', answer: 'От 5 до 10 БРВ (2 060 000 − 4 120 000 сум по состоянию на 2025 год).' },
+      { question: 'Какой штраф за езду без ОСАГО?', answer: 'От 5 до 10 БРВ (2 060 000 − 4 120 000 сум при БРВ 412 000 сум).' },
       { question: 'Какая максимальная выплата по ОСАГО?', answer: 'За вред здоровью — до 200 БРВ (82,4 млн сум). За вред имуществу — до 100 БРВ (41,2 млн сум).' },
       { question: 'Что такое коэффициент бонус-малус?', answer: 'Скидка за безаварийную езду: от 0,5 (5+ лет без ДТП — 50% скидка) до 2,5 (частые ДТП — надбавка 150%).' },
       { question: 'Можно ли оформить ОСАГО онлайн?', answer: 'Да, полис ОСАГО можно приобрести онлайн через сайты страховых компаний.' },
@@ -489,7 +489,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Для снижения расходов на электроэнергию рекомендуется: использовать энергосберегающие LED-лампы (экономия до 80%); устанавливать таймеры на электроприборы; утеплять помещения для снижения расходов на обогрев; рассмотреть установку солнечных панелей (окупаемость 3-5 лет). Для расчёта полных коммунальных расходов воспользуйтесь калькулятором коммунальных услуг, который включает электроэнергию, газ и воду.',
     ],
     paragraphsUz: [
-      "O'zbekiston aholisi uchun elektr energiya tariflari 2025-yilda 6 bosqichli shkala bo'yicha belgilangan: iste'mol qancha ko'p bo'lsa, kVt·soat uchun tarif shuncha yuqori. Oyiga birinchi 200 kVt·soat eng arzon, 1 001 kVt·soatdan ortiq iste'mol — maksimal tarif bo'yicha. Bunday tizim elektr energiyani tejab iste'mol qilishga rag'batlantiradi.",
+      "O'zbekiston aholisi uchun elektr energiya tariflari 6 bosqichli shkala bo'yicha belgilangan: iste'mol qancha ko'p bo'lsa, kVt·soat uchun tarif shuncha yuqori. Oyiga birinchi 200 kVt·soat eng arzon, 1 001 kVt·soatdan ortiq iste'mol — maksimal tarif bo'yicha. Bunday tizim elektr energiyani tejab iste'mol qilishga rag'batlantiradi.",
       "Aholi uchun tarif setkasi (2025): 1-bosqich (0-200 kVt·soat) — 600 so'm/kVt·soat; 2-bosqich (201-500) — 800 so'm; 3-bosqich (501-1 000) — 1 000 so'm; 4-bosqich (1 001-5 000) — 1 500 so'm; 5-bosqich (5 001-10 000) — 1 750 so'm; 6-bosqich (10 000 dan ortiq) — 2 000 so'm/kVt·soat.",
       "Hisoblash misoli: oyiga 700 kVt·soat iste'mol. 1-bosqich: 200 × 600 = 120 000 so'm. 2-bosqich: 300 × 800 = 240 000 so'm. 3-bosqich: 200 × 1 000 = 200 000 so'm. Jami: 560 000 so'm. O'rtacha narx: 800 so'm/kVt·soat.",
       "Yuridik shaxslar uchun boshqa tariflar amal qiladi — iste'molchi toifasi va kunning vaqtiga qarab yagona stavka. Sanoat korxonalari o'rtacha 700-1 200 so'm/kVt·soat, tijorat tashkilotlari — 800-1 500 so'm/kVt·soat to'laydi.",
@@ -526,7 +526,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Для экономии газа рекомендуется: утеплить стены и окна (экономия 30-50%); установить программируемый термостат; использовать конденсационный газовый котёл (КПД до 95%); регулярно обслуживать газовое оборудование. При использовании газа для отопления также рассмотрите альтернативу — электрическое отопление с тепловым насосом. Рассчитать все коммунальные расходы можно в нашем калькуляторе коммунальных услуг.',
     ],
     paragraphsUz: [
-      "O'zbekiston aholisi uchun tabiiy gaz tariflari 2025-yilda mavsumiy ijtimoiy normalar tizimi bo'yicha belgilangan. Bazaviy stavka 1 000 so'm/m³ ni tashkil etadi. Ijtimoiy norma: iliq davrda (mart-oktyabr) oyiga 100 m³ gacha, sovuq davrda (noyabr-fevral) oyiga 500 m³ gacha. Ijtimoiy normadan oshganda yuqori tarif qo'llaniladi. Gaz kalkulyatori iste'molingiz asosida aniq narxni hisoblaydi.",
+      "O'zbekiston aholisi uchun tabiiy gaz tariflari mavsumiy ijtimoiy normalar tizimi bo'yicha belgilangan. Bazaviy stavka 1 000 so'm/m³ ni tashkil etadi. Ijtimoiy norma: iliq davrda (mart-oktyabr) oyiga 100 m³ gacha, sovuq davrda (noyabr-fevral) oyiga 500 m³ gacha. Ijtimoiy normadan oshganda yuqori tarif qo'llaniladi. Gaz kalkulyatori iste'molingiz asosida aniq narxni hisoblaydi.",
       "Aholi uchun tarif tizimi (2025): bazaviy stavka — ijtimoiy norma doirasida 1 000 so'm/m³. Iliq davrda (mart-oktyabr) ijtimoiy norma: oyiga 100 m³ gacha; sovuq davrda (noyabr-fevral): oyiga 500 m³ gacha. Ijtimoiy normadan ortiq iste'molda yuqori tarif qo'llaniladi. Bunday tizim aholining isitish uchun gaz ehtiyojlarini mavsumiy hisobga oladi.",
       "Hisoblash misoli: qishda oyiga 300 m³ iste'mol (yillik jamlanma iste'mol 1 500 m³ da). Hisob joriy bosqich bo'yicha yuritiladi. Yozgi davrda iste'mol odatda 20-50 m³/oy (faqat ovqat pishirish va issiq suv).",
       "Gaz isitishli xususiy uy uchun o'rtacha gaz iste'moli: yiliga 2 000-4 000 m³; gaz isitishisiz kvartira uchun (faqat plita va kolonka): yiliga 300-800 m³. Yillik gaz narxi xususiy uy uchun: 2 500 000 dan 9 000 000 so'mgacha; kvartira uchun: 300 000 dan 1 200 000 so'mgacha.",
@@ -754,14 +754,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       "Tez hisoblash uchun: 1 BHK = 412 000 so'm; 10 BHK = 4 120 000 so'm; 100 BHK = 41 200 000 so'm; 1 000 BHK = 412 000 000 so'm; 10 000 BHK = 4 120 000 000 so'm; 60 000 BHK = 24 720 000 000 so'm. Summalar BHK da ko'rsatilgan qonun hujjatlarini o'qiyotganda, so'mga bir zumda o'girish uchun kalkulyatorimizdan foydalaning.",
     ],
     faqRu: [
-      { question: 'Сколько составляет 1 БРВ в 2025 году?', answer: '412 000 сум (с августа 2025 года). До этого: 375 000 сум (2024), 330 000 сум (2023).' },
+      { question: 'Сколько составляет 1 БРВ в 2026 году?', answer: '412 000 сум (действует с августа 2025 года, сохраняется в 2026). До этого: 375 000 сум (2024), 330 000 сум (2023).' },
       { question: 'Для чего используется БРВ?', answer: 'Для расчёта штрафов, госпошлин, налоговых порогов, социальных пособий, вычетов по НДФЛ и многих других нормативов.' },
       { question: 'Чем БРВ отличается от минимальной зарплаты?', answer: 'БРВ (412 000 сум) — расчётный показатель для нормативов. МЗП (1 271 000 сум) — минимальный уровень оплаты труда. С 2022 года устанавливаются независимо.' },
       { question: 'Как часто меняется БРВ?', answer: 'Обычно 1-2 раза в год по Указу Президента. Индексируется с учётом инфляции и экономического роста.' },
       { question: 'Сколько БРВ составляет порог НДС?', answer: '60 000 БРВ = 24 720 000 000 сум. При обороте выше этой суммы за 12 месяцев регистрация плательщиком НДС обязательна.' },
     ],
     faqUz: [
-      { question: "2025-yilda 1 BHK qancha?", answer: "412 000 so'm (2025-yil avgustidan). Bundan oldin: 375 000 so'm (2024), 330 000 so'm (2023)." },
+      { question: "2026-yilda 1 BHK qancha?", answer: "412 000 so'm (2025-yil avgustidan amal qiladi, 2026-yilda ham saqlanmoqda). Bundan oldin: 375 000 so'm (2024), 330 000 so'm (2023)." },
       { question: "BHK nima uchun ishlatiladi?", answer: "Jarimalar, davlat bojlari, soliq chegaralari, ijtimoiy nafaqalar, JShShS bo'yicha chegirmalar va boshqa ko'plab normativlarni hisoblash uchun." },
       { question: "BHK minimal ish haqidan nimasi bilan farq qiladi?", answer: "BHK (412 000 so'm) — normativlar uchun hisob ko'rsatkich. MIH (1 271 000 so'm) — mehnat haqi to'lashning minimal darajasi. 2022-yildan mustaqil belgilanadi." },
       { question: "BHK qanchalik tez-tez o'zgaradi?", answer: "Odatda yiliga 1-2 marta Prezident Farmoni bilan. Inflyatsiya va iqtisodiy o'sishni hisobga olgan holda indekslanadi." },
@@ -1010,14 +1010,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       "Pasport bojlari kalkulyatori hujjat turi, shoshilinchlik, arizachining yoshi va murojaat sababi (birinchi marta berish, almashtirish, yo'qotish) ni hisobga olgan holda aniq narxni avtomatik hisoblaydi. To'lov bank terminallari, Click, Payme, Uzum mobil ilovalari yoki bank bo'limlarida amalga oshiriladi. Kvitansiya to'langan kundan boshlab 3 oy amal qiladi.",
     ],
     faqRu: [
-      { question: 'Сколько стоит загранпаспорт в 2025 году?', answer: 'Стандартное оформление: 2 БРВ (824 000 сум, 15 дней). Ускоренное: 4 БРВ (1 648 000, 5 дней). Срочное: 8 БРВ (3 296 000, 1-3 дня).' },
+      { question: 'Сколько стоит загранпаспорт в 2026 году?', answer: 'Стандартное оформление: 2 БРВ (824 000 сум, 15 дней). Ускоренное: 4 БРВ (1 648 000, 5 дней). Срочное: 8 БРВ (3 296 000, 1-3 дня).' },
       { question: 'Сколько стоит ID-карта?', answer: '0,5 БРВ (206 000 сум) при стандартном оформлении. Срок действия — 10 лет.' },
       { question: 'Сколько стоит паспорт при утере?', answer: 'Двойная пошлина. Загранпаспорт: 4 БРВ (1 648 000 сум) при стандартном оформлении вместо обычных 2 БРВ.' },
       { question: 'Где оформить паспорт?', answer: 'Онлайн через my.gov.uz или лично в ОВД по месту прописки. Оплата через Click, Payme, Uzum или банк.' },
       { question: 'Какие документы нужны для загранпаспорта?', answer: 'Заявление, текущий паспорт или свидетельство о рождении, фото 35×45 мм, квитанция об оплате пошлины.' },
     ],
     faqUz: [
-      { question: "2025-yilda xorijga chiqish pasporti qancha turadi?", answer: "Standart rasmiylashtirish: 2 BHK (824 000 so'm, 15 kun). Tezlashtirilgan: 4 BHK (1 648 000, 5 kun). Shoshilinch: 8 BHK (3 296 000, 1-3 kun)." },
+      { question: "2026-yilda xorijga chiqish pasporti qancha turadi?", answer: "Standart rasmiylashtirish: 2 BHK (824 000 so'm, 15 kun). Tezlashtirilgan: 4 BHK (1 648 000, 5 kun). Shoshilinch: 8 BHK (3 296 000, 1-3 kun)." },
       { question: "ID-karta qancha turadi?", answer: "Standart rasmiylashtirishda 0,5 BHK (206 000 so'm). Amal qilish muddati — 10 yil." },
       { question: "Pasport yo'qotilganda qancha turadi?", answer: "Ikki baravar boj. Xorijga chiqish pasporti: odatdagi 2 BHK o'rniga 4 BHK (1 648 000 so'm)." },
       { question: "Pasportni qayerda rasmiylashtirish mumkin?", answer: "my.gov.uz orqali onlayn yoki propiska joyi bo'yicha IIBda shaxsan. To'lov Click, Payme, Uzum yoki bank orqali." },
@@ -1531,7 +1531,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Какой процент алиментов на ребёнка?', answer: '1 ребёнок — 25%, 2 — 33%, 3+ — 50% от дохода после вычета НДФЛ.' },
       { question: 'С каких доходов удерживаются алименты?', answer: 'Со всех: зарплата, премии, доход ИП, пенсия, стипендия, аренда, дивиденды.' },
       { question: 'Облагаются ли алименты налогом?', answer: 'Нет, алименты не облагаются НДФЛ у получателя. Плательщик платит НДФЛ до удержания алиментов.' },
-      { question: 'Какой минимальный размер алиментов?', answer: 'Не менее 50% МЗП (635 500 сум в 2025) на одного ребёнка.' },
+      { question: 'Какой минимальный размер алиментов?', answer: 'Не менее 50% МЗП (635 500 сум при МЗП 1 271 000 сум) на одного ребёнка.' },
       { question: 'До какого возраста платят алименты?', answer: 'До 18 лет. Для учащихся на дневной форме обучения — до 21 года.' },
     ],
     faqUz: [
@@ -1767,14 +1767,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     ],
     faqRu: [
       { question: 'Как сравнить вклады в разных банках?', answer: 'По эффективной годовой ставке (с учётом капитализации), а не по номинальной. Наш калькулятор покажет реальный доход.' },
-      { question: 'Какие ставки по вкладам в 2025?', answer: 'В сумах: 20-26% годовых. В долларах: 4-7%. В евро: 2-4%. Зависит от банка и срока.' },
+      { question: 'Какие ставки по вкладам в 2026?', answer: 'В сумах: 20-26% годовых. В долларах: 4-7%. В евро: 2-4%. Зависит от банка и срока.' },
       { question: 'Лучше ежемесячная капитализация или выплата в конце?', answer: 'Ежемесячная капитализация выгоднее: повышает эффективную ставку на 1-3% в зависимости от номинальной ставки.' },
       { question: 'Застрахованы ли вклады?', answer: 'Да, все вклады физлиц гарантированы Фондом гарантирования до 200 млн сум на одного вкладчика в одном банке.' },
       { question: 'Облагается ли доход по вкладам налогом?', answer: 'Да, с дохода по вкладам удерживается НДФЛ 5% для резидентов (10% для нерезидентов). Банк удерживает налог автоматически при выплате процентов.' },
     ],
     faqUz: [
       { question: "Turli banklardagi omonatlarni qanday solishtirish mumkin?", answer: "Nominal emas, samarali yillik stavka (kapitalizatsiyani hisobga olgan holda) bo'yicha. Kalkulyatorimiz haqiqiy daromadni ko'rsatadi." },
-      { question: "2025-yilda omonat stavkalari qanday?", answer: "So'mda: yillik 20-26%. Dollarda: 4-7%. Yevroda: 2-4%. Bank va muddatga bog'liq." },
+      { question: "2026-yilda omonat stavkalari qanday?", answer: "So'mda: yillik 20-26%. Dollarda: 4-7%. Yevroda: 2-4%. Bank va muddatga bog'liq." },
       { question: "Oylik kapitalizatsiya yoki oxirida to'lov yaxshiroqmi?", answer: "Oylik kapitalizatsiya foydaliroq: nominal stavkaga qarab samarali stavkani 1-3% ga oshiradi." },
       { question: "Omonatlar sug'urtalanganmi?", answer: "Ha, barcha jismoniy shaxs omonatlari Kafolatlash fondi tomonidan bir omonatchiga bir bankda 200 mln so'mgacha kafolatlangan." },
       { question: "Omonat daromadi soliqqa tortiladimi?", answer: "Ha, depozit foizlari rezidentlar uchun 5% (norezidentlar uchun 10%) JShShSga tortiladi. Bank foizlarni to'lashda soliqni avtomatik ravishda ushlab qoladi." },
@@ -2270,7 +2270,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       "Ta'lim narxi kalkulyatori kontrakt to'lovi, yashash va qo'shimcha xarajatlarni hisobga olgan holda O'zbekiston OTMlarida o'qishning to'liq xarajatlarini hisoblaydi. 2025-yilda mamlakatda 200 dan ortiq oliy ta'lim muassasasi ishlaydi, jumladan 30+ xorijiy universitetlar filiallari (Westminster, INHA, Turin, Amity). Har yili taxminan 400 000 abituriyent OTMlarga kiradi.",
       "2025-yilda kontrakt asosida o'qish narxi: davlat OTMlari — yiliga 12-30 mln so'm (ToshDU, O'zMU — 14 mln dan, TATU — 16 mln dan); tibbiyot — 25-45 mln (TTA — 30 mln dan, stomatologiya — 35 mln dan); texnik — 15-28 mln; iqtisod va huquqshunoslik — 18-35 mln. Xususiy OTMlar: 15-50 mln. Xorijiy filiallar: 25-80 mln (Westminster — 45 mln dan, INHA — 35 mln dan). Byudjet o'rinlari — bepul (stipendiya oyiga 800 000 so'mdan).",
       "Yillik qo'shimcha xarajatlar: darsliklar va materiallar — 1-3 mln so'm; yotoqxonada yashash — 1-3 mln (yiliga 800 000-2 500 000 so'm); Toshkentda xona ijarasi — oyiga 2-4 mln; ovqatlanish — yiliga 3-5 mln (oyiga 250 000-400 000); transport — yiliga 500 000-1 200 000. Jami boshqa shahardagi talabalar uchun qo'shimcha xarajatlar: yiliga 5-12 mln.",
-      "Byudjet grantlari yagona kirish imtihoni (DTM) natijalari bo'yicha taqsimlanadi. 2025-yilda davlat granti barcha o'rinlarning 20-25% gacha qoplaydi. Shuningdek, nomli stipendiyalar mavjud: Prezident stipendiyasi (oyiga 2 mln so'mdan), «El-yurt umidi» (xorijda o'qish), «Ist Krayst» fondi va boshqa tashkilotlar stipendiyalari. Banklar 7 yilgacha muddatga 14-18% imtiyozli stavkalarda ta'lim kreditlari taklif etadi.",
+      "Byudjet grantlari yagona kirish imtihoni (DTM) natijalari bo'yicha taqsimlanadi. Davlat granti barcha o'rinlarning 20-25% gacha qoplaydi. Shuningdek, nomli stipendiyalar mavjud: Prezident stipendiyasi (oyiga 2 mln so'mdan), «El-yurt umidi» (xorijda o'qish), «Ist Krayst» fondi va boshqa tashkilotlar stipendiyalari. Banklar 7 yilgacha muddatga 14-18% imtiyozli stavkalarda ta'lim kreditlari taklif etadi.",
       "Ta'lim kalkulyatori butun o'qish davri (bakalavr 4 yil, magistratura 2 yil) uchun to'liq byudjetni hisoblashga yordam beradi: OTM, mutaxassislik, o'qish shakli va shaharni kiriting — yillar va xarajat toifalari bo'yicha batafsil smetani olasiz.",
     ],
     faqRu: [
@@ -2311,14 +2311,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       "Ta'lim krediti kalkulyatori o'qish davrida va undan keyin oylik to'lovlarni, umumiy ortiqcha to'lovni hisoblaydi va turli banklar shartlarini solishtiradi. O'qish narxi, muddat va stavkani kiriting — batafsil to'lov jadvalini olasiz. Stavkalar o'zgarishi mumkinligini unutmang: O'zbekiston MB qayta moliyalash stavkasiga bog'lanish (2025-yilda 14%).",
     ],
     faqRu: [
-      { question: 'Какие ставки по образовательным кредитам?', answer: '14-18% годовых — значительно ниже рыночных 22-28%. Ставка привязана к ставке ЦБ (14% в 2025).' },
+      { question: 'Какие ставки по образовательным кредитам?', answer: '14-18% годовых — значительно ниже рыночных 22-33%. Ставка привязана к ставке ЦБ (14%).' },
       { question: 'Когда начинать погашение?', answer: 'После окончания учёбы. Во время обучения — только проценты (1-3 млн сум/мес) или полная отсрочка у некоторых банков.' },
       { question: 'Какие документы нужны?', answer: 'Справка о зачислении, паспорт, поручитель с доходами, справка о доходах поручителя, договор с вузом.' },
       { question: 'Какую сумму можно получить?', answer: 'До 100% стоимости обучения, максимум до 200 млн сум в зависимости от банка и вуза.' },
       { question: 'Какая переплата по кредиту?', answer: 'При ставке 16% и сроке 7 лет — переплата составит около 50-60% от суммы кредита. Используйте калькулятор для точного расчёта.' },
     ],
     faqUz: [
-      { question: "Ta'lim kreditlari stavkalari qanday?", answer: "Yillik 14-18% — bozor stavkalaridan 22-28% ancha past. Stavka MB stavkasiga (2025-yilda 14%) bog'langan." },
+      { question: "Ta'lim kreditlari stavkalari qanday?", answer: "Yillik 14-18% — bozor stavkalaridan 22-33% ancha past. Stavka MB stavkasiga (14%) bog'langan." },
       { question: "Qaytarishni qachon boshlash kerak?", answer: "O'qish tugaganidan keyin. O'qish davrida — faqat foizlar (oyiga 1-3 mln so'm) yoki ba'zi banklarda to'liq kechiktirish." },
       { question: "Qanday hujjatlar kerak?", answer: "Ro'yxatga olish ma'lumotnomasi, pasport, daromadli kafil, kafil daromadlari ma'lumotnomasi, OTM bilan shartnoma." },
       { question: "Qancha summa olish mumkin?", answer: "O'qish qiymatining 100% gacha, bank va OTMga qarab maksimum 200 mln so'mgacha." },
@@ -2385,14 +2385,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       "Fitr-sadaqa kalkulyatori oilangiz uchun aniq summani hisoblaydi: oila a'zolari sonini kiriting va mahsulotni tanlang (bug'doy, guruch, arpa) — to'lanadigan umumiy summani olasiz. Kalkulyator O'zbekistondagi dolzarb oziq-ovqat narxlaridan foydalanadi.",
     ],
     faqRu: [
-      { question: 'Сколько фитр-садака в 2025 году?', answer: 'Минимум ~45 000 сум (пшеница) до ~65 000 сум (рис) на человека. Семья из 5 человек: 225 000-325 000 сум.' },
+      { question: 'Сколько фитр-садака в 2026 году?', answer: 'Минимум ~45 000 сум (пшеница) до ~65 000 сум (рис) на человека. Семья из 5 человек: 225 000-325 000 сум.' },
       { question: 'Кто должен платить?', answer: 'Каждый мусульманин за себя и иждивенцев (дети, пожилые родители). Глава семьи платит за всех.' },
       { question: 'Когда нужно выплатить?', answer: 'До утренней праздничной молитвы Ид аль-Фитр. Рекомендуется в последние дни Рамадана.' },
       { question: 'Куда передать фитр-садака?', answer: 'Напрямую нуждающимся, через мечеть, фонд Вакф (vaqf.uz) или благотворительные организации.' },
       { question: 'Как определяется размер фитр-садака?', answer: 'Стоимость 1 са (~3,5 кг) основного продукта: пшеница, рис или ячмень. Управление мусульман Узбекистана публикует размеры ежегодно.' },
     ],
     faqUz: [
-      { question: '2025-yilda fitr-sadaqa qancha?', answer: "Minimum ~45 000 so'm (bug'doy) dan ~65 000 so'm (guruch) gacha kishiga. 5 kishilik oila: 225 000-325 000 so'm." },
+      { question: '2026-yilda fitr-sadaqa qancha?', answer: "Minimum ~45 000 so'm (bug'doy) dan ~65 000 so'm (guruch) gacha kishiga. 5 kishilik oila: 225 000-325 000 so'm." },
       { question: "Kim to'lashi kerak?", answer: "Har bir musulmon o'zi va qaramog'idagilar (bolalar, keksa ota-onalar) uchun. Oila boshlig'i barcha uchun to'laydi." },
       { question: "Qachon to'lash kerak?", answer: "Iyd al-Fitr ertalab bayram namozigacha. Ramazonning oxirgi kunlarida to'lash tavsiya etiladi." },
       { question: "Fitr-sadaqani qayerga uzatish mumkin?", answer: "Muhtojlarga bevosita, masjid orqali, Vaqf fondi (vaqf.uz) yoki xayriya tashkilotlari orqali." },
@@ -2456,7 +2456,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       "Qurbon marosimi hanafiy mazhabiga ko'ra balog'atga yetgan, mol-mulki nisob — 85 gramm oltin yoki 595 gramm kumush ekvivalentidan ortiq bo'lgan musulmonga vojib hisoblanadi. Bizning kalkulyatorimiz qurbon narxini hisoblaydi, go'shtni ulushlar bo'yicha taqsimlashni ko'rsatadi va 7 ta oila uchun birgalikda buqa sotib olishni tashkil qilishga yordam beradi — bu eng tejamkor variant.",
     ],
     faqRu: [{ question: 'Сколько стоит курбан в 2025?', answer: 'Баран: 2,5-5 млн сум. Бык: 15-30 млн (7 долей, ~2,1-4,3 млн за долю).' }, { question: 'Кто обязан резать курбан?', answer: 'Совершеннолетний мусульманин, обладающий нисабом (имущество > 85 г золота).' }, { question: 'Как делится мясо?', answer: '1/3 семье, 1/3 родным/соседям, 1/3 нуждающимся.' }],
-    faqUz: [{ question: "2025-yilda qurbon qancha turadi?", answer: "Qo'y: 2,5-5 mln so'm. Buqa: 15-30 mln (7 ulush, ulushiga ~2,1-4,3 mln)." }, { question: "Qurbon qilish kimga vojib?", answer: "Nisobga (85 g oltindan ortiq mol-mulk) ega balog'atga yetgan musulmon." }, { question: "Go'sht qanday taqsimlanadi?", answer: "1/3 oilaga, 1/3 qarindosh/qo'shnilarga, 1/3 muhtojlarga." }],
+    faqUz: [{ question: "2026-yilda qurbon qancha turadi?", answer: "Qo'y: 3-6 mln so'm. Buqa: 18-35 mln (7 ulush, ulushiga ~2,6-5 mln)." }, { question: "Qurbon qilish kimga vojib?", answer: "Nisobga (85 g oltindan ortiq mol-mulk) ega balog'atga yetgan musulmon." }, { question: "Go'sht qanday taqsimlanadi?", answer: "1/3 oilaga, 1/3 qarindosh/qo'shnilarga, 1/3 muhtojlarga." }],
   },
 
   {
