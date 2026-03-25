@@ -1,0 +1,27 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'uz.calk.calculator',
+  appName: 'Calk.UZ',
+  webDir: 'out',
+  server: {
+    url: 'https://calk.uz',
+    cleartext: false,
+    androidScheme: 'https',
+    errorPath: 'index.html',
+  },
+  plugins: {
+    SplashScreen: {
+      launchShowDuration: 2000,
+      launchAutoHide: true,
+      backgroundColor: '#059669',
+      showSpinner: false,
+    },
+    StatusBar: {
+      style: 'DARK',
+      backgroundColor: '#059669',
+    },
+  },
+};
+
+export default config;
