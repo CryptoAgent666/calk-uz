@@ -181,6 +181,10 @@
   "about_stats_updates": "Har chorakda yangilanadi",
   "about_stats_languages": "2 ta interfeys tili",
 
+  "home_intro_title": "O'zbekiston uchun moliyaviy kalkulyatorlar",
+  "home_intro_p1": "Calk.UZ — O'zbekiston aholisi uchun eng yirik bepul moliyaviy kalkulyatorlar platformasi. Barcha 78 ta kalkulyator amaldagi qonunchilik asosida ishlaydi: Soliq kodeksi, Mehnat kodeksi, Markaziy bank stavkalari va tasdiqlangan tariflar. Natijalar har chorakda yangilanadi.",
+  "home_intro_p2": "JShShS, QQS, ish haqi, kredit to'lovlari, kommunal xizmatlar, avtomobil bojxona qiymatini va boshqalarni hisoblang — bepul, ro'yxatdan o'tmasdan, ruscha va o'zbekcha tillarda. Ma'lumotlar rasmiy manbalardan olinadi: lex.uz, cbu.uz, soliq.uz.",
+
   "cookie_message": "Bu sayt tahlil va ishlashni yaxshilash uchun cookie fayllaridan foydalanadi.",
   "cookie_accept": "Qabul qilish",
   "cookie_decline": "Rad etish",
