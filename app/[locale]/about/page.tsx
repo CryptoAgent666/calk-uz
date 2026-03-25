@@ -11,6 +11,11 @@ import {
   ShieldCheck,
   ExternalLink,
   BarChart3,
+  Users,
+  Target,
+  Briefcase,
+  GraduationCap,
+  User,
 } from "lucide-react"
 
 export async function generateMetadata({
@@ -173,6 +178,58 @@ export default async function AboutPage({
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="mb-16">
+        <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
+          <div className="flex items-start gap-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 dark:bg-emerald-900/30">
+              <Users className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold text-foreground mb-3">
+                {t("about_team_title")}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+                {t("about_team_p1")}
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-base">
+                {t("about_team_p2")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Target audience */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+          {t("about_audience_title")}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { key: "about_audience_accountants", icon: Calculator },
+            { key: "about_audience_entrepreneurs", icon: Briefcase },
+            { key: "about_audience_citizens", icon: User },
+            { key: "about_audience_students", icon: GraduationCap },
+          ].map((item) => {
+            const Icon = item.icon
+            return (
+              <div
+                key={item.key}
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/30"
+              >
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
+                  <Icon className="h-4.5 w-4.5 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <p className="text-sm font-medium text-foreground leading-relaxed pt-1.5">
+                  {t(item.key)}
+                </p>
+              </div>
+            )
+          })}
         </div>
       </section>
 
