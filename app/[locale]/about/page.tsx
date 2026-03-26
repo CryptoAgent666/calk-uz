@@ -117,25 +117,6 @@ export default async function AboutPage({
         </p>
       </div>
 
-      {/* Non-Government Disclaimer */}
-      <section className="mb-12">
-        <div className="rounded-2xl border-2 border-amber-400 bg-amber-50 dark:bg-amber-950/30 dark:border-amber-600 p-6 sm:p-8">
-          <div className="flex items-start gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-200 dark:bg-amber-900/50">
-              <ShieldCheck className="h-5 w-5 text-amber-700 dark:text-amber-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-semibold text-amber-900 dark:text-amber-200 mb-2">
-                {t("disclaimer_not_government_title")}
-              </h2>
-              <p className="text-amber-800 dark:text-amber-300 leading-relaxed text-sm">
-                {t("disclaimer_not_government_text")}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Mission */}
       <section className="mb-16">
         <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
