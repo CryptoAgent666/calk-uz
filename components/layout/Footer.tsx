@@ -173,6 +173,9 @@ export async function Footer() {
             <p className="text-xs text-muted-foreground/70 leading-relaxed pt-2">
               {t("footer_disclaimer")}
             </p>
+            <p className="text-xs text-muted-foreground/50 leading-relaxed pt-1 font-medium">
+              {t("footer_not_government")}
+            </p>
           </div>
         </div>
 

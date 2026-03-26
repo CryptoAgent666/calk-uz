@@ -64,6 +64,9 @@
   "footer_privacy": "Maxfiylik siyosati",
   "footer_terms": "Foydalanish shartlari",
   "footer_disclaimer": "Hisob-kitob natijalari faqat ma'lumot uchun mo'ljallangan bo'lib, yuridik yoki moliyaviy maslahat hisoblanmaydi.",
+  "footer_not_government": "Calk.UZ davlat xizmati emas va O'zbekiston Respublikasi davlat organlari bilan bog'liq emas.",
+  "disclaimer_not_government_title": "Muhim ma'lumot",
+  "disclaimer_not_government_text": "Calk.UZ — xususiy dasturchilar tomonidan yaratilgan mustaqil axborot loyihasidir. Ilova davlat xizmati EMAS va O'zbekiston Respublikasi davlat organlari bilan BOG'LIQ EMAS. Barcha hisoblar rasmiy manbalar (cbu.uz, lex.uz, soliq.uz) asosida ma'lumotnoma xarakteriga ega bo'lib, moliyaviy yoki yuridik maslahat hisoblanmaydi. Moliyaviy qarorlar qabul qilish uchun malakali mutaxassislarga murojaat qilishni tavsiya etamiz.",
   "footer_copyright": "© {year} Calk.UZ. Barcha huquqlar himoyalangan.",
 
   "theme_light": "Yorug'",

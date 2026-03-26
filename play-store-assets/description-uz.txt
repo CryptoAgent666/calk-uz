@@ -1,0 +1,32 @@
+⚠️ MUHIM: Calk.UZ davlat xizmati EMAS va O'zbekiston Respublikasi davlat organlari bilan BOG'LIQ EMAS. Bu xususiy dasturchilar tomonidan yaratilgan mustaqil axborot vositasidir. Barcha hisoblar ma'lumotnoma xarakteriga ega va rasmiy hujjat yoki moliyaviy maslahat hisoblanmaydi.
+
+Calk.UZ — O'zbekiston aholisi uchun 78 ta bepul moliyaviy kalkulyator. Soliqlar, maoshlar, kreditlar, depozitlar, kommunal xizmatlar, valyutani hisoblang.
+
+Hisoblar rasmiy manbalardan olingan ochiq ma'lumotlarga asoslangan. Ilova ma'lumotnoma hisob-kitoblar uchun ommaviy foydalanishdagi ma'lumotlardan foydalanadi.
+
+IMKONIYATLAR:
+• 8 ta kategoriyada 78 ta kalkulyator
+• Dolzarb ochiq ma'lumotlar asosida hisob-kitoblar
+• Rus va o'zbek tillarida interfeys
+• Ro'yxatdan o'tishsiz va shaxsiy ma'lumotlar yig'ilmaydi
+• To'liq bepul
+• Oflayn ishlaydi
+
+KATEGORIYALAR:
+📊 Soliqlar — JShShS, QQS, foyda solig'i, mol-mulk solig'i, yer solig'i, IT Park
+💰 Maosh — sof/yalpi, ta'til puli, kasallik varaqasi, ishdan bo'shatish kompensatsiyasi
+🏦 Kreditlar — annuitet, differentsial to'lovlar, qayta moliyalash
+📈 Depozitlar — murakkab foizlar, omonatlarni solishtirish
+💱 Valyuta — MB kursi bo'yicha konverter
+🏠 Kommunal — elektr, gaz, suv, isitish
+🏗️ Ko'chmas mulk — ipoteka, ijara, ta'mirlash
+📐 Boshqa — foizlar, marja, zararsizlik nuqtasi, yosh
+
+Ma'lumotnoma hisob-kitoblar uchun ishlatiladigan ochiq ma'lumot manbalari:
+• O'zbekiston Markaziy banki — cbu.uz (valyuta kurslari)
+• Soliq qo'mitasi — soliq.uz (soliq stavkalari)
+• Qonunchilik bazasi — lex.uz (normativ hujjatlar)
+• Moliya vazirligi — mf.uz (byudjet ma'lumotlari)
+• Davlat statistika qo'mitasi — stat.uz (statistika)
+
+OGOHLANTIRISH: Ushbu ilova davlat xizmati EMAS. Calk.UZ O'zbekiston Respublikasining hech qanday davlat organlari bilan BOG'LIQ EMAS va ularni IFODALAMAYDI. Hisob-kitob natijalari faqat axborot va ma'lumotnoma xarakteriga ega bo'lib, moliyaviy, yuridik yoki soliq maslahat hisoblanmaydi. Moliyaviy qarorlar qabul qilish uchun malakali mutaxassislarga murojaat qiling. Dasturchi hisob-kitob natijalari asosida qabul qilingan qarorlar uchun javobgar emas.
