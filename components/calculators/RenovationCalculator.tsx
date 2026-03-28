@@ -12,7 +12,8 @@ export default function RenovationCalculator() {
   const [area, setArea] = useState('')
   const [level, setLevel] = useState<'economy' | 'standard' | 'premium'>('standard')
 
-  const PRICES: Record<string, number> = { economy: 1_500_000, standard: 3_000_000, premium: 6_000_000 }
+  // Updated for 2026 Tashkent market rates
+  const PRICES: Record<string, number> = { economy: 1_800_000, standard: 3_500_000, premium: 7_000_000 }
 
   const result = useMemo(() => {
     const a = parseFloat(area) || 0

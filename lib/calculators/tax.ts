@@ -3,8 +3,7 @@
  * Income tax, property tax, land tax, vehicle tax, corporate tax, penalty
  */
 
-const BRV = 412_000
-const CB_RATE = 0.14
+import { BRV, CB_RATE } from '@/lib/constants/brv'
 
 // Income Tax (NDFL/JSHSHS) - covered in salary.ts, this is standalone
 export interface IncomeTaxResult {
@@ -34,9 +33,9 @@ export function calculatePropertyTax(cadastralValue: number, areaM2: number, isL
   let taxRate: number
   if (isLegalEntity) {
     taxRate = 0.015
-  } else if (areaM2 <= 200) {
+  } else if (areaM2 <= 100) {
     taxRate = 0.0034
-  } else if (areaM2 <= 500) {
+  } else if (areaM2 <= 200) {
     taxRate = 0.0045
   } else {
     taxRate = 0.006

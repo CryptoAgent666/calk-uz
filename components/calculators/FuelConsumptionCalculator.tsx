@@ -34,8 +34,8 @@ export default function FuelConsumptionCalculator() {
       }
 
   const fuelLabels: Record<string, string> = locale === 'uz'
-    ? { 'ai-80': 'AI-80', 'ai-91': 'AI-91', 'ai-92': 'AI-92', 'ai-95': 'AI-95', 'ai-98': 'AI-98', diesel: 'Dizel', gas_lpg: 'Propan', gas_cng: 'Metan' }
-    : { 'ai-80': 'АИ-80', 'ai-91': 'АИ-91', 'ai-92': 'АИ-92', 'ai-95': 'АИ-95', 'ai-98': 'АИ-98', diesel: 'Дизель', gas_lpg: 'Пропан', gas_cng: 'Метан' }
+    ? { 'ai-91': 'AI-91', 'ai-92': 'AI-92', 'ai-95': 'AI-95', 'ai-98': 'AI-98', diesel: 'Dizel', gas_lpg: 'Propan', gas_cng: 'Metan' }
+    : { 'ai-91': 'АИ-91', 'ai-92': 'АИ-92', 'ai-95': 'АИ-95', 'ai-98': 'АИ-98', diesel: 'Дизель', gas_lpg: 'Пропан', gas_cng: 'Метан' }
 
   return (
     <div className="space-y-6">

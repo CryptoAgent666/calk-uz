@@ -20,7 +20,7 @@ export default function MovingCalculator() {
     const f = parseInt(floor) || 1
     const d = parseFloat(distance) || 0
     const baseCost = r * 500_000
-    const floorSurcharge = hasElevator ? 0 : f * 50_000
+    const floorSurcharge = hasElevator ? 0 : Math.max(0, f - 1) * 50_000
     const distanceCost = d * 5_000
     const loaders = r <= 1 ? 2 : r <= 3 ? 3 : 4
     const loadersCost = loaders * 200_000

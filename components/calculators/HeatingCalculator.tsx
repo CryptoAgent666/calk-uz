@@ -21,11 +21,19 @@ export default function HeatingCalculator() {
   }, [area, days])
 
   const t = locale === 'uz'
-    ? { area: 'Maydon (m\u00B2)', days: 'Oydagi kunlar', results: 'Natijalar', dailyRate: 'Kunlik tarif (m\u00B2)', total: 'Jami to\'lov', placeholder: 'Maydonni kiriting' }
-    : { area: 'Площадь (м\u00B2)', days: 'Дней в месяце', results: 'Результаты', dailyRate: 'Дневной тариф (м\u00B2)', total: 'Итого к оплате', placeholder: 'Введите площадь' }
+    ? { area: 'Maydon (m\u00B2)', days: 'Oydagi kunlar', results: 'Natijalar', dailyRate: 'Kunlik tarif (m\u00B2)', total: 'Jami to\'lov', placeholder: 'Maydonni kiriting', offSeason: 'Isitish mavsumi: oktyabr — mart. Hozir mavsumdan tashqarida bo\'lishi mumkin.' }
+    : { area: 'Площадь (м\u00B2)', days: 'Дней в месяце', results: 'Результаты', dailyRate: 'Дневной тариф (м\u00B2)', total: 'Итого к оплате', placeholder: 'Введите площадь', offSeason: 'Отопительный сезон: октябрь — март. Сейчас может быть вне сезона.' }
+
+  const currentMonth = new Date().getMonth() + 1
+  const isHeatingSeason = [10, 11, 12, 1, 2, 3].includes(currentMonth)
 
   return (
     <div className="space-y-6">
+      {!isHeatingSeason && (
+        <div className="rounded-md border border-amber-200 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-800 px-4 py-3 text-sm text-amber-800 dark:text-amber-200">
+          {t.offSeason}
+        </div>
+      )}
       <Card>
         <CardContent className="pt-6 space-y-4">
           <div>

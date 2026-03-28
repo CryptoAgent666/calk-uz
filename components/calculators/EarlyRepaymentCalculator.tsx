@@ -24,7 +24,7 @@ export default function EarlyRepaymentCalculator() {
     const t = parseInt(term) || 0
     const em = parseInt(earlyMonth) || 0
     const ea = parseFloat(earlyAmount.replace(/\s/g, '')) || 0
-    if (a <= 0 || r <= 0 || t <= 0 || em <= 0 || ea <= 0) return null
+    if (a <= 0 || r <= 0 || t <= 0 || em <= 0 || ea <= 0 || em > t) return null
     return calculateEarlyRepayment(a, r, t, em, ea, reduceType)
   }, [amount, rate, term, earlyMonth, earlyAmount, reduceType])
 
@@ -79,7 +79,7 @@ export default function EarlyRepaymentCalculator() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label>{t.earlyMonth}</Label>
-              <Input type="number" value={earlyMonth} onChange={(e) => setEarlyMonth(e.target.value)} className="mt-1" min={1} />
+              <Input type="number" value={earlyMonth} onChange={(e) => setEarlyMonth(e.target.value)} className="mt-1" min={1} max={parseInt(term) || 360} />
             </div>
             <div>
               <Label>{t.earlyAmount}</Label>

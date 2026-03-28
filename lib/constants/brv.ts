@@ -1,6 +1,6 @@
 /**
  * Base Calculation Value (БРВ / BHM) and related constants for Uzbekistan
- * Updated: August 2025
+ * Updated: January 2026
  */
 
 /** Base Calculation Value in UZS (Базовая расчётная величина / Bazaviy hisoblash miqdori) */

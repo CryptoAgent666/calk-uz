@@ -34,6 +34,8 @@ export default function SickLeaveCalculator() {
         ndfl: 'JSHSHS (12%)',
         net: 'Qo\'lga olinadigan summa',
         placeholder: 'Summani kiriting',
+        employerPays: 'Ish beruvchi to\'laydi (10 kungacha)',
+        statePays: 'Davlat to\'laydi (10 kundan keyin)',
       }
     : {
         totalEarnings: 'Общий заработок за 12 мес. (UZS)',
@@ -46,6 +48,8 @@ export default function SickLeaveCalculator() {
         ndfl: 'НДФЛ (12%)',
         net: 'К выплате (нетто)',
         placeholder: 'Введите сумму',
+        employerPays: 'Оплата работодателя (до 10 дней)',
+        statePays: 'Оплата государства (после 10 дней)',
       }
 
   return (
@@ -85,6 +89,20 @@ export default function SickLeaveCalculator() {
               <span className="text-muted-foreground">{t.gross}</span>
               <span>{formatCurrency(result.grossAmount, 'UZS', locale)}</span>
             </div>
+            {parseInt(sickDays) > 0 && (
+              <div className="rounded-md bg-muted/50 p-3 space-y-1.5 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t.employerPays}</span>
+                  <span>{formatCurrency(result.averageDailyEarnings * (result.experiencePercent / 100) * Math.min(parseInt(sickDays) || 0, 10), 'UZS', locale)}</span>
+                </div>
+                {(parseInt(sickDays) || 0) > 10 && (
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">{t.statePays}</span>
+                    <span>{formatCurrency(result.averageDailyEarnings * (result.experiencePercent / 100) * ((parseInt(sickDays) || 0) - 10), 'UZS', locale)}</span>
+                  </div>
+                )}
+              </div>
+            )}
             <div className="flex justify-between">
               <span className="text-muted-foreground">{t.ndfl}</span>
               <span className="text-destructive">-{formatCurrency(result.ndflAmount, 'UZS', locale)}</span>

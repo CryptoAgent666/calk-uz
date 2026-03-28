@@ -40,8 +40,8 @@ const UTILIZATION_FEE_BRV: { upTo: number; newCar: number; usedCar: number }[] =
   { upTo: Infinity, newCar: 82, usedCar: 137 },
 ]
 
-const BRV = 412_000  // Base calculation value in UZS
-const USD_UZS = 12_192 // Approximate exchange rate
+import { BRV } from '@/lib/constants/brv'
+const USD_UZS = 12_850 // Approximate exchange rate (updated March 2026)
 const CUSTOMS_DUTY_RATE = 0.15 // 15%
 const VAT_RATE = 0.12 // 12%
 const CERTIFICATION_FEE_USD = 690

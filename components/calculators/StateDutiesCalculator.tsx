@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { STATE_DUTIES, calculateStateDuty } from '@/lib/calculators/unique'
+import { BRV } from '@/lib/constants/brv'
 import { formatCurrency } from '@/lib/utils'
 
 export default function StateDutiesCalculator() {
@@ -42,7 +43,7 @@ export default function StateDutiesCalculator() {
           {STATE_DUTIES.map(d => (
             <div key={d.type} className="flex justify-between text-sm py-1 border-b border-muted/30 last:border-0">
               <span className="text-muted-foreground">{locale === 'uz' ? d.descriptionUz : d.descriptionRu}</span>
-              <span className="font-medium">{formatCurrency(412_000 * d.brvMultiplier, 'UZS', locale)}</span>
+              <span className="font-medium">{formatCurrency(BRV * d.brvMultiplier, 'UZS', locale)}</span>
             </div>
           ))}
         </CardContent>

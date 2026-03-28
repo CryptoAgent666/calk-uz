@@ -13,23 +13,20 @@ export interface OsagoResult {
 }
 
 export function calculateOsago(
-  engineVolumeCc: number,
-  region: 'tashkent' | 'other_city' | 'rural' = 'tashkent',
+  region: 'tashkent' | 'other_region' = 'tashkent',
+  isUnlimitedDrivers: boolean = false,
   driverAge: number = 30,
   driverExperienceYears: number = 5,
   accidentHistory: number = 0
 ): OsagoResult {
-  // Base tariff depends on engine volume (in UZS)
-  let baseTariff: number
-  if (engineVolumeCc <= 1500) baseTariff = 180_000
-  else if (engineVolumeCc <= 2000) baseTariff = 250_000
-  else if (engineVolumeCc <= 2500) baseTariff = 350_000
-  else if (engineVolumeCc <= 3000) baseTariff = 480_000
-  else baseTariff = 650_000
+  // 2026 flat rates by region (Cabinet of Ministers Resolution No. 458, July 2025)
+  const baseTariffs: Record<string, { limited: number; unlimited: number }> = {
+    tashkent: { limited: 192_000, unlimited: 384_000 },
+    other_region: { limited: 160_000, unlimited: 320_000 },
+  }
 
-  // Region coefficient
-  const regionCoeffs: Record<string, number> = { tashkent: 1.7, other_city: 1.3, rural: 1.0 }
-  const regionCoeff = regionCoeffs[region] ?? 1.0
+  const tariff = baseTariffs[region] ?? baseTariffs.tashkent
+  const baseTariff = isUnlimitedDrivers ? tariff.unlimited : tariff.limited
 
   // Age and experience coefficient
   let ageExpCoeff = 1.0
@@ -37,16 +34,16 @@ export function calculateOsago(
   else if (driverAge < 22) ageExpCoeff = 1.6
   else if (driverExperienceYears < 3) ageExpCoeff = 1.7
 
-  // Accident history coefficient (bonus-malus)
+  // Bonus-malus coefficient
   let historyCoeff = 1.0
-  if (accidentHistory === 0) historyCoeff = 0.9 // discount for no accidents
+  if (accidentHistory === 0) historyCoeff = 0.9
   else if (accidentHistory === 1) historyCoeff = 1.0
   else if (accidentHistory === 2) historyCoeff = 1.4
   else historyCoeff = 1.7
 
-  const annualPremium = baseTariff * regionCoeff * ageExpCoeff * historyCoeff
+  const annualPremium = Math.round(baseTariff * ageExpCoeff * historyCoeff)
 
-  return { baseTariff, regionCoeff, ageExpCoeff, historyCoeff, annualPremium }
+  return { baseTariff, regionCoeff: 1, ageExpCoeff, historyCoeff, annualPremium }
 }
 
 // Fuel Consumption Calculator
@@ -62,14 +59,13 @@ export interface FuelResult {
 
 // Current fuel prices in UZS (approximate, 2025-2026)
 export const FUEL_PRICES: Record<string, number> = {
-  'ai-80': 8_500,
   'ai-91': 11_500,
-  'ai-92': 12_000,
-  'ai-95': 14_000,
-  'ai-98': 16_000,
-  'diesel': 12_500,
-  'gas_lpg': 5_200, // Propane
-  'gas_cng': 3_200, // Methane
+  'ai-92': 12_500,
+  'ai-95': 14_500,
+  'ai-98': 16_500,
+  'diesel': 13_000,
+  'gas_lpg': 5_500,
+  'gas_cng': 4_800,
 }
 
 export function calculateFuelConsumption(

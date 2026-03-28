@@ -2,7 +2,7 @@
  * Unique Uzbekistan calculators: passport fees, state duties, wedding, cotton, remittances, visa, BRV
  */
 
-const BRV = 412_000
+import { BRV } from '@/lib/constants/brv'
 
 // Passport Fees
 export interface PassportFeesResult {
@@ -174,7 +174,7 @@ export interface RemittanceResult {
 export function calculateRemittance(
   sendAmount: number,
   sendCurrency: string = 'USD',
-  exchangeRate: number = 12_192,
+  exchangeRate: number = 12_850,
   feePercent: number = 1.5
 ): RemittanceResult {
   const fee = sendAmount * feePercent / 100
@@ -206,34 +206,37 @@ export interface VisaCostResult {
   totalCost: number
 }
 
-export const VISA_COSTS: Record<string, { consulateFee: number; serviceFee: number }> = {
-  schengen: { consulateFee: 80 * 12_192, serviceFee: 30 * 12_192 },
-  usa: { consulateFee: 185 * 12_192, serviceFee: 0 },
-  uk: { consulateFee: 115 * 12_192, serviceFee: 50 * 12_192 },
-  south_korea: { consulateFee: 40 * 12_192, serviceFee: 20 * 12_192 },
-  japan: { consulateFee: 30 * 12_192, serviceFee: 25 * 12_192 },
-  china: { consulateFee: 45 * 12_192, serviceFee: 35 * 12_192 },
-  turkey: { consulateFee: 0, serviceFee: 0 }, // visa-free
-  uae: { consulateFee: 0, serviceFee: 0 }, // visa-free
+export const VISA_COSTS_USD: Record<string, { consulateFeeUsd: number; serviceFeeUsd: number }> = {
+  schengen: { consulateFeeUsd: 80, serviceFeeUsd: 30 },
+  usa: { consulateFeeUsd: 185, serviceFeeUsd: 0 },
+  uk: { consulateFeeUsd: 115, serviceFeeUsd: 50 },
+  south_korea: { consulateFeeUsd: 40, serviceFeeUsd: 20 },
+  japan: { consulateFeeUsd: 30, serviceFeeUsd: 25 },
+  china: { consulateFeeUsd: 45, serviceFeeUsd: 35 },
+  turkey: { consulateFeeUsd: 0, serviceFeeUsd: 0 },
+  uae: { consulateFeeUsd: 0, serviceFeeUsd: 0 },
 }
 
 export function calculateVisaCost(
   country: string,
+  exchangeRate: number = 12_850,
   insuranceDays: number = 30,
   insuranceRatePerDay: number = 15_000
 ): VisaCostResult {
-  const visa = VISA_COSTS[country] ?? { consulateFee: 50 * 12_192, serviceFee: 25 * 12_192 }
+  const visa = VISA_COSTS_USD[country] ?? { consulateFeeUsd: 50, serviceFeeUsd: 25 }
+  const consulateFee = visa.consulateFeeUsd * exchangeRate
+  const serviceFee = visa.serviceFeeUsd * exchangeRate
   const insuranceCost = insuranceDays * insuranceRatePerDay
-  const photoCost = 50_000 // approximate photo cost
+  const photoCost = 50_000
 
   return {
     country,
     visaType: 'tourist',
-    consulateFee: visa.consulateFee,
-    serviceFee: visa.serviceFee,
+    consulateFee,
+    serviceFee,
     insuranceCost,
     photoCost,
-    totalCost: visa.consulateFee + visa.serviceFee + insuranceCost + photoCost,
+    totalCost: consulateFee + serviceFee + insuranceCost + photoCost,
   }
 }
 

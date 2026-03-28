@@ -22,7 +22,7 @@ export default function AlimonyCalculator() {
 
   const t = locale === 'uz'
     ? {
-        income: 'Oylik daromad (UZS)',
+        income: 'Oylik daromad — soliqdan keyin (UZS)',
         children: 'Bolalar soni',
         results: 'Natijalar',
         rate: 'Alimentlar stavkasi',
@@ -31,7 +31,7 @@ export default function AlimonyCalculator() {
         placeholder: 'Summani kiriting',
       }
     : {
-        income: 'Ежемесячный доход (UZS)',
+        income: 'Ежемесячный доход — после налогов (UZS)',
         children: 'Количество детей',
         results: 'Результаты',
         rate: 'Ставка алиментов',

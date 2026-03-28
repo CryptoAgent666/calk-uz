@@ -6,69 +6,123 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { formatNumber } from '@/lib/utils'
+import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
 
-const BANK_RATES = [
-  { name: 'Markaziy bank', buy: 12_850, sell: 12_850 },
-  { name: 'NBU', buy: 12_830, sell: 12_870 },
-  { name: 'Kapitalbank', buy: 12_800, sell: 12_900 },
-  { name: 'Hamkorbank', buy: 12_810, sell: 12_890 },
-  { name: 'Ipoteka Bank', buy: 12_820, sell: 12_880 },
-]
+const FALLBACK_USD_RATE = 12_850
 
 export default function BankRatesCalculator() {
   const locale = useLocale()
+  const { rates: liveRates, loading, error, lastUpdated } = useCurrencyRates()
   const [amount, setAmount] = useState('1000')
+
+  // Get the CBU official USD rate
+  const cbuUsdRate = useMemo(() => {
+    const usd = liveRates.find((r) => r.code === 'USD')
+    if (usd) return usd.rate / usd.nominal
+    return FALLBACK_USD_RATE
+  }, [liveRates])
+
+  const usingFallback = liveRates.length === 0 && !loading
 
   const results = useMemo(() => {
     const a = parseFloat(amount.replace(/\s/g, '')) || 0
     if (a <= 0) return null
-    return BANK_RATES.map(bank => ({
-      ...bank,
-      buyTotal: a * bank.buy,
-      sellTotal: a * bank.sell,
-      spread: bank.sell - bank.buy,
-    }))
-  }, [amount])
+    return { uzsAmount: a * cbuUsdRate }
+  }, [amount, cbuUsdRate])
 
   const t = locale === 'uz'
-    ? { amount: 'Summa (USD)', bank: 'Bank', buy: 'Olish', sell: 'Sotish', spread: 'Farq', total: 'Jami (UZS)', placeholder: 'Summani kiriting' }
-    : { amount: 'Сумма (USD)', bank: 'Банк', buy: 'Покупка', sell: 'Продажа', spread: 'Спред', total: 'Итого (UZS)', placeholder: 'Введите сумму' }
+    ? {
+        amount: 'Summa (USD)',
+        placeholder: 'Summani kiriting',
+        cbuRate: 'Markaziy bank kursi',
+        result: 'Natija',
+        total: 'Jami (UZS)',
+        loading: 'Kurslar yuklanmoqda...',
+        error: 'Kurslarni yuklashda xatolik',
+        fallbackWarning: 'Joriy kurslar yuklanmadi, taxminiy kurs ishlatilmoqda',
+        source: 'Manba: O\'zbekiston Markaziy banki (CBU)',
+        updated: 'Yangilangan',
+        bankNote: 'Diqqat: tijorat banklari kurslari Markaziy bank kursidan farq qiladi. Aniq kurslarni o\'z bankingizdan tekshiring.',
+      }
+    : {
+        amount: 'Сумма (USD)',
+        placeholder: 'Введите сумму',
+        cbuRate: 'Курс ЦБ',
+        result: 'Результат',
+        total: 'Итого (UZS)',
+        loading: 'Загрузка курсов...',
+        error: 'Ошибка загрузки курсов',
+        fallbackWarning: 'Не удалось загрузить актуальные курсы, используются приблизительные',
+        source: 'Источник: Центральный банк Узбекистана (ЦБУ)',
+        updated: 'Обновлено',
+        bankNote: 'Внимание: курсы коммерческих банков отличаются от курса ЦБ. Уточняйте актуальный курс в вашем банке.',
+      }
 
   return (
     <div className="space-y-6">
       <Card>
-        <CardContent className="pt-6">
-          <Label>{t.amount}</Label>
-          <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
+        <CardContent className="pt-6 space-y-4">
+          <div>
+            <Label>{t.amount}</Label>
+            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
+          </div>
+
+          {/* Status indicator */}
+          {loading && (
+            <p className="text-xs text-muted-foreground animate-pulse">
+              {t.loading}
+            </p>
+          )}
+          {error && !loading && (
+            <p className="text-xs text-destructive">
+              {t.error}
+            </p>
+          )}
+          {usingFallback && !loading && (
+            <p className="text-xs text-amber-600">
+              {t.fallbackWarning}
+            </p>
+          )}
         </CardContent>
       </Card>
 
-      {results && (
-        <Card>
-          <CardContent className="pt-4 overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b">
-                  <th className="py-2 text-left">{t.bank}</th>
-                  <th className="py-2 text-right">{t.buy}</th>
-                  <th className="py-2 text-right">{t.sell}</th>
-                  <th className="py-2 text-right">{t.total}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {results.map((bank) => (
-                  <tr key={bank.name} className="border-b border-muted/50">
-                    <td className="py-2 font-medium">{bank.name}</td>
-                    <td className="py-2 text-right text-green-600">{formatNumber(bank.buy, locale)}</td>
-                    <td className="py-2 text-right text-destructive">{formatNumber(bank.sell, locale)}</td>
-                    <td className="py-2 text-right font-medium">{formatNumber(Math.round(bank.buyTotal), locale)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </CardContent>
-        </Card>
-      )}
+      {/* CBU official rate card */}
+      <Card className="border-primary/30">
+        <CardHeader>
+          <CardTitle className="text-lg">{t.cbuRate}</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex justify-between items-center">
+            <span className="text-muted-foreground">1 USD</span>
+            <span className="text-xl font-bold text-primary">{formatNumber(Math.round(cbuUsdRate), locale)} UZS</span>
+          </div>
+          {results && (
+            <div className="border-t pt-3 flex justify-between items-center">
+              <span className="text-muted-foreground">{amount} USD =</span>
+              <span className="text-xl font-bold">{formatNumber(Math.round(results.uzsAmount), locale)} UZS</span>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Bank rates note */}
+      <Card className="border-amber-300/50 bg-amber-50/50 dark:bg-amber-950/20">
+        <CardContent className="pt-4">
+          <p className="text-sm text-amber-800 dark:text-amber-200">
+            {t.bankNote}
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* Source attribution */}
+      <div className="text-center space-y-1">
+        <p className="text-xs text-muted-foreground">{t.source}</p>
+        {lastUpdated && (
+          <p className="text-xs text-muted-foreground">
+            {t.updated}: {new Date(lastUpdated).toLocaleString(locale === 'uz' ? 'uz-UZ' : 'ru-RU')}
+          </p>
+        )}
+      </div>
     </div>
   )
 }

@@ -103,9 +103,9 @@ export function calculateMaternity(
   totalEarnings12Months: number,
   isComplicatedBirth: boolean = false,
   isMultipleBirth: boolean = false,
-  workingDaysIn12Months: number = 247
+  calendarDaysIn12Months: number = 365
 ): MaternityResult {
-  const averageDailyEarnings = totalEarnings12Months / workingDaysIn12Months
+  const averageDailyEarnings = totalEarnings12Months / calendarDaysIn12Months
   const prebirthDays = 70
   let postbirthDays = 56
   if (isComplicatedBirth) postbirthDays = 70
@@ -170,8 +170,17 @@ export function calculateOvertime(
   workingHoursPerMonth: number = 168
 ): OvertimeResult {
   const hourlyRate = monthlyeSalary / workingHoursPerMonth
-  const overtimeMultiplier = isHoliday ? 2.0 : 1.5
-  const overtimePay = hourlyRate * overtimeMultiplier * overtimeHours
+  let overtimePay: number
+  let overtimeMultiplier: number
+  if (isHoliday) {
+    overtimeMultiplier = 2.0
+    overtimePay = hourlyRate * 2.0 * overtimeHours
+  } else {
+    overtimeMultiplier = 1.5 // average shown in UI
+    const first2h = Math.min(overtimeHours, 2)
+    const rest = Math.max(0, overtimeHours - 2)
+    overtimePay = hourlyRate * (first2h * 1.5 + rest * 2.0)
+  }
 
   return { hourlyRate, overtimeHours, overtimeMultiplier, overtimePay }
 }
@@ -191,7 +200,7 @@ export function calculatePension(
   averageMonthlySalary: number,
   yearsOfService: number
 ): PensionResult {
-  const retirementAge = isMale ? 60 : 55
+  const retirementAge = isMale ? 60 : 57
   const yearsToRetirement = Math.max(0, retirementAge - currentAge)
 
   // Simplified pension calculation for UZ

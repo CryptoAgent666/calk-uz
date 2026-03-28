@@ -1,18 +1,36 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useLocale } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateRemittance } from '@/lib/calculators/unique'
 import { formatCurrency, formatNumber } from '@/lib/utils'
+import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
+
+const FALLBACK_USD_RATE = 12_850
 
 export default function MoneyTransferCalculator() {
   const locale = useLocale()
+  const { rates: liveRates, loading, error, lastUpdated } = useCurrencyRates()
   const [amount, setAmount] = useState('500')
   const [feePercent, setFeePercent] = useState('1.5')
   const [exchangeRate, setExchangeRate] = useState('12850')
+
+  // Auto-populate USD exchange rate from live data
+  const liveUsdRate = useMemo(() => {
+    const usd = liveRates.find((r) => r.code === 'USD')
+    if (usd) return Math.round(usd.rate / usd.nominal)
+    return FALLBACK_USD_RATE
+  }, [liveRates])
+
+  const usingFallback = liveRates.length === 0 && !loading
+
+  // Update exchange rate when live data loads
+  useEffect(() => {
+    setExchangeRate(String(liveUsdRate))
+  }, [liveUsdRate])
 
   const result = useMemo(() => {
     const a = parseFloat(amount) || 0
@@ -33,6 +51,12 @@ export default function MoneyTransferCalculator() {
         receiveAmount: 'Qabul qiluvchi oladi',
         effectiveRate: 'Samarali kurs',
         placeholder: 'Summani kiriting',
+        loading: 'Kurslar yuklanmoqda...',
+        error: 'Kurslarni yuklashda xatolik',
+        fallbackWarning: 'Joriy kurslar yuklanmadi, taxminiy kurs ishlatilmoqda',
+        source: 'Kurs manba: O\'zbekiston Markaziy banki',
+        updated: 'Yangilangan',
+        rateNote: 'Kurs avtomatik yuklanadi. Kerak bo\'lsa qo\'lda o\'zgartiring.',
       }
     : {
         amount: 'Сумма перевода (USD)',
@@ -44,6 +68,12 @@ export default function MoneyTransferCalculator() {
         receiveAmount: 'Получатель получит',
         effectiveRate: 'Эффективный курс',
         placeholder: 'Введите сумму',
+        loading: 'Загрузка курсов...',
+        error: 'Ошибка загрузки курсов',
+        fallbackWarning: 'Не удалось загрузить актуальные курсы, используются приблизительные',
+        source: 'Курс: Центральный банк Узбекистана',
+        updated: 'Обновлено',
+        rateNote: 'Курс загружается автоматически. При необходимости измените вручную.',
       }
 
   return (
@@ -61,7 +91,19 @@ export default function MoneyTransferCalculator() {
           <div>
             <Label>{t.rate}</Label>
             <Input type="number" value={exchangeRate} onChange={(e) => setExchangeRate(e.target.value)} className="mt-1" />
+            <p className="text-xs text-muted-foreground mt-1">{t.rateNote}</p>
           </div>
+
+          {/* Status indicator */}
+          {loading && (
+            <p className="text-xs text-muted-foreground animate-pulse">{t.loading}</p>
+          )}
+          {error && !loading && (
+            <p className="text-xs text-destructive">{t.error}</p>
+          )}
+          {usingFallback && !loading && (
+            <p className="text-xs text-amber-600">{t.fallbackWarning}</p>
+          )}
         </CardContent>
       </Card>
 
@@ -90,6 +132,16 @@ export default function MoneyTransferCalculator() {
           </CardContent>
         </Card>
       )}
+
+      {/* Source attribution */}
+      <div className="text-center space-y-1">
+        <p className="text-xs text-muted-foreground">{t.source}</p>
+        {lastUpdated && (
+          <p className="text-xs text-muted-foreground">
+            {t.updated}: {new Date(lastUpdated).toLocaleString(locale === 'uz' ? 'uz-UZ' : 'ru-RU')}
+          </p>
+        )}
+      </div>
     </div>
   )
 }

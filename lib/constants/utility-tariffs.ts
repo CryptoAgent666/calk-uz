@@ -39,7 +39,7 @@ export const GAS_TIERS_SUMMER: TariffTier[] = [
 
 /** Gas tiers — winter rates per month (UZS/m3) — typically same structure, higher consumption */
 export const GAS_TIERS_WINTER: TariffTier[] = [
-  { upTo: 100, pricePerUnit: 1000 },
+  { upTo: 500, pricePerUnit: 1000 },
   { upTo: 2500, pricePerUnit: 1800 },
   { upTo: 5000, pricePerUnit: 2100 },
   { upTo: 10000, pricePerUnit: 2500 },

@@ -21,7 +21,7 @@ export function calculateZakat(assets: {
   businessInventory: number
   receivables: number
   debtsOwed: number
-}, goldPricePerGram: number = 850_000): ZakatResult {
+}, goldPricePerGram: number = 950_000): ZakatResult {
   // Nisab = value of 85 grams of gold
   const nisab = 85 * goldPricePerGram
 

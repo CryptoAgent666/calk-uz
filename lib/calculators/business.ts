@@ -2,6 +2,8 @@
  * Business calculators: IP/LLC tax, margin, break-even, ROI, employer cost
  */
 
+import { BRV } from '@/lib/constants/brv'
+
 // IP (Individual Entrepreneur) Calculator
 export interface IPTaxResult {
   revenue: number
@@ -34,9 +36,8 @@ export function calculateIPTax(
   }
 
   // Social contributions for IP (fixed amount based on BRV)
-  const BRV = 412_000
   const socialTax = BRV * 12 // Monthly BRV × 12 months (simplified)
-  const inps = annualRevenue * 0.001
+  const inps = 0
 
   const totalTaxBurden = taxAmount + socialTax + inps
   const netIncome = annualRevenue - totalTaxBurden
@@ -76,7 +77,7 @@ export function calculateLLCTax(
   const profit = Math.max(0, revenue - expenses)
 
   const corporateTax = profit * 0.15
-  const vatAmount = isVatPayer ? revenue * 0.12 : 0
+  const vatAmount = isVatPayer ? Math.max(0, (revenue - expenses) * 0.12) : 0
   const socialTaxOnPayroll = payroll * 0.12
 
   const totalTaxBurden = corporateTax + socialTaxOnPayroll

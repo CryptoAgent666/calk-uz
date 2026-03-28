@@ -58,7 +58,7 @@ export function calculateDeposit(input: DepositInput): DepositResult {
 
     monthlyData.push({
       month,
-      balance: balance + (capitalization === 'none' ? 0 : 0),
+      balance: capitalization === 'none' ? balance : balance,
       interest,
       totalInterest,
     })
@@ -72,8 +72,13 @@ export function calculateDeposit(input: DepositInput): DepositResult {
   const taxAmount = totalInterest * taxRate
   const netInterest = totalInterest - taxAmount
   const totalInvested = initialAmount + monthlyTopUp * termMonths
-  const effectiveRate = totalInvested > 0
-    ? (totalInterest / totalInvested) * (12 / termMonths) * 100
+  // Time-weighted average investment for effective rate calculation
+  // Each top-up is invested for a decreasing number of months
+  const weightedInvestment = monthlyTopUp > 0
+    ? initialAmount * termMonths + monthlyTopUp * termMonths * (termMonths + 1) / 2
+    : initialAmount * termMonths
+  const effectiveRate = weightedInvestment > 0
+    ? (totalInterest / weightedInvestment) * 12 * 100
     : 0
 
   return {

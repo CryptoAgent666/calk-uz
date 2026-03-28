@@ -45,10 +45,8 @@ export interface VatThresholdResult {
 
 export function calculateVatThreshold(
   monthlyTurnovers: number[],
-  thresholdMRP: number = 60000,
-  mrpValue: number = 412_000
+  threshold: number = 1_000_000_000
 ): VatThresholdResult {
-  const threshold = thresholdMRP * mrpValue
   const currentTurnover = monthlyTurnovers.reduce((sum, t) => sum + t, 0)
   const remainingToThreshold = Math.max(0, threshold - currentTurnover)
   const percentUsed = (currentTurnover / threshold) * 100
