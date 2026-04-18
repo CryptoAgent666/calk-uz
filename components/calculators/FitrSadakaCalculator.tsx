@@ -30,12 +30,12 @@ export default function FitrSadakaCalculator() {
 
   const t = locale === 'uz'
     ? {
-        family: 'Oila aʼzolari', product: 'Mahsulot turi', pricePerKg: 'Narx (UZS/kg)',
+        family: "Oila a'zolari", product: 'Mahsulot turi', pricePerKg: 'Narx (UZS/kg)',
         results: 'Natijalar', perPerson: 'Har bir kishi uchun', totalKg: 'Jami (kg)',
         totalAmount: 'Jami summa',
-        wheat: 'Bugʼdoy (2 kg)', flour: 'Un (2 kg)', barley: 'Arpa (4 kg)',
+        wheat: "Bug'doy (2 kg)", flour: 'Un (2 kg)', barley: 'Arpa (4 kg)',
         rice: 'Guruch (2 kg)', raisins: 'Mayiz (2 kg)', dates: 'Xurmo (4 kg)',
-        official: 'Oʼzbekiston musulmonlari idorasi, Ramazon 2026',
+        official: "O'zbekiston musulmonlari idorasi, Ramazon 2026",
       }
     : {
         family: 'Членов семьи', product: 'Тип продукта', pricePerKg: 'Цена (UZS/кг)',

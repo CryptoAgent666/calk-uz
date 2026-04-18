@@ -28,16 +28,16 @@ export default function SickLeaveCalculator() {
     ? {
         totalEarnings: '12 oylik jami daromad (UZS)',
         sickDays: 'Kasallik kunlari (taqvim)',
-        insurance: 'Sugʼurta staji (oy)',
+        insurance: "Sug'urta staji (oy)",
         results: 'Natijalar',
-        avgDaily: 'Oʼrtacha kunlik daromad',
+        avgDaily: "O'rtacha kunlik daromad",
         expPercent: 'Stavka foizi',
         gross: 'Nafaqa (brutto)',
         ndfl: 'JSHSHS (12%)',
-        net: 'Qoʼlga olinadigan summa',
+        net: "Qo'lga olinadigan summa",
         placeholder: 'Summani kiriting',
-        info2026: '2026-yildan boshlab nafaqalarni DIS Jamgʼarmasi toʼlaydi. Kamida 6 oy sugʼurta staji talab qilinadi.',
-        notEligible: 'Sugʼurta staji yetarli emas (minimum 6 oy)',
+        info2026: "2026-yildan kasallik nafaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Kamida 6 oy sug'urta staji talab qilinadi.",
+        notEligible: "Sug'urta staji yetarli emas (minimum 6 oy)",
       }
     : {
         totalEarnings: 'Общий заработок за 12 мес. (UZS)',

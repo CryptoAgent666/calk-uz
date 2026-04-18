@@ -27,19 +27,19 @@ export default function MaternityCalculator() {
   const t = locale === 'uz'
     ? {
         totalEarnings: '12 oylik jami daromad (UZS)',
-        insurance: 'Sugʼurta staji (oy)',
-        complicated: 'Murakkab tugʼruq',
-        multiple: 'Koʼp bolali tugʼruq',
+        insurance: "Sug'urta staji (oy)",
+        complicated: "Murakkab tug'ruq",
+        multiple: "Ko'p bolali tug'ruq",
         results: 'Natijalar',
-        avgDaily: 'Oʼrtacha kunlik daromad',
-        prebirthDays: 'Tugʼruqgacha kunlar',
-        postbirthDays: 'Tugʼruqdan keyin kunlar',
+        avgDaily: "O'rtacha kunlik daromad",
+        prebirthDays: "Tug'ruqgacha kunlar",
+        postbirthDays: "Tug'ruqdan keyin kunlar",
         totalDays: 'Jami kunlar',
         benefitPercent: 'Foiz stavka',
         benefit: 'Nafaqa summasi',
         placeholder: 'Summani kiriting',
-        info2026: '2026-yildan boshlab dekretni DIS Jamgʼarmasi toʼlaydi. Kamida 10 oy sugʼurta staji talab qilinadi.',
-        notEligible: 'Sugʼurta staji yetarli emas (minimum 10 oy)',
+        info2026: "2026-yildan dekret nafaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Kamida 10 oy sug'urta staji talab qilinadi.",
+        notEligible: "Sug'urta staji yetarli emas (minimum 10 oy)",
       }
     : {
         totalEarnings: 'Общий заработок за 12 мес. (UZS)',
