@@ -174,6 +174,14 @@ export async function Footer() {
               </li>
               <li>
                 <Link
+                  href="/updates"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {locale === "uz" ? "Yangilanishlar" : "Обновления"}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >

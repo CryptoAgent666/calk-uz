@@ -57,15 +57,15 @@ export interface FuelResult {
   costPerKm: number
 }
 
-// Current fuel prices in UZS (approximate, 2025-2026)
+// Current fuel prices in UZS per liter/m³ (April 2026, Uzbekneftegas reference)
+// AI-80 was banned from December 1, 2025; AI-91 is no longer sold.
 export const FUEL_PRICES: Record<string, number> = {
-  'ai-91': 11_500,
-  'ai-92': 12_500,
-  'ai-95': 14_500,
-  'ai-98': 16_500,
-  'diesel': 13_000,
-  'gas_lpg': 5_500,
-  'gas_cng': 4_800,
+  'ai-92': 11_200,
+  'ai-95': 13_500,
+  'ai-100': 16_000,
+  'diesel': 12_500,
+  'gas_lpg': 5_500,   // propane per liter
+  'gas_cng': 5_350,   // methane per m³
 }
 
 export function calculateFuelConsumption(

@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
+import { Badge } from '@/components/ui/badge'
 import { calculateSickLeave } from '@/lib/calculators/social'
 import { formatCurrency } from '@/lib/utils'
 
@@ -12,61 +13,63 @@ export default function SickLeaveCalculator() {
   const locale = useLocale()
   const [totalEarnings, setTotalEarnings] = useState('')
   const [sickDays, setSickDays] = useState('')
-  const [experience, setExperience] = useState('5')
+  // 2026: insurance experience in months, not years of general service
+  const [insuranceMonths, setInsuranceMonths] = useState('60')
 
   const result = useMemo(() => {
     const earnings = parseFloat(totalEarnings.replace(/\s/g, '')) || 0
     const days = parseInt(sickDays) || 0
-    const exp = parseInt(experience) || 0
+    const months = parseInt(insuranceMonths) || 0
     if (earnings <= 0 || days <= 0) return null
-    return calculateSickLeave(earnings, days, exp)
-  }, [totalEarnings, sickDays, experience])
+    return calculateSickLeave(earnings, days, months)
+  }, [totalEarnings, sickDays, insuranceMonths])
 
   const t = locale === 'uz'
     ? {
         totalEarnings: '12 oylik jami daromad (UZS)',
-        sickDays: 'Kasallik kunlari',
-        experience: 'Ish staji (yil)',
+        sickDays: 'Kasallik kunlari (taqvim)',
+        insurance: 'Sugʼurta staji (oy)',
         results: 'Natijalar',
-        avgDaily: 'O\'rtacha kunlik daromad',
-        expPercent: 'Staj foizi',
-        gross: 'Kasallik varag\'i (brutto)',
+        avgDaily: 'Oʼrtacha kunlik daromad',
+        expPercent: 'Stavka foizi',
+        gross: 'Nafaqa (brutto)',
         ndfl: 'JSHSHS (12%)',
-        net: 'Qo\'lga olinadigan summa',
+        net: 'Qoʼlga olinadigan summa',
         placeholder: 'Summani kiriting',
-        employerPays: 'Ish beruvchi to\'laydi (10 kungacha)',
-        statePays: 'Davlat to\'laydi (10 kundan keyin)',
+        info2026: '2026-yildan boshlab nafaqalarni DIS Jamgʼarmasi toʼlaydi. Kamida 6 oy sugʼurta staji talab qilinadi.',
+        notEligible: 'Sugʼurta staji yetarli emas (minimum 6 oy)',
       }
     : {
         totalEarnings: 'Общий заработок за 12 мес. (UZS)',
-        sickDays: 'Дней болезни',
-        experience: 'Стаж (лет)',
+        sickDays: 'Дней болезни (календарных)',
+        insurance: 'Страховой стаж (мес)',
         results: 'Результаты',
         avgDaily: 'Среднедневной заработок',
-        expPercent: 'Процент от стажа',
+        expPercent: 'Процент ставки',
         gross: 'Больничный (брутто)',
         ndfl: 'НДФЛ (12%)',
         net: 'К выплате (нетто)',
         placeholder: 'Введите сумму',
-        employerPays: 'Оплата работодателя (до 10 дней)',
-        statePays: 'Оплата государства (после 10 дней)',
+        info2026: 'С 2026 года больничные платит Фонд государственного социального страхования. Нужно минимум 6 месяцев страхового стажа.',
+        notEligible: 'Недостаточно страхового стажа (минимум 6 месяцев)',
       }
 
   return (
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
+          <p className="text-xs text-muted-foreground bg-muted/40 rounded-md px-3 py-2">{t.info2026}</p>
           <div>
             <Label>{t.totalEarnings}</Label>
             <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={totalEarnings} onChange={(e) => setTotalEarnings(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.sickDays}</Label>
-            <Input type="number" value={sickDays} onChange={(e) => setSickDays(e.target.value)} className="mt-1" min={1} />
+            <Input type="number" value={sickDays} onChange={(e) => setSickDays(e.target.value)} className="mt-1" min={1} max={182} />
           </div>
           <div>
-            <Label>{t.experience}</Label>
-            <Input type="number" value={experience} onChange={(e) => setExperience(e.target.value)} className="mt-1" min={0} max={50} />
+            <Label>{t.insurance}</Label>
+            <Input type="number" value={insuranceMonths} onChange={(e) => setInsuranceMonths(e.target.value)} className="mt-1" min={0} max={600} />
           </div>
         </CardContent>
       </Card>
@@ -77,40 +80,32 @@ export default function SickLeaveCalculator() {
             <CardTitle className="text-lg">{t.results}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">{t.avgDaily}</span>
-              <span>{formatCurrency(result.averageDailyEarnings, 'UZS', locale)}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">{t.expPercent}</span>
-              <span>{result.experiencePercent}%</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">{t.gross}</span>
-              <span>{formatCurrency(result.grossAmount, 'UZS', locale)}</span>
-            </div>
-            {parseInt(sickDays) > 0 && (
-              <div className="rounded-md bg-muted/50 p-3 space-y-1.5 text-sm">
+            {!result.isEligible ? (
+              <Badge variant="destructive">{t.notEligible}</Badge>
+            ) : (
+              <>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">{t.employerPays}</span>
-                  <span>{formatCurrency(result.averageDailyEarnings * (result.experiencePercent / 100) * Math.min(parseInt(sickDays) || 0, 10), 'UZS', locale)}</span>
+                  <span className="text-muted-foreground">{t.avgDaily}</span>
+                  <span>{formatCurrency(result.averageDailyEarnings, 'UZS', locale)}</span>
                 </div>
-                {(parseInt(sickDays) || 0) > 10 && (
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">{t.statePays}</span>
-                    <span>{formatCurrency(result.averageDailyEarnings * (result.experiencePercent / 100) * ((parseInt(sickDays) || 0) - 10), 'UZS', locale)}</span>
-                  </div>
-                )}
-              </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t.expPercent}</span>
+                  <Badge variant="secondary">{result.experiencePercent}%</Badge>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t.gross}</span>
+                  <span>{formatCurrency(result.grossAmount, 'UZS', locale)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t.ndfl}</span>
+                  <span className="text-destructive">-{formatCurrency(result.ndflAmount, 'UZS', locale)}</span>
+                </div>
+                <div className="border-t pt-3 flex justify-between font-bold text-lg">
+                  <span>{t.net}</span>
+                  <span className="text-primary">{formatCurrency(result.netAmount, 'UZS', locale)}</span>
+                </div>
+              </>
             )}
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">{t.ndfl}</span>
-              <span className="text-destructive">-{formatCurrency(result.ndflAmount, 'UZS', locale)}</span>
-            </div>
-            <div className="border-t pt-3 flex justify-between font-bold text-lg">
-              <span>{t.net}</span>
-              <span className="text-primary">{formatCurrency(result.netAmount, 'UZS', locale)}</span>
-            </div>
           </CardContent>
         </Card>
       )}

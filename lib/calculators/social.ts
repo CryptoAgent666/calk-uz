@@ -54,34 +54,50 @@ export function calculateVacationPay(
 }
 
 // Sick leave
+// 2026 RULES (PKM #796 from 17.12.2025):
+// Benefits are paid by the State Social Insurance Fund (ФГСС).
+// Minimum 6 months of insurance experience required.
+// Percentage of average earnings depends on insurance experience (months).
 export interface SickLeaveResult {
   averageDailyEarnings: number
   sickDays: number
+  insuranceMonths: number
   experiencePercent: number
+  isEligible: boolean
   grossAmount: number
   ndflAmount: number
   netAmount: number
 }
 
+export function getSickLeavePercent(insuranceMonths: number): number {
+  if (insuranceMonths < 6) return 0        // not eligible
+  if (insuranceMonths < 24) return 60      // 6-23 months
+  if (insuranceMonths < 60) return 70      // 2-5 years
+  if (insuranceMonths < 96) return 80      // 5-8 years
+  return 100                               // 8+ years
+}
+
 export function calculateSickLeave(
   totalEarnings12Months: number,
   sickDays: number,
-  yearsOfExperience: number,
-  workingDaysIn12Months: number = 247
+  insuranceMonths: number,
+  calendarDaysIn12Months: number = 365
 ): SickLeaveResult {
-  let experiencePercent: number
-  if (yearsOfExperience >= 8) experiencePercent = 100
-  else if (yearsOfExperience >= 5) experiencePercent = 80
-  else experiencePercent = 60
-
-  const averageDailyEarnings = totalEarnings12Months / workingDaysIn12Months
-  const grossAmount = averageDailyEarnings * sickDays * (experiencePercent / 100)
+  const experiencePercent = getSickLeavePercent(insuranceMonths)
+  const isEligible = experiencePercent > 0
+  // 2026: payments are calendar-day based, funded by ФГСС
+  const averageDailyEarnings = totalEarnings12Months / calendarDaysIn12Months
+  const grossAmount = isEligible
+    ? averageDailyEarnings * sickDays * (experiencePercent / 100)
+    : 0
   const ndflAmount = grossAmount * 0.12
 
   return {
     averageDailyEarnings,
     sickDays,
+    insuranceMonths,
     experiencePercent,
+    isEligible,
     grossAmount,
     ndflAmount,
     netAmount: grossAmount - ndflAmount,
@@ -89,8 +105,14 @@ export function calculateSickLeave(
 }
 
 // Maternity benefits
+// 2026 RULES (PKM #796 from 17.12.2025):
+// Benefits are paid by ФГСС. Minimum 10 months of insurance experience required.
+// Benefit percentage depends on insurance experience.
 export interface MaternityResult {
   averageDailyEarnings: number
+  insuranceMonths: number
+  benefitPercent: number
+  isEligible: boolean
   totalDays: number
   grossBenefit: number
   ndflAmount: number
@@ -99,12 +121,22 @@ export interface MaternityResult {
   postbirthDays: number
 }
 
+export function getMaternityPercent(insuranceMonths: number): number {
+  if (insuranceMonths < 10) return 0       // not eligible
+  if (insuranceMonths < 24) return 75      // 10-23 months
+  if (insuranceMonths < 60) return 85      // 2-5 years
+  return 100                               // 5+ years
+}
+
 export function calculateMaternity(
   totalEarnings12Months: number,
+  insuranceMonths: number = 24,
   isComplicatedBirth: boolean = false,
   isMultipleBirth: boolean = false,
   calendarDaysIn12Months: number = 365
 ): MaternityResult {
+  const benefitPercent = getMaternityPercent(insuranceMonths)
+  const isEligible = benefitPercent > 0
   const averageDailyEarnings = totalEarnings12Months / calendarDaysIn12Months
   const prebirthDays = 70
   let postbirthDays = 56
@@ -112,11 +144,16 @@ export function calculateMaternity(
   if (isMultipleBirth) postbirthDays = 70
 
   const totalDays = prebirthDays + postbirthDays
-  const grossBenefit = averageDailyEarnings * totalDays
+  const grossBenefit = isEligible
+    ? averageDailyEarnings * totalDays * (benefitPercent / 100)
+    : 0
   const ndflAmount = 0 // Maternity benefits are tax-exempt
 
   return {
     averageDailyEarnings,
+    insuranceMonths,
+    benefitPercent,
+    isEligible,
     totalDays,
     grossBenefit,
     ndflAmount,
@@ -200,7 +237,10 @@ export function calculatePension(
   averageMonthlySalary: number,
   yearsOfService: number
 ): PensionResult {
-  const retirementAge = isMale ? 60 : 57
+  // Statutory retirement age in Uzbekistan:
+  // Men — 60 (25 years of service required)
+  // Women — 55 (20 years of service required); 54 with full 20-year record
+  const retirementAge = isMale ? 60 : 55
   const yearsToRetirement = Math.max(0, retirementAge - currentAge)
 
   // Simplified pension calculation for UZ

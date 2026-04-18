@@ -6,36 +6,44 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
+import { Badge } from '@/components/ui/badge'
 import { calculateMaternity } from '@/lib/calculators/social'
 import { formatCurrency } from '@/lib/utils'
 
 export default function MaternityCalculator() {
   const locale = useLocale()
   const [totalEarnings, setTotalEarnings] = useState('')
+  const [insuranceMonths, setInsuranceMonths] = useState('24')
   const [isComplicated, setIsComplicated] = useState(false)
   const [isMultiple, setIsMultiple] = useState(false)
 
   const result = useMemo(() => {
     const earnings = parseFloat(totalEarnings.replace(/\s/g, '')) || 0
+    const months = parseInt(insuranceMonths) || 0
     if (earnings <= 0) return null
-    return calculateMaternity(earnings, isComplicated, isMultiple)
-  }, [totalEarnings, isComplicated, isMultiple])
+    return calculateMaternity(earnings, months, isComplicated, isMultiple)
+  }, [totalEarnings, insuranceMonths, isComplicated, isMultiple])
 
   const t = locale === 'uz'
     ? {
         totalEarnings: '12 oylik jami daromad (UZS)',
-        complicated: 'Murakkab tug\'ruq',
-        multiple: 'Ko\'p bolali tug\'ruq',
+        insurance: 'Sugʼurta staji (oy)',
+        complicated: 'Murakkab tugʼruq',
+        multiple: 'Koʼp bolali tugʼruq',
         results: 'Natijalar',
-        avgDaily: 'O\'rtacha kunlik daromad',
-        prebirthDays: 'Tug\'ruqgacha kunlar',
-        postbirthDays: 'Tug\'ruqdan keyin kunlar',
+        avgDaily: 'Oʼrtacha kunlik daromad',
+        prebirthDays: 'Tugʼruqgacha kunlar',
+        postbirthDays: 'Tugʼruqdan keyin kunlar',
         totalDays: 'Jami kunlar',
+        benefitPercent: 'Foiz stavka',
         benefit: 'Nafaqa summasi',
         placeholder: 'Summani kiriting',
+        info2026: '2026-yildan boshlab dekretni DIS Jamgʼarmasi toʼlaydi. Kamida 10 oy sugʼurta staji talab qilinadi.',
+        notEligible: 'Sugʼurta staji yetarli emas (minimum 10 oy)',
       }
     : {
         totalEarnings: 'Общий заработок за 12 мес. (UZS)',
+        insurance: 'Страховой стаж (мес)',
         complicated: 'Осложнённые роды',
         multiple: 'Многоплодная беременность',
         results: 'Результаты',
@@ -43,17 +51,25 @@ export default function MaternityCalculator() {
         prebirthDays: 'Дней до родов',
         postbirthDays: 'Дней после родов',
         totalDays: 'Всего дней',
+        benefitPercent: 'Процент ставки',
         benefit: 'Сумма пособия',
         placeholder: 'Введите сумму',
+        info2026: 'С 2026 года декретные платит Фонд государственного соцстрахования. Требуется минимум 10 месяцев страхового стажа.',
+        notEligible: 'Недостаточно страхового стажа (минимум 10 месяцев)',
       }
 
   return (
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
+          <p className="text-xs text-muted-foreground bg-muted/40 rounded-md px-3 py-2">{t.info2026}</p>
           <div>
             <Label>{t.totalEarnings}</Label>
             <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={totalEarnings} onChange={(e) => setTotalEarnings(e.target.value)} className="mt-1 text-lg" />
+          </div>
+          <div>
+            <Label>{t.insurance}</Label>
+            <Input type="number" value={insuranceMonths} onChange={(e) => setInsuranceMonths(e.target.value)} className="mt-1" min={0} max={600} />
           </div>
           <div className="flex items-center justify-between">
             <Label htmlFor="complicated" className="cursor-pointer">{t.complicated}</Label>
@@ -72,26 +88,36 @@ export default function MaternityCalculator() {
             <CardTitle className="text-lg">{t.results}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">{t.avgDaily}</span>
-              <span>{formatCurrency(result.averageDailyEarnings, 'UZS', locale)}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">{t.prebirthDays}</span>
-              <span>{result.prebirthDays}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">{t.postbirthDays}</span>
-              <span>{result.postbirthDays}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">{t.totalDays}</span>
-              <span>{result.totalDays}</span>
-            </div>
-            <div className="border-t pt-3 flex justify-between font-bold text-lg">
-              <span>{t.benefit}</span>
-              <span className="text-primary">{formatCurrency(result.netBenefit, 'UZS', locale)}</span>
-            </div>
+            {!result.isEligible ? (
+              <Badge variant="destructive">{t.notEligible}</Badge>
+            ) : (
+              <>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t.avgDaily}</span>
+                  <span>{formatCurrency(result.averageDailyEarnings, 'UZS', locale)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t.prebirthDays}</span>
+                  <span>{result.prebirthDays}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t.postbirthDays}</span>
+                  <span>{result.postbirthDays}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t.totalDays}</span>
+                  <span>{result.totalDays}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t.benefitPercent}</span>
+                  <Badge variant="secondary">{result.benefitPercent}%</Badge>
+                </div>
+                <div className="border-t pt-3 flex justify-between font-bold text-lg">
+                  <span>{t.benefit}</span>
+                  <span className="text-primary">{formatCurrency(result.netBenefit, 'UZS', locale)}</span>
+                </div>
+              </>
+            )}
           </CardContent>
         </Card>
       )}

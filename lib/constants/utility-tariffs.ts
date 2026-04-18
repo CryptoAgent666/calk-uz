@@ -56,8 +56,8 @@ export const WATER_COLD_RATE = 3808
 /** Hot water tariff (UZS per m3) */
 export const WATER_HOT_RATE = 8928.67
 
-/** Sewage/drainage rate (UZS per m3, typically included) */
-export const WATER_SEWAGE_RATE = 2182
+/** Sewage/drainage rate (UZS per m3, Tashkent region average, 2026) */
+export const WATER_SEWAGE_RATE = 1456
 
 // =============================================
 // HEATING (Отопление / Isitish)

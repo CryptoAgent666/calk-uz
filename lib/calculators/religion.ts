@@ -21,7 +21,7 @@ export function calculateZakat(assets: {
   businessInventory: number
   receivables: number
   debtsOwed: number
-}, goldPricePerGram: number = 950_000): ZakatResult {
+}, goldPricePerGram: number = 1_900_000): ZakatResult {
   // Nisab = value of 85 grams of gold
   const nisab = 85 * goldPricePerGram
 
@@ -65,15 +65,32 @@ export interface FitrSadaqaResult {
   productType: string
 }
 
+export type FitrProductType = 'wheat' | 'flour' | 'barley' | 'rice' | 'raisins' | 'dates'
+
+/**
+ * Official 2026 per-person amounts from the Uzbekistan Muslims Board (muslim.uz).
+ * Values reflect 2 kg of wheat/flour/raisins, 4 kg of barley/dates, etc.
+ */
+export const FITR_OFFICIAL_2026: Record<FitrProductType, { kg: number; sum: number }> = {
+  wheat:   { kg: 2, sum: 10_000 },
+  flour:   { kg: 2, sum: 12_000 },
+  barley:  { kg: 4, sum: 20_000 },
+  rice:    { kg: 2, sum: 30_000 }, // market average, not officially listed
+  raisins: { kg: 2, sum: 110_000 },
+  dates:   { kg: 4, sum: 200_000 },
+}
+
 export function calculateFitrSadaqa(
   familyMembers: number,
-  productType: 'wheat' | 'rice' | 'dates' = 'wheat',
-  pricePerKg: number = 15_000 // approximate price per kg
+  productType: FitrProductType = 'wheat',
+  // If a custom price is not passed, use the official 2026 per-kg rate
+  pricePerKg?: number
 ): FitrSadaqaResult {
-  // 1 sa' ≈ 2.5 kg of staple food per person
-  const kgPerPerson = 2.5
+  const official = FITR_OFFICIAL_2026[productType] ?? FITR_OFFICIAL_2026.wheat
+  const kgPerPerson = official.kg
+  const effectivePricePerKg = pricePerKg ?? official.sum / official.kg
   const inKg = kgPerPerson * familyMembers
-  const amountPerPerson = kgPerPerson * pricePerKg
+  const amountPerPerson = kgPerPerson * effectivePricePerKg
   const totalAmount = amountPerPerson * familyMembers
 
   return {

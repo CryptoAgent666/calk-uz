@@ -14,7 +14,7 @@ export default function ZakatCalculator() {
   const [cash, setCash] = useState('')
   const [bankDeposits, setBankDeposits] = useState('')
   const [goldGrams, setGoldGrams] = useState('0')
-  const [goldPrice, setGoldPrice] = useState('950000')
+  const [goldPrice, setGoldPrice] = useState('1900000')
   const [investments, setInvestments] = useState('0')
   const [businessInventory, setBusinessInventory] = useState('0')
   const [debtsOwed, setDebtsOwed] = useState('0')
@@ -25,7 +25,7 @@ export default function ZakatCalculator() {
     const g = parseFloat(goldGrams) || 0
     const inv = parseFloat(investments.replace(/\s/g, '')) || 0
     const bi = parseFloat(businessInventory.replace(/\s/g, '')) || 0
-    const gp = parseFloat(goldPrice.replace(/\s/g, '')) || 950_000
+    const gp = parseFloat(goldPrice.replace(/\s/g, '')) || 1_900_000
     if (c <= 0 && bd <= 0 && g <= 0 && inv <= 0 && bi <= 0) return null
     return calculateZakat({
       cash: c, bankDeposits: bd, goldGrams: parseFloat(goldGrams) || 0,
