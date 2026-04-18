@@ -87,6 +87,14 @@ export default async function AboutPage({
       url: `https://calk.uz/${locale}/about`,
       isPartOf: { "@type": "WebSite", name: "Calk.UZ", url: "https://calk.uz" },
       inLanguage: locale === "uz" ? "uz" : "ru",
+      mainEntity: {
+        "@type": "Person",
+        "@id": "https://calk.uz/#founder",
+        name: "Konstantin Yakovlev",
+        alternateName: "Константин Яковлев",
+        jobTitle: locale === "uz" ? "Asoschi va rahbar" : "Основатель и руководитель",
+        worksFor: { "@type": "Organization", name: "Calk.UZ", url: "https://calk.uz" },
+      },
     },
     {
       "@context": "https://schema.org",
@@ -199,6 +207,47 @@ export default async function AboutPage({
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base">
                 {t("about_editorial_p1")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="mb-16">
+        <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
+          <div className="flex items-start gap-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 dark:bg-emerald-900/30">
+              <User className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-xl font-semibold text-foreground mb-3">
+                {locale === "uz" ? "Loyiha asoschisi" : "Основатель проекта"}
+              </h2>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 text-white font-semibold text-lg">
+                  КЯ
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">
+                    {locale === "uz" ? "Konstantin Yakovlev" : "Константин Яковлев"}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {locale === "uz"
+                      ? "Asoschi, mahsulot va muhandislik rahbari"
+                      : "Основатель, руководитель продукта и разработки"}
+                  </p>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+                {locale === "uz"
+                  ? "Konstantin Yakovlev — Calk.UZ asoschisi. U fintech va moliyaviy kalkulyatorlar sohasida 10 yildan ortiq tajribaga ega. 2022-yilda Qozog'iston bozori uchun Calk.KZ loyihasini ishga tushirdi, keyin O'zbekiston aholisi uchun Calk.UZ ni yaratdi."
+                  : "Константин Яковлев — основатель Calk.UZ. Имеет более 10 лет опыта в финтехе и разработке финансовых калькуляторов. В 2022 году запустил проект Calk.KZ для рынка Казахстана, а затем создал Calk.UZ для жителей Узбекистана."}
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-base">
+                {locale === "uz"
+                  ? "Loyihaning moliya mutaxassislari, buxgalterlar va yuristlar bilan hamkorlikda barcha kalkulyator algoritmlari O'zbekiston Respublikasining amaldagi qonunchiligiga muvofiq tekshiriladi va yangilanib turadi."
+                  : "В сотрудничестве с финансовыми специалистами, бухгалтерами и юристами все алгоритмы калькуляторов проверяются и актуализируются в соответствии с действующим законодательством Республики Узбекистан."}
               </p>
             </div>
           </div>

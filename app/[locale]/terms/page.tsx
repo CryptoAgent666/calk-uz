@@ -154,10 +154,32 @@ export default async function TermsPage({
           </ul>
         </section>
 
+        {/* Advertising */}
+        <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            {isUz ? "6. Reklama" : "6. Реклама"}
+          </h2>
+          <p className="text-muted-foreground leading-relaxed text-sm mb-3">
+            {isUz
+              ? "Sayt uchinchi tomon reklama tarmoqlaridan, jumladan Google AdSense xizmatidan reklama ko'rsatishi mumkin. Reklama kontenti Calk.UZ tomonidan emas, balki tashqi reklama beruvchilar tomonidan taqdim etiladi."
+              : "Сайт может содержать рекламу от сторонних рекламных сетей, в том числе от Google AdSense. Содержание рекламных объявлений предоставляется внешними рекламодателями, а не Calk.UZ."}
+          </p>
+          <p className="text-muted-foreground leading-relaxed text-sm mb-3">
+            {isUz
+              ? "Calk.UZ reklama tovarlari, xizmatlari yoki reklama beruvchining saytiga o'tishdan keyin yuzaga keladigan munosabatlar uchun javobgarlikni o'z zimmasiga olmaydi. Reklamada taqdim etilgan takliflarning ishonchliligini foydalanuvchi mustaqil tekshirishi kerak."
+              : "Calk.UZ не несёт ответственности за рекламируемые товары, услуги или отношения, возникающие после перехода на сайт рекламодателя. Достоверность предложений, представленных в рекламе, пользователь должен проверять самостоятельно."}
+          </p>
+          <p className="text-muted-foreground leading-relaxed text-sm">
+            {isUz
+              ? "Reklama cookie fayllari va shaxsiylashtirilgan reklamadan voz kechish tartibi bizning Maxfiylik siyosatida batafsil tavsiflangan."
+              : "Порядок отказа от рекламных cookie и персонализированной рекламы подробно описан в нашей Политике конфиденциальности."}
+          </p>
+        </section>
+
         {/* Third-party links */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "6. Tashqi havolalar" : "6. Ссылки на сторонние ресурсы"}
+            {isUz ? "7. Tashqi havolalar" : "7. Ссылки на сторонние ресурсы"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz
@@ -169,7 +191,7 @@ export default async function TermsPage({
         {/* Changes to terms */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "7. Shartlarni o'zgartirish" : "7. Изменение условий"}
+            {isUz ? "8. Shartlarni o'zgartirish" : "8. Изменение условий"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz
@@ -181,7 +203,7 @@ export default async function TermsPage({
         {/* Governing law */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "8. Qo'llaniladigan huquq" : "8. Применимое право"}
+            {isUz ? "9. Qo'llaniladigan huquq" : "9. Применимое право"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm mb-3">
             {isUz
@@ -198,7 +220,7 @@ export default async function TermsPage({
         {/* Contact */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "9. Bog'lanish" : "9. Контакты"}
+            {isUz ? "10. Bog'lanish" : "10. Контакты"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz

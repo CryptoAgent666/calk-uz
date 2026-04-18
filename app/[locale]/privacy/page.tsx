@@ -182,10 +182,97 @@ export default async function PrivacyPage({
           </p>
         </section>
 
+        {/* Google AdSense detailed disclosure */}
+        <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            {isUz
+              ? "5. Google AdSense va reklama cookie fayllari"
+              : "5. Google AdSense и рекламные cookie"}
+          </h2>
+          <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+            {isUz
+              ? "Saytimizda reklama ko'rsatish uchun Google AdSense xizmatidan foydalaniladi. Google va uning sheriklari — uchinchi tomon vendorlar — o'z cookie fayllaridan, jumladan DoubleClick DART cookie faylidan foydalanib, foydalanuvchining ushbu saytga va boshqa saytlarga oldingi tashriflariga asoslanib reklama ko'rsatadi."
+              : "На нашем сайте используется сервис Google AdSense для показа рекламы. Google и его партнёры — сторонние вендоры — используют файлы cookie, включая DoubleClick DART cookie, для показа рекламы на основе предыдущих посещений пользователем этого и других сайтов."}
+          </p>
+          <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+            {isUz
+              ? "Reklama cookie fayllari Google va uning sheriklariga foydalanuvchi qiziqishlariga mos reklamalarni ko'rsatishga imkon beradi. Sayt egasi sifatida biz foydalanuvchilarning shaxsiy ma'lumotlariga to'g'ridan-to'g'ri kirish imkoniga ega emasmiz."
+              : "Рекламные cookie позволяют Google и его партнёрам показывать пользователям релевантную их интересам рекламу. Как владелец сайта мы не имеем прямого доступа к персональным данным пользователей."}
+          </p>
+          <h3 className="text-base font-semibold text-foreground mb-2">
+            {isUz
+              ? "Shaxsiylashtirilgan reklamadan voz kechish"
+              : "Как отказаться от персонализированной рекламы"}
+          </h3>
+          <ul className="list-disc list-inside text-muted-foreground text-sm space-y-2 mb-4">
+            <li>
+              {isUz
+                ? "Google reklama sozlamalari sahifasida DART cookie faylidan va shaxsiylashtirilgan reklamadan voz kechishingiz mumkin: "
+                : "Вы можете отключить DART cookie и персонализированную рекламу в настройках рекламы Google: "}
+              <a
+                href="https://www.google.com/settings/ads"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline break-all"
+              >
+                google.com/settings/ads
+              </a>
+            </li>
+            <li>
+              {isUz
+                ? "Google reklama texnologiyalari haqida batafsil: "
+                : "Подробнее о рекламных технологиях Google: "}
+              <a
+                href="https://policies.google.com/technologies/ads"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline break-all"
+              >
+                policies.google.com/technologies/ads
+              </a>
+            </li>
+            <li>
+              {isUz
+                ? "Uchinchi tomon vendorlaridan cookie fayllarini rad etish uchun Network Advertising Initiative sahifasiga tashrif buyuring: "
+                : "Для отказа от cookie сторонних вендоров посетите страницу Network Advertising Initiative: "}
+              <a
+                href="https://optout.networkadvertising.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline break-all"
+              >
+                optout.networkadvertising.org
+              </a>
+            </li>
+          </ul>
+          <p className="text-muted-foreground leading-relaxed text-sm">
+            {isUz
+              ? "Yevropa Ittifoqi foydalanuvchilari uchun saytga birinchi tashrifda ko'rsatiladigan cookie bannerida reklama cookie fayllariga rozilik berish yoki rad etish imkoniyati taqdim etiladi (Google Consent Mode v2)."
+              : "Для пользователей из Европейского Союза при первом посещении сайта в cookie-баннере предоставляется возможность дать согласие или отказаться от рекламных cookie (Google Consent Mode v2)."}
+          </p>
+        </section>
+
+        {/* Children's Privacy (COPPA) */}
+        <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            {isUz ? "6. Bolalar maxfiyligi" : "6. Конфиденциальность детей"}
+          </h2>
+          <p className="text-muted-foreground leading-relaxed text-sm mb-3">
+            {isUz
+              ? "Calk.UZ 13 yoshdan kichik bolalardan atayin shaxsiy ma'lumotlarni to'plamaydi. Sayt moliyaviy hisob-kitoblar uchun mo'ljallangan bo'lib, asosan kattalar auditoriyasiga qaratilgan."
+              : "Calk.UZ не собирает намеренно персональные данные от детей младше 13 лет. Сайт предназначен для финансовых расчётов и ориентирован преимущественно на взрослую аудиторию."}
+          </p>
+          <p className="text-muted-foreground leading-relaxed text-sm">
+            {isUz
+              ? "Agar siz 13 yoshdan kichik bolaning ota-onasi yoki vasiysi bo'lsangiz va bolangiz bizga shaxsiy ma'lumot taqdim etgan deb hisoblasangiz, iltimos, info@calk.uz manzilga murojaat qiling — biz bunday ma'lumotlarni o'chirish uchun zarur choralarni ko'ramiz. Google AdSense ham 13 yoshdan kichik bolalarga yo'naltirilgan reklamani ko'rsatmaslik siyosatiga amal qiladi."
+              : "Если вы родитель или опекун ребёнка младше 13 лет и считаете, что ваш ребёнок предоставил нам персональные данные, пожалуйста, свяжитесь с нами по адресу info@calk.uz — мы примем необходимые меры для удаления таких данных. Google AdSense также следует политике неотображения рекламы, направленной на детей младше 13 лет."}
+          </p>
+        </section>
+
         {/* User rights */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "5. Foydalanuvchi huquqlari" : "5. Права пользователей"}
+            {isUz ? "7. Foydalanuvchi huquqlari" : "7. Права пользователей"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm mb-4">
             {isUz
@@ -224,7 +311,7 @@ export default async function PrivacyPage({
         {/* Data retention */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "6. Ma'lumotlarni saqlash muddati" : "6. Срок хранения данных"}
+            {isUz ? "8. Ma'lumotlarni saqlash muddati" : "8. Срок хранения данных"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz
@@ -236,7 +323,7 @@ export default async function PrivacyPage({
         {/* Data protection */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "7. Ma'lumotlarni himoya qilish" : "7. Защита данных"}
+            {isUz ? "9. Ma'lumotlarni himoya qilish" : "9. Защита данных"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz
@@ -248,7 +335,7 @@ export default async function PrivacyPage({
         {/* Contact */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "8. Bog'lanish" : "8. Контакты"}
+            {isUz ? "10. Bog'lanish" : "10. Контакты"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz

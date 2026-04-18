@@ -50,6 +50,7 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://calk.uz/#organization",
       name: "Calk.UZ",
       url: "https://calk.uz",
       logo: {
@@ -60,7 +61,17 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
       },
       description:
         "Бесплатные онлайн-калькуляторы для жителей Узбекистана. Налоги, зарплата, кредиты, вклады и другие финансовые расчёты.",
-      sameAs: ["https://t.me/calkuz_bot"],
+      sameAs: [
+        "https://t.me/calkuz_bot",
+        "https://play.google.com/store/apps/details?id=uz.calk.calculator",
+      ],
+      founder: {
+        "@type": "Person",
+        "@id": "https://calk.uz/#founder",
+        name: "Konstantin Yakovlev",
+        alternateName: "Константин Яковлев",
+        jobTitle: "Founder",
+      },
       contactPoint: {
         "@type": "ContactPoint",
         email: "info@calk.uz",
