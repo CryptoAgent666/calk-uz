@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { getTranslations, setRequestLocale } from "next-intl/server"
-import { Sparkles, CheckCircle2 } from "lucide-react"
+import { Sparkles } from "lucide-react"
 
 export async function generateMetadata({
   params,
@@ -12,8 +12,8 @@ export async function generateMetadata({
   return {
     title: isUz ? "Yangilanishlar" : "Обновления",
     description: isUz
-      ? "Calk.UZ yangilanishlari — kalkulyatorlar, stavkalar va tariflardagi oʼzgarishlar jurnali."
-      : "Обновления Calk.UZ — журнал изменений в калькуляторах, ставках и тарифах.",
+      ? "Calk.UZ yangilanishlari — kalkulyatorlar, stavkalar va tariflardagi oʼzgarishlar."
+      : "Обновления Calk.UZ — что изменилось в калькуляторах, ставках и тарифах.",
     alternates: {
       canonical: `/${locale}/updates`,
       languages: {
@@ -25,18 +25,15 @@ export async function generateMetadata({
   }
 }
 
-type Severity = "critical" | "high" | "medium" | "low"
-
 interface UpdateItem {
   titleRu: string
   titleUz: string
   descRu: string
   descUz: string
-  severity: Severity
 }
 
 interface UpdateBlock {
-  date: string // ISO date
+  date: string
   dateLabelRu: string
   dateLabelUz: string
   items: UpdateItem[]
@@ -49,83 +46,60 @@ const UPDATES: UpdateBlock[] = [
     dateLabelUz: "2026-yil 18-aprel",
     items: [
       {
-        severity: "critical",
-        titleRu: "Закят: цена золота обновлена до рыночной (апр 2026)",
-        titleUz: "Zakat: oltin narxi bozor narxiga yangilandi (apr 2026)",
+        titleRu: "Больничный и декретный — новая формула 2026",
+        titleUz: "Kasallik varaqasi va dekret — 2026-ning yangi formulasi",
         descRu:
-          "Дефолт цены грамма золота поднят с 950 000 до 1 900 000 сум — это реальная стоимость на 17 апреля 2026. Нисаб теперь рассчитывается корректно (85 г × 1 900 000 ≈ 161,5 млн сум).",
+          "С 1 января 2026 пособия платит Фонд государственного социального страхования. Расчёт теперь по страховому стажу (в месяцах), а не по общему стажу. Больничный — нужно минимум 6 месяцев стажа, декретный — минимум 10 месяцев.",
         descUz:
-          "Gram oltin uchun standart narx 950 000 dan 1 900 000 so‘mga oshirildi — bu 17-aprel 2026 dagi haqiqiy narx. Nisob endi to‘g‘ri hisoblanadi (85 g × 1 900 000 ≈ 161,5 mln so‘m).",
+          "2026-yil 1-yanvardan nafaqalarni Davlat ijtimoiy sug‘urtasi jamg‘armasi to‘laydi. Hisob-kitob sug‘urta staji bo‘yicha (oylarda). Kasallik varaqasi — kamida 6 oy, dekret — kamida 10 oy staj kerak.",
       },
       {
-        severity: "critical",
-        titleRu: "Фитр-садака: официальные суммы от Управления мусульман Узбекистана",
-        titleUz: "Fitr-sadaqa: O‘zbekiston musulmonlari idorasining rasmiy raqamlari",
+        titleRu: "Пенсия — возраст женщин 55 лет",
+        titleUz: "Pensiya — ayollar uchun 55 yosh",
         descRu:
-          "Добавлены все 6 официальных вариантов на Рамадан-2026: пшеница 10 000 / мука 12 000 / ячмень 20 000 / рис / изюм 110 000 / финики 200 000 сум на человека. Цена автоматически подставляется при выборе продукта.",
+          "Исправлен возраст выхода на пенсию для женщин: 55 лет (54 года при стаже от 20 лет). Для мужчин — 60 лет, без изменений.",
         descUz:
-          "Ramazon-2026 uchun barcha 6 rasmiy variant qo‘shildi: bug‘doy 10 000 / un 12 000 / arpa 20 000 / guruch / mayiz 110 000 / xurmo 200 000 so‘m kishi boshiga. Mahsulot tanlanganda narx avtomatik to‘ldiriladi.",
+          "Ayollar uchun pensiya yoshi tuzatildi: 55 yil (20+ yillik staj bilan 54 yil). Erkaklar uchun — 60 yil, o‘zgarishsiz.",
       },
       {
-        severity: "critical",
-        titleRu: "Больничный и декретный: новая методика ФГСС с 01.01.2026",
-        titleUz: "Kasallik varaqasi va dekret: DIS jamg‘armasining 01.01.2026 dan yangi metodikasi",
+        titleRu: "Закят — актуальная цена золота",
+        titleUz: "Zakat — oltinning dolzarb narxi",
         descRu:
-          "Калькуляторы переведены на новую систему (ПКМ №796 от 17.12.2025). Расчёт теперь по страховому стажу (месяцы), а не по общему стажу (годы). Больничный: мин. 6 мес. стажа. Декрет: мин. 10 мес. Платит Фонд государственного социального страхования напрямую.",
+          "Цена грамма золота по умолчанию поднята до 1 900 000 сум — это рыночная цена на апрель 2026. Нисаб теперь считается корректно.",
         descUz:
-          "Kalkulyatorlar yangi tizimga o‘tkazildi (17.12.2025-dagi VMQ №796). Hisob-kitob endi sug‘urta staji bo‘yicha (oylar), umumiy staj emas. Kasallik varaqasi: min. 6 oy staj. Dekret: min. 10 oy. DIS jamg‘armasi to‘g‘ridan-to‘g‘ri to‘laydi.",
+          "Gram oltin narxi 1 900 000 so‘mga yangilandi — bu 2026-yil aprelidagi bozor narxi. Nisob endi to‘g‘ri hisoblanadi.",
       },
       {
-        severity: "critical",
-        titleRu: "Пенсия: возраст женщин исправлен на 55 лет",
-        titleUz: "Pensiya: ayollarning yoshi 55 yilga tuzatildi",
+        titleRu: "Фитр-садака — все 6 вариантов на Рамадан-2026",
+        titleUz: "Fitr-sadaqa — Ramazon-2026 uchun 6 ta variant",
         descRu:
-          "По закону пенсионный возраст для женщин — 55 лет (54 года при стаже от 20 лет). Раньше калькулятор показывал 57. Мужчины — без изменений, 60 лет.",
+          "По данным Управления мусульман Узбекистана: пшеница 10 000, мука 12 000, ячмень 20 000, изюм 110 000, финики 200 000 сум на человека. Цена подставляется автоматически при выборе продукта.",
         descUz:
-          "Qonun bo‘yicha ayollarning pensiya yoshi — 55 yil (20+ yillik staj bilan 54 yil). Ilgari kalkulyator 57 ko‘rsatgan. Erkaklar — o‘zgarishsiz, 60 yil.",
+          "O‘zbekiston musulmonlari idorasi ma‘lumotlariga ko‘ra: bug‘doy 10 000, un 12 000, arpa 20 000, mayiz 110 000, xurmo 200 000 so‘m kishi boshiga. Mahsulot tanlanganda narx avtomatik qo‘yiladi.",
       },
       {
-        severity: "high",
-        titleRu: "Топливо: цены на апрель 2026, убран AI-91",
-        titleUz: "Yoqilg‘i: 2026-yil aprel narxlari, AI-91 olib tashlandi",
+        titleRu: "Цены на топливо — апрель 2026",
+        titleUz: "Yoqilg‘i narxlari — 2026-yil aprel",
         descRu:
-          "AI-92 11 200 · AI-95 13 500 · AI-100 16 000 · дизель 12 500 · метан 5 350 · пропан 5 500. AI-91 удалён (больше не продаётся). AI-98 заменён на AI-100.",
+          "АИ-92 — 11 200, АИ-95 — 13 500, АИ-100 — 16 000, дизель — 12 500, метан — 5 350, пропан — 5 500 сум. AI-91 убран — больше не продаётся.",
         descUz:
-          "AI-92 11 200 · AI-95 13 500 · AI-100 16 000 · dizel 12 500 · metan 5 350 · propan 5 500. AI-91 olib tashlandi (endi sotilmaydi). AI-98 o‘rniga AI-100.",
+          "AI-92 — 11 200, AI-95 — 13 500, AI-100 — 16 000, dizel — 12 500, metan — 5 350, propan — 5 500 so‘m. AI-91 olib tashlandi — endi sotilmaydi.",
       },
       {
-        severity: "medium",
-        titleRu: "Ставки банков приведены к реальному рынку (апр 2026)",
-        titleUz: "Banklarning stavkalari real bozorga moslashtirildi (apr 2026)",
+        titleRu: "Ставки банков — реальный рынок на апрель 2026",
+        titleUz: "Banklar stavkalari — 2026-yil aprel real bozori",
         descRu:
-          "Депозиты UZS 18–22,5% (раньше 22–26%), кредиты 22–28%, ипотека 17–23%. Частные банки: AVO до 22,5%, TBC/Orient/Trust ≈ 21%. Госбанки: 18–19%.",
+          "Обновлены ставки 16 банков. Вклады в сумах — 18–22,5% годовых, кредиты — 22–28%, ипотека — 17–23%. Частные банки дают чуть больше, государственные — стабильнее.",
         descUz:
-          "UZS omonatlar 18–22,5% (ilgari 22–26%), kreditlar 22–28%, ipoteka 17–23%. Xususiy banklar: AVO 22,5% gacha, TBC/Orient/Trust ≈ 21%. Davlat banklari: 18–19%.",
+          "16 bank stavkalari yangilandi. So‘mdagi omonatlar — yillik 18–22,5%, kreditlar — 22–28%, ipoteka — 17–23%. Xususiy banklar biroz ko‘proq, davlat banklari barqarorroq.",
       },
       {
-        severity: "medium",
-        titleRu: "Канализация: обновлён тариф на реальный (1 456 сум/м³)",
-        titleUz: "Kanalizatsiya: tarif real qiymatga yangilandi (1 456 so‘m/m³)",
+        titleRu: "Тариф канализации — 1 456 сум/м³",
+        titleUz: "Kanalizatsiya tarifi — 1 456 so‘m/m³",
         descRu:
-          "Раньше было 2 182 сум/м³ — завышено. Актуальный тариф для Ташкентской области с 01.07.2025 — 1 456 сум/м³ с НДС.",
+          "Обновлён на актуальный тариф Ташкентской области с июля 2025 (с НДС). Раньше калькулятор считал по устаревшему тарифу 2 182 сум/м³.",
         descUz:
-          "Ilgari 2 182 so‘m/m³ edi — oshirilgan. Toshkent viloyati uchun 01.07.2025 dan amaldagi tarif — 1 456 so‘m/m³ QQS bilan.",
-      },
-    ],
-  },
-  {
-    date: "2026-04-17",
-    dateLabelRu: "17 апреля 2026",
-    dateLabelUz: "2026-yil 17-aprel",
-    items: [
-      {
-        severity: "high",
-        titleRu: "Соответствие Google AdSense",
-        titleUz: "Google AdSense talablariga muvofiqlik",
-        descRu:
-          "Реальный ID издателя в ads.txt, раскрытие про DART cookie и COPPA в Политике, раздел о рекламе в Условиях, блок «Основатель» (Константин Яковлев) + Person schema.org.",
-        descUz:
-          "ads.txt da haqiqiy nashriyot ID si, DART cookie va COPPA haqida ma‘lumot Maxfiylik siyosatida, Shartlarda reklama bo‘limi, «Asoschi» bloki (Konstantin Yakovlev) + Person schema.org.",
+          "2025-yil iyuldan Toshkent viloyati uchun amaldagi tarifga yangilandi (QQS bilan). Ilgari kalkulyator eski 2 182 so‘m/m³ bilan hisoblagan.",
       },
     ],
   },
@@ -135,55 +109,40 @@ const UPDATES: UpdateBlock[] = [
     dateLabelUz: "2026-yil 16-aprel",
     items: [
       {
-        severity: "high",
-        titleRu: "Массовый аудит калькуляторов + живые курсы ЦБ",
-        titleUz: "Kalkulyatorlarning ommaviy auditi + Markaziy bank jonli kurslari",
+        titleRu: "ОСАГО — новые тарифы 2026",
+        titleUz: "OSAGO — 2026-yil yangi tariflari",
         descRu:
-          "ОСАГО на тарифы 2026 (по регионам, лимит 80 млн), порог НДС 1 млрд UZS, 5 валютных калькуляторов на живые курсы CBU, сверхурочные 1,5×/2×, декретные — календарные дни, централизация БРВ.",
+          "С 1 января 2026 ОСАГО подорожало: Ташкент и область — 192 000 сум, другие регионы — 160 000. Лимит страховой выплаты удвоен — до 80 млн сум.",
         descUz:
-          "OSAGO 2026 tariflari (hududlar bo‘yicha, limit 80 mln), QQS chegarasi 1 mlrd UZS, 5 valyuta kalkulyatori CBU jonli kurslarida, ishdan tashqari 1,5×/2×, dekret — kalendar kunlar, BHM markazlashtirildi.",
+          "2026-yil 1-yanvardan OSAGO qimmatladi: Toshkent shahri va viloyati — 192 000 so‘m, boshqa hududlar — 160 000. Sug‘urta to‘lovi limiti 80 mln so‘mgacha ikki barobar oshdi.",
       },
       {
-        severity: "medium",
-        titleRu: "Кнопка Google Play в футере",
-        titleUz: "Footerda Google Play tugmasi",
-        descRu: "Добавлена ссылка на мобильное приложение в Google Play.",
-        descUz: "Google Play-dagi mobil ilovaga havola qo‘shildi.",
+        titleRu: "Живые курсы Центрального банка",
+        titleUz: "Markaziy bankning jonli valyuta kurslari",
+        descRu:
+          "Валютные калькуляторы (конвертер, переводы, таможня и др.) теперь подтягивают актуальные курсы USD, EUR, RUB и других валют с сайта ЦБ РУз автоматически.",
+        descUz:
+          "Valyuta kalkulyatorlari (konverter, pul o‘tkazmalari, bojxona va h.k.) endi USD, EUR, RUB va boshqa valyutalarning dolzarb kurslarini O‘zR MB saytidan avtomatik oladi.",
+      },
+      {
+        titleRu: "Сверхурочные по Трудовому кодексу",
+        titleUz: "Mehnat kodeksi bo‘yicha ish vaqtidan tashqari",
+        descRu:
+          "Калькулятор переработки теперь считает правильно: первые 2 часа — 1,5×, дальше — 2×. В праздники — всегда 2×.",
+        descUz:
+          "Ish vaqtidan tashqari kalkulyatori endi to‘g‘ri hisoblaydi: birinchi 2 soat — 1,5×, keyin — 2×. Bayram kunlarida — doim 2×.",
+      },
+      {
+        titleRu: "Мобильное приложение в Google Play",
+        titleUz: "Google Play’dagi mobil ilova",
+        descRu:
+          "Теперь Calk.UZ доступен как приложение на Android. Ссылка в футере сайта.",
+        descUz:
+          "Endi Calk.UZ Android uchun ilova sifatida mavjud. Havola sayt footerida.",
       },
     ],
   },
 ]
-
-const SEVERITY_STYLES: Record<Severity, { label: string; labelUz: string; bg: string; text: string; ring: string }> = {
-  critical: {
-    label: "Критично",
-    labelUz: "Muhim",
-    bg: "bg-red-100 dark:bg-red-900/30",
-    text: "text-red-700 dark:text-red-300",
-    ring: "ring-red-500/20",
-  },
-  high: {
-    label: "Важно",
-    labelUz: "Yuqori",
-    bg: "bg-amber-100 dark:bg-amber-900/30",
-    text: "text-amber-700 dark:text-amber-300",
-    ring: "ring-amber-500/20",
-  },
-  medium: {
-    label: "Заметно",
-    labelUz: "O‘rta",
-    bg: "bg-blue-100 dark:bg-blue-900/30",
-    text: "text-blue-700 dark:text-blue-300",
-    ring: "ring-blue-500/20",
-  },
-  low: {
-    label: "Мелкое",
-    labelUz: "Kichik",
-    bg: "bg-muted",
-    text: "text-muted-foreground",
-    ring: "ring-border",
-  },
-}
 
 export default async function UpdatesPage({
   params,
@@ -202,7 +161,6 @@ export default async function UpdatesPage({
     url: `https://calk.uz/${locale}/updates`,
     isPartOf: { "@type": "WebSite", name: "Calk.UZ", url: "https://calk.uz" },
     inLanguage: isUz ? "uz" : "ru",
-    datePublished: "2026-04-16",
     dateModified: UPDATES[0].date,
   }
 
@@ -223,8 +181,8 @@ export default async function UpdatesPage({
         </h1>
         <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           {isUz
-            ? "Kalkulyatorlar, stavkalar, tariflar va sayt funksiyalaridagi oʼzgarishlar jurnali. Qisqa va sanalari bilan."
-            : "Журнал изменений в калькуляторах, ставках, тарифах и функциях сайта. Кратко и с датами."}
+            ? "Kalkulyatorlar, stavkalar va tariflarda nima o‘zgardi — qisqa va sanalari bilan."
+            : "Что изменилось в калькуляторах, ставках и тарифах — кратко и по датам."}
         </p>
       </div>
 
@@ -232,40 +190,23 @@ export default async function UpdatesPage({
       <div className="space-y-10">
         {UPDATES.map((block) => (
           <section key={block.date}>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/30">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-              </div>
-              <h2 className="text-lg font-semibold text-foreground">
-                {isUz ? block.dateLabelUz : block.dateLabelRu}
-              </h2>
-            </div>
-            <div className="space-y-3 pl-11">
-              {block.items.map((item, i) => {
-                const style = SEVERITY_STYLES[item.severity]
-                return (
-                  <article
-                    key={i}
-                    className={`rounded-xl border border-border bg-card p-5 ring-1 ${style.ring}`}
-                  >
-                    <div className="flex items-start gap-3">
-                      <span
-                        className={`shrink-0 rounded-md px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide ${style.bg} ${style.text}`}
-                      >
-                        {isUz ? style.labelUz : style.label}
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <h3 className="font-semibold text-foreground leading-snug mb-1">
-                          {isUz ? item.titleUz : item.titleRu}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {isUz ? item.descUz : item.descRu}
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-                )
-              })}
+            <h2 className="text-lg font-semibold text-foreground mb-5 pb-2 border-b border-border">
+              {isUz ? block.dateLabelUz : block.dateLabelRu}
+            </h2>
+            <div className="space-y-3">
+              {block.items.map((item, i) => (
+                <article
+                  key={i}
+                  className="rounded-xl border border-border bg-card p-5"
+                >
+                  <h3 className="font-semibold text-foreground leading-snug mb-1.5">
+                    {isUz ? item.titleUz : item.titleRu}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {isUz ? item.descUz : item.descRu}
+                  </p>
+                </article>
+              ))}
             </div>
           </section>
         ))}
@@ -274,8 +215,8 @@ export default async function UpdatesPage({
       {/* Footer note */}
       <p className="mt-12 text-xs text-muted-foreground text-center">
         {isUz
-          ? "Ilova yoki kalkulyatorda xatolikni topdingizmi? info@calk.uz ga yozing."
-          : "Нашли ошибку в калькуляторе или тарифе? Напишите на info@calk.uz."}
+          ? "Kalkulyatorda xatolikni topdingizmi? info@calk.uz ga yozing."
+          : "Нашли ошибку в калькуляторе? Напишите на info@calk.uz."}
       </p>
     </div>
   )
