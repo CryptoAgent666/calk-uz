@@ -30,6 +30,7 @@ import { CATEGORIES } from "@/lib/data/categories"
 import { getSlugByLocale } from "@/lib/data/calculator-slugs"
 import { getCalculatorArticle } from "@/lib/data/calculator-articles"
 import { getAuthorBySlug, PRIMARY_AUTHOR_SLUG } from "@/lib/data/authors"
+import { UPDATES } from "@/lib/data/updates"
 import type { CategoryId, CalculatorMeta } from "@/lib/types/calculator"
 
 const CATEGORY_ICONS: Record<CategoryId, React.ComponentType<{ className?: string }>> = {
@@ -75,13 +76,13 @@ export async function HomeRichIntro() {
     return { calc, article }
   }).filter((x): x is { calc: CalculatorMeta; article: ReturnType<typeof getCalculatorArticle> } => x !== null)
 
-  // Sort by lastUpdated DESC for "What's recently updated"
-  const recentlyUpdated = [...featured]
-    .filter((f) => f.article)
-    .sort((a, b) =>
-      (b.article!.lastUpdated || "").localeCompare(a.article!.lastUpdated || "")
-    )
-    .slice(0, 4)
+  // "What's recently updated" — pulled from the same source as /updates page.
+  // We take items from the most recent date block, up to 4 entries.
+  const latestBlock = [...UPDATES].sort((a, b) => b.date.localeCompare(a.date))[0]
+  const recentItems = latestBlock?.items.slice(0, 4) ?? []
+  const latestDateLabel = latestBlock
+    ? (isUz ? latestBlock.dateLabelUz : latestBlock.dateLabelRu)
+    : ""
 
   return (
     <>
@@ -221,59 +222,50 @@ export async function HomeRichIntro() {
         </div>
       </section>
 
-      {/* What's new / recently updated */}
-      {recentlyUpdated.length > 0 && (
+      {/* What's new / recently updated — synced with /updates page */}
+      {recentItems.length > 0 && (
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <div className="rounded-2xl border border-border bg-gradient-to-br from-emerald-50/40 to-transparent dark:from-emerald-950/20 dark:to-transparent p-6 sm:p-8">
+          <Link
+            href="/updates"
+            className="block rounded-2xl border border-border bg-gradient-to-br from-emerald-50/40 to-transparent dark:from-emerald-950/20 dark:to-transparent p-6 sm:p-8 transition-all hover:border-emerald-500/30"
+          >
             <div className="flex items-end justify-between mb-5">
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <Calendar className="h-4 w-4 text-emerald-600" />
                   <span className="text-xs uppercase tracking-wider font-semibold text-muted-foreground">
-                    {isUz ? "Yangi ma'lumotlar" : "Свежие данные"}
+                    {latestDateLabel}
                   </span>
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-foreground">
                   {isUz ? "So'nggi yangilanishlar" : "Что недавно обновили"}
                 </h2>
               </div>
-              <Link
-                href="/updates"
-                className="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-emerald-700 dark:text-emerald-400 hover:gap-1.5 transition-all"
-              >
+              <span className="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-emerald-700 dark:text-emerald-400">
                 {isUz ? "Barchasi" : "Все обновления"}
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </span>
             </div>
 
             <ul className="space-y-3">
-              {recentlyUpdated.map(({ calc, article }) => {
-                const localizedSlug = getSlugByLocale(calc.slug, locale)
-                const title = isUz ? calc.titleUz : calc.titleRu
-                return (
-                  <li key={calc.slug}>
-                    <Link
-                      href={`/calculator/${localizedSlug}`}
-                      className="group flex items-center justify-between gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-emerald-500/30"
-                    >
-                      <div className="flex items-center gap-3 min-w-0">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-                        <div className="min-w-0">
-                          <p className="font-medium text-foreground text-sm truncate group-hover:text-primary transition-colors">
-                            {title}
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            {isUz ? "Yangilangan" : "Обновлено"}: {article!.lastUpdated}
-                          </p>
-                        </div>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
-                    </Link>
-                  </li>
-                )
-              })}
+              {recentItems.map((item, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+                >
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <div className="min-w-0">
+                    <p className="font-medium text-foreground text-sm leading-snug mb-0.5">
+                      {isUz ? item.titleUz : item.titleRu}
+                    </p>
+                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                      {isUz ? item.descUz : item.descRu}
+                    </p>
+                  </div>
+                </li>
+              ))}
             </ul>
-          </div>
+          </Link>
         </section>
       )}
 
