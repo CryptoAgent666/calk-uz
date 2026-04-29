@@ -41,6 +41,77 @@ interface UpdateBlock {
 
 const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-04-29",
+    dateLabelRu: "29 апреля 2026",
+    dateLabelUz: "2026-yil 29-aprel",
+    items: [
+      {
+        titleRu: "ИНПС теперь считается отдельно от НДФЛ",
+        titleUz: "IJPH endi JShShSdan alohida hisoblanadi",
+        descRu:
+          "Зарплатный калькулятор и расчёт расходов работодателя обновлены. ИНПС 0,1% — это отдельное удержание поверх НДФЛ 12%, а не его часть. Итого с зарплаты удерживается 12,1% (7,6% для IT Park). Раньше формула давала на 0,1% больше «на руки».",
+        descUz:
+          "Ish haqi kalkulyatori va ish beruvchi xarajatlari yangilandi. IJPH 0,1% — bu JShShS 12% ustiga alohida ushlanma, uning bir qismi emas. Ish haqidan jami 12,1% ushlanadi (IT Park uchun 7,6%). Ilgari formula qo'lga 0,1% ko'p natija berardi.",
+      },
+      {
+        titleRu: "Транспортный налог — возрастной коэффициент исправлен",
+        titleUz: "Transport solig'i — yosh koeffitsiyenti tuzatildi",
+        descRu:
+          "Раньше старые автомобили платили меньше налога — это было неверно. По НК ст. 446 коэффициент идёт В СТОРОНУ ПОВЫШЕНИЯ: 0–3 года 1,0×, 3–7 лет 1,2×, 7–10 лет 1,4×, старше 10 лет — 1,5×. Налог на 10-летнее авто теперь рассчитывается корректно.",
+        descUz:
+          "Ilgari eski avtomobillar kamroq soliq to'lardi — bu noto'g'ri edi. Soliq kodeksining 446-moddasiga ko'ra koeffitsiyent OSHIRILADI: 0–3 yil 1,0×, 3–7 yil 1,2×, 7–10 yil 1,4×, 10 yildan eski 1,5×. 10 yillik avtoga soliq endi to'g'ri hisoblanadi.",
+      },
+      {
+        titleRu: "ИП на общем режиме — соцналог 12% от чистого дохода",
+        titleUz: "Umumiy rejimdagi YaTT — ijtimoiy soliq sof daromaddan 12%",
+        descRu:
+          "Калькулятор ИП теперь учитывает фактическую соцналоговую нагрузку: max(12 БРВ минимум, 12% от чистого дохода). Раньше всегда считалось только 12 БРВ — для ИП с большим доходом это занижало сумму налога.",
+        descUz:
+          "YaTT kalkulyatori endi haqiqiy ijtimoiy soliq yukini hisobga oladi: max(12 BHK minimum, sof daromaddan 12%). Ilgari faqat 12 BHK hisoblanardi — bu yuqori daromadli YaTTlar uchun soliq summasini kamaytirardi.",
+      },
+      {
+        titleRu: "ООО — отдельная строка «общий отток средств с НДС»",
+        titleUz: "MChJ — «QQS bilan jami pul oqimi» alohida qatori",
+        descRu:
+          "В калькуляторе ООО НДС теперь показывается отдельной строкой totalCashOutflow для планирования cash-flow. Сама нагрузка на прибыль (totalTaxBurden) НДС не включает — НДС платит покупатель, организация лишь перечисляет.",
+        descUz:
+          "MChJ kalkulyatorida QQS endi cash-flow rejalashtirish uchun alohida totalCashOutflow qatorida ko'rsatiladi. Foyda yuki (totalTaxBurden) QQSni o'z ichiga olmaydi — QQSni xaridor to'laydi, tashkilot esa faqat o'tkazadi.",
+      },
+      {
+        titleRu: "США — добавлен Visa Integrity Fee $250",
+        titleUz: "AQSh — Visa Integrity Fee $250 qo'shildi",
+        descRu:
+          "С октября 2024 США взимают дополнительный Visa Integrity Fee — $250 при выдаче туристической визы (B1/B2) сверх консульского сбора $185. Калькулятор виз теперь учитывает оба сбора. Шенген — €80 → €90 (с июня 2024).",
+        descUz:
+          "2024-yil oktyabrdan AQSh turistik viza (B1/B2) berilganda $185 konsullik to'lovidan tashqari qo'shimcha Visa Integrity Fee — $250 oladi. Viza kalkulyatori endi ikkala to'lovni hisobga oladi. Shengen — €80 → €90 (2024-yil iyundan).",
+      },
+      {
+        titleRu: "ОСАГО — реальный региональный множитель",
+        titleUz: "OSAGO — real hududiy ko'paytuvchi",
+        descRu:
+          "Поле «коэффициент региона» теперь показывает фактический множитель: 1,2 для Ташкента и области, 1,0 для других регионов. Раньше всегда отображалось «1» — было неинформативно.",
+        descUz:
+          "«Hudud koeffitsiyenti» maydoni endi haqiqiy ko'paytuvchini ko'rsatadi: Toshkent va viloyati uchun 1,2, boshqa hududlar uchun 1,0. Ilgari har doim «1» ko'rinardi — bu informativ emas edi.",
+      },
+      {
+        titleRu: "Свадьба, хлопок — цены актуализированы на 2026",
+        titleUz: "To'y, paxta — narxlar 2026-yilga yangilandi",
+        descRu:
+          "Свадебный калькулятор: блюдо 150 → 200 тыс., музыка 5 → 6,5 млн, платье 10 → 13 млн, фото 3 → 4 млн сум. Хлопок: урожайность 2800 → 3000 кг/га, закупочная цена 6 000 → 9 000 сум/кг (по данным Узпахтасаноат на 2026).",
+        descUz:
+          "To'y kalkulyatori: taom 150 → 200 ming, musiqa 5 → 6,5 mln, libos 10 → 13 mln, foto 3 → 4 mln so'm. Paxta: hosildorlik 2800 → 3000 kg/ga, xarid narxi 6 000 → 9 000 so'm/kg (Uzpaxtasanoat 2026 ma'lumoti).",
+      },
+      {
+        titleRu: "Курс USD как параметр",
+        titleUz: "USD kursi parametr sifatida",
+        descRu:
+          "Калькуляторы таможни, переводов и виз теперь принимают курс USD/UZS параметром, что позволяет передавать актуальный курс с cbu.uz без переразвёртывания. Курс по умолчанию обновлён до 12 780 сум (CBU, конец апреля 2026).",
+        descUz:
+          "Bojxona, pul o'tkazmalari va viza kalkulyatorlari endi USD/UZS kursini parametr sifatida qabul qiladi, bu cbu.uz dagi joriy kursni qayta yoyishsiz uzatish imkonini beradi. Standart kurs 12 780 so'mga yangilandi (CBU, 2026-yil aprel oxiri).",
+      },
+    ],
+  },
+  {
     date: "2026-04-18",
     dateLabelRu: "18 апреля 2026",
     dateLabelUz: "2026-yil 18-aprel",

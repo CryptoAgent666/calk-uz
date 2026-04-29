@@ -36,7 +36,7 @@ const GAS_WINTER_TIERS: TariffTier[] = [
 const WATER_RATES = {
   cold: 3808,
   hot: 8928.67,
-  sewage: 2182,
+  sewage: 1456, // Toshsuvta'minoti tariff effective July 2025 (with VAT)
 }
 
 const HEATING_RATE_PER_M2_PER_DAY = 241.44
