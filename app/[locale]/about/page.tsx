@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { getTranslations, setRequestLocale } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 import {
   Calculator,
   Globe,
@@ -12,11 +14,14 @@ import {
   ExternalLink,
   BarChart3,
   Users,
-  Target,
   Briefcase,
   GraduationCap,
   User,
+  ArrowRight,
+  Award,
+  MapPin,
 } from "lucide-react"
+import { getAuthorBySlug, PRIMARY_AUTHOR_SLUG } from "@/lib/data/authors"
 
 export async function generateMetadata({
   params,
@@ -214,45 +219,74 @@ export default async function AboutPage({
       </section>
 
       {/* Founder */}
-      <section className="mb-16">
-        <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
-          <div className="flex items-start gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 dark:bg-emerald-900/30">
-              <User className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-xl font-semibold text-foreground mb-3">
-                {locale === "uz" ? "Loyiha asoschisi" : "Основатель проекта"}
-              </h2>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 text-white font-semibold text-lg">
-                  КЯ
+      {(() => {
+        const author = getAuthorBySlug(PRIMARY_AUTHOR_SLUG)
+        if (!author) return null
+        const isUz = locale === "uz"
+        return (
+          <section className="mb-16">
+            <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 dark:bg-emerald-900/30">
+                  <User className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <div>
-                  <p className="font-semibold text-foreground">
-                    {locale === "uz" ? "Konstantin Yakovlev" : "Константин Яковлев"}
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
+                    {isUz ? "Loyiha asoschisi" : "Основатель проекта"}
+                  </h2>
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="relative h-16 w-16 shrink-0 rounded-2xl overflow-hidden ring-2 ring-emerald-500/20">
+                      <Image
+                        src={author.imagePath}
+                        alt={author.alternateName}
+                        width={400}
+                        height={400}
+                        className="object-cover h-full w-full"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground text-base">
+                        {author.alternateName}
+                      </p>
+                      <p className="text-sm text-emerald-700 dark:text-emerald-400">
+                        {isUz ? author.jobTitleUz : author.jobTitleRu}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-3 text-xs text-muted-foreground mb-4">
+                    <span className="inline-flex items-center gap-1.5">
+                      <Award className="h-3.5 w-3.5 text-emerald-600" />
+                      {isUz
+                        ? `${author.experienceYearsTotal}+ yil tajriba`
+                        : `${author.experienceYearsTotal}+ лет опыта`}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <BarChart3 className="h-3.5 w-3.5 text-emerald-600" />
+                      {isUz
+                        ? `${author.experienceYearsFinance}+ yil moliyaviy tahlilda`
+                        : `${author.experienceYearsFinance}+ лет в финансовой аналитике`}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin className="h-3.5 w-3.5 text-emerald-600" />
+                      {author.location}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed text-base mb-4">
+                    {isUz ? author.shortBioUz : author.shortBioRu}
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    {locale === "uz"
-                      ? "Asoschi, mahsulot va muhandislik rahbari"
-                      : "Основатель, руководитель продукта и разработки"}
-                  </p>
+                  <Link
+                    href={`/author/${author.slug}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300"
+                  >
+                    {isUz ? "Asoschi haqida ko'proq" : "Подробнее об основателе"}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-base mb-4">
-                {locale === "uz"
-                  ? "Konstantin Yakovlev — Calk.UZ asoschisi. U fintech va moliyaviy kalkulyatorlar sohasida 10 yildan ortiq tajribaga ega. 2022-yilda Qozog'iston bozori uchun Calk.KZ loyihasini ishga tushirdi, keyin O'zbekiston aholisi uchun Calk.UZ ni yaratdi."
-                  : "Константин Яковлев — основатель Calk.UZ. Имеет более 10 лет опыта в финтехе и разработке финансовых калькуляторов. В 2022 году запустил проект Calk.KZ для рынка Казахстана, а затем создал Calk.UZ для жителей Узбекистана."}
-              </p>
-              <p className="text-muted-foreground leading-relaxed text-base">
-                {locale === "uz"
-                  ? "Loyihaning moliya mutaxassislari, buxgalterlar va yuristlar bilan hamkorlikda barcha kalkulyator algoritmlari O'zbekiston Respublikasining amaldagi qonunchiligiga muvofiq tekshiriladi va yangilanib turadi."
-                  : "В сотрудничестве с финансовыми специалистами, бухгалтерами и юристами все алгоритмы калькуляторов проверяются и актуализируются в соответствии с действующим законодательством Республики Узбекистан."}
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        )
+      })()}
 
       {/* Team */}
       <section className="mb-16">

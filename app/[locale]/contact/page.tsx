@@ -1,6 +1,23 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { getTranslations, setRequestLocale } from "next-intl/server"
-import { Mail, Send, MessageCircle, Clock, HelpCircle, AlertCircle, Lightbulb, Users, ChevronDown } from "lucide-react"
+import { Link } from "@/i18n/navigation"
+import {
+  Mail,
+  Send,
+  MessageCircle,
+  Clock,
+  HelpCircle,
+  AlertCircle,
+  Lightbulb,
+  Users,
+  ChevronDown,
+  MapPin,
+  Globe,
+  ArrowRight,
+  ShieldCheck,
+} from "lucide-react"
+import { getAuthorBySlug, PRIMARY_AUTHOR_SLUG } from "@/lib/data/authors"
 
 export async function generateMetadata({
   params,
@@ -32,6 +49,8 @@ export default async function ContactPage({
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale })
+  const author = getAuthorBySlug(PRIMARY_AUTHOR_SLUG)
+  const isUz = locale === "uz"
 
   const contactSchema = [
     {
@@ -41,7 +60,34 @@ export default async function ContactPage({
       description: t("contact_description"),
       url: `https://calk.uz/${locale}/contact`,
       isPartOf: { "@type": "WebSite", name: "Calk.UZ", url: "https://calk.uz" },
-      inLanguage: locale === "uz" ? "uz" : "ru",
+      inLanguage: isUz ? "uz" : "ru",
+      mainEntity: {
+        "@type": "Organization",
+        "@id": "https://calk.uz/#organization",
+        name: "Calk.UZ",
+        email: "info@calk.uz",
+        url: "https://calk.uz",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Tashkent",
+          addressCountry: "UZ",
+        },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "customer support",
+            email: "info@calk.uz",
+            availableLanguage: ["Russian", "Uzbek", "English"],
+            areaServed: "UZ",
+          },
+          {
+            "@type": "ContactPoint",
+            contactType: "technical support",
+            url: "https://t.me/calkuz_bot",
+            availableLanguage: ["Russian", "Uzbek"],
+          },
+        ],
+      },
     },
     {
       "@context": "https://schema.org",
@@ -57,6 +103,22 @@ export default async function ContactPage({
     { q: t("contact_faq_accuracy_q"), a: t("contact_faq_accuracy_a") },
     { q: t("contact_faq_update_q"), a: t("contact_faq_update_a") },
     { q: t("contact_faq_new_q"), a: t("contact_faq_new_a") },
+    {
+      q: isUz
+        ? "Loyiha rasmiy davlat xizmatimi?"
+        : "Является ли проект государственным сервисом?",
+      a: isUz
+        ? "Yo'q. Calk.UZ — Konstantin Yakovlev tomonidan yuritiladigan mustaqil xususiy loyiha. Biz O'zbekiston davlat organlari bilan bog'liq emasmiz. Barcha hisob-kitoblar ma'lumot uchun beriladi va rasmiy maslahat o'rnini bosmaydi."
+        : "Нет. Calk.UZ — независимый частный проект, который ведёт Константин Яковлев. Мы не связаны с государственными органами Узбекистана. Все расчёты носят справочный характер и не заменяют консультацию официальных специалистов.",
+    },
+    {
+      q: isUz
+        ? "Saytda mualliflik huquqi yoki ma'lumotlardan foydalanish bo'yicha shartlar nimadan iborat?"
+        : "Какие условия использования контента и данных сайта?",
+      a: isUz
+        ? "Calk.UZ kontenti bepul shaxsiy foydalanish uchun mo'ljallangan. Tijorat maqsadlarida — masalan, kalkulyatorlarni boshqa saytda joylashtirishdan oldin info@calk.uz manziliga yozing."
+        : "Контент Calk.UZ предоставляется бесплатно для личного использования. Для коммерческого применения — например, встраивания калькуляторов на сторонний сайт — напишите на info@calk.uz.",
+    },
   ]
 
   const reasons = [
@@ -85,6 +147,35 @@ export default async function ContactPage({
         </p>
       </div>
 
+      {/* Author / contact owner */}
+      {author && (
+        <Link
+          href={`/author/${author.slug}`}
+          className="mb-8 group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-500/5"
+        >
+          <div className="relative h-14 w-14 shrink-0 rounded-2xl overflow-hidden ring-2 ring-emerald-500/20">
+            <Image
+              src={author.imagePath}
+              alt={author.alternateName}
+              width={400}
+              height={400}
+              className="object-cover h-full w-full"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-0.5">
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+              {isUz ? "Sizga shaxsan javob beradi" : "Вам отвечает лично"}
+            </div>
+            <p className="font-semibold text-foreground">{author.alternateName}</p>
+            <p className="text-xs text-muted-foreground line-clamp-1">
+              {isUz ? author.jobTitleUz : author.jobTitleRu}
+            </p>
+          </div>
+          <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all" />
+        </Link>
+      )}
+
       {/* Contact cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         {/* Email */}
@@ -101,6 +192,9 @@ export default async function ContactPage({
             </h2>
             <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
               info@calk.uz
+            </p>
+            <p className="text-xs text-muted-foreground/70 mt-1">
+              {isUz ? "Ish kunlari, 1 kun ichida" : "В будни, в течение 1 рабочего дня"}
             </p>
           </div>
         </a>
@@ -122,8 +216,56 @@ export default async function ContactPage({
             <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
               @calkuz_bot
             </p>
+            <p className="text-xs text-muted-foreground/70 mt-1">
+              {isUz ? "Tezkor savollar, 9:00–21:00 (UZT)" : "Быстрые вопросы, 9:00–21:00 (UZT)"}
+            </p>
           </div>
         </a>
+      </div>
+
+      {/* Legal entity / location info */}
+      <div className="mb-8 rounded-2xl border border-border bg-muted/30 p-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+          <div className="flex items-start gap-2.5">
+            <MapPin className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+            <div>
+              <p className="font-medium text-foreground">
+                {isUz ? "Joylashuv" : "Локация"}
+              </p>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                {isUz ? "Toshkent, O'zbekiston" : "Ташкент, Узбекистан"}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-2.5">
+            <Globe className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+            <div>
+              <p className="font-medium text-foreground">
+                {isUz ? "Mas'ul shaxs" : "Ответственное лицо"}
+              </p>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Konstantin Yakovlev
+                <br />
+                {isUz
+                  ? "Calk.UZ asoschisi va rahbari"
+                  : "Основатель и руководитель Calk.UZ"}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-2.5">
+            <Clock className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+            <div>
+              <p className="font-medium text-foreground">
+                {isUz ? "Ish vaqti" : "Часы работы"}
+              </p>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                {isUz
+                  ? "Dushanba–Juma, 9:00–21:00 UZT"
+                  : "Пн–Пт, 9:00–21:00 (UZT)"}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Response time */}
@@ -155,6 +297,18 @@ export default async function ContactPage({
             )
           })}
         </div>
+      </section>
+
+      {/* Disclaimer */}
+      <section className="mb-12 rounded-xl border border-amber-200 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 p-5">
+        <h2 className="text-base font-semibold text-amber-900 dark:text-amber-200 mb-2">
+          {isUz ? "Muhim eslatma" : "Важное уточнение"}
+        </h2>
+        <p className="text-sm text-amber-800 dark:text-amber-300/90 leading-relaxed">
+          {isUz
+            ? "Calk.UZ — bu mustaqil xususiy loyiha. Biz O'zbekiston davlat organlari bilan bog'liq emasmiz va rasmiy davlat xizmati emasmiz. Hisob-kitoblar ochiq ma'lumotlar (lex.uz, cbu.uz, soliq.uz) asosida tuziladi va ma'lumot xarakteriga ega."
+            : "Calk.UZ — независимый частный проект. Мы не связаны с государственными органами Узбекистана и не являемся официальным государственным сервисом. Расчёты построены на открытых данных (lex.uz, cbu.uz, soliq.uz) и носят справочный характер."}
+        </p>
       </section>
 
       {/* FAQ */}

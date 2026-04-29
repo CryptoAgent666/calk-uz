@@ -9,6 +9,7 @@ import { ToastProvider } from "@/components/ui/toast-simple"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { CookieConsent } from "@/components/CookieConsent"
+import { getAuthorBySlug, PRIMARY_AUTHOR_SLUG } from "@/lib/data/authors"
 import "@/app/globals.css"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-sans" })
@@ -46,6 +47,13 @@ export const metadata: Metadata = {
 }
 
 function OrganizationJsonLd({ locale }: { locale: string }) {
+  const author = getAuthorBySlug(PRIMARY_AUTHOR_SLUG)
+  const isUz = locale === "uz"
+  const founderUrl = `https://calk.uz/${locale}/author/${PRIMARY_AUTHOR_SLUG}`
+  const founderSameAs = author
+    ? author.social.filter((s) => s.url.startsWith("http")).map((s) => s.url)
+    : []
+
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -65,18 +73,38 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
         "https://t.me/calkuz_bot",
         "https://play.google.com/store/apps/details?id=uz.calk.calculator",
       ],
-      founder: {
-        "@type": "Person",
-        "@id": "https://calk.uz/#founder",
-        name: "Konstantin Yakovlev",
-        alternateName: "Константин Яковлев",
-        jobTitle: "Founder",
+      founder: { "@id": "https://calk.uz/#founder" },
+      foundingDate: "2025-01-01",
+      areaServed: {
+        "@type": "Country",
+        name: "Uzbekistan",
       },
       contactPoint: {
         "@type": "ContactPoint",
         email: "info@calk.uz",
         contactType: "customer service",
         availableLanguage: ["Russian", "Uzbek"],
+      },
+    },
+    author && {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://calk.uz/#founder",
+      name: author.name,
+      alternateName: author.alternateName,
+      jobTitle: isUz ? author.jobTitleUz : author.jobTitleRu,
+      description: isUz ? author.shortBioUz : author.shortBioRu,
+      url: founderUrl,
+      image: `https://calk.uz${author.imagePath}`,
+      email: author.email,
+      knowsLanguage: ["ru", "uz", "en"],
+      knowsAbout: isUz ? author.expertiseUz : author.expertiseRu,
+      sameAs: founderSameAs,
+      worksFor: { "@id": "https://calk.uz/#organization" },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Tashkent",
+        addressCountry: "UZ",
       },
     },
     {
@@ -93,7 +121,7 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
         "query-input": "required name=search_term_string",
       },
     },
-  ]
+  ].filter(Boolean)
 
   return (
     <script

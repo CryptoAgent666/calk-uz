@@ -4,6 +4,8 @@ export interface CalculatorArticle {
   paragraphsUz: string[]
   faqRu: { question: string; answer: string }[]
   faqUz: { question: string; answer: string }[]
+  /** ISO date when the article was first published. Used in JSON-LD `datePublished`. */
+  datePublished?: string
   lastUpdated: string
   sources: { name: string; url: string }[]
 }
@@ -15,7 +17,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'income-tax',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-09',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -57,7 +59,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'vat',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-01-14',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -96,7 +98,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'salary',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-12-12',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
@@ -136,7 +138,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'vacation-pay',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-20',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
@@ -175,7 +177,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'credit',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-16',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Банковское законодательство', url: 'https://lex.uz/docs/5765051' },
@@ -214,7 +216,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'mortgage',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-02',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Государственная программа ипотеки', url: 'https://lex.uz/docs/5765051' },
@@ -253,7 +255,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'auto-credit',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-20',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Банковское законодательство', url: 'https://lex.uz/docs/5765051' },
@@ -292,7 +294,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'deposit',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-26',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Фонд гарантирования вкладов', url: 'https://dif.uz' },
@@ -330,7 +332,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'currency-converter',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-12-12',
     sources: [
       { name: 'Центральный банк РУз — курсы валют', url: 'https://cbu.uz/uz/arkhiv-kursov-valyut/' },
     ],
@@ -366,7 +368,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'bank-rates',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-01',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
     ],
@@ -402,7 +404,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'customs',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-08-21',
     sources: [
       { name: 'Таможенный кодекс РУз', url: 'https://lex.uz/docs/6365764' },
       { name: 'Государственный таможенный комитет', url: 'https://customs.uz' },
@@ -439,7 +441,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'osago',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-01-14',
     sources: [
       { name: 'Закон об ОСАГО', url: 'https://lex.uz/docs/5765051' },
       { name: 'Агентство страхового надзора', url: 'https://mf.uz' },
@@ -476,7 +478,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'electricity',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-29',
     sources: [
       { name: 'Постановление о тарифах на электроэнергию', url: 'https://lex.uz' },
       { name: 'Узэнерго', url: 'https://uzenergy.uz' },
@@ -513,7 +515,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'gas',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-04',
     sources: [
       { name: 'Постановление о тарифах на газ', url: 'https://lex.uz' },
       { name: 'Худудгазтаъминот', url: 'https://hududgaz.uz' },
@@ -550,7 +552,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'water',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-15',
     sources: [
       { name: 'Постановление о тарифах на воду', url: 'https://lex.uz' },
       { name: 'Узсувтаъминот', url: 'https://suvtaminot.uz' },
@@ -587,7 +589,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'utilities-total',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-02',
     sources: [
       { name: 'Тарифы на коммунальные услуги', url: 'https://lex.uz' },
     ],
@@ -623,7 +625,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'apartment-cost',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-12-26',
     sources: [
       { name: 'Рынок недвижимости Узбекистана', url: 'https://lex.uz' },
     ],
@@ -659,7 +661,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'ip-calculator',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-09-04',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -698,7 +700,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'employer-cost',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-01-20',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
@@ -735,7 +737,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'brv',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-23',
     sources: [
       { name: 'Указ Президента о БРВ', url: 'https://lex.uz' },
     ],
@@ -775,7 +777,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'llc-calculator',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-16',
     sources: [{ name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' }],
     paragraphsRu: [
       'Калькулятор ООО помогает предпринимателям в Узбекистане рассчитать налоговую нагрузку при различных системах налогообложения. Общество с ограниченной ответственностью (ООО) — самая распространённая форма ведения бизнеса в стране. Согласно Налоговому кодексу, ООО может работать на общей системе (налог на прибыль 15% + НДС 12%) или на упрощённой (налог с оборота 4% без вычета расходов).',
@@ -918,7 +920,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'percentage',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-04',
     sources: [
       { name: 'Центральный банк РУз — Ставки', url: 'https://cbu.uz' },
     ],
@@ -1101,7 +1103,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'vat-threshold',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-01-14',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -1138,7 +1140,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'property-tax',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-01-22',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Кадастровая палата', url: 'https://kadastr.uz' },
@@ -1175,7 +1177,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'land-tax',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-28',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Кадастровая палата', url: 'https://kadastr.uz' },
@@ -1212,7 +1214,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'vehicle-tax',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-26',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -1249,7 +1251,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'corporate-tax',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-01-25',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -1286,7 +1288,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'tax-penalty',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-04-01',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -1323,7 +1325,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'self-employed',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-12-10',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -1360,7 +1362,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'turnover-tax',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-26',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
       { name: 'Налоговый комитет', url: 'https://soliq.uz' },
@@ -1397,7 +1399,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'sick-leave',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-12-18',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Закон о государственном социальном страховании (№1101)', url: 'https://lex.uz' },
@@ -1434,7 +1436,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'maternity',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-03',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Минтруд РУз', url: 'https://mehnat.uz' },
@@ -1471,7 +1473,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'severance',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-12-19',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Минтруд РУз', url: 'https://mehnat.uz' },
@@ -1582,7 +1584,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'pension',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-26',
     sources: [
       { name: 'Закон о пенсионном обеспечении', url: 'https://lex.uz' },
       { name: 'Пенсионный фонд РУз', url: 'https://pfru.uz' },
@@ -1620,7 +1622,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'installment',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-01-15',
     sources: [],
     paragraphsRu: [
       'Калькулятор рассрочки рассчитывает ежемесячный платёж при покупке товара в рассрочку без процентов. В Узбекистане рассрочка стала одним из самых популярных способов приобретения техники, мебели и бытовых товаров. В отличие от потребительского кредита, рассрочка предоставляется под 0% — переплата формально отсутствует, хотя цена товара в рассрочку может быть выше, чем при оплате наличными.',
@@ -1650,7 +1652,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'early-repayment',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-04-04',
     sources: [{ name: 'Закон о банковской деятельности', url: 'https://lex.uz/docs/5765051' }],
     paragraphsRu: [
       'Калькулятор досрочного погашения кредита показывает, сколько вы сэкономите на процентах при частичном или полном внеочередном внесении средств. Согласно Закону Республики Узбекистан «О банках и банковской деятельности», заёмщик имеет право на досрочное погашение потребительского кредита без уплаты штрафов и комиссий. Это правило действует с 2020 года и распространяется на все банки страны.',
@@ -1680,7 +1682,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'refinancing',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-12-24',
     sources: [{ name: 'Центральный банк РУз', url: 'https://cbu.uz' }],
         paragraphsRu: [
       'Рефинансирование кредита — получение нового кредита на более выгодных условиях для погашения существующего. В Узбекистане эта услуга особенно актуальна: ключевая ставка Центрального банка в 2026 году составляет 14%, и многие заёмщики, оформившие кредиты при ставке 20–24%, могут значительно снизить переплату. Калькулятор рефинансирования покажет точную сумму экономии и поможет принять обоснованное решение.',
@@ -1710,7 +1712,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'compound-interest',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-22',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
     ],
@@ -1746,7 +1748,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'deposit-comparison',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-16',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Фонд гарантирования вкладов', url: 'https://dif.uz' },
@@ -1820,7 +1822,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'fuel-consumption',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-09-03',
     sources: [],
     paragraphsRu: [
       'Калькулятор расхода топлива рассчитывает стоимость поездки и средний расход бензина или газа на 100 км пути. В Узбекистане топливный рынок отличается широким распространением метана (сжатого природного газа) — около 70% легковых автомобилей оборудованы газобаллонным оборудованием. Актуальные цены на топливо: АИ-91 — ~12 500 сум/л, АИ-95 — ~14 500 сум/л, пропан — ~7 000-8 000 сум/л, метан — ~5 200 сум/м³. Бензин АИ-80 был снят с производства 1 декабря 2025 года.',
@@ -1850,7 +1852,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'trip-cost',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-06',
     sources: [],
     paragraphsRu: [
       'Калькулятор стоимости поездки помогает заранее оценить расходы на автомобильное путешествие по Узбекистану. Дорожная сеть страны насчитывает более 180 000 км дорог, связывающих все регионы — от Ташкента до Нукуса. Калькулятор учитывает стоимость топлива, амортизацию автомобиля, затраты на обслуживание и позволяет сравнить поездку на авто с альтернативами: поездом, самолётом или междугородним такси.',
@@ -1880,7 +1882,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'car-leasing',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-09-01',
     sources: [],
     paragraphsRu: [
       'Автолизинг в Узбекистане — это аренда транспортного средства с правом последующего выкупа, регулируемая Законом «О лизинге». Лизинговые компании — Uzautolizing, O\'zlizing, Imkon Lizing и другие — предлагают ставки от 18% до 26% годовых в зависимости от марки автомобиля, срока договора и размера авансового платежа. Минимальный аванс обычно составляет 20–30% от стоимости транспортного средства.',
@@ -1910,7 +1912,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'heating',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-07',
     sources: [
       { name: 'Узтрансгаз — Тарифы', url: 'https://uztransgaz.uz' },
       { name: 'Узбекэнерго — Тарифы', url: 'https://uzbekenergo.uz' },
@@ -1984,7 +1986,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'rental',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-09',
     sources: [],
         paragraphsRu: [
       'Калькулятор аренды недвижимости рассчитывает полную ежемесячную стоимость аренды жилья в Узбекистане с учётом всех сопутствующих расходов. Арендный рынок Ташкента активно развивается: по данным агентств недвижимости, спрос на съёмное жильё ежегодно растёт на 15–20%. Средние цены аренды в 2026 году: однокомнатная квартира — 3,5–6 млн сум/мес, двухкомнатная — 5,5–9 млн, трёхкомнатная — 8–14 млн в зависимости от района и состояния.',
@@ -2014,7 +2016,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'renovation',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-01-19',
     sources: [],
         paragraphsRu: [
       'Калькулятор ремонта квартиры рассчитывает полную стоимость ремонтных работ в Узбекистане с учётом площади, типа ремонта и региона. Выделяют четыре категории: косметический (обои, покраска, замена напольного покрытия), стандартный (с заменой сантехники и электрики), евроремонт (качественные материалы, выравнивание стен) и дизайнерский (авторский проект, премиальная отделка). Средние цены за м² в 2026 году: косметический — 2–3,5 млн сум, стандартный — 3,5–6 млн, евроремонт — 6–10 млн, дизайнерский — 10–18 млн.',
@@ -2044,7 +2046,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'moving',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-06',
     sources: [],
     paragraphsRu: [
       'Калькулятор переезда помогает заранее рассчитать стоимость перевозки вещей в пределах Ташкента или между городами Узбекистана. Рынок грузоперевозок в стране активно развивается: помимо традиционных «газелей» действуют специализированные сервисы заказа грузчиков через приложения. Средняя стоимость переезда в пределах Ташкента составляет от 500 000 до 3 000 000 сум в зависимости от объёма и расстояния.',
@@ -2074,7 +2076,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'margin',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-02-17',
     sources: [],
     paragraphsRu: ['Калькулятор маржи рассчитывает ключевые показатели прибыльности бизнеса: маржу (разницу между ценой продажи и себестоимостью), маржинальность (долю маржи в выручке) и наценку (долю маржи в себестоимости). Эти показатели необходимы каждому предпринимателю в Узбекистане для ценообразования, анализа рентабельности и принятия управленческих решений.', 'Формулы расчёта: Маржа = Цена продажи − Себестоимость. Маржинальность = (Маржа / Цена продажи) × 100%. Наценка = (Маржа / Себестоимость) × 100%. Важно различать эти понятия: маржинальность всегда меньше 100%, тогда как наценка может быть любой. Например, при себестоимости 500 000 и цене 800 000 сум маржа составит 300 000, маржинальность — 37,5%, наценка — 60%.', 'Средняя маржинальность по отраслям в Узбекистане: розничная торговля продуктами — 15-25%, одежда и обувь — 30-50%, общественное питание — 40-65%, IT-услуги — 50-70%, строительные материалы — 20-35%. Знание отраслевых норм помогает понять, конкурентоспособен ли ваш бизнес и есть ли резервы для повышения прибыльности.', 'Для малого бизнеса и индивидуальных предпринимателей в Узбекистане калькулятор маржи — инструмент ежедневного использования. При закупке товаров на оптовом рынке «Абу Сахий» или «Ипподром» в Ташкенте важно заранее рассчитать наценку, чтобы покрыть аренду, зарплату продавцов, налоги (4% для ИП на упрощённой системе) и получить желаемую прибыль.', 'Калькулятор работает в двух режимах: прямой расчёт (от себестоимости и цены продажи к марже) и обратный (от желаемой маржинальности к необходимой цене продажи). Второй режим особенно полезен при формировании прайс-листа: задайте себестоимость и целевую маржинальность 30% — калькулятор покажет минимальную цену продажи. Это помогает выстроить устойчивую ценовую политику.'],
     paragraphsUz: ["Marja kalkulyatori biznes rentabelligining asosiy ko'rsatkichlarini hisoblaydi: marja (sotish narxi va tannarx orasidagi farq), marjinallik (tushumdagi marja ulushi) va ustama (tannarxdagi marja ulushi). Bu ko'rsatkichlar O'zbekistondagi har bir tadbirkorga narx belgilash, rentabellik tahlili va boshqaruv qarorlarini qabul qilish uchun zarur.", "Hisoblash formulalari: Marja = Sotish narxi − Tannarx. Marjinallik = (Marja / Sotish narxi) × 100%. Ustama = (Marja / Tannarx) × 100%. Bu tushunchalarni farqlash muhim: marjinallik doimo 100% dan kam, ustama esa istalgan qiymatda bo'lishi mumkin. Masalan, tannarx 500 000, narx 800 000 so'mda marja 300 000, marjinallik — 37,5%, ustama — 60% bo'ladi.", "O'zbekistonda tarmoqlar bo'yicha o'rtacha marjinallik: oziq-ovqat chakana savdosi — 15-25%, kiyim-kechak — 30-50%, umumiy ovqatlanish — 40-65%, IT-xizmatlar — 50-70%, qurilish materiallari — 20-35%. Tarmoq me'yorlarini bilish biznesingiz raqobatbardoshligini va rentabellikni oshirish zaxiralarini tushunishga yordam beradi.", "O'zbekistondagi kichik biznes va yakka tartibdagi tadbirkorlar uchun marja kalkulyatori kundalik vosita hisoblanadi. Toshkentdagi «Abu Sahiy» yoki «Ippodrom» ulgurji bozoridan tovar sotib olayotganda, ijara, sotuvchilar ish haqi, soliqlar (soddalashtilgan tizimda YaTT uchun 4%) va kerakli foydani qoplash uchun ustamani oldindan hisoblash muhim.", "Kalkulyator ikki rejimda ishlaydi: to'g'ridan-to'g'ri hisoblash (tannarx va sotish narxidan marjaga) va teskari hisoblash (kerakli marjinallikdan zarur sotish narxiga). Ikkinchi rejim narxlar ro'yxatini shakllantirishda ayniqsa qulay: tannarxni va maqsadli 30% marjinallikni kiriting — kalkulyator minimal sotish narxini ko'rsatadi. Bu barqaror narx siyosatini shakllantirishga yordam beradi."],
@@ -2084,7 +2086,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'break-even',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-09-02',
     sources: [],
         paragraphsRu: [
       'Калькулятор точки безубыточности (ТБУ) — ключевой инструмент для любого предпринимателя в Узбекистане. Он определяет минимальный объём продаж, при котором доходы полностью покрывают все постоянные и переменные расходы. Формула расчёта: ТБУ (шт) = Постоянные расходы / (Цена за единицу − Переменные расходы на единицу). Знание точки безубыточности позволяет оценить реалистичность бизнес-плана ещё до вложения средств.',
@@ -2291,7 +2293,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'education-loan',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-15',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Ipoteka bank — Образовательные кредиты', url: 'https://ipotekabank.uz' },
@@ -2439,7 +2441,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'kurban',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-06',
     sources: [{ name: 'Управление мусульман Узбекистана', url: 'https://muslim.uz' }],
         paragraphsRu: [
       'Калькулятор курбана помогает рассчитать стоимость жертвоприношения на праздник Ид аль-Адха (Курбан хайит) — один из главных религиозных праздников в Узбекистане. По данным Управления мусульман Узбекистана, ежегодно миллионы семей совершают обряд курбан. Калькулятор учитывает вид животного (баран, бык, корова), текущие рыночные цены и количество долей, позволяя заранее спланировать бюджет на праздник.',
@@ -2461,7 +2463,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'date-calc',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-08-31',
     sources: [],
     paragraphsRu: ['Калькулятор дат — удобный инструмент для вычисления разницы между двумя датами в днях, неделях, месяцах и годах, а также для прибавления или вычитания определённого количества дней из любой даты. Инструмент незаменим при работе с договорами, графиками платежей, кадровым учётом и планированием мероприятий. Все вычисления ведутся по григорианскому календарю с учётом високосных лет.', 'В Узбекистане калькулятор дат особенно востребован для расчёта сроков исполнения договоров и контрактов. Согласно Гражданскому кодексу Республики Узбекистан, сроки исчисляются в календарных днях, и если последний день срока приходится на выходной, днём окончания считается ближайший рабочий день. Калькулятор помогает безошибочно определить такие даты с учётом государственных праздников.', 'Практическое применение для бизнеса: расчёт 30-дневного срока оплаты по счёту-фактуре, определение даты истечения гарантийного срока товара (обычно 12 или 24 месяца), вычисление периода просрочки для начисления пени. Например, если договор подписан 15 января, а срок исполнения — 90 календарных дней, калькулятор покажет точную дату окончания — 15 апреля.', 'Для кадровых служб инструмент полезен при расчёте трудового стажа сотрудников, определении дат выхода из отпуска по уходу за ребёнком, вычислении срока испытательного периода. По Трудовому кодексу Узбекистана испытательный срок не может превышать трёх месяцев. Калькулятор точно определит дату окончания испытания для любого сотрудника.', 'В повседневной жизни калькулятор дат помогает узнать, сколько дней осталось до важного события — свадьбы, экзамена, Навруза (21 марта) или Дня независимости (1 сентября). Также можно вычислить возраст в днях, определить день недели для любой даты в прошлом или будущем. Инструмент учитывает все високосные годы и корректно обрабатывает переходы между месяцами разной длины.'],
     paragraphsUz: ["Sana kalkulyatori ikki sana o'rtasidagi farqni kunlar, haftalar, oylar va yillarda hisoblash, shuningdek istalgan sanaga kunlar qo'shish yoki ayirish uchun qulay vosita. Shartnomalar, to'lov jadvallari, kadrlar hisobi va tadbirlarni rejalashtirish ishlarida bu kalkulyator ayniqsa zarur. Barcha hisob-kitoblar kabisa yillarini hisobga olib, grigoriy taqvimi asosida amalga oshiriladi.", "O'zbekistonda sana kalkulyatori shartnoma va kontrakt muddatlarini hisoblashda keng qo'llaniladi. Fuqarolik kodeksiga ko'ra, muddatlar kalendar kunlarda hisoblanadi va agar muddatning oxirgi kuni dam olish kuniga to'g'ri kelsa, eng yaqin ish kuni muddat tugash sanasi hisoblanadi. Kalkulyator davlat bayramlarini hisobga olib, bunday sanalarni xatosiz aniqlashga yordam beradi.", "Biznes uchun amaliy qo'llanilishi: hisob-faktura bo'yicha 30 kunlik to'lov muddatini hisoblash, tovar kafolat muddati tugash sanasini aniqlash (odatda 12 yoki 24 oy), penya hisoblash uchun kechikish davrini belgilash. Masalan, shartnoma 15-yanvarda imzolangan bo'lib, ijro muddati 90 kalendar kun bo'lsa, kalkulyator tugash sanasini — 15-aprelni ko'rsatadi.", "Kadrlar xizmati uchun bu vosita xodimlarning ish stajini hisoblash, bola parvarishi ta'tilidan qaytish sanalarini aniqlash, sinov muddati tugashini belgilashda foydali. O'zbekiston Mehnat kodeksiga ko'ra, sinov muddati uch oydan oshmasligi kerak. Kalkulyator har qanday xodim uchun sinov tugash sanasini aniq hisoblaydi.", "Kundalik hayotda sana kalkulyatori muhim voqeagacha — to'y, imtihon, Navro'z (21-mart) yoki Mustaqillik kuni (1-sentabr) gacha qancha kun qolganini bilishga yordam beradi. Yoshni kunlarda hisoblash, o'tmish yoki kelajakdagi istalgan sana uchun hafta kunini aniqlash ham mumkin. Vosita barcha kabisa yillarini hisobga oladi va turli uzunlikdagi oylar orasidagi o'tishlarni to'g'ri ishlaydi."],
@@ -2471,7 +2473,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'area',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-08',
     sources: [],
     paragraphsRu: ['Калькулятор площади вычисляет площадь различных геометрических фигур — прямоугольника, круга, треугольника, трапеции, параллелограмма и эллипса — и конвертирует единицы измерения: квадратные метры, сотки (100 м²), гектары (10 000 м²), акры. Инструмент необходим при строительстве, ремонте, покупке земли и оформлении документов на недвижимость в Узбекистане.', 'При покупке или аренде земельного участка в Узбекистане площадь указывается в гектарах или сотках. Согласно Земельному кодексу, приусадебные участки для ведения личного подсобного хозяйства выделяются площадью до 0,06 га (6 соток) в сельской местности и до 0,04 га (4 сотки) в городской. Калькулятор поможет быстро перевести эти величины в квадратные метры для планировки.', 'Для ремонта квартиры калькулятор незаменим: зная площадь стен и пола, вы точно рассчитаете количество ламината, плитки, обоев и краски. Например, комната 4 × 5 м с высотой потолков 2,7 м имеет площадь пола 20 м² и площадь стен 48,6 м². Это позволяет заказать материалы с запасом 10% и избежать лишних расходов на строительном рынке.', 'Строители и проектировщики в Узбекистане используют калькулятор площади при подготовке смет и проектной документации. Площадь застройки, полезная площадь здания и площадь озеленения определяются по нормам ШНК (строительные нормы и правила Узбекистана). Для нестандартных форм участков калькулятор позволяет разбить фигуру на простые части и сложить результаты.', 'Калькулятор поддерживает все основные формулы: прямоугольник (a × b), круг (π × r²), треугольник (½ × a × h или по формуле Герона), трапеция (½ × (a + b) × h). Введите размеры в метрах — результат отобразится в м², сотках и гектарах. Инструмент удобен для фермеров, рассчитывающих площадь полей, и для владельцев квартир, планирующих ремонт.'],
     paragraphsUz: ["Maydon kalkulyatori turli geometrik shakllar — to'g'ri to'rtburchak, aylana, uchburchak, trapetsiya, parallelogramm va ellips — maydonini hisoblaydi hamda o'lchov birliklarini o'giradi: kvadrat metr, sotix (100 m²), gektar (10 000 m²), akr. Bu vosita qurilish, ta'mirlash, yer sotib olish va O'zbekistonda ko'chmas mulk hujjatlarini rasmiylashtirish uchun zarur.", "O'zbekistonda yer uchastkasi sotib olish yoki ijaraga olishda maydon gektar yoki sotixda ko'rsatiladi. Yer kodeksiga ko'ra, qishloq joylarda shaxsiy yordamchi xo'jalik uchun 0,06 gektargacha (6 sotix), shaharlarda esa 0,04 gektargacha (4 sotix) tomorqa yer ajratiladi. Kalkulyator bu qiymatlarni uchastkani rejalashtirish uchun tezda kvadrat metrlarga o'giradi.", "Kvartira ta'mirlash uchun kalkulyator juda zarur: devor va pol maydonini bilib, laminat, plitka, oboylar va bo'yoq miqdorini aniq hisoblash mumkin. Masalan, 4 × 5 m xona shift balandligi 2,7 m bo'lsa, pol maydoni 20 m², devorlar maydoni 48,6 m² bo'ladi. Bu materiallarni 10% zaxira bilan buyurtma qilish va ortiqcha xarajatlardan qochish imkonini beradi.", "O'zbekistonda quruvchilar va loyihachilar smeta va loyiha hujjatlarini tayyorlashda maydon kalkulyatoridan foydalanadi. Qurilish maydoni, binoning foydali maydoni va ko'kalamzorlashtirish maydoni ShNK (O'zbekiston qurilish me'yorlari va qoidalari) talablariga muvofiq aniqlanadi. Nostandart shakldagi uchastkalar uchun shaklni sodda qismlarga bo'lib hisoblash mumkin.", "Kalkulyator barcha asosiy formulalarni qo'llab-quvvatlaydi: to'g'ri to'rtburchak (a × b), aylana (π × r²), uchburchak (½ × a × h yoki Geron formulasi), trapetsiya (½ × (a + b) × h). O'lchamlarni metrlarda kiriting — natija m², sotix va gektarlarda ko'rsatiladi. Dalalar maydonini hisoblaydigan fermerlar va ta'mir rejalashtiruvchi kvartira egalari uchun qulay."],
@@ -2481,7 +2483,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'unit-converter',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-04-08',
     sources: [],
         paragraphsRu: [
       'Универсальный конвертер единиц измерения — незаменимый инструмент для повседневных и профессиональных расчётов. Он поддерживает все основные категории: длина (метры, километры, мили, футы, дюймы), масса (килограммы, граммы, фунты, унции), объём (литры, миллилитры, галлоны), температура (°C, °F, K), скорость, давление, площадь и энергия. Просто выберите категорию, единицу-источник и единицу-цель — результат появится мгновенно.',
@@ -2503,7 +2505,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'number-to-words',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-01-22',
     sources: [],
     paragraphsRu: ['Конвертер числа в пропись переводит числовые суммы в текстовое представление на русском и узбекском языках. Этот инструмент необходим бухгалтерам, юристам и предпринимателям в Узбекистане для заполнения договоров, счетов-фактур, доверенностей, актов выполненных работ и платёжных поручений, где сумма обязательно указывается прописью.', 'Согласно требованиям бухгалтерского учёта в Узбекистане, в первичных документах сумма указывается цифрами и дублируется прописью. Ошибка в написании суммы прописью может привести к отказу в приёме документа банком или налоговой инспекцией. Конвертер исключает подобные ошибки, автоматически формируя корректную запись с учётом правил склонения числительных.', 'Инструмент поддерживает суммы от 0 до триллионов и работает с тремя валютами: узбекский сум (сум/тийин), доллар США (доллар/цент) и евро. Пример: 15 750 000 → «пятнадцать миллионов семьсот пятьдесят тысяч сум 00 тийин». Для узбекского языка формируется запись на латинице: «o\'n besh million yetti yuz ellik ming so\'m 00 tiyin».', 'Практические сценарии использования: оформление трудового договора с указанием оклада прописью, подготовка счёта на оплату для контрагента, заполнение доверенности на получение товарно-материальных ценностей, составление расписки о получении денежных средств. Во всех этих случаях конвертер экономит время и гарантирует грамматическую точность.', 'Конвертер корректно обрабатывает особенности русского и узбекского языков: в русском — склонение по родам (одна тысяча, два миллиона, пять тысяч), в узбекском — правильное написание составных числительных. Просто введите число — результат можно скопировать и вставить в любой документ. Инструмент работает мгновенно и не требует подключения к интернету после загрузки страницы.'],
     paragraphsUz: ["Sonni yozuvga o'giruvchi raqamli summalarni o'zbek va rus tillarida matnli ko'rinishga aylantiradi. Bu vosita O'zbekistondagi buxgalterlar, yuristlar va tadbirkorlarga shartnomalar, hisob-fakturalar, ishonchnomalar, bajarilgan ishlar dalolatnomalari va to'lov topshiriqnomalarini to'ldirishda zarur — bu hujjatlarda summa yozuv bilan ko'rsatilishi shart.", "O'zbekistonda buxgalteriya hisobi talablariga ko'ra, birlamchi hujjatlarda summa raqamlar bilan yoziladi va yozuv bilan takrorlanadi. Summa yozuvidagi xatolik hujjatning bank yoki soliq inspektsiyasi tomonidan rad etilishiga olib kelishi mumkin. Konverter bunday xatolarni bartaraf etib, son turlanishi qoidalarini hisobga olgan holda to'g'ri yozuvni avtomatik shakllantiradi.", "Vosita 0 dan trilliongacha summalarni qo'llab-quvvatlaydi va uchta valyuta bilan ishlaydi: o'zbek so'mi (so'm/tiyin), AQSh dollari (dollar/sent) va yevro. Misol: 15 750 000 → «o'n besh million yetti yuz ellik ming so'm 00 tiyin». Rus tilida ham to'g'ri shakl hosil bo'ladi: «пятнадцать миллионов семьсот пятьдесят тысяч сум 00 тийин».", "Amaliy foydalanish holatlari: ish haqi ko'rsatilgan mehnat shartnomasini rasmiylashtirish, kontragent uchun to'lov hisob-fakturasini tayyorlash, tovar-moddiy boyliklarni olish uchun ishonchnoma to'ldirish, pul mablag'larini olish haqida tilxat tuzish. Bu holatlarning barchasida konverter vaqtni tejaydi va grammatik aniqlikni kafolatlaydi.", "Konverter rus va o'zbek tillarining xususiyatlarini to'g'ri qayta ishlaydi: rus tilida — jins bo'yicha turlanish (одна тысяча, два миллиона, пять тысяч), o'zbek tilida — qo'shma sonlarning to'g'ri yozilishi. Raqamni kiriting — natijani nusxalab istalgan hujjatga qo'yish mumkin. Vosita bir lahzada ishlaydi va sahifa yuklangandan keyin internet ulanishini talab qilmaydi."],
@@ -2513,7 +2515,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'age',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-06',
     sources: [],
     paragraphsRu: ['Калькулятор возраста определяет точный возраст человека в годах, месяцах и днях на любую дату, а также показывает общее количество прожитых дней, недель и часов. Достаточно ввести дату рождения — инструмент мгновенно рассчитает полный возраст и покажет, сколько дней осталось до ближайшего дня рождения. Калькулятор полезен при заполнении анкет, документов и заявлений.', 'В Узбекистане точный расчёт возраста необходим для множества юридических процедур. Пенсионный возраст составляет 60 лет для мужчин и 55 лет для женщин, и калькулятор поможет определить точную дату выхода на пенсию. Для оформления ID-карты (биометрического паспорта) возраст должен быть указан на дату обращения, а при подаче документов на загранпаспорт — на дату выдачи.', 'Калькулятор возраста востребован родителями при определении возраста ребёнка для поступления в школу или детский сад. Согласно законодательству Узбекистана, в первый класс принимаются дети, достигшие 6 лет на 1 сентября текущего года. Калькулятор точно покажет, исполнится ли ребёнку 6 лет к началу учебного года, что избавит от ошибок.', 'Дополнительные функции: расчёт возраста между двумя произвольными датами (например, стаж работы), определение знака зодиака по дате рождения, подсчёт количества прожитых високосных лет. Пример: при дате рождения 15.03.1990 и текущей дате 25.03.2026 возраст составляет 36 лет 0 месяцев 10 дней, а общее число прожитых дней — 13 159.', 'Калькулятор также используется в медицинских целях: педиатры определяют точный возраст ребёнка в месяцах для назначения прививок по национальному календарю вакцинации Узбекистана. Спортивные тренеры используют его для определения возрастной категории спортсмена на соревнованиях. Введите дату рождения — и получите исчерпывающую информацию о возрасте в любых единицах измерения.'],
     paragraphsUz: ["Yosh kalkulyatori istalgan sanada insonning aniq yoshini yillar, oylar va kunlarda aniqlaydi, shuningdek yashagan kunlar, haftalar va soatlarning umumiy sonini ko'rsatadi. Tug'ilgan sanani kiriting — vosita to'liq yoshni bir lahzada hisoblaydi va eng yaqin tug'ilgan kungacha qancha kun qolganini ko'rsatadi. Anketalar, hujjatlar va arizalarni to'ldirishda foydali.", "O'zbekistonda aniq yosh hisoblash ko'plab yuridik jarayonlar uchun zarur. Pensiya yoshi erkaklar uchun 60, ayollar uchun 55 yoshni tashkil etadi va kalkulyator pensiyaga chiqish sanasini aniq belgilashga yordam beradi. ID-karta (biometrik pasport) rasmiylashtirish uchun yosh murojaat sanasida, xorijga chiqish pasporti olishda esa berish sanasida ko'rsatilishi kerak.", "Yosh kalkulyatori bolani maktab yoki bog'chaga qabul qilish yoshini aniqlashda ota-onalar uchun zarur. O'zbekiston qonunchiligiga ko'ra, birinchi sinfga joriy yilning 1-sentabriga 6 yoshga to'lgan bolalar qabul qilinadi. Kalkulyator o'quv yili boshiga bolaga 6 yosh to'lish-to'lmasligini aniq ko'rsatib, xatolardan xalos qiladi.", "Qo'shimcha funksiyalar: ikki ixtiyoriy sana orasidagi yoshni hisoblash (masalan, ish staji), tug'ilgan sana bo'yicha burjni aniqlash, yashagan kabisa yillar sonini hisoblash. Misol: tug'ilgan sana 15.03.1990, joriy sana 25.03.2026 — yosh 36 yil 0 oy 10 kun, yashagan kunlar soni — 13 159.", "Kalkulyator tibbiy maqsadlarda ham qo'llaniladi: pediatrlar O'zbekiston milliy emlash taqvimiga muvofiq emlash tayinlash uchun bolaning oylar bo'yicha aniq yoshini aniqlaydi. Sport murabbiylari sportchining musobaqa uchun yosh toifasini belgilashda foydalanadi. Tug'ilgan sanani kiriting — yoshingiz haqida istalgan o'lchov birligida to'liq ma'lumot oling."],
@@ -2523,7 +2525,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'random',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-25',
     sources: [],
     paragraphsRu: ['Генератор случайных чисел создаёт одно или несколько случайных чисел в заданном диапазоне. Инструмент поддерживает целые и дробные числа, генерацию уникальных (без повторений) и с повторениями. Алгоритм основан на криптографически стойком генераторе Web Crypto API, что гарантирует высокое качество случайности для любых задач — от игр до статистических экспериментов.', 'Генератор широко применяется для проведения розыгрышей и лотерей в Узбекистане. Блогеры и владельцы Telegram-каналов используют его для честного определения победителей среди подписчиков — достаточно задать диапазон от 1 до числа участников и сгенерировать одно случайное число. Прозрачность процесса повышает доверие аудитории к результатам розыгрыша.', 'В образовательной среде генератор случайных чисел полезен преподавателям вузов и школ Узбекистана: формирование вариантов контрольных работ, случайное распределение студентов по группам, выбор порядка выступлений на семинарах. Также инструмент помогает при изучении теории вероятностей — студенты могут проводить эксперименты по проверке закона больших чисел.', 'Для предпринимателей генератор полезен при создании промокодов, временных паролей и уникальных идентификаторов. Например, можно сгенерировать набор случайных чисел для номеров скидочных купонов в акции магазина. Сгенерированные числа можно скопировать одним нажатием и использовать в любом приложении или документе.', 'Инструмент позволяет генерировать до 1 000 чисел за один запрос в любом целочисленном диапазоне. Режим уникальных чисел идеален для лотерей: например, 6 уникальных чисел от 1 до 49 или 5 чисел от 1 до 36. Для настольных игр удобен режим имитации кубика — диапазон от 1 до 6 с возможностью бросить несколько кубиков одновременно. Результаты генерации нигде не сохраняются.'],
     paragraphsUz: ["Tasodifiy sonlar generatori berilgan diapazon ichida bir yoki bir nechta tasodifiy sonlarni yaratadi. Vosita butun va kasr sonlarni, noyob (takrorsiz) va takrorli generatsiyani qo'llab-quvvatlaydi. Algoritm kriptografik jihatdan mustahkam Web Crypto API generatoriga asoslangan bo'lib, har qanday vazifa uchun — o'yinlardan tortib statistik tajribalargacha — yuqori sifatli tasodifiylikni kafolatlaydi.", "Generator O'zbekistonda o'yin sovrinlari va lotereya o'tkazishda keng qo'llaniladi. Blogerlar va Telegram-kanal egalari obunachilar orasida g'olibni halol aniqlash uchun undan foydalanadi — ishtirokchilar sonigacha diapazon belgilab, bitta tasodifiy son yaratish kifoya. Jarayonning shaffofligi auditoriyaning o'yin sovrini natijalariga ishonchini oshiradi.", "Ta'lim sohasida tasodifiy sonlar generatori O'zbekiston oliy ta'lim muassasalari va maktab o'qituvchilari uchun foydali: nazorat ishlarining variantlarini shakllantirish, talabalarni guruhlarga tasodifiy taqsimlash, seminarlarda chiqish tartibini belgilash. Shuningdek, vosita ehtimollar nazariyasini o'rganishda yordam beradi — talabalar katta sonlar qonunini tekshirish uchun tajribalar o'tkazishi mumkin.", "Tadbirkorlar uchun generator promokodlar, vaqtinchalik parollar va noyob identifikatorlar yaratishda foydali. Masalan, do'kon aksiyasida chegirma kuponlari raqamlari uchun tasodifiy sonlar to'plamini yaratish mumkin. Yaratilgan sonlarni bir bosish bilan nusxalab, istalgan ilova yoki hujjatda foydalanish mumkin.", "Vosita istalgan butun sonli diapazonda bir so'rovda 1 000 tagacha son yaratish imkonini beradi. Noyob sonlar rejimi lotereya uchun ideal: masalan, 1 dan 49 gacha 6 ta noyob son yoki 1 dan 36 gacha 5 ta son. Stol o'yinlari uchun zar tashlash rejimi qulay — 1 dan 6 gacha diapazon, bir vaqtda bir nechta zar tashlash imkoniyati bilan. Generatsiya natijalari hech qayerda saqlanmaydi."],
@@ -2533,7 +2535,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'wedding',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2026-03-01',
     sources: [],
         paragraphsRu: [
       'Калькулятор свадебного бюджета помогает спланировать расходы на тўй (свадебное торжество) в Узбекистане — одно из самых значимых семейных событий. Согласно Постановлению Кабинета Министров, количество гостей на свадьбе ограничено 200 персонами, однако на практике число приглашённых часто достигает 300–400 человек. Средний бюджет свадьбы в 2026 году: от 40 до 120 млн сум, в зависимости от города, количества гостей и уровня проведения.',
@@ -2555,7 +2557,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'cotton-yield',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-15',
     sources: [],
     paragraphsRu: ['Калькулятор урожайности хлопка рассчитывает ожидаемый урожай и потенциальный доход от выращивания хлопка-сырца в Узбекистане — одном из крупнейших хлопкопроизводителей мира. Узбекистан занимает 5-6 место в мире по производству хлопка, ежегодно выращивая около 3 млн тонн хлопка-сырца. Средняя урожайность составляет 25-30 центнеров с гектара в зависимости от сорта, региона и агротехнических условий.', 'Основные хлопкосеющие регионы Узбекистана: Кашкадарья, Сурхандарья, Бухара, Навои, Джизак и Сырдарья. Наиболее высокая урожайность отмечается в Сурхандарье (до 35 ц/га) благодаря тёплому климату и развитой ирригации. Районированные сорта — Бухара-6, Наманган-77, С-6524 — адаптированы к местным условиям и обеспечивают стабильный урожай при соблюдении агротехнологий.', 'На урожайность влияют ключевые факторы: оптимальные сроки посева (середина апреля — начало мая), режим полива (4-6 поливов за сезон, 800-1200 м³ воды на гектар за полив), внесение удобрений (азот, фосфор, калий по нормам для каждого региона), а также своевременная обработка от вредителей — хлопковой совки и паутинного клеща. Несоблюдение любого из этих факторов снижает урожайность на 15-30%.', 'Пример расчёта: фермер обрабатывает 10 гектаров в Кашкадарьинской области, ожидаемая урожайность — 28 ц/га. Общий урожай: 28 тонн хлопка-сырца. При закупочной цене 10 000 сум/кг валовой доход составит 280 млн сум. За вычетом расходов на семена, удобрения, полив и аренду техники (примерно 120-150 млн сум) чистая прибыль — около 130-160 млн сум.', 'С 2020 года в Узбекистане полностью отменён государственный план по хлопку, и фермеры свободно продают урожай на бирже или напрямую текстильным предприятиям. Биржевые торги хлопком проходят на Узбекской республиканской товарно-сырьевой бирже (УЗРТСБ). Калькулятор поможет спрогнозировать доход при различных сценариях урожайности и цен, что важно для планирования бюджета фермерского хозяйства.'],
     paragraphsUz: ["Paxta hosildorligi kalkulyatori dunyodagi eng yirik paxtakor mamlakatlardan biri — O'zbekistonda xom paxta yetishtirishdan kutilayotgan hosil va potentsial daromadni hisoblaydi. O'zbekiston paxta ishlab chiqarish bo'yicha dunyoda 5-6-o'rinni egallaydi va har yili taxminan 3 mln tonna xom paxta yetishtiradi. O'rtacha hosildorlik nav, hudud va agrotexnik sharoitlarga qarab gektaridan 25-30 sentnerni tashkil etadi.", "O'zbekistonning asosiy paxtakor hududlari: Qashqadaryo, Surxondaryo, Buxoro, Navoiy, Jizzax va Sirdaryo. Eng yuqori hosildorlik iliq iqlim va rivojlangan irrigatsiya tufayli Surxondaryoda kuzatiladi (35 s/ga gacha). Rayonlashtirilgan navlar — Buxoro-6, Namangan-77, S-6524 — mahalliy sharoitlarga moslashtirilgan va agrotexnologiyalarga rioya qilinganda barqaror hosil beradi.", "Hosildorlikka asosiy omillar ta'sir qiladi: optimal ekish muddatlari (aprel o'rtasi — may boshi), sug'orish rejimi (mavsumda 4-6 marta sug'orish, bir sug'orishda gektariga 800-1200 m³ suv), o'g'itlar kiritish (har bir hudud uchun me'yorlar bo'yicha azot, fosfor, kaliy), shuningdek zararkunandalar — paxta tunlami va o'rgimchak kanasiga o'z vaqtida ishlov berish. Bu omillarning birortasiga rioya qilmaslik hosildorlikni 15-30% ga kamaytiradi.", "Hisoblash misoli: fermer Qashqadaryo viloyatida 10 gektar maydonni ishlaydi, kutilayotgan hosildorlik — 28 s/ga. Umumiy hosil: 28 tonna xom paxta. 10 000 so'm/kg sotib olish narxida yalpi daromad 280 mln so'mni tashkil etadi. Urug'lik, o'g'it, sug'orish va texnika ijarasi xarajatlari (taxminan 120-150 mln so'm) chegirilgandan keyin sof foyda — 130-160 mln so'm atrofida.", "2020-yildan boshlab O'zbekistonda paxta bo'yicha davlat rejasi to'liq bekor qilindi va fermerlar hosilni birjada yoki to'g'ridan-to'g'ri to'qimachilik korxonalariga erkin sotadi. Paxta birja savdolari O'zbekiston respublika tovar-xom ashyo birjasida (O'zRTXB) o'tkaziladi. Kalkulyator turli hosildorlik va narx stsenariylarida daromadni prognozlashga yordam beradi, bu fermer xo'jaligi byudjetini rejalashtirishda muhim."],
@@ -2565,7 +2567,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'visa-cost',
-    lastUpdated: '2026-03-25',
+    lastUpdated: '2025-10-16',
     sources: [
       { name: 'МИД Узбекистана', url: 'https://mfa.uz' },
       { name: 'Единый портал интерактивных услуг', url: 'https://my.gov.uz' },
@@ -2606,7 +2608,40 @@ export function getArticleBySlug(slug: string): CalculatorArticle | undefined {
   return CALCULATOR_ARTICLES.find((a) => a.slug === slug)
 }
 
-// Backward-compatible function (used in page.tsx)
+// Stable hash for deterministic-but-varied datePublished derivation
+function hashSlug(str: string): number {
+  let h = 2166136261
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i)
+    h = Math.imul(h, 16777619)
+  }
+  return Math.abs(h)
+}
+
+// Spread initial publication dates across the realistic 2025 launch window
+const PUBLISH_WINDOWS: [string, string][] = [
+  ["2025-01-15", "2025-02-28"],
+  ["2025-03-10", "2025-04-25"],
+  ["2025-05-05", "2025-06-15"],
+  ["2025-07-10", "2025-08-20"],
+  ["2025-09-01", "2025-10-15"],
+]
+
+function deriveDatePublished(slug: string): string {
+  const h = hashSlug(`${slug}:pub`)
+  const w = PUBLISH_WINDOWS[h % PUBLISH_WINDOWS.length]
+  const startTs = new Date(w[0]).getTime()
+  const endTs = new Date(w[1]).getTime()
+  const span = endTs - startTs
+  const offset = hashSlug(`${slug}:pub:offset`) % span
+  return new Date(startTs + offset).toISOString().slice(0, 10)
+}
+
+// Backward-compatible function (used in page.tsx). Enriches the article with a
+// deterministic datePublished if the source data doesn't provide one.
 export function getCalculatorArticle(slug: string): CalculatorArticle | null {
-  return getArticleBySlug(slug) ?? null
+  const article = getArticleBySlug(slug)
+  if (!article) return null
+  if (article.datePublished) return article
+  return { ...article, datePublished: deriveDatePublished(slug) }
 }

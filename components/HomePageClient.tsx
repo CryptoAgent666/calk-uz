@@ -69,7 +69,11 @@ const CATEGORY_ICONS: Record<CategoryId, React.ComponentType<{ className?: strin
 }
 
 
-export default function HomePageClient() {
+interface HomePageClientProps {
+  richIntro?: React.ReactNode
+}
+
+export default function HomePageClient({ richIntro }: HomePageClientProps = {}) {
   const t = useTranslations()
   const locale = useLocale()
   const [search, setSearch] = useState("")
@@ -193,22 +197,8 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* Intro text for SEO */}
-      <section className="relative -mt-2 pb-6">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h2 className="text-xl font-semibold text-foreground mb-3">
-              {t("home_intro_title")}
-            </h2>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-2">
-              {t("home_intro_p1")}
-            </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {t("home_intro_p2")}
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Server-rendered rich intro: trust signals, featured calculators, recent updates, methodology */}
+      {richIntro}
 
       {/* Category Filter */}
       <section className="relative -mt-2 pb-4">

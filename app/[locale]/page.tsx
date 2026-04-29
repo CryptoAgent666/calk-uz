@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { setRequestLocale } from "next-intl/server"
 import HomePageClient from "@/components/HomePageClient"
+import { HomeRichIntro } from "@/components/HomeRichIntro"
 
 const BASE_URL = "https://calk.uz"
 
@@ -74,7 +75,7 @@ export default async function HomePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
-      <HomePageClient />
+      <HomePageClient richIntro={<HomeRichIntro />} />
     </>
   )
 }

@@ -174,6 +174,22 @@ export async function Footer() {
               </li>
               <li>
                 <Link
+                  href="/about"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {t("about_title")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/author/konstantin-yakovlev"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {locale === "uz" ? "Muallif haqida" : "Об авторе"}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/updates"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >

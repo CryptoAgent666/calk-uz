@@ -11,12 +11,16 @@ import { getCalculatorHowTo } from "@/lib/data/calculator-howto"
 import { getSlugByLocale, getEnglishSlug, getAllLocalizedSlugs } from "@/lib/data/calculator-slugs"
 import { CROSS_LINKS } from "@/lib/data/calculator-crosslinks"
 import { getTablesForCategory } from "@/lib/data/calculator-tables"
+import { getAuthorBySlug, PRIMARY_AUTHOR_SLUG } from "@/lib/data/authors"
+import { getCaseStudies } from "@/lib/data/calculator-case-studies"
+import { getUzExtraFaq } from "@/lib/data/calculator-faq-uz-extras"
 import type { CategoryId } from "@/lib/types/calculator"
-import { ChevronRight, Home, ArrowRight, Calendar, ExternalLink, ShieldCheck } from "lucide-react"
+import { ChevronRight, Home, ArrowRight, Calendar, ExternalLink, ShieldCheck, FlaskConical } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { DynamicIcon } from "@/components/calculator/DynamicIcon"
 import { ErrorBoundary } from "@/components/calculator/ErrorBoundary"
 import { SharePrintButtons } from "@/components/calculator/SharePrintButtons"
+import { LinkifiedParagraph } from "@/components/calculator/LinkifiedParagraph"
 import {
   Accordion,
   AccordionItem,
@@ -151,15 +155,22 @@ export default async function CalculatorPage({
       ? article.paragraphsUz
       : article.paragraphsRu
     : null
-  const faqItems = article
+  // Augment Uzbek FAQ with locale-specific items (mahalla, OTM, BHK, etc.)
+  // so the UZ pages have unique content beyond a translation of the RU version.
+  const baseFaq = article
     ? (locale === "uz" ? article.faqUz : article.faqRu)
     : null
+  const uzExtras = locale === "uz" ? getUzExtraFaq(calc.slug) : []
+  const faqItems = baseFaq ? [...baseFaq, ...uzExtras] : null
 
   // Get HowTo data
   const howTo = getCalculatorHowTo(calc.slug)
   const howToSteps = howTo
     ? locale === "uz" ? howTo.stepsUz : howTo.stepsRu
     : null
+
+  // Real-world case studies (priority-1 calculators)
+  const caseStudies = getCaseStudies(calc.slug)
 
   // Schema.org JSON-LD — always use localized canonical URL
   const canonicalUrl = `${BASE_URL}/${locale}/calculator/${localizedSlug}`
@@ -228,6 +239,9 @@ export default async function CalculatorPage({
 
   const articleLastUpdated = article?.lastUpdated || "2026-01-01"
 
+  const author = getAuthorBySlug(PRIMARY_AUTHOR_SLUG)
+  const articleDatePublished = article?.datePublished || "2025-09-01"
+
   const techArticleSchema = articleParagraphs
     ? {
         "@context": "https://schema.org",
@@ -235,15 +249,27 @@ export default async function CalculatorPage({
         headline: title,
         description,
         url: canonicalUrl,
-        datePublished: "2025-01-01",
+        datePublished: articleDatePublished,
         dateModified: articleLastUpdated,
-        author: {
+        author: author
+          ? {
+              "@type": "Person",
+              "@id": `${BASE_URL}/#founder`,
+              name: author.name,
+              alternateName: author.alternateName,
+              url: `${BASE_URL}/${locale}/author/${author.slug}`,
+              jobTitle: locale === "uz" ? author.jobTitleUz : author.jobTitleRu,
+              image: `${BASE_URL}${author.imagePath}`,
+            }
+          : { "@type": "Organization", name: "Calk.UZ", url: BASE_URL },
+        reviewedBy: {
           "@type": "Organization",
           name: "Calk.UZ",
           url: BASE_URL,
         },
         publisher: {
           "@type": "Organization",
+          "@id": `${BASE_URL}/#organization`,
           name: "Calk.UZ",
           url: BASE_URL,
           logo: {
@@ -348,6 +374,57 @@ export default async function CalculatorPage({
               </ErrorBoundary>
             </div>
 
+            {/* Practical case studies — unique editorial content for priority-1 calcs */}
+            {caseStudies && caseStudies.cases.length > 0 && (
+              <div className="mt-8 rounded-2xl border border-border bg-card p-6 sm:p-8">
+                <div className="flex items-center gap-2.5 mb-1">
+                  <FlaskConical className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                  <h2 className="text-lg sm:text-xl font-bold text-foreground">
+                    {locale === "uz" ? "Amaliy misollar" : "Практические примеры"}
+                  </h2>
+                </div>
+                <p className="text-sm text-muted-foreground mb-5">
+                  {locale === "uz"
+                    ? `${caseStudies.calibratedFor}-yil uchun yangilangan haqiqiy stsenariylar`
+                    : `Реальные сценарии, актуализированные для ${caseStudies.calibratedFor} года`}
+                </p>
+                <div className="space-y-5">
+                  {caseStudies.cases.map((cs, idx) => {
+                    const steps = locale === "uz" ? cs.stepsUz : cs.stepsRu
+                    return (
+                      <div
+                        key={idx}
+                        className="rounded-xl border border-border bg-muted/20 p-4 sm:p-5"
+                      >
+                        <h3 className="text-base font-semibold text-foreground">
+                          {locale === "uz" ? cs.titleUz : cs.titleRu}
+                        </h3>
+                        <p className="text-xs text-muted-foreground mt-0.5 mb-3">
+                          {locale === "uz" ? cs.contextUz : cs.contextRu}
+                        </p>
+                        <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
+                          {steps.map((step, sIdx) => (
+                            <div
+                              key={sIdx}
+                              className="flex items-baseline justify-between gap-3 border-b border-border/50 pb-1"
+                            >
+                              <dt className="text-xs text-muted-foreground">{step.label}</dt>
+                              <dd className="text-sm font-medium text-foreground tabular-nums">
+                                {step.value}
+                              </dd>
+                            </div>
+                          ))}
+                        </dl>
+                        <p className="text-sm text-muted-foreground mt-3 leading-relaxed border-l-2 border-emerald-500 pl-3">
+                          {locale === "uz" ? cs.conclusionUz : cs.conclusionRu}
+                        </p>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+
             {/* HowTo Steps */}
             {howToSteps && howToSteps.length > 0 && (
               <div className="mt-8 rounded-2xl border border-border bg-card p-6 sm:p-8">
@@ -430,7 +507,13 @@ export default async function CalculatorPage({
                             {t(subheadingKey)}
                           </h3>
                         )}
-                        <p className="leading-relaxed">{paragraph}</p>
+                        <p className="leading-relaxed">
+                          <LinkifiedParagraph
+                            text={paragraph}
+                            locale={locale}
+                            currentSlug={calc.slug}
+                          />
+                        </p>
                       </div>
                     )
                   })}
@@ -511,11 +594,35 @@ export default async function CalculatorPage({
                   </div>
                 )}
 
-                {/* Reviewed by */}
-                <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-                  <ShieldCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                  <span>{t("reviewed_by")}</span>
-                </div>
+                {/* Reviewed by — author byline */}
+                {author && (
+                  <Link
+                    href={`/author/${author.slug}`}
+                    className="mt-8 flex items-center gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:border-emerald-500/30 hover:bg-emerald-50/30 dark:hover:bg-emerald-950/20"
+                  >
+                    <div className="relative h-12 w-12 shrink-0 rounded-xl overflow-hidden ring-2 ring-emerald-500/20">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={author.imagePath}
+                        alt={author.alternateName}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-0.5">
+                        <ShieldCheck className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+                        {locale === "uz" ? "Muallif va metodologiya" : "Автор и методология"}
+                      </div>
+                      <p className="font-semibold text-foreground text-sm">
+                        {author.alternateName}
+                      </p>
+                      <p className="text-xs text-muted-foreground line-clamp-1">
+                        {locale === "uz" ? author.jobTitleUz : author.jobTitleRu}
+                      </p>
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />
+                  </Link>
+                )}
               </div>
             )}
           </div>
