@@ -79,12 +79,15 @@ export function calculateVehicleTax(engineVolumeCc: number, yearOfManufacture: n
 
   const baseTax = brvMultiplier * BRV
 
-  // Age factor (decreasing with age)
+  // Age factor — older vehicles pay MORE due to higher emissions (НК ст. 446):
+  //   0–3 years: 1.0× base
+  //   3–7 years: 1.2×
+  //   7–10 years: 1.4×
+  //   10+ years: 1.5×
   let ageFactor = 1.0
-  if (vehicleAge > 10) ageFactor = 0.5
-  else if (vehicleAge > 7) ageFactor = 0.6
-  else if (vehicleAge > 5) ageFactor = 0.7
-  else if (vehicleAge > 3) ageFactor = 0.8
+  if (vehicleAge > 10) ageFactor = 1.5
+  else if (vehicleAge > 7) ageFactor = 1.4
+  else if (vehicleAge > 3) ageFactor = 1.2
 
   const annualTax = baseTax * ageFactor
 

@@ -35,8 +35,13 @@ export function calculateIPTax(
     taxAmount = annualRevenue * taxRate
   }
 
-  // Social contributions for IP (fixed amount based on BRV)
-  const socialTax = BRV * 12 // Monthly BRV × 12 months (simplified)
+  // Social contributions for IP (НК ст. 408): the higher of
+  //   (a) 1 BRV per month — minimum, paid even at zero income
+  //   (b) 12% of net income — actual liability for IPs on the general regime
+  // Self-employed individuals are exempt (НК ст. 437-1).
+  const socialMinimum = BRV * 12
+  const socialActual = regime === 'general' ? annualRevenue * 0.12 : 0
+  const socialTax = regime === 'self_employed' ? 0 : Math.max(socialMinimum, socialActual)
   const inps = 0
 
   const totalTaxBurden = taxAmount + socialTax + inps
@@ -64,7 +69,11 @@ export interface LLCTaxResult {
   corporateTax: number
   vatAmount: number
   socialTaxOnPayroll: number
+  /** Direct cost to the LLC: corporate tax + payroll social tax. VAT is excluded
+   *  because it is collected from buyers and remitted, not paid out of profit. */
   totalTaxBurden: number
+  /** Including VAT. Useful for cash-flow planning even though VAT is pass-through. */
+  totalCashOutflow: number
   netProfit: number
 }
 
@@ -81,6 +90,7 @@ export function calculateLLCTax(
   const socialTaxOnPayroll = payroll * 0.12
 
   const totalTaxBurden = corporateTax + socialTaxOnPayroll
+  const totalCashOutflow = totalTaxBurden + vatAmount
   const netProfit = profit - corporateTax
 
   return {
@@ -91,6 +101,7 @@ export function calculateLLCTax(
     vatAmount,
     socialTaxOnPayroll,
     totalTaxBurden,
+    totalCashOutflow,
     netProfit,
   }
 }
@@ -196,9 +207,9 @@ export function calculateEmployerCost(grossSalary: number, isBudgetOrg: boolean 
   const socialTax = grossSalary * socialTaxRate
   const inps = grossSalary * 0.001
 
+  // NDFL (12% to budget) + INPS (0.1% to personal pension account) — separate deductions
   const ndfl = grossSalary * 0.12
-  const ndflToBudget = ndfl - inps
-  const netSalary = grossSalary - ndflToBudget - inps
+  const netSalary = grossSalary - ndfl - inps
 
   const totalCost = grossSalary + socialTax
   const employerOverhead = totalCost - netSalary

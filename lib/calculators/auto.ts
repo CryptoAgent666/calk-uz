@@ -6,7 +6,8 @@
 // OSAGO Calculator
 export interface OsagoResult {
   baseTariff: number
-  regionCoeff: number
+  /** Region-specific premium (already baked into baseTariff). 1.2 = Tashkent, 1.0 = other regions. */
+  regionMultiplier: number
   ageExpCoeff: number
   historyCoeff: number
   annualPremium: number
@@ -42,8 +43,9 @@ export function calculateOsago(
   else historyCoeff = 1.7
 
   const annualPremium = Math.round(baseTariff * ageExpCoeff * historyCoeff)
+  const regionMultiplier = region === 'tashkent' ? 1.2 : 1.0
 
-  return { baseTariff, regionCoeff: 1, ageExpCoeff, historyCoeff, annualPremium }
+  return { baseTariff, regionMultiplier, ageExpCoeff, historyCoeff, annualPremium }
 }
 
 // Fuel Consumption Calculator

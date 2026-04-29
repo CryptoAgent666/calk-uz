@@ -41,14 +41,20 @@ const UTILIZATION_FEE_BRV: { upTo: number; newCar: number; usedCar: number }[] =
 ]
 
 import { BRV } from '@/lib/constants/brv'
-const USD_UZS = 12_850 // Approximate exchange rate (updated March 2026)
+// Default fallback rate. The currency-converter calculator pulls live rates
+// from cbu.uz; pass `usdToUzs` explicitly for accurate cost projections.
+const USD_UZS_FALLBACK = 12_780 // CBU reference rate, late April 2026
 const CUSTOMS_DUTY_RATE = 0.15 // 15%
 const VAT_RATE = 0.12 // 12%
 const CERTIFICATION_FEE_USD = 690
 
-export function calculateCustomsClearance(input: CustomsInput): CustomsResult {
+export function calculateCustomsClearance(
+  input: CustomsInput,
+  /** Live USD→UZS rate. Pass the current cbu.uz rate for accurate results. */
+  usdToUzs: number = USD_UZS_FALLBACK,
+): CustomsResult {
   const { carPrice, engineVolumeCc, fuelType, isNew } = input
-  const carPriceUzs = carPrice * USD_UZS
+  const carPriceUzs = carPrice * usdToUzs
 
   // Electric vehicles: 0% customs duty until 2027
   const isElectric = fuelType === 'electric'
@@ -60,7 +66,7 @@ export function calculateCustomsClearance(input: CustomsInput): CustomsResult {
   let exciseTax = 0
   if (!isElectric) {
     const rate = EXCISE_RATES_PER_CC.find(t => engineVolumeCc <= t.upTo)?.rate ?? 10
-    exciseTax = engineVolumeCc * rate * USD_UZS
+    exciseTax = engineVolumeCc * rate * usdToUzs
   }
 
   // VAT: 12% of (car price + customs duty + excise)
@@ -81,7 +87,7 @@ export function calculateCustomsClearance(input: CustomsInput): CustomsResult {
   const registrationFee = 1 * BRV
 
   // Certification fee
-  const certificationFee = CERTIFICATION_FEE_USD * USD_UZS
+  const certificationFee = CERTIFICATION_FEE_USD * usdToUzs
 
   const totalCustomsCost = customsDuty + exciseTax + vat + utilizationFee + registrationFee + certificationFee
 

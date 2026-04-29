@@ -91,21 +91,23 @@ export interface WeddingResult {
 export function calculateWedding(
   guestCount: number,
   venueType: 'restaurant' | 'banquet_hall' | 'home' | 'outdoor',
-  costPerPlate: number = 150_000,
-  musicBudget: number = 5_000_000,
-  photographyBudget: number = 3_000_000,
-  decorationBudget: number = 2_000_000,
-  dressBudget: number = 10_000_000,
-  transportBudget: number = 2_000_000
+  // 2026 mid-market reference prices for Tashkent, sourced from event-planning
+  // agencies. Pass explicit values for higher-end / luxury planning.
+  costPerPlate: number = 200_000,
+  musicBudget: number = 6_500_000,
+  photographyBudget: number = 4_000_000,
+  decorationBudget: number = 2_800_000,
+  dressBudget: number = 13_000_000,
+  transportBudget: number = 2_500_000
 ): WeddingResult {
   const venueRates: Record<string, number> = {
-    restaurant: 100_000, banquet_hall: 80_000, home: 0, outdoor: 50_000,
+    restaurant: 130_000, banquet_hall: 100_000, home: 0, outdoor: 70_000,
   }
 
-  const venueCost = guestCount * (venueRates[venueType] ?? 80_000)
+  const venueCost = guestCount * (venueRates[venueType] ?? 100_000)
   const foodCost = guestCount * costPerPlate
-  const invitationsCost = guestCount * 10_000
-  const otherCost = guestCount * 20_000
+  const invitationsCost = guestCount * 13_000
+  const otherCost = guestCount * 25_000
 
   const totalCost = venueCost + foodCost + musicBudget + photographyBudget +
     decorationBudget + dressBudget + invitationsCost + transportBudget + otherCost
@@ -140,9 +142,9 @@ export interface CottonYieldResult {
 
 export function calculateCottonYield(
   areaHectares: number,
-  yieldPerHectare: number = 2800, // kg per hectare average
-  pricePerKg: number = 6_000, // UZS
-  costsPerHectare: number = 8_000_000 // UZS
+  yieldPerHectare: number = 3000, // 2025 nationwide average per Uzpaxtasanoat
+  pricePerKg: number = 9_000, // 2026 reference procurement price for raw cotton (seed cotton)
+  costsPerHectare: number = 11_000_000 // 2026 inputs incl. seeds, fertilizer, water, labor
 ): CottonYieldResult {
   const totalYieldKg = areaHectares * yieldPerHectare
   const grossRevenue = totalYieldKg * pricePerKg
@@ -174,7 +176,8 @@ export interface RemittanceResult {
 export function calculateRemittance(
   sendAmount: number,
   sendCurrency: string = 'USD',
-  exchangeRate: number = 12_850,
+  /** USD→UZS rate. Default is a fallback; pass the live cbu.uz rate. */
+  exchangeRate: number = 12_780,
   feePercent: number = 1.5
 ): RemittanceResult {
   const fee = sendAmount * feePercent / 100
@@ -201,14 +204,26 @@ export interface VisaCostResult {
   visaType: string
   consulateFee: number
   serviceFee: number
+  /** Country-specific additional fee (e.g. USA Visa Integrity Fee) in UZS */
+  additionalFee: number
+  additionalFeeNote?: string
   insuranceCost: number
   photoCost: number
   totalCost: number
 }
 
-export const VISA_COSTS_USD: Record<string, { consulateFeeUsd: number; serviceFeeUsd: number }> = {
-  schengen: { consulateFeeUsd: 80, serviceFeeUsd: 30 },
-  usa: { consulateFeeUsd: 185, serviceFeeUsd: 0 },
+export const VISA_COSTS_USD: Record<
+  string,
+  { consulateFeeUsd: number; serviceFeeUsd: number; additionalFeeUsd?: number; additionalFeeNoteRu?: string; additionalFeeNoteUz?: string }
+> = {
+  schengen: { consulateFeeUsd: 90, serviceFeeUsd: 30 }, // €80 raised to €90 from June 2024
+  usa: {
+    consulateFeeUsd: 185,
+    serviceFeeUsd: 0,
+    additionalFeeUsd: 250,
+    additionalFeeNoteRu: 'Visa Integrity Fee (с октября 2024) — оплачивается при выдаче визы',
+    additionalFeeNoteUz: 'Visa Integrity Fee (2024-yil oktyabrdan) — viza berilganda to\'lanadi',
+  },
   uk: { consulateFeeUsd: 115, serviceFeeUsd: 50 },
   south_korea: { consulateFeeUsd: 40, serviceFeeUsd: 20 },
   japan: { consulateFeeUsd: 30, serviceFeeUsd: 25 },
@@ -219,13 +234,14 @@ export const VISA_COSTS_USD: Record<string, { consulateFeeUsd: number; serviceFe
 
 export function calculateVisaCost(
   country: string,
-  exchangeRate: number = 12_850,
+  exchangeRate: number = 12_780,
   insuranceDays: number = 30,
   insuranceRatePerDay: number = 15_000
 ): VisaCostResult {
   const visa = VISA_COSTS_USD[country] ?? { consulateFeeUsd: 50, serviceFeeUsd: 25 }
   const consulateFee = visa.consulateFeeUsd * exchangeRate
   const serviceFee = visa.serviceFeeUsd * exchangeRate
+  const additionalFee = (visa.additionalFeeUsd ?? 0) * exchangeRate
   const insuranceCost = insuranceDays * insuranceRatePerDay
   const photoCost = 50_000
 
@@ -234,9 +250,11 @@ export function calculateVisaCost(
     visaType: 'tourist',
     consulateFee,
     serviceFee,
+    additionalFee,
+    additionalFeeNote: visa.additionalFeeNoteRu,
     insuranceCost,
     photoCost,
-    totalCost: consulateFee + serviceFee + insuranceCost + photoCost,
+    totalCost: consulateFee + serviceFee + additionalFee + insuranceCost + photoCost,
   }
 }
 
