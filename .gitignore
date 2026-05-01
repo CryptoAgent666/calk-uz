@@ -22,6 +22,7 @@
 
 # misc
 .DS_Store
+**/.DS_Store
 *.pem
 
 # debug
@@ -33,9 +34,25 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
+# vercel — not used, keeping rule for safety
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# JetBrains / VSCode IDE files
+.idea/
+.vscode/
+*.iml
+
+# Android — build artifacts and gradle cache
+android/.gradle/
+android/build/
+android/app/build/
+android/capacitor-cordova-android-plugins/build/
+
+# OS / editor temp
+*.swp
+*.swo
+*~
