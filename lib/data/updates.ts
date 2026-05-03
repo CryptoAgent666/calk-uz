@@ -20,6 +20,29 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-05-03",
+    dateLabelRu: "3 мая 2026",
+    dateLabelUz: "2026-yil 3-may",
+    items: [
+      {
+        titleRu: "Транспортный налог — ставки приведены в соответствие с НК ст. 446",
+        titleUz: "Transport solig'i — stavkalar Soliq kodeksining 446-moddasiga muvofiqlashtirildi",
+        descRu:
+          "Калькулятор использовал самодельные ставки (1, 2, 3, 5, 7, 10 БРВ). Теперь ставки соответствуют закону: до 1.5 л — 1.5 БРВ (618 000), 1.5–2.0 л — 3 БРВ (1 236 000), 2.0–3.0 л — 5 БРВ (2 060 000), свыше 3.0 л — 7.5 БРВ (3 090 000). Возрастной коэффициент убран — НК Узбекистана его не предусматривает (ставка зависит только от объёма двигателя).",
+        descUz:
+          "Kalkulyator o'zboshimcha stavkalardan foydalanardi (1, 2, 3, 5, 7, 10 BHK). Endi stavkalar qonunga muvofiq: 1.5 l gacha — 1.5 BHK (618 000), 1.5–2.0 l — 3 BHK (1 236 000), 2.0–3.0 l — 5 BHK (2 060 000), 3.0 l dan ortiq — 7.5 BHK (3 090 000). Yosh koeffitsiyenti olib tashlandi — Soliq kodeksi uni nazarda tutmaydi (stavka faqat dvigatel hajmiga bog'liq).",
+      },
+      {
+        titleRu: "Курс USD по умолчанию обновлён",
+        titleUz: "Standart USD kursi yangilandi",
+        descRu:
+          "Резервный курс USD/UZS снижен с 12 780 до 11 938 сум — это курс ЦБ на 1 мая 2026. Затрагивает калькуляторы таможни, виз и переводов в случаях, когда live-курс с cbu.uz недоступен. Сум укрепился к доллару примерно на 6,6% за две недели.",
+        descUz:
+          "USD/UZS zaxira kursi 12 780 dan 11 938 so'mga tushirildi — bu MB ning 2026-yil 1-may holati. Cbu.uz ning jonli kursi mavjud bo'lmaganda bojxona, viza va pul o'tkazmalari kalkulyatorlariga ta'sir qiladi. So'm ikki hafta ichida dollarga nisbatan taxminan 6,6% ga mustahkamlandi.",
+      },
+    ],
+  },
+  {
     date: "2026-04-29",
     dateLabelRu: "29 апреля 2026",
     dateLabelUz: "2026-yil 29-aprel",

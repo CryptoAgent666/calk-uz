@@ -43,7 +43,7 @@ const UTILIZATION_FEE_BRV: { upTo: number; newCar: number; usedCar: number }[] =
 import { BRV } from '@/lib/constants/brv'
 // Default fallback rate. The currency-converter calculator pulls live rates
 // from cbu.uz; pass `usdToUzs` explicitly for accurate cost projections.
-const USD_UZS_FALLBACK = 12_780 // CBU reference rate, late April 2026
+const USD_UZS_FALLBACK = 11_938 // CBU reference rate, 1 May 2026
 const CUSTOMS_DUTY_RATE = 0.15 // 15%
 const VAT_RATE = 0.12 // 12%
 const CERTIFICATION_FEE_USD = 690

@@ -68,27 +68,23 @@ export function calculateVehicleTax(engineVolumeCc: number, yearOfManufacture: n
   const currentYear = new Date().getFullYear()
   const vehicleAge = currentYear - yearOfManufacture
 
-  // Tax in BRV based on engine volume
+  // Passenger car rates per НК ст. 446 (2026), expressed in BRV per year:
+  //   ≤1500 cc → 1.5 BRV
+  //   1500–2000 cc → 3 BRV
+  //   2000–3000 cc → 5 BRV
+  //   >3000 cc → 7.5 BRV
   let brvMultiplier: number
-  if (engineVolumeCc <= 1500) brvMultiplier = 1
-  else if (engineVolumeCc <= 2000) brvMultiplier = 2
-  else if (engineVolumeCc <= 2500) brvMultiplier = 3
+  if (engineVolumeCc <= 1500) brvMultiplier = 1.5
+  else if (engineVolumeCc <= 2000) brvMultiplier = 3
   else if (engineVolumeCc <= 3000) brvMultiplier = 5
-  else if (engineVolumeCc <= 4000) brvMultiplier = 7
-  else brvMultiplier = 10
+  else brvMultiplier = 7.5
 
   const baseTax = brvMultiplier * BRV
 
-  // Age factor — older vehicles pay MORE due to higher emissions (НК ст. 446):
-  //   0–3 years: 1.0× base
-  //   3–7 years: 1.2×
-  //   7–10 years: 1.4×
-  //   10+ years: 1.5×
-  let ageFactor = 1.0
-  if (vehicleAge > 10) ageFactor = 1.5
-  else if (vehicleAge > 7) ageFactor = 1.4
-  else if (vehicleAge > 3) ageFactor = 1.2
-
+  // Note: НК Узбекистана does not prescribe a vehicle-age multiplier for the
+  // base annual transport tax (the rate depends only on engine volume).
+  // ageFactor is kept at 1.0 and exposed in the result for UI compatibility.
+  const ageFactor = 1.0
   const annualTax = baseTax * ageFactor
 
   return {

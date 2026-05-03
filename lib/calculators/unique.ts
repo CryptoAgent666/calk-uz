@@ -177,7 +177,7 @@ export function calculateRemittance(
   sendAmount: number,
   sendCurrency: string = 'USD',
   /** USD→UZS rate. Default is a fallback; pass the live cbu.uz rate. */
-  exchangeRate: number = 12_780,
+  exchangeRate: number = 11_938,
   feePercent: number = 1.5
 ): RemittanceResult {
   const fee = sendAmount * feePercent / 100
@@ -234,7 +234,7 @@ export const VISA_COSTS_USD: Record<
 
 export function calculateVisaCost(
   country: string,
-  exchangeRate: number = 12_780,
+  exchangeRate: number = 11_938,
   insuranceDays: number = 30,
   insuranceRatePerDay: number = 15_000
 ): VisaCostResult {
