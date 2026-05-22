@@ -57,16 +57,12 @@ export const AUTHORS: Author[] = [
     shortBioUz:
       "Calk.UZ asoschisi. Internet-marketingda 14 yildan ortiq, moliyaviy tahlilda 8 yildan ortiq tajriba. Zanimaem.kz va Profinance.kz moliyaviy marketpleyslarining yaratuvchisi.",
     longBioRu: [
-      'Привет! Меня зовут Константин Яковлев, я — основатель и идейный вдохновитель проекта Calk.UZ. За плечами у меня более 14 лет работы в интернет-маркетинге и свыше 8 лет в финансовой аналитике. Всё это время я занимаюсь одной задачей — помогать людям принимать более грамотные финансовые решения через прозрачные и понятные онлайн-инструменты.',
-      'В 2016 году я запустил Zanimaem.kz — один из первых финансовых маркетплейсов Казахстана, где пользователи могут сравнивать кредиты, микрозаймы и банковские продукты. Параллельно я развиваю аналитический портал Profinance.kz, который ежедневно публикует обзоры банковских ставок, рейтинги микрофинансовых организаций и материалы о личных финансах.',
-      'Calk.UZ я создал в 2025 году, потому что увидел очевидный пробел: в Узбекистане не было современной, бесплатной и двуязычной платформы калькуляторов, где формулы соответствовали бы актуальному Налоговому кодексу, Трудовому кодексу и постановлениям ЦБ Узбекистана. Я лично тестирую финансовые продукты, сверяю формулы с первоисточниками (lex.uz, cbu.uz, soliq.uz) и слежу, чтобы каждое обновление законодательства попадало на сайт в течение нескольких дней.',
-      'Помимо разработки калькуляторов, я отвечаю за методологию расчётов, редакторскую политику и точность данных. Если вы заметили несоответствие в каком-либо расчёте — напишите мне напрямую: я лично разбираю каждое сообщение и отвечаю обычно в течение суток.',
+      'Меня зовут Константин Яковлев, я — основатель Calk.UZ. Более 14 лет в интернет-маркетинге, свыше 8 лет в финансовой аналитике. Делаю онлайн-инструменты, которые помогают принимать грамотные финансовые решения.',
+      'В 2016 году запустил Zanimaem.kz — один из первых финансовых маркетплейсов Казахстана. В 2025 — Calk.kz, в 2026 — Profinance.kz и Calk.UZ. Если заметили ошибку в расчётах — напишите мне напрямую: я лично читаю каждое сообщение.',
     ],
     longBioUz: [
-      "Salom! Mening ismim Konstantin Yakovlev, men Calk.UZ loyihasining asoschisi va g'oyaviy ilhomchisi. Internet-marketing sohasida 14 yildan ortiq va moliyaviy tahlilda 8 yildan ortiq tajribaga egaman. Shu vaqt davomida bir maqsad ustida ishlayapman — odamlarga shaffof va tushunarli onlayn vositalar orqali aqlli moliyaviy qarorlar qabul qilishda yordam berish.",
-      "2016-yilda Zanimaem.kz ni ishga tushirdim — bu Qozog'istondagi birinchi moliyaviy marketpleyslardan biri bo'lib, foydalanuvchilar kreditlar, mikroqarzlar va bank mahsulotlarini taqqoslashlari mumkin. Shu bilan birga, har kuni bank stavkalari sharhlari, mikromoliyaviy tashkilotlar reytinglari va shaxsiy moliya bo'yicha materiallar nashr etadigan Profinance.kz tahliliy portalini rivojlantirib boryapman.",
-      "Calk.UZni 2025-yilda yaratganman, chunki aniq bo'shliqni ko'rdim: O'zbekistonda formulalari amaldagi Soliq kodeksi, Mehnat kodeksi va MB qarorlariga mos keladigan zamonaviy, bepul va ikki tilli kalkulyatorlar platformasi yo'q edi. Men shaxsan moliyaviy mahsulotlarni sinab ko'raman, formulalarni asl manbalar (lex.uz, cbu.uz, soliq.uz) bilan solishtiraman va qonunchilikdagi har bir o'zgarish bir necha kun ichida saytga kirib kelishini ta'minlayman.",
-      "Kalkulyatorlarni ishlab chiqishdan tashqari, men hisoblash metodologiyasi, tahririyat siyosati va ma'lumotlar aniqligi uchun mas'ulman. Agar biror hisob-kitobda nomuvofiqlikni sezsangiz, menga to'g'ridan-to'g'ri yozing: men har bir xabarni shaxsan ko'rib chiqaman va odatda bir kun ichida javob beraman.",
+      "Mening ismim Konstantin Yakovlev, men Calk.UZ asoschisiman. Internet-marketingda 14 yildan ortiq, moliyaviy tahlilda 8 yildan ortiq tajribaga egaman. Aqlli moliyaviy qarorlar qabul qilishga yordam beradigan onlayn vositalar yarataman.",
+      "2016-yilda Zanimaem.kz ni — Qozog'istondagi birinchi moliyaviy marketpleyslardan birini ishga tushirdim. 2025-yilda — Calk.kz, 2026-yilda — Profinance.kz va Calk.UZ. Agar hisob-kitobda xatolikni sezsangiz, menga to'g'ridan-to'g'ri yozing: men har bir xabarni shaxsan o'qiyman.",
     ],
     expertiseRu: [
       'Налоговое законодательство Узбекистана и Казахстана',
@@ -125,8 +121,8 @@ export const AUTHORS: Author[] = [
     experienceYearsTotal: 14,
     experienceYearsFinance: 8,
     email: 'info@calk.uz',
-    location: 'Tashkent, Uzbekistan',
-    languages: ['Русский', "O'zbek", 'English'],
+    location: 'Kazakhstan',
+    languages: ['Русский'],
     social: [
       { label: 'Profinance.kz', url: 'https://profinance.kz', iconKey: 'BarChart3' },
       { label: 'Zanimaem.kz', url: 'https://zanimaem.kz', iconKey: 'Briefcase' },

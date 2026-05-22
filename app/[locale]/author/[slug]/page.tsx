@@ -12,7 +12,6 @@ import {
   BarChart3,
   Calculator,
   ExternalLink,
-  Globe,
   GraduationCap,
   ShieldCheck,
   Award,
@@ -20,7 +19,6 @@ import {
   Languages,
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { DynamicIcon } from "@/components/calculator/DynamicIcon"
 import { AUTHORS, getAuthorBySlug } from "@/lib/data/authors"
 
 const BASE_URL = "https://calk.uz"
@@ -31,7 +29,6 @@ const SOCIAL_ICONS: Record<string, React.ComponentType<{ className?: string }>> 
   Briefcase,
   BarChart3,
   Calculator,
-  Globe,
   ExternalLink,
 }
 
@@ -164,7 +161,6 @@ export default async function AuthorPage({
   }
 
   const longBio = isUz ? author.longBioUz : author.longBioRu
-  const expertise = isUz ? author.expertiseUz : author.expertiseRu
 
   return (
     <div className="min-h-screen">
@@ -264,74 +260,6 @@ export default async function AuthorPage({
               </p>
             ))}
           </div>
-        </section>
-
-        {/* Expertise areas */}
-        <section className="mt-10">
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
-            {isUz ? "Mutaxassislik sohalari" : "Области экспертизы"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {author.expertiseAreas.map((area) => (
-              <div
-                key={area.iconKey}
-                className="rounded-2xl border border-border bg-card p-5"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 dark:bg-emerald-900/30">
-                    <DynamicIcon
-                      name={area.iconKey}
-                      className="h-5 w-5 text-emerald-600 dark:text-emerald-400"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">
-                      {isUz ? area.titleUz : area.titleRu}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {isUz ? area.descriptionUz : area.descriptionRu}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Skills tags */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            {expertise.map((item) => (
-              <Badge key={item} variant="secondary" className="text-xs font-normal">
-                {item}
-              </Badge>
-            ))}
-          </div>
-        </section>
-
-        {/* Timeline */}
-        <section className="mt-10">
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
-            {isUz ? "Professional yo'l" : "Профессиональный путь"}
-          </h2>
-          <ol className="relative border-l border-border ml-3 space-y-6">
-            {author.timeline.map((item, idx) => (
-              <li key={idx} className="ml-6">
-                <span className="absolute -left-[7px] flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-500 ring-4 ring-background" />
-                <div className="rounded-xl border border-border bg-card p-4">
-                  <div className="flex items-baseline gap-3 mb-1">
-                    <span className="text-sm font-bold text-emerald-700 dark:text-emerald-400">
-                      {isUz ? item.yearUz : item.yearRu}
-                    </span>
-                    <h3 className="text-base font-semibold text-foreground">
-                      {isUz ? item.titleUz : item.titleRu}
-                    </h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {isUz ? item.descriptionUz : item.descriptionRu}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
         </section>
 
         {/* Other projects */}
