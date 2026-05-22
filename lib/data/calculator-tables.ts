@@ -3,6 +3,15 @@ import { TAX_RATES } from "@/lib/constants/tax-rates"
 import { ELECTRICITY_TIERS, GAS_TIERS_SUMMER, WATER_COLD_RATE, WATER_HOT_RATE, WATER_SEWAGE_RATE } from "@/lib/constants/utility-tariffs"
 import { BANKS } from "@/lib/constants/banks"
 
+/**
+ * Format a decimal rate as a percent string with up to 2 decimals.
+ * Avoids JS float artifacts like `0.0034 * 100 = 0.33999999999999997`.
+ */
+const pct = (rate: number): string => {
+  const value = Math.round(rate * 10000) / 100
+  return `${value % 1 === 0 ? value.toFixed(0) : value.toString()}%`
+}
+
 export interface CalculatorTable {
   titleRu: string
   titleUz: string
@@ -19,10 +28,10 @@ const TAX_TABLES: CalculatorTable[] = [
       { ru: "Ставка", uz: "Stavka" },
     ],
     rows: [
-      { ru: ["Стандартная ставка НДФЛ", `${TAX_RATES.NDFL * 100}%`], uz: ["Standart JShShS stavkasi", `${TAX_RATES.NDFL * 100}%`] },
-      { ru: ["НДФЛ для резидентов IT Park", `${TAX_RATES.NDFL_IT_PARK * 100}%`], uz: ["IT Park rezidentlari uchun JShShS", `${TAX_RATES.NDFL_IT_PARK * 100}%`] },
-      { ru: ["НДС", `${TAX_RATES.VAT * 100}%`], uz: ["QQS", `${TAX_RATES.VAT * 100}%`] },
-      { ru: ["Налог на прибыль", `${TAX_RATES.CORPORATE_TAX * 100}%`], uz: ["Foyda solig'i", `${TAX_RATES.CORPORATE_TAX * 100}%`] },
+      { ru: ["Стандартная ставка НДФЛ", `${pct(TAX_RATES.NDFL)}`], uz: ["Standart JShShS stavkasi", `${pct(TAX_RATES.NDFL)}`] },
+      { ru: ["НДФЛ для резидентов IT Park", `${pct(TAX_RATES.NDFL_IT_PARK)}`], uz: ["IT Park rezidentlari uchun JShShS", `${pct(TAX_RATES.NDFL_IT_PARK)}`] },
+      { ru: ["НДС", `${pct(TAX_RATES.VAT)}`], uz: ["QQS", `${pct(TAX_RATES.VAT)}`] },
+      { ru: ["Налог на прибыль", `${pct(TAX_RATES.CORPORATE_TAX)}`], uz: ["Foyda solig'i", `${pct(TAX_RATES.CORPORATE_TAX)}`] },
     ],
   },
   {
@@ -33,10 +42,10 @@ const TAX_TABLES: CalculatorTable[] = [
       { ru: "Ставка (% от кадастровой стоимости)", uz: "Stavka (kadastr qiymatidan %)" },
     ],
     rows: [
-      { ru: ["До 100 м\u00B2", `${TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL * 100}%`], uz: ["100 m\u00B2 gacha", `${TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL * 100}%`] },
-      { ru: ["100\u2013200 м\u00B2", `${TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM * 100}%`], uz: ["100\u2013200 m\u00B2", `${TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM * 100}%`] },
-      { ru: ["Свыше 200 м\u00B2", `${TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE * 100}%`], uz: ["200 m\u00B2 dan ortiq", `${TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE * 100}%`] },
-      { ru: ["Юридические лица", `${TAX_RATES.PROPERTY_TAX_LEGAL * 100}%`], uz: ["Yuridik shaxslar", `${TAX_RATES.PROPERTY_TAX_LEGAL * 100}%`] },
+      { ru: ["До 100 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL)}`], uz: ["100 m\u00B2 gacha", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL)}`] },
+      { ru: ["100\u2013200 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`], uz: ["100\u2013200 m\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`] },
+      { ru: ["Свыше 200 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`], uz: ["200 m\u00B2 dan ortiq", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`] },
+      { ru: ["Юридические лица", `${pct(TAX_RATES.PROPERTY_TAX_LEGAL)}`], uz: ["Yuridik shaxslar", `${pct(TAX_RATES.PROPERTY_TAX_LEGAL)}`] },
     ],
   },
 ]
@@ -51,10 +60,10 @@ const SALARY_TABLES: CalculatorTable[] = [
       { ru: "Кто платит", uz: "Kim to'laydi" },
     ],
     rows: [
-      { ru: ["НДФЛ", `${TAX_RATES.NDFL * 100}%`, "Удерживается из зарплаты"], uz: ["JShShS", `${TAX_RATES.NDFL * 100}%`, "Ish haqidan ushlab qolinadi"] },
-      { ru: ["ИНПС", `${TAX_RATES.INPS * 100}%`, "Удерживается из зарплаты"], uz: ["MHTJ", `${TAX_RATES.INPS * 100}%`, "Ish haqidan ushlab qolinadi"] },
-      { ru: ["Социальный налог (коммерч.)", `${TAX_RATES.SOCIAL_TAX * 100}%`, "За счёт работодателя"], uz: ["Ijtimoiy soliq (tijoriy)", `${TAX_RATES.SOCIAL_TAX * 100}%`, "Ish beruvchi hisobidan"] },
-      { ru: ["Социальный налог (бюджет.)", `${TAX_RATES.SOCIAL_TAX_BUDGET * 100}%`, "За счёт работодателя"], uz: ["Ijtimoiy soliq (byudjet)", `${TAX_RATES.SOCIAL_TAX_BUDGET * 100}%`, "Ish beruvchi hisobidan"] },
+      { ru: ["НДФЛ", `${pct(TAX_RATES.NDFL)}`, "Удерживается из зарплаты"], uz: ["JShShS", `${pct(TAX_RATES.NDFL)}`, "Ish haqidan ushlab qolinadi"] },
+      { ru: ["ИНПС", `${pct(TAX_RATES.INPS)}`, "Удерживается из зарплаты"], uz: ["MHTJ", `${pct(TAX_RATES.INPS)}`, "Ish haqidan ushlab qolinadi"] },
+      { ru: ["Социальный налог (коммерч.)", `${pct(TAX_RATES.SOCIAL_TAX)}`, "За счёт работодателя"], uz: ["Ijtimoiy soliq (tijoriy)", `${pct(TAX_RATES.SOCIAL_TAX)}`, "Ish beruvchi hisobidan"] },
+      { ru: ["Социальный налог (бюджет.)", `${pct(TAX_RATES.SOCIAL_TAX_BUDGET)}`, "За счёт работодателя"], uz: ["Ijtimoiy soliq (byudjet)", `${pct(TAX_RATES.SOCIAL_TAX_BUDGET)}`, "Ish beruvchi hisobidan"] },
     ],
   },
 ]
@@ -175,9 +184,9 @@ const BUSINESS_TABLES: CalculatorTable[] = [
       { ru: "Применение", uz: "Qo'llanilishi" },
     ],
     rows: [
-      { ru: ["Общий режим (налог на прибыль)", `${TAX_RATES.CORPORATE_TAX * 100}%`, "Крупный бизнес, оборот свыше порога"], uz: ["Umumiy rejim (foyda solig'i)", `${TAX_RATES.CORPORATE_TAX * 100}%`, "Yirik biznes, aylanma chegaradan yuqori"] },
-      { ru: ["Налог с оборота", `${TAX_RATES.TURNOVER_TAX * 100}%`, "Малый бизнес, упрощённая система"], uz: ["Aylanma soliq", `${TAX_RATES.TURNOVER_TAX * 100}%`, "Kichik biznes, soddalashtirilgan tizim"] },
-      { ru: ["Самозанятость", `${TAX_RATES.SELF_EMPLOYED_TAX * 100}%`, "Физлица без наёмных работников"], uz: ["O'z-o'zini band qilish", `${TAX_RATES.SELF_EMPLOYED_TAX * 100}%`, "Yollanma ishchilarsiz jismoniy shaxslar"] },
+      { ru: ["Общий режим (налог на прибыль)", `${pct(TAX_RATES.CORPORATE_TAX)}`, "Крупный бизнес, оборот свыше порога"], uz: ["Umumiy rejim (foyda solig'i)", `${pct(TAX_RATES.CORPORATE_TAX)}`, "Yirik biznes, aylanma chegaradan yuqori"] },
+      { ru: ["Налог с оборота", `${pct(TAX_RATES.TURNOVER_TAX)}`, "Малый бизнес, упрощённая система"], uz: ["Aylanma soliq", `${pct(TAX_RATES.TURNOVER_TAX)}`, "Kichik biznes, soddalashtirilgan tizim"] },
+      { ru: ["Самозанятость", `${pct(TAX_RATES.SELF_EMPLOYED_TAX)}`, "Физлица без наёмных работников"], uz: ["O'z-o'zini band qilish", `${pct(TAX_RATES.SELF_EMPLOYED_TAX)}`, "Yollanma ishchilarsiz jismoniy shaxslar"] },
     ],
   },
 ]

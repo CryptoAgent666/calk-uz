@@ -56,3 +56,10 @@ android/capacitor-cordova-android-plugins/build/
 *.swp
 *.swo
 *~
+
+# Signing tooling artifacts — do not commit (contain encrypted private key material)
+pepk.jar
+pepk_out.zip
+android/pepk_out.zip
+android/calkuz-upload-cert.der
+android/calkuz-v*.aab

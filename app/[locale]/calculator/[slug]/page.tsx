@@ -14,6 +14,7 @@ import { getTablesForCategory } from "@/lib/data/calculator-tables"
 import { getAuthorBySlug, PRIMARY_AUTHOR_SLUG } from "@/lib/data/authors"
 import { getCaseStudies } from "@/lib/data/calculator-case-studies"
 import { getUzExtraFaq } from "@/lib/data/calculator-faq-uz-extras"
+import { getQuickAnswer } from "@/lib/data/calculator-quick-answers"
 import type { CategoryId } from "@/lib/types/calculator"
 import { ChevronRight, Home, ArrowRight, Calendar, ExternalLink, ShieldCheck, FlaskConical } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -172,6 +173,12 @@ export default async function CalculatorPage({
   // Real-world case studies (priority-1 calculators)
   const caseStudies = getCaseStudies(calc.slug)
 
+  // TL;DR / Quick Answer block — optimized for AI citation (ChatGPT/Perplexity)
+  const quickAnswer = getQuickAnswer(calc.slug)
+  const quickAnswerText = quickAnswer
+    ? (locale === "uz" ? quickAnswer.textUz : quickAnswer.textRu)
+    : null
+
   // Schema.org JSON-LD — always use localized canonical URL
   const canonicalUrl = `${BASE_URL}/${locale}/calculator/${localizedSlug}`
 
@@ -199,6 +206,7 @@ export default async function CalculatorPage({
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${canonicalUrl}#breadcrumb`,
     itemListElement: [
       {
         "@type": "ListItem",
@@ -282,13 +290,51 @@ export default async function CalculatorPage({
       }
     : null
 
+  // WebPage — explicit type, improves AI/search engine document model.
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description,
+    url: canonicalUrl,
+    inLanguage: locale === "uz" ? "uz" : "ru",
+    isPartOf: { "@type": "WebSite", name: "Calk.UZ", url: BASE_URL },
+    breadcrumb: { "@id": `${canonicalUrl}#breadcrumb` },
+    primaryImageOfPage: { "@type": "ImageObject", url: `${canonicalUrl}/opengraph-image` },
+    dateModified: articleLastUpdated,
+  }
+
+  // HowTo — turns the step list into a structured object Google/AI can cite.
+  const howToSchema = howTo && howToSteps && howToSteps.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: locale === "uz"
+          ? `${title}dan qanday foydalanish`
+          : `Как пользоваться: ${title}`,
+        description: locale === "uz"
+          ? `${title}dan foydalanish bo'yicha qadam-baqadam qo'llanma`
+          : `Пошаговое руководство по использованию калькулятора: ${title}`,
+        totalTime: `PT${howTo.totalTimeMinutes}M`,
+        step: howToSteps.map((s, idx) => ({
+          "@type": "HowToStep",
+          position: idx + 1,
+          name: s.name,
+          text: s.text,
+        })),
+      }
+    : null
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const jsonLdArray: Record<string, any>[] = [webApplicationSchema, breadcrumbSchema]
+  const jsonLdArray: Record<string, any>[] = [webPageSchema, webApplicationSchema, breadcrumbSchema]
   if (faqSchema) {
     jsonLdArray.push(faqSchema)
   }
   if (techArticleSchema) {
     jsonLdArray.push(techArticleSchema)
+  }
+  if (howToSchema) {
+    jsonLdArray.push(howToSchema)
   }
 
 
@@ -365,6 +411,21 @@ export default async function CalculatorPage({
                   </span>
                 )}
               </div>
+
+              {/* Quick Answer / TL;DR — for AI citation & user scannability */}
+              {quickAnswerText && (
+                <aside
+                  aria-label={locale === "uz" ? "Qisqacha javob" : "Краткий ответ"}
+                  className="mt-5 rounded-2xl border-l-4 border-emerald-500 bg-emerald-50/60 dark:bg-emerald-950/30 p-4 sm:p-5"
+                >
+                  <p className="text-xs uppercase tracking-wider font-semibold text-emerald-700 dark:text-emerald-400 mb-1.5">
+                    {locale === "uz" ? "Qisqacha javob" : "Краткий ответ"}
+                  </p>
+                  <p className="text-sm sm:text-base text-foreground leading-relaxed">
+                    {quickAnswerText}
+                  </p>
+                </aside>
+              )}
             </div>
 
             {/* Calculator Component */}

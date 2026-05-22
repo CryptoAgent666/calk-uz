@@ -145,6 +145,16 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} antialiased`} suppressHydrationWarning>
       <head>
+        {/* Preconnect to third-party origins used by calculators */}
+        <link rel="preconnect" href="https://cbu.uz" />
+        <link rel="dns-prefetch" href="https://cbu.uz" />
+        {GA_ID && (
+          <>
+            <link rel="preconnect" href="https://www.google-analytics.com" />
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
+          </>
+        )}
+
         <OrganizationJsonLd locale={locale} />
 
         {/* Google Analytics 4 */}
