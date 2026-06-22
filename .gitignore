@@ -63,3 +63,17 @@ pepk_out.zip
 android/pepk_out.zip
 android/calkuz-upload-cert.der
 android/calkuz-v*.aab
+
+# iOS signing / distribution artifacts — never commit
+*.ipa
+*.mobileprovision
+*.p8
+*.p12
+*.cer
+ios/App/build/
+
+# Native iOS app (ios-app/) — build output, not source
+ios-app/build/
+ios-app/**/xcuserdata/
+ios-app/DerivedData/
+**/*.xcarchive

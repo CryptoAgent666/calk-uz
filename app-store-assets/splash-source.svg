@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2732" height="2732" viewBox="0 0 2732 2732">
+  <!-- brand-green full-bleed background (matches SplashScreen.backgroundColor) -->
+  <rect width="2732" height="2732" fill="#059669"/>
+  <!-- centered calculator mark (matches the app icon) -->
+  <rect x="963" y="797" width="806" height="1138" rx="130" fill="#ffffff" fill-opacity="0.16"/>
+  <rect x="963" y="797" width="806" height="1138" rx="130" fill="none" stroke="#ffffff" stroke-opacity="0.30" stroke-width="5"/>
+  <!-- screen -->
+  <rect x="1056" y="905" width="619" height="216" rx="50" fill="#04432c"/>
+  <!-- row 1 (gold accent key) -->
+  <rect x="1056" y="1218" width="173" height="173" rx="40" fill="#ffffff" fill-opacity="0.95"/>
+  <rect x="1280" y="1218" width="173" height="173" rx="40" fill="#ffffff" fill-opacity="0.95"/>
+  <rect x="1503" y="1218" width="173" height="173" rx="40" fill="#D4A843"/>
+  <!-- row 2 -->
+  <rect x="1056" y="1442" width="173" height="173" rx="40" fill="#ffffff" fill-opacity="0.95"/>
+  <rect x="1280" y="1442" width="173" height="173" rx="40" fill="#ffffff" fill-opacity="0.95"/>
+  <rect x="1503" y="1442" width="173" height="173" rx="40" fill="#ffffff" fill-opacity="0.95"/>
+  <!-- row 3 -->
+  <rect x="1056" y="1665" width="173" height="173" rx="40" fill="#ffffff" fill-opacity="0.95"/>
+  <rect x="1280" y="1665" width="173" height="173" rx="40" fill="#ffffff" fill-opacity="0.95"/>
+  <rect x="1503" y="1665" width="173" height="173" rx="40" fill="#ffffff" fill-opacity="0.95"/>
+</svg>
