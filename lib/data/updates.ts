@@ -20,6 +20,37 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-05-23",
+    dateLabelRu: "23 мая 2026",
+    dateLabelUz: "2026-yil 23-may",
+    items: [
+      {
+        titleRu: "Блок «Краткий ответ» на страницах калькуляторов",
+        titleUz: "Kalkulyator sahifalarida «Qisqa javob» bloki",
+        descRu:
+          "Над основной статьёй калькуляторов добавлен блок «Краткий ответ» — прямой ответ в 1–3 предложениях с актуальными цифрами (ставки и суммы 2026 года). Помогает мгновенно получить суть расчёта и повышает цитируемость сайта в AI-поиске (ChatGPT, Perplexity, Google AI Overviews). Охвачено более 20 калькуляторов.",
+        descUz:
+          "Kalkulyatorlarning asosiy maqolasi tepasiga «Qisqa javob» bloki qo'shildi — dolzarb raqamlar (2026-yil stavkalari va summalari) bilan 1–3 jumlalik to'g'ridan-to'g'ri javob. Hisob mohiyatini darhol tushunishga yordam beradi va saytning AI-qidiruvda (ChatGPT, Perplexity, Google AI Overviews) iqtibos keltirilishini oshiradi. 20 dan ortiq kalkulyator qamrab olindi.",
+      },
+      {
+        titleRu: "Точность отображения процентных ставок",
+        titleUz: "Foiz stavkalarini ko'rsatish aniqligi",
+        descRu:
+          "Исправлены артефакты округления чисел с плавающей точкой в справочных таблицах ставок: теперь отображается, например, 0,34% вместо 0,33999999%. На сами расчёты это не влияло — только на отображение чисел в таблицах.",
+        descUz:
+          "Stavkalar jadvallaridagi suzuvchi nuqtali sonlarni yaxlitlash xatolari tuzatildi: endi, masalan, 0,33999999% o'rniga 0,34% ko'rsatiladi. Bu hisob-kitoblarning o'ziga ta'sir qilmadi — faqat jadvallardagi sonlar ko'rinishiga.",
+      },
+      {
+        titleRu: "Структурированные данные и страница автора",
+        titleUz: "Strukturalashgan ma'lumotlar va muallif sahifasi",
+        descRu:
+          "Углублена разметка Schema.org — поисковикам и AI-сервисам проще понимать содержимое страниц. Биография автора сокращена и приведена в соответствие с фактами (хронология проектов: Zanimaem.kz — 2016, Calk.kz — 2025, Profinance.kz и Calk.UZ — 2026).",
+        descUz:
+          "Schema.org razmetkasi chuqurlashtirildi — qidiruv tizimlari va AI-xizmatlar sahifa mazmunini osonroq tushunadi. Muallif biografiyasi qisqartirildi va faktlarga muvofiqlashtirildi (loyihalar xronologiyasi: Zanimaem.kz — 2016, Calk.kz — 2025, Profinance.kz va Calk.UZ — 2026).",
+      },
+    ],
+  },
+  {
     date: "2026-05-03",
     dateLabelRu: "3 мая 2026",
     dateLabelUz: "2026-yil 3-may",
