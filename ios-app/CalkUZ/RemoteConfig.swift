@@ -51,19 +51,19 @@ final class RemoteConfig {
     /// One step of an engine-size schedule: applies up to `maxCC` cm³.
     struct Bracket { let maxCC: Int; let value: Double }
 
-    /// Customs excise schedule (USD per cm³ by engine size). Falls back to built-in.
+    /// Customs per-cc duty surcharge (USD per cm³, new cars). Falls back to built-in.
     var customsExciseBrackets: [Bracket] {
         brackets(payload.customsExciseBrackets,
-                 default: [Bracket(maxCC: 1500, value: 1.5), Bracket(maxCC: 2000, value: 3.0),
-                           Bracket(maxCC: 2500, value: 5.0), Bracket(maxCC: 3000, value: 7.0),
-                           Bracket(maxCC: Int.max, value: 10.0)])
+                 default: [Bracket(maxCC: 1000, value: 0.4), Bracket(maxCC: 1500, value: 0.6),
+                           Bracket(maxCC: 1800, value: 0.8), Bracket(maxCC: Int.max, value: 1.0)])
     }
 
-    /// Customs recycling-fee schedule (count of БРВ by engine size).
+    /// Customs recycling-fee schedule (count of БРВ by engine size, new cars).
     var customsUtilBrackets: [Bracket] {
         brackets(payload.customsUtilBrackets,
-                 default: [Bracket(maxCC: 1000, value: 6), Bracket(maxCC: 2000, value: 20),
-                           Bracket(maxCC: 3000, value: 50), Bracket(maxCC: Int.max, value: 137)])
+                 default: [Bracket(maxCC: 1000, value: 30), Bracket(maxCC: 2000, value: 120),
+                           Bracket(maxCC: 3000, value: 180), Bracket(maxCC: 3500, value: 180),
+                           Bracket(maxCC: Int.max, value: 300)])
     }
 
     private func brackets(_ raw: [[Double]]?, default def: [Bracket]) -> [Bracket] {

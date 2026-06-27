@@ -31,7 +31,7 @@ final class SalaryCalculatorViewController: UIViewController {
             switch self {
             case .standard:    return RemoteConfig.shared.num("ndflStandard", 0.12)
             case .itpark:      return RemoteConfig.shared.num("ndflItpark", 0.075)
-            case .nonresident: return RemoteConfig.shared.num("ndflNonresident", 0.20)
+            case .nonresident: return RemoteConfig.shared.num("ndflNonresident", 0.12)
             }
         }
     }
