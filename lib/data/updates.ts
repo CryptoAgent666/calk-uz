@@ -20,6 +20,61 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-06-27",
+    dateLabelRu: "27 июня 2026",
+    dateLabelUz: "2026-yil 27-iyun",
+    items: [
+      {
+        titleRu: "Коммунальные тарифы — повышение электричества и газа с 1 июня 2026",
+        titleUz: "Kommunal tariflar — elektr va gaz 2026-yil 1-iyundan oshdi",
+        descRu:
+          "Калькуляторы ЖКУ обновлены под новые ставки (ПКМ-243): электричество 650–2200 сум/кВт·ч по ступеням, газ от 1100 сум/м³. Тарифы 2025 года заменены актуальными.",
+        descUz:
+          "Kommunal kalkulyatorlar yangi tariflarga moslandi (243-son qaror): elektr energiyasi pog'onalar bo'yicha 650–2200 so'm/kVt·s, gaz 1100 so'm/m³ dan. 2025-yil tariflari yangilandi.",
+      },
+      {
+        titleRu: "Налог на имущество физлиц — ставки и площади 2026",
+        titleUz: "Jismoniy shaxslar mol-mulk solig'i — 2026 stavkalari va maydonlari",
+        descRu:
+          "Ставки проиндексированы: 0,36% (до 200 м²), 0,48% (200–500 м²), 0,64% (свыше 500 м²). Исправлены площадные диапазоны — раньше использовались устаревшие границы 100/200 м².",
+        descUz:
+          "Stavkalar indeksatsiya qilindi: 0,36% (200 m² gacha), 0,48% (200–500 m²), 0,64% (500 m² dan ortiq). Maydon oraliqlari to'g'rilandi — avval 100/200 m² eskirgan chegaralar edi.",
+      },
+      {
+        titleRu: "Растаможка авто — пересчитанная модель пошлины",
+        titleUz: "Avto bojxonasi — qayta hisoblangan boj modeli",
+        descRu:
+          "Таможенный калькулятор приведён к реальной схеме 2026: пошлина 15% (новые) / 40% (б/у) + надбавка 0,4–1,0 $/см³, корректный утильсбор и регистрация (~13 БРВ). Льгота на импорт электромобилей продлена до 2030 года.",
+        descUz:
+          "Bojxona kalkulyatori 2026-yilgi haqiqiy sxemaga keltirildi: boj 15% (yangi) / 40% (ishlatilgan) + sm³ uchun 0,4–1,0 $, to'g'ri utilizatsiya yig'imi va ro'yxatga olish (~13 BHM). Elektromobil importiga imtiyoz 2030-yilgacha.",
+      },
+      {
+        titleRu: "Налоги: порог НДС, НДФЛ нерезидентов, сроки уплаты",
+        titleUz: "Soliqlar: QQS bo'sag'asi, norezident JShShS, to'lov muddatlari",
+        descRu:
+          "Порог обязательной регистрации НДС и упрощёнки — 1 млрд сум оборота (вместо устаревших значений). НДФЛ нерезидентов — 12% (был 20%). Имущественный, земельный и транспортный налог физлица платят до 15 апреля и 15 октября. Перенос убытков — без ограничения по сроку.",
+        descUz:
+          "QQS va soddalashtirilgan soliqqa ro'yxatdan o'tish bo'sag'asi — 1 mlrd so'm aylanma. Norezident JShShS — 12% (20% edi). Mol-mulk, yer va transport solig'ini jismoniy shaxslar 15 aprel va 15 oktyabrgacha to'laydi. Zararlarni o'tkazish — muddat cheklovisiz.",
+      },
+      {
+        titleRu: "Трудовое и социальное: отпуск, больничный, алименты, пенсия",
+        titleUz: "Mehnat va ijtimoiy: ta'til, kasallik varaqasi, aliment, pensiya",
+        descRu:
+          "Минимальный отпуск — 21 календарный день, 9 праздничных дней, годовой лимит сверхурочных отменён. Больничный: до 8 лет стажа — 60%, свыше — 80%. Алименты — не менее 26,5% МРОТ; пособие по уходу за ребёнком до 2 лет — 60% МРОТ. Минимальная пенсия — 983 000 сум с 1 июля 2026.",
+        descUz:
+          "Eng kam ta'til — 21 kalendar kun, 9 bayram kuni, ortiqcha ish soatining yillik chegarasi bekor qilindi. Kasallik varaqasi: 8 yilgacha — 60%, undan ortiq — 80%. Aliment — MROTning kamida 26,5%; 2 yoshgacha bola parvarishi nafaqasi — MROTning 60%. Eng kam pensiya — 2026-yil 1-iyuldan 983 000 so'm.",
+      },
+      {
+        titleRu: "Госпошлины и ОСАГО",
+        titleUz: "Davlat bojlari va OSAGO",
+        descRu:
+          "Госпошлины уточнены: регистрация брака 0,2 БРВ, ООО — 1 БРВ, иск в суд — 4% цены иска. ОСАГО: максимальная выплата — до 80 млн сум, штраф за вождение без полиса — 1 БРВ.",
+        descUz:
+          "Davlat bojlari aniqlandi: nikoh ro'yxati 0,2 BHM, MChJ — 1 BHM, sudga da'vo — da'vo qiymatining 4%. OSAGO: maksimal to'lov — 80 mln so'mgacha, polissiz haydash uchun jarima — 1 BHM.",
+      },
+    ],
+  },
+  {
     date: "2026-05-23",
     dateLabelRu: "23 мая 2026",
     dateLabelUz: "2026-yil 23-may",
