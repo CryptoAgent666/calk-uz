@@ -4,6 +4,7 @@
  */
 
 import { BRV, CB_RATE } from '@/lib/constants/brv'
+import { TAX_RATES } from '@/lib/constants/tax-rates'
 
 // Income Tax (NDFL/JSHSHS) - covered in salary.ts, this is standalone
 export interface IncomeTaxResult {
@@ -30,25 +31,25 @@ export interface PropertyTaxResult {
 }
 
 export function calculatePropertyTax(cadastralValue: number, areaM2: number, isLegalEntity: boolean = false): PropertyTaxResult {
+  // 2026 residential rates (already indexed). Bands: <=200 / 200-500 / >500 m2.
+  // Legal-entity rate is flat 1.5% (NOT indexed).
   let taxRate: number
   if (isLegalEntity) {
-    taxRate = 0.015
-  } else if (areaM2 <= 100) {
-    taxRate = 0.0034
+    taxRate = TAX_RATES.PROPERTY_TAX_LEGAL
   } else if (areaM2 <= 200) {
-    taxRate = 0.0045
+    taxRate = TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL
+  } else if (areaM2 <= 500) {
+    taxRate = TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM
   } else {
-    taxRate = 0.006
+    taxRate = TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE
   }
 
-  // Indexed +7% from 2026
-  const indexedRate = taxRate * 1.07
-  const annualTax = cadastralValue * indexedRate
+  const annualTax = cadastralValue * taxRate
 
   return {
     cadastralValue,
     area: areaM2,
-    taxRate: indexedRate * 100,
+    taxRate: taxRate * 100,
     annualTax,
     quarterlyTax: annualTax / 4,
     monthlyTax: annualTax / 12,

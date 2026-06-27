@@ -42,9 +42,9 @@ const TAX_TABLES: CalculatorTable[] = [
       { ru: "Ставка (% от кадастровой стоимости)", uz: "Stavka (kadastr qiymatidan %)" },
     ],
     rows: [
-      { ru: ["До 100 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL)}`], uz: ["100 m\u00B2 gacha", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL)}`] },
-      { ru: ["100\u2013200 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`], uz: ["100\u2013200 m\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`] },
-      { ru: ["Свыше 200 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`], uz: ["200 m\u00B2 dan ortiq", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`] },
+      { ru: ["До 200 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL)}`], uz: ["200 m\u00B2 gacha", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL)}`] },
+      { ru: ["200\u2013500 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`], uz: ["200\u2013500 m\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`] },
+      { ru: ["Свыше 500 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`], uz: ["500 m\u00B2 dan ortiq", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`] },
       { ru: ["Юридические лица", `${pct(TAX_RATES.PROPERTY_TAX_LEGAL)}`], uz: ["Yuridik shaxslar", `${pct(TAX_RATES.PROPERTY_TAX_LEGAL)}`] },
     ],
   },

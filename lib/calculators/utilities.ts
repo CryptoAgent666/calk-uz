@@ -1,6 +1,6 @@
 /**
  * Utility bills calculator for Uzbekistan
- * Tiered tariff system (effective May 1, 2025)
+ * Tiered tariff system. Electricity + gas raised 1 Jun 2026 (ПКМ-243).
  */
 
 interface TariffTier {
@@ -9,28 +9,28 @@ interface TariffTier {
 }
 
 const ELECTRICITY_TIERS: TariffTier[] = [
-  { upTo: 200, rate: 600 },
-  { upTo: 500, rate: 800 },
-  { upTo: 1000, rate: 1000 },
-  { upTo: 5000, rate: 1500 },
-  { upTo: 10000, rate: 1750 },
-  { upTo: Infinity, rate: 2000 },
+  { upTo: 200, rate: 650 },
+  { upTo: 500, rate: 900 },
+  { upTo: 1000, rate: 1100 },
+  { upTo: 5000, rate: 1600 },
+  { upTo: 10000, rate: 1900 },
+  { upTo: Infinity, rate: 2200 },
 ]
 
 const GAS_SUMMER_TIERS: TariffTier[] = [
-  { upTo: 100, rate: 1000 },
-  { upTo: 2500, rate: 1800 },
-  { upTo: 5000, rate: 2100 },
-  { upTo: 10000, rate: 2500 },
-  { upTo: Infinity, rate: 3000 },
+  { upTo: 100, rate: 1100 },
+  { upTo: 2500, rate: 2000 },
+  { upTo: 5000, rate: 2300 },
+  { upTo: 10000, rate: 2700 },
+  { upTo: Infinity, rate: 3300 },
 ]
 
 const GAS_WINTER_TIERS: TariffTier[] = [
-  { upTo: 500, rate: 1000 },
-  { upTo: 2500, rate: 1800 },
-  { upTo: 5000, rate: 2100 },
-  { upTo: 10000, rate: 2500 },
-  { upTo: Infinity, rate: 3000 },
+  { upTo: 500, rate: 1100 },
+  { upTo: 2500, rate: 2000 },
+  { upTo: 5000, rate: 2300 },
+  { upTo: 10000, rate: 2700 },
+  { upTo: Infinity, rate: 3300 },
 ]
 
 const WATER_RATES = {

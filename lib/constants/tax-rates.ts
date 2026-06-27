@@ -30,14 +30,14 @@ export const TAX_RATES = {
   /** Self-employed tax rate */
   SELF_EMPLOYED_TAX: 0.01,
 
-  /** Property tax — residential, up to 100 m2 */
-  PROPERTY_TAX_RESIDENTIAL_SMALL: 0.0034,
+  /** Property tax — residential, up to 200 m2 (2026, indexed +7%) */
+  PROPERTY_TAX_RESIDENTIAL_SMALL: 0.0036,
 
-  /** Property tax — residential, 100-200 m2 */
-  PROPERTY_TAX_RESIDENTIAL_MEDIUM: 0.0045,
+  /** Property tax — residential, 200-500 m2 (2026, indexed +7%) */
+  PROPERTY_TAX_RESIDENTIAL_MEDIUM: 0.0048,
 
-  /** Property tax — residential, over 200 m2 */
-  PROPERTY_TAX_RESIDENTIAL_LARGE: 0.006,
+  /** Property tax — residential, over 500 m2 (2026, indexed +7%) */
+  PROPERTY_TAX_RESIDENTIAL_LARGE: 0.0064,
 
   /** Property tax — legal entities */
   PROPERTY_TAX_LEGAL: 0.015,

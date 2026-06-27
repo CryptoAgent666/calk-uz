@@ -1,6 +1,7 @@
 /**
- * Utility tariffs for Uzbekistan (2025)
- * Source: Government-regulated tariffs
+ * Utility tariffs for Uzbekistan (2026)
+ * Source: Government-regulated tariffs.
+ * Electricity + gas raised 1 Jun 2026 per ПКМ-243 (~8-12%).
  */
 
 export interface TariffTier {
@@ -16,12 +17,12 @@ export interface TariffTier {
 
 /** Electricity tiers per month per household (UZS/kWh) */
 export const ELECTRICITY_TIERS: TariffTier[] = [
-  { upTo: 200, pricePerUnit: 600 },
-  { upTo: 500, pricePerUnit: 800 },
-  { upTo: 1000, pricePerUnit: 1000 },
-  { upTo: 5000, pricePerUnit: 1500 },
-  { upTo: 10000, pricePerUnit: 1750 },
-  { upTo: null, pricePerUnit: 2000 },
+  { upTo: 200, pricePerUnit: 650 },
+  { upTo: 500, pricePerUnit: 900 },
+  { upTo: 1000, pricePerUnit: 1100 },
+  { upTo: 5000, pricePerUnit: 1600 },
+  { upTo: 10000, pricePerUnit: 1900 },
+  { upTo: null, pricePerUnit: 2200 },
 ]
 
 // =============================================
@@ -30,20 +31,20 @@ export const ELECTRICITY_TIERS: TariffTier[] = [
 
 /** Gas tiers — summer rates per month (UZS/m3) */
 export const GAS_TIERS_SUMMER: TariffTier[] = [
-  { upTo: 100, pricePerUnit: 1000 },
-  { upTo: 2500, pricePerUnit: 1800 },
-  { upTo: 5000, pricePerUnit: 2100 },
-  { upTo: 10000, pricePerUnit: 2500 },
-  { upTo: null, pricePerUnit: 3000 },
+  { upTo: 100, pricePerUnit: 1100 },
+  { upTo: 2500, pricePerUnit: 2000 },
+  { upTo: 5000, pricePerUnit: 2300 },
+  { upTo: 10000, pricePerUnit: 2700 },
+  { upTo: null, pricePerUnit: 3300 },
 ]
 
 /** Gas tiers — winter rates per month (UZS/m3) — typically same structure, higher consumption */
 export const GAS_TIERS_WINTER: TariffTier[] = [
-  { upTo: 500, pricePerUnit: 1000 },
-  { upTo: 2500, pricePerUnit: 1800 },
-  { upTo: 5000, pricePerUnit: 2100 },
-  { upTo: 10000, pricePerUnit: 2500 },
-  { upTo: null, pricePerUnit: 3000 },
+  { upTo: 500, pricePerUnit: 1100 },
+  { upTo: 2500, pricePerUnit: 2000 },
+  { upTo: 5000, pricePerUnit: 2300 },
+  { upTo: 10000, pricePerUnit: 2700 },
+  { upTo: null, pricePerUnit: 3300 },
 ]
 
 // =============================================
