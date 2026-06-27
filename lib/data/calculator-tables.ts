@@ -159,17 +159,18 @@ const UTILITIES_TABLES: CalculatorTable[] = [
 
 const AUTO_TABLES: CalculatorTable[] = [
   {
-    titleRu: "Ставки акцизного налога по объёму двигателя",
-    titleUz: "Dvigatel hajmi bo'yicha aksiz solig'i stavkalari",
+    titleRu: "Таможенная пошлина: надбавка за см³ (сверх 15% новые / 40% б/у)",
+    titleUz: "Bojxona boji: sm³ uchun ustama (15% yangi / 40% ishlatilgan ustiga)",
     headers: [
       { ru: "Объём двигателя", uz: "Dvigatel hajmi" },
-      { ru: "Ставка акциза", uz: "Aksiz stavkasi" },
+      { ru: "Надбавка за см³ (новые)", uz: "sm³ uchun ustama (yangi)" },
     ],
     rows: [
-      { ru: ["До 1 500 см\u00B3", "0.5 БРВ за каждый см\u00B3 свыше 1500"], uz: ["1 500 sm\u00B3 gacha", "1500 dan ortiq har bir sm\u00B3 uchun 0.5 BHM"] },
-      { ru: ["1 500 \u2013 2 000 см\u00B3", "1.0 БРВ за каждый см\u00B3 свыше 1500"], uz: ["1 500 \u2013 2 000 sm\u00B3", "1500 dan ortiq har bir sm\u00B3 uchun 1.0 BHM"] },
-      { ru: ["2 000 \u2013 3 000 см\u00B3", "1.5 БРВ за каждый см\u00B3 свыше 2000"], uz: ["2 000 \u2013 3 000 sm\u00B3", "2000 dan ortiq har bir sm\u00B3 uchun 1.5 BHM"] },
-      { ru: ["Свыше 3 000 см\u00B3", "2.0 БРВ за каждый см\u00B3 свыше 3000"], uz: ["3 000 sm\u00B3 dan ortiq", "3000 dan ortiq har bir sm\u00B3 uchun 2.0 BHM"] },
+      { ru: ["До 1 000 см³", "0.4 $ за см³"], uz: ["1 000 sm³ gacha", "sm³ uchun 0.4 $"] },
+      { ru: ["1 000 – 1 500 см³", "0.6 $ за см³"], uz: ["1 000 – 1 500 sm³", "sm³ uchun 0.6 $"] },
+      { ru: ["1 500 – 1 800 см³", "0.8 $ за см³"], uz: ["1 500 – 1 800 sm³", "sm³ uchun 0.8 $"] },
+      { ru: ["Свыше 1 800 см³", "1.0 $ за см³"], uz: ["1 800 sm³ dan ortiq", "sm³ uchun 1.0 $"] },
+      { ru: ["Б/у авто (>3 лет)", "≈ 3.0 $ за см³"], uz: ["Ishlatilgan (>3 yil)", "≈ 3.0 $ sm³ uchun"] },
     ],
   },
 ]

@@ -1,7 +1,12 @@
 /**
- * Car customs clearance calculator for Uzbekistan
- * Includes: customs duty, excise tax, VAT, utilization fee
+ * Car customs clearance calculator for Uzbekistan (2026)
+ * Imported cars pay a COMBINED customs duty = percentage (15% new / 40% used)
+ * + a USD-per-cc surcharge. There is no separate per-cc excise on cars.
+ * Plus: utilization (recycling) fee in БРВ, 12% VAT, registration.
+ * Source: customs.uz / dif.uz 2026 (DATA_HUB pilot verdicts 2026-06-25).
  */
+
+import { BRV } from '@/lib/constants/brv'
 
 export interface CustomsInput {
   carPrice: number       // Price in USD
@@ -24,27 +29,37 @@ export interface CustomsResult {
   breakdown: { name: string; amount: number }[]
 }
 
-const EXCISE_RATES_PER_CC: { upTo: number; rate: number }[] = [
-  { upTo: 1000, rate: 1.5 },   // $1.5 per cc
-  { upTo: 1500, rate: 2.0 },
-  { upTo: 2000, rate: 3.0 },
-  { upTo: 3000, rate: 5.0 },
-  { upTo: 4000, rate: 7.0 },
-  { upTo: Infinity, rate: 10.0 },
-]
+// Customs-duty percentage component (of car price): 15% new / 40% used.
+const CUSTOMS_DUTY_PCT_NEW = 0.15
+const CUSTOMS_DUTY_PCT_USED = 0.4
 
+// Per-cc customs-duty surcharge (USD per cm³), added on top of the percentage
+// duty. New cars: 0.4–1.0 $/cc by engine size. Used cars (>3 yr): flat ~3.0 $/cc.
+const DUTY_PER_CC_NEW: { upTo: number; rate: number }[] = [
+  { upTo: 1000, rate: 0.4 },
+  { upTo: 1500, rate: 0.6 },
+  { upTo: 1800, rate: 0.8 },
+  { upTo: Infinity, rate: 1.0 },
+]
+const DUTY_PER_CC_USED = 3.0
+
+// Utilization (recycling) fee in БРВ by engine size — 2026 (M1 passenger cars).
 const UTILIZATION_FEE_BRV: { upTo: number; newCar: number; usedCar: number }[] = [
-  { upTo: 1000, newCar: 6, usedCar: 17 },
-  { upTo: 2000, newCar: 17, usedCar: 60 },
-  { upTo: 3000, newCar: 43, usedCar: 82 },
-  { upTo: Infinity, newCar: 82, usedCar: 137 },
+  { upTo: 1000, newCar: 30, usedCar: 90 },
+  { upTo: 2000, newCar: 120, usedCar: 210 },
+  { upTo: 3000, newCar: 180, usedCar: 330 },
+  { upTo: 3500, newCar: 180, usedCar: 390 },
+  { upTo: Infinity, newCar: 300, usedCar: 480 },
 ]
+// Imported electric cars pay a flat utilization fee: 30 (new) / 90 (used) БРВ.
+const UTILIZATION_FEE_EV_BRV = { newCar: 30, usedCar: 90 }
 
-import { BRV } from '@/lib/constants/brv'
+// Registration: vehicle reg 6.84 + tech passport 0.7 + plates 5.5 = 13.04 БРВ.
+const REGISTRATION_FEE_BRV = 6.84 + 0.7 + 5.5
+
 // Default fallback rate. The currency-converter calculator pulls live rates
 // from cbu.uz; pass `usdToUzs` explicitly for accurate cost projections.
 const USD_UZS_FALLBACK = 11_938 // CBU reference rate, 1 May 2026
-const CUSTOMS_DUTY_RATE = 0.15 // 15%
 const VAT_RATE = 0.12 // 12%
 const CERTIFICATION_FEE_USD = 690
 
@@ -56,37 +71,40 @@ export function calculateCustomsClearance(
   const { carPrice, engineVolumeCc, fuelType, isNew } = input
   const carPriceUzs = carPrice * usdToUzs
 
-  // Electric vehicles: 0% customs duty until 2027
+  // Electric vehicles: 0% customs duty + 0 per-cc surcharge until 1 January 2030.
   const isElectric = fuelType === 'electric'
 
-  // Customs duty: 15% of car price (0% for electric)
-  const customsDuty = isElectric ? 0 : carPriceUzs * CUSTOMS_DUTY_RATE
-
-  // Excise tax based on engine volume (0 for electric)
-  let exciseTax = 0
+  // Customs duty = percentage component + USD-per-cc surcharge (0 for electric).
+  let customsDuty = 0
   if (!isElectric) {
-    const rate = EXCISE_RATES_PER_CC.find(t => engineVolumeCc <= t.upTo)?.rate ?? 10
-    exciseTax = engineVolumeCc * rate * usdToUzs
+    const pct = isNew ? CUSTOMS_DUTY_PCT_NEW : CUSTOMS_DUTY_PCT_USED
+    const perCc = isNew
+      ? (DUTY_PER_CC_NEW.find(t => engineVolumeCc <= t.upTo)?.rate ?? 1.0)
+      : DUTY_PER_CC_USED
+    customsDuty = carPriceUzs * pct + engineVolumeCc * perCc * usdToUzs
   }
 
-  // VAT: 12% of (car price + customs duty + excise)
-  const vatBase = carPriceUzs + customsDuty + exciseTax
-  const vat = vatBase * VAT_RATE
+  // No separate excise on cars — the per-cc charge is part of the customs duty.
+  const exciseTax = 0
 
-  // Utilization fee based on engine volume and age
+  // VAT: 12% of (car price + customs duty). Imported EVs still pay VAT.
+  const vat = (carPriceUzs + customsDuty) * VAT_RATE
+
+  // Utilization (recycling) fee — imported EVs also pay it (30/90 БРВ).
   let utilizationFee = 0
-  if (!isElectric) {
+  if (isElectric) {
+    utilizationFee = (isNew ? UTILIZATION_FEE_EV_BRV.newCar : UTILIZATION_FEE_EV_BRV.usedCar) * BRV
+  } else {
     const tier = UTILIZATION_FEE_BRV.find(t => engineVolumeCc <= t.upTo)
     if (tier) {
-      const brvMultiplier = isNew ? tier.newCar : tier.usedCar
-      utilizationFee = brvMultiplier * BRV
+      utilizationFee = (isNew ? tier.newCar : tier.usedCar) * BRV
     }
   }
 
-  // Registration fee (approximate)
-  const registrationFee = 1 * BRV
+  // Registration (vehicle reg + tech passport + plates) ≈ 13.04 БРВ.
+  const registrationFee = REGISTRATION_FEE_BRV * BRV
 
-  // Certification fee
+  // Certification fee (uncertain — left at the prior estimate).
   const certificationFee = CERTIFICATION_FEE_USD * usdToUzs
 
   const totalCustomsCost = customsDuty + exciseTax + vat + utilizationFee + registrationFee + certificationFee

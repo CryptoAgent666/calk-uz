@@ -70,11 +70,9 @@ export interface SickLeaveResult {
 }
 
 export function getSickLeavePercent(insuranceMonths: number): number {
-  if (insuranceMonths < 6) return 0        // not eligible
-  if (insuranceMonths < 24) return 60      // 6-23 months
-  if (insuranceMonths < 60) return 70      // 2-5 years
-  if (insuranceMonths < 96) return 80      // 5-8 years
-  return 100                               // 8+ years
+  if (insuranceMonths < 6) return 0        // <6 months: not eligible
+  if (insuranceMonths < 96) return 60      // up to 8 years: 60%
+  return 80                                // 8+ years: 80% (100% only for work injury)
 }
 
 export function calculateSickLeave(

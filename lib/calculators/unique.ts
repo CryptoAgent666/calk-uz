@@ -19,11 +19,13 @@ export function calculatePassportFees(
   isUrgent: boolean = false
 ): PassportFeesResult {
   const fees: Record<string, { base: number; urgent: number; days: number; urgentDays: number }> = {
-    new: { base: BRV * 1, urgent: BRV * 2, days: 15, urgentDays: 3 },
-    replacement: { base: BRV * 1, urgent: BRV * 2, days: 15, urgentDays: 3 },
-    lost: { base: BRV * 2, urgent: BRV * 3, days: 15, urgentDays: 3 },
-    child: { base: BRV * 0.5, urgent: BRV * 1, days: 10, urgentDays: 3 },
-    biometric: { base: BRV * 2.5, urgent: BRV * 4, days: 15, urgentDays: 5 },
+    // 2026 (ЗРУ-600): ID-card issuance ≈ 0.89 БРВ; child (<16) 0.8; biometric
+    // international passport (загран) 1.2 БРВ. No urgent surcharge (faster days only).
+    new: { base: BRV * 0.89, urgent: BRV * 0.89, days: 15, urgentDays: 3 },
+    replacement: { base: BRV * 0.89, urgent: BRV * 0.89, days: 15, urgentDays: 3 },
+    lost: { base: BRV * 0.89, urgent: BRV * 0.89, days: 15, urgentDays: 3 },
+    child: { base: BRV * 0.8, urgent: BRV * 0.8, days: 10, urgentDays: 3 },
+    biometric: { base: BRV * 1.2, urgent: BRV * 1.2, days: 15, urgentDays: 5 },
   }
 
   const fee = fees[type] ?? fees.new
@@ -48,16 +50,16 @@ export interface StateDutyResult {
 }
 
 export const STATE_DUTIES: { type: string; brvMultiplier: number; descriptionRu: string; descriptionUz: string }[] = [
-  { type: 'marriage', brvMultiplier: 0.5, descriptionRu: 'Регистрация брака', descriptionUz: 'Nikohni ro\'yxatga olish' },
+  { type: 'marriage', brvMultiplier: 0.2, descriptionRu: 'Регистрация брака', descriptionUz: 'Nikohni ro\'yxatga olish' },
   { type: 'divorce', brvMultiplier: 1.5, descriptionRu: 'Расторжение брака', descriptionUz: 'Nikohni bekor qilish' },
   { type: 'birth_cert', brvMultiplier: 0.1, descriptionRu: 'Свидетельство о рождении', descriptionUz: 'Tug\'ilganlik haqida guvohnoma' },
-  { type: 'court_civil', brvMultiplier: 3, descriptionRu: 'Подача иска в суд (имущество)', descriptionUz: 'Sudga da\'vo ariza (mulk)' },
+  { type: 'court_civil', brvMultiplier: 1, descriptionRu: 'Иск в суд (4% цены иска, мин. 1 БРВ)', descriptionUz: 'Sudga da\'vo (da\'vo qiymatining 4%, min. 1 BHM)' },
   { type: 'court_divorce', brvMultiplier: 2, descriptionRu: 'Подача иска в суд (развод)', descriptionUz: 'Sudga da\'vo ariza (ajralish)' },
   { type: 'notary_power', brvMultiplier: 0.5, descriptionRu: 'Нотариальная доверенность', descriptionUz: 'Notarial ishonchnoma' },
   { type: 'notary_deal', brvMultiplier: 1, descriptionRu: 'Нотариальная сделка', descriptionUz: 'Notarial bitim' },
   { type: 'name_change', brvMultiplier: 1, descriptionRu: 'Смена имени/фамилии', descriptionUz: 'Ism/familiya o\'zgartirish' },
   { type: 'ip_registration', brvMultiplier: 1, descriptionRu: 'Регистрация ИП', descriptionUz: 'YaTT ro\'yxatga olish' },
-  { type: 'llc_registration', brvMultiplier: 5, descriptionRu: 'Регистрация ООО', descriptionUz: 'MChJ ro\'yxatga olish' },
+  { type: 'llc_registration', brvMultiplier: 1, descriptionRu: 'Регистрация ООО', descriptionUz: 'MChJ ro\'yxatga olish' },
 ]
 
 export function calculateStateDuty(type: string): StateDutyResult {
