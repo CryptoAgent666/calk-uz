@@ -51,8 +51,9 @@ const UTILIZATION_FEE_BRV: { upTo: number; newCar: number; usedCar: number }[] =
   { upTo: 3500, newCar: 180, usedCar: 390 },
   { upTo: Infinity, newCar: 300, usedCar: 480 },
 ]
-// Imported electric cars pay a flat utilization fee: 30 (new) / 90 (used) БРВ.
-const UTILIZATION_FEE_EV_BRV = { newCar: 30, usedCar: 90 }
+// Imported EVs are exempt from customs DUTY (until 1 Jan 2030) but NOT from the
+// recycling fee, which rose on 1 May 2025 to 120 (≤3yr) / 210 (older) БРВ.
+const UTILIZATION_FEE_EV_BRV = { newCar: 120, usedCar: 210 }
 
 // Registration: vehicle reg 6.84 + tech passport 0.7 + plates 5.5 = 13.04 БРВ.
 const REGISTRATION_FEE_BRV = 6.84 + 0.7 + 5.5
@@ -90,7 +91,7 @@ export function calculateCustomsClearance(
   // VAT: 12% of (car price + customs duty). Imported EVs still pay VAT.
   const vat = (carPriceUzs + customsDuty) * VAT_RATE
 
-  // Utilization (recycling) fee — imported EVs also pay it (30/90 БРВ).
+  // Utilization (recycling) fee — imported EVs also pay it (120/210 БРВ).
   let utilizationFee = 0
   if (isElectric) {
     utilizationFee = (isNew ? UTILIZATION_FEE_EV_BRV.newCar : UTILIZATION_FEE_EV_BRV.usedCar) * BRV

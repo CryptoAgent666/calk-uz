@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { formatCurrency } from '@/lib/utils'
+import { BRV } from '@/lib/constants/brv'
 
 export default function ApartmentCostCalculator() {
   const locale = useLocale()
@@ -18,8 +19,13 @@ export default function ApartmentCostCalculator() {
     const p = parseFloat(pricePerM2.replace(/\s/g, '')) || 0
     if (a <= 0 || p <= 0) return null
     const totalPrice = a * p
-    const registrationFee = 412_000 * 3
-    const notaryFee = totalPrice * 0.005
+    // Real-estate registration fee (ПКМ-623): area-tiered for residential
+    // property of individuals — ≤100 m² = 1.25 БРВ, 101–300 = 2 БРВ, 301+ = 3 БРВ.
+    const regBrv = a <= 100 ? 1.25 : a <= 300 ? 2 : 3
+    const registrationFee = BRV * regBrv
+    // Notarial certification of the sale contract is a FIXED state duty of 1 БРВ
+    // (Tashkent / regional centres; 0.5 БРВ elsewhere), NOT a % of the price.
+    const notaryFee = BRV * 1
     return { totalPrice, registrationFee, notaryFee, totalCost: totalPrice + registrationFee + notaryFee }
   }, [area, pricePerM2])
 
