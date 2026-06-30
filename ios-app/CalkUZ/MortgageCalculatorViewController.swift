@@ -27,7 +27,7 @@ import UIKit
 
 final class MortgageCalculatorViewController: UIViewController {
 
-    private var propertyPrice: Double = 5_000_000
+    private var propertyPrice: Double = 500_000_000
     private var downPaymentPct: Double = 20      // %
     private var annualRatePct: Double = 14       // %
     private var years: Int = 15
@@ -50,7 +50,7 @@ final class MortgageCalculatorViewController: UIViewController {
         return l
     }()
 
-    private let priceField    = MortgageCalculatorViewController.makeNumField(initial: "5000000")
+    private let priceField    = MortgageCalculatorViewController.makeNumField(initial: "500000000")
     private let downField     = MortgageCalculatorViewController.makeNumField(initial: "20", decimal: true)
     private let rateField     = MortgageCalculatorViewController.makeNumField(initial: "14", decimal: true)
     private let yearsField    = MortgageCalculatorViewController.makeNumField(initial: "15")

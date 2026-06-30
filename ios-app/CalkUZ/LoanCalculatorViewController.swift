@@ -25,7 +25,7 @@ final class LoanCalculatorViewController: UIViewController {
 
     // MARK: - Inputs
 
-    private var principal: Double = 500_000   // сум
+    private var principal: Double = 50_000_000   // сум
     private var annualRatePct: Double = 24    // %
     private var months: Int = 24
 
@@ -49,7 +49,7 @@ final class LoanCalculatorViewController: UIViewController {
         return l
     }()
 
-    private let amountField = LoanCalculatorViewController.makeField(initial: "500000")
+    private let amountField = LoanCalculatorViewController.makeField(initial: "50000000")
     private let rateField   = LoanCalculatorViewController.makeField(initial: "24", decimal: true)
     private let termField   = LoanCalculatorViewController.makeField(initial: "24")
 
