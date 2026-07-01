@@ -39,6 +39,9 @@ jobs:
           node-version: '25'
           cache: npm
 
+      - name: Write version marker (served at /version.txt)
+        run: echo "$GITHUB_SHA $(date -u +%FT%TZ)" > public/version.txt
+
       - name: Install & build
         run: |
           npm ci
