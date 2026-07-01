@@ -72,6 +72,7 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
       sameAs: [
         "https://t.me/calkuz_bot",
         "https://play.google.com/store/apps/details?id=uz.calk.calculator",
+        "https://apps.apple.com/app/id6782391910",
       ],
       founder: { "@id": "https://calk.uz/#founder" },
       foundingDate: "2025-01-01",

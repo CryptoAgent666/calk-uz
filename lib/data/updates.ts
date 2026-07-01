@@ -20,6 +20,21 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-07-01",
+    dateLabelRu: "1 июля 2026",
+    dateLabelUz: "2026-yil 1-iyul",
+    items: [
+      {
+        titleRu: "Приложение Calk.UZ вышло в App Store",
+        titleUz: "Calk.UZ ilovasi App Store'da chiqdi",
+        descRu:
+          "Мобильное приложение Calk.UZ теперь доступно для iPhone и iPad в App Store: нативные калькуляторы (зарплата, кредит, ипотека, растаможка, НДС и другие), курсы валют ЦБ, история расчётов и избранное — всё работает офлайн. Для Android приложение доступно в Google Play. Ссылки на оба магазина — в футере сайта.",
+        descUz:
+          "Calk.UZ mobil ilovasi endi iPhone va iPad uchun App Store'da mavjud: native kalkulyatorlar (ish haqi, kredit, ipoteka, bojxona, QQS va boshqalar), Markaziy bank valyuta kurslari, hisob-kitob tarixi va sevimlilar — barchasi oflayn ishlaydi. Android uchun ilova Google Play'da mavjud. Ikkala do'kon havolalari — sayt futerida.",
+      },
+    ],
+  },
+  {
     date: "2026-06-27",
     dateLabelRu: "27 июня 2026",
     dateLabelUz: "2026-yil 27-iyun",
