@@ -1,0 +1,67 @@
+name: Build & publish to Plesk (deploy branch)
+
+# Push to main -> build .next in a clean env -> publish a ready-to-run snapshot
+# (source + built .next + a fresh tmp/restart.txt, WITHOUT node_modules) to the
+# `deploy` branch. Plesk Git (tracking `deploy`) auto-deploys it to /calk.uz and
+# Passenger restarts because tmp/restart.txt changed. No server-side build.
+#
+# node_modules stays on the server. When dependencies change, run «Установка NPM»
+# once in Plesk → Node.js (the workflow warns when package-lock.json changed).
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-branch
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # enough to diff package-lock against the parent
+
+      - name: Warn if dependencies changed
+        run: |
+          if git rev-parse HEAD~1 >/dev/null 2>&1 && \
+             ! git diff --quiet HEAD~1 HEAD -- package-lock.json; then
+            echo "::warning title=Deps changed::package-lock.json changed — after this deploy, click «Установка NPM» once in Plesk → Node.js, then it restarts."
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '25'
+          cache: npm
+
+      - name: Write version marker (served at /version.txt)
+        run: echo "$GITHUB_SHA $(date -u +%FT%TZ)" > public/version.txt
+
+      - name: Install & build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Stamp Passenger restart trigger
+        run: |
+          mkdir -p tmp
+          echo "restart $GITHUB_SHA $(date -u +%FT%TZ)" > tmp/restart.txt
+
+      - name: Publish snapshot to `deploy` branch
+        run: |
+          git config user.name  "deploy-bot"
+          git config user.email "deploy-bot@users.noreply.github.com"
+          # Orphan snapshot: keep the branch a single throwaway commit (no history bloat).
+          git checkout --orphan deploy
+          git reset -q                          # unstage everything, keep working tree
+          git add -A                            # source (non-ignored): app.js, next.config.ts, public, package*.json …
+          git add -f .next tmp/restart.txt      # force-add the built output + restart trigger (both gitignored)
+          git reset -q -- .next/cache 2>/dev/null || true   # drop the huge build cache (not needed at runtime)
+          git commit -q -m "deploy: build ${GITHUB_SHA::7}"
+          git push -f origin deploy
+          echo "Published $(git rev-parse --short HEAD) to deploy branch"

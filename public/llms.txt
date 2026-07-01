@@ -1,0 +1,63 @@
+# Calk.UZ
+
+> Free online financial calculators for Uzbekistan (78 calculators, bilingual RU/UZ)
+
+## About
+
+Calk.UZ provides 78 free online calculators for residents of Uzbekistan covering taxes, salaries, loans, deposits, currency exchange, utilities, real estate, automotive, business, health, education, and religious calculations. All formulas are based on current legislation of the Republic of Uzbekistan. No registration required.
+
+## Key Pages
+
+- Homepage (RU): https://calk.uz/ru
+- Homepage (UZ): https://calk.uz/uz
+- About: https://calk.uz/ru/about
+- Methodology: https://calk.uz/ru/methodology
+- Contact: https://calk.uz/ru/contact
+
+## Calculator Categories (14)
+
+- Taxes (NDFL, VAT, profit tax, property tax, etc.)
+- Salary (net/gross, vacation pay, sick leave)
+- Loans (annuity, differentiated, mortgage)
+- Deposits (simple/compound interest)
+- Currency (conversion at CBU rates)
+- Auto (customs duty, fuel cost)
+- Utilities (electricity, gas, water, heating)
+- Real Estate (mortgage, rental yield)
+- Business (break-even, margin, markup)
+- Health (BMI, calories, water intake)
+- Education (GPA, scholarship)
+- Religion (zakat, sadaqah)
+- Tools (percentage, unit conversion)
+
+## Data Sources
+
+All rates and tariffs are sourced from official government bodies:
+
+- National Legal Database: https://lex.uz
+- Central Bank of Uzbekistan: https://cbu.uz
+- State Tax Committee: https://soliq.uz
+- State Statistics Committee: https://stat.uz
+- Ministry of Finance: https://mf.uz
+
+## Key Facts
+
+- NDFL (personal income tax) rate: 12% for residents, 20% for non-residents
+- VAT rate: 12%
+- Minimum wage (2026): updated quarterly
+- Refinancing rate: set by Central Bank of Uzbekistan
+- Currency rates: updated daily from cbu.uz
+
+## Update Schedule
+
+- Tax calculators: annually (January) or when Tax Code changes
+- Currency calculators: daily (CBU rates)
+- Loan/deposit calculators: quarterly or when refinancing rate changes
+- Utility calculators: when tariffs change (1-2 times per year)
+- Salary calculators: quarterly (minimum wage and contributions)
+
+## Contact
+
+- Email: info@calk.uz
+- Telegram: https://t.me/calkuz_bot
+- Website: https://calk.uz

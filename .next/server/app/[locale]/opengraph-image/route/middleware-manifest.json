@@ -1,0 +1,55 @@
+{
+  "sorted_middleware": [
+    "/[locale]/opengraph-image/route"
+  ],
+  "middleware": {},
+  "instrumentation": null,
+  "functions": {
+    "/[locale]/opengraph-image/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/[locale]/opengraph-image/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_[locale]_opengraph-image_route_actions_0uc_co-.js",
+        "server/edge/chunks/[root-of-the-server]__0pb6_p8._.js",
+        "server/edge/chunks/node_modules_next_dist_13bv687._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_11csqje._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0ye1gz2.js"
+      ],
+      "name": "app/[locale]/opengraph-image/route",
+      "page": "/[locale]/opengraph-image/route",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0ye1gz2.js",
+      "matchers": [
+        {
+          "regexp": "^/(?P<nxtPlocale>[^/]+?)/opengraph-image(?:/)?$",
+          "originalSource": "/[locale]/opengraph-image"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_10a187050363648b49a36c79d5266d2c",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_yoga_0656eb_.wasm"
+        },
+        {
+          "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_resvg_0656eb_.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf",
+          "filePath": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "ho_PLmB22Xt1IShblYwbi",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "qZmM6TCat5iEDt8D+KGVdAxwLu6csx9DYETVt+L1lpY=",
+        "__NEXT_PREVIEW_MODE_ID": "d334659bc14021d2e5aa185ed9b801f6",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "48426bd7f1a31c2a2d5f5685c10d35dcdd11edec708d7b635fbc2e75007f0e0e",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "dbc773f7273f193b48c185d50e703eea3a077f3f05e5372ba4606f18e7e9241e"
+      }
+    }
+  }
+}

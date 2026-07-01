@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "functions": {
+    "/[locale]/calculator/[slug]/opengraph-image": {},
+    "/[locale]/opengraph-image": {}
+  }
+}
