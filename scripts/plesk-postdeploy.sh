@@ -16,6 +16,9 @@ set -uo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$(dirname "$SCRIPT_DIR")"   # repo root (== Plesk server path)
 
+# Output goes to Plesk's deployment-action window (stdout) so progress/errors
+# are visible there, and is also appended to deploy.log.
+exec 2>&1
 {
   echo "=== $(date '+%F %T') post-deploy ==="
 
@@ -61,4 +64,4 @@ cd "$(dirname "$SCRIPT_DIR")"   # repo root (== Plesk server path)
   fi
 
   echo "post-deploy done"
-} >> deploy.log 2>&1
+} | tee -a deploy.log
