@@ -22,12 +22,18 @@ exec 2>&1
 {
   echo "=== $(date '+%F %T') post-deploy ==="
 
-  # Make node/npm reachable (Plesk Node.js lives under /opt/plesk/node/*/bin).
-  for d in /opt/plesk/node/*/bin "$HOME/.nvm/versions/node/"*/bin /usr/local/bin; do
-    [ -d "$d" ] && export PATH="$d:$PATH"
-  done
+  # Make node/npm reachable. Prefer the user's normal node (nvm default),
+  # otherwise Plesk's bundled Node.js under /opt/plesk/node/*/bin.
   export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+  if [ -s "$HOME/.nvm/nvm.sh" ]; then
+    . "$HOME/.nvm/nvm.sh" >/dev/null 2>&1 || true
+    nvm use default >/dev/null 2>&1 || true
+  fi
+  if ! command -v npm >/dev/null 2>&1; then
+    for d in /opt/plesk/node/*/bin; do [ -d "$d" ] && export PATH="$d:$PATH"; done
+  fi
   echo "node: $(command -v node || echo MISSING) $(node -v 2>/dev/null || true)"
+  echo "npm:  $(command -v npm || echo MISSING) $(npm -v 2>/dev/null || true)"
 
   if ! command -v npm >/dev/null 2>&1; then
     echo "!! npm not found in PATH — set the correct Node.js path at the top of this script"
