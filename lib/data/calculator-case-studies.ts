@@ -89,18 +89,18 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
         contextUz: "O'zbekiston norezidenti, o'zbek mijozdan 15 000 USD bir martalik daromad",
         stepsRu: [
           { label: 'Доход (~по курсу 12 700)', value: '190 500 000 сум' },
-          { label: 'НДФЛ для нерезидента 20%', value: '38 100 000 сум' },
-          { label: 'К получению', value: '152 400 000 сум' },
+          { label: 'НДФЛ для нерезидента 12%', value: '22 860 000 сум' },
+          { label: 'К получению', value: '167 640 000 сум' },
         ],
         stepsUz: [
           { label: "Daromad (~12 700 kursda)", value: "190 500 000 so'm" },
-          { label: "Norezident JShShS 20%", value: "38 100 000 so'm" },
-          { label: "Olinadigan summa", value: "152 400 000 so'm" },
+          { label: "Norezident JShShS 12%", value: "22 860 000 so'm" },
+          { label: "Olinadigan summa", value: "167 640 000 so'm" },
         ],
         conclusionRu:
-          'Если Дилшод вернётся на 183+ дней в Узбекистан, он станет резидентом и сможет вернуть переплату через декларацию.',
+          'Ставка НДФЛ по доходам из источников в Узбекистане для нерезидентов такая же, как для резидентов — 12%, поэтому налоговый статус на этот доход не влияет.',
         conclusionUz:
-          "Agar Dilshod O'zbekistonga 183+ kunga qaytsa, rezident bo'ladi va deklaratsiya orqali ortiqcha to'langan summani qaytarib olishi mumkin.",
+          "O'zbekistondagi manbalardan olingan daromadlar bo'yicha JShShS stavkasi norezidentlar uchun ham rezidentlardagi kabi — 12%, shuning uchun soliq maqomi bu daromadga ta'sir qilmaydi.",
       },
     ],
   },
@@ -417,13 +417,13 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
           { label: 'Беспошлинный ввоз товаров (1 БРВ × 8)', value: '3 296 000 сум' },
           { label: 'Имущественный вычет (500 БРВ)', value: '206 000 000 сум' },
           { label: 'Освобождение от НДФЛ матпомощи (4,22 БРВ)', value: '1 738 640 сум' },
-          { label: 'Порог обязательной регистрации НДС (60 000 БРВ)', value: '24 720 000 000 сум' },
+          { label: 'Порог обязательной регистрации НДС (в сумах, не в БРВ)', value: '1 000 000 000 сум' },
         ],
         stepsUz: [
           { label: "Bojsiz olib kirish (1 BHK × 8)", value: "3 296 000 so'm" },
           { label: "Mulkiy chegirma (500 BHK)", value: "206 000 000 so'm" },
           { label: "Moddiy yordam JShShSdan ozod (4,22 BHK)", value: "1 738 640 so'm" },
-          { label: "QQS majburiy ro'yxatga olish chegarasi (60 000 BHK)", value: "24 720 000 000 so'm" },
+          { label: "QQS majburiy ro'yxatga olish chegarasi (so'mda, BHKda emas)", value: "1 000 000 000 so'm" },
         ],
         conclusionRu:
           'БРВ пересматривается ежегодно. Все лимиты, привязанные к БРВ, автоматически растут вместе с её увеличением.',

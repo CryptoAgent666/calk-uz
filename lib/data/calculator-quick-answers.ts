@@ -20,9 +20,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'income-tax',
     textRu:
-      'НДФЛ в Узбекистане в 2026 году — 12% от начисленной зарплаты (7,5% для резидентов IT Park, 20% для нерезидентов). Дополнительно удерживается 0,1% ИНПС на персональный пенсионный счёт. Итого с зарплаты удерживается 12,1%, на руки работник получает 87,9%.',
+      'НДФЛ в Узбекистане в 2026 году — 12% от начисленной зарплаты, в том числе для нерезидентов (7,5% для резидентов IT Park). Дополнительно удерживается 0,1% ИНПС на персональный пенсионный счёт. Итого с зарплаты удерживается 12,1%, на руки работник получает 87,9%.',
     textUz:
-      "2026-yilda O'zbekistonda JShShS — hisoblangan ish haqining 12% (IT Park rezidentlari uchun 7,5%, norezidentlar uchun 20%). Qo'shimcha 0,1% IJPH shaxsiy pensiya hisobiga ushlab qolinadi. Jami ish haqidan 12,1% ushlanadi, xodim qo'liga 87,9% oladi.",
+      "2026-yilda O'zbekistonda JShShS — hisoblangan ish haqining 12%, shu jumladan norezidentlar uchun ham (IT Park rezidentlari uchun 7,5%). Qo'shimcha 0,1% IJPH shaxsiy pensiya hisobiga ushlab qolinadi. Jami ish haqidan 12,1% ushlanadi, xodim qo'liga 87,9% oladi.",
   },
   {
     slug: 'vat',
@@ -146,9 +146,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'sick-leave',
     textRu:
-      'Больничный в Узбекистане с 2026 года выплачивает Фонд госсоцстрахования. Минимум 6 месяцев страхового стажа. Размер: 60% при стаже 6–23 мес, 70% при 2–5 годах, 80% при 5–8 годах, 100% при стаже от 8 лет. Расчёт по среднему заработку за 12 месяцев в календарных днях.',
+      'Больничный в Узбекистане с 2026 года выплачивает Фонд госсоцстрахования. Минимум 6 месяцев страхового стажа. Размер: 60% при стаже до 5 лет, 80% при 5–8 годах, 100% при стаже от 8 лет. Расчёт по среднему заработку за 12 месяцев в календарных днях.',
     textUz:
-      "2026-yildan O'zbekistonda kasallik varaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Minimum 6 oy sug'urta staji. Miqdori: 6–23 oy stajda 60%, 2–5 yilda 70%, 5–8 yilda 80%, 8 yildan ortiqda 100%. Hisoblash 12 oy o'rtacha ish haqi bo'yicha kalendar kunlarida.",
+      "2026-yildan O'zbekistonda kasallik varaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Minimum 6 oy sug'urta staji. Miqdori: 5 yilgacha stajda 60%, 5–8 yilda 80%, 8 yildan ortiqda 100%. Hisoblash 12 oy o'rtacha ish haqi bo'yicha kalendar kunlarida.",
   },
   {
     slug: 'pension',

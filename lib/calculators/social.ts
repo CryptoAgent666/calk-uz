@@ -70,9 +70,11 @@ export interface SickLeaveResult {
 }
 
 export function getSickLeavePercent(insuranceMonths: number): number {
+  // ПКМ-314 (31.05.2024): 60% (<5 лет), 80% (5-8 лет), 100% (8+ лет / льготные категории)
   if (insuranceMonths < 6) return 0        // <6 months: not eligible
-  if (insuranceMonths < 96) return 60      // up to 8 years: 60%
-  return 80                                // 8+ years: 80% (100% only for work injury)
+  if (insuranceMonths < 60) return 60      // up to 5 years: 60%
+  if (insuranceMonths < 96) return 80      // 5-8 years: 80%
+  return 100                               // 8+ years: 100%
 }
 
 export function calculateSickLeave(
