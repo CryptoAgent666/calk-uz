@@ -46,6 +46,9 @@ function CalculatorRenderer({ slug }: { slug: string }) {
   return <Component />
 }
 
+// Only pre-generated slugs are valid; any other slug returns a real 404.
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return getAllLocalizedSlugs()
 }

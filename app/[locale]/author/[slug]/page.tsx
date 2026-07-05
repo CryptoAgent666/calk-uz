@@ -32,6 +32,9 @@ const SOCIAL_ICONS: Record<string, React.ComponentType<{ className?: string }>> 
   ExternalLink,
 }
 
+// Only pre-generated author slugs are valid; anything else returns a real 404.
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return AUTHORS.flatMap((a) => [
     { locale: "ru", slug: a.slug },

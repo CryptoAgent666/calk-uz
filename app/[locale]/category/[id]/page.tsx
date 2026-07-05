@@ -15,6 +15,9 @@ import { DynamicIcon } from "@/components/calculator/DynamicIcon"
 const BASE_URL = "https://calk.uz"
 const LOCALES = ["ru", "uz"]
 
+// Only pre-generated category ids are valid; anything else returns a real 404.
+export const dynamicParams = false
+
 export function generateStaticParams() {
   const params: { locale: string; id: string }[] = []
   for (const locale of LOCALES) {
