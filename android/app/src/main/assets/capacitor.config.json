@@ -8,6 +8,9 @@
 		"androidScheme": "https",
 		"errorPath": "index.html"
 	},
+	"android": {
+		"appendUserAgent": "CalkUZ-Android-App"
+	},
 	"plugins": {
 		"SplashScreen": {
 			"launchShowDuration": 2000,

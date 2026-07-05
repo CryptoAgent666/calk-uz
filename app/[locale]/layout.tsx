@@ -11,6 +11,7 @@ import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { CookieConsent } from "@/components/CookieConsent"
 import { Monetization } from "@/components/Monetization"
+import { NativeAds } from "@/components/NativeAds"
 import { getAuthorBySlug, PRIMARY_AUTHOR_SLUG } from "@/lib/data/authors"
 import "@/app/globals.css"
 
@@ -172,6 +173,7 @@ export default async function LocaleLayout({
             <Footer />
             <CookieConsent />
             <Monetization />
+            <NativeAds />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
