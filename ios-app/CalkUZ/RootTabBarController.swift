@@ -17,6 +17,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 final class RootTabBarController: UITabBarController, UITabBarControllerDelegate {
 
@@ -114,6 +115,30 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
             tabBar.standardAppearance = appearance
             tabBar.scrollEdgeAppearance = appearance
         }
+
+        setupAdBanner()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AdMobManager.shared.requestTrackingIfNeeded()
+    }
+
+    // MARK: - AdMob banner (pinned above the tab bar)
+
+    private var adBanner: BannerView?
+
+    private func setupAdBanner() {
+        let banner = AdMobManager.shared.makeBanner(width: UIScreen.main.bounds.width, root: self)
+        banner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(banner)
+        NSLayoutConstraint.activate([
+            banner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            banner.bottomAnchor.constraint(equalTo: tabBar.topAnchor),
+        ])
+        adBanner = banner
+        // Keep tab content clear of the banner.
+        additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
     }
 
     /// Opens a calculator from a bookmark tap. Routes to the "Ещё" tab and

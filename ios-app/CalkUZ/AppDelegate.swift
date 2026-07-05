@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // OTA rates: fetch the latest calculator config so native calculators
         // reflect rate changes (НДФЛ/НДС/БРВ…) without an app release.
         RemoteConfig.shared.refresh()
+        // AdMob: start the SDK (ATT prompt is requested once the UI is up).
+        AdMobManager.shared.start()
         return true
     }
 

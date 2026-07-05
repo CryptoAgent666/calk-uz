@@ -142,5 +142,7 @@ extension CalculatorsHubViewController: UITableViewDataSource, UITableViewDelega
         let row = sections[indexPath.section].rows[indexPath.row]
         let vc = row.make()
         navigationController?.pushViewController(vc, animated: true)
+        // Frequency-capped interstitial on calculator opens.
+        AdMobManager.shared.noteNavigationAndMaybeShowInterstitial(from: self)
     }
 }
