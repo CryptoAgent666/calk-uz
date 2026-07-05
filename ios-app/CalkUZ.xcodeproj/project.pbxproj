@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1A1A1A11D000000000001 /* AdMobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A11D000000000010 /* AdMobManager.swift */; };
+		A1A1A1A1AD000000000003 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A1A1A1A1AD000000000002 /* GoogleMobileAds */; };
 		A1A1A1A101000000000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A101000000000010 /* AppDelegate.swift */; };
 		A1A1A1A102000000000001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A102000000000010 /* SceneDelegate.swift */; };
 		A1A1A1A103000000000001 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A103000000000010 /* WebViewController.swift */; };
@@ -51,6 +53,7 @@
 		A1A1A1A10C000000000010 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1A1A1A10D000000000010 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		A1A1A1A10E000000000010 /* SalaryCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryCalculatorViewController.swift; sourceTree = "<group>"; };
+		A1A1A1A11D000000000010 /* AdMobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobManager.swift; sourceTree = "<group>"; };
 		A1A1A1A10F000000000010 /* LoanCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanCalculatorViewController.swift; sourceTree = "<group>"; };
 		A1A1A1A110000000000010 /* CalculationHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationHistoryStore.swift; sourceTree = "<group>"; };
 		A1A1A1A111000000000010 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A1A1A1AD000000000003 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +104,7 @@
 				A1A1A1A10C000000000010 /* SettingsViewController.swift */,
 				A1A1A1A10D000000000010 /* RootTabBarController.swift */,
 				A1A1A1A10E000000000010 /* SalaryCalculatorViewController.swift */,
+				A1A1A1A11D000000000010 /* AdMobManager.swift */,
 				A1A1A1A10F000000000010 /* LoanCalculatorViewController.swift */,
 				A1A1A1A110000000000010 /* CalculationHistoryStore.swift */,
 				A1A1A1A111000000000010 /* HistoryViewController.swift */,
@@ -147,6 +152,9 @@
 			);
 			name = CalkUZ;
 			productName = CalkUZ;
+			packageProductDependencies = (
+				A1A1A1A1AD000000000002 /* GoogleMobileAds */,
+			);
 			productReference = A1A1A1A1FF000000000010 /* CalkUZ.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -177,6 +185,9 @@
 			);
 			mainGroup = A1A1A1A1FF000000000030;
 			productRefGroup = A1A1A1A1FF000000000050 /* Products */;
+			packageReferences = (
+				A1A1A1A1AD000000000001 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -184,6 +195,25 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A1A1A1A1AD000000000001 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1A1A1A1AD000000000002 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1A1A1A1AD000000000001 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A1A1A1A1FF000000000090 /* Resources */ = {
@@ -213,6 +243,7 @@
 				A1A1A1A10C000000000001 /* SettingsViewController.swift in Sources */,
 				A1A1A1A10D000000000001 /* RootTabBarController.swift in Sources */,
 				A1A1A1A10E000000000001 /* SalaryCalculatorViewController.swift in Sources */,
+				A1A1A1A11D000000000001 /* AdMobManager.swift in Sources */,
 				A1A1A1A10F000000000001 /* LoanCalculatorViewController.swift in Sources */,
 				A1A1A1A110000000000001 /* CalculationHistoryStore.swift in Sources */,
 				A1A1A1A111000000000001 /* HistoryViewController.swift in Sources */,
