@@ -9,13 +9,11 @@ import { ToastProvider } from "@/components/ui/toast-simple"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { CookieConsent } from "@/components/CookieConsent"
+import { Monetization } from "@/components/Monetization"
 import { getAuthorBySlug, PRIMARY_AUTHOR_SLUG } from "@/lib/data/authors"
 import "@/app/globals.css"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-sans" })
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ""
-const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || ""
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -149,48 +147,16 @@ export default async function LocaleLayout({
         {/* Preconnect to third-party origins used by calculators */}
         <link rel="preconnect" href="https://cbu.uz" />
         <link rel="dns-prefetch" href="https://cbu.uz" />
-        {GA_ID && (
-          <>
-            <link rel="preconnect" href="https://www.google-analytics.com" />
-            <link rel="preconnect" href="https://www.googletagmanager.com" />
-          </>
-        )}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
 
         <OrganizationJsonLd locale={locale} />
 
-        {/* Google Analytics 4 */}
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
-          </>
-        )}
-
-        {/* Google AdSense */}
+        {/* Analytics + AdSense load via <Monetization/> (web only; gated off in native apps). */}
         {/* Service Worker for offline support */}
         <Script id="sw-register" strategy="afterInteractive">
           {`if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}`}
         </Script>
-
-        {ADSENSE_ID && (
-          <Script
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
-            strategy="afterInteractive"
-            crossOrigin="anonymous"
-          />
-        )}
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
@@ -201,6 +167,7 @@ export default async function LocaleLayout({
             </ToastProvider>
             <Footer />
             <CookieConsent />
+            <Monetization />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

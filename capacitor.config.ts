@@ -10,6 +10,11 @@ const config: CapacitorConfig = {
     androidScheme: 'https',
     errorPath: 'index.html',
   },
+  // Mark the app webview UA so the site suppresses web AdSense/GA/cookie there
+  // (apps monetize via AdMob). The iOS native shell sets its own "CalkUZ" UA.
+  android: {
+    appendUserAgent: 'CalkUZ-Android-App',
+  },
   plugins: {
     SplashScreen: {
       launchShowDuration: 2000,

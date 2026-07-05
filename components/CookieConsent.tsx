@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from "react"
 import { useTranslations } from "next-intl"
+import { isNativeApp } from "@/lib/platform"
 
 export function CookieConsent() {
   const t = useTranslations()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    if (isNativeApp()) return // no web cookie banner inside the native apps
     const consent = localStorage.getItem("cookie-consent")
     if (!consent) {
       setVisible(true)
