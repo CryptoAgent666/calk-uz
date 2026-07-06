@@ -61,6 +61,25 @@ final class CalculatorsHubViewController: UIViewController {
             Row(title: "Индекс массы тела (ИМТ)", subtitle: "Категория веса по ВОЗ",
                 icon: "figure.stand", tint: .systemGreen,
                 make: { BMICalculatorViewController() }),
+            Row(title: "Идеальный вес", subtitle: "Devine/Robinson/Miller + ИМТ-диапазон",
+                icon: "figure.arms.open", tint: .systemGreen,
+                make: { IdealWeightCalculatorViewController() }),
+        ]),
+        Section(title: "Налоги", rows: [
+            Row(title: "Транспортный налог", subtitle: "По объёму двигателя, в БРВ",
+                icon: "car.circle.fill", tint: .systemOrange,
+                make: { TransportTaxCalculatorViewController() }),
+            Row(title: "Госпошлины", subtitle: "Брак, ИП, ООО, нотариус — в БРВ",
+                icon: "building.columns.fill", tint: .systemBrown,
+                make: { StateDutyCalculatorViewController() }),
+        ]),
+        Section(title: "Инструменты", rows: [
+            Row(title: "Проценты", subtitle: "% от числа, доля, прибавить/вычесть",
+                icon: "percent", tint: .systemPurple,
+                make: { PercentageCalculatorViewController() }),
+            Row(title: "Скидки", subtitle: "Цена со скидкой и сумма экономии",
+                icon: "tag.fill", tint: .systemPink,
+                make: { DiscountCalculatorViewController() }),
         ]),
     ]
 
@@ -99,6 +118,11 @@ final class CalculatorsHubViewController: UIViewController {
                 case "customs":  return { CustomsCalculatorViewController() }
                 case "calorie":  return { CalorieCalculatorViewController() }
                 case "bmi":      return { BMICalculatorViewController() }
+                case "percentage":  return { PercentageCalculatorViewController() }
+                case "discount":    return { DiscountCalculatorViewController() }
+                case "transport":   return { TransportTaxCalculatorViewController() }
+                case "idealweight": return { IdealWeightCalculatorViewController() }
+                case "stateduty":   return { StateDutyCalculatorViewController() }
                 default:         return nil
                 }
             }()
