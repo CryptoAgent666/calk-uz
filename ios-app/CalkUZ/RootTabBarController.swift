@@ -124,21 +124,27 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
         AdMobManager.shared.requestTrackingIfNeeded()
     }
 
-    // MARK: - AdMob banner (pinned above the tab bar)
+    // MARK: - AdMob banner (positioned just above the tab bar)
 
     private var adBanner: BannerView?
 
     private func setupAdBanner() {
-        let banner = AdMobManager.shared.makeBanner(width: UIScreen.main.bounds.width, root: self)
-        banner.translatesAutoresizingMaskIntoConstraints = false
+        let banner = AdMobManager.shared.makeBanner(width: view.bounds.width, root: self)
+        banner.backgroundColor = .clear
         view.addSubview(banner)
-        NSLayoutConstraint.activate([
-            banner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            banner.bottomAnchor.constraint(equalTo: tabBar.topAnchor),
-        ])
         adBanner = banner
         // Keep tab content clear of the banner.
         additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+    }
+
+    // Frame-based layout — avoids activating an Auto Layout constraint against
+    // `tabBar` before it is in the view hierarchy, which crashed on launch on
+    // iOS/iPadOS 26 (NSLayoutConstraint _nearestAncestorLayoutItem → SIGABRT).
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        guard let banner = adBanner else { return }
+        let h = banner.adSize.size.height > 0 ? banner.adSize.size.height : 50
+        banner.frame = CGRect(x: 0, y: tabBar.frame.minY - h, width: view.bounds.width, height: h)
     }
 
     /// Opens a calculator from a bookmark tap. Routes to the "Ещё" tab and
