@@ -38,7 +38,6 @@ export async function generateMetadata({
 const RATE_SOURCES = [
   { key: "methodology_rates_source_lex", url: "https://lex.uz" },
   { key: "methodology_rates_source_cbu", url: "https://cbu.uz" },
-  { key: "methodology_rates_source_soliq", url: "https://soliq.uz" },
   { key: "methodology_rates_source_gazeta", url: "https://gazeta.uz" },
 ] as const
 

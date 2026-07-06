@@ -306,8 +306,8 @@ export default async function ContactPage({
         </h2>
         <p className="text-sm text-amber-800 dark:text-amber-300/90 leading-relaxed">
           {isUz
-            ? "Calk.UZ — bu mustaqil xususiy loyiha. Biz O'zbekiston davlat organlari bilan bog'liq emasmiz va rasmiy davlat xizmati emasmiz. Hisob-kitoblar ochiq ma'lumotlar (lex.uz, cbu.uz, soliq.uz) asosida tuziladi va ma'lumot xarakteriga ega."
-            : "Calk.UZ — независимый частный проект. Мы не связаны с государственными органами Узбекистана и не являемся официальным государственным сервисом. Расчёты построены на открытых данных (lex.uz, cbu.uz, soliq.uz) и носят справочный характер."}
+            ? "Calk.UZ — bu mustaqil xususiy loyiha. Biz O'zbekiston davlat organlari bilan bog'liq emasmiz va rasmiy davlat xizmati emasmiz. Hisob-kitoblar ochiq ma'lumotlar (lex.uz, cbu.uz, stat.uz) asosida tuziladi va ma'lumot xarakteriga ega."
+            : "Calk.UZ — независимый частный проект. Мы не связаны с государственными органами Узбекистана и не являемся официальным государственным сервисом. Расчёты построены на открытых данных (lex.uz, cbu.uz, stat.uz) и носят справочный характер."}
         </p>
       </section>
 

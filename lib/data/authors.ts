@@ -203,9 +203,9 @@ export const AUTHORS: Author[] = [
         titleRu: 'Calk.UZ',
         titleUz: 'Calk.UZ',
         descriptionRu:
-          'Адаптация методологии для Узбекистана: 78 калькуляторов, двуязычный интерфейс (русский и узбекский), привязка к lex.uz, cbu.uz, soliq.uz.',
+          'Адаптация методологии для Узбекистана: 78 калькуляторов, двуязычный интерфейс (русский и узбекский), привязка к lex.uz, cbu.uz, stat.uz.',
         descriptionUz:
-          "Metodologiyani O'zbekiston uchun moslashtirish: 78 kalkulyator, ikki tilli interfeys (rus va o'zbek), lex.uz, cbu.uz, soliq.uz ga bog'lash.",
+          "Metodologiyani O'zbekiston uchun moslashtirish: 78 kalkulyator, ikki tilli interfeys (rus va o'zbek), lex.uz, cbu.uz, stat.uz ga bog'lash.",
       },
       {
         yearRu: '2026',

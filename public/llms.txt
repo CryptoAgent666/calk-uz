@@ -36,9 +36,8 @@ All rates and tariffs are sourced from official government bodies:
 
 - National Legal Database: https://lex.uz
 - Central Bank of Uzbekistan: https://cbu.uz
-- State Tax Committee: https://soliq.uz
 - State Statistics Committee: https://stat.uz
-- Ministry of Finance: https://mf.uz
+- Ministry of Economy and Finance: https://imv.uz
 
 ## Key Facts
 

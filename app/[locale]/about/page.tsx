@@ -69,9 +69,8 @@ const FEATURES_KEYS = [
 const DATA_SOURCES = [
   { key: "about_source_lex", url: "https://lex.uz", domain: "lex.uz" },
   { key: "about_source_cbu", url: "https://cbu.uz", domain: "cbu.uz" },
-  { key: "about_source_soliq", url: "https://soliq.uz", domain: "soliq.uz" },
   { key: "about_source_stat", url: "https://stat.uz", domain: "stat.uz" },
-  { key: "about_source_mf", url: "https://mf.uz", domain: "mf.uz" },
+  { key: "about_source_mf", url: "https://imv.uz", domain: "imv.uz" },
 ] as const
 
 export default async function AboutPage({
