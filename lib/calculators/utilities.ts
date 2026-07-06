@@ -33,10 +33,13 @@ const GAS_WINTER_TIERS: TariffTier[] = [
   { upTo: Infinity, rate: 3300 },
 ]
 
+// Tashkent metered household rates. The cold-water tariff ALREADY bundles all
+// canalization (водоотведение) for both cold and hot water:
+//   3808 = (1400 water + 1000 cold-drainage + 1000 hot-drainage) × 1.12 VAT
+// so sewerage must NOT be charged as a separate line (goldenpages.uz / ustabor.uz).
 const WATER_RATES = {
   cold: 3808,
   hot: 8928.67,
-  sewage: 1456, // Toshsuvta'minoti tariff effective July 2025 (with VAT)
 }
 
 const HEATING_RATE_PER_M2_PER_DAY = 241.44
@@ -107,15 +110,14 @@ export interface WaterResult {
   hotConsumption: number
   coldCost: number
   hotCost: number
-  sewageCost: number
   total: number
 }
 
 export function calculateWater(coldM3: number, hotM3: number): WaterResult {
   const coldCost = coldM3 * WATER_RATES.cold
   const hotCost = hotM3 * WATER_RATES.hot
-  const sewageCost = (coldM3 + hotM3) * WATER_RATES.sewage
-  return { coldConsumption: coldM3, hotConsumption: hotM3, coldCost, hotCost, sewageCost, total: coldCost + hotCost + sewageCost }
+  // Canalization is already included in the cold/hot tariffs — no separate line.
+  return { coldConsumption: coldM3, hotConsumption: hotM3, coldCost, hotCost, total: coldCost + hotCost }
 }
 
 export interface HeatingResult {

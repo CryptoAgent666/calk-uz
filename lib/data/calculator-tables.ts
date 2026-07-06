@@ -1,6 +1,6 @@
 import type { CategoryId } from "@/lib/types/calculator"
 import { TAX_RATES } from "@/lib/constants/tax-rates"
-import { ELECTRICITY_TIERS, GAS_TIERS_SUMMER, WATER_COLD_RATE, WATER_HOT_RATE, WATER_SEWAGE_RATE } from "@/lib/constants/utility-tariffs"
+import { ELECTRICITY_TIERS, GAS_TIERS_SUMMER, WATER_COLD_RATE, WATER_HOT_RATE } from "@/lib/constants/utility-tariffs"
 import { BANKS } from "@/lib/constants/banks"
 
 /**
@@ -150,9 +150,8 @@ const UTILITIES_TABLES: CalculatorTable[] = [
       { ru: "Тариф (сум/м\u00B3)", uz: "Tarif (so'm/m\u00B3)" },
     ],
     rows: [
-      { ru: ["Холодная вода", `${WATER_COLD_RATE.toLocaleString("ru-RU")} сум`], uz: ["Sovuq suv", `${WATER_COLD_RATE.toLocaleString("ru-RU")} so'm`] },
+      { ru: ["Холодная вода (с канализацией)", `${WATER_COLD_RATE.toLocaleString("ru-RU")} сум`], uz: ["Sovuq suv (kanalizatsiya bilan)", `${WATER_COLD_RATE.toLocaleString("ru-RU")} so'm`] },
       { ru: ["Горячая вода", `${WATER_HOT_RATE.toLocaleString("ru-RU")} сум`], uz: ["Issiq suv", `${WATER_HOT_RATE.toLocaleString("ru-RU")} so'm`] },
-      { ru: ["Канализация", `${WATER_SEWAGE_RATE.toLocaleString("ru-RU")} сум`], uz: ["Kanalizatsiya", `${WATER_SEWAGE_RATE.toLocaleString("ru-RU")} so'm`] },
     ],
   },
 ]

@@ -20,6 +20,21 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-07-06",
+    dateLabelRu: "6 июля 2026",
+    dateLabelUz: "2026-yil 6-iyul",
+    items: [
+      {
+        titleRu: "Калькулятор воды — исправлен двойной счёт канализации",
+        titleUz: "Suv kalkulyatori — kanalizatsiya ikki marta hisoblanishi tuzatildi",
+        descRu:
+          "В Ташкенте тариф на холодную воду по счётчику (3 808 сум/м³) уже включает водоотведение для холодной и горячей воды. Калькулятор ошибочно начислял канализацию ещё раз отдельной строкой (1 456 сум/м³), из-за чего счёт за воду завышался. Теперь вода считается корректно: холодная 3 808 + горячая 8 928,67 сум/м³, без повторного начисления.",
+        descUz:
+          "Toshkentda hisoblagich bo'yicha sovuq suv tarifi (3 808 so'm/m³) sovuq va issiq suv uchun kanalizatsiyani allaqachon o'z ichiga oladi. Kalkulyator kanalizatsiyani yana alohida (1 456 so'm/m³) qo'shib, suv hisobini oshirib yuborardi. Endi suv to'g'ri hisoblanadi: sovuq 3 808 + issiq 8 928,67 so'm/m³, takroriy hisoblashsiz.",
+      },
+    ],
+  },
+  {
     date: "2026-07-01",
     dateLabelRu: "1 июля 2026",
     dateLabelUz: "2026-yil 1-iyul",

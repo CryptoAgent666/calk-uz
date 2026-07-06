@@ -57,9 +57,9 @@ export const WATER_COLD_RATE = 3808
 /** Hot water tariff (UZS per m3) */
 export const WATER_HOT_RATE = 8928.67
 
-/** Sewage/drainage rate (UZS per m3, Tashkent region, with VAT)
- * Source: Toshsuvta'minoti, current tariff effective July 2025 */
-export const WATER_SEWAGE_RATE = 1456
+// Note: canalization (водоотведение) is NOT a separate constant — the official
+// Tashkent metered cold-water tariff (3808) already bundles sewerage for both
+// cold and hot water, so it must not be charged again on top.
 
 // =============================================
 // HEATING (Отопление / Isitish)
@@ -121,20 +121,15 @@ export function calculateHeatingCost(areaM2: number, daysInMonth: number = 30): 
 }
 
 /**
- * Calculate monthly water cost
+ * Calculate monthly water cost. Canalization is already bundled into the
+ * cold/hot water tariffs, so it is not added separately.
  * @param coldM3 - Cold water consumption in m3
  * @param hotM3 - Hot water consumption in m3
- * @param includeSewage - Whether to include sewage fee
  * @returns Cost in UZS
  */
 export function calculateWaterCost(
   coldM3: number,
-  hotM3: number,
-  includeSewage: boolean = true
+  hotM3: number
 ): number {
-  let cost = coldM3 * WATER_COLD_RATE + hotM3 * WATER_HOT_RATE
-  if (includeSewage) {
-    cost += (coldM3 + hotM3) * WATER_SEWAGE_RATE
-  }
-  return Math.round(cost)
+  return Math.round(coldM3 * WATER_COLD_RATE + hotM3 * WATER_HOT_RATE)
 }
