@@ -2,6 +2,17 @@
  * Tax rates for Uzbekistan (2025)
  * Source: Tax Code of the Republic of Uzbekistan
  */
+import { BRV } from './brv'
+
+/**
+ * Mandatory VAT-registration / turnover-tax → general-regime turnover threshold.
+ * 12,000 БРВ (БРВ-indexed) since 1 Jun 2026 (Указ УП-100 от 26.05.2026); was a
+ * fixed 1 млрд UZS. At БРВ=412,000 → 4,944,000,000 UZS; auto-rises with БРВ
+ * (→ 5.28 млрд from 1 Sep 2026). NB: the separate 1% ИП / self-employed regime
+ * keeps its own 1 млрд ceiling (ПП-247) — a different figure, do not conflate.
+ */
+export const VAT_MANDATORY_REGISTRATION_THRESHOLD = 12_000 * BRV
+
 export const TAX_RATES = {
   /** Personal income tax (НДФЛ / JSHSHS) — standard rate */
   NDFL: 0.12,

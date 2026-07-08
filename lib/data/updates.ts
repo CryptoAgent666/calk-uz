@@ -20,6 +20,37 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-07-07",
+    dateLabelRu: "7 июля 2026",
+    dateLabelUz: "2026-yil 7-iyul",
+    items: [
+      {
+        titleRu: "Порог перехода на НДС — 12 000 БРВ (≈4,9 млрд сум)",
+        titleUz: "QQSga o'tish chegarasi — 12 000 BHK (≈4,9 mlrd so'm)",
+        descRu:
+          "С 1 июня 2026 порог обязательного перехода с налога с оборота на НДС и налог на прибыль повышен с 1 млрд до 12 000 БРВ = 4,944 млрд сум (Указ УП-100 от 26.05.2026). Порог индексируется к БРВ. Калькулятор порога НДС обновлён.",
+        descUz:
+          "2026-yil 1-iyundan aylanma solig'idan QQS va foyda solig'iga majburiy o'tish chegarasi 1 mlrd dan 12 000 BHK = 4,944 mlrd so'mga oshirildi (UP-100 Farmoni, 26.05.2026). Chegara BHKga bog'lab indeksatsiyalanadi.",
+      },
+      {
+        titleRu: "ОСАГО — исправлены коэффициенты (бонус-малус)",
+        titleUz: "ОСАГО — koeffitsiyentlar tuzatildi (bonus-malus)",
+        descRu:
+          "По тарифам 2026 (ПКМ №458) коэффициент по числу ДТП: без аварий 1,0 (без скидки), далее 1,3 / 2,0 / 3,0. Убран несуществующий в тарифе 2026 коэффициент возраста/стажа. База для Ташкента — 192 000 сум (ограниченный список), 384 000 (без ограничений).",
+        descUz:
+          "2026 tariflari (458-son qaror) bo'yicha ДТП soni koeffitsiyenti: avariyasiz 1,0 (chegirmasiz), keyin 1,3 / 2,0 / 3,0. 2026 tarifida mavjud bo'lmagan yosh/tajriba koeffitsiyenti olib tashlandi.",
+      },
+      {
+        titleRu: "Пособие при рождении ребёнка — 70,3% МРОТ",
+        titleUz: "Bola tug'ilganda nafaqa — MROTning 70,3%",
+        descRu:
+          "Уточнено: единовременное государственное пособие при рождении («суюнчи пули») — 70,3% МРОТ, около 893 500 сум в 2026 году (ПКМ №110 от 04.03.2024). Прежняя формулировка «единой государственной ставки нет» была неверной.",
+        descUz:
+          "Aniqlashtirildi: bola tug'ilganda bir martalik davlat nafaqasi («suyunchi puli») — MROTning 70,3%, 2026-yilda qariyb 893 500 so'm (110-son qaror, 04.03.2024).",
+      },
+    ],
+  },
+  {
     date: "2026-07-06",
     dateLabelRu: "6 июля 2026",
     dateLabelUz: "2026-yil 6-iyul",

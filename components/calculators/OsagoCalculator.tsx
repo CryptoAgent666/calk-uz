@@ -12,34 +12,28 @@ export default function OsagoCalculator() {
   const locale = useLocale()
   const [region, setRegion] = useState<'tashkent' | 'other_region'>('tashkent')
   const [unlimitedDrivers, setUnlimitedDrivers] = useState(false)
-  const [driverAge, setDriverAge] = useState('30')
-  const [experience, setExperience] = useState('5')
   const [accidents, setAccidents] = useState('0')
 
   const result = useMemo(() => {
-    const age = parseInt(driverAge) || 0
-    const exp = parseInt(experience) || 0
     const acc = parseInt(accidents) || 0
-    return calculateOsago(region, unlimitedDrivers, age, exp, acc)
-  }, [region, unlimitedDrivers, driverAge, experience, accidents])
+    return calculateOsago(region, unlimitedDrivers, acc)
+  }, [region, unlimitedDrivers, accidents])
 
   const t = locale === 'uz'
     ? {
-        region: 'Hudud', driverAge: 'Haydovchi yoshi',
-        experience: 'Tajriba (yil)', accidents: 'Avariyalar soni',
+        region: 'Hudud', accidents: 'Aybdor ДТП soni',
         unlimitedDrivers: 'Cheklanmagan haydovchilar',
         results: 'Natijalar', baseTariff: 'Bazaviy tarif',
-        ageExpCoeff: 'Yosh/tajriba koeff.', historyCoeff: 'Tarix koeff.',
+        historyCoeff: 'Tarix koeff. (КБМ)',
         annualPremium: 'Yillik sug\'urta badali',
         tashkent: 'Toshkent', other_region: 'Boshqa hududlar',
         yes: 'Ha', no: 'Yo\'q',
       }
     : {
-        region: 'Регион', driverAge: 'Возраст водителя',
-        experience: 'Стаж (лет)', accidents: 'Количество ДТП',
+        region: 'Регион', accidents: 'Количество ДТП по вине',
         unlimitedDrivers: 'Неограниченное число водителей',
         results: 'Результаты', baseTariff: 'Базовый тариф',
-        ageExpCoeff: 'Коэфф. возраст/стаж', historyCoeff: 'Коэфф. истории',
+        historyCoeff: 'Коэфф. истории (КБМ)',
         annualPremium: 'Годовая страховая премия',
         tashkent: 'Ташкент', other_region: 'Другие регионы',
         yes: 'Да', no: 'Нет',
@@ -64,19 +58,9 @@ export default function OsagoCalculator() {
             </label>
             <Label>{t.unlimitedDrivers}</Label>
           </div>
-          <div className="grid grid-cols-3 gap-4">
-            <div>
-              <Label>{t.driverAge}</Label>
-              <Input type="number" value={driverAge} onChange={(e) => setDriverAge(e.target.value)} className="mt-1" min={18} max={80} />
-            </div>
-            <div>
-              <Label>{t.experience}</Label>
-              <Input type="number" value={experience} onChange={(e) => setExperience(e.target.value)} className="mt-1" min={0} max={60} />
-            </div>
-            <div>
-              <Label>{t.accidents}</Label>
-              <Input type="number" value={accidents} onChange={(e) => setAccidents(e.target.value)} className="mt-1" min={0} max={10} />
-            </div>
+          <div>
+            <Label>{t.accidents}</Label>
+            <Input type="number" value={accidents} onChange={(e) => setAccidents(e.target.value)} className="mt-1" min={0} max={10} />
           </div>
         </CardContent>
       </Card>
@@ -86,7 +70,6 @@ export default function OsagoCalculator() {
           <CardHeader><CardTitle className="text-lg">{t.results}</CardTitle></CardHeader>
           <CardContent className="space-y-3">
             <div className="flex justify-between"><span className="text-muted-foreground">{t.baseTariff}</span><span>{formatCurrency(result.baseTariff, 'UZS', locale)}</span></div>
-            <div className="flex justify-between"><span className="text-muted-foreground">{t.ageExpCoeff}</span><span>{result.ageExpCoeff}</span></div>
             <div className="flex justify-between"><span className="text-muted-foreground">{t.historyCoeff}</span><span>{result.historyCoeff}</span></div>
             <div className="border-t pt-3 flex justify-between font-bold text-lg">
               <span>{t.annualPremium}</span>

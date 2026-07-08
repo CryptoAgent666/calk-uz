@@ -8,7 +8,6 @@ export interface OsagoResult {
   baseTariff: number
   /** Region-specific premium (already baked into baseTariff). 1.2 = Tashkent, 1.0 = other regions. */
   regionMultiplier: number
-  ageExpCoeff: number
   historyCoeff: number
   annualPremium: number
 }
@@ -16,11 +15,9 @@ export interface OsagoResult {
 export function calculateOsago(
   region: 'tashkent' | 'other_region' = 'tashkent',
   isUnlimitedDrivers: boolean = false,
-  driverAge: number = 30,
-  driverExperienceYears: number = 5,
   accidentHistory: number = 0
 ): OsagoResult {
-  // 2026 flat rates by region (Cabinet of Ministers Resolution No. 458, July 2025)
+  // 2026 flat rates by region (ПКМ №458 от 23.07.2025, in force 1 Jan 2026)
   const baseTariffs: Record<string, { limited: number; unlimited: number }> = {
     tashkent: { limited: 192_000, unlimited: 384_000 },
     other_region: { limited: 160_000, unlimited: 320_000 },
@@ -29,23 +26,18 @@ export function calculateOsago(
   const tariff = baseTariffs[region] ?? baseTariffs.tashkent
   const baseTariff = isUnlimitedDrivers ? tariff.unlimited : tariff.limited
 
-  // Age and experience coefficient
-  let ageExpCoeff = 1.0
-  if (driverAge < 22 && driverExperienceYears < 3) ageExpCoeff = 1.8
-  else if (driverAge < 22) ageExpCoeff = 1.6
-  else if (driverExperienceYears < 3) ageExpCoeff = 1.7
-
-  // Bonus-malus coefficient
+  // Bonus-malus (КБМ) by prior at-fault claims — ПКМ №458 (2026): a clean record
+  // is the base 1.0 (no discount), then 1.3 / 2.0 / 3.0. The 2026 tariff has NO
+  // driver age/experience coefficient (removed — it did not exist in the reform).
   let historyCoeff = 1.0
-  if (accidentHistory === 0) historyCoeff = 0.9
-  else if (accidentHistory === 1) historyCoeff = 1.0
-  else if (accidentHistory === 2) historyCoeff = 1.4
-  else historyCoeff = 1.7
+  if (accidentHistory === 1) historyCoeff = 1.3
+  else if (accidentHistory === 2) historyCoeff = 2.0
+  else if (accidentHistory >= 3) historyCoeff = 3.0
 
-  const annualPremium = Math.round(baseTariff * ageExpCoeff * historyCoeff)
+  const annualPremium = Math.round(baseTariff * historyCoeff)
   const regionMultiplier = region === 'tashkent' ? 1.2 : 1.0
 
-  return { baseTariff, regionMultiplier, ageExpCoeff, historyCoeff, annualPremium }
+  return { baseTariff, regionMultiplier, historyCoeff, annualPremium }
 }
 
 // Fuel Consumption Calculator

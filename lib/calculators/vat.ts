@@ -2,6 +2,7 @@
  * VAT (QQS/НДС) calculator for Uzbekistan
  * Standard rate: 12%
  */
+import { VAT_MANDATORY_REGISTRATION_THRESHOLD } from '@/lib/constants/tax-rates'
 
 const VAT_RATE = 0.12
 
@@ -45,7 +46,7 @@ export interface VatThresholdResult {
 
 export function calculateVatThreshold(
   monthlyTurnovers: number[],
-  threshold: number = 1_000_000_000
+  threshold: number = VAT_MANDATORY_REGISTRATION_THRESHOLD
 ): VatThresholdResult {
   const currentTurnover = monthlyTurnovers.reduce((sum, t) => sum + t, 0)
   const remainingToThreshold = Math.max(0, threshold - currentTurnover)
