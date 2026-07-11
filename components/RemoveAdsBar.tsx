@@ -84,6 +84,14 @@ export function RemoveAdsBar() {
     setDismissed(true)
   }
   const buy = async () => {
+    if (!price) {
+      window.alert(
+        locale === "uz"
+          ? "Xarid hozircha mavjud emas — mahsulot Google Play'da faollashmoqda. Bir necha soatdan keyin qayta urinib ko'ring."
+          : "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов."
+      )
+      return
+    }
     setBusy(true)
     try {
       await buyRemoveAds()
