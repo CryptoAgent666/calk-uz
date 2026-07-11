@@ -117,9 +117,10 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
         }
 
         setupAdBanner()
-        // Tear the banner down instantly if "remove ads" is purchased/restored.
+        setupRemoveAdsBar()
+        // Tear the banner + bar down instantly if "remove ads" is purchased/restored.
         NotificationCenter.default.addObserver(forName: PurchasesManager.adFreeChanged, object: nil, queue: .main) { [weak self] _ in
-            if PurchasesManager.shared.isAdFree { self?.removeAdBanner() }
+            if PurchasesManager.shared.isAdFree { self?.teardownAds() }
         }
     }
 
@@ -128,9 +129,12 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
         AdMobManager.shared.requestTrackingIfNeeded()
     }
 
-    // MARK: - AdMob banner (positioned just above the tab bar)
+    // MARK: - AdMob banner + "remove ads" bar (stacked just above the tab bar)
 
     private var adBanner: BannerView?
+    private var removeAdsBar: RemoveAdsBarView?
+    private var barDismissed = false
+    private let removeAdsBarHeight: CGFloat = 46
 
     private func setupAdBanner() {
         // No ads in App Store screenshots / IAP review captures.
@@ -140,14 +144,41 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
         banner.backgroundColor = .clear
         view.addSubview(banner)
         adBanner = banner
-        // Keep tab content clear of the banner.
-        additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        updateContentInset()
     }
 
-    private func removeAdBanner() {
-        adBanner?.removeFromSuperview()
-        adBanner = nil
+    private func setupRemoveAdsBar() {
+        if ProcessInfo.processInfo.environment["CALK_SCREENSHOT_MODE"] == "1" { return }
+        guard !PurchasesManager.shared.isAdFree, !barDismissed else { return }
+        let bar = RemoveAdsBarView()
+        bar.onTap = { PurchasesManager.shared.buy { _ in } }  // StoreKit sheet confirms; teardown via notification
+        bar.onClose = { [weak self] in
+            self?.barDismissed = true
+            self?.removeAdsBar?.removeFromSuperview()
+            self?.removeAdsBar = nil
+            self?.updateContentInset()
+        }
+        view.addSubview(bar)
+        removeAdsBar = bar
+        PurchasesManager.shared.localizedPrice { [weak self] p in self?.removeAdsBar?.setPrice(p) }
+        updateContentInset()
+    }
+
+    private func teardownAds() {
+        adBanner?.removeFromSuperview(); adBanner = nil
+        removeAdsBar?.removeFromSuperview(); removeAdsBar = nil
         additionalSafeAreaInsets = .zero
+    }
+
+    private func bannerHeight() -> CGFloat {
+        guard let banner = adBanner else { return 0 }
+        return banner.adSize.size.height > 0 ? banner.adSize.size.height : 50
+    }
+
+    private func updateContentInset() {
+        let barH: CGFloat = removeAdsBar != nil ? removeAdsBarHeight : 0
+        let inset = UIEdgeInsets(top: 0, left: 0, bottom: bannerHeight() + barH, right: 0)
+        if additionalSafeAreaInsets != inset { additionalSafeAreaInsets = inset }
     }
 
     // Frame-based layout — avoids activating an Auto Layout constraint against
@@ -155,9 +186,16 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
     // iOS/iPadOS 26 (NSLayoutConstraint _nearestAncestorLayoutItem → SIGABRT).
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        guard let banner = adBanner else { return }
-        let h = banner.adSize.size.height > 0 ? banner.adSize.size.height : 50
-        banner.frame = CGRect(x: 0, y: tabBar.frame.minY - h, width: view.bounds.width, height: h)
+        var bottomY = tabBar.frame.minY
+        if let banner = adBanner {
+            let h = bannerHeight()
+            banner.frame = CGRect(x: 0, y: bottomY - h, width: view.bounds.width, height: h)
+            bottomY -= h
+        }
+        if let bar = removeAdsBar {
+            bar.frame = CGRect(x: 0, y: bottomY - removeAdsBarHeight, width: view.bounds.width, height: removeAdsBarHeight)
+        }
+        updateContentInset()
     }
 
     /// Opens a calculator from a bookmark tap. Routes to the "Ещё" tab and
