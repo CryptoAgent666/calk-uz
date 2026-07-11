@@ -10,6 +10,7 @@ import { ToastProvider } from "@/components/ui/toast-simple"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { CookieConsent } from "@/components/CookieConsent"
+import { AppInstallBanner } from "@/components/AppInstallBanner"
 import { Monetization } from "@/components/Monetization"
 import { NativeAds } from "@/components/NativeAds"
 import { RemoveAdsBar } from "@/components/RemoveAdsBar"
@@ -174,6 +175,7 @@ export default async function LocaleLayout({
             </ToastProvider>
             <Footer />
             <CookieConsent />
+            <AppInstallBanner />
             <Monetization />
             <NativeAds />
             <RemoveAdsBar />
