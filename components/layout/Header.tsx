@@ -31,6 +31,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
+import { RemoveAdsButton } from "@/components/RemoveAdsButton"
 import { CATEGORIES } from "@/lib/data/categories"
 import type { CategoryId } from "@/lib/types/calculator"
 
@@ -291,6 +292,8 @@ export function Header() {
 
                   {/* Mobile Footer */}
                   <div className="p-4 border-t border-border space-y-3">
+                    {/* Remove-ads upsell — only renders inside the native app with purchases. */}
+                    <RemoveAdsButton />
                     <div className="flex items-center gap-2">
                       <div className="flex-1 flex items-center rounded-lg border border-border bg-muted/50 p-0.5">
                         <button

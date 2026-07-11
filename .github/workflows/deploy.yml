@@ -46,6 +46,11 @@ jobs:
         env:
           NEXT_PUBLIC_ADSENSE_ID: ${{ vars.NEXT_PUBLIC_ADSENSE_ID }}
           NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
+          # RevenueCat public SDK keys (safe in the client bundle; the Android app
+          # loads the live site, so the key must be inlined here at build time).
+          # Set these as GitHub repo Variables once the RevenueCat "Calk UZ" project exists.
+          NEXT_PUBLIC_RC_ANDROID_KEY: ${{ vars.NEXT_PUBLIC_RC_ANDROID_KEY }}
+          NEXT_PUBLIC_RC_IOS_KEY: ${{ vars.NEXT_PUBLIC_RC_IOS_KEY }}
         run: |
           npm ci
           npm run build
