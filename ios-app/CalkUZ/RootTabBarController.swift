@@ -117,6 +117,10 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
         }
 
         setupAdBanner()
+        // Tear the banner down instantly if "remove ads" is purchased/restored.
+        NotificationCenter.default.addObserver(forName: PurchasesManager.adFreeChanged, object: nil, queue: .main) { [weak self] _ in
+            if PurchasesManager.shared.isAdFree { self?.removeAdBanner() }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -129,12 +133,19 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
     private var adBanner: BannerView?
 
     private func setupAdBanner() {
+        guard !PurchasesManager.shared.isAdFree else { return }
         let banner = AdMobManager.shared.makeBanner(width: view.bounds.width, root: self)
         banner.backgroundColor = .clear
         view.addSubview(banner)
         adBanner = banner
         // Keep tab content clear of the banner.
         additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+    }
+
+    private func removeAdBanner() {
+        adBanner?.removeFromSuperview()
+        adBanner = nil
+        additionalSafeAreaInsets = .zero
     }
 
     // Frame-based layout — avoids activating an Auto Layout constraint against

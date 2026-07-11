@@ -63,42 +63,69 @@ final class MoreViewController: UIViewController {
         if ProcessInfo.processInfo.environment["CALK_OPEN_WEB"] == "1" {
             DispatchQueue.main.async { [weak self] in self?.openAllCalculators() }
         }
+        // Screenshot hook: auto-open the "remove ads" screen (for the App Store
+        // Connect IAP review screenshot).
+        if ProcessInfo.processInfo.environment["CALK_OPEN_REMOVEADS"] == "1" {
+            DispatchQueue.main.async { [weak self] in self?.openRemoveAds() }
+        }
+
+        // Refresh the "remove ads" row when purchase status changes.
+        NotificationCenter.default.addObserver(forName: PurchasesManager.adFreeChanged, object: nil, queue: .main) { [weak self] _ in
+            self?.buildSections()
+            self?.tableView.reloadData()
+        }
     }
 
     private func buildSections() {
-        sections = [
-            (header: nil, rows: [
-                Row(
-                    title: "Избранное",
-                    subtitle: "Закладки на калькуляторы",
-                    icon: "star",
-                    action: { [weak self] in self?.openBookmarks() }
-                ),
-                Row(
-                    title: "Все калькуляторы сайта",
-                    subtitle: "Полный каталог — обновляется автоматически",
-                    icon: "list.bullet.rectangle",
-                    action: { [weak self] in self?.openAllCalculators() }
-                ),
-            ]),
-            (header: "Приложение", rows: [
-                Row(
-                    title: "Настройки",
-                    subtitle: "Язык, тема, очистка кэша",
-                    icon: "gearshape",
-                    action: { [weak self] in self?.openSettings() }
-                ),
-                Row(
-                    title: "О приложении",
-                    subtitle: "Версия и контакты",
-                    icon: "info.circle",
-                    action: { [weak self] in self?.openAbout() }
-                ),
-            ])
-        ]
+        var result: [(header: String?, rows: [Row])] = []
+        // Remove-ads upsell (native RevenueCat IAP)
+        if PurchasesManager.shared.isAdFree {
+            result.append((header: nil, rows: [
+                Row(title: "✓ Реклама отключена", subtitle: "Спасибо за поддержку!",
+                    icon: "checkmark.seal.fill", action: {})
+            ]))
+        } else {
+            result.append((header: nil, rows: [
+                Row(title: "Убрать рекламу навсегда", subtitle: "Разовая покупка — по цене пары чашек кофе",
+                    icon: "sparkles", action: { [weak self] in self?.openRemoveAds() })
+            ]))
+        }
+        result.append((header: nil, rows: [
+            Row(
+                title: "Избранное",
+                subtitle: "Закладки на калькуляторы",
+                icon: "star",
+                action: { [weak self] in self?.openBookmarks() }
+            ),
+            Row(
+                title: "Все калькуляторы сайта",
+                subtitle: "Полный каталог — обновляется автоматически",
+                icon: "list.bullet.rectangle",
+                action: { [weak self] in self?.openAllCalculators() }
+            ),
+        ]))
+        result.append((header: "Приложение", rows: [
+            Row(
+                title: "Настройки",
+                subtitle: "Язык, тема, очистка кэша",
+                icon: "gearshape",
+                action: { [weak self] in self?.openSettings() }
+            ),
+            Row(
+                title: "О приложении",
+                subtitle: "Версия и контакты",
+                icon: "info.circle",
+                action: { [weak self] in self?.openAbout() }
+            ),
+        ]))
+        sections = result
     }
 
     // MARK: - Actions
+
+    private func openRemoveAds() {
+        navigationController?.pushViewController(RemoveAdsViewController(), animated: true)
+    }
 
     private func openBookmarks() {
         let vc = BookmarksViewController()

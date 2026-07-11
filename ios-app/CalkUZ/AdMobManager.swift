@@ -63,6 +63,7 @@ final class AdMobManager {
 
     /// Count a calculator navigation and, subject to the cap, show an interstitial.
     func noteNavigationAndMaybeShowInterstitial(from vc: UIViewController) {
+        guard !PurchasesManager.shared.isAdFree else { return }
         navSinceInterstitial += 1
         guard let ad = interstitial,
               navSinceInterstitial >= 4,
