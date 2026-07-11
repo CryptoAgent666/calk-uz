@@ -133,6 +133,8 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
     private var adBanner: BannerView?
 
     private func setupAdBanner() {
+        // No ads in App Store screenshots / IAP review captures.
+        if ProcessInfo.processInfo.environment["CALK_SCREENSHOT_MODE"] == "1" { return }
         guard !PurchasesManager.shared.isAdFree else { return }
         let banner = AdMobManager.shared.makeBanner(width: view.bounds.width, root: self)
         banner.backgroundColor = .clear
