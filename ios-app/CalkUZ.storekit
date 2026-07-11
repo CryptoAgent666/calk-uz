@@ -1,0 +1,29 @@
+{
+  "identifier" : "B0883628-D1B6-4F70-BA10-980EC266A7F2",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "DB905C7A-B848-46A6-9747-4F08D9955228",
+      "localizations" : [
+        {
+          "description" : "Уберите баннеры и полноэкранную рекламу навсегда",
+          "displayName" : "Без рекламы",
+          "locale" : "ru"
+        }
+      ],
+      "productID" : "uz.calk.calculator.removeads",
+      "referenceName" : "Remove Ads",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_developerTeamID" : "SRKYS78RMQ"
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
