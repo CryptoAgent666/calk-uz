@@ -255,6 +255,10 @@ export function Header() {
 
                   {/* Mobile Nav */}
                   <div className="flex-1 overflow-y-auto p-4 space-y-1">
+                    {/* Remove-ads upsell — top of the menu, away from the bottom AdMob
+                        banner (a native overlay that would otherwise intercept taps).
+                        Only renders inside the native app with purchases. */}
+                    <div className="mb-2"><RemoveAdsButton /></div>
                     <Link
                       href="/"
                       className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium hover:bg-accent transition-colors"
@@ -292,8 +296,6 @@ export function Header() {
 
                   {/* Mobile Footer */}
                   <div className="p-4 border-t border-border space-y-3">
-                    {/* Remove-ads upsell — only renders inside the native app with purchases. */}
-                    <RemoveAdsButton />
                     <div className="flex items-center gap-2">
                       <div className="flex-1 flex items-center rounded-lg border border-border bg-muted/50 p-0.5">
                         <button

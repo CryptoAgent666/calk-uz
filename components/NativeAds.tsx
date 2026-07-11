@@ -61,8 +61,10 @@ export function NativeAds() {
 
         // Publish the real banner height so the upsell bar lands right above it.
         AdMob.addListener(BannerAdPluginEvents.SizeChanged, (info: { height: number }) => {
-          const px = Math.max(0, Math.round(info?.height ?? 0))
-          document.documentElement.style.setProperty("--admob-banner-height", `${px}px`)
+          const px = Math.round(info?.height ?? 0)
+          // Ignore 0-height events (fired before the banner is measured) — otherwise
+          // the "remove ads" bar drops onto the banner and the banner eats its taps.
+          if (px > 0) document.documentElement.style.setProperty("--admob-banner-height", `${px}px`)
         })
 
         if (isAdFree()) return // purchased — no banner, no interstitial

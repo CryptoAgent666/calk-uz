@@ -97,7 +97,7 @@ export function RemoveAdsBar() {
   return (
     <div
       className="fixed left-0 right-0 z-40 flex items-center justify-between gap-2 bg-emerald-600 px-3 py-2 text-white shadow-lg"
-      style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + var(--admob-banner-height, 56px) + 6px)" }}
+      style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + var(--admob-banner-height, 72px) + 10px)" }}
       role="region"
       aria-label={t.remove}
     >
