@@ -11,6 +11,7 @@ import {
   purchasesAvailable,
   REMOVE_ADS_FALLBACK_PRICE,
 } from "@/lib/purchases"
+import { emitIap } from "@/lib/telemetry"
 
 const DISMISS_KEY = "calk_removeads_bar_dismissed"
 const VARIANT_KEY = "calk_removeads_bar_variant"
@@ -71,6 +72,12 @@ export function RemoveAdsBar() {
   useEffect(() => onAdFreeChange(setAdFree), [])
   useEffect(() => {
     void getRemoveAdsPrice().then(setPrice)
+  }, [])
+  // Плашка — показ оффера, если она реально видима (есть покупки, не куплено,
+  // не скрыта в этой сессии).
+  useEffect(() => {
+    if (purchasesAvailable() && !isAdFree() && !dismissed) emitIap("paywall_shown")
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (!purchasesAvailable() || adFree || dismissed) return null

@@ -1,4 +1,5 @@
 import { Capacitor } from "@capacitor/core"
+import { emitIap } from "@/lib/telemetry"
 
 /**
  * RevenueCat: разовая покупка «Убрать рекламу» (non-consumable / durable one-time).
@@ -19,7 +20,10 @@ import { Capacitor } from "@capacitor/core"
  */
 
 const ENTITLEMENT_ID = "ad_free"
-const REMOVE_ADS_PRODUCT_ID = "removeads"
+// Team-unique store product ID. App Store product IDs are unique across the whole
+// Apple team (SRKYS78RMQ), and the KZ app already claimed bare "removeads" — so UZ
+// must namespace it. Kept identical on Play for a single code path.
+const REMOVE_ADS_PRODUCT_ID = "uz.calk.calculator.removeads"
 const CACHE_KEY = "calk_ad_free"
 
 /**
@@ -144,18 +148,32 @@ export async function getRemoveAdsPrice(): Promise<string | null> {
 /** Купить «Убрать рекламу». true — успех (или уже куплено). */
 export async function buyRemoveAds(): Promise<boolean> {
   if (!purchasesAvailable()) return false
+  emitIap("purchase_tapped")
   try {
     const { Purchases } = await loadSdk()
     const { products } = await Purchases.getProducts({ productIdentifiers: [REMOVE_ADS_PRODUCT_ID] })
-    if (!products.length) return false
+    if (!products.length) {
+      emitIap("purchase_failed")
+      return false
+    }
     const { customerInfo } = await Purchases.purchaseStoreProduct({ product: products[0] })
     const ok = hasEntitlement(customerInfo)
     setAdFree(ok)
     return ok
-  } catch {
-    // Пользователь отменил покупку — это не ошибка.
+  } catch (e) {
+    // Отмена пользователем — не ошибка; различаем её от реального сбоя для воронки.
+    emitIap(isUserCancelled(e) ? "purchase_cancelled" : "purchase_failed")
     return false
   }
+}
+
+/** RevenueCat отдаёт отмену как `userCancelled: true` (или code/message с "cancel"). */
+function isUserCancelled(e: unknown): boolean {
+  if (!e || typeof e !== "object") return false
+  const err = e as { userCancelled?: boolean; code?: string | number; message?: string }
+  if (err.userCancelled) return true
+  const hay = `${err.code ?? ""} ${err.message ?? ""}`.toUpperCase()
+  return hay.includes("CANCEL")
 }
 
 /** Восстановить покупку — ОБЯЗАТЕЛЬНАЯ кнопка для Apple (Guideline 3.1.1). */

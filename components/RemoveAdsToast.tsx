@@ -11,6 +11,7 @@ import {
   purchasesAvailable,
   REMOVE_ADS_FALLBACK_PRICE,
 } from "@/lib/purchases"
+import { emitIap } from "@/lib/telemetry"
 
 /** Событие «предложить убрать рекламу» — шлётся из NativeAds после интерстишелов. */
 export const SUGGEST_REMOVE_ADS_EVENT = "calk:suggest-remove-ads"
@@ -65,6 +66,11 @@ export function RemoveAdsToast() {
       clearTimeout(timer)
     }
   }, [])
+
+  // Каждое появление тоста после интерстишела — отдельный показ оффера.
+  useEffect(() => {
+    if (visible) emitIap("paywall_shown")
+  }, [visible])
 
   if (!purchasesAvailable() || adFree || !visible) return null
 

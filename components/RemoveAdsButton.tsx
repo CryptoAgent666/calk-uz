@@ -12,6 +12,7 @@ import {
   purchasesAvailable,
   REMOVE_ADS_FALLBACK_PRICE,
 } from "@/lib/purchases"
+import { emitIap } from "@/lib/telemetry"
 
 /**
  * Кнопка «Убрать рекламу навсегда» + «Восстановить покупку» (место 1 из 3).
@@ -49,6 +50,11 @@ export function RemoveAdsButton() {
   useEffect(() => onAdFreeChange(setAdFree), [])
   useEffect(() => {
     void getRemoveAdsPrice().then(setPrice)
+  }, [])
+  // Оффер реально показан только когда есть покупки и реклама ещё не отключена
+  // (компонент монтируется при открытии мобильного меню).
+  useEffect(() => {
+    if (purchasesAvailable() && !isAdFree()) emitIap("paywall_shown")
   }, [])
 
   // Только в приложении С нативным модулем покупок (не в старых бинарях / не на сайте).
