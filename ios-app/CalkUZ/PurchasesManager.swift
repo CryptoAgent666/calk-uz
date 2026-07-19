@@ -28,7 +28,7 @@ final class PurchasesManager: NSObject {
     static let adFreeChanged = Notification.Name("calk.adFreeChanged")
 
     /// Fallback price shown until StoreKit returns the localized string.
-    let fallbackPrice = "$3.99"
+    let fallbackPrice = "$1.99"
 
     /// Synchronous, cached — safe to gate ads instantly and offline.
     var isAdFree: Bool { UserDefaults.standard.bool(forKey: cacheKey) }

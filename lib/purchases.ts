@@ -37,7 +37,7 @@ export function purchasesAvailable(): boolean {
 }
 
 /** Запасная цена для UI, пока RevenueCat не вернул локализованную (getRemoveAdsPrice). */
-export const REMOVE_ADS_FALLBACK_PRICE = "49 000 сум"
+export const REMOVE_ADS_FALLBACK_PRICE = "24 900 сум"
 
 // Публичные SDK-ключи RevenueCat (Project Settings → API keys, по одному на
 // платформу). Их МОЖНО держать в клиенте — это НЕ секретные `sk_`-ключи.
