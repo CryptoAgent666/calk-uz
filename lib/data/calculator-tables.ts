@@ -1,0 +1,208 @@
+import type { CategoryId } from "@/lib/types/calculator"
+import { TAX_RATES } from "@/lib/constants/tax-rates"
+import { ELECTRICITY_TIERS, GAS_TIERS_SUMMER, WATER_COLD_RATE, WATER_HOT_RATE } from "@/lib/constants/utility-tariffs"
+import { BANKS } from "@/lib/constants/banks"
+
+/**
+ * Format a decimal rate as a percent string with up to 2 decimals.
+ * Avoids JS float artifacts like `0.0034 * 100 = 0.33999999999999997`.
+ */
+const pct = (rate: number): string => {
+  const value = Math.round(rate * 10000) / 100
+  return `${value % 1 === 0 ? value.toFixed(0) : value.toString()}%`
+}
+
+export interface CalculatorTable {
+  titleRu: string
+  titleUz: string
+  headers: { ru: string; uz: string }[]
+  rows: { ru: string[]; uz: string[] }[]
+}
+
+const TAX_TABLES: CalculatorTable[] = [
+  {
+    titleRu: "Ставки НДФЛ в Узбекистане (2025)",
+    titleUz: "O'zbekistonda JShShS stavkalari (2025)",
+    headers: [
+      { ru: "Вид дохода", uz: "Daromad turi" },
+      { ru: "Ставка", uz: "Stavka" },
+    ],
+    rows: [
+      { ru: ["Стандартная ставка НДФЛ", `${pct(TAX_RATES.NDFL)}`], uz: ["Standart JShShS stavkasi", `${pct(TAX_RATES.NDFL)}`] },
+      { ru: ["НДФЛ для резидентов IT Park", `${pct(TAX_RATES.NDFL_IT_PARK)}`], uz: ["IT Park rezidentlari uchun JShShS", `${pct(TAX_RATES.NDFL_IT_PARK)}`] },
+      { ru: ["НДС", `${pct(TAX_RATES.VAT)}`], uz: ["QQS", `${pct(TAX_RATES.VAT)}`] },
+      { ru: ["Налог на прибыль", `${pct(TAX_RATES.CORPORATE_TAX)}`], uz: ["Foyda solig'i", `${pct(TAX_RATES.CORPORATE_TAX)}`] },
+    ],
+  },
+  {
+    titleRu: "Налог на имущество физических лиц",
+    titleUz: "Jismoniy shaxslar mulk solig'i",
+    headers: [
+      { ru: "Площадь жилья", uz: "Uy-joy maydoni" },
+      { ru: "Ставка (% от кадастровой стоимости)", uz: "Stavka (kadastr qiymatidan %)" },
+    ],
+    rows: [
+      { ru: ["До 200 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL)}`], uz: ["200 m\u00B2 gacha", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL)}`] },
+      { ru: ["200\u2013500 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`], uz: ["200\u2013500 m\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`] },
+      { ru: ["Свыше 500 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`], uz: ["500 m\u00B2 dan ortiq", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`] },
+      { ru: ["Юридические лица", `${pct(TAX_RATES.PROPERTY_TAX_LEGAL)}`], uz: ["Yuridik shaxslar", `${pct(TAX_RATES.PROPERTY_TAX_LEGAL)}`] },
+    ],
+  },
+]
+
+const SALARY_TABLES: CalculatorTable[] = [
+  {
+    titleRu: "Обязательные отчисления с зарплаты (2025)",
+    titleUz: "Ish haqidan majburiy ajratmalar (2025)",
+    headers: [
+      { ru: "Отчисление", uz: "Ajratma" },
+      { ru: "Ставка", uz: "Stavka" },
+      { ru: "Кто платит", uz: "Kim to'laydi" },
+    ],
+    rows: [
+      { ru: ["НДФЛ", `${pct(TAX_RATES.NDFL)}`, "Удерживается из зарплаты"], uz: ["JShShS", `${pct(TAX_RATES.NDFL)}`, "Ish haqidan ushlab qolinadi"] },
+      { ru: ["ИНПС", `${pct(TAX_RATES.INPS)}`, "Удерживается из зарплаты"], uz: ["MHTJ", `${pct(TAX_RATES.INPS)}`, "Ish haqidan ushlab qolinadi"] },
+      { ru: ["Социальный налог (коммерч.)", `${pct(TAX_RATES.SOCIAL_TAX)}`, "За счёт работодателя"], uz: ["Ijtimoiy soliq (tijoriy)", `${pct(TAX_RATES.SOCIAL_TAX)}`, "Ish beruvchi hisobidan"] },
+      { ru: ["Социальный налог (бюджет.)", `${pct(TAX_RATES.SOCIAL_TAX_BUDGET)}`, "За счёт работодателя"], uz: ["Ijtimoiy soliq (byudjet)", `${pct(TAX_RATES.SOCIAL_TAX_BUDGET)}`, "Ish beruvchi hisobidan"] },
+    ],
+  },
+]
+
+const topBanksByLoan = [...BANKS].sort((a, b) => a.loanRateUzs - b.loanRateUzs).slice(0, 8)
+const topBanksByDeposit = [...BANKS].sort((a, b) => b.depositRateUzs - a.depositRateUzs).slice(0, 8)
+
+const CREDIT_TABLES: CalculatorTable[] = [
+  {
+    titleRu: "Ставки потребительских кредитов в банках Узбекистана",
+    titleUz: "O'zbekiston banklarida iste'mol kredit stavkalari",
+    headers: [
+      { ru: "Банк", uz: "Bank" },
+      { ru: "Потреб. кредит (UZS)", uz: "Iste'mol kredit (UZS)" },
+      { ru: "Ипотека (UZS)", uz: "Ipoteka (UZS)" },
+      { ru: "Тип", uz: "Turi" },
+    ],
+    rows: topBanksByLoan.map((b) => ({
+      ru: [b.name, `${(b.loanRateUzs * 100).toFixed(0)}%`, `${(b.mortgageRate * 100).toFixed(0)}%`, b.stateOwned ? "Гос." : "Частный"],
+      uz: [b.nameUz, `${(b.loanRateUzs * 100).toFixed(0)}%`, `${(b.mortgageRate * 100).toFixed(0)}%`, b.stateOwned ? "Davlat" : "Xususiy"],
+    })),
+  },
+]
+
+const DEPOSIT_TABLES: CalculatorTable[] = [
+  {
+    titleRu: "Ставки по вкладам в банках Узбекистана (12 мес.)",
+    titleUz: "O'zbekiston banklarida omonat stavkalari (12 oy)",
+    headers: [
+      { ru: "Банк", uz: "Bank" },
+      { ru: "Вклад UZS", uz: "Omonat UZS" },
+      { ru: "Вклад USD", uz: "Omonat USD" },
+      { ru: "Тип", uz: "Turi" },
+    ],
+    rows: topBanksByDeposit.map((b) => ({
+      ru: [b.name, `${(b.depositRateUzs * 100).toFixed(0)}%`, `${(b.depositRateUsd * 100).toFixed(1)}%`, b.stateOwned ? "Гос." : "Частный"],
+      uz: [b.nameUz, `${(b.depositRateUzs * 100).toFixed(0)}%`, `${(b.depositRateUsd * 100).toFixed(1)}%`, b.stateOwned ? "Davlat" : "Xususiy"],
+    })),
+  },
+]
+
+const UTILITIES_TABLES: CalculatorTable[] = [
+  {
+    titleRu: "Тарифы на электроэнергию (сум/кВт\u00B7ч)",
+    titleUz: "Elektr energiya tariflari (so'm/kVt\u00B7s)",
+    headers: [
+      { ru: "Объём потребления", uz: "Iste'mol hajmi" },
+      { ru: "Цена за 1 кВт\u00B7ч", uz: "1 kVt\u00B7s narxi" },
+    ],
+    rows: ELECTRICITY_TIERS.map((tier) => ({
+      ru: [
+        tier.upTo !== null ? `До ${tier.upTo} кВт\u00B7ч` : `Свыше ${ELECTRICITY_TIERS[ELECTRICITY_TIERS.length - 2].upTo} кВт\u00B7ч`,
+        `${tier.pricePerUnit.toLocaleString("ru-RU")} сум`,
+      ],
+      uz: [
+        tier.upTo !== null ? `${tier.upTo} kVt\u00B7s gacha` : `${ELECTRICITY_TIERS[ELECTRICITY_TIERS.length - 2].upTo} kVt\u00B7s dan ortiq`,
+        `${tier.pricePerUnit.toLocaleString("ru-RU")} so'm`,
+      ],
+    })),
+  },
+  {
+    titleRu: "Тарифы на газ (сум/м\u00B3)",
+    titleUz: "Gaz tariflari (so'm/m\u00B3)",
+    headers: [
+      { ru: "Объём потребления", uz: "Iste'mol hajmi" },
+      { ru: "Цена за 1 м\u00B3", uz: "1 m\u00B3 narxi" },
+    ],
+    rows: GAS_TIERS_SUMMER.map((tier) => ({
+      ru: [
+        tier.upTo !== null ? `До ${tier.upTo} м\u00B3` : `Свыше ${GAS_TIERS_SUMMER[GAS_TIERS_SUMMER.length - 2].upTo} м\u00B3`,
+        `${tier.pricePerUnit.toLocaleString("ru-RU")} сум`,
+      ],
+      uz: [
+        tier.upTo !== null ? `${tier.upTo} m\u00B3 gacha` : `${GAS_TIERS_SUMMER[GAS_TIERS_SUMMER.length - 2].upTo} m\u00B3 dan ortiq`,
+        `${tier.pricePerUnit.toLocaleString("ru-RU")} so'm`,
+      ],
+    })),
+  },
+  {
+    titleRu: "Тарифы на воду",
+    titleUz: "Suv tariflari",
+    headers: [
+      { ru: "Услуга", uz: "Xizmat" },
+      { ru: "Тариф (сум/м\u00B3)", uz: "Tarif (so'm/m\u00B3)" },
+    ],
+    rows: [
+      { ru: ["Холодная вода (с канализацией)", `${WATER_COLD_RATE.toLocaleString("ru-RU")} сум`], uz: ["Sovuq suv (kanalizatsiya bilan)", `${WATER_COLD_RATE.toLocaleString("ru-RU")} so'm`] },
+      { ru: ["Горячая вода", `${WATER_HOT_RATE.toLocaleString("ru-RU")} сум`], uz: ["Issiq suv", `${WATER_HOT_RATE.toLocaleString("ru-RU")} so'm`] },
+    ],
+  },
+]
+
+const AUTO_TABLES: CalculatorTable[] = [
+  {
+    titleRu: "Таможенная пошлина: надбавка за см³ (сверх 15% новые / 40% б/у)",
+    titleUz: "Bojxona boji: sm³ uchun ustama (15% yangi / 40% ishlatilgan ustiga)",
+    headers: [
+      { ru: "Объём двигателя", uz: "Dvigatel hajmi" },
+      { ru: "Надбавка за см³ (новые)", uz: "sm³ uchun ustama (yangi)" },
+    ],
+    rows: [
+      { ru: ["До 1 000 см³", "0.4 $ за см³"], uz: ["1 000 sm³ gacha", "sm³ uchun 0.4 $"] },
+      { ru: ["1 000 – 1 500 см³", "0.6 $ за см³"], uz: ["1 000 – 1 500 sm³", "sm³ uchun 0.6 $"] },
+      { ru: ["1 500 – 1 800 см³", "0.8 $ за см³"], uz: ["1 500 – 1 800 sm³", "sm³ uchun 0.8 $"] },
+      { ru: ["Свыше 1 800 см³", "1.0 $ за см³"], uz: ["1 800 sm³ dan ortiq", "sm³ uchun 1.0 $"] },
+      { ru: ["Б/у авто (>3 лет)", "≈ 3.0 $ за см³"], uz: ["Ishlatilgan (>3 yil)", "≈ 3.0 $ sm³ uchun"] },
+    ],
+  },
+]
+
+const BUSINESS_TABLES: CalculatorTable[] = [
+  {
+    titleRu: "Сравнение налоговых режимов для бизнеса",
+    titleUz: "Biznes uchun soliq rejimlarini taqqoslash",
+    headers: [
+      { ru: "Режим", uz: "Rejim" },
+      { ru: "Ставка", uz: "Stavka" },
+      { ru: "Применение", uz: "Qo'llanilishi" },
+    ],
+    rows: [
+      { ru: ["Общий режим (налог на прибыль)", `${pct(TAX_RATES.CORPORATE_TAX)}`, "Крупный бизнес, оборот свыше порога"], uz: ["Umumiy rejim (foyda solig'i)", `${pct(TAX_RATES.CORPORATE_TAX)}`, "Yirik biznes, aylanma chegaradan yuqori"] },
+      { ru: ["Налог с оборота", `${pct(TAX_RATES.TURNOVER_TAX)}`, "Малый бизнес, упрощённая система"], uz: ["Aylanma soliq", `${pct(TAX_RATES.TURNOVER_TAX)}`, "Kichik biznes, soddalashtirilgan tizim"] },
+      { ru: ["Самозанятость", `${pct(TAX_RATES.SELF_EMPLOYED_TAX)}`, "Физлица без наёмных работников"], uz: ["O'z-o'zini band qilish", `${pct(TAX_RATES.SELF_EMPLOYED_TAX)}`, "Yollanma ishchilarsiz jismoniy shaxslar"] },
+    ],
+  },
+]
+
+/** Map of category IDs to their relevant data tables */
+export const CATEGORY_TABLES: Partial<Record<CategoryId, CalculatorTable[]>> = {
+  tax: TAX_TABLES,
+  salary: SALARY_TABLES,
+  credit: CREDIT_TABLES,
+  deposit: DEPOSIT_TABLES,
+  utilities: UTILITIES_TABLES,
+  auto: AUTO_TABLES,
+  business: BUSINESS_TABLES,
+}
+
+/** Get tables for a given category */
+export function getTablesForCategory(category: CategoryId): CalculatorTable[] {
+  return CATEGORY_TABLES[category] ?? []
+}
