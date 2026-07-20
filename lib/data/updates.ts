@@ -129,9 +129,9 @@ export const UPDATES: UpdateBlock[] = [
         titleRu: "Госпошлины и ОСАГО",
         titleUz: "Davlat bojlari va OSAGO",
         descRu:
-          "Госпошлины уточнены: регистрация брака 0,2 БРВ, ООО — 1 БРВ, иск в суд — 4% цены иска. ОСАГО: максимальная выплата — до 80 млн сум, штраф за вождение без полиса — 1 БРВ.",
+          "Госпошлины уточнены: регистрация брака 0,2 БРВ, ООО — 1 БРВ, иск в суд — 4% цены иска. ОСАГО: максимальная выплата — до 80 млн сум, штраф за вождение без полиса — 0,5 БРВ (или предупреждение), ст. 135-1 КоАО.",
         descUz:
-          "Davlat bojlari aniqlandi: nikoh ro'yxati 0,2 BHM, MChJ — 1 BHM, sudga da'vo — da'vo qiymatining 4%. OSAGO: maksimal to'lov — 80 mln so'mgacha, polissiz haydash uchun jarima — 1 BHM.",
+          "Davlat bojlari aniqlandi: nikoh ro'yxati 0,2 BHM, MChJ — 1 BHM, sudga da'vo — da'vo qiymatining 4%. OSAGO: maksimal to'lov — 80 mln so'mgacha, polissiz haydash uchun jarima — 0,5 BHM (yoki ogohlantirish), MJtK 135-1-modda.",
       },
     ],
   },

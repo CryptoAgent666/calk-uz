@@ -124,7 +124,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "OSAGO yo'q haydovchi jarima qancha?",
         answer:
-          "Ma'muriy javobgarlik kodeksining 234-moddasi bo'yicha 1 BHK miqdorida jarima (hozir 412 000 so'm). Baxtsiz hodisada zarar o'z hisobingizdan to'lanadi.",
+          "Ma'muriy javobgarlik kodeksining 135-1-moddasi bo'yicha ogohlantirish yoki 0,5 BHK jarima (hozir 206 000 so'm). Baxtsiz hodisada zarar o'z hisobingizdan to'lanadi.",
       },
     ],
   },
