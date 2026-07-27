@@ -19,7 +19,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'income-tax',
     lastUpdated: '2025-10-09',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
       { name: 'IT Park', url: 'https://it-park.uz' },
     ],
     paragraphsRu: [
@@ -60,7 +60,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'vat',
     lastUpdated: '2026-01-14',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
       'Ставка налога на добавленную стоимость (НДС) в Узбекистане составляет 12% — одна из самых низких в СНГ. НДС является косвенным налогом, который включается в цену товаров и услуг и фактически уплачивается конечным потребителем. Обязанность по начислению и уплате НДС возлагается на юридических лиц и индивидуальных предпринимателей, чей совокупный оборот за 12 последовательных месяцев превышает порог в 1 млрд сум. Предприятия с оборотом ниже этого порога могут добровольно зарегистрироваться в качестве плательщиков НДС.',
@@ -99,7 +99,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     lastUpdated: '2025-12-12',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
       'Минимальная заработная плата в Узбекистане составляет 1 271 000 сум в месяц (размер действует с 2025 года и сохраняется в 2026 году). Калькулятор зарплаты позволяет рассчитать чистую сумму «на руки» из начисленной (гросс) зарплаты с учётом всех обязательных удержаний: НДФЛ 12%, ИНПС 0,1%, а также определить расходы работодателя на социальный налог 12%. При расчёте «от обратного» — из суммы на руки — калькулятор определит необходимую начисленную зарплату.',
@@ -138,7 +138,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     lastUpdated: '2026-02-20',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
       'Минимальная продолжительность ежегодного оплачиваемого отпуска в Узбекистане составляет 21 календарный день (ст. 217 Трудового кодекса 2023 года). Для отдельных категорий работников предусмотрены удлинённые отпуска: педагогические работники — до 56 календарных дней, работники с вредными условиями труда — дополнительно от 6 до 36 рабочих дней. Калькулятор отпускных позволяет точно рассчитать сумму выплат на основе среднедневного заработка.',
@@ -659,7 +659,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'ip-calculator',
     lastUpdated: '2025-09-04',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
       'Индивидуальные предприниматели (ИП) в Узбекистане с 2026 года уплачивают налог с оборота по ставке 1% от валового дохода (выручки) при обороте до 1 000 000 000 сум в год. При обороте свыше 1 млрд сум ставка составляет 4%. Это упрощённая система налогообложения, не предусматривающая вычет расходов. ИП не являются плательщиками НДС, если их оборот не превышает порог в 1 млрд сум. Самозанятые лица также уплачивают 1% от оборота. Калькулятор ИП рассчитает налоговые обязательства на основе вашего дохода.',
@@ -697,7 +697,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'employer-cost',
     lastUpdated: '2026-01-20',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
     ],
     paragraphsRu: [
@@ -773,7 +773,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
   {
     slug: 'llc-calculator',
     lastUpdated: '2026-02-16',
-    sources: [{ name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' }],
+    sources: [{ name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' }],
     paragraphsRu: [
       'Калькулятор ООО помогает предпринимателям в Узбекистане рассчитать налоговую нагрузку при различных системах налогообложения. Общество с ограниченной ответственностью (ООО) — самая распространённая форма ведения бизнеса в стране. Согласно Налоговому кодексу, ООО может работать на общей системе (налог на прибыль 15% + НДС 12%) или на упрощённой (налог с оборота 4% без вычета расходов).',
       'На общей системе налогообложения ООО уплачивает: налог на прибыль — 15% от чистой прибыли (доходы минус документально подтверждённые расходы); НДС — 12% при обороте свыше 1 млрд сум; социальный налог — 12% от фонда оплаты труда; НДФЛ — 12% с зарплат сотрудников (удерживается из зарплаты). Дивиденды учредителям-резидентам облагаются НДФЛ по ставке 5% (нерезидентам — 10%).',
@@ -1026,7 +1026,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'state-duties',
     lastUpdated: '2025-09-20',
     sources: [
-      { name: 'Налоговый кодекс — Госпошлины', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс — Госпошлины', url: 'https://lex.uz/ru/docs/4674893' },
       { name: 'Министерство юстиции РУз', url: 'https://minjust.uz' },
     ],
     paragraphsRu: [
@@ -1100,7 +1100,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'vat-threshold',
     lastUpdated: '2026-01-14',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
       'Порог обязательной регистрации плательщиком НДС в Узбекистане составляет 1 млрд сум за 12 последовательных месяцев. Если совокупный оборот предприятия за 12 последовательных месяцев превышает эту сумму, регистрация в качестве плательщика НДС обязательна. Калькулятор порога НДС отслеживает текущий оборот вашего бизнеса и показывает, какой процент от порога вы достигли. Важно учитывать именно скользящий 12-месячный период, а не календарный год.',
@@ -1136,7 +1136,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'property-tax',
     lastUpdated: '2026-01-22',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
       { name: 'Кадастровая палата', url: 'https://kadastr.uz' },
     ],
     paragraphsRu: [
@@ -1173,7 +1173,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'land-tax',
     lastUpdated: '2026-03-28',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
       { name: 'Кадастровая палата', url: 'https://kadastr.uz' },
     ],
     paragraphsRu: [
@@ -1210,7 +1210,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'vehicle-tax',
     lastUpdated: '2026-02-26',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
       'Транспортный налог в Узбекистане взимается ежегодно с владельцев автотранспортных средств. Ставка зависит от объёма двигателя и определяется в базовых расчётных величинах (БРВ). Для легковых автомобилей: до 1,5 л — 1,5 БРВ (618 000 сум); 1,5-2,0 л — 3 БРВ (1 236 000 сум); 2,0-3,0 л — 5 БРВ (2 060 000 сум); свыше 3,0 л — 7,5 БРВ (3 090 000 сум). Грузовые автомобили и спецтехника облагаются по отдельным ставкам.',
@@ -1244,36 +1244,36 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'corporate-tax',
-    lastUpdated: '2026-01-25',
+    lastUpdated: '2026-07-25',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
-      'Ставка налога на прибыль юридических лиц в Узбекистане составляет 15% от чистой прибыли — доходы минус документально подтверждённые расходы. Повышенная ставка 20% установлена для банков, операторов мобильной связи, производителей цемента и операторов рынков и торговых комплексов. С 2026 года ставка для предприятий электронной коммерции повышена с 10% до 15%. Согласно Закону ZRU-1104, для высокотехнологичных производств установлена ставка 0% по налогу на прибыль. Предприятия, переходящие с налога с оборота на общую систему с НДС/налогом на прибыль, получают 1-летнее освобождение от налога на прибыль. Налогооблагаемая база определяется по данным бухгалтерского учёта с корректировками, предусмотренными Налоговым кодексом.',
+      'Ставка налога на прибыль юридических лиц в Узбекистане составляет 15% от чистой прибыли — доходы минус документально подтверждённые расходы (ст. 337 НК). Повышенная ставка 20% установлена для банков, операторов мобильной связи, производителей полиэтиленовых гранул, а также по прибыли от услуг рынков и торговых комплексов. С 2026 года льготная ставка для предприятий электронной коммерции отменена — они платят базовые 15% (ранее 10%). Законом ЗРУ-1104 от 25.12.2025 введена ставка 0% для продукции, произведённой на основе высоких технологий: она действует 3 года с даты ввода производства в эксплуатацию, только по доходам от такой продукции и по перечню, утверждаемому постановлением Президента. Плательщики налога с оборота, впервые перешедшие на общую систему с 1 января 2026 года, освобождаются от налога на прибыль на один налоговый период, следующий за годом перехода (кроме дивидендов и процентных доходов; не распространяется на реорганизованных). Налогооблагаемая база определяется по данным бухгалтерского учёта с корректировками, предусмотренными Налоговым кодексом.',
       'Предприятия с годовой выручкой до 1 млрд сум могут выбрать упрощённую систему налогообложения — налог с оборота по ставке 4% (для юрлиц и ИП с оборотом свыше 1 млрд) или 1% (для ИП с оборотом до 1 млрд) без вычета расходов. Это выгодно при низкой доле расходов в выручке. Переход между системами возможен с начала календарного года при уведомлении налогового органа. Компании на общей системе с оборотом свыше 1 млрд сум автоматически становятся плательщиками НДС.',
-      'Авансовые платежи по налогу на прибыль уплачиваются ежеквартально — не позднее 25-го числа первого месяца каждого квартала. Годовая декларация подаётся до 1 апреля следующего года через систему my.soliq.uz. Убытки можно переносить на будущие налоговые периоды без ограничения по сроку (прежний 5-летний лимит отменён), уменьшая налогооблагаемую прибыль будущих лет. Дивиденды, выплачиваемые учредителям-физлицам, облагаются НДФЛ по ставке 5%.',
+      'Авансовые платежи по налогу на прибыль уплачивают только налогоплательщики с совокупным доходом за предыдущий период свыше 20 млрд сум — ежемесячно, не позднее 23-го числа каждого месяца отчётного периода (ст. 340 НК). Годовая декларация подаётся не позднее 1 марта года, следующего за истекшим, через систему my.soliq.uz; по итогам отчётного периода — не позднее 20-го числа следующего месяца (ст. 339 НК). Убытки можно переносить на будущие налоговые периоды без ограничения по сроку (прежний 5-летний лимит отменён), уменьшая налогооблагаемую прибыль будущих лет. Дивиденды, выплачиваемые учредителям-физлицам, облагаются НДФЛ по ставке 5%.',
       'Законодательство предусматривает значительные льготы. Резиденты свободных экономических зон (СЭЗ) — Навои, Ангрен, Джизак, Ургут и другие — освобождены от налога на прибыль до 10 лет в зависимости от объёма инвестиций. Резиденты IT Park уплачивают 1% от выручки (единый налоговый платёж). Предприятия, инвестирующие в социальную инфраструктуру, могут получить пониженные ставки. Экспортёры имеют право на дополнительные вычеты.',
       'Пример расчёта: ООО с годовой выручкой 5 млрд сум и расходами 3,5 млрд. На общей системе: прибыль = 1,5 млрд, налог = 1 500 000 000 × 15% = 225 000 000 сум. На упрощённой: налог = 5 000 000 000 × 4% = 200 000 000 сум. В данном случае упрощённая система выгоднее на 25 млн. При расходах 4 млрд: общая система = 150 млн, упрощённая = 200 млн — общая выгоднее.',
     ],
     paragraphsUz: [
-      "O'zbekistonda yuridik shaxslarning foyda solig'i stavkasi sof foydaning 15% ni tashkil etadi — daromadlar minus hujjat bilan tasdiqlangan xarajatlar. 20% oshirilgan stavka banklar, mobil aloqa operatorlari, tsement ishlab chiqaruvchilar hamda bozorlar va savdo majmualari operatorlari uchun belgilangan. 2026-yildan elektron tijorat korxonalari uchun stavka 10% dan 15% ga oshirildi. ZRU-1104 Qonuniga ko'ra, yuqori texnologiyali ishlab chiqarishlar uchun foyda solig'i stavkasi 0% belgilangan. Aylanma solig'idan QQS/foyda solig'i bilan umumiy tizimga o'tayotgan korxonalar 1 yillik foyda solig'idan ozod qilinadi. Soliq bazasi buxgalteriya hisobi ma'lumotlari asosida Soliq kodeksida nazarda tutilgan tuzatishlar bilan aniqlanadi.",
+      "O'zbekistonda yuridik shaxslarning foyda solig'i stavkasi sof foydaning 15% ni tashkil etadi — daromadlar minus hujjat bilan tasdiqlangan xarajatlar (SKning 337-moddasi). 20% oshirilgan stavka banklar, mobil aloqa operatorlari, polietilen granulalari ishlab chiqaruvchilar, shuningdek bozorlar va savdo majmualari ko'rsatgan xizmatlardan olingan foyda uchun belgilangan. 2026-yildan elektron tijorat korxonalari uchun imtiyozli stavka bekor qilindi — ular bazaviy 15% to'laydi (avval 10%). 25.12.2025-yildagi ZRU-1104 Qonuni bilan yuqori texnologiyalar asosida ishlab chiqarilgan mahsulot uchun 0% stavka joriy etildi: u ishlab chiqarish ob'ekti foydalanishga topshirilgan sanadan 3 yil davomida, faqat shunday mahsulotdan olingan daromadlar bo'yicha va Prezident qarori bilan tasdiqlanadigan ro'yxat bo'yicha amal qiladi. 2026-yil 1-yanvardan boshlab umumiy tizimga birinchi marta o'tgan aylanma solig'i to'lovchilari o'tgan yildan keyingi bir soliq davri uchun foyda solig'idan ozod qilinadi (dividendlar va foizli daromadlardan tashqari; qayta tashkil etilganlarga tatbiq etilmaydi). Soliq bazasi buxgalteriya hisobi ma'lumotlari asosida Soliq kodeksida nazarda tutilgan tuzatishlar bilan aniqlanadi.",
       "Yillik tushumi 1 mlrd so'mgacha bo'lgan korxonalar soddalashtilgan soliqqa tortish tizimini tanlashi mumkin — xarajatlarni chegirmasdan aylanmadan 4% (yuridik shaxslar va aylanmasi 1 mlrd dan ortiq YaTTlar uchun) yoki 1% (aylanmasi 1 mlrd gacha YaTTlar uchun) stavkada soliq. Bu xarajatlar ulushi tushumda past bo'lganda foydali. Tizimlar o'rtasida o'tish kalendar yili boshidan soliq organiga xabar berish sharti bilan mumkin. Umumiy tizimdagi aylanmasi 1 mlrd so'mdan ortiq kompaniyalar avtomatik ravishda QQS to'lovchilariga aylanadi.",
-      "Foyda solig'i bo'yicha avans to'lovlari har chorakda — har chorak birinchi oyining 25-sanasidan kechiktirmay to'lanadi. Yillik deklaratsiya keyingi yilning 1-aprelgacha my.soliq.uz tizimi orqali topshiriladi. Zararlarni muddat cheklovisiz keyingi soliq davrlariga o'tkazish (avvalgi 5 yillik limit bekor qilingan) va kelajakdagi yillarning soliqqa tortiladigan foydasini kamaytirish mumkin. Ta'sischilar-jismoniy shaxslarga to'lanadigan dividendlar 5% stavkada JShShSga tortiladi.",
+      "Foyda solig'i bo'yicha avans to'lovlarini faqat oldingi davr uchun jami daromadi 20 mlrd so'mdan ortiq bo'lgan soliq to'lovchilar to'laydi — har oyda, hisobot davrining har oyi 23-sanasidan kechiktirmay (SKning 340-moddasi). Yillik deklaratsiya tugagan yildan keyingi yilning 1-martidan kechiktirmay my.soliq.uz tizimi orqali topshiriladi; hisobot davri yakunlari bo'yicha — keyingi oyning 20-sanasidan kechiktirmay (SKning 339-moddasi). Zararlarni muddat cheklovisiz keyingi soliq davrlariga o'tkazish (avvalgi 5 yillik limit bekor qilingan) va kelajakdagi yillarning soliqqa tortiladigan foydasini kamaytirish mumkin. Ta'sischilar-jismoniy shaxslarga to'lanadigan dividendlar 5% stavkada JShShSga tortiladi.",
       "Qonunchilik sezilarli imtiyozlarni nazarda tutadi. Erkin iqtisodiy zonalar (EIZ) rezidentlari — Navoiy, Angren, Jizzax, Urgut va boshqalar — investitsiya hajmiga qarab 10 yilgacha foyda solig'idan ozod. IT Park rezidentlari tushumdan 1% (yagona soliq to'lovi) to'laydi. Ijtimoiy infratuzilmaga sarmoya kiritayotgan korxonalar pasaytirilgan stavkalar olishi mumkin. Eksportchilar qo'shimcha chegirmalarga haqli.",
       "Hisoblash misoli: yillik tushumi 5 mlrd so'm va xarajatlari 3,5 mlrd bo'lgan MChJ. Umumiy tizimda: foyda = 1,5 mlrd, soliq = 1 500 000 000 × 15% = 225 000 000 so'm. Soddalashtirilda: soliq = 5 000 000 000 × 4% = 200 000 000 so'm. Bu holatda soddalashtilgan tizim 25 mln ga foydaliroq. Xarajatlar 4 mlrd bo'lganda: umumiy tizim = 150 mln, soddalashtilgan = 200 mln — umumiy foydaliroq.",
     ],
     faqRu: [
-      { question: 'Какая ставка налога на прибыль?', answer: '15% для обычных юрлиц (в т.ч. e-commerce с 2026), 20% для банков, мобильных операторов, производителей цемента и операторов рынков/ТЦ, 0% для высокотехнологичных производств (ZRU-1104). На упрощённой — 4% от оборота (юрлица), 1% (ИП до 1 млрд).' },
+      { question: 'Какая ставка налога на прибыль?', answer: '15% для обычных юрлиц (в т.ч. e-commerce с 2026), 20% для банков, мобильных операторов, производителей полиэтиленовых гранул и по прибыли от услуг рынков/ТЦ, 0% для продукции на основе высоких технологий (ЗРУ-1104 — 3 года, по перечню Президента). На упрощённой — 4% от оборота (юрлица), 1% (ИП до 1 млрд).' },
       { question: 'Можно ли перенести убытки?', answer: 'Да, убытки переносятся на будущие периоды без ограничения по сроку (прежний 5-летний лимит отменён), уменьшая прибыль будущих лет.' },
       { question: 'Какие льготы по налогу на прибыль?', answer: 'СЭЗ (до 10 лет освобождение), IT Park (1% от выручки), инвесторы в социальные проекты — пониженные ставки.' },
-      { question: 'Когда подавать декларацию?', answer: 'До 1 апреля года, следующего за отчётным. Авансовые платежи — ежеквартально до 25-го числа первого месяца квартала.' },
+      { question: 'Когда подавать декларацию?', answer: 'Не позднее 1 марта года, следующего за истекшим (ст. 339 НК). Авансовые платежи — ежемесячно до 23-го числа и только при совокупном доходе за предыдущий период свыше 20 млрд сум (ст. 340 НК).' },
       { question: 'Какой налог на дивиденды?', answer: 'Дивиденды резидентам (физлицам и юрлицам) облагаются по ставке 5%, нерезидентам — 10%.' },
     ],
     faqUz: [
-      { question: "Foyda solig'i stavkasi qancha?", answer: "Oddiy yuridik shaxslar uchun 15% (shu jumladan 2026-yildan e-tijorat), banklar, mobil operatorlar, tsement ishlab chiqaruvchilar va bozor/savdo majmualari operatorlari uchun 20%, yuqori texnologiyali ishlab chiqarish uchun 0% (ZRU-1104). Soddalashtirilda — aylanmadan 4% (yuridik shaxslar), 1% (1 mlrd gacha YaTTlar)." },
+      { question: "Foyda solig'i stavkasi qancha?", answer: "Oddiy yuridik shaxslar uchun 15% (shu jumladan 2026-yildan e-tijorat), banklar, mobil operatorlar, polietilen granulalari ishlab chiqaruvchilar va bozor/savdo majmualari xizmatlaridan olingan foyda uchun 20%, yuqori texnologiyalar asosidagi mahsulot uchun 0% (ZRU-1104 — 3 yil, Prezident ro'yxati bo'yicha). Soddalashtirilda — aylanmadan 4% (yuridik shaxslar), 1% (1 mlrd gacha YaTTlar)." },
       { question: "Zararlarni o'tkazish mumkinmi?", answer: "Ha, zararlar muddat cheklovisiz keyingi davrlarga o'tkaziladi (avvalgi 5 yillik limit bekor qilingan), kelajakdagi yillar foydasini kamaytiradi." },
       { question: "Foyda solig'i bo'yicha qanday imtiyozlar bor?", answer: "EIZ (10 yilgacha ozod qilish), IT Park (tushumdan 1%), ijtimoiy loyihalarga investorlar — pasaytirilgan stavkalar." },
-      { question: "Deklaratsiyani qachon topshirish kerak?", answer: "Hisobot yilidan keyingi yilning 1-aprelgacha. Avans to'lovlari — har chorak birinchi oyining 25-sanasigacha." },
+      { question: "Deklaratsiyani qachon topshirish kerak?", answer: "Tugagan yildan keyingi yilning 1-martidan kechiktirmay (SKning 339-moddasi). Avans to'lovlari — har oy 23-sanasigacha va faqat oldingi davr uchun jami daromadi 20 mlrd so'mdan ortiq bo'lganda (SKning 340-moddasi)." },
       { question: "Dividendlarga soliq qancha?", answer: "Rezident ta'sischilarga (jismoniy va yuridik shaxslar) to'lanadigan dividendlardan 5%, norezidentlarga — 10%." },
     ],
   },
@@ -1282,7 +1282,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'tax-penalty',
     lastUpdated: '2026-04-01',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
       'Калькулятор налоговых пеней рассчитывает размер пени за несвоевременную уплату налогов в Узбекистане. Пеня начисляется автоматически в размере 1/300 ставки рефинансирования Центрального банка от суммы задолженности за каждый день просрочки. При текущей ставке ЦБ 14% это составляет 14%/300 = 0,047%/день (17,0% годовых). Пеня начисляется с первого дня, следующего за установленным сроком уплаты, до дня фактической оплаты включительно. Калькулятор определит точную сумму пени по вашим данным.',
@@ -1318,7 +1318,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'self-employed',
     lastUpdated: '2025-12-10',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
       'С 2026 года в Узбекистане вводится официальный статус самозанятого лица с налогом 1% от оборота — это самая низкая налоговая ставка среди всех режимов налогообложения в стране. Самозанятые не являются индивидуальными предпринимателями: им не требуется регистрация в едином реестре предпринимателей, а отчётность сведена к минимуму. Регистрация осуществляется через мобильное приложение или портал my.soliq.uz буквально за несколько минут.',
@@ -1354,7 +1354,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'turnover-tax',
     lastUpdated: '2025-10-26',
     sources: [
-      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/docs/6230091' },
+      { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
     paragraphsRu: [
       'Налог с оборота — упрощённый режим налогообложения для индивидуальных предпринимателей и юридических лиц с совокупным оборотом менее 1 млрд сум. С 2026 года ставки дифференцированы: для ИП и самозанятых с оборотом до 1 млрд сум — 1% от валового дохода, для юридических лиц и ИП с оборотом свыше 1 млрд — 4%. Расходы не вычитаются. Этот режим заменяет налог на прибыль и НДС, что существенно упрощает бухгалтерский учёт и снижает административную нагрузку на малый бизнес.',
