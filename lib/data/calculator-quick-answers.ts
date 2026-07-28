@@ -27,9 +27,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'vat',
     textRu:
-      'Ставка НДС в Узбекистане — 12%, одна из самых низких в СНГ. Для выделения НДС из суммы с НДС: сумма × 12 / 112. Для начисления НДС на сумму без НДС: сумма × 12%. Обязательная регистрация плательщиком НДС — при обороте свыше 1 млрд сум за 12 месяцев.',
+      'Ставка НДС в Узбекистане — 12%, одна из самых низких в СНГ. Для выделения НДС из суммы с НДС: сумма × 12 / 112. Для начисления НДС на сумму без НДС: сумма × 12%. Обязательная регистрация плательщиком НДС — при совокупном доходе за налоговый период свыше 12 000 БРВ (4 944 000 000 сум).',
     textUz:
-      "O'zbekistonda QQS stavkasi — 12%, MDHdagi eng past stavkalardan biri. QQS bilan summadan QQS ajratish: summa × 12 / 112. QQSsiz summaga QQS qo'shish: summa × 12%. QQS to'lovchisi sifatida majburiy ro'yxatga olish — 12 oy davomida aylanma 1 mlrd so'mdan oshganda.",
+      "O'zbekistonda QQS stavkasi — 12%, MDHdagi eng past stavkalardan biri. QQS bilan summadan QQS ajratish: summa × 12 / 112. QQSsiz summaga QQS qo'shish: summa × 12%. QQS to'lovchisi sifatida majburiy ro'yxatga olish — soliq davri uchun umumiy daromad 12 000 BHK (4 944 000 000 so'm) dan oshganda.",
   },
   {
     slug: 'salary',
@@ -118,9 +118,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'corporate-tax',
     textRu:
-      'Налог на прибыль в Узбекистане для ООО и АО — 15% от чистой прибыли. Дополнительно: НДС 12% (если плательщик), социальный налог 12% от ФОТ. ИП на упрощённой системе платит налог с оборота 4% (1% для оборота до 1 млрд сум), вместо налога на прибыль.',
+      'Налог на прибыль в Узбекистане для ООО и АО — 15% от чистой прибыли. Дополнительно: НДС 12% (если плательщик), социальный налог 12% от ФОТ. ИП на упрощённой системе платит налог с оборота 1% вместо налога на прибыль.',
     textUz:
-      "O'zbekistonda MChJ va AJ uchun foyda solig'i — sof foydaning 15%. Qo'shimcha: QQS 12% (to'lovchi bo'lsa), ish haqi fondidan ijtimoiy soliq 12%. Soddalashtirilgan tizimdagi YaTT aylanma solig'i 4% to'laydi (1 mlrd so'mgacha aylanma uchun 1%), foyda solig'i o'rniga.",
+      "O'zbekistonda MChJ va AJ uchun foyda solig'i — sof foydaning 15%. Qo'shimcha: QQS 12% (to'lovchi bo'lsa), ish haqi fondidan ijtimoiy soliq 12%. Soddalashtirilgan tizimdagi YaTT foyda solig'i o'rniga aylanma solig'ini 1% stavkada to'laydi.",
   },
   {
     slug: 'self-employed',

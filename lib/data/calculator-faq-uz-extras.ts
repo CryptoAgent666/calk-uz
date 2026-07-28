@@ -74,7 +74,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Bozorda sotuvchi bo'lsam, QQS to'lashim kerakmi?",
         answer:
-          "Yo'q, agar 12 oylik aylanmangiz 60 000 BHK (24,72 mlrd so'm) dan kam bo'lsa, QQS to'lovchisi emassiz. Bozordagi ko'pchilik chakana sotuvchilar bu chegaradan oshmaydi.",
+          "Yo'q, agar soliq davri uchun daromadingiz 12 000 BHK (4 944 000 000 so'm) dan kam bo'lsa, QQS to'lovchisi emassiz. Bozordagi ko'pchilik chakana sotuvchilar bu chegaradan oshmaydi.",
       },
       {
         question: "Faktura.soliq.uz da hisob-faktura qanday rasmiylashtirish?",

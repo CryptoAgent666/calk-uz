@@ -417,13 +417,13 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
           { label: 'Беспошлинный ввоз товаров (1 БРВ × 8)', value: '3 296 000 сум' },
           { label: 'Имущественный вычет (500 БРВ)', value: '206 000 000 сум' },
           { label: 'Освобождение от НДФЛ матпомощи (4,22 БРВ)', value: '1 738 640 сум' },
-          { label: 'Порог обязательной регистрации НДС (в сумах, не в БРВ)', value: '1 000 000 000 сум' },
+          { label: 'Порог обязательной регистрации НДС (12 000 БРВ)', value: '4 944 000 000 сум' },
         ],
         stepsUz: [
           { label: "Bojsiz olib kirish (1 BHK × 8)", value: "3 296 000 so'm" },
           { label: "Mulkiy chegirma (500 BHK)", value: "206 000 000 so'm" },
           { label: "Moddiy yordam JShShSdan ozod (4,22 BHK)", value: "1 738 640 so'm" },
-          { label: "QQS majburiy ro'yxatga olish chegarasi (so'mda, BHKda emas)", value: "1 000 000 000 so'm" },
+          { label: "QQS majburiy ro'yxatga olish chegarasi (12 000 BHK)", value: "4 944 000 000 so'm" },
         ],
         conclusionRu:
           'БРВ пересматривается ежегодно. Все лимиты, привязанные к БРВ, автоматически растут вместе с её увеличением.',
