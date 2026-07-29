@@ -10,12 +10,14 @@ export async function generateMetadata({
   const { locale } = await params
   const t = await getTranslations({ locale })
 
+  const description =
+    locale === "uz"
+      ? "Calk.UZ veb-saytidan foydalanish shartlari"
+      : "Условия использования сайта Calk.UZ"
+
   return {
     title: t("terms_title"),
-    description:
-      locale === "uz"
-        ? "Calk.UZ veb-saytidan foydalanish shartlari"
-        : "Условия использования сайта Calk.UZ",
+    description,
     alternates: {
       canonical: `/${locale}/terms`,
       languages: {
@@ -23,6 +25,17 @@ export async function generateMetadata({
         uz: "/uz/terms",
         "x-default": "/ru/terms",
       },
+    },
+    openGraph: {
+      title: t("terms_title"),
+      description,
+      type: "website",
+      locale: locale === "uz" ? "uz_UZ" : "ru_RU",
+      alternateLocale: locale === "uz" ? "ru_RU" : "uz_UZ",
+      url: `/${locale}/terms`,
+      siteName: "Calk.UZ",
+      // Re-attach the segment-level file image (replaced once openGraph is defined).
+      images: [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630 }],
     },
   }
 }

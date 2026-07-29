@@ -76,9 +76,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'utilities-total',
     textRu:
-      'Коммунальные услуги в Узбекистане для семьи из 4 человек в Ташкенте (квартира 70 м²) в 2026: зимой ~300 000 сум/мес, летом ~180 000 сум/мес. Электричество — 600–2 000 сум/кВт·ч (по тарифным ступеням), газ — 1 000–3 000 сум/м³, холодная вода — 3 808 сум/м³.',
+      'Коммунальные услуги в Узбекистане для семьи из 4 человек в Ташкенте (квартира 70 м²) в 2026: зимой ~300 000 сум/мес, летом ~180 000 сум/мес. Электричество — 650–2 200 сум/кВт·ч (по тарифным ступеням), газ — 1 100–3 300 сум/м³, холодная вода — 3 808 сум/м³.',
     textUz:
-      "2026-yilda O'zbekistonda Toshkentdagi 4 kishilik oila uchun (70 m² kvartira) kommunal xizmatlar: qishda ~300 000 so'm/oy, yozda ~180 000 so'm/oy. Elektr — 600–2 000 so'm/kVt·s (tarif bosqichlari bo'yicha), gaz — 1 000–3 000 so'm/m³, sovuq suv — 3 808 so'm/m³.",
+      "2026-yilda O'zbekistonda Toshkentdagi 4 kishilik oila uchun (70 m² kvartira) kommunal xizmatlar: qishda ~300 000 so'm/oy, yozda ~180 000 so'm/oy. Elektr — 650–2 200 so'm/kVt·s (tarif bosqichlari bo'yicha), gaz — 1 100–3 300 so'm/m³, sovuq suv — 3 808 so'm/m³.",
   },
   {
     slug: 'customs',
@@ -90,9 +90,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'brv',
     textRu:
-      'БРВ (Базовая расчётная величина) в Узбекистане с августа 2025 года — 412 000 сум. Используется для расчёта государственных пошлин, штрафов, имущественных вычетов и налогов. Например: имущественный вычет при покупке жилья — 500 БРВ = 206 000 000 сум, регистрация ООО — 5 БРВ.',
+      'БРВ (Базовая расчётная величина) в Узбекистане с августа 2025 года — 412 000 сум; с 1 сентября 2026 года повышается до 440 000 сум (Указ ПФ-115). Используется для расчёта государственных пошлин, штрафов, имущественных вычетов и налогов. Например: имущественный вычет при покупке жилья — 500 БРВ = 206 000 000 сум, регистрация ООО — 5 БРВ.',
     textUz:
-      "O'zbekistonda BHK (Bazaviy hisoblash kattaligi) 2025-yil avgustdan — 412 000 so'm. Davlat bojlari, jarimalar, mulkiy chegirmalar va soliqlarni hisoblash uchun ishlatiladi. Masalan: uy-joy sotib olganda mulkiy chegirma — 500 BHK = 206 000 000 so'm, MChJ ro'yxatdan o'tkazish — 5 BHK.",
+      "O'zbekistonda BHK (Bazaviy hisoblash kattaligi) 2025-yil avgustdan — 412 000 so'm; 2026-yil 1-sentabrdan 440 000 so'mgacha oshiriladi (PF-115 Farmoni). Davlat bojlari, jarimalar, mulkiy chegirmalar va soliqlarni hisoblash uchun ishlatiladi. Masalan: uy-joy sotib olganda mulkiy chegirma — 500 BHK = 206 000 000 so'm, MChJ ro'yxatdan o'tkazish — 5 BHK.",
   },
   {
     slug: 'osago',
@@ -111,9 +111,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'property-tax',
     textRu:
-      'Налог на имущество физлиц в Узбекистане: жильё до 100 м² — 0,34%, 100–200 м² — 0,45%, свыше 200 м² — 0,6% от кадастровой стоимости. Для юридических лиц — 1,5%. С 2026 года ставки индексированы +7%. Срок уплаты — до 15 апреля следующего года.',
+      'Налог на имущество физлиц в Узбекистане: жильё до 200 м² — 0,36%, 200–500 м² — 0,48%, свыше 500 м² — 0,64% от кадастровой стоимости (ставки на 2026 год с индексацией +7%). Для юридических лиц — 1,5%. Уплата — равными долями до 15 апреля и 15 октября текущего года.',
     textUz:
-      "O'zbekistonda jismoniy shaxslar mulk solig'i: 100 m² gacha uy-joy — 0,34%, 100–200 m² — 0,45%, 200 m² dan ortiq — 0,6% kadastr qiymatidan. Yuridik shaxslar uchun — 1,5%. 2026-yildan stavkalar +7% ga indekslangan. To'lash muddati — keyingi yilning 15-apreligacha.",
+      "O'zbekistonda jismoniy shaxslar mulk solig'i: 200 m² gacha uy-joy — 0,36%, 200–500 m² — 0,48%, 500 m² dan ortiq — 0,64% kadastr qiymatidan (2026-yil uchun +7% indeksatsiya bilan). Yuridik shaxslar uchun — 1,5%. To'lov — joriy yilning 15-aprel va 15-oktabrigacha teng ulushlarda.",
   },
   {
     slug: 'corporate-tax',

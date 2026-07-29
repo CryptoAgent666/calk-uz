@@ -10,12 +10,14 @@ export async function generateMetadata({
   const { locale } = await params
   const t = await getTranslations({ locale })
 
+  const description =
+    locale === "uz"
+      ? "Calk.UZ maxfiylik siyosati — shaxsiy ma'lumotlaringiz qanday himoya qilinadi"
+      : "Политика конфиденциальности Calk.UZ — как защищены ваши персональные данные"
+
   return {
     title: t("privacy_title"),
-    description:
-      locale === "uz"
-        ? "Calk.UZ maxfiylik siyosati — shaxsiy ma'lumotlaringiz qanday himoya qilinadi"
-        : "Политика конфиденциальности Calk.UZ — как защищены ваши персональные данные",
+    description,
     alternates: {
       canonical: `/${locale}/privacy`,
       languages: {
@@ -23,6 +25,17 @@ export async function generateMetadata({
         uz: "/uz/privacy",
         "x-default": "/ru/privacy",
       },
+    },
+    openGraph: {
+      title: t("privacy_title"),
+      description,
+      type: "website",
+      locale: locale === "uz" ? "uz_UZ" : "ru_RU",
+      alternateLocale: locale === "uz" ? "ru_RU" : "uz_UZ",
+      url: `/${locale}/privacy`,
+      siteName: "Calk.UZ",
+      // Re-attach the segment-level file image (replaced once openGraph is defined).
+      images: [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630 }],
     },
   }
 }

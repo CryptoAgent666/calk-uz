@@ -65,6 +65,14 @@ export async function generateMetadata({
       alternateLocale: locale === "uz" ? "ru_RU" : "uz_UZ",
       url: canonicalUrl,
       siteName: "Calk.UZ",
+      // Defining `openGraph` here replaces the segment-level file image
+      // (app/[locale]/opengraph-image.tsx), so re-attach it explicitly —
+      // otherwise category shares render without a card image.
+      images: [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [`/${locale}/opengraph-image`],
     },
   }
 }
