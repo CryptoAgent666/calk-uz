@@ -56,7 +56,7 @@ export const CATEGORY_DESCRIPTIONS: Record<CategoryId, CategoryDescription> = {
     descriptionUz:
       "O'zbekistondagi bank omonati daromadliligini foiz stavkasi, kapitalizatsiya va muddat hisobiga hisoblang. Turli banklar depozit shartlarini solishtiring, murakkab foiz ta'sirini baholang va mablag'larni joylashtirish uchun eng foydali variantni tanlang. Kalkulyatorlar o'zbek banklarining dolzarb stavkalaridan foydalanadi va jamg'armalar bo'yicha asosli qaror qabul qilishga yordam beradi.",
     seoTitleRu: 'Калькуляторы вкладов — депозиты, сложный процент, сравнение банков',
-    seoTitleUz: "Depozit kalkulyatorlari — omonatlar, murakkab foiz, banklar taqqoslash",
+    seoTitleUz: "Depozit kalkulyatorlari: omonat va murakkab foiz",
     seoDescriptionRu: 'Рассчитайте доход по вкладу в банках Узбекистана. Сложный процент, сравнение депозитов, актуальные ставки.',
     seoDescriptionUz: "O'zbekiston banklarida omonat daromadini hisoblang. Murakkab foiz, depozitlarni solishtirish, dolzarb stavkalar.",
   },
@@ -151,7 +151,7 @@ export const CATEGORY_DESCRIPTIONS: Record<CategoryId, CategoryDescription> = {
       'Рассчитайте закят, фитр-садака, фидия-садака и стоимость курбана по нормам ислама. Калькуляторы учитывают актуальные цены на продовольствие в Узбекистане и помогают точно определить размер обязательных и добровольных пожертвований.',
     descriptionUz:
       "Islom normalari bo'yicha zakot, fitr-sadaqa, fidiya-sadaqa va qurbon narxini hisoblang. Kalkulyatorlar O'zbekistondagi dolzarb oziq-ovqat narxlarini hisobga oladi va majburiy hamda ixtiyoriy xayriya miqdorini aniq aniqlashga yordam beradi.",
-    seoTitleRu: 'Религиозные калькуляторы — закят, фитр-садака, фидия, курбан',
+    seoTitleRu: 'Религиозные калькуляторы: закят, фитр-садака, фидия',
     seoTitleUz: "Diniy kalkulyatorlar — zakot, fitr-sadaqa, fidiya, qurbon",
     seoDescriptionRu: 'Рассчитайте закят, фитр-садака, фидию и курбан онлайн. Актуальные цены для Узбекистана.',
     seoDescriptionUz: "Zakot, fitr-sadaqa, fidiya va qurbonni onlayn hisoblang. O'zbekiston uchun dolzarb narxlar.",

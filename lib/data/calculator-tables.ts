@@ -21,8 +21,8 @@ export interface CalculatorTable {
 
 const TAX_TABLES: CalculatorTable[] = [
   {
-    titleRu: "Ставки НДФЛ в Узбекистане (2025)",
-    titleUz: "O'zbekistonda JShShS stavkalari (2025)",
+    titleRu: "Ставки НДФЛ в Узбекистане (2026)",
+    titleUz: "O'zbekistonda JShShS stavkalari (2026)",
     headers: [
       { ru: "Вид дохода", uz: "Daromad turi" },
       { ru: "Ставка", uz: "Stavka" },
@@ -52,8 +52,8 @@ const TAX_TABLES: CalculatorTable[] = [
 
 const SALARY_TABLES: CalculatorTable[] = [
   {
-    titleRu: "Обязательные отчисления с зарплаты (2025)",
-    titleUz: "Ish haqidan majburiy ajratmalar (2025)",
+    titleRu: "Обязательные отчисления с зарплаты (2026)",
+    titleUz: "Ish haqidan majburiy ajratmalar (2026)",
     headers: [
       { ru: "Отчисление", uz: "Ajratma" },
       { ru: "Ставка", uz: "Stavka" },
