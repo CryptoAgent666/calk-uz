@@ -21,8 +21,8 @@ export default function IpCalculator() {
   }, [revenue, regime])
 
   const t = locale === 'uz'
-    ? { revenue: 'Yillik daromad (UZS)', regime: 'Soliq rejimi', turnover: 'Aylanma solig\'i (4%)', selfEmployed: 'O\'z-o\'zini band (1%)', general: 'Umumiy rejim (12%)', results: 'Natijalar', tax: 'Soliq', socialTax: 'Ijtimoiy soliq', inps: 'MHTJ', totalBurden: 'Jami soliq yuki', netIncome: 'Sof daromad', effectiveRate: 'Samarali stavka', placeholder: 'Summani kiriting' }
-    : { revenue: 'Годовой доход (UZS)', regime: 'Налоговый режим', turnover: 'Налог с оборота (4%)', selfEmployed: 'Самозанятый (1%)', general: 'Общий режим (12%)', results: 'Результаты', tax: 'Налог', socialTax: 'Социальный налог', inps: 'ИНПС', totalBurden: 'Общая нагрузка', netIncome: 'Чистый доход', effectiveRate: 'Эффективная ставка', placeholder: 'Введите сумму' }
+    ? { revenue: 'Yillik daromad (UZS)', regime: 'Soliq rejimi', turnover: 'Aylanma solig\'i (1%)', selfEmployed: 'O\'z-o\'zini band (1%)', general: 'Umumiy rejim (12%)', results: 'Natijalar', tax: 'Soliq', socialTax: 'Ijtimoiy soliq', inps: 'MHTJ', totalBurden: 'Jami soliq yuki', netIncome: 'Sof daromad', effectiveRate: 'Samarali stavka', placeholder: 'Summani kiriting' }
+    : { revenue: 'Годовой доход (UZS)', regime: 'Налоговый режим', turnover: 'Налог с оборота (1%)', selfEmployed: 'Самозанятый (1%)', general: 'Общий режим (12%)', results: 'Результаты', tax: 'Налог', socialTax: 'Социальный налог', inps: 'ИНПС', totalBurden: 'Общая нагрузка', netIncome: 'Чистый доход', effectiveRate: 'Эффективная ставка', placeholder: 'Введите сумму' }
 
   const regimeOptions = { turnover: t.turnover, self_employed: t.selfEmployed, general: t.general }
 

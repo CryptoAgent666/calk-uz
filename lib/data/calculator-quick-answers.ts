@@ -83,9 +83,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'customs',
     textRu:
-      'Растаможка автомобиля в Узбекистане в 2026: таможенная пошлина 15% от стоимости, акциз 1,5–10 USD за см³ объёма двигателя, НДС 12%, утильсбор 6–137 БРВ. Электромобили — 0% пошлины и акциза до 2027 года. На авто $20 000 с двигателем 2 000 см³ — ~$11 000 дополнительно к цене.',
+      'Растаможка автомобиля в Узбекистане в 2026: таможенная пошлина 15% от стоимости, акциз 1,5–10 USD за см³ объёма двигателя, НДС 12%, утильсбор 6–137 БРВ. Электромобили — 0% пошлины и акциза до 1 января 2030 года (утильсбор платится). На авто $20 000 с двигателем 2 000 см³ — ~$11 000 дополнительно к цене.',
     textUz:
-      "2026-yilda O'zbekistonda avtomobilni bojxonadan o'tkazish: bojxona boji narxning 15%, aksiz har bir sm³ dvigatel hajmiga 1,5–10 USD, QQS 12%, utilizatsiya yig'imi 6–137 BHK. Elektromobillar — 2027-yilgacha 0% boj va aksiz. 2 000 sm³ dvigatelli $20 000 avto uchun — narxga qo'shimcha ~$11 000.",
+      "2026-yilda O'zbekistonda avtomobilni bojxonadan o'tkazish: bojxona boji narxning 15%, aksiz har bir sm³ dvigatel hajmiga 1,5–10 USD, QQS 12%, utilizatsiya yig'imi 6–137 BHK. Elektromobillar — 2030-yil 1-yanvarigacha 0% boj va aksiz (utilizatsiya yig'imi to'lanadi). 2 000 sm³ dvigatelli $20 000 avto uchun — narxga qo'shimcha ~$11 000.",
   },
   {
     slug: 'brv',
