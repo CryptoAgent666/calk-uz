@@ -23,8 +23,7 @@ final class AdMobManager: NSObject {
 
     private let bannerUnitID = "ca-app-pub-4859241862365215/1031952587"
     private let interstitialUnitID = "ca-app-pub-4859241862365215/9078833104"
-    /// Google's official TEST rewarded unit — replace with the real AdMob unit before release.
-    private let rewardedUnitID = "ca-app-pub-3940256099942544/1712485313"
+    private let rewardedUnitID = "ca-app-pub-4859241862365215/5603704093"
 
     private var interstitial: InterstitialAd?
     private var rewarded: RewardedAd?

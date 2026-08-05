@@ -15,14 +15,13 @@
  */
 import { isAdFree, onAdFreeChange } from "@/lib/purchases"
 
-/** Google's official TEST rewarded unit. Replace with the real AdMob unit before release. */
-const REWARDED_ID_TEST = "ca-app-pub-3940256099942544/5224354917"
-
 /**
- * Real rewarded unit, created in the AdMob console. Until it exists, the test
- * unit is used so the flow is exercisable end-to-end (test ads pay nothing).
+ * Rewarded unit of the Android app (AdMob app ca-app-pub-4859241862365215~5490072349).
+ * Overridable by env so a unit swap needs no code change — it rides OTA either way.
+ * The iOS app has its own unit, set natively in AdMobManager.swift.
  */
-const REWARDED_ID = process.env.NEXT_PUBLIC_ADMOB_REWARDED_ID || REWARDED_ID_TEST
+const REWARDED_ID =
+  process.env.NEXT_PUBLIC_ADMOB_REWARDED_ID || "ca-app-pub-4859241862365215/3175037212"
 
 const UNTIL_KEY = "calk_ad_free_until"
 
