@@ -20,6 +20,45 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-08-06",
+    dateLabelRu: "6 августа 2026",
+    dateLabelUz: "2026-yil 6-avgust",
+    items: [
+      {
+        titleRu: "В приложениях: посмотрите ролик — 24 часа без рекламы",
+        titleUz: "Ilovalarda: rolik ko'ring — 24 soat reklamasiz",
+        descRu:
+          "В приложениях для Android и iPhone появился бесплатный способ убрать рекламу: короткий видеоролик отключает баннеры и полноэкранную рекламу на 24 часа. Кнопка — в меню, в блоке «Убрать рекламу». Разовая покупка «навсегда» никуда не делась и остаётся выгоднее, если пользуетесь регулярно.",
+        descUz:
+          "Android va iPhone ilovalarida reklamani olib tashlashning bepul usuli paydo bo'ldi: qisqa videorolik bannerlar va to'liq ekranli reklamani 24 soatga o'chiradi. Tugma — menyuda, «Reklamani olib tashlash» blokida. «Abadiy» bir martalik xarid ham saqlanib qoldi.",
+      },
+      {
+        titleRu: "БРВ вырастет до 440 000 сум с 1 сентября 2026",
+        titleUz: "BHK 2026-yil 1-sentabrdan 440 000 so'mgacha oshadi",
+        descRu:
+          "Базовая расчётная величина повышается с 412 000 до 440 000 сум (Указ ПФ-115 от 23.06.2026). К БРВ привязаны штрафы, госпошлины, налоговые вычеты и пороги — в том числе порог перехода на НДС, который станет 5,28 млрд сум. Анонс добавлен на страницы БРВ и порога НДС; после 1 сентября значения пересчитаются.",
+        descUz:
+          "Bazaviy hisoblash kattaligi 412 000 dan 440 000 so'mga oshiriladi (PF-115 Farmoni, 23.06.2026). Jarimalar, davlat bojlari, soliq chegirmalari va chegaralar BHKga bog'langan — shu jumladan QQSga o'tish chegarasi 5,28 mlrd so'm bo'ladi.",
+      },
+      {
+        titleRu: "НДФЛ: добавлен срок уплаты и уточнено, кто подаёт декларацию",
+        titleUz: "JShShS: to'lov muddati qo'shildi va kim deklaratsiya topshirishi aniqlashtirildi",
+        descRu:
+          "Раньше был указан только срок подачи — 1 апреля. Добавлен срок уплаты налога по декларации: не позднее 1 июня (ст. 398 НК) — разница в два месяца, за которые начисляется пеня. Также исправлено основание подачи: декларируют доходы, с которых налог не удержан у источника (ст. 393), а не «доходы из нескольких источников» — при двух работодателях с удержанием декларация не нужна.",
+        descUz:
+          "Avval faqat topshirish muddati — 1-aprel ko'rsatilgan edi. Deklaratsiya bo'yicha soliqni to'lash muddati qo'shildi: 1-iyundan kechiktirmay (SK 398-moddasi). Topshirish asosi ham tuzatildi: to'lov manbaida soliq ushlab qolinmagan daromadlar deklaratsiya qilinadi (393-modda).",
+      },
+      {
+        titleRu: "Пенсии и сверхурочные — уточнены даты вступления норм",
+        titleUz: "Pensiya va ortiqcha ish — normalar kuchga kirish sanalari aniqlashtirildi",
+        descRu:
+          "Право женщин со стажем 20+ лет выйти на пенсию в 54 года действует с марта 2024 года (ЗРУ-922), а не «с июня 2026», как было указано. Годовой лимит сверхурочных 120 часов отменён Законом ЗРУ-1095 от 11.11.2025. Сами пенсионные возрасты не изменились: мужчины 60, женщины 55 — обсуждаемое повышение до 63/58 пока остаётся проектом.",
+        descUz:
+          "20+ yil stajga ega ayollarning 54 yoshda pensiyaga chiqish huquqi 2024-yil martdan amal qiladi (ZRU-922). Ortiqcha ishning yillik 120 soatlik limiti ZRU-1095 Qonuni bilan bekor qilindi (11.11.2025). Pensiya yoshlari o'zgarmadi: erkaklar 60, ayollar 55.",
+      },
+    ],
+  },
+  {
     date: "2026-07-07",
     dateLabelRu: "7 июля 2026",
     dateLabelUz: "2026-yil 7-iyul",
