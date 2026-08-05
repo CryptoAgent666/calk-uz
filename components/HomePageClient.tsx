@@ -177,15 +177,20 @@ export default function HomePageClient({ richIntro }: HomePageClientProps = {}) 
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-800 dark:from-emerald-900 dark:via-emerald-950 dark:to-teal-950">
-        {/* Background pattern */}
-        <div className="absolute inset-0 uzbek-pattern opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      <section className="relative bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-800 dark:from-emerald-900 dark:via-emerald-950 dark:to-teal-950">
+        {/* The blurred blobs need clipping, but the section must NOT clip — the
+            search dropdown hangs below the hero and overflow-hidden here would
+            cut it off mid-list. So the decorative layer clips itself. */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Background pattern */}
+          <div className="absolute inset-0 uzbek-pattern opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
 
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl" />
-        <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-emerald-400/10 blur-3xl" />
-        <div className="absolute top-40 right-1/4 h-48 w-48 rounded-full bg-teal-300/10 blur-2xl" />
+          {/* Decorative elements */}
+          <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-emerald-400/10 blur-3xl" />
+          <div className="absolute top-40 right-1/4 h-48 w-48 rounded-full bg-teal-300/10 blur-2xl" />
+        </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
           <div className="text-center max-w-3xl mx-auto">
@@ -251,11 +256,15 @@ export default function HomePageClient({ richIntro }: HomePageClientProps = {}) 
                   className="w-full h-14 pl-12 pr-4 text-base rounded-2xl bg-background/95 backdrop-blur-sm border-white/20 shadow-xl shadow-black/10 focus:border-emerald-400 focus:ring-emerald-400/20 placeholder:text-muted-foreground/50"
                 />
 
+                {/* z-[45] clears the fixed "Убрать рекламу" bar (z-40) in the
+                    apps — an open suggestion list is a transient overlay the
+                    user just asked for and must win — while staying under the
+                    cookie/install banners (z-50). */}
                 {open && search.trim() && (
                   <div
                     id="hero-search-results"
                     role="listbox"
-                    className="absolute left-0 right-0 top-full z-20 mt-2 max-h-[min(60vh,26rem)] overflow-y-auto rounded-2xl border border-border bg-popover text-left shadow-2xl"
+                    className="absolute left-0 right-0 top-full z-[45] mt-2 max-h-[min(60vh,26rem)] overflow-y-auto rounded-2xl border border-border bg-popover text-left shadow-2xl"
                   >
                     {suggestions.length === 0 ? (
                       <p className="px-4 py-3 text-sm text-muted-foreground">
