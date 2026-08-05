@@ -133,37 +133,62 @@ export async function initPurchases(): Promise<void> {
   }
 }
 
+/**
+ * Запрос продукта в сторе.
+ *
+ * ⚠️ `type` ОБЯЗАТЕЛЕН. Нативный Android-плагин по умолчанию спрашивает Google
+ * Play про ПОДПИСКУ (`call.getString("type") ?: "SUBSCRIPTION"`,
+ * PurchasesPlugin.kt), а «убрать рекламу» — разовая покупка. Без параметра Play
+ * не находил ничего, список приходил пустым → цена null → пользователь видел
+ * «продукт ещё активируется в Google Play». На iOS параметр игнорируется —
+ * поэтому там покупка работала, а на Android нет.
+ */
+async function fetchRemoveAdsProduct() {
+  const { Purchases } = await loadSdk()
+  const { PRODUCT_CATEGORY } = await import("@revenuecat/purchases-typescript-internal-esm")
+  const { products } = await Purchases.getProducts({
+    productIdentifiers: [REMOVE_ADS_PRODUCT_ID],
+    type: PRODUCT_CATEGORY.NON_SUBSCRIPTION,
+  })
+  return products[0] ?? null
+}
+
 /** Локализованная цена продукта (напр. «49 000 сум») для кнопки, или null. */
 export async function getRemoveAdsPrice(): Promise<string | null> {
   if (!purchasesAvailable()) return null
   try {
-    const { Purchases } = await loadSdk()
-    const { products } = await Purchases.getProducts({ productIdentifiers: [REMOVE_ADS_PRODUCT_ID] })
-    return products[0]?.priceString ?? null
+    return (await fetchRemoveAdsProduct())?.priceString ?? null
   } catch {
     return null
   }
 }
 
-/** Купить «Убрать рекламу». true — успех (или уже куплено). */
-export async function buyRemoveAds(): Promise<boolean> {
-  if (!purchasesAvailable()) return false
+/**
+ * Исход покупки. Раньше был просто boolean, и вызывающий не мог отличить «юзер
+ * передумал» от «стор не отдал продукт» — а сообщать об этом надо по-разному.
+ */
+export type BuyResult = "ok" | "cancelled" | "unavailable" | "failed"
+
+/** Купить «Убрать рекламу». */
+export async function buyRemoveAds(): Promise<BuyResult> {
+  if (!purchasesAvailable()) return "unavailable"
   emitIap("purchase_tapped")
   try {
     const { Purchases } = await loadSdk()
-    const { products } = await Purchases.getProducts({ productIdentifiers: [REMOVE_ADS_PRODUCT_ID] })
-    if (!products.length) {
+    const product = await fetchRemoveAdsProduct()
+    if (!product) {
       emitIap("purchase_failed")
-      return false
+      return "unavailable"
     }
-    const { customerInfo } = await Purchases.purchaseStoreProduct({ product: products[0] })
+    const { customerInfo } = await Purchases.purchaseStoreProduct({ product })
     const ok = hasEntitlement(customerInfo)
     setAdFree(ok)
-    return ok
+    return ok ? "ok" : "failed"
   } catch (e) {
     // Отмена пользователем — не ошибка; различаем её от реального сбоя для воронки.
-    emitIap(isUserCancelled(e) ? "purchase_cancelled" : "purchase_failed")
-    return false
+    const cancelled = isUserCancelled(e)
+    emitIap(cancelled ? "purchase_cancelled" : "purchase_failed")
+    return cancelled ? "cancelled" : "failed"
   }
 }
 

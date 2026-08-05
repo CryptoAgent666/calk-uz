@@ -7,10 +7,9 @@ import {
   isAdFree,
   onAdFreeChange,
   buyRemoveAds,
-  getRemoveAdsPrice,
   purchasesAvailable,
-  REMOVE_ADS_FALLBACK_PRICE,
 } from "@/lib/purchases"
+import { useRemoveAdsPrice } from "@/lib/use-remove-ads-price"
 import { emitIap } from "@/lib/telemetry"
 
 const DISMISS_KEY = "calk_removeads_bar_dismissed"
@@ -50,7 +49,7 @@ export function RemoveAdsBar() {
       return false
     }
   })
-  const [price, setPrice] = useState<string | null>(null)
+  const price = useRemoveAdsPrice()
   const [busy, setBusy] = useState(false)
   const [variant] = useState(pickBarVariant)
 
@@ -61,18 +60,17 @@ export function RemoveAdsBar() {
           barCoffee: "☕ Abadiy reklamasiz — bir-ikki piyola kofe narxida",
           processing: "Bajarilmoqda…",
           hide: "Yashirish",
+          unavailable: "Xarid hozircha mavjud emas — mahsulot Google Play'da faollashmoqda. Bir necha soatdan keyin qayta urinib ko'ring.",
         }
       : {
           remove: "Убрать рекламу",
           barCoffee: "☕ Без рекламы навсегда — цена пары кофе",
           processing: "Обработка…",
           hide: "Скрыть",
+          unavailable: "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов.",
         }
 
   useEffect(() => onAdFreeChange(setAdFree), [])
-  useEffect(() => {
-    void getRemoveAdsPrice().then(setPrice)
-  }, [])
   // Плашка — показ оффера, если она реально видима (есть покупки, не куплено,
   // не скрыта в этой сессии).
   useEffect(() => {
@@ -80,7 +78,8 @@ export function RemoveAdsBar() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  if (!purchasesAvailable() || adFree || dismissed) return null
+  // Стор не отдал продукт → оффера нет вовсе (мёртвая кнопка хуже отсутствия).
+  if (!purchasesAvailable() || adFree || dismissed || price.state === "unavailable") return null
 
   const dismiss = () => {
     try {
@@ -91,23 +90,15 @@ export function RemoveAdsBar() {
     setDismissed(true)
   }
   const buy = async () => {
-    if (!price) {
-      window.alert(
-        locale === "uz"
-          ? "Xarid hozircha mavjud emas — mahsulot Google Play'da faollashmoqda. Bir necha soatdan keyin qayta urinib ko'ring."
-          : "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов."
-      )
-      return
-    }
     setBusy(true)
     try {
-      await buyRemoveAds()
+      if ((await buyRemoveAds()) === "unavailable") window.alert(t.unavailable)
     } finally {
       setBusy(false)
     }
   }
 
-  const label = variant === "coffee" ? t.barCoffee : `${t.remove} — ${price ?? REMOVE_ADS_FALLBACK_PRICE}`
+  const label = variant === "coffee" ? t.barCoffee : `${t.remove} — ${price.label}`
 
   return (
     <div

@@ -8,10 +8,9 @@ import {
   onAdFreeChange,
   buyRemoveAds,
   restorePurchases,
-  getRemoveAdsPrice,
   purchasesAvailable,
-  REMOVE_ADS_FALLBACK_PRICE,
 } from "@/lib/purchases"
+import { useRemoveAdsPrice } from "@/lib/use-remove-ads-price"
 import { emitIap } from "@/lib/telemetry"
 import {
   rewardedAvailable,
@@ -30,7 +29,7 @@ import {
 export function RemoveAdsButton() {
   const locale = useLocale()
   const [adFree, setAdFree] = useState(isAdFree())
-  const [price, setPrice] = useState<string | null>(null)
+  const price = useRemoveAdsPrice()
   const [busy, setBusy] = useState<"buy" | "restore" | "reward" | null>(null)
   const [hoursLeft, setHoursLeft] = useState(0)
 
@@ -48,6 +47,7 @@ export function RemoveAdsButton() {
           watching: "Rolik yuklanmoqda…",
           active: (h: number) => `✓ Reklamasiz: yana ${h} soat`,
           orFree: "yoki bepul:",
+          unavailable: "Xarid hozircha mavjud emas — mahsulot Google Play'da faollashmoqda. Bir necha soatdan keyin qayta urinib ko'ring.",
         }
       : {
           pitch: "120+ калькуляторов навсегда без рекламы — по цене пары чашек кофе ☕",
@@ -61,15 +61,13 @@ export function RemoveAdsButton() {
           watching: "Загружаем ролик…",
           active: (h: number) => `✓ Без рекламы: ещё ${h} ч`,
           orFree: "или бесплатно:",
+          unavailable: "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов.",
         }
 
   useEffect(() => onAdFreeChange(setAdFree), [])
   useEffect(() => {
     setHoursLeft(rewardHoursLeft())
     return onTempAdFreeChange(() => setHoursLeft(rewardHoursLeft()))
-  }, [])
-  useEffect(() => {
-    void getRemoveAdsPrice().then(setPrice)
   }, [])
   // Оффер реально показан только когда есть покупки и реклама ещё не отключена
   // (компонент монтируется при открытии мобильного меню).
@@ -88,17 +86,9 @@ export function RemoveAdsButton() {
   }
 
   const buy = async () => {
-    if (!price) {
-      window.alert(
-        locale === "uz"
-          ? "Xarid hozircha mavjud emas — mahsulot Google Play'da faollashmoqda. Bir necha soatdan keyin qayta urinib ko'ring."
-          : "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов."
-      )
-      return
-    }
     setBusy("buy")
     try {
-      await buyRemoveAds()
+      if ((await buyRemoveAds()) === "unavailable") window.alert(t.unavailable)
     } finally {
       setBusy(null)
     }
@@ -123,16 +113,23 @@ export function RemoveAdsButton() {
 
   return (
     <div className="rounded-xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 p-4 dark:border-emerald-900 dark:from-emerald-950 dark:to-teal-950">
-      <p className="mb-3 text-center text-sm font-semibold leading-snug text-emerald-900 dark:text-emerald-200">{t.pitch}</p>
-      <button
-        onClick={buy}
-        disabled={busy !== null}
-        className="flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-3 font-semibold text-white transition-colors hover:bg-emerald-700 disabled:opacity-60"
-      >
-        <Sparkles className="h-4 w-4" />
-        {busy === "buy" ? t.processing : `${t.removeForever} — ${price ?? REMOVE_ADS_FALLBACK_PRICE}`}
-      </button>
-      <p className="mt-2 text-center text-xs text-muted-foreground">{t.oneTime}</p>
+      {/* Платная ступень скрывается, если стор не отдал продукт: кнопка с ценой,
+          которая по тапу отвечает «покупка недоступна», хуже её отсутствия.
+          Бесплатная ступень (ролик) от биллинга не зависит и остаётся. */}
+      {price.state !== "unavailable" && (
+        <>
+          <p className="mb-3 text-center text-sm font-semibold leading-snug text-emerald-900 dark:text-emerald-200">{t.pitch}</p>
+          <button
+            onClick={buy}
+            disabled={busy !== null}
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-3 font-semibold text-white transition-colors hover:bg-emerald-700 disabled:opacity-60"
+          >
+            <Sparkles className="h-4 w-4" />
+            {busy === "buy" ? t.processing : `${t.removeForever} — ${price.label}`}
+          </button>
+          <p className="mt-2 text-center text-xs text-muted-foreground">{t.oneTime}</p>
+        </>
+      )}
 
       {/* Free rung: a rewarded video buys 24 h of quiet. Hidden once a window is
           already running — nothing to gain from stacking, and it would read as

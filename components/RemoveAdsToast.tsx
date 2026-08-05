@@ -7,10 +7,9 @@ import {
   isAdFree,
   onAdFreeChange,
   buyRemoveAds,
-  getRemoveAdsPrice,
   purchasesAvailable,
-  REMOVE_ADS_FALLBACK_PRICE,
 } from "@/lib/purchases"
+import { useRemoveAdsPrice } from "@/lib/use-remove-ads-price"
 import { emitIap } from "@/lib/telemetry"
 
 /** Событие «предложить убрать рекламу» — шлётся из NativeAds после интерстишелов. */
@@ -28,7 +27,7 @@ export function RemoveAdsToast() {
   const locale = useLocale()
   const [adFree, setAdFree] = useState(isAdFree())
   const [visible, setVisible] = useState(false)
-  const [price, setPrice] = useState<string | null>(null)
+  const price = useRemoveAdsPrice()
   const [busy, setBusy] = useState(false)
 
   const t =
@@ -38,18 +37,17 @@ export function RemoveAdsToast() {
           removeForPrice: (p: string) => `Abadiy olib tashlash — ${p}`,
           processing: "Bajarilmoqda…",
           close: "Yopish",
+          unavailable: "Xarid hozircha mavjud emas — mahsulot Google Play'da faollashmoqda. Bir necha soatdan keyin qayta urinib ko'ring.",
         }
       : {
           tired: "Надоела реклама?",
           removeForPrice: (p: string) => `Убрать навсегда за ${p}`,
           processing: "Обработка…",
           close: "Закрыть",
+          unavailable: "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов.",
         }
 
   useEffect(() => onAdFreeChange(setAdFree), [])
-  useEffect(() => {
-    void getRemoveAdsPrice().then(setPrice)
-  }, [])
 
   useEffect(() => {
     if (!purchasesAvailable()) return
@@ -72,21 +70,15 @@ export function RemoveAdsToast() {
     if (visible) emitIap("paywall_shown")
   }, [visible])
 
-  if (!purchasesAvailable() || adFree || !visible) return null
+  // Стор не отдал продукт → тост не показываем.
+  if (!purchasesAvailable() || adFree || !visible || price.state === "unavailable") return null
 
   const buy = async () => {
-    if (!price) {
-      window.alert(
-        locale === "uz"
-          ? "Xarid hozircha mavjud emas — mahsulot Google Play'da faollashmoqda. Bir necha soatdan keyin qayta urinib ko'ring."
-          : "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов."
-      )
-      return
-    }
     setBusy(true)
     try {
-      const ok = await buyRemoveAds()
-      if (ok) setVisible(false)
+      const result = await buyRemoveAds()
+      if (result === "ok") setVisible(false)
+      else if (result === "unavailable") window.alert(t.unavailable)
     } finally {
       setBusy(false)
     }
@@ -103,7 +95,7 @@ export function RemoveAdsToast() {
         <div className="flex-1 text-sm">
           <div className="font-semibold">{t.tired}</div>
           <button onClick={buy} disabled={busy} className="text-blue-300 underline disabled:opacity-70">
-            {busy ? t.processing : t.removeForPrice(price ?? REMOVE_ADS_FALLBACK_PRICE)}
+            {busy ? t.processing : t.removeForPrice(price.label)}
           </button>
         </div>
         <button onClick={() => setVisible(false)} aria-label={t.close} className="p-1 opacity-70 hover:opacity-100">
