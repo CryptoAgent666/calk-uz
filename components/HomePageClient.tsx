@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useRef, useEffect, useCallback } from "react"
 import { useTranslations, useLocale } from "next-intl"
-import { Link } from "@/i18n/navigation"
+import { Link, useRouter } from "@/i18n/navigation"
 import { motion } from "framer-motion"
 import {
   Search,
@@ -76,6 +76,7 @@ interface HomePageClientProps {
 export default function HomePageClient({ richIntro }: HomePageClientProps = {}) {
   const t = useTranslations()
   const locale = useLocale()
+  const router = useRouter()
   const [search, setSearch] = useState("")
   const [activeCategory, setActiveCategory] = useState<string>("all")
 
@@ -100,6 +101,70 @@ export default function HomePageClient({ richIntro }: HomePageClientProps = {}) 
 
     return result.sort((a, b) => a.priority - b.priority)
   }, [search, activeCategory])
+
+  // ─── Hero search dropdown ────────────────────────────────────────────────
+  // The grid below the fold already filters, but from the hero viewport typing
+  // looked like nothing happened. Surface the top matches right under the input
+  // and let Enter jump to the full results.
+  const [open, setOpen] = useState(false)
+  const [highlight, setHighlight] = useState(-1)
+  const searchBoxRef = useRef<HTMLDivElement>(null)
+  const resultsRef = useRef<HTMLDivElement>(null)
+
+  const suggestions = useMemo(
+    () => (search.trim() ? filteredCalculators.slice(0, 5) : []),
+    [search, filteredCalculators]
+  )
+
+  // Reopen and reset the cursor whenever the query changes.
+  useEffect(() => {
+    setOpen(search.trim().length > 0)
+    setHighlight(-1)
+  }, [search])
+
+  // Close on outside click — a dropdown that survives a click elsewhere reads as stuck.
+  useEffect(() => {
+    if (!open) return
+    const onDown = (e: MouseEvent) => {
+      if (!searchBoxRef.current?.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener("mousedown", onDown)
+    return () => document.removeEventListener("mousedown", onDown)
+  }, [open])
+
+  const scrollToResults = useCallback(() => {
+    setOpen(false)
+    resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }, [])
+
+  const onSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Escape") {
+      setOpen(false)
+      return
+    }
+    if (!open || suggestions.length === 0) {
+      if (e.key === "Enter") scrollToResults()
+      return
+    }
+    if (e.key === "ArrowDown") {
+      e.preventDefault()
+      setHighlight((i) => (i + 1) % suggestions.length)
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault()
+      setHighlight((i) => (i <= 0 ? suggestions.length - 1 : i - 1))
+    } else if (e.key === "Enter") {
+      e.preventDefault()
+      if (highlight < 0) {
+        // Nothing picked → treat Enter as "show me everything".
+        scrollToResults()
+      } else {
+        // Focus stays in the input, so the highlighted <Link> never receives the
+        // key — navigate explicitly.
+        setOpen(false)
+        router.push(`/calculator/${suggestions[highlight].slug}`)
+      }
+    }
+  }
 
   const getTitle = (c: CalculatorMeta) => (locale === "uz" ? c.titleUz : c.titleRu)
   const getDescription = (c: CalculatorMeta) => (locale === "uz" ? c.descriptionUz : c.descriptionRu)
@@ -166,15 +231,77 @@ export default function HomePageClient({ richIntro }: HomePageClientProps = {}) 
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-8 max-w-xl mx-auto"
             >
-              <div className="relative group">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground/60 group-focus-within:text-emerald-600 transition-colors" />
+              <div className="relative group" ref={searchBoxRef}>
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground/60 group-focus-within:text-emerald-600 transition-colors z-10" />
                 <Input
                   type="text"
                   placeholder={t("hero_search_placeholder")}
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
+                  onKeyDown={onSearchKeyDown}
+                  onFocus={() => search.trim() && setOpen(true)}
+                  // Clicking an already-focused input fires no focus event, so
+                  // after Escape the list would stay shut until the next keystroke.
+                  onClick={() => search.trim() && setOpen(true)}
+                  role="combobox"
+                  aria-expanded={open && search.trim().length > 0}
+                  aria-controls="hero-search-results"
+                  aria-autocomplete="list"
+                  aria-activedescendant={highlight >= 0 ? `hero-search-opt-${highlight}` : undefined}
                   className="w-full h-14 pl-12 pr-4 text-base rounded-2xl bg-background/95 backdrop-blur-sm border-white/20 shadow-xl shadow-black/10 focus:border-emerald-400 focus:ring-emerald-400/20 placeholder:text-muted-foreground/50"
                 />
+
+                {open && search.trim() && (
+                  <div
+                    id="hero-search-results"
+                    role="listbox"
+                    className="absolute left-0 right-0 top-full z-20 mt-2 max-h-[min(60vh,26rem)] overflow-y-auto rounded-2xl border border-border bg-popover text-left shadow-2xl"
+                  >
+                    {suggestions.length === 0 ? (
+                      <p className="px-4 py-3 text-sm text-muted-foreground">
+                        {locale === "uz" ? "Hech narsa topilmadi" : "Ничего не найдено"}
+                      </p>
+                    ) : (
+                      <>
+                        {suggestions.map((c, i) => (
+                          <Link
+                            key={c.slug}
+                            href={`/calculator/${c.slug}`}
+                            id={`hero-search-opt-${i}`}
+                            role="option"
+                            aria-selected={i === highlight}
+                            onMouseEnter={() => setHighlight(i)}
+                            onClick={() => setOpen(false)}
+                            className={`flex items-center gap-3 px-4 py-3 transition-colors ${
+                              i === highlight ? "bg-accent" : "hover:bg-accent/60"
+                            }`}
+                          >
+                            <span className="min-w-0 flex-1">
+                              <span className="block truncate text-sm font-medium text-foreground">
+                                {getTitle(c)}
+                              </span>
+                              <span className="block truncate text-xs text-muted-foreground">
+                                {getCategoryName(c.category)}
+                              </span>
+                            </span>
+                            <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                          </Link>
+                        ))}
+                        {filteredCalculators.length > suggestions.length && (
+                          <button
+                            type="button"
+                            onClick={scrollToResults}
+                            className="w-full border-t border-border px-4 py-2.5 text-center text-xs font-medium text-emerald-700 transition-colors hover:bg-accent dark:text-emerald-400"
+                          >
+                            {locale === "uz"
+                              ? `Barcha ${filteredCalculators.length} ta natijani ko'rish`
+                              : `Показать все ${filteredCalculators.length}`}
+                          </button>
+                        )}
+                      </>
+                    )}
+                  </div>
+                )}
               </div>
             </motion.div>
           </div>
@@ -241,7 +368,7 @@ export default function HomePageClient({ richIntro }: HomePageClientProps = {}) 
       </section>
 
       {/* Calculator Grid */}
-      <section className="py-8 pb-20">
+      <section className="py-8 pb-20" ref={resultsRef}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Results count */}
           <div className="mb-6 flex items-center justify-between">
