@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Sparkles } from "lucide-react"
+import { Sparkles, PlayCircle } from "lucide-react"
 import { useLocale } from "next-intl"
 import {
   isAdFree,
@@ -13,6 +13,13 @@ import {
   REMOVE_ADS_FALLBACK_PRICE,
 } from "@/lib/purchases"
 import { emitIap } from "@/lib/telemetry"
+import {
+  rewardedAvailable,
+  showRewardedAd,
+  rewardHoursLeft,
+  onTempAdFreeChange,
+  REWARD_HOURS,
+} from "@/lib/rewarded"
 
 /**
  * Кнопка «Убрать рекламу навсегда» + «Восстановить покупку» (место 1 из 3).
@@ -24,7 +31,8 @@ export function RemoveAdsButton() {
   const locale = useLocale()
   const [adFree, setAdFree] = useState(isAdFree())
   const [price, setPrice] = useState<string | null>(null)
-  const [busy, setBusy] = useState<"buy" | "restore" | null>(null)
+  const [busy, setBusy] = useState<"buy" | "restore" | "reward" | null>(null)
+  const [hoursLeft, setHoursLeft] = useState(0)
 
   const t =
     locale === "uz"
@@ -36,6 +44,10 @@ export function RemoveAdsButton() {
           restore: "Xaridni tiklash",
           restoring: "Tiklanmoqda…",
           disabled: "✓ Reklama o'chirilgan",
+          watch: `Rolik ko'rish — ${REWARD_HOURS} soat reklamasiz`,
+          watching: "Rolik yuklanmoqda…",
+          active: (h: number) => `✓ Reklamasiz: yana ${h} soat`,
+          orFree: "yoki bepul:",
         }
       : {
           pitch: "120+ калькуляторов навсегда без рекламы — по цене пары чашек кофе ☕",
@@ -45,9 +57,17 @@ export function RemoveAdsButton() {
           restore: "Восстановить покупку",
           restoring: "Восстановление…",
           disabled: "✓ Реклама отключена",
+          watch: `Смотреть ролик — ${REWARD_HOURS} ч без рекламы`,
+          watching: "Загружаем ролик…",
+          active: (h: number) => `✓ Без рекламы: ещё ${h} ч`,
+          orFree: "или бесплатно:",
         }
 
   useEffect(() => onAdFreeChange(setAdFree), [])
+  useEffect(() => {
+    setHoursLeft(rewardHoursLeft())
+    return onTempAdFreeChange(() => setHoursLeft(rewardHoursLeft()))
+  }, [])
   useEffect(() => {
     void getRemoveAdsPrice().then(setPrice)
   }, [])
@@ -91,6 +111,15 @@ export function RemoveAdsButton() {
       setBusy(null)
     }
   }
+  const watch = async () => {
+    setBusy("reward")
+    try {
+      await showRewardedAd()
+    } finally {
+      setBusy(null)
+      setHoursLeft(rewardHoursLeft())
+    }
+  }
 
   return (
     <div className="rounded-xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 p-4 dark:border-emerald-900 dark:from-emerald-950 dark:to-teal-950">
@@ -104,6 +133,29 @@ export function RemoveAdsButton() {
         {busy === "buy" ? t.processing : `${t.removeForever} — ${price ?? REMOVE_ADS_FALLBACK_PRICE}`}
       </button>
       <p className="mt-2 text-center text-xs text-muted-foreground">{t.oneTime}</p>
+
+      {/* Free rung: a rewarded video buys 24 h of quiet. Hidden once a window is
+          already running — nothing to gain from stacking, and it would read as
+          a broken button. */}
+      {rewardedAvailable() &&
+        (hoursLeft > 0 ? (
+          <p className="mt-3 rounded-lg bg-emerald-100 px-3 py-2 text-center text-xs font-medium text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-300">
+            {t.active(hoursLeft)}
+          </p>
+        ) : (
+          <>
+            <p className="mt-3 text-center text-xs text-muted-foreground">{t.orFree}</p>
+            <button
+              onClick={watch}
+              disabled={busy !== null}
+              className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg border border-emerald-300 px-4 py-2.5 text-sm font-medium text-emerald-800 transition-colors hover:bg-emerald-100 disabled:opacity-60 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-900/40"
+            >
+              <PlayCircle className="h-4 w-4" />
+              {busy === "reward" ? t.watching : t.watch}
+            </button>
+          </>
+        ))}
+
       <button
         onClick={restore}
         disabled={busy !== null}

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react"
 import { usePathname } from "next/navigation"
-import { initPurchases, isAdFree, onAdFreeChange } from "@/lib/purchases"
+import { initPurchases, isAdFree } from "@/lib/purchases"
+import { adsHidden, onAdsHiddenChange, prepareRewardedAd } from "@/lib/rewarded"
 import { SUGGEST_REMOVE_ADS_EVENT } from "@/components/RemoveAdsToast"
 
 /**
@@ -15,8 +16,9 @@ import { SUGGEST_REMOVE_ADS_EVENT } from "@/components/RemoveAdsToast"
  *   `--admob-banner-height` so the "remove ads" bar can sit exactly above it.
  * - Interstitial: shown on calculator navigations, frequency-capped (every 4th
  *   open, min 120s apart) per AdMob policy — never on first load / unexpectedly.
- * - All ads are gated on isAdFree(): a one-time "remove ads" purchase (RevenueCat)
- *   disables banner + interstitials instantly (see lib/purchases.ts).
+ * - All ads are gated on adsHidden(): either the one-time "remove ads" purchase
+ *   (RevenueCat, permanent — lib/purchases.ts) or an active rewarded-video window
+ *   (24 h — lib/rewarded.ts). Both tear the banner down instantly.
  */
 const BANNER_ID = "ca-app-pub-4859241862365215/5901135885"
 const INTERSTITIAL_ID = "ca-app-pub-4859241862365215/1401442070"
@@ -67,7 +69,7 @@ export function NativeAds() {
           if (px > 0) document.documentElement.style.setProperty("--admob-banner-height", `${px}px`)
         })
 
-        if (isAdFree()) return // purchased — no banner, no interstitial
+        if (adsHidden()) return // bought forever, or inside a reward window
 
         await AdMob.showBanner({
           adId: BANNER_ID,
@@ -82,9 +84,12 @@ export function NativeAds() {
       }
     })()
 
-    // If the purchase completes while the app is open, tear ads down immediately.
-    const unsub = onAdFreeChange((adFree) => {
-      if (adFree) void hideAllAds()
+    // Preload a rewarded video so the "watch for 24 h" button responds instantly.
+    if (!isAdFree()) void prepareRewardedAd()
+
+    // Purchase OR a granted reward window: tear ads down immediately.
+    const unsub = onAdsHiddenChange((hidden) => {
+      if (hidden) void hideAllAds()
     })
 
     return () => {
@@ -97,7 +102,7 @@ export function NativeAds() {
   // Interstitial on calculator navigations, frequency-capped. Skipped when ad-free.
   useEffect(() => {
     if (typeof window === "undefined" || !isAndroidApp()) return
-    if (isAdFree()) return
+    if (adsHidden()) return
     if (!pathname || !pathname.includes("/calculator/")) return
     navCount.current += 1
     const now = Date.now()
@@ -112,7 +117,7 @@ export function NativeAds() {
           // After every 2nd interstitial, nudge the "remove ads" toast — right when
           // a full-screen ad just interrupted the user (best conversion moment).
           interstitialCount.current += 1
-          if (interstitialCount.current % 2 === 0 && !isAdFree()) {
+          if (interstitialCount.current % 2 === 0 && !adsHidden()) {
             window.dispatchEvent(new CustomEvent(SUGGEST_REMOVE_ADS_EVENT))
           }
           await AdMob.prepareInterstitial({ adId: INTERSTITIAL_ID }) // preload the next one

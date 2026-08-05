@@ -16,15 +16,20 @@ import UIKit
 import GoogleMobileAds
 import AppTrackingTransparency
 
-final class AdMobManager {
+final class AdMobManager: NSObject {
 
     static let shared = AdMobManager()
-    private init() {}
+    private override init() { super.init() }
 
     private let bannerUnitID = "ca-app-pub-4859241862365215/1031952587"
     private let interstitialUnitID = "ca-app-pub-4859241862365215/9078833104"
+    /// Google's official TEST rewarded unit — replace with the real AdMob unit before release.
+    private let rewardedUnitID = "ca-app-pub-3940256099942544/1712485313"
 
     private var interstitial: InterstitialAd?
+    private var rewarded: RewardedAd?
+    private var rewardCompletion: ((Bool) -> Void)?
+    private var rewardEarned = false
     private var lastInterstitial = Date.distantPast
     private var navSinceInterstitial = 0
 
@@ -32,6 +37,7 @@ final class AdMobManager {
     func start() {
         MobileAds.shared.start(completionHandler: { [weak self] _ in
             self?.loadInterstitial()
+            self?.loadRewarded()
         })
     }
 
@@ -61,9 +67,48 @@ final class AdMobManager {
         }
     }
 
+    // MARK: - Rewarded ("watch a video → 24 h without ads")
+
+    private func loadRewarded() {
+        RewardedAd.load(with: rewardedUnitID, request: Request()) { [weak self] ad, _ in
+            self?.rewarded = ad
+        }
+    }
+
+    /// True once a rewarded video is loaded and can be presented right away.
+    var isRewardedReady: Bool { rewarded != nil }
+
+    /// Present the rewarded video. `completion(true)` only when the user watched
+    /// far enough to earn the reward — dismissing early grants nothing, per AdMob
+    /// policy. Grants the 24 h window itself so every caller behaves the same.
+    /// Settled once from `adDidDismissFullScreenContent` (or immediately on failure).
+    func showRewarded(from vc: UIViewController, completion: @escaping (Bool) -> Void) {
+        guard let ad = rewarded else {
+            loadRewarded() // nothing cached — warm one up for the next tap
+            completion(false)
+            return
+        }
+        rewarded = nil
+        rewardEarned = false
+        rewardCompletion = completion
+        ad.fullScreenContentDelegate = self
+        ad.present(from: vc) { [weak self] in
+            self?.rewardEarned = true
+            PurchasesManager.shared.grantTempAdFree()
+        }
+    }
+
+    /// Call the pending completion exactly once, then preload the next video.
+    private func settleReward() {
+        let done = rewardCompletion
+        rewardCompletion = nil
+        done?(rewardEarned)
+        loadRewarded()
+    }
+
     /// Count a calculator navigation and, subject to the cap, show an interstitial.
     func noteNavigationAndMaybeShowInterstitial(from vc: UIViewController) {
-        guard !PurchasesManager.shared.isAdFree else { return }
+        guard !PurchasesManager.shared.adsHidden else { return }
         navSinceInterstitial += 1
         guard let ad = interstitial,
               navSinceInterstitial >= 4,
@@ -73,5 +118,17 @@ final class AdMobManager {
         interstitial = nil
         ad.present(from: vc)
         loadInterstitial() // preload the next one
+    }
+}
+
+// MARK: - FullScreenContentDelegate (rewarded)
+
+extension AdMobManager: FullScreenContentDelegate {
+    func adDidDismissFullScreenContent(_ ad: FullScreenPresentingAd) {
+        settleReward()
+    }
+
+    func ad(_ ad: FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        settleReward()
     }
 }

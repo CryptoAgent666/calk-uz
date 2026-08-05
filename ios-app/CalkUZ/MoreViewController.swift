@@ -84,6 +84,14 @@ final class MoreViewController: UIViewController {
                 Row(title: "✓ Реклама отключена", subtitle: "Спасибо за поддержку!",
                     icon: "checkmark.seal.fill", action: {})
             ]))
+        } else if PurchasesManager.shared.isTempAdFree {
+            // Reward window is running: say how long it lasts, but keep the row
+            // tappable — the permanent purchase is still the thing being sold.
+            let hours = PurchasesManager.shared.rewardHoursLeft
+            result.append((header: nil, rows: [
+                Row(title: "Без рекламы: ещё \(hours) ч", subtitle: "Убрать рекламу навсегда",
+                    icon: "clock.badge.checkmark", action: { [weak self] in self?.openRemoveAds() })
+            ]))
         } else {
             result.append((header: nil, rows: [
                 Row(title: "Убрать рекламу навсегда", subtitle: "Разовая покупка — по цене пары чашек кофе",

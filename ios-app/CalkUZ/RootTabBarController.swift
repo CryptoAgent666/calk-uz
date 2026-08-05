@@ -120,7 +120,7 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
         setupRemoveAdsBar()
         // Tear the banner + bar down instantly if "remove ads" is purchased/restored.
         NotificationCenter.default.addObserver(forName: PurchasesManager.adFreeChanged, object: nil, queue: .main) { [weak self] _ in
-            if PurchasesManager.shared.isAdFree { self?.teardownAds() }
+            if PurchasesManager.shared.adsHidden { self?.teardownAds() }
         }
     }
 
@@ -139,7 +139,7 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
     private func setupAdBanner() {
         // No ads in App Store screenshots / IAP review captures.
         if ProcessInfo.processInfo.environment["CALK_SCREENSHOT_MODE"] == "1" { return }
-        guard !PurchasesManager.shared.isAdFree else { return }
+        guard !PurchasesManager.shared.adsHidden else { return }
         let banner = AdMobManager.shared.makeBanner(width: view.bounds.width, root: self)
         banner.backgroundColor = .clear
         view.addSubview(banner)
@@ -149,7 +149,7 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
 
     private func setupRemoveAdsBar() {
         if ProcessInfo.processInfo.environment["CALK_SCREENSHOT_MODE"] == "1" { return }
-        guard !PurchasesManager.shared.isAdFree, !barDismissed else { return }
+        guard !PurchasesManager.shared.adsHidden, !barDismissed else { return }
         let bar = RemoveAdsBarView()
         bar.onTap = { PurchasesManager.shared.buy { _ in } }  // StoreKit sheet confirms; teardown via notification
         bar.onClose = { [weak self] in

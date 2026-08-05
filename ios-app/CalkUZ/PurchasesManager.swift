@@ -33,6 +33,39 @@ final class PurchasesManager: NSObject {
     /// Synchronous, cached — safe to gate ads instantly and offline.
     var isAdFree: Bool { UserDefaults.standard.bool(forKey: cacheKey) }
 
+    // MARK: - Rewarded window (watch a video → 24 h without ads)
+
+    private let untilKey = "calk_ad_free_until"
+
+    /// Hours one watched video buys.
+    static let rewardHours = 24
+
+    /// End of the current reward window, or nil when there is none / it expired.
+    var tempAdFreeUntil: Date? {
+        let t = UserDefaults.standard.double(forKey: untilKey)
+        guard t > 0 else { return nil }
+        let date = Date(timeIntervalSince1970: t)
+        return date > Date() ? date : nil
+    }
+
+    var isTempAdFree: Bool { tempAdFreeUntil != nil }
+
+    /// Whole hours left in the reward window, rounded up (0 when inactive).
+    var rewardHoursLeft: Int {
+        guard let until = tempAdFreeUntil else { return 0 }
+        return max(1, Int(ceil(until.timeIntervalSinceNow / 3600)))
+    }
+
+    /// The gate every ad path checks: bought forever OR inside a reward window.
+    var adsHidden: Bool { isAdFree || isTempAdFree }
+
+    /// Grant the window after the user actually earned the reward.
+    func grantTempAdFree(hours: Int = PurchasesManager.rewardHours) {
+        let until = Date().addingTimeInterval(TimeInterval(hours) * 3600)
+        UserDefaults.standard.set(until.timeIntervalSince1970, forKey: untilKey)
+        NotificationCenter.default.post(name: Self.adFreeChanged, object: nil)
+    }
+
     private func setAdFree(_ value: Bool) {
         guard value != isAdFree else { return }
         UserDefaults.standard.set(value, forKey: cacheKey)
