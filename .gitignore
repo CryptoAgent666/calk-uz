@@ -77,3 +77,8 @@ ios-app/build/
 ios-app/**/xcuserdata/
 ios-app/DerivedData/
 **/*.xcarchive
+
+# signing keys — never commit (keystore lives in ~/Keys,
+# passwords in ~/.gradle/gradle.properties)
+*.keystore
+*.jks

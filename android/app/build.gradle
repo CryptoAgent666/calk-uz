@@ -18,10 +18,21 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('../calkuz-release.keystore')
-            storePassword System.getenv('CALKUZ_KEYSTORE_PASSWORD') ?: 'calkuz2026'
-            keyAlias System.getenv('CALKUZ_KEY_ALIAS') ?: 'calkuz'
-            keyPassword System.getenv('CALKUZ_KEY_PASSWORD') ?: 'calkuz2026'
+            // Креды живут ВНЕ репозитория: keystore — в ~/Keys, пароли —
+            // в ~/.gradle/gradle.properties (chmod 600). Раньше пароль лежал
+            // литералом прямо здесь, рядом с путём к ключу: секрет подписи
+            // в системе контроля версий — это один `git push` до инцидента.
+            // На CI/другой машине те же значения можно передать через CALKUZ_*.
+            def ksPath = findProperty('calkuzStoreFile') ?: System.getenv('CALKUZ_KEYSTORE')
+            def ksPass = findProperty('calkuzStorePassword') ?: System.getenv('CALKUZ_KEYSTORE_PASSWORD')
+            def ksAlias = findProperty('calkuzKeyAlias') ?: System.getenv('CALKUZ_KEY_ALIAS') ?: 'calk-uz'
+            def ksKeyPass = findProperty('calkuzKeyPassword') ?: System.getenv('CALKUZ_KEY_PASSWORD') ?: ksPass
+            if (ksPath && ksPass) {
+                storeFile file(ksPath)
+                storePassword ksPass
+                keyAlias ksAlias
+                keyPassword ksKeyPass
+            }
         }
     }
     buildTypes {
@@ -60,4 +71,13 @@ try {
     }
 } catch(Exception e) {
     logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}
+
+gradle.taskGraph.whenReady { graph ->
+    def releasing = graph.allTasks.any { it.name == 'bundleRelease' || it.name == 'assembleRelease' }
+    if (releasing && android.signingConfigs.release.storeFile == null) {
+        throw new GradleException(
+            "Release signing is not configured. Set calkuzStoreFile/calkuzStorePassword in " +
+            "~/.gradle/gradle.properties (chmod 600), or export CALKUZ_KEYSTORE/CALKUZ_KEYSTORE_PASSWORD.")
+    }
 }
