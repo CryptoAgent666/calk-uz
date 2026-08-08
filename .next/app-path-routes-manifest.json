@@ -1,0 +1,23 @@
+{
+  "/[locale]/about/page": "/[locale]/about",
+  "/[locale]/author/[slug]/page": "/[locale]/author/[slug]",
+  "/[locale]/calculator/[slug]/opengraph-image/route": "/[locale]/calculator/[slug]/opengraph-image",
+  "/[locale]/calculator/[slug]/page": "/[locale]/calculator/[slug]",
+  "/[locale]/category/[id]/page": "/[locale]/category/[id]",
+  "/[locale]/contact/page": "/[locale]/contact",
+  "/[locale]/methodology/page": "/[locale]/methodology",
+  "/[locale]/opengraph-image/route": "/[locale]/opengraph-image",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/privacy/page": "/[locale]/privacy",
+  "/[locale]/terms/page": "/[locale]/terms",
+  "/[locale]/updates/page": "/[locale]/updates",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/exchange-rates/route": "/api/exchange-rates",
+  "/api/iap-telemetry/route": "/api/iap-telemetry",
+  "/api/indexnow/route": "/api/indexnow",
+  "/api/telegram/webhook/route": "/api/telegram/webhook",
+  "/favicon.ico/route": "/favicon.ico",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml"
+}
