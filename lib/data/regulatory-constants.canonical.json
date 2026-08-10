@@ -116,7 +116,7 @@
       "notes": "Government-set mandatory motor TPL (ОСАГО) base tariffs by region and limited/unlimited driver list. Cited as Cabinet of Ministers Resolution No. 458, July 2025.  ||  2026-06-30 verify: current (ПКМ-458, eff 1 Jan 2026).",
       "official_value": "Tashkent limited base = 192000 UZS; other regions limited base = 160000 UZS",
       "source_url": "https://www.gazeta.uz/ru/2025/07/25/osago/",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-08-09"
     },
     {
       "id": "auto.ts__OSAGO coefficients (ageExp, bonus-malus)",
@@ -163,7 +163,7 @@
       "id": "customs.ts__CERTIFICATION_FEE_USD",
       "file": "lib/calculators/customs.ts",
       "key": "CERTIFICATION_FEE_USD",
-      "value": "690",
+      "value": "0 (сбор отменён)",
       "unit": "USD",
       "law": "Сбор за сертификацию ввозимого автомобиля (certification fee)",
       "theme": "customs",
@@ -175,10 +175,11 @@
       "last_updated_hint": null,
       "source_hint": "customs.uz / Узстандарт (сертификация автотранспорта)",
       "conflict": true,
-      "status": "uncertain",
-      "notes": "Certification fee fixed in USD, converted by USD→UZS rate. Verify whether actually a regulated fixed fee vs market; treated as regulated import cost here.  ||  2026-06-30 verify: still uncertain — sources vary 4–9.1 млн сум (~$711); $690 kept as defensible upper estimate.",
-      "source_url": "https://www.autostrada.uz/rastamozhka-uzbekistan/",
-      "last_verified": "2026-06-30"
+      "status": "current",
+      "notes": "Было 690 USD (≈8,2 млн сум) как обязательная строка растаможки — завышало итог, в т.ч. для электромобилей, которых ПКМ-597 прямо исключает из оценки экокласса. Исправлено в коде 2026-08-10.",
+      "source_url": "https://lex.uz/uz/docs/7735340",
+      "last_verified": "2026-08-09",
+      "official_value": "Экологическая сертификация ввозимых ТС категорий M/N отменена с 20.09.2025 (ПКМ-597, признало утратившим силу ПКМ-50 от 30.01.2020). Гос-регулируемой ставки нет; остаточная плата аккредитованному органу — договорная."
     },
     {
       "id": "customs.ts__CUSTOMS_DUTY_RATE",
@@ -205,7 +206,7 @@
       "id": "customs.ts__EV customs duty exemption (until 2027)",
       "file": "lib/calculators/customs.ts",
       "key": "EV customs duty exemption (until 2027)",
-      "value": "0% duty + 0 excise until 1 Jan 2030 (util/recycling fee NOT exempt: 120/210 БРВ since 1 May 2025)",
+      "value": "0% пошлины (постоянная ставка тарифа для ТН ВЭД 8703 80 с 01.01.2019) + 0 акциза (с 01.08.2019); утильсбор НЕ освобождён — 120/210 БРВ с 01.05.2025",
       "unit": "ratio / flag",
       "law": "Льгота: 0% таможенной пошлины и акциза на электромобили (EV import exemption), действует до 2027",
       "theme": "customs",
@@ -219,16 +220,16 @@
       "source_hint": "lex.uz (льготы на ввоз электромобилей)",
       "conflict": false,
       "status": "current",
-      "notes": "Electric vehicles get 0% customs duty, 0 excise and 0 utilization fee. Comment: 'until 2027' — check current sunset date.  ||  2026-06-30 verify: duty exemption until 2030 (key label '2027' obsolete). Related: EV recycling fee FIXED IN CODE 30/90 → 120/210 БРВ.",
-      "official_value": "0% duty + 0 excise, valid until 1 January 2030 (not 2027)",
-      "source_url": "https://kun.uz/ru/news/2022/12/20/elektromobili-i-gibridnyye-avtomobili-budut-osvobojdeny-ot-tamojyennoy-poshliny-do-1-yanvarya-2030-goda",
-      "last_verified": "2026-06-30"
+      "notes": "Привязка нуля к сроку 2030 была неверной атрибуцией; цифры не менялись. Комментарии в коде исправлены 2026-08-10.",
+      "official_value": "0% — постоянная ставка, а не срочная льгота. Срок «до 1 января 2030» из ПП-443 относится к машинокомплектам и оборудованию для ПРОИЗВОДСТВА электромобилей, к ввозу готовых — нет.",
+      "source_url": "https://lex.uz/docs/3802366",
+      "last_verified": "2026-08-09"
     },
     {
       "id": "customs.ts__EXCISE_RATES_PER_CC",
       "file": "lib/calculators/customs.ts",
       "key": "EXCISE_RATES_PER_CC",
-      "value": "superseded by DUTY_PER_CC_NEW: per-cc USD ≤1000=0.4,≤1500=0.6,≤1800=0.8,>1800=1.0; used ~3.0 $/cc",
+      "value": "новые ≤1 года: 15% + $0,4/0,6/0,8/1,0/1,25 за см³; 1–3 года: 30% + $1,8/2,0/2,5/3,0; б/у: 40% + $3,0",
       "unit": "USD per cm³ of engine volume",
       "law": "Акцизный налог на ввозимые автомобили по объёму двигателя (excise on imported cars)",
       "theme": "customs",
@@ -241,10 +242,10 @@
       "source_hint": "customs.uz / lex.uz (ставки акцизного налога на автотранспорт)",
       "conflict": false,
       "status": "current",
-      "notes": "USD-per-cc excise brackets by engine displacement; multiplied by engineVolumeCc and USD→UZS. 0 for electric. NOTE: differs from the BRV-per-cc excise table in calculator-tables.ts AUTO_TABLES (see auto excise table entry) — two different excise representations on the site.  ||  2026-06-30 verify: code reworked (Phase 4) to per-cc USD ladder — CONFIRMED correct (autostrada.uz). No separate БРВ excise on cars.",
-      "official_value": "USD-per-cc duty surcharge (new cars): <=1000cc=0.4; 1000-1500=0.6; 1500-1800=0.8; 1800-3000=1.0 $/cc (used 3yr+ ~3.0 $/cc on a 40% base)",
-      "source_url": "https://www.autostrada.uz/rastamozhka-uzbekistan/",
-      "last_verified": "2026-06-30"
+      "notes": "В коде не хватало средней группы «более 1 года, но менее 3 лет»; бинарный isNew отправлял её в льготные 15%. Добавлена трёхступенчатая ось ageBand 2026-08-10.",
+      "official_value": "Приложение № 1 к ПП-3818 в редакции ПП-58 от 11.02.2026 — ТРИ возрастные группы",
+      "source_url": "https://lex.uz/ru/docs/3802366",
+      "last_verified": "2026-08-09"
     },
     {
       "id": "customs.ts__UTILIZATION_FEE_BRV",
@@ -308,7 +309,7 @@
       "notes": "Vehicle registration госпошлина modeled as 1 BRV (approximate per comment). BRV=412000 → 412,000 UZS.  ||  2026-06-30 verify: re-checked — 13.04 БРВ CONFIRMED (ustabor.uz exact-sum breakdown; new plates 5.5 БРВ mandatory 2026). Earlier '3.5' = old base plate rate.",
       "official_value": "Регистрация ТС = 6.84 БРВ; выдача техпаспорта = 0.7 БРВ; выдача госномеров = 5.5 БРВ (электро/мото = 1.5 БРВ)",
       "source_url": "https://www.norma.uz/novoe_v_zakonodatelstve/obnovleny_stavki_za_registraciyu_avto",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-08-09"
     },
     {
       "id": "social.ts__NDFL rate on vacation/sick pay",
@@ -409,7 +410,7 @@
       "notes": "HARDCODED in social.ts. Overtime pay: first 2 hours on a weekday ×1.5, beyond 2 hours ×2.0; holiday/rest-day work ×2.0. overtimeMultiplier field reports 1.5 as the 'average shown in UI'. Statutory minimums per Labor Code.  ||  2026-06-30 verify: current (ст.262/263 ТК; 1.5×/2.0×; 120h cap repealed ЗРУ-1095).",
       "official_value": "{\"holiday\":2.0,\"first_2h_weekday\":1.5,\"after_2h_weekday\":2.0}",
       "source_url": "https://www.spot.uz/ru/2025/11/12/overtime",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-08-09"
     },
     {
       "id": "social.ts__calculatePension.formula (base 55%, +1%/yr, cap 75%)",
@@ -477,7 +478,7 @@
       "id": "social.ts__getMaternityPercent.tiers",
       "file": "lib/calculators/social.ts",
       "key": "getMaternityPercent.tiers",
-      "value": "{\"<10mo\":0,\"10-23mo\":75,\"24-59mo\":85,\">=60mo\":100}",
+      "value": "{\"<10mo\":0,\"10-24mo\":75,\"25-60mo\":85,\">=61mo\":100}",
       "unit": "percent of average earnings by insurance experience (months)",
       "law": "ПКМ №796 от 17.12.2025 (пособия по беременности и родам, ФГСС, с 2026)",
       "theme": "social",
@@ -489,9 +490,10 @@
       "source_hint": "lex.uz (Постановление КМ РУз №796 от 17.12.2025)",
       "conflict": false,
       "status": "current",
-      "notes": "HARDCODED tiers in social.ts. Maternity benefit % by insurance months: <10mo=0 (ineligible, min 10mo required), 10–23mo=75%, 2–5yr (24–59mo)=85%, 5yr+ (≥60mo)=100%. Paid by ФГСС; benefit is tax-exempt (NDFL=0).",
-      "official_value": "{\"<10mo\":0,\"10-24mo\":75,\"25-60mo\":85,\">=61mo\":100}",
-      "source_url": "https://www.spot.uz/ru/2025/12/19/social-security/"
+      "notes": "Прежние границы (10–23 / 24–59 / ≥60) промахивались на месяц на всех трёх. Исправлено 2026-08-10.",
+      "official_value": "ПКМ № 796 от 17.12.2025 — границы включающие: 10–24 / 25–60 / 61+",
+      "source_url": "https://lex.uz/docs/7926684",
+      "last_verified": "2026-08-09"
     },
     {
       "id": "social.ts__getSickLeavePercent.tiers",
@@ -699,7 +701,7 @@
       "id": "tax.ts__calculateVehicleTax.BRV_MULTIPLIERS",
       "file": "lib/calculators/tax.ts",
       "key": "calculateVehicleTax.BRV_MULTIPLIERS",
-      "value": "{\"<=1500cc\":1.5,\"1500-2000cc\":3,\"2000-3000cc\":5,\">3000cc\":7.5}",
+      "value": "УДАЛЕНО — транспортного налога в РУз не существует",
       "unit": "BRV-multiple per year (annual transport tax for passenger cars)",
       "law": "Налоговый кодекс РУз, ст. 446 (2026) — транспортный налог по объёму двигателя",
       "theme": "vehicle_tax",
@@ -710,15 +712,17 @@
       "last_updated_hint": "Code comment: 'per НК ст. 446 (2026)' — 2026 marker",
       "source_hint": "lex.uz / soliq.uz (Налоговый кодекс РУз, ст. 446, транспортный налог)",
       "conflict": false,
-      "status": "uncertain",
-      "notes": "HARDCODED brackets in tax.ts, NOT in constants file. Passenger-car annual transport tax in BRV: ≤1500cc=1.5 BRV, 1500–2000cc=3 BRV, 2000–3000cc=5 BRV, >3000cc=7.5 BRV. baseTax = multiplier × BRV (412000). ageFactor deliberately fixed at 1.0 (НК prescribes no age multiplier — see notes). At BRV=412000 → 618000 / 1236000 / 2060000 / 3090000 UZS.",
-      "source_url": "https://lex.uz/ru/docs/4674893"
+      "status": "removed",
+      "notes": "Шкала БРВ-множителей была занесена из законодательства Беларуси. Калькулятор переделан в расчёт госпошлин при постановке на учёт 2026-08-10.",
+      "source_url": "https://lex.uz/ru/docs/4674893",
+      "official_value": "Ст. 17 НК РУз — закрытый перечень из 10 налогов; транспортного среди них нет.",
+      "last_verified": "2026-08-09"
     },
     {
       "id": "tax.ts__calculateVehicleTax.ageFactor",
       "file": "lib/calculators/tax.ts",
       "key": "calculateVehicleTax.ageFactor",
-      "value": "1.0",
+      "value": "УДАЛЕНО вместе с калькулятором транспортного налога",
       "unit": "multiplier (vehicle-age factor for transport tax)",
       "law": "Налоговый кодекс РУз (транспортный налог зависит только от объёма двигателя)",
       "theme": "vehicle_tax",
@@ -729,9 +733,11 @@
       "last_updated_hint": "Aligned with НК ст. 446 (2026) note above",
       "source_hint": "lex.uz / soliq.uz (Налоговый кодекс РУз, транспортный налог)",
       "conflict": false,
-      "status": "current",
-      "notes": "HARDCODED 1.0 in tax.ts. Code comment states НК РУз does NOT prescribe a vehicle-age multiplier for base annual transport tax; ageFactor kept at 1.0 only for UI compatibility. Effectively a no-op, but documents a deliberate regulatory choice.",
-      "source_url": "https://lex.uz/ru/docs/4674893"
+      "status": "removed",
+      "notes": "Удалено 2026-08-10.",
+      "source_url": "https://lex.uz/ru/docs/4674893",
+      "official_value": "Неприменимо — налога не существует",
+      "last_verified": "2026-08-09"
     },
     {
       "id": "unique.ts__STATE_DUTIES (госпошлины)",
@@ -1785,7 +1791,7 @@
       "id": "utility-tariffs.ts__WATER_SEWAGE_RATE",
       "file": "lib/constants/utility-tariffs.ts",
       "key": "WATER_SEWAGE_RATE",
-      "value": "REMOVED (bundled into WATER_COLD_RATE)",
+      "value": "1120 сум/м³ с НДС (нетто 1000) — самостоятельный утверждённый тариф, отдельная строка в квитанции; в сводные 3808 уже заложен",
       "unit": "UZS_per_m3 (Tashkent region, incl. VAT)",
       "law": "Тарифная комиссия / Toshsuvta'minoti — тариф на канализацию/водоотведение",
       "theme": "utility_tariff",
@@ -1796,10 +1802,11 @@
       "last_updated_hint": "Effective July 2025 (inline comment); file header 2025 — freshness flag",
       "source_hint": "Toshsuvta'minoti / тарифная комиссия (Tashkent водоотведение)",
       "conflict": false,
-      "status": "removed",
-      "notes": "REMOVED 2026-07-06: separate sewage rate double-counted canalization. The Tashkent cold-water tariff (3808, WATER_COLD_RATE) already bundles sewerage for cold+hot (goldenpages: 1400+1000+1000 ×1.12). Deleted the constant and the (cold+hot)×1456 charge from utility-tariffs.ts + utilities.ts + calculator-tables.ts. 1456 was also a Tashkent-region figure, not city. calculateWaterCost now = cold×3808 + hot×8928.67.",
-      "source_url": "https://www.goldenpages.uz/en/komunal-tarifi/",
-      "last_verified": "2026-07-06"
+      "status": "current",
+      "notes": "Решение не начислять канализацию поверх 3808 верное, но формулировка «слита в тариф на воду» неточна. ⚠️ ПКМ-243 от 15.05.2026 поднял электричество и газ, воды НЕ касался — прежняя запись «повышение 1 июня 2026» ошибочна.",
+      "source_url": "https://api.uzsuv.uz/media/tariff/2026/04/toshkent_ru.pdf",
+      "last_verified": "2026-08-09",
+      "official_value": "Питьевая вода 1568 сум/м³, сточные воды 1120 сум/м³ (с НДС). Нетто-тарифы не менялись с 15.12.2023; версия с НДС — с 01.04.2024."
     },
     {
       "id": "calculator-tables.ts__AUTO excise table (БРВ per cc)",
@@ -2138,14 +2145,14 @@
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-08-09"
     },
     {
       "id": "ApartmentCostCalculator.tsx__apartment_notary_tariff_rate",
       "file": "components/calculators/ApartmentCostCalculator.tsx",
       "key": "apartment_notary_tariff_rate",
       "value": "fixed 1 БРВ (412000) in Tashkent/regional centres, 0.5 БРВ elsewhere (NOT a %)",
-      "unit": "fraction of contract value (0.5%)",
+      "unit": "БРВ-multiple (фиксированный, НЕ процент от цены договора)",
       "law": "Нотариальный тариф за удостоверение договора отчуждения недвижимости — регулируемая ставка нотариального тарифа (Положение о нотариальных тарифах РУз)",
       "theme": "notary_tariff",
       "is_gov_regulated": true,
@@ -2156,7 +2163,7 @@
       "source_hint": "lex.uz — нотариальные тарифы РУз (ставка за удостоверение договора отчуждения недвижимого имущества); verify 0.5%",
       "conflict": false,
       "status": "current",
-      "notes": "Inline `const notaryFee = totalPrice * 0.005` — hardcoded 0.5% notary tariff on property contract value. Not in ledger. [completeness pass 2026-06-25]  ||  2026-06-30 FIXED IN CODE: 0.5% → fixed 1 БРВ (ApartmentCostCalculator.tsx).",
+      "notes": "Тариф фиксированный: 1 БРВ в Ташкенте/Нукусе/облцентрах, 0,5 БРВ в остальных населённых пунктах. В поле unit ошибочно стояло «fraction of contract value (0.5%)».",
       "official_value": "State duty (госпошлина) for notarial certification of a real-estate alienation contract is a FIXED fee: 1 БРВ (= 412,000 UZS in 2026) in Tashkent, Nukus and regional centres; 0.5 БРВ (= 206,000 UZS) in other localities. It is NOT a 0.5% (0.005) percentage of the contract value.",
       "source_url": "https://lex.uz/ru/docs/6306838",
       "source_title": "Podrobno.uz — изменился размер госпошлины при купле-продаже недвижимости (Закон 'О государственной пошлине')",
@@ -2164,7 +2171,7 @@
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-08-09"
     },
     {
       "id": "calculator-articles.ts__NDFL_NONRESIDENT_RATE",
@@ -2609,7 +2616,7 @@
       "verify_confidence": "high",
       "verified_date": "2026-07-20",
       "verify_method": "tier2-web-2026-07-20-primary-lex.uz",
-      "last_verified": "2026-07-20"
+      "last_verified": "2026-08-09"
     },
     {
       "id": "calculator-articles.ts__MIN_ANNUAL_PAID_LEAVE",
@@ -3171,7 +3178,7 @@
       "id": "calculator-articles.ts__VEHICLE_TAX_PAYMENT_DEADLINE",
       "file": "lib/data/calculator-articles.ts",
       "key": "VEHICLE_TAX_PAYMENT_DEADLINE",
-      "value": "1 December of the current year",
+      "value": "УДАЛЕНО — срока нет, т.к. нет самого налога",
       "unit": "date/deadline",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "vehicle_tax",
@@ -3183,21 +3190,22 @@
       "last_updated_hint": null,
       "source_hint": "lex.uz/ru/docs/4674893 — транспортный налог до 1 декабря",
       "conflict": true,
-      "status": "uncertain",
-      "notes": "Vehicle tax due by 1 December. NOTE inconsistency: the vehicle-tax quick-answer (line 107/109) states 15 April of the following year. Not in ledger. [completeness pass 2026-06-25]",
-      "official_value": "Property and land tax for INDIVIDUALS is paid in two equal installments by 15 April and 15 October (Tax Code art. ~423). A standalone '1 December' vehicle-tax deadline for individuals could not be confirmed in any current primary source; the ledger's own quick-answer says '15 April of the following year'. Most likely the correct deadline is NOT 1 December.",
-      "source_url": "https://lex.uz/ru/docs/4674893",
+      "status": "removed",
+      "notes": "И «1 декабря», и «15 апреля» были неверны. Удалено 2026-08-10.",
+      "official_value": "15 апреля и 15 октября — сроки уплаты налога на имущество и земельного налога физлиц, к ТС отношения не имеют",
+      "source_url": "https://gov.uz/ru/advice/70/document/1331",
       "source_title": "lex.uz — Налоговый кодекс РУз (Имущество/транспорт, сроки уплаты)",
       "verify_note": "Self-contradictory in the ledger (1 Dec vs 15 Apr); UZ individual property/land tax uses 15 Apr + 15 Oct installments, so the '1 December' figure is doubtful — verify against Tax Code before trusting (primary article text is paywalled).",
       "verify_confidence": "low",
       "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verify_method": "tier2-web-2026-06-27",
+      "last_verified": "2026-08-09"
     },
     {
       "id": "calculator-articles.ts__VEHICLE_TAX_EV_EXEMPTION_UNTIL",
       "file": "lib/data/calculator-articles.ts",
       "key": "VEHICLE_TAX_EV_EXEMPTION_UNTIL",
-      "value": "EVs subject to vehicle tax from 1 Jan 2026 (exemption expired 31.12.2025, not extended); customs-duty exemption until 1 Jan 2030 remains; hybrids 50%",
+      "value": "УДАЛЕНО — занос из НК Республики Беларусь",
       "unit": "year / fraction",
       "law": "Налоговый кодекс РУз / госпрограмма электротранспорта (lex.uz/ru/docs/4674893)",
       "theme": "vehicle_tax",
@@ -3210,22 +3218,22 @@
       "last_updated_hint": null,
       "source_hint": "lex.uz/ru/docs/4674893 — освобождение электромобилей от транспортного налога до 2030",
       "conflict": false,
-      "status": "current",
-      "notes": "EVs exempt from VEHICLE tax until 2030; hybrids taxed at 50% of base. Distinct from the customs EV duty exemption (until 2027) already in the ledger. Not in ledger as a vehicle-tax item. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
-      "official_value": "Electric passenger cars are NO LONGER exempt from vehicle tax. The rule that did not treat M1/M1G electric cars as objects of vehicle tax expired on 31.12.2025 and was NOT extended — from 1 January 2026 electric vehicles ARE subject to vehicle tax. 'Exempt until 2030' is incorrect.",
-      "source_url": "https://www.gazeta.uz/ru/2025/12/31/legislation/",
+      "status": "removed",
+      "notes": "Источником записи был auto.onliner.by (белорусский сайт); формулировка про категории M1/M1G и истечение льготы 31.12.2025 — из белорусского законодательства. Удалено 2026-08-10.",
+      "official_value": "Неприменимо к РУз",
+      "source_url": "https://lex.uz/ru/docs/4674893",
       "source_title": "Gazeta.uz — Что изменилось с 1 января 2026 года / Налоговые изменения 2026",
       "verify_note": "STALE: EV vehicle-tax exemption ended 31.12.2025 (not prolonged); EVs taxed from 2026. NB: this is separate from the EV IMPORT customs-duty 0% rate, which still runs (≈until 2027). Hybrid-50% claim also unverified.",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-08-09"
     },
     {
       "id": "calculator-articles.ts__VEHICLE_TAX_RATES_OTHER_VEHICLES_BRV",
       "file": "lib/data/calculator-articles.ts",
       "key": "VEHICLE_TAX_RATES_OTHER_VEHICLES_BRV",
-      "value": "motorcycle/moped: 0.5 БРВ; trucks <=2t: 3, 2-5t: 5, >5t: 7 БРВ; trailers: 1.5 БРВ; buses: 5-14 БРВ",
+      "value": "УДАЛЕНО — шкалы транспортного налога по типам ТС в РУз нет",
       "unit": "BRV-multiple/year",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "vehicle_tax",
@@ -3237,15 +3245,16 @@
       "last_updated_hint": null,
       "source_hint": "lex.uz/ru/docs/4674893 — ставки транспортного налога по типам ТС",
       "conflict": false,
-      "status": "uncertain",
-      "notes": "Vehicle tax for non-car vehicles (motorcycles, trucks by tonnage, trailers, buses). Ledger only has passenger-car BRV multipliers by engine cc; these other-vehicle rates are not present. [completeness pass 2026-06-25]",
-      "official_value": "Vehicle-tax rates (cars and other vehicles) were indexed upward by ~6.95% on average for 2026. The specific non-car БРВ multipliers in the ledger (motorcycle 0.5; trucks 3/5/7 by tonnage; trailers 1.5; buses 5–14) could not be matched against a current primary schedule and may be outdated after the 2026 indexation.",
+      "status": "removed",
+      "notes": "Занос из законодательства Беларуси. Удалено 2026-08-10.",
+      "official_value": "Ст. 17 НК РУз — транспортный налог отсутствует",
       "source_url": "https://lex.uz/ru/docs/4674893",
       "source_title": "lex.uz — Налоговый кодекс РУз (ставки транспортного налога)",
       "verify_note": "2026 brought ~6.95% indexation of all vehicle-tax rates, so fixed БРВ multiples should be re-checked against the current Tax Code annex; exact non-car figures not confirmed (primary annex paywalled).",
       "verify_confidence": "low",
       "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verify_method": "tier2-web-2026-06-27",
+      "last_verified": "2026-08-09"
     },
     {
       "id": "calculator-articles.ts__CORPORATE_TAX_SPECIAL_RATES",
@@ -3601,7 +3610,7 @@
       "id": "calculator-articles.ts__PENSION_EARLY_RETIREMENT_WOMEN_2026",
       "file": "lib/data/calculator-articles.ts",
       "key": "PENSION_EARLY_RETIREMENT_WOMEN_2026",
-      "value": "women with 20+ years service may retire at 54 (1 year early) from June 2026",
+      "value": "женщины со стажем 20+ лет — выход в 54 года (ст. 12¹ Закона о госпенсионном обеспечении)",
       "unit": "age/years",
       "law": "Закон о пенсионном обеспечении / Закон №1101 (lex.uz)",
       "theme": "pension",
@@ -3614,14 +3623,15 @@
       "source_hint": "lex.uz — досрочный выход на пенсию женщин с 20+ лет стажа с июня 2026",
       "conflict": false,
       "status": "current",
-      "notes": "From June 2026 women with 20+ years of service may retire 1 year early, at 54. Ledger has female retirement age 55; this early-retirement provision is new. [completeness pass 2026-06-25]",
-      "official_value": "Women with 20+ years of service may retire 1 year early, at 54 (vs standard 55). From June 2026 these early pensions are assigned automatically (proactively) without a separate application.",
-      "source_url": "https://kapital.uz/snizit-pensionnyj-vozrast/",
+      "notes": "Значение 54 верно, но привязка «с июня 2026» была ошибочной — норме больше 25 лет. Проза сайта цитирует редакцию корректно, правка не требовалась.",
+      "official_value": "Норма введена Законом РУз № 760-I от 14.04.1999 (в силе с 01.07.1999); действующая редакция — ЗРУ-922 от 18.03.2024",
+      "source_url": "https://lex.uz/ru/docs/112312",
       "source_title": "Kapital.uz — Женщинам со стажем 20 лет снизят пенсионный возраст на год",
       "verify_note": "Retire-at-54 right for women with 20+ yrs confirmed; the June 2026 change makes assignment automatic. Ledger value correct (note: it formalizes/automates an existing entitlement).",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verify_method": "tier2-web-2026-06-27",
+      "last_verified": "2026-08-09"
     },
     {
       "id": "calculator-articles.ts__REMITTANCE_DECLARATION_FREE_LIMIT",
@@ -3675,7 +3685,7 @@
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-08-09"
     },
     {
       "id": "calculator-articles.ts__STATE_DUTY_COURT_CLAIM_PERCENT",
@@ -3795,6 +3805,8 @@
         "MISC"
       ]
     },
-    "last_reconcile": "2026-07-03"
+    "last_reconcile": "2026-07-03",
+    "last_verification_sweep": "2026-08-09",
+    "last_verification_note": "Сверка по первоисточникам после алерта DATA_HUB: 30 позиций, 12 устарели, 15 подтверждены, 1 отбита скептиком, 2 неясны. Правки применены в коде 2026-08-10."
   }
 }
