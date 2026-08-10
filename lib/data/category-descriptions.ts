@@ -16,12 +16,12 @@ export const CATEGORY_DESCRIPTIONS: Record<CategoryId, CategoryDescription> = {
     titleRu: 'Налоговые калькуляторы',
     titleUz: 'Soliq kalkulyatorlari',
     descriptionRu:
-      'Рассчитайте все виды налогов в Узбекистане: НДФЛ, НДС, налог на имущество, земельный и транспортный налоги, налог на прибыль и единый налоговый платёж. Наши калькуляторы основаны на актуальных ставках Налогового кодекса Республики Узбекистан и ежегодно обновляются в соответствии с постановлениями Президента и Кабинета Министров. Вы можете быстро определить сумму налога, проверить порог НДС, рассчитать пени за просрочку или узнать налоговую нагрузку для ИП и самозанятых. Все расчёты бесплатны и не требуют регистрации.',
+      'Рассчитайте все виды налогов в Узбекистане: НДФЛ, НДС, налог на имущество, земельный и госпошлины за постановку на учёти, налог на прибыль и единый налоговый платёж. Наши калькуляторы основаны на актуальных ставках Налогового кодекса Республики Узбекистан и ежегодно обновляются в соответствии с постановлениями Президента и Кабинета Министров. Вы можете быстро определить сумму налога, проверить порог НДС, рассчитать пени за просрочку или узнать налоговую нагрузку для ИП и самозанятых. Все расчёты бесплатны и не требуют регистрации.',
     descriptionUz:
       "O'zbekistondagi barcha turdagi soliqlarni hisoblang: JShShS, QQS, mol-mulk solig'i, yer va transport soliqlari, foyda solig'i va yagona soliq to'lovi. Bizning kalkulyatorlarimiz O'zbekiston Respublikasi Soliq kodeksining dolzarb stavkalariga asoslangan va Prezident hamda Vazirlar Mahkamasi qarorlariga muvofiq har yili yangilanadi. Soliq summasini tez aniqlash, QQS chegarasini tekshirish, kechikish uchun peniya hisoblash yoki YaTT va o'z-o'zini band qilganlar uchun soliq yukini bilish mumkin. Barcha hisob-kitoblar bepul va ro'yxatdan o'tishni talab qilmaydi.",
     seoTitleRu: 'Налоговые калькуляторы Узбекистана — НДФЛ, НДС, налог на прибыль',
     seoTitleUz: "O'zbekiston soliq kalkulyatorlari — JShShS, QQS, foyda solig'i",
-    seoDescriptionRu: 'Бесплатные онлайн калькуляторы налогов Узбекистана: НДФЛ 12%, НДС, налог на имущество, земельный и транспортный налоги. Актуальные ставки 2025–2026.',
+    seoDescriptionRu: 'Бесплатные онлайн калькуляторы налогов Узбекистана: НДФЛ 12%, НДС, налог на имущество, земельный и госпошлины за постановку на учёти. Актуальные ставки 2025–2026.',
     seoDescriptionUz: "O'zbekiston soliqlari uchun bepul onlayn kalkulyatorlar: JShShS 12%, QQS, mol-mulk solig'i, yer va transport soliqlari. 2025–2026 yil dolzarb stavkalari.",
   },
   salary: {
@@ -76,13 +76,13 @@ export const CATEGORY_DESCRIPTIONS: Record<CategoryId, CategoryDescription> = {
     titleRu: 'Автомобильные калькуляторы',
     titleUz: 'Avtomobil kalkulyatorlari',
     descriptionRu:
-      'Рассчитайте стоимость растаможки автомобиля, ОСАГО, транспортный налог, расход топлива и стоимость поездки в Узбекистане. Калькулятор растаможки учитывает акцизы, таможенные пошлины и НДС для новых и подержанных автомобилей. Также доступен расчёт автолизинга и автокредита от узбекских банков.',
+      'Рассчитайте стоимость растаможки автомобиля, ОСАГО, госпошлины при постановке на учёт, расход топлива и стоимость поездки в Узбекистане. Калькулятор растаможки учитывает акцизы, таможенные пошлины и НДС для новых и подержанных автомобилей. Также доступен расчёт автолизинга и автокредита от узбекских банков.',
     descriptionUz:
-      "O'zbekistonda avtomobil rastamozhkasi narxini, OSAGO, transport solig'ini, yoqilg'i sarfini va sayohat narxini hisoblang. Rastamozhka kalkulyatori yangi va ishlatilgan avtomobillar uchun aktsizlar, bojxona bojlari va QQSni hisobga oladi. Shuningdek, o'zbek banklaridan avto lizing va avtokredit hisobi mavjud.",
+      "O'zbekistonda avtomobil rastamozhkasi narxini, OSAGO, hisobga qo'yish davlat bojlarini, yoqilg'i sarfini va sayohat narxini hisoblang. Rastamozhka kalkulyatori yangi va ishlatilgan avtomobillar uchun aktsizlar, bojxona bojlari va QQSni hisobga oladi. Shuningdek, o'zbek banklaridan avto lizing va avtokredit hisobi mavjud.",
     seoTitleRu: 'Автомобильные калькуляторы — растаможка, ОСАГО, расход топлива',
     seoTitleUz: "Avtomobil kalkulyatorlari — rastamozhka, OSAGO, yoqilg'i sarfi",
-    seoDescriptionRu: 'Рассчитайте растаможку авто, ОСАГО, транспортный налог и расход топлива в Узбекистане. Актуальные тарифы и пошлины.',
-    seoDescriptionUz: "O'zbekistonda avto rastamozhkasi, OSAGO, transport solig'i va yoqilg'i sarfini hisoblang. Dolzarb tariflar va bojlar.",
+    seoDescriptionRu: 'Рассчитайте растаможку авто, ОСАГО, госпошлины при постановке на учёт и расход топлива в Узбекистане. Актуальные тарифы и пошлины.',
+    seoDescriptionUz: "O'zbekistonda avto rastamozhkasi, OSAGO, hisobga qo'yish davlat boji va yoqilg'i sarfini hisoblang. Dolzarb tariflar va bojlar.",
   },
   utilities: {
     titleRu: 'Калькуляторы коммунальных услуг',

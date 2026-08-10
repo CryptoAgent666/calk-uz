@@ -403,16 +403,14 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     slug: 'vehicle-tax',
     totalTimeMinutes: 1,
     stepsRu: [
-      { name: 'Выберите тип ТС', text: 'Укажите тип транспортного средства.' },
-      { name: 'Введите объём двигателя', text: 'Укажите объём двигателя в кубических сантиметрах.' },
-      { name: 'Выберите год выпуска', text: 'Укажите год выпуска автомобиля.' },
-      { name: 'Получите расчёт налога', text: 'Результат появится сразу — вы узнаете годовой транспортный налог.' },
+      { name: 'Выберите тип ТС', text: 'Легковой автомобиль, мотоцикл или прицеп — ставки госпошлины различаются.' },
+      { name: 'Укажите, нужны ли новые номера', text: 'При перерегистрации со своими номерами платёж меньше на 5,5 БРВ.' },
+      { name: 'Получите расчёт', text: 'Результат появится сразу — разовая госпошлина при постановке на учёт, в сумах и в БРВ.' },
     ],
     stepsUz: [
-      { name: 'TV turini tanlang', text: "Transport vositasi turini ko'rsating." },
-      { name: 'Dvigatel hajmini kiriting', text: 'Dvigatel hajmini kub santimetrlarda kiriting.' },
-      { name: 'Ishlab chiqarilgan yilini tanlang', text: "Avtomobilning ishlab chiqarilgan yilini ko'rsating." },
-      { name: 'Soliq hisobini oling', text: "Natija darhol chiqadi — yillik transport solig'ini bilib oling." },
+      { name: 'TV turini tanlang', text: "Yengil avtomobil, mototsikl yoki tirkama — davlat boji stavkalari har xil." },
+      { name: 'Yangi raqam kerakmi, belgilang', text: "O'z raqamlari bilan qayta ro'yxatdan o'tishda to'lov 5,5 BHM ga kam." },
+      { name: 'Hisobni oling', text: "Natija darhol chiqadi — hisobga qo'yishdagi bir martalik davlat boji, so'mda va BHM da." },
     ],
   },
   {

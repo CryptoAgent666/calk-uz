@@ -280,7 +280,7 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
         conclusionRu:
           'Закладывайте в бюджет не только платёж, но и ОСАГО, ТО и налог на транспорт. Полная стоимость владения — на 6-8% выше платежа по кредиту.',
         conclusionUz:
-          "Byudjetga faqat to'lovni emas, OSAGO, texnik ko'rik va transport solig'ini ham kiriting. Egalik qiymati kredit to'lovidan 6-8% yuqori.",
+          "Byudjetga faqat to'lovni emas, OSAGO va texnik ko'rikni ham kiriting. Egalik qiymati kredit to'lovidan 6-8% yuqori.",
       },
     ],
   },

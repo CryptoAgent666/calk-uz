@@ -56,46 +56,62 @@ export function calculatePropertyTax(cadastralValue: number, areaM2: number, isL
   }
 }
 
-// Vehicle Tax
-export interface VehicleTaxResult {
-  engineVolume: number
-  vehicleAge: number
-  baseTax: number
-  ageFactor: number
-  annualTax: number
+/**
+ * Сбор при постановке автомобиля на учёт.
+ *
+ * ⚠️ Здесь раньше считался ЕЖЕГОДНЫЙ ТРАНСПОРТНЫЙ НАЛОГ по шкале БРВ-множителей
+ * от объёма двигателя. Такого налога в Узбекистане НЕТ: перечень налогов в
+ * ст. 17 НК РУз закрытый (НДС, акцизный, на прибыль, НДФЛ, за недра,
+ * экологический, за водные ресурсы, на имущество, земельный, социальный) —
+ * транспортного среди них нет. Прежняя шкала и «срок уплаты до 1 декабря»
+ * были занесены из законодательства Беларуси (источник записи в реестре
+ * указывал на auto.onliner.by). Проверено по первоисточникам 2026-08-09.
+ *
+ * Владелец авто в РУз реально платит РАЗОВЫЕ госпошлины при регистрации,
+ * а не ежегодный налог. Ставки — приказ МВД (рег. № 2303, ред. 2303-7
+ * от 23.12.2024), в БРВ.
+ */
+export interface VehicleRegistrationResult {
+  /** Госпошлина за регистрацию транспортного средства, сум */
+  registration: number
+  /** Свидетельство о регистрации (техпаспорт), сум */
+  techPassport: number
+  /** Выдача государственных номерных знаков, сум */
+  plates: number
+  /** Итого разовый платёж при постановке на учёт, сум */
+  total: number
+  /** Тот же итог в БРВ — устойчив к индексации БРВ */
+  totalBrv: number
 }
 
-export function calculateVehicleTax(engineVolumeCc: number, yearOfManufacture: number): VehicleTaxResult {
-  const currentYear = new Date().getFullYear()
-  const vehicleAge = currentYear - yearOfManufacture
+/** Ставки в БРВ. Мото/прицепы и электромобили тарифицируются отдельно. */
+const REG_FEE_BRV = {
+  car: { registration: 6.84, techPassport: 0.7, plates: 5.5 },
+  motorcycle: { registration: 3.42, techPassport: 0.7, plates: 2.75 },
+  trailer: { registration: 3.42, techPassport: 0.7, plates: 2.75 },
+} as const
 
-  // Passenger car rates per НК ст. 446 (2026), expressed in BRV per year:
-  //   ≤1500 cc → 1.5 BRV
-  //   1500–2000 cc → 3 BRV
-  //   2000–3000 cc → 5 BRV
-  //   >3000 cc → 7.5 BRV
-  let brvMultiplier: number
-  if (engineVolumeCc <= 1500) brvMultiplier = 1.5
-  else if (engineVolumeCc <= 2000) brvMultiplier = 3
-  else if (engineVolumeCc <= 3000) brvMultiplier = 5
-  else brvMultiplier = 7.5
+export type VehicleKind = keyof typeof REG_FEE_BRV
 
-  const baseTax = brvMultiplier * BRV
-
-  // Note: НК Узбекистана does not prescribe a vehicle-age multiplier for the
-  // base annual transport tax (the rate depends only on engine volume).
-  // ageFactor is kept at 1.0 and exposed in the result for UI compatibility.
-  const ageFactor = 1.0
-  const annualTax = baseTax * ageFactor
-
+export function calculateVehicleRegistration(
+  kind: VehicleKind = 'car',
+  /** Нужны ли новые номера. При перерегистрации со «своими» номерами — false. */
+  withNewPlates: boolean = true,
+): VehicleRegistrationResult {
+  const r = REG_FEE_BRV[kind]
+  const plates = withNewPlates ? r.plates * BRV : 0
+  const registration = r.registration * BRV
+  const techPassport = r.techPassport * BRV
+  const total = registration + techPassport + plates
   return {
-    engineVolume: engineVolumeCc,
-    vehicleAge,
-    baseTax,
-    ageFactor,
-    annualTax,
+    registration,
+    techPassport,
+    plates,
+    total,
+    totalBrv: total / BRV,
   }
 }
+
 
 // Corporate Tax
 export interface CorporateTaxResult {

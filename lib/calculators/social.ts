@@ -69,12 +69,22 @@ export interface SickLeaveResult {
   netAmount: number
 }
 
+/**
+ * Процент пособия по временной нетрудоспособности от среднего заработка.
+ *
+ * ПКМ № 796 от 17.12.2025, приложение № 4, п. 18 — шкала ДВУХступенчатая:
+ * «олти ойдан тўқсон олти ойгача (тўқсон олтинчи ой ҳам киради) — 60 фоиз;
+ *  тўқсон етти ва ундан ортиқ ой — 80 фоиз».
+ * То есть 6–96 месяцев включительно = 60%, 97+ = 80%. Ступени 100% НЕТ.
+ * Применяется к страховым случаям с 1 июля 2026 г.
+ *
+ * Раньше здесь стояла четырёхступенчатая шкала 60/80/100 с границами по 60 и 96
+ * месяцам — она завышала выплату всем со стажем от 5 лет.
+ */
 export function getSickLeavePercent(insuranceMonths: number): number {
-  // ПКМ-314 (31.05.2024): 60% (<5 лет), 80% (5-8 лет), 100% (8+ лет / льготные категории)
-  if (insuranceMonths < 6) return 0        // <6 months: not eligible
-  if (insuranceMonths < 60) return 60      // up to 5 years: 60%
-  if (insuranceMonths < 96) return 80      // 5-8 years: 80%
-  return 100                               // 8+ years: 100%
+  if (insuranceMonths < 6) return 0        // <6 месяцев — права на пособие нет
+  if (insuranceMonths <= 96) return 60     // 6–96 месяцев включительно
+  return 80                                // 97 месяцев и больше
 }
 
 export function calculateSickLeave(
@@ -121,11 +131,18 @@ export interface MaternityResult {
   postbirthDays: number
 }
 
+/**
+ * Процент пособия по беременности и родам от среднего заработка.
+ *
+ * ПКМ № 796 от 17.12.2025 — границы включающие: 10–24 мес. = 75%,
+ * 25–60 мес. = 85%, 61 мес. и более = 100%. Применяется с 1 января 2026 г.
+ * Прежние границы (10–23 / 24–59 / ≥60) промахивались на месяц на всех трёх.
+ */
 export function getMaternityPercent(insuranceMonths: number): number {
-  if (insuranceMonths < 10) return 0       // not eligible
-  if (insuranceMonths < 24) return 75      // 10-23 months
-  if (insuranceMonths < 60) return 85      // 2-5 years
-  return 100                               // 5+ years
+  if (insuranceMonths < 10) return 0       // права на пособие нет
+  if (insuranceMonths <= 24) return 75     // 10–24 месяца включительно
+  if (insuranceMonths <= 60) return 85     // 25–60 месяцев включительно
+  return 100                               // 61 месяц и больше
 }
 
 export function calculateMaternity(

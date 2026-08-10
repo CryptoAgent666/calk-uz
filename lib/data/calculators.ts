@@ -84,15 +84,18 @@ export const CALCULATORS: CalculatorMeta[] = [
     slug: 'vehicle-tax',
     slugRu: CALCULATOR_SLUGS['vehicle-tax'].ru,
     slugUz: CALCULATOR_SLUGS['vehicle-tax'].uz,
-    titleRu: 'Транспортный налог',
-    titleUz: "Transport solig'i",
+    // Ежегодного транспортного налога в РУз нет (ст. 17 НК — закрытый перечень).
+    // Слаг и ключевые слова сохранены: по запросу «транспортный налог» люди
+    // приходят именно сюда, и правильный ответ им нужнее, чем 404.
+    titleRu: 'Постановка авто на учёт: госпошлины',
+    titleUz: "Avtoni hisobga qo'yish: davlat bojlari",
     descriptionRu:
-      'Рассчитайте транспортный налог на автомобиль в Узбекистане. Зависит от объёма двигателя и года выпуска.',
+      'Транспортного налога в Узбекистане нет. Считаем то, что платят реально — госпошлины при постановке автомобиля на учёт.',
     descriptionUz:
-      "O'zbekistonda avtomobil uchun transport solig'ini hisoblang. Dvigatel hajmi va ishlab chiqarilgan yiliga bog'liq.",
-    category: 'tax',
+      "O'zbekistonda transport solig'i yo'q. Haqiqatda to'lanadigan narsani hisoblaymiz — avtomobilni hisobga qo'yishdagi davlat bojlari.",
+    category: 'auto',
     icon: 'Car',
-    keywords: ['транспортный налог', 'transport solig\'i', 'vehicle tax', 'автомобильный налог'],
+    keywords: ['транспортный налог', 'transport solig\'i', 'vehicle tax', 'госпошлина за регистрацию авто', 'постановка на учёт'],
     priority: 2,
   },
   {

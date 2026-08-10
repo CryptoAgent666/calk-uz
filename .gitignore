@@ -82,3 +82,6 @@ ios-app/DerivedData/
 # passwords in ~/.gradle/gradle.properties)
 *.keystore
 *.jks
+
+# локальные бэкапы правок констант
+*.bak-*

@@ -104,9 +104,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'vehicle-tax',
     textRu:
-      'Налог на транспорт в Узбекистане в 2026 году рассчитывается по объёму двигателя в БРВ: до 1,5 л — 1,5 БРВ (618 000 сум), 1,5–2,0 л — 3 БРВ, 2,0–3,0 л — 5 БРВ, свыше 3 л — 7,5 БРВ. Срок уплаты — до 15 апреля следующего года. Льготы: инвалиды I-II групп, многодетные семьи.',
+      'Ежегодного транспортного налога в Узбекистане нет: перечень налогов в статье 17 Налогового кодекса закрытый, транспортного среди них не значится. Владелец платит разово при постановке на учёт — 13,04 БРВ (5 372 480 сум) с новыми номерами: регистрация 6,84 БРВ, техпаспорт 0,7 БРВ, номера 5,5 БРВ. Со своими номерами — 7,54 БРВ. Сроки 15 апреля и 15 октября относятся к налогу на имущество и земельному, а не к автомобилю.',
     textUz:
-      "2026-yilda O'zbekistonda transport solig'i dvigatel hajmi bo'yicha BHK da hisoblanadi: 1,5 l gacha — 1,5 BHK (618 000 so'm), 1,5–2,0 l — 3 BHK, 2,0–3,0 l — 5 BHK, 3 l dan ortiq — 7,5 BHK. To'lash muddati — keyingi yilning 15-apreligacha. Imtiyozlar: I-II guruh nogironlari, ko'p bolali oilalar.",
+      "O'zbekistonda yillik transport solig'i yo'q: Soliq kodeksining 17-moddasidagi soliqlar ro'yxati yopiq va transport solig'i unda yo'q. Egasi hisobga qo'yishda bir marta to'laydi — yangi raqam bilan 13,04 BHM (5 372 480 so'm): ro'yxatga olish 6,84 BHM, texpasport 0,7 BHM, raqamlar 5,5 BHM. O'z raqamlari bilan — 7,54 BHM. 15-aprel va 15-oktabr muddatlari mol-mulk va yer solig'iga tegishli, avtomobilga emas.",
   },
   {
     slug: 'property-tax',
