@@ -345,10 +345,50 @@ export default async function PrivacyPage({
           </p>
         </section>
 
+        {/* Mobile apps — Apple и Google ожидают отдельный раздел про то, что
+            происходит в бинаре: реклама, покупка, rewarded-ролик и OTA. */}
+        <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            {isUz ? "10. Calk.UZ mobil ilovasi" : "10. Мобильное приложение Calk.UZ"}
+          </h2>
+          <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+            {isUz
+              ? "Calk.UZ mobil ilovasida (iOS va Android) saytdagi kabi tamoyillar amal qiladi: hisob-kitoblar qurilmangizda bajariladi va serverga yuborilmaydi. Quyida faqat ilovaga xos jihatlar keltirilgan."
+              : "В мобильном приложении Calk.UZ (iOS и Android) действуют те же принципы, что и на сайте: расчёты выполняются на вашем устройстве и не отправляются на сервер. Ниже — то, что относится только к приложению."}
+          </p>
+          <ul className="list-disc list-inside text-muted-foreground text-sm space-y-2">
+            <li>
+              {isUz
+                ? "Reklama Google AdMob orqali ko'rsatiladi. Reklamani tanlash uchun AdMob qurilmaning reklama identifikatoridan foydalanadi. iOS'da biz kuzatuvga ruxsat so'raymiz (App Tracking Transparency): rad etsangiz, reklama shaxsiylashtirilmagan holda ko'rsatiladi."
+                : "Реклама показывается через Google AdMob. Для подбора объявлений AdMob использует рекламный идентификатор устройства. На iOS мы запрашиваем разрешение на отслеживание (App Tracking Transparency): если вы откажете, реклама будет неперсонализированной."}
+            </li>
+            <li>
+              {isUz
+                ? "«Reklamani olib tashlash» bir martalik xaridini ilova do'koni (App Store yoki Google Play) va RevenueCat xizmati amalga oshiradi. Biz to'lov ma'lumotlarini ko'rmaymiz va saqlamaymiz — bizga faqat xaridning holati yetib keladi."
+                : "Разовая покупка «Убрать рекламу» проводится магазином приложений (App Store или Google Play) и сервисом RevenueCat. Мы не видим и не храним платёжные данные — до нас доходит только статус покупки."}
+            </li>
+            <li>
+              {isUz
+                ? "Videorolik ko'rish evaziga reklamani vaqtincha o'chirish ixtiyoriy. Muddat tugash vaqti faqat shu qurilmaning xotirasida saqlanadi va serverga yuborilmaydi."
+                : "Временное отключение рекламы за просмотр видеоролика — добровольное. Момент окончания срока хранится только в памяти этого устройства и на сервер не передаётся."}
+            </li>
+            <li>
+              {isUz
+                ? "Ilova vaqti-vaqti bilan serverimizdan ma'lumotnoma qiymatlari va interfeys yangilanishlarini so'raydi. Bunday so'rovlarda shaxsiy ma'lumotlar bo'lmaydi."
+                : "Приложение периодически запрашивает у нашего сервера справочные значения и обновления интерфейса. Такие запросы не содержат персональных данных."}
+            </li>
+            <li>
+              {isUz
+                ? "Ilovani o'chirsangiz, qurilmada saqlangan barcha ma'lumotlar (sozlamalar, hisob-kitoblar tarixi, reklamasiz muddat) o'chib ketadi. Xarid do'kon hisobingizga bog'langan va qayta o'rnatishdan keyin tiklanadi."
+                : "При удалении приложения все данные, хранящиеся на устройстве (настройки, история расчётов, срок без рекламы), удаляются. Покупка привязана к вашей учётной записи в магазине и восстанавливается после переустановки."}
+            </li>
+          </ul>
+        </section>
+
         {/* Contact */}
         <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            {isUz ? "10. Bog'lanish" : "10. Контакты"}
+            {isUz ? "11. Bog'lanish" : "11. Контакты"}
           </h2>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz

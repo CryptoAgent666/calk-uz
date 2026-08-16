@@ -25,12 +25,12 @@ export const UPDATES: UpdateBlock[] = [
     dateLabelUz: "2026-yil 6-avgust",
     items: [
       {
-        titleRu: "В приложениях: посмотрите ролик — 24 часа без рекламы",
-        titleUz: "Ilovalarda: rolik ko'ring — 24 soat reklamasiz",
+        titleRu: "В приложениях: посмотрите ролик — 6 часов без рекламы",
+        titleUz: "Ilovalarda: rolik ko'ring — 6 soat reklamasiz",
         descRu:
-          "В приложениях для Android и iPhone появился бесплатный способ убрать рекламу: короткий видеоролик отключает баннеры и полноэкранную рекламу на 24 часа. Кнопка — в меню, в блоке «Убрать рекламу». Разовая покупка «навсегда» никуда не делась и остаётся выгоднее, если пользуетесь регулярно.",
+          "В приложениях для Android и iPhone появился бесплатный способ убрать рекламу: короткий видеоролик отключает баннеры и полноэкранную рекламу на 6 часов. Кнопка — в меню, в блоке «Убрать рекламу». Разовая покупка «навсегда» никуда не делась и остаётся выгоднее, если пользуетесь регулярно.",
         descUz:
-          "Android va iPhone ilovalarida reklamani olib tashlashning bepul usuli paydo bo'ldi: qisqa videorolik bannerlar va to'liq ekranli reklamani 24 soatga o'chiradi. Tugma — menyuda, «Reklamani olib tashlash» blokida. «Abadiy» bir martalik xarid ham saqlanib qoldi.",
+          "Android va iPhone ilovalarida reklamani olib tashlashning bepul usuli paydo bo'ldi: qisqa videorolik bannerlar va to'liq ekranli reklamani 6 soatga o'chiradi. Tugma — menyuda, «Reklamani olib tashlash» blokida. «Abadiy» bir martalik xarid ham saqlanib qoldi.",
       },
       {
         titleRu: "БРВ вырастет до 440 000 сум с 1 сентября 2026",

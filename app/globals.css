@@ -191,3 +191,10 @@
   .lg\:col-span-1 { display: none !important; }
   .lg\:col-span-2 { grid-column: span 3 !important; }
 }
+
+/* Ссылки на магазины приложений прячутся ВНУТРИ приложений: бейдж Google Play
+   в iOS-бинаре — реджект 2.3.10. Атрибут ставит инлайн-скрипт в <head> до
+   первой отрисовки (app/[locale]/layout.tsx), поэтому мигания нет. */
+[data-native-app="1"] [data-store-links] {
+  display: none;
+}

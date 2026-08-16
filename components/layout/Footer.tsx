@@ -57,7 +57,8 @@ export async function Footer() {
                 Telegram @calkuz_bot
               </a>
             </div>
-            <div className="mt-3 flex flex-wrap gap-2">
+            {/* Скрывается внутри приложений — см. [data-native-app] в globals.css */}
+            <div data-store-links className="mt-3 flex flex-wrap gap-2">
               <a
                 href="https://play.google.com/store/apps/details?id=uz.calk.calculator"
                 target="_blank"

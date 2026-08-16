@@ -38,7 +38,10 @@ final class PurchasesManager: NSObject {
     private let untilKey = "calk_ad_free_until"
 
     /// Hours one watched video buys.
-    static let rewardHours = 24
+    /// 6, а не 24: сутки одним роликом закрывают весь визит эпизодического
+    /// пользователя и обесценивают покупку «навсегда». Держим одинаковым с
+    /// вебом (lib/rewarded.ts) и с calk.kg.
+    static let rewardHours = 6
 
     /// End of the current reward window, or nil when there is none / it expired.
     var tempAdFreeUntil: Date? {
@@ -94,16 +97,37 @@ final class PurchasesManager: NSObject {
         }
     }
 
-    /// Buy "remove ads". Completion true on success (or already owned).
-    func buy(_ completion: @escaping (Bool) -> Void) {
+    /// Исход покупки. Раньше `buy` отдавал голый Bool, и три совершенно разных
+    /// случая выглядели одинаково: пользователь передумал, продукта нет в
+    /// сторе, и — самый опасный — Apple списала деньги, но entitlement не
+    /// активировался (продукт не привязан к `ad_free` в RevenueCat). Последний
+    /// молча возвращал false, экран просто гасил спиннер, и пользователь
+    /// оставался с оплатой и рекламой. Теперь исходы различимы.
+    enum BuyResult {
+        case ok
+        case cancelled
+        /// Стор не отдал продукт: нет в App Store Connect либо не заведён в RevenueCat.
+        case unavailable
+        /// Оплата прошла, но entitlement не активировался — почти всегда это
+        /// продукт, не привязанный к entitlement в дашборде RevenueCat.
+        case paidButNotGranted
+        case failed(String)
+    }
+
+    /// Buy "remove ads".
+    func buy(_ completion: @escaping (BuyResult) -> Void) {
         Purchases.shared.getProducts([productID]) { [weak self] products in
             guard let product = products.first else {
-                DispatchQueue.main.async { completion(false) }
+                DispatchQueue.main.async { completion(.unavailable) }
                 return
             }
-            Purchases.shared.purchase(product: product) { _, info, _, userCancelled in
+            Purchases.shared.purchase(product: product) { _, info, error, userCancelled in
                 if let info = info { self?.update(from: info) }
-                DispatchQueue.main.async { completion(!userCancelled && (self?.isAdFree ?? false)) }
+                DispatchQueue.main.async {
+                    if userCancelled { completion(.cancelled); return }
+                    if let error = error { completion(.failed(error.localizedDescription)); return }
+                    completion(self?.isAdFree == true ? .ok : .paidButNotGranted)
+                }
             }
         }
     }

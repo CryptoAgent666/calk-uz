@@ -160,6 +160,25 @@ export default async function LocaleLayout({
 
         <OrganizationJsonLd locale={locale} />
 
+        {/*
+          Ставим data-native-app на <html> ДО первой отрисовки. Нужно, чтобы
+          внутри приложений не показывались ссылки на магазины: бейдж Google
+          Play в iOS-бинаре — реджект по гайдлайну 2.3.10 (во флоте уже был
+          Review Suspended ровно за бейдж в футере). Сайт статический и один
+          бандл отдаётся и вебу, и приложению, поэтому вырезать на сборке
+          нельзя — гейт рантаймовый, но выполняется синхронно в <head>, так
+          что бейдж не успевает мигнуть. CSS-правило — в globals.css.
+        */}
+        <script
+          id="native-app-stamp"
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var u=navigator.userAgent||'';var c=window.Capacitor;" +
+              "var n=/CalkUZ/i.test(u)||(c&&(typeof c.isNativePlatform==='function'?c.isNativePlatform():!!c.isNative));" +
+              "if(n)document.documentElement.setAttribute('data-native-app','1')}catch(e){}})()",
+          }}
+        />
+
         {/* Analytics + AdSense load via <Monetization/> (web only; gated off in native apps). */}
         {/* Service Worker for offline support */}
         <Script id="sw-register" strategy="afterInteractive">

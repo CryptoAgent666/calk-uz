@@ -197,10 +197,32 @@ final class RemoveAdsViewController: UIViewController {
 
     @objc private func buyTapped() {
         setBusy(true)
-        PurchasesManager.shared.buy { [weak self] _ in
-            self?.setBusy(false)
-            self?.refreshState()
+        PurchasesManager.shared.buy { [weak self] result in
+            guard let self else { return }
+            self.setBusy(false)
+            self.refreshState()
+            switch result {
+            case .ok, .cancelled:
+                break  // успех виден по экрану, отмену комментировать не нужно
+            case .unavailable:
+                self.showPurchaseAlert(
+                    "Покупка недоступна",
+                    "Магазин не вернул товар. Если вы уже покупали — нажмите «Восстановить покупку».")
+            case .paidButNotGranted:
+                // Деньги ушли, доступ не выдан — молчать здесь нельзя.
+                self.showPurchaseAlert(
+                    "Оплата прошла, но реклама не отключилась",
+                    "Нажмите «Восстановить покупку». Если не поможет — напишите на info@calk.uz, мы разберёмся и вернём средства.")
+            case .failed(let message):
+                self.showPurchaseAlert("Не удалось завершить покупку", message)
+            }
         }
+    }
+
+    private func showPurchaseAlert(_ title: String, _ message: String) {
+        let a = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        a.addAction(UIAlertAction(title: "OK", style: .default))
+        present(a, animated: true)
     }
 
     @objc private func restoreTapped() {

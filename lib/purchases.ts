@@ -143,12 +143,20 @@ export async function initPurchases(): Promise<void> {
  * «продукт ещё активируется в Google Play». На iOS параметр игнорируется —
  * поэтому там покупка работала, а на Android нет.
  */
+type ProductCategory = NonNullable<
+  Parameters<typeof import("@revenuecat/purchases-capacitor").Purchases.getProducts>[0]["type"]
+>
+// Enum PRODUCT_CATEGORY лежит в транзитивной зависимости SDK: импортировать его
+// в рантайме — тянуть лишний чанк ради одной строки. Берём литерал, а тип
+// выводим из сигнатуры самого getProducts, так что опечатка не скомпилируется.
+// Тот же приём на calk.kz, где эта схема уже приносит реальные покупки.
+const NON_SUBSCRIPTION = "NON_SUBSCRIPTION" as ProductCategory
+
 async function fetchRemoveAdsProduct() {
   const { Purchases } = await loadSdk()
-  const { PRODUCT_CATEGORY } = await import("@revenuecat/purchases-typescript-internal-esm")
   const { products } = await Purchases.getProducts({
     productIdentifiers: [REMOVE_ADS_PRODUCT_ID],
-    type: PRODUCT_CATEGORY.NON_SUBSCRIPTION,
+    type: NON_SUBSCRIPTION,
   })
   return products[0] ?? null
 }
