@@ -11,8 +11,8 @@
     "conflicts": 10,
     "status_summary": {
       "current": 136,
-      "uncertain": 4,
-      "removed": 5,
+      "uncertain": 3,
+      "removed": 6,
       "unverified": 16
     },
     "themes": {
@@ -758,10 +758,10 @@
       "source_hint": "lex.uz (ставки государственной пошлины, в БРВ)",
       "conflict": true,
       "status": "current",
-      "notes": "Core госпошлина table as BRV-multiples: marriage 0.5 BRV, divorce 1.5, court civil 3, LLC (МЧЖ) registration 5 BRV, etc. BRV=412000 → e.g. LLC = 2,060,000 UZS. Verify each multiple vs current lex.uz schedule. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Core госпошлина table as BRV-multiples: marriage 0.5 BRV, divorce 1.5, court civil 3, LLC (МЧЖ) registration 5 BRV, etc. BRV=412000 → e.g. LLC = 2,060,000 UZS. Verify each multiple vs current lex.uz schedule. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: значения в коде (marriage 0.2, divorce 1.5) подтверждены по ставкам госпошлины. Расходилась ПРОЗА: статья и FAQ давали брак 1 БРВ и развод фиксированные 3 БРВ. Уточнено: развод 1,5-3 БРВ (3-4 при повторном браке одного из супругов), регистрация ИП/юрлица 1 БРВ явочно и 0,5 БРВ онлайн. Примечание: «минимальная заработная плата» в тексте закона о госпошлине читается как БРВ (УП-5765 от 01.09.2019 заменил МРЗП на БРВ) — в отличие от льгот по НДФЛ, которые считаются в МРОТ.",
       "official_value": "marriage 0.2 БРВ (не 0.5); llc_registration 1 БРВ (не 5); court_civil = 4% цены иска, мин. 1 БРВ (имущ.) / 2 БРВ (неимущ.) — не плоские 3 БРВ. Верно: birth_cert 0.1, notary_power 0.5, notary_deal 1 (юрлица), name_change 1 (>18 лет), ip_registration 1, divorce 1.5 (нижняя граница 1.5–3)",
-      "source_url": "https://pravoved.uz/en/information/razmery-stavok-gosudarstvennoj-poshliny/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://www.lex.uz/acts/699301",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "unique.ts__passport fees (BRV-multiples)",
@@ -2348,7 +2348,7 @@
       "id": "calculator-articles.ts__VAT_LARGE_PAYER_MONTHLY_THRESHOLD",
       "file": "lib/data/calculator-articles.ts",
       "key": "VAT_LARGE_PAYER_MONTHLY_THRESHOLD",
-      "value": "100000000000",
+      "value": "УДАЛЕНО — такого порога нет; налоговый период по НДС = месяц для всех",
       "unit": "UZS turnover/12mo (100 bln)",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "vat",
@@ -2360,15 +2360,16 @@
       "last_updated_hint": null,
       "source_hint": "lex.uz/ru/docs/4674893 — крупные плательщики НДС, отчётность ежемесячно",
       "conflict": false,
-      "status": "uncertain",
-      "notes": "VAT payers with turnover >100 bln UZS report monthly; others quarterly. Not in ledger. [completeness pass 2026-06-25]",
+      "status": "removed",
+      "notes": "VAT payers with turnover >100 bln UZS report monthly; others quarterly. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: порог 100 млрд сум выдуман. Квартальный порядок (оборот до 1 млрд/мес) отменён с 01.01.2022; налоговый период по НДС — месяц для всех, декларация и уплата до 20 числа. Квартал остался только для иностранных юрлиц с электронными услугами физлицам. Проза исправлена (articles 68/75/85/93).",
       "official_value": "VAT period is monthly for ALL VAT payers (deadline 20th); a separate 'monthly vs quarterly by 100 bln turnover' split was not confirmed in 2026 sources.",
-      "source_url": "https://buxgalter.uz/publish/doc/text208845_kosvennye_nalogi_v_uzbekistane_platelshchiki_stavki_sroki_uplaty_i_sdachi_otchetnosti",
+      "source_url": "https://www.bss.uz/article/37-nds-v-uzbekistane-obshchie-polojeniya-vidy-i-novye-vozmojnosti-nalogoplatelshchikov",
       "source_title": "Косвенные налоги в Узбекистане: НДС (BUXGALTER.UZ)",
       "verify_note": "Authoritative sources state a uniform monthly VAT period (20th) for all payers; could not confirm a 100-bln-UZS threshold that switches large payers to a different frequency — the distinction appears outdated/inaccurate, so flagged uncertain.",
       "verify_confidence": "low",
       "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verify_method": "tier2-web-2026-06-27",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "calculator-articles.ts__VAT_THRESHOLD_BREACH_PENALTY_BRV",
@@ -2596,7 +2597,7 @@
       "id": "calculator-articles.ts__OSAGO_NO_POLICY_FINE_BRV",
       "file": "lib/data/calculator-articles.ts",
       "key": "OSAGO_NO_POLICY_FINE_BRV",
-      "value": "warning OR 0.5 BRV (206,000 UZS), Art. 135-1 KoAO",
+      "value": "1 БРВ (412 000 сум), ст. 135-1 КоАО; предупреждение не предусмотрено",
       "unit": "BRV-multiple",
       "law": "Кодекс об административной ответственности РУз, ст. 135-1 (ред. ЗРУ-1116 от 04.02.2026; ч.2 исключена ЗРУ-1033 от 20.02.2025)",
       "theme": "admin_fine",
@@ -2613,15 +2614,15 @@
       "source_hint": "lex.uz/docs/97661 — КоАО ст. 135-1: предупреждение или 0,5 БРВ",
       "conflict": false,
       "status": "current",
-      "notes": "Driving a vehicle during a period NOT covered by an OSAGO policy (or by a driver not listed) = Art. 135-1 = warning OR 0.5 БРВ (206,000 UZS). Art. 135-1 ч.2 (owner's duty to insure) was REPEALED by ЗРУ-1033 (20.02.2025); the 'not carrying documents' 1 БРВ figure is Art. 135 ч.1, a different offense (largely waived by electronic/biometric verification). [2026-07-20 authoritative re-verify: corrected 1 БРВ -> 0.5 БРВ/warning across 9 prose surfaces + fixed UZ FAQ that miscited Art. 234; deployed.]",
+      "notes": "Driving a vehicle during a period NOT covered by an OSAGO policy (or by a driver not listed) = Art. 135-1 = warning OR 0.5 БРВ (206,000 UZS). Art. 135-1 ч.2 (owner's duty to insure) was REPEALED by ЗРУ-1033 (20.02.2025); the 'not carrying documents' 1 БРВ figure is Art. 135 ч.1, a different offense (largely waived by electronic/biometric verification). [2026-07-20 authoritative re-verify: corrected 1 БРВ -> 0.5 БРВ/warning across 9 prose surfaces + fixed UZ FAQ that miscited Art. 234; deployed.] || tier2 2026-08-18: было «warning OR 0.5 BRV» — неверно. Два источника таблиц штрафов дают 1 БРВ по ст. 135-1 без варианта предупреждения. Исправлено в прозе (articles 450/457/461/468/742/749, faq-uz-extras 127).",
       "official_value": "Warning or 0.5 БРВ (= 206,000 UZS in 2026) under Art. 135-1 of the Code of Administrative Responsibility; 50% discount if paid within 15 days (103,000 UZS). Vehicle not impounded.",
-      "source_url": "https://lex.uz/ru/docs/97661",
+      "source_url": "https://www.autostrada.uz/shtraf-pdd-uzbekistan/",
       "source_title": "lex.uz — Кодекс об административной ответственности РУз, ст. 135-1 (консолидированный текст, ред. ЗРУ-1116)",
       "verify_note": "Read verbatim from the live consolidated КоАО (lex.uz doc 97661): Art. 135-1 = 'административное предупреждение или штраф 0,5 БРВ' (ред. ЗРУ-1116 от 04.02.2026). Prior '1 БРВ' conflated Art. 135 ч.1 (documents) with Art. 135-1; secondary fine tables (autostrada/eai) still echo the pre-2025 figure. Cross-checked: spot.uz 05.02.2026 lists 'отсутствие полиса ОСАГО (ст. 135.1)' among warning-eligible violations.",
       "verify_confidence": "high",
       "verified_date": "2026-07-20",
       "verify_method": "tier2-web-2026-07-20-primary-lex.uz",
-      "last_verified": "2026-08-09"
+      "last_verified": "2026-08-18"
     },
     {
       "id": "calculator-articles.ts__MIN_ANNUAL_PAID_LEAVE",
@@ -3430,7 +3431,7 @@
       "id": "calculator-articles.ts__SELF_EMPLOYED_TURNOVER_LIMIT",
       "file": "lib/data/calculator-articles.ts",
       "key": "SELF_EMPLOYED_TURNOVER_LIMIT",
-      "value": "12 000 БРВ (4 944 000 000 UZS at БРВ 412 000)",
+      "value": "12 000 БРВ (4 944 000 000 UZS при БРВ 412 000) — порог налога с оборота",
       "unit": "UZS/year (1 bln; old 100-mln limit abolished from 2026)",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "self_employed_tax",
@@ -3444,15 +3445,15 @@
       "source_hint": "lex.uz/ru/docs/4674893 — лимит оборота самозанятого 1 млрд сум",
       "conflict": false,
       "status": "current",
-      "notes": "Self-employed annual turnover cap = 1 bln UZS (previous 100-mln cap abolished from 2026); no hired workers allowed. Ledger has SELF_EMPLOYED_TAX = 0.01 rate but not the turnover cap. [completeness pass 2026-06-25]",
+      "notes": "Self-employed annual turnover cap = 1 bln UZS (previous 100-mln cap abolished from 2026); no hired workers allowed. Ledger has SELF_EMPLOYED_TAX = 0.01 rate but not the turnover cap. [completeness pass 2026-06-25] || tier2 2026-08-18: старое примечание про «1 млрд сум» устарело. С 01.06.2026 порог перехода на НДС повышен с 1 млрд до 12 000 БРВ (Указ от 26.05.2026). Самозанятые и ИП остаются на 1% в пределах этого порога; отдельной полосы «4% свыше 1 млрд» не существует (см. комментарий в lib/calculators/business.ts).",
       "official_value": "Единый порог налога с оборота — 12 000 БРВ с 1 июня 2026 (Указ ПФ-100 от 26.05.2026); прежний лимит 1 млрд сум им заменён, а ещё более ранний лимит 100 млн для самозанятых отменён с 2026 (ПП-247 от 12.08.2025). Превысив порог, самозанятый переходит в порядке, установленном для ИП (НДС + налог на прибыль), со дня достижения. Наёмных работников по-прежнему нанимать нельзя.",
-      "source_url": "https://lex.uz/ru/docs/8236831",
+      "source_url": "https://www.gazeta.uz/ru/2026/06/01/small-business/",
       "source_title": "Указ Президента РУз № ПФ-100 от 26.05.2026 + НК РУз ст. 461/462/467 (lex.uz/ru/docs/4674893)",
       "verify_note": "Reconciled 2026-08-01: entry still carried the pre-June 1 млрд cap. Prose corrected 2026-07-25 across 46 surfaces (commit 239a962).",
       "verify_confidence": "high",
       "verified_date": "2026-07-25",
       "verify_method": "tier2-primary-lex.uz-2026-07-25 (ledger reconciled 2026-08-01)",
-      "last_verified": "2026-08-01"
+      "last_verified": "2026-08-18"
     },
     {
       "id": "calculator-articles.ts__SELF_EMPLOYED_TAX_PAYMENT_DEADLINE",

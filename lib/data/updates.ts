@@ -25,6 +25,30 @@ export const UPDATES: UpdateBlock[] = [
     dateLabelUz: "2026-yil 18-avgust",
     items: [
       {
+        titleRu: "НДС: отчётность ежемесячная у всех, а не только у крупных",
+        titleUz: "QQS: hisobot faqat yiriklarda emas, hammada oylik",
+        descRu:
+          "Мы писали, что ежемесячно отчитываются плательщики с оборотом свыше 100 млрд сум, а остальные — раз в квартал. Это неверно вдвойне: такого порога нет, а сам квартальный порядок отменён с 1 января 2022 года. Налоговый период по НДС — месяц для всех плательщиков независимо от оборота; декларация и уплата — до 20-го числа следующего месяца. Квартал остался только для иностранных юрлиц, оказывающих электронные услуги физлицам. Ошибка была из тех, что стоят денег: бухгалтер, поверивший в квартальную отчётность, пропустил бы восемь сроков из двенадцати.",
+        descUz:
+          "100 mlrd so'mdan ortiq aylanmaga ega to'lovchilar har oy, qolganlari chorakda bir marta hisobot beradi deb yozgan edik. Bu ikki tomonlama xato: bunday chegara yo'q, choraklik tartibning o'zi esa 2022-yil 1-yanvardan bekor qilingan. QQS bo'yicha soliq davri — aylanmadan qat'i nazar barcha uchun oy; deklaratsiya va to'lov — keyingi oyning 20-sanasigacha.",
+      },
+      {
+        titleRu: "Штраф за езду без ОСАГО — 1 БРВ, и предупреждения нет",
+        titleUz: "OSAGOsiz haydash uchun jarima — 1 BHK, ogohlantirish yo'q",
+        descRu:
+          "У нас стояло «предупреждение или штраф 0,5 БРВ (206 000 сум)». По ст. 135-1 КоАО штраф составляет 1 БРВ — 412 000 сум, и предупреждение по этой статье не предусмотрено. Исправлено на страницах ОСАГО и БРВ.",
+        descUz:
+          "Bizda «ogohlantirish yoki 0,5 BHK (206 000 so'm) jarima» deb turgan edi. MJtKning 135-1-moddasi bo'yicha jarima 1 BHK — 412 000 so'm, ogohlantirish esa nazarda tutilmagan. OSAGO va BHK sahifalarida tuzatildi.",
+      },
+      {
+        titleRu: "Госпошлины: брак 0,2 БРВ, развод — вилка, регистрация онлайн вдвое дешевле",
+        titleUz: "Davlat bojlari: nikoh 0,2 BHK, ajralish — oraliq, onlayn ro'yxat ikki barobar arzon",
+        descRu:
+          "Пошлина за регистрацию брака указана как 0,2 БРВ (82 400 сум) вместо прежнего 1 БРВ. Расторжение брака через суд — не фиксированные 3 БРВ, а вилка 1,5-3 БРВ, которая поднимается до 3-4 БРВ, если один из супругов вступает в брак повторно. Регистрация ИП стоит 1 БРВ при обращении в явочном порядке, а не 0,5 — 0,5 БРВ это льготная ставка при подаче через интернет, и та же скидка вдвое действует при регистрации юрлица.",
+        descUz:
+          "Nikohni ro'yxatdan o'tkazish boji avvalgi 1 BHK o'rniga 0,2 BHK (82 400 so'm) deb ko'rsatildi. Nikohni sud orqali bekor qilish — qat'iy 3 BHK emas, 1,5-3 BHK oralig'i, er-xotindan biri takroran nikohga kirsa 3-4 BHK. YaTTni ro'yxatdan o'tkazish yakka tartibda 1 BHK turadi, 0,5 BHK esa internet orqali topshirishdagi imtiyozli stavka; xuddi shu ikki barobar chegirma yuridik shaxsni ro'yxatdan o'tkazishda ham amal qiladi.",
+      },
+      {
         titleRu: "Необлагаемая матпомощь считается в МРОТ, а не в БРВ — лимит втрое больше",
         titleUz: "JShShSga tortilmaydigan moddiy yordam BHK da emas, MIH da hisoblanadi — limit uch barobar katta",
         descRu:
