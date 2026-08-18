@@ -10,11 +10,10 @@
     "market_or_other": 16,
     "conflicts": 10,
     "status_summary": {
-      "current": 79,
-      "stale_confirmed": 57,
-      "uncertain": 9,
-      "unverified": 16,
-      "historical": 0
+      "current": 136,
+      "uncertain": 4,
+      "removed": 5,
+      "unverified": 16
     },
     "themes": {
       "utility_tariff": 30,
@@ -428,9 +427,10 @@
       "source_hint": "lex.uz (Закон РУз о пенсионном обеспечении граждан, исчисление пенсии)",
       "conflict": false,
       "status": "current",
-      "notes": "HARDCODED simplified pension formula in social.ts: base 55% of average salary at full service (25yr men / 20yr women), +1% per additional year of service, capped at 75%. Marked 'Simplified pension calculation' in code — a model of the statutory rules.",
+      "notes": "HARDCODED simplified pension formula in social.ts: base 55% of average salary at full service (25yr men / 20yr women), +1% per additional year of service, capped at 75%. Marked 'Simplified pension calculation' in code — a model of the statutory rules. || tier2 2026-08-18: 55% среднемесячного заработка при полном стаже (муж. 25 лет / жен. 20 лет), +1% за каждый год сверх минимума, потолок 75%. Подтверждено (Закон о государственном пенсионном обеспечении граждан).",
       "official_value": "{\"basePercent\":55,\"capPercent\":75,\"perExtraYear\":1,\"requiredYears_male\":25,\"requiredYears_female\":20}",
-      "source_url": "https://lex.uz/acts/112312"
+      "source_url": "https://gov.uz/ru/advice/NaN/document/221",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "social.ts__calculatePension.retirementAge",
@@ -469,10 +469,11 @@
       "last_updated_hint": "2026 rules (PKM #796 from 17.12.2025)",
       "source_hint": "lex.uz (Постановление КМ РУз №796 от 17.12.2025)",
       "conflict": false,
-      "status": "current",
-      "notes": "Default 365 calendar days used to compute average daily earnings for sick-leave and maternity benefits. 2026 rules made these payments calendar-day based (per PKM #796) — the calendar-day basis is regulatory; 365 is the standard-year divisor.",
+      "status": "uncertain",
+      "notes": "Default 365 calendar days used to compute average daily earnings for sick-leave and maternity benefits. 2026 rules made these payments calendar-day based (per PKM #796) — the calendar-day basis is regulatory; 365 is the standard-year divisor. || tier2 2026-08-18: Делитель среднедневного заработка не подтверждён по первоисточнику: текст ПКМ-796 (прил. 4) на lex.uz доступен только на узбекском и не отдаётся ни WebFetch, ни r.jina.ai. kadry.uz описывает старую методику «среднемесячный / 25,3 рабочих дня», kadrovik.uz и norma.uz — календарную базу (182 календарных дня в году). В коде 365 — переопределяемый пользователем дефолт, не жёсткое утверждение. Нужен узбекский текст прил. 4 ПКМ-796.",
       "official_value": "365",
-      "source_url": "https://nrm.uz/contentf?doc=797906_polojenie_o_poryadke_naznacheniya_i_vyplaty_posobiy_po_vremennoy_netrudosposobnosti_a_takje_po_beremennosti_i_rodam_v_ramkah_gosudarstvennogo_socialnogo_strahovaniya_(prilojenie_n_4_k_postanovleniyu_km_ruz_ot_17_12_2025_g_n_796)&products=3_prakticheskaya_buhgalteriya"
+      "source_url": "https://lex.uz/ru/docs/7927782",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "social.ts__getMaternityPercent.tiers",
@@ -594,9 +595,10 @@
       "source_hint": "lex.uz / mehnat.uz (порядок исчисления пенсий)",
       "conflict": false,
       "status": "current",
-      "notes": "Simplified statutory pension replacement: 55% base + 1%/yr over required service, capped at 75%.",
+      "notes": "Simplified statutory pension replacement: 55% base + 1%/yr over required service, capped at 75%. || tier2 2026-08-18: То же правило другими словами — подтверждено.",
       "official_value": "base 55%; +1% per extra year; cap 75%",
-      "source_url": "https://lex.uz/acts/112312"
+      "source_url": "https://gov.uz/ru/advice/NaN/document/221",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "social.ts__retirement age",
@@ -1202,9 +1204,10 @@
       "source_hint": "soliq.uz / lex.uz (нормы о самозанятых)",
       "conflict": false,
       "status": "current",
-      "notes": "Self-employed tax rate 1%. Same value hardcoded in tax.ts calculateSelfEmployedTax ('1% from 2026') and business.ts calculateIPTax self_employed regime.",
+      "notes": "Self-employed tax rate 1%. Same value hardcoded in tax.ts calculateSelfEmployedTax ('1% from 2026') and business.ts calculateIPTax self_employed regime. || tier2 2026-08-18: 1% подтверждено (ПП-247 от 12.08.2025, НК-2026): единая ставка 1% для самозанятых и ИП с оборотом до 1 млрд сум, порог необлагаемых 100 млн сум отменён — налог с первого сума.",
       "official_value": "0.01",
-      "source_url": "https://www.bss.uz/article/3433-kakie-nalogi-platyat-samozanyatye-v-2026-godu-i-kak-ih-rasschitat"
+      "source_url": "https://buxgalter.uz/publish/doc/text212712_nk-2026_izmeneniya_po_nalogu_s_oborota_dlya_ip_i_samozanyatyh",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.SOCIAL_TAX",
@@ -2234,7 +2237,7 @@
       "id": "calculator-articles.ts__MATERIAL_AID_NDFL_EXEMPTION_BRV",
       "file": "lib/data/calculator-articles.ts",
       "key": "MATERIAL_AID_NDFL_EXEMPTION_BRV",
-      "value": "4.22",
+      "value": "4.22 МРОТ = 5 363 620 сум (МРОТ 1 271 000); с 01.09.2026 — 5 739 200",
       "unit": "BRV-multiple/year (= 1,738,640 UZS)",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "income_tax",
@@ -2249,20 +2252,21 @@
       "source_hint": "lex.uz/ru/docs/4674893 — необлагаемая материальная помощь 4,22 БРВ",
       "conflict": false,
       "status": "current",
-      "notes": "Employer material aid exempt from НДФЛ up to 4.22 БРВ/year = 1,738,640 UZS. Also the threshold above which severance is taxed. Not in ledger. [completeness pass 2026-06-25]",
+      "notes": "Employer material aid exempt from НДФЛ up to 4.22 БРВ/year = 1,738,640 UZS. Also the threshold above which severance is taxed. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: ОШИБКА ЕДИНИЦЫ ИЗМЕРЕНИЯ. П. 1 ст. 378 НК: матпомощь освобождается «до 4,22 МРОТ за налоговый период», а не 4,22 БРВ. Сайт занижает льготу втрое: 1 738 640 вместо 5 363 620 сум. Подтверждено buxgalter.uz и bss.uz. Льгота пересчитывается при изменении МРОТ в течение года. Затронуто ~10 мест (ru+uz проза, FAQ, статья про БРВ, статья про увольнение, case-studies). || phase4 2026-08-18: исправлено в коде — 10 мест в calculator-articles.ts (ru+uz проза, FAQ НДФЛ, статья БРВ, статья об увольнении), 2 в case-studies.ts, 1 в faq-uz-extras.ts. Единица изменена БРВ→МРОТ, сумма 1 738 640→5 363 620.",
       "official_value": "4.22 БРВ/year exempt from НДФЛ (= 1,738,640 UZS at БРВ 412,000)",
-      "source_url": "https://www.bss.uz/article/2664-lgoty-na-podohodnyy-nalog-polnyy-spisok-uzbekistan",
+      "source_url": "https://buxgalter.uz/publish/doc/text203587_kogda_nujno_pereschityvat_lgotnuyu_summu_matpomoshchi_pri_izmenenii_mrot",
       "source_title": "Льготы на подоходный налог: полный список (BSS.UZ)",
       "verify_note": "Employer material aid is exempt from НДФЛ up to 4.22 БРВ per year; the БРВ multiple is unchanged for 2026, only the сум value rises with БРВ (412,000 → 440,000 from 1 Sep 2026).",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verify_method": "tier2-web-2026-06-27",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "calculator-articles.ts__PROPERTY_PURCHASE_NDFL_DEDUCTION_BRV",
       "file": "lib/data/calculator-articles.ts",
       "key": "PROPERTY_PURCHASE_NDFL_DEDUCTION_BRV",
-      "value": "500",
+      "value": "п. 16 ст. 378 НК: до 80 МРОТ за календарный год = 101 680 000 сум (погашение ипотеки и процентов)",
       "unit": "BRV-multiple (= 206,000,000 UZS)",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "income_tax",
@@ -2277,14 +2281,15 @@
       "source_hint": "lex.uz/ru/docs/4674893 — имущественный вычет при покупке жилья",
       "conflict": false,
       "status": "current",
-      "notes": "Imushchestvenny vychet (property-purchase НДФЛ deduction) = up to 500 БРВ = 206 mln UZS, once in a lifetime. Not in ledger. [completeness pass 2026-06-25]",
+      "notes": "Imushchestvenny vychet (property-purchase НДФЛ deduction) = up to 500 БРВ = 206 mln UZS, once in a lifetime. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: ВЫДУМАННАЯ ЛЬГОТА. «Имущественного вычета при покупке жилья 500 БРВ (206 000 000 сум), один раз в жизни» в НК РУз нет. Реальная норма — п. 16 ст. 378 НК: до 80 МРОТ в календарный год на погашение ипотеки и процентов (для приобретённого/построенного/реконструированного жилья с субсидией из бюджета; для молодых семей — без условия о субсидии; отчуждение в течение 36 месяцев аннулирует льготу). Поиск «500 БРВ имущественный вычет» выдаёт первым результатом сам calk.uz — источник цифры циркулярный. Затронуто: articles.ts:29/36/44/53/742/749, case-studies.ts:418/424 (worked example — пересчитывать, не find-replace). || phase4 2026-08-18: выдуманный вычет 500 БРВ удалён, заменён реальной ипотечной льготой 80 МРОТ — 6 мест в calculator-articles.ts, 2 в case-studies.ts, 2 в quick-answers.ts. Попутно исправлена смежная выдумка: льгота на обучение детей называлась «до 4,22 БРВ/год», хотя оплата обучения в вузах освобождается без лимита.",
       "official_value": "Up to 500 БРВ property-purchase НДФЛ deduction (= 206,000,000 UZS at БРВ 412,000), once in a lifetime",
-      "source_url": "https://www.bss.uz/article/2664-lgoty-na-podohodnyy-nalog-polnyy-spisok-uzbekistan",
+      "source_url": "https://buxgalter.uz/publish/doc/text192571_dlya_kogo_predusmotrena_lgota_po_ndfl_pri_poluchenii_ipotechnogo_kredita",
       "source_title": "Льготы на подоходный налог: полный список (BSS.UZ)",
       "verify_note": "Imushchestvenny vychet for buying/building housing is capped at 500 БРВ; the БРВ multiple is unchanged for 2026 (сум value scales with БРВ).",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verify_method": "tier2-web-2026-06-27",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "calculator-articles.ts__NDFL_DECLARATION_DEADLINE",
@@ -2663,15 +2668,15 @@
       "source_hint": "lex.uz/docs/6257288 — 11 праздничных нерабочих дней в году",
       "conflict": false,
       "status": "current",
-      "notes": "11 official non-working public holidays per year (not counted as leave days). Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "11 official non-working public holidays per year (not counted as leave days). Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: Подтверждено: 9 праздничных нерабочих дней (1 января, 8 марта, Рамазан хайит, 21 марта Навруз, 9 мая, Курбан хайит, 1 сентября, 1 октября, 8 декабря). Дополнительные выходные и переносы указом президента на 2026 — отдельно, в счёт 9 не входят.",
       "official_value": "9 official non-working public holidays per year (7 fixed secular: 1 Jan, 8 Mar, 21 Mar, 9 May, 1 Sep, 1 Oct, 8 Dec + 2 religious: first days of Ruza Hayit and Kurban Hayit). Labor Code Art. 208.",
-      "source_url": "https://www.gazeta.uz/ru/2025/12/25/days-off-2026/",
+      "source_url": "https://buxgalter.uz/publish/doc/text212379_proizvodstvennyy_kalendar_2026",
       "source_title": "Gazeta.uz — Какие дни будут выходными в 2026 году",
       "verify_note": "Statutory list under Art. 208 (ex-131) is 9 holidays, not 11; the '11' value is incorrect (extra government-decreed long-weekend transfer days vary yearly and are not part of the fixed statutory count).",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-08-18"
     },
     {
       "id": "calculator-articles.ts__VACATION_PAY_DEADLINE",
@@ -3085,7 +3090,7 @@
       "source_hint": "lex.uz — алименты до 18 лет (21 для учащихся)",
       "conflict": false,
       "status": "current",
-      "notes": "Alimony paid until the child is 18 (21 for full-time students). Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Alimony paid until the child is 18 (21 for full-time students). Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: Подтверждено: алименты до 18 лет; совершеннолетним — только нетрудоспособным и нуждающимся (ст. 96, 100, 108 СК). Правила «21 год для учащихся» нет.",
       "official_value": "Until 18 (minor children, Family Code Art. 96). Support for adult children continues only if they are disabled/incapacitated and in need (Art. 100/108). There is no general alimony-to-21-for-students provision.",
       "source_url": "https://lex.uz/ru/docs/104723",
       "source_title": "lex.uz — Семейный кодекс Республики Узбекистан",
@@ -3093,7 +3098,7 @@
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-08-18"
     },
     {
       "id": "calculator-articles.ts__ALIMONY_EMPLOYER_TRANSFER_DEADLINE",
@@ -3111,14 +3116,15 @@
       "source_hint": "lex.uz — перечисление алиментов в течение 3 дней",
       "conflict": false,
       "status": "current",
-      "notes": "Employer must transfer withheld alimony within 3 days of paying wages. Not in ledger. [completeness pass 2026-06-25]",
+      "notes": "Employer must transfer withheld alimony within 3 days of paying wages. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: Подтверждено дословно (ст. 137 СК): «не позднее чем в трёхдневный срок со дня выплаты заработной платы».",
       "official_value": "Within 3 days of paying wages/other income (Family Code Art. 137: 'не позднее чем в трехдневный срок со дня выплаты заработной платы').",
       "source_url": "https://lex.uz/ru/docs/104723",
       "source_title": "lex.uz — Семейный кодекс Республики Узбекистан",
       "verify_note": "Employer must remit withheld alimony within 3 days of wage payment (Art. 137); confirmed current.",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verify_method": "tier2-web-2026-06-27",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "calculator-articles.ts__PROPERTY_TAX_PAYMENT_DEADLINE",
@@ -3137,15 +3143,15 @@
       "source_hint": "lex.uz/ru/docs/4674893 — налог на имущество до 1 декабря",
       "conflict": true,
       "status": "current",
-      "notes": "Property tax due by 1 December. NOTE inconsistency: the property-tax quick-answer (line 114/116) states the deadline as 15 April of the following year. Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Property tax due by 1 December. NOTE inconsistency: the property-tax quick-answer (line 114/116) states the deadline as 15 April of the following year. Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: Подтверждено: налог уплачивается либо полностью до 15 апреля, либо двумя равными платежами до 15 апреля и до 15 октября. Наша формулировка описывает только вариант с двумя платежами — стоит добавить вариант единовременной уплаты.",
       "official_value": "For individuals: in equal installments by 15 April and 15 October of the current year (tax notice issued by ~1 March). NOT 1 December.",
-      "source_url": "https://nrm.uz/contentf?doc=53586_3_poryadok_rascheta_i_sroki_uplaty_naloga_na_imushchestvo_fizicheskih_lic&products=4_prakticheskoe_nalogooblojenie",
+      "source_url": "https://blog.salomuy.uz/ru/articles/8/200152",
       "source_title": "Порядок расчёта и сроки уплаты налога на имущество физических лиц (NRM.uz, ст. 423 НК)",
       "verify_note": "Property tax for individuals is paid by 15 April (in full) or in two equal parts by 15 April and 15 October; the article's '1 December' is wrong, and the site's own quick-answer '15 April' is the correct figure.",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-08-18"
     },
     {
       "id": "calculator-articles.ts__LAND_TAX_PAYMENT_DEADLINE",
@@ -3805,8 +3811,8 @@
         "MISC"
       ]
     },
-    "last_reconcile": "2026-07-03",
-    "last_verification_sweep": "2026-08-09",
-    "last_verification_note": "Сверка по первоисточникам после алерта DATA_HUB: 30 позиций, 12 устарели, 15 подтверждены, 1 отбита скептиком, 2 неясны. Правки применены в коде 2026-08-10."
+    "last_reconcile": "2026-08-18",
+    "last_verification_sweep": "2026-08-18",
+    "last_verification_note": "Tier-2 по алерту свежести DATA_HUB (7 изменившихся источников, 10 констант): 7 подтверждены, 2 устарели, 1 не подтверждена (делитель среднедневного заработка — нужен узбекский текст прил. 4 ПКМ-796). Phase-4 применён в тот же день: матпомощь 4,22 БРВ→4,22 МРОТ (5 363 620), выдуманный имущественный вычет 500 БРВ заменён ипотечной льготой 80 МРОТ (101 680 000), льгота на обучение — без лимита. 21 место в ru+uz."
   }
 }

@@ -20,6 +20,37 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-08-18",
+    dateLabelRu: "18 августа 2026",
+    dateLabelUz: "2026-yil 18-avgust",
+    items: [
+      {
+        titleRu: "Необлагаемая матпомощь считается в МРОТ, а не в БРВ — лимит втрое больше",
+        titleUz: "JShShSga tortilmaydigan moddiy yordam BHK da emas, MIH da hisoblanadi — limit uch barobar katta",
+        descRu:
+          "Мы писали, что материальная помощь от работодателя освобождается от НДФЛ в пределах 4,22 БРВ (1 738 640 сум). Пункт 1 статьи 378 НК считает эту льготу в МРОТ: 4,22 МРОТ — это 5 363 620 сум при МРОТ 1 271 000. Лимит втрое выше, чем у нас было указано. Исправлено везде: в статье про НДФЛ, в FAQ, в статье про БРВ, в разделе о выплатах при увольнении (там же — граница обложения выходного пособия) и в примерах расчёта. Льгота пересчитывается при изменении МРОТ в течение года, так что с 1 сентября 2026 она вырастет до 5 739 200 сум.",
+        descUz:
+          "Ish beruvchidan olingan moddiy yordam JShShSdan 4,22 BHK (1 738 640 so'm) doirasida ozod deb yozgan edik. SK 378-moddasi 1-bandi bu imtiyozni MIH da hisoblaydi: 4,22 MIH — MIH 1 271 000 so'mda 5 363 620 so'm. Limit biz ko'rsatganidan uch barobar yuqori. Hamma joyda tuzatildi. 2026-yil 1-sentabrdan imtiyoz 5 739 200 so'mgacha oshadi.",
+      },
+      {
+        titleRu: "«Имущественный вычет 500 БРВ при покупке жилья» — такой льготы нет",
+        titleUz: "«Uy-joy sotib olganda 500 BHK mulkiy chegirma» — bunday imtiyoz yo'q",
+        descRu:
+          "На страницах НДФЛ и БРВ говорилось про имущественный вычет до 500 БРВ (206 000 000 сум), предоставляемый один раз в жизни. В Налоговом кодексе Узбекистана такой нормы нет. Реальная льгота — пункт 16 статьи 378 НК: от НДФЛ освобождаются доходы, направляемые на погашение ипотечного кредита и процентов по нему, до 80 МРОТ (101 680 000 сум) за календарный год. Условие — жильё приобретено, построено или реконструировано с субсидией из бюджета; для молодых семей это условие не применяется, а продажа жилья в течение 36 месяцев льготу аннулирует. Заменили описание, FAQ и пример расчёта.",
+        descUz:
+          "JShShS va BHK sahifalarida umr davomida bir marta beriladigan 500 BHK (206 000 000 so'm) mulkiy chegirma haqida yozilgan edi. O'zbekiston Soliq kodeksida bunday norma yo'q. Haqiqiy imtiyoz — SK 378-moddasi 16-bandi: ipoteka krediti va u bo'yicha foizlarni to'lashga yo'naltirilgan daromadlar kalendar yil davomida 80 MIH (101 680 000 so'm) gacha JShShSdan ozod qilinadi.",
+      },
+      {
+        titleRu: "Льгота на оплату обучения — без ограничения по сумме",
+        titleUz: "O'qish to'loviga imtiyoz — summa cheklovisiz",
+        descRu:
+          "В примере расчёта зарплаты мы называли вычет за обучение детей «до 4,22 БРВ в год» — это была подставленная сумма от другой льготы. Оплата обучения в вузах Узбекистана освобождается от НДФЛ без ограничения по сумме (п. 16 ст. 378 НК), а возрастной предел для детей отменён с 2024 года.",
+        descUz:
+          "Ish haqi hisobi misolida bolalar ta'limi uchun chegirmani «yiliga 4,22 BHK gacha» deb atagan edik — bu boshqa imtiyozdan olingan summa edi. O'zbekiston oliy ta'lim muassasalarida o'qish to'lovi summa cheklovisiz JShShSdan ozod (SK 378-moddasi 16-bandi).",
+      },
+    ],
+  },
+  {
     date: "2026-08-06",
     dateLabelRu: "6 августа 2026",
     dateLabelUz: "2026-yil 6-avgust",

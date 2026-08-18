@@ -44,7 +44,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "OTMda o'qiyotgan bo'lsam, ish beruvchi qo'shimcha imtiyoz beradimi?",
         answer:
-          "OTM (oliy ta'lim muassasasi) talabasi bo'lib ishlasangiz, qonun bo'yicha ish beruvchi sizga maxsus soliq imtiyozi bermaydi. Lekin yiliga 4,22 BHK gacha bo'lgan moddiy yordam JShShSdan ozod (chegirma o'zingizning my.soliq.uz dagi deklaratsiyangiz orqali).",
+          "OTM (oliy ta'lim muassasasi) talabasi bo'lib ishlasangiz, qonun bo'yicha ish beruvchi sizga maxsus soliq imtiyozi bermaydi. Lekin yiliga 4,22 MIH gacha bo'lgan moddiy yordam JShShSdan ozod (5 363 620 so'm), o'qish to'lovi esa summa cheklovisiz JShShSdan ozod (SK 378-moddasi 16-bandi) — my.soliq.uz dagi deklaratsiyangiz orqali.",
       },
       {
         question: "Qishloqda joylashgan ishxonada ish haqi shaharnikidan farq qiladimi?",

@@ -90,9 +90,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'brv',
     textRu:
-      'БРВ (Базовая расчётная величина) в Узбекистане с августа 2025 года — 412 000 сум; с 1 сентября 2026 года повышается до 440 000 сум (Указ ПФ-115). Используется для расчёта государственных пошлин, штрафов, имущественных вычетов и налогов. Например: имущественный вычет при покупке жилья — 500 БРВ = 206 000 000 сум, регистрация ООО — 5 БРВ.',
+      'БРВ (Базовая расчётная величина) в Узбекистане с августа 2025 года — 412 000 сум; с 1 сентября 2026 года повышается до 440 000 сум (Указ ПФ-115). Используется для расчёта государственных пошлин, штрафов и налоговых порогов. Например: регистрация ООО — 5 БРВ, порог обязательной регистрации по НДС — 12 000 БРВ. Льготы по НДФЛ считаются не в БРВ, а в МРОТ (1 271 000 сум).',
     textUz:
-      "O'zbekistonda BHK (Bazaviy hisoblash kattaligi) 2025-yil avgustdan — 412 000 so'm; 2026-yil 1-sentabrdan 440 000 so'mgacha oshiriladi (PF-115 Farmoni). Davlat bojlari, jarimalar, mulkiy chegirmalar va soliqlarni hisoblash uchun ishlatiladi. Masalan: uy-joy sotib olganda mulkiy chegirma — 500 BHK = 206 000 000 so'm, MChJ ro'yxatdan o'tkazish — 5 BHK.",
+      "O'zbekistonda BHK (Bazaviy hisoblash kattaligi) 2025-yil avgustdan — 412 000 so'm; 2026-yil 1-sentabrdan 440 000 so'mgacha oshiriladi (PF-115 Farmoni). Davlat bojlari, jarimalar va soliq chegaralarini hisoblash uchun ishlatiladi. Masalan: MChJ ro'yxatdan o'tkazish — 5 BHK, QQS bo'yicha majburiy ro'yxatdan o'tish chegarasi — 12 000 BHK. JShShS imtiyozlari esa BHK da emas, MIH da (1 271 000 so'm) hisoblanadi.",
   },
   {
     slug: 'osago',

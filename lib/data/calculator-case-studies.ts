@@ -78,9 +78,9 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
           { label: "Ijtimoiy soliq (ish beruvchi to'laydi, 12%)", value: "840 000 so'm" },
         ],
         conclusionRu:
-          'Эффективная нагрузка на работодателя — 7 840 000 сум. Сотрудник может получить вычет за обучение детей (до 4,22 БРВ/год), подав декларацию через my.soliq.uz.',
+          'Эффективная нагрузка на работодателя — 7 840 000 сум. Сотрудник может получить льготу по НДФЛ на оплату обучения детей в вузах Узбекистана — без ограничения по сумме (п. 16 ст. 378 НК), подав декларацию через my.soliq.uz.',
         conclusionUz:
-          "Ish beruvchining samarali yuklamasi 7 840 000 so'm. Xodim my.soliq.uz orqali deklaratsiya topshirib, bolalar ta'limi uchun chegirma olishi mumkin (yiliga 4,22 BHK gacha).",
+          "Ish beruvchining samarali yuklamasi 7 840 000 so'm. Xodim my.soliq.uz orqali deklaratsiya topshirib, bolalarning O'zbekiston oliy ta'lim muassasalaridagi o'qishi uchun JShShS imtiyozini olishi mumkin — summa cheklovisiz (SK 378-moddasi 16-bandi).",
       },
       {
         titleRu: 'Дилшод, фрилансер из Германии',
@@ -409,26 +409,26 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
     calibratedFor: '2026',
     cases: [
       {
-        titleRu: 'Расчёт лимитов в БРВ',
-        titleUz: 'BHK dagi limitlarni hisoblash',
-        contextRu: 'БРВ с августа 2025 = 412 000 сум',
-        contextUz: "2025-yil avgustdan BHK = 412 000 so'm",
+        titleRu: 'Расчёт лимитов в БРВ и МРОТ',
+        titleUz: 'BHK va MIH dagi limitlarni hisoblash',
+        contextRu: 'БРВ с августа 2025 = 412 000 сум, МРОТ = 1 271 000 сум',
+        contextUz: "2025-yil avgustdan BHK = 412 000 so'm, MIH = 1 271 000 so'm",
         stepsRu: [
           { label: 'Беспошлинный ввоз товаров (1 БРВ × 8)', value: '3 296 000 сум' },
-          { label: 'Имущественный вычет (500 БРВ)', value: '206 000 000 сум' },
-          { label: 'Освобождение от НДФЛ матпомощи (4,22 БРВ)', value: '1 738 640 сум' },
+          { label: 'Льгота по НДФЛ на погашение ипотеки (80 МРОТ)', value: '101 680 000 сум' },
+          { label: 'Освобождение от НДФЛ матпомощи (4,22 МРОТ)', value: '5 363 620 сум' },
           { label: 'Порог обязательной регистрации НДС (12 000 БРВ)', value: '4 944 000 000 сум' },
         ],
         stepsUz: [
           { label: "Bojsiz olib kirish (1 BHK × 8)", value: "3 296 000 so'm" },
-          { label: "Mulkiy chegirma (500 BHK)", value: "206 000 000 so'm" },
-          { label: "Moddiy yordam JShShSdan ozod (4,22 BHK)", value: "1 738 640 so'm" },
+          { label: "Ipotekani to'lashga JShShS imtiyozi (80 MIH)", value: "101 680 000 so'm" },
+          { label: "Moddiy yordam JShShSdan ozod (4,22 MIH)", value: "5 363 620 so'm" },
           { label: "QQS majburiy ro'yxatga olish chegarasi (12 000 BHK)", value: "4 944 000 000 so'm" },
         ],
         conclusionRu:
-          'БРВ пересматривается ежегодно. Все лимиты, привязанные к БРВ, автоматически растут вместе с её увеличением.',
+          'БРВ пересматривается ежегодно, и привязанные к ней лимиты растут вместе с ней. Но база у лимитов разная: пошлины, штрафы и налоговые пороги считаются в БРВ, а льготы по НДФЛ — в МРОТ. Спутать их — значит ошибиться втрое.',
         conclusionUz:
-          "BHK har yili qayta ko'rib chiqiladi. BHK ga bog'langan barcha limitlar uning oshishi bilan avtomatik ravishda o'sadi.",
+          "BHK har yili qayta ko'rib chiqiladi va unga bog'langan limitlar u bilan birga o'sadi. Lekin limitlarning asosi har xil: bojlar, jarimalar va soliq chegaralari BHK da, JShShS imtiyozlari esa MIH da hisoblanadi. Ularni chalkashtirish — uch barobar xato qilish demakdir.",
       },
     ],
   },
