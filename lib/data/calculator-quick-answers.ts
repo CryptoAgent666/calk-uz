@@ -132,9 +132,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'vacation-pay',
     textRu:
-      'Отпускные в Узбекистане рассчитываются по среднедневному заработку за 12 месяцев: Заработок за 12 мес ÷ 247 рабочих дней × Дней отпуска. Из суммы удерживается НДФЛ 12%. Стандартный отпуск — 21 рабочий день, плюс дополнительные дни за стаж и вредные условия труда.',
+      'Отпускные в Узбекистане рассчитываются по среднедневному заработку за 12 месяцев: Заработок за 12 мес ÷ 247 рабочих дней × Дней отпуска. Из суммы удерживается НДФЛ 12%. Минимальный отпуск по статье 217 Трудового кодекса — 21 КАЛЕНДАРНЫЙ день; в поле калькулятора вводите рабочие дни, на которые он приходится (21 календарный день без праздников — это примерно 15 рабочих). За стаж и вредные условия положены дополнительные дни.',
     textUz:
-      "O'zbekistonda ta'til puli 12 oylik o'rtacha kunlik ish haqi bo'yicha hisoblanadi: 12 oylik ish haqi ÷ 247 ish kuni × Ta'til kunlari. Summadan JShShS 12% ushlab qolinadi. Standart ta'til — 21 ish kuni, ortiqcha stajga va zararli mehnat sharoitlariga qo'shimcha kunlar.",
+      "O'zbekistonda ta'til puli 12 oylik o'rtacha kunlik ish haqi bo'yicha hisoblanadi: 12 oylik ish haqi ÷ 247 ish kuni × Ta'til kunlari. Summadan JShShS 12% ushlab qolinadi. Mehnat kodeksining 217-moddasi bo'yicha eng kam ta'til — 21 TAQVIM kuni; kalkulyator maydoniga esa unga to'g'ri keladigan ish kunlarini kiriting (bayramlarsiz 21 taqvim kuni — taxminan 15 ish kuni). Staj va zararli mehnat sharoitlari uchun qo'shimcha kunlar beriladi.",
   },
   {
     slug: 'maternity',

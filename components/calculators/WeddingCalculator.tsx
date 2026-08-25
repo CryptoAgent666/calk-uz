@@ -26,7 +26,7 @@ export default function WeddingCalculator() {
         guests: 'Mehmonlar soni', venue: 'Joy turi', costPerPlate: 'Narx/kishi (UZS)',
         results: 'Natijalar', venueCost: 'Joy ijarasi', foodCost: 'Ovqat', musicCost: 'Musiqa',
         photoCost: 'Foto/Video', decorCost: 'Bezak', dressCost: 'Kiyim-kechak',
-        transportCost: 'Transport', otherCost: 'Boshqa', totalCost: 'Jami xarajat',
+        transportCost: 'Transport', invitationsCost: 'Taklifnomalar', otherCost: 'Boshqa xarajatlar', totalCost: 'Jami xarajat',
         costPerGuest: 'Har bir mehmon uchun',
         restaurant: 'Restoran', banquet_hall: 'To\'yxona', home: 'Uyda', outdoor: 'Ochiq havoda',
       }
@@ -34,7 +34,7 @@ export default function WeddingCalculator() {
         guests: 'Количество гостей', venue: 'Тип места', costPerPlate: 'Стоимость/чел. (UZS)',
         results: 'Результаты', venueCost: 'Аренда зала', foodCost: 'Питание', musicCost: 'Музыка',
         photoCost: 'Фото/Видео', decorCost: 'Декор', dressCost: 'Одежда',
-        transportCost: 'Транспорт', otherCost: 'Прочее', totalCost: 'Общая стоимость',
+        transportCost: 'Транспорт', invitationsCost: 'Приглашения', otherCost: 'Прочие расходы', totalCost: 'Общая стоимость',
         costPerGuest: 'На каждого гостя',
         restaurant: 'Ресторан', banquet_hall: 'Банкетный зал', home: 'Дома', outdoor: 'На природе',
       }
@@ -61,6 +61,8 @@ export default function WeddingCalculator() {
             <div className="flex justify-between"><span className="text-muted-foreground">{t.decorCost}</span><span>{formatCurrency(result.decorationCost, 'UZS', locale)}</span></div>
             <div className="flex justify-between"><span className="text-muted-foreground">{t.dressCost}</span><span>{formatCurrency(result.dressCost, 'UZS', locale)}</span></div>
             <div className="flex justify-between"><span className="text-muted-foreground">{t.transportCost}</span><span>{formatCurrency(result.transportCost, 'UZS', locale)}</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.invitationsCost}</span><span>{formatCurrency(result.invitationsCost, 'UZS', locale)}</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.otherCost}</span><span>{formatCurrency(result.otherCost, 'UZS', locale)}</span></div>
             <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>{t.totalCost}</span><span className="text-primary">{formatCurrency(result.totalCost, 'UZS', locale)}</span></div>
             <div className="flex justify-between text-sm"><span className="text-muted-foreground">{t.costPerGuest}</span><span>{formatCurrency(result.costPerGuest, 'UZS', locale)}</span></div>
           </CardContent>
