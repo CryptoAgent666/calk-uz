@@ -451,9 +451,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Курсы банков',
     titleUz: 'Bank kurslari',
     descriptionRu:
-      'Актуальные курсы покупки и продажи валют в банках Узбекистана. Сравнение курсов для обмена.',
+      'Официальный курс ЦБ Узбекистана и пересчёт суммы по нему. Курсы покупки и продажи в коммерческих банках отличаются — уточняйте в своём банке.',
     descriptionUz:
-      "O'zbekiston banklarida valyutalarning sotib olish va sotish kurslari. Ayirboshlash uchun kurslarni solishtirish.",
+      "O'zbekiston Markaziy bankining rasmiy kursi va summani shu kurs bo'yicha qayta hisoblash. Tijorat banklaridagi sotib olish va sotish kurslari farq qiladi — o'z bankingizda aniqlashtiring.",
     category: 'currency',
     icon: 'Building2',
     keywords: ['курсы банков', 'bank kurslari', 'bank rates', 'обмен валют', 'курс покупки'],
