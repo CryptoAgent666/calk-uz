@@ -125,9 +125,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'self-employed',
     textRu:
-      'С 2026 года самозанятые в Узбекистане платят налог 1% с оборота через приложение Soliq.uz. Регистрация бесплатная, без поездок в налоговую. Лимит дохода — без ограничений. Социальный налог не платится. Декларации — автоматически. Подходит для фрилансеров, репетиторов, частных мастеров.',
+      'С 2026 года самозанятые в Узбекистане платят налог 1% с оборота через приложение Soliq.uz. Регистрация бесплатная, без поездок в налоговую. Прежний лимит 100 млн сум отменён, но доход должен оставаться в пределах порога налога с оборота — 12 000 БРВ (4 944 000 000 сум) за налоговый период; сверх него нужно переходить на НДС и налог на прибыль. Социальный налог не платится. Декларации — автоматически. Подходит для фрилансеров, репетиторов, частных мастеров.',
     textUz:
-      "2026-yildan O'zbekistondagi o'z-o'zini band qilganlar Soliq.uz ilovasi orqali aylanmadan 1% soliq to'laydilar. Ro'yxatga olish bepul, soliq idorasiga borishsiz. Daromad chegarasi — cheklovsiz. Ijtimoiy soliq to'lanmaydi. Deklaratsiyalar — avtomatik. Frilanserlar, repetitorlar, xususiy ustalar uchun mos.",
+      "2026-yildan O'zbekistondagi o'z-o'zini band qilganlar Soliq.uz ilovasi orqali aylanmadan 1% soliq to'laydilar. Ro'yxatga olish bepul, soliq idorasiga borishsiz. Avvalgi 100 mln so'mlik limit bekor qilindi, lekin daromad aylanma solig'i chegarasi — soliq davri uchun 12 000 BHK (4 944 000 000 so'm) doirasida qolishi kerak; undan oshsa QQS va foyda solig'iga o'tish kerak. Ijtimoiy soliq to'lanmaydi. Deklaratsiyalar — avtomatik. Frilanserlar, repetitorlar, xususiy ustalar uchun mos.",
   },
   {
     slug: 'vacation-pay',
