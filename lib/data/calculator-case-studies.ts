@@ -278,7 +278,7 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
           { label: "5 yillik OSAGO (taxminiy)", value: "~3 250 000 so'm" },
         ],
         conclusionRu:
-          'Закладывайте в бюджет не только платёж, но и ОСАГО, ТО и налог на транспорт. Полная стоимость владения — на 6-8% выше платежа по кредиту.',
+          'Закладывайте в бюджет не только платёж, но и ОСАГО с техобслуживанием. Ежегодного транспортного налога в Узбекистане нет — при покупке платятся разовые госпошлины за постановку на учёт. Полная стоимость владения — на 6-8% выше платежа по кредиту.',
         conclusionUz:
           "Byudjetga faqat to'lovni emas, OSAGO va texnik ko'rikni ham kiriting. Egalik qiymati kredit to'lovidan 6-8% yuqori.",
       },

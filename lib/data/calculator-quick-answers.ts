@@ -62,9 +62,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'auto-credit',
     textRu:
-      'Автокредит в Узбекистане в 2026: ставка 22–26% годовых, первый взнос 20–30%, срок 3–7 лет. Дополнительно: ОСАГО (от 160 000 сум/год), налог на транспорт (от 1 БРВ в год). На Chevrolet Cobalt за 160 млн сум при 30% взносе и 5 годах кредита ежемесячный платёж составит ~3,2 млн сум.',
+      'Автокредит в Узбекистане в 2026: ставка 22–26% годовых, первый взнос 20–30%, срок 3–7 лет. Дополнительно: ОСАГО (от 160 000 сум/год) и разовые госпошлины при постановке на учёт — 13,04 БРВ с новыми номерами. Ежегодного транспортного налога в Узбекистане нет. На Chevrolet Cobalt за 160 млн сум при 30% взносе и 5 годах кредита ежемесячный платёж составит ~3,2 млн сум.',
     textUz:
-      "2026-yilda O'zbekistonda avtokredit: stavka yillik 22–26%, boshlang'ich to'lov 20–30%, muddat 3–7 yil. Qo'shimcha: OSAGO (yiliga 160 000 so'm dan), transport solig'i (yiliga 1 BHK dan). 160 mln so'mdagi Chevrolet Cobalt uchun 30% to'lov va 5 yil kreditda oylik to'lov ~3,2 mln so'm bo'ladi.",
+      "2026-yilda O'zbekistonda avtokredit: stavka yillik 22–26%, boshlang'ich to'lov 20–30%, muddat 3–7 yil. Qo'shimcha: OSAGO (yiliga 160 000 so'mdan) va ro'yxatdan o'tkazishdagi bir martalik davlat bojlari — yangi raqamlar bilan 13,04 BHK. O'zbekistonda yillik transport solig'i yo'q. 160 mln so'mdagi Chevrolet Cobalt uchun 30% to'lov va 5 yil kreditda oylik to'lov ~3,2 mln so'm bo'ladi.",
   },
   {
     slug: 'currency-converter',
