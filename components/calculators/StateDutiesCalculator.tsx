@@ -16,8 +16,8 @@ export default function StateDutiesCalculator() {
   const selectedDuty = STATE_DUTIES.find(d => d.type === selectedType)
 
   const t = locale === 'uz'
-    ? { type: 'Xizmat turi', results: 'Natijalar', brvMultiplier: 'BHM koeffitsiyenti', amount: 'Summa' }
-    : { type: 'Тип услуги', results: 'Результаты', brvMultiplier: 'Коэфф. БРВ', amount: 'Сумма' }
+    ? { type: 'Xizmat turi', results: 'Natijalar', brvMultiplier: 'BHM koeffitsiyenti', brvUnit: 'BHM', amount: 'Summa' }
+    : { type: 'Тип услуги', results: 'Результаты', brvMultiplier: 'Коэфф. БРВ', brvUnit: 'БРВ', amount: 'Сумма' }
 
   return (
     <div className="space-y-6">
@@ -32,7 +32,7 @@ export default function StateDutiesCalculator() {
       <Card className="border-primary/20">
         <CardHeader><CardTitle className="text-lg">{t.results}</CardTitle></CardHeader>
         <CardContent className="space-y-3">
-          <div className="flex justify-between"><span className="text-muted-foreground">{t.brvMultiplier}</span><span>{result.brvMultiplier} BHM</span></div>
+          <div className="flex justify-between"><span className="text-muted-foreground">{t.brvMultiplier}</span><span>{result.brvMultiplier} {t.brvUnit}</span></div>
           <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>{t.amount}</span><span className="text-primary">{formatCurrency(result.amount, 'UZS', locale)}</span></div>
         </CardContent>
       </Card>

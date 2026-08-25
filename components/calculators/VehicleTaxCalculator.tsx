@@ -41,7 +41,7 @@ export default function VehicleTaxCalculator() {
         techPassport: 'Ro‘yxatga olish guvohnomasi (texpasport)',
         platesRow: 'Davlat raqami belgilarini berish',
         total: 'Jami bir martalik to‘lov',
-        inBrv: 'BHM da',
+        inBrv: 'BHM da', brvUnit: 'BHM',
       }
     : {
         notice: 'В Узбекистане нет ежегодного транспортного налога. Владелец авто платит разовую госпошлину при постановке на учёт — её и считает калькулятор.',
@@ -55,7 +55,7 @@ export default function VehicleTaxCalculator() {
         techPassport: 'Свидетельство о регистрации (техпаспорт)',
         platesRow: 'Выдача госномеров',
         total: 'Итого разовый платёж',
-        inBrv: 'в БРВ',
+        inBrv: 'в БРВ', brvUnit: 'БРВ',
       }
 
   const kinds: { value: VehicleKind; label: string }[] = [
@@ -117,7 +117,7 @@ export default function VehicleTaxCalculator() {
           </div>
           <div className="flex justify-between text-xs text-muted-foreground">
             <span>{t.inBrv}</span>
-            <span>{result.totalBrv.toFixed(2)} БРВ</span>
+            <span>{result.totalBrv.toFixed(2)} {t.brvUnit}</span>
           </div>
         </CardContent>
       </Card>
