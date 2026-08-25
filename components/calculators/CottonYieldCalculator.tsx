@@ -25,8 +25,8 @@ export default function CottonYieldCalculator() {
   }, [area, yieldPerHa, pricePerKg, costsPerHa])
 
   const t = locale === 'uz'
-    ? { area: 'Maydon (gektar)', yield: 'Hosildorlik (kg/ga)', price: 'Narx (UZS/kg)', costs: 'Xarajatlar (UZS/ga)', results: 'Natijalar', totalYield: 'Jami hosil (kg)', grossRevenue: 'Yalpi daromad', totalCosts: 'Jami xarajatlar', netProfit: 'Sof foyda', placeholder: 'Gektarni kiriting' }
-    : { area: 'Площадь (гектар)', yield: 'Урожайность (кг/га)', price: 'Цена (UZS/кг)', costs: 'Затраты (UZS/га)', results: 'Результаты', totalYield: 'Общий урожай (кг)', grossRevenue: 'Валовой доход', totalCosts: 'Общие затраты', netProfit: 'Чистая прибыль', placeholder: 'Введите площадь' }
+    ? { area: 'Maydon (gektar)', yield: 'Hosildorlik (kg/ga)', price: 'Narx (UZS/kg)', costs: 'Xarajatlar (UZS/ga)', results: 'Natijalar', unit: 'kg', totalYield: 'Jami hosil (kg)', grossRevenue: 'Yalpi daromad', totalCosts: 'Jami xarajatlar', netProfit: 'Sof foyda', placeholder: 'Gektarni kiriting' }
+    : { area: 'Площадь (гектар)', yield: 'Урожайность (кг/га)', price: 'Цена (UZS/кг)', costs: 'Затраты (UZS/га)', results: 'Результаты', unit: 'кг', totalYield: 'Общий урожай (кг)', grossRevenue: 'Валовой доход', totalCosts: 'Общие затраты', netProfit: 'Чистая прибыль', placeholder: 'Введите площадь' }
 
   return (
     <div className="space-y-6">
@@ -44,7 +44,7 @@ export default function CottonYieldCalculator() {
         <Card className="border-primary/20">
           <CardHeader><CardTitle className="text-lg">{t.results}</CardTitle></CardHeader>
           <CardContent className="space-y-3">
-            <div className="flex justify-between"><span className="text-muted-foreground">{t.totalYield}</span><span>{formatNumber(result.totalYieldKg, locale)} kg</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.totalYield}</span><span>{formatNumber(result.totalYieldKg, locale)} {t.unit}</span></div>
             <div className="flex justify-between"><span className="text-muted-foreground">{t.grossRevenue}</span><span>{formatCurrency(result.grossRevenue, 'UZS', locale)}</span></div>
             <div className="flex justify-between"><span className="text-muted-foreground">{t.totalCosts}</span><span className="text-destructive">{formatCurrency(result.costs, 'UZS', locale)}</span></div>
             <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>{t.netProfit}</span><span className={result.netProfit >= 0 ? 'text-green-600' : 'text-destructive'}>{formatCurrency(result.netProfit, 'UZS', locale)}</span></div>

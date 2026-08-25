@@ -24,12 +24,12 @@ export default function FuelConsumptionCalculator() {
   const t = locale === 'uz'
     ? {
         distance: 'Masofa (km)', consumption: 'Sarfiyot (l/100km)', fuelType: 'Yoqilg\'i turi',
-        results: 'Natijalar', totalFuel: 'Jami yoqilg\'i (l)', fuelPrice: 'Yoqilg\'i narxi',
+        results: 'Natijalar', unit: 'l', totalFuel: 'Jami yoqilg\'i (l)', fuelPrice: 'Yoqilg\'i narxi',
         totalCost: 'Jami xarajat', costPerKm: 'Km uchun xarajat',
       }
     : {
         distance: 'Расстояние (км)', consumption: 'Расход (л/100км)', fuelType: 'Тип топлива',
-        results: 'Результаты', totalFuel: 'Всего топлива (л)', fuelPrice: 'Цена топлива',
+        results: 'Результаты', unit: 'л', totalFuel: 'Всего топлива (л)', fuelPrice: 'Цена топлива',
         totalCost: 'Общая стоимость', costPerKm: 'Стоимость за км',
       }
 
@@ -62,7 +62,7 @@ export default function FuelConsumptionCalculator() {
         <Card className="border-primary/20">
           <CardHeader><CardTitle className="text-lg">{t.results}</CardTitle></CardHeader>
           <CardContent className="space-y-3">
-            <div className="flex justify-between"><span className="text-muted-foreground">{t.totalFuel}</span><span>{result.totalFuelLiters.toFixed(1)} l</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.totalFuel}</span><span>{result.totalFuelLiters.toFixed(1)} {t.unit}</span></div>
             <div className="flex justify-between"><span className="text-muted-foreground">{t.fuelPrice}</span><span>{formatCurrency(result.fuelPricePerLiter, 'UZS', locale)}/l</span></div>
             <div className="flex justify-between"><span className="text-muted-foreground">{t.costPerKm}</span><span>{formatCurrency(result.costPerKm, 'UZS', locale)}</span></div>
             <div className="border-t pt-3 flex justify-between font-bold text-lg">

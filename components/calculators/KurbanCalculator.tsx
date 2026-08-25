@@ -22,8 +22,8 @@ export default function KurbanCalculator() {
   }, [animalType, price, shares])
 
   const t = locale === 'uz'
-    ? { type: 'Hayvon turi', price: 'Narx (UZS)', shares: 'Ulush', results: 'Natijalar', pricePerShare: 'Ulush narxi', totalCost: 'Jami xarajat', meatEstimate: 'Taxminiy go\'sht (kg)', sheep: 'Qo\'y', goat: 'Echki', cow: 'Sigir', camel: 'Tuya' }
-    : { type: 'Тип животного', price: 'Цена (UZS)', shares: 'Долей', results: 'Результаты', pricePerShare: 'Цена за долю', totalCost: 'Общая стоимость', meatEstimate: 'Мясо примерно (кг)', sheep: 'Овца', goat: 'Коза', cow: 'Корова', camel: 'Верблюд' }
+    ? { type: 'Hayvon turi', price: 'Narx (UZS)', shares: 'Ulush', results: 'Natijalar', unit: 'kg', pricePerShare: 'Ulush narxi', totalCost: 'Jami xarajat', meatEstimate: 'Taxminiy go\'sht (kg)', sheep: 'Qo\'y', goat: 'Echki', cow: 'Sigir', camel: 'Tuya' }
+    : { type: 'Тип животного', price: 'Цена (UZS)', shares: 'Долей', results: 'Результаты', unit: 'кг', pricePerShare: 'Цена за долю', totalCost: 'Общая стоимость', meatEstimate: 'Мясо примерно (кг)', sheep: 'Овца', goat: 'Коза', cow: 'Корова', camel: 'Верблюд' }
 
   const animalOptions = { sheep: t.sheep, goat: t.goat, cow: t.cow, camel: t.camel }
 
@@ -43,7 +43,7 @@ export default function KurbanCalculator() {
           <CardHeader><CardTitle className="text-lg">{t.results}</CardTitle></CardHeader>
           <CardContent className="space-y-3">
             <div className="flex justify-between"><span className="text-muted-foreground">{t.pricePerShare}</span><span>{formatCurrency(result.pricePerShare, 'UZS', locale)}</span></div>
-            <div className="flex justify-between"><span className="text-muted-foreground">{t.meatEstimate}</span><span>{result.meatEstimateKg.toFixed(0)} kg</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.meatEstimate}</span><span>{result.meatEstimateKg.toFixed(0)} {t.unit}</span></div>
             <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>{t.totalCost}</span><span className="text-primary">{formatCurrency(result.totalCost, 'UZS', locale)}</span></div>
           </CardContent>
         </Card>

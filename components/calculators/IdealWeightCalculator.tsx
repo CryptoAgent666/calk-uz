@@ -20,8 +20,8 @@ export default function IdealWeightCalculator() {
   }, [height, isMale])
 
   const t = locale === 'uz'
-    ? { height: 'Bo\'y (sm)', isMale: 'Erkak', results: 'Ideal vazn (kg)', average: 'O\'rtacha', devine: 'Devin', robinson: 'Robinson', miller: 'Miller', hamwi: 'Hamwi' }
-    : { height: 'Рост (см)', isMale: 'Мужской пол', results: 'Идеальный вес (кг)', average: 'Среднее', devine: 'Девайн', robinson: 'Робинсон', miller: 'Миллер', hamwi: 'Хамви' }
+    ? { height: 'Bo\'y (sm)', isMale: 'Erkak', results: 'Ideal vazn (kg)', unit: 'kg', average: 'O\'rtacha', devine: 'Devin', robinson: 'Robinson', miller: 'Miller', hamwi: 'Hamwi' }
+    : { height: 'Рост (см)', isMale: 'Мужской пол', results: 'Идеальный вес (кг)', unit: 'кг', average: 'Среднее', devine: 'Девайн', robinson: 'Робинсон', miller: 'Миллер', hamwi: 'Хамви' }
 
   return (
     <div className="space-y-6">
@@ -35,11 +35,11 @@ export default function IdealWeightCalculator() {
         <Card className="border-primary/20">
           <CardHeader><CardTitle className="text-lg">{t.results}</CardTitle></CardHeader>
           <CardContent className="space-y-3">
-            <div className="border-b pb-3 flex justify-between font-bold text-lg"><span>{t.average}</span><span className="text-primary">{result.average.toFixed(1)} kg</span></div>
-            <div className="flex justify-between"><span className="text-muted-foreground">{t.devine}</span><span>{result.devine.toFixed(1)} kg</span></div>
-            <div className="flex justify-between"><span className="text-muted-foreground">{t.robinson}</span><span>{result.robinson.toFixed(1)} kg</span></div>
-            <div className="flex justify-between"><span className="text-muted-foreground">{t.miller}</span><span>{result.miller.toFixed(1)} kg</span></div>
-            <div className="flex justify-between"><span className="text-muted-foreground">{t.hamwi}</span><span>{result.hamwi.toFixed(1)} kg</span></div>
+            <div className="border-b pb-3 flex justify-between font-bold text-lg"><span>{t.average}</span><span className="text-primary">{result.average.toFixed(1)} {t.unit}</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.devine}</span><span>{result.devine.toFixed(1)} {t.unit}</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.robinson}</span><span>{result.robinson.toFixed(1)} {t.unit}</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.miller}</span><span>{result.miller.toFixed(1)} {t.unit}</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.hamwi}</span><span>{result.hamwi.toFixed(1)} {t.unit}</span></div>
           </CardContent>
         </Card>
       )}
