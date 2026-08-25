@@ -39,6 +39,14 @@ jobs:
           node-version: '25'
           cache: npm
 
+      # Устаревшие значения в прозе — класс ошибок, который на этом сайте
+      # всплывал в каждом втором проходе QA: константу обновили, а текст вокруг
+      # неё забыли. Проверка идёт ДО npm ci, чтобы падать за секунды.
+      # Если шаг упал на легитимном историческом упоминании — не удаляйте
+      # запись из списка, а сузьте её полем ctx в scripts/check-stale-prose.mjs.
+      - name: Check prose for stale regulatory values
+        run: node scripts/check-stale-prose.mjs
+
       - name: Write version marker (served at /version.txt)
         run: echo "$GITHUB_SHA $(date -u +%FT%TZ)" > public/version.txt
 
