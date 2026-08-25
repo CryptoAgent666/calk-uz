@@ -25,8 +25,8 @@ export default function LlcCalculator() {
   }, [revenue, expenses, payroll, isVatPayer])
 
   const t = locale === 'uz'
-    ? { revenue: 'Daromad (UZS)', expenses: 'Xarajatlar (UZS)', payroll: 'Ish haqi fondi (UZS)', vatPayer: 'QQS to\'lovchisi', results: 'Natijalar', profit: 'Foyda', corporateTax: 'Foyda solig\'i (15%)', vat: 'QQS', socialTax: 'Ijtimoiy soliq', totalBurden: 'Jami soliq yuki', netProfit: 'Sof foyda', placeholder: 'Summani kiriting' }
-    : { revenue: 'Выручка (UZS)', expenses: 'Расходы (UZS)', payroll: 'ФОТ (UZS)', vatPayer: 'Плательщик НДС', results: 'Результаты', profit: 'Прибыль', corporateTax: 'Налог на прибыль (15%)', vat: 'НДС', socialTax: 'Социальный налог', totalBurden: 'Общая нагрузка', netProfit: 'Чистая прибыль', placeholder: 'Введите сумму' }
+    ? { revenue: 'Daromad (UZS)', expenses: 'Xarajatlar (UZS)', payroll: 'Ish haqi fondi (UZS)', vatPayer: 'QQS to\'lovchisi', results: 'Natijalar', profit: 'Foyda', corporateTax: 'Foyda solig\'i (15%)', vat: 'QQS', socialTax: 'Ijtimoiy soliq', totalBurden: "Jami soliq yuki (foyda solig'i + ijtimoiy soliq)", netProfit: "Foyda solig'idan keyingi foyda", placeholder: 'Summani kiriting' }
+    : { revenue: 'Выручка (UZS)', expenses: 'Расходы (UZS)', payroll: 'ФОТ (UZS)', vatPayer: 'Плательщик НДС', results: 'Результаты', profit: 'Прибыль', corporateTax: 'Налог на прибыль (15%)', vat: 'НДС', socialTax: 'Социальный налог', totalBurden: 'Налоговая нагрузка (прибыль + соцналог)', netProfit: 'Прибыль после налога на прибыль', placeholder: 'Введите сумму' }
 
   return (
     <div className="space-y-6">
@@ -46,6 +46,7 @@ export default function LlcCalculator() {
             <div className="flex justify-between"><span className="text-muted-foreground">{t.corporateTax}</span><span className="text-destructive">{formatCurrency(result.corporateTax, 'UZS', locale)}</span></div>
             {result.vatAmount > 0 && <div className="flex justify-between"><span className="text-muted-foreground">{t.vat}</span><span>{formatCurrency(result.vatAmount, 'UZS', locale)}</span></div>}
             <div className="flex justify-between"><span className="text-muted-foreground">{t.socialTax}</span><span>{formatCurrency(result.socialTaxOnPayroll, 'UZS', locale)}</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.totalBurden}</span><span>{formatCurrency(result.totalTaxBurden, 'UZS', locale)}</span></div>
             <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>{t.netProfit}</span><span className="text-primary">{formatCurrency(result.netProfit, 'UZS', locale)}</span></div>
           </CardContent>
         </Card>

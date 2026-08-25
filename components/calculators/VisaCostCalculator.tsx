@@ -42,6 +42,7 @@ export default function VisaCostCalculator() {
         results: 'Natijalar',
         consulateFee: 'Konsullik yig\'imi',
         serviceFee: 'Xizmat yig\'imi',
+        additionalFee: "Qo'shimcha yig'im",
         insurance: 'Sug\'urta',
         photo: 'Fotosurat',
         totalCost: 'Jami xarajat',
@@ -58,6 +59,7 @@ export default function VisaCostCalculator() {
         results: 'Результаты',
         consulateFee: 'Консульский сбор',
         serviceFee: 'Сервисный сбор',
+        additionalFee: 'Дополнительный сбор',
         insurance: 'Страховка',
         photo: 'Фотография',
         totalCost: 'Общая стоимость',
@@ -109,6 +111,15 @@ export default function VisaCostCalculator() {
         <CardContent className="space-y-3">
           <div className="flex justify-between"><span className="text-muted-foreground">{t.consulateFee}</span><span>{formatCurrency(result.consulateFee, 'UZS', locale)}</span></div>
           <div className="flex justify-between"><span className="text-muted-foreground">{t.serviceFee}</span><span>{formatCurrency(result.serviceFee, 'UZS', locale)}</span></div>
+          {result.additionalFee > 0 && (
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">
+                {t.additionalFee}
+                {result.additionalFeeNote && <span className="block text-xs">{result.additionalFeeNote}</span>}
+              </span>
+              <span>{formatCurrency(result.additionalFee, 'UZS', locale)}</span>
+            </div>
+          )}
           <div className="flex justify-between"><span className="text-muted-foreground">{t.insurance}</span><span>{formatCurrency(result.insuranceCost, 'UZS', locale)}</span></div>
           <div className="flex justify-between"><span className="text-muted-foreground">{t.photo}</span><span>{formatCurrency(result.photoCost, 'UZS', locale)}</span></div>
           <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>{t.totalCost}</span><span className="text-primary">{formatCurrency(result.totalCost, 'UZS', locale)}</span></div>

@@ -1133,12 +1133,12 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     slug: 'remittances',
     totalTimeMinutes: 1,
     stepsRu: [
-      { name: 'Выберите страну отправки', text: 'Укажите страну, из которой отправляется перевод.' },
+      { name: 'Выберите валюту', text: 'Укажите валюту, в которой отправляется перевод — курс подтягивается с сайта ЦБ.' },
       { name: 'Введите сумму', text: 'Укажите сумму перевода в валюте отправления.' },
       { name: 'Получите расчёт', text: 'Результат появится сразу — вы узнаете сумму к получению в сумах с учётом комиссии.' },
     ],
     stepsUz: [
-      { name: "Jo'natish mamlakatini tanlang", text: "Pul o'tkazma jo'natiladigan mamlakatni ko'rsating." },
+      { name: "Valyutani tanlang", text: "O'tkazma jo'natilayotgan valyutani tanlang — kurs MB saytidan olinadi." },
       { name: 'Summani kiriting', text: "Jo'natish valyutasida o'tkazma summasini kiriting." },
       { name: 'Hisobni oling', text: "Natija darhol chiqadi — komissiyani hisobga olgan holda so'mda qabul qilinadigan summani bilib oling." },
     ],
@@ -1147,16 +1147,14 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     slug: 'visa-cost',
     totalTimeMinutes: 2,
     stepsRu: [
-      { name: 'Выберите страну', text: 'Укажите страну, для которой оформляется виза.' },
-      { name: 'Выберите тип визы', text: 'Укажите тип: туристическая, рабочая, студенческая, транзитная.' },
-      { name: 'Укажите срочность', text: 'Выберите обычный или ускоренный срок оформления.' },
-      { name: 'Получите расчёт', text: 'Результат появится сразу — вы узнаете консульский сбор и общие расходы на визу.' },
+      { name: 'Выберите страну', text: 'Шенген, США, Великобритания, Южная Корея, Япония, Китай; для Турции и ОАЭ виза не нужна.' },
+      { name: 'Укажите срок страховки', text: 'Число дней поездки — от него считается медицинская страховка.' },
+      { name: 'Получите расчёт', text: 'Результат появится сразу: консульский и сервисный сборы по курсу ЦБ, страховка, фото и итог. Для США отдельной строкой идёт Visa Integrity Fee.' },
     ],
     stepsUz: [
-      { name: 'Mamlakatni tanlang', text: "Viza rasmiylashtirilayotgan mamlakatni ko'rsating." },
-      { name: 'Viza turini tanlang', text: "Turini ko'rsating: turistik, ishchi, talaba, tranzit." },
-      { name: "Shoshilinchligini ko'rsating", text: "Oddiy yoki tezlashtirilgan rasmiylashtirish muddatini tanlang." },
-      { name: 'Hisobni oling', text: "Natija darhol chiqadi — konsullik yig'imi va viza uchun umumiy xarajatlarni bilib oling." },
+      { name: 'Mamlakatni tanlang', text: 'Shengen, AQSH, Buyuk Britaniya, Janubiy Koreya, Yaponiya, Xitoy; Turkiya va BAAga viza kerak emas.' },
+      { name: 'Sug\'urta muddatini ko\'rsating', text: 'Safar kunlari soni — tibbiy sug\'urta shundan hisoblanadi.' },
+      { name: 'Hisobni oling', text: 'Natija darhol chiqadi: MB kursi bo\'yicha konsullik va xizmat yig\'imlari, sug\'urta, fotosurat va jami. AQSH uchun Visa Integrity Fee alohida qator bo\'lib chiqadi.' },
     ],
   },
   {
