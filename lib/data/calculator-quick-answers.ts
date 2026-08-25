@@ -97,9 +97,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'osago',
     textRu:
-      'ОСАГО в Узбекистане в 2026 году: 192 000 сум — Ташкент с ограниченным кругом водителей, 384 000 — без ограничений, 160 000/320 000 — для других регионов. Лимит выплаты — 80 млн сум. КБМ (бонус-малус): 0,9× при безаварийной езде, 1,7× при 3+ ДТП.',
+      'ОСАГО в Узбекистане в 2026 году: 192 000 сум — Ташкент с ограниченным кругом водителей, 384 000 — без ограничений, 160 000/320 000 — для других регионов. Лимит выплаты — 80 млн сум. Коэффициент истории: чистая история — 1,0 (скидки за безаварийность в тарифе 2026 нет), 1 ДТП по вине — 1,3, два — 2,0, три и больше — 3,0.',
     textUz:
-      "2026-yilda O'zbekistonda OSAGO: Toshkentda cheklangan haydovchilar doirasida — 192 000 so'm, cheksiz — 384 000, boshqa hududlarda — 160 000/320 000. To'lov chegarasi — 80 mln so'm. KBM (bonus-malus): baxtsiz hodisasiz haydashda 0,9×, 3+ baxtsiz hodisada 1,7×.",
+      "2026-yilda O'zbekistonda OSAGO: Toshkentda cheklangan haydovchilar doirasida — 192 000 so'm, cheksiz — 384 000, boshqa hududlarda — 160 000/320 000. To'lov chegarasi — 80 mln so'm. Tarix koeffitsiyenti: toza tarix — 1,0 (2026 tarifida baxtsiz hodisasizlik uchun chegirma yo'q), aybdor 1 hodisa — 1,3, ikkita — 2,0, uch va undan ortiq — 3,0.",
   },
   {
     slug: 'vehicle-tax',

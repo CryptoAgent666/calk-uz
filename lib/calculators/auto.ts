@@ -7,7 +7,6 @@
 export interface OsagoResult {
   baseTariff: number
   /** Region-specific premium (already baked into baseTariff). 1.2 = Tashkent, 1.0 = other regions. */
-  regionMultiplier: number
   historyCoeff: number
   annualPremium: number
 }
@@ -34,10 +33,13 @@ export function calculateOsago(
   else if (accidentHistory === 2) historyCoeff = 2.0
   else if (accidentHistory >= 3) historyCoeff = 3.0
 
+  // Отдельного коэффициента региона в тарифе 2026 нет: регион уже заложен в
+  // сам базовый тариф (192 000 Ташкент против 160 000 по областям). Прежний
+  // множитель 1,2 остался от старой модели, к премии не применялся и попал
+  // в пример на странице как «коэффициент региона».
   const annualPremium = Math.round(baseTariff * historyCoeff)
-  const regionMultiplier = region === 'tashkent' ? 1.2 : 1.0
 
-  return { baseTariff, regionMultiplier, historyCoeff, annualPremium }
+  return { baseTariff, historyCoeff, annualPremium }
 }
 
 // Fuel Consumption Calculator
