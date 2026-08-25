@@ -16,8 +16,8 @@ export default function PassportFeesCalculator() {
   const result = useMemo(() => calculatePassportFees(type, isUrgent), [type, isUrgent])
 
   const t = locale === 'uz'
-    ? { type: 'Pasport turi', urgent: 'Shoshilinch', results: 'Natijalar', baseFee: 'Oddiy narx', urgentFee: 'Shoshilinch narx', totalFee: 'Jami to\'lov', processingDays: 'Tayyorlanish muddati (kun)', new: 'Yangi', replacement: 'Almashtirish', lost: 'Yo\'qolgan', child: 'Bola', biometric: 'Biometrik' }
-    : { type: 'Тип паспорта', urgent: 'Срочный', results: 'Результаты', baseFee: 'Обычная стоимость', urgentFee: 'Срочная стоимость', totalFee: 'Итого', processingDays: 'Срок изготовления (дней)', new: 'Новый', replacement: 'Замена', lost: 'Утерянный', child: 'Детский', biometric: 'Биометрический' }
+    ? { type: 'Pasport turi', urgent: 'Shoshilinch', results: 'Natijalar', baseFee: 'Davlat boji', totalFee: 'Jami to\'lov', processingDays: 'Tayyorlanish muddati (kun)', new: 'Yangi', replacement: 'Almashtirish', lost: 'Yo\'qolgan', child: 'Bola', biometric: 'Biometrik' }
+    : { type: 'Тип паспорта', urgent: 'Срочный', results: 'Результаты', baseFee: 'Госпошлина', totalFee: 'Итого', processingDays: 'Срок изготовления (дней)', new: 'Новый', replacement: 'Замена', lost: 'Утерянный', child: 'Детский', biometric: 'Биометрический' }
 
   const typeOptions = { new: t.new, replacement: t.replacement, lost: t.lost, child: t.child, biometric: t.biometric }
 
@@ -33,7 +33,6 @@ export default function PassportFeesCalculator() {
         <CardHeader><CardTitle className="text-lg">{t.results}</CardTitle></CardHeader>
         <CardContent className="space-y-3">
           <div className="flex justify-between"><span className="text-muted-foreground">{t.baseFee}</span><span>{formatCurrency(result.baseFee, 'UZS', locale)}</span></div>
-          <div className="flex justify-between"><span className="text-muted-foreground">{t.urgentFee}</span><span>{formatCurrency(result.urgentFee, 'UZS', locale)}</span></div>
           <div className="flex justify-between"><span className="text-muted-foreground">{t.processingDays}</span><span>{result.processingDays}</span></div>
           <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>{t.totalFee}</span><span className="text-primary">{formatCurrency(result.totalFee, 'UZS', locale)}</span></div>
         </CardContent>

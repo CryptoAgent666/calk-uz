@@ -26,8 +26,8 @@ export default function BmiCalculator() {
   }
 
   const t = locale === 'uz'
-    ? { weight: 'Vazn (kg)', height: 'Bo\'y (sm)', results: 'Natijalar', bmi: 'BMI', category: 'Kategoriya', healthyRange: 'Sog\'lom vazn oralig\'i' }
-    : { weight: 'Вес (кг)', height: 'Рост (см)', results: 'Результаты', bmi: 'ИМТ', category: 'Категория', healthyRange: 'Здоровый диапазон веса' }
+    ? { weight: 'Vazn (kg)', height: 'Bo\'y (sm)', results: 'Natijalar', bmi: 'BMI', category: 'Kategoriya', healthyRange: 'Sog\'lom vazn oralig\'i', kg: 'kg' }
+    : { weight: 'Вес (кг)', height: 'Рост (см)', results: 'Результаты', bmi: 'ИМТ', category: 'Категория', healthyRange: 'Здоровый диапазон веса', kg: 'кг' }
 
   const getBmiColor = (key: string) => {
     if (key === 'normal') return 'text-green-600'
@@ -51,7 +51,7 @@ export default function BmiCalculator() {
             <Badge variant={result.categoryKey === 'normal' ? 'default' : 'destructive'}>
               {(categories[locale] || categories.ru)[result.categoryKey] || result.category}
             </Badge>
-            <p className="text-sm text-muted-foreground mt-2">{t.healthyRange}: {result.healthyWeightMin.toFixed(1)} – {result.healthyWeightMax.toFixed(1)} kg</p>
+            <p className="text-sm text-muted-foreground mt-2">{t.healthyRange}: {result.healthyWeightMin.toFixed(1)} – {result.healthyWeightMax.toFixed(1)} {t.kg}</p>
           </CardContent>
         </Card>
       )}

@@ -15,6 +15,7 @@ import { getAuthorBySlug, PRIMARY_AUTHOR_SLUG } from "@/lib/data/authors"
 import { getCaseStudies } from "@/lib/data/calculator-case-studies"
 import { getUzExtraFaq } from "@/lib/data/calculator-faq-uz-extras"
 import { getQuickAnswer } from "@/lib/data/calculator-quick-answers"
+import { localizedSourceName } from "@/lib/data/source-names-uz"
 import type { CategoryId } from "@/lib/types/calculator"
 import { ChevronRight, Home, ArrowRight, Calendar, ExternalLink, ShieldCheck, FlaskConical } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -136,6 +137,13 @@ export default async function CalculatorPage({
 
   const category = CATEGORIES[calc.category]
   const categoryName = locale === "uz" ? category.nameUz : category.nameRu
+  // Массив keywords намеренно смешанный (ru + uz + en) — он работает как список
+  // поисковых синонимов. В видимых тегах показываем только те, что на языке
+  // страницы: на узбекской версии раньше висели «самозанятый», «свадьба», «калым».
+  const isCyrillic = (s: string) => /[А-Яа-яЁё]/.test(s)
+  const localeKeywords = calc.keywords.filter((k) =>
+    locale === "uz" ? !isCyrillic(k) : isCyrillic(k)
+  )
   const title = locale === "uz" ? calc.titleUz : calc.titleRu
   const description = locale === "uz" ? calc.descriptionUz : calc.descriptionRu
 
@@ -747,7 +755,7 @@ export default async function CalculatorPage({
                       className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
                     >
                       <ExternalLink className="h-3.5 w-3.5 shrink-0 group-hover:text-primary" />
-                      <span>{source.name}</span>
+                      <span>{localizedSourceName(source.name, locale)}</span>
                     </a>
                   ))}
                 </div>
@@ -762,9 +770,9 @@ export default async function CalculatorPage({
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {description}
               </p>
-              {calc.keywords.length > 0 && (
+              {localeKeywords.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 mt-4">
-                  {calc.keywords.slice(0, 6).map((keyword) => (
+                  {localeKeywords.slice(0, 6).map((keyword) => (
                     <Badge
                       key={keyword}
                       variant="secondary"

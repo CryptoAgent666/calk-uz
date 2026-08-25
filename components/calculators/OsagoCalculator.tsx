@@ -21,10 +21,10 @@ export default function OsagoCalculator() {
 
   const t = locale === 'uz'
     ? {
-        region: 'Hudud', accidents: 'Aybdor ДТП soni',
+        region: 'Hudud', accidents: 'Aybdor YTH soni',
         unlimitedDrivers: 'Cheklanmagan haydovchilar',
         results: 'Natijalar', baseTariff: 'Bazaviy tarif',
-        historyCoeff: 'Tarix koeff. (КБМ)',
+        historyCoeff: 'Tarix koeff. (KBM)',
         annualPremium: 'Yillik sug\'urta badali',
         tashkent: 'Toshkent', other_region: 'Boshqa hududlar',
         yes: 'Ha', no: 'Yo\'q',

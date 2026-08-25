@@ -25,7 +25,7 @@ export default function VacationPayCalculator() {
   const t = locale === 'uz'
     ? {
         totalEarnings: '12 oylik jami daromad (UZS)',
-        vacationDays: 'Ta\'til kunlari',
+        vacationDays: "Ta'til kunlari (ish kunlari)",
         workingDays: '12 oydagi ish kunlari',
         results: 'Natijalar',
         avgDaily: 'O\'rtacha kunlik daromad',
@@ -36,7 +36,7 @@ export default function VacationPayCalculator() {
       }
     : {
         totalEarnings: 'Общий заработок за 12 мес. (UZS)',
-        vacationDays: 'Дней отпуска',
+        vacationDays: 'Дней отпуска (рабочих)',
         workingDays: 'Рабочих дней за 12 мес.',
         results: 'Результаты',
         avgDaily: 'Среднедневной заработок',

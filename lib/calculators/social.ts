@@ -2,6 +2,11 @@
  * Social calculators: alimony, vacation pay, sick leave, maternity, severance, overtime, pension
  */
 
+import { MIN_WAGE } from '@/lib/constants/brv'
+
+/** Минимальный размер алиментов — 26,5% МРОТ на каждого ребёнка. */
+export const ALIMONY_MIN_SHARE_OF_MIN_WAGE = 0.265
+
 // Alimony
 export interface AlimonyResult {
   income: number
@@ -9,21 +14,35 @@ export interface AlimonyResult {
   alimonyRate: number
   alimonyAmount: number
   remainingIncome: number
+  /** 26,5% МРОТ на каждого ребёнка — ниже этой суммы алименты не назначаются. */
+  statutoryMinimum: number
+  /** Доля от дохода оказалась ниже минимума, начислен минимум. */
+  minimumApplied: boolean
 }
 
 export function calculateAlimony(monthlyIncome: number, childrenCount: number): AlimonyResult {
+  // Ст. 99 СК: 1/4 на одного ребёнка, 1/3 на двух, 1/2 на трёх и более.
+  // Именно 1/3, а не 0,33 — округление занижало алименты на двоих детей.
   let alimonyRate: number
   if (childrenCount === 1) alimonyRate = 0.25
-  else if (childrenCount === 2) alimonyRate = 0.33
+  else if (childrenCount === 2) alimonyRate = 1 / 3
   else alimonyRate = 0.50
 
-  const alimonyAmount = monthlyIncome * alimonyRate
+  // Доля от дохода не может быть ниже 26,5% МРОТ на каждого ребёнка:
+  // при низком доходе суд назначает этот минимум, а не долю.
+  const statutoryMinimum = ALIMONY_MIN_SHARE_OF_MIN_WAGE * MIN_WAGE * childrenCount
+  const shareOfIncome = monthlyIncome * alimonyRate
+  const minimumApplied = shareOfIncome < statutoryMinimum
+  const alimonyAmount = minimumApplied ? statutoryMinimum : shareOfIncome
+
   return {
     income: monthlyIncome,
     childrenCount,
     alimonyRate: alimonyRate * 100,
     alimonyAmount,
     remainingIncome: monthlyIncome - alimonyAmount,
+    statutoryMinimum,
+    minimumApplied,
   }
 }
 
@@ -58,9 +77,19 @@ export function calculateVacationPay(
 // Benefits are paid by the State Social Insurance Fund (ФГСС).
 // Minimum 6 months of insurance experience required.
 // Percentage of average earnings depends on insurance experience (months).
+/**
+ * Максимум оплачиваемых дней болезни — 182 календарных дня в течение
+ * календарного года (при туберкулёзе — 240, отдельного режима в калькуляторе нет).
+ */
+export const SICK_LEAVE_MAX_PAID_DAYS = 182
+
 export interface SickLeaveResult {
   averageDailyEarnings: number
   sickDays: number
+  /** Сколько дней реально оплачивается — не больше годового лимита. */
+  paidDays: number
+  /** Введённых дней больше лимита, выплата ограничена. */
+  daysCapped: boolean
   insuranceMonths: number
   experiencePercent: number
   isEligible: boolean
@@ -97,14 +126,20 @@ export function calculateSickLeave(
   const isEligible = experiencePercent > 0
   // 2026: payments are calendar-day based, funded by ФГСС
   const averageDailyEarnings = totalEarnings12Months / calendarDaysIn12Months
+  // Сверх 182 дней в году пособие не выплачивается — раньше калькулятор
+  // оплачивал сколько угодно дней, завышая выплату при долгой болезни.
+  const paidDays = Math.min(sickDays, SICK_LEAVE_MAX_PAID_DAYS)
+  const daysCapped = sickDays > SICK_LEAVE_MAX_PAID_DAYS
   const grossAmount = isEligible
-    ? averageDailyEarnings * sickDays * (experiencePercent / 100)
+    ? averageDailyEarnings * paidDays * (experiencePercent / 100)
     : 0
   const ndflAmount = grossAmount * 0.12
 
   return {
     averageDailyEarnings,
     sickDays,
+    paidDays,
+    daysCapped,
     insuranceMonths,
     experiencePercent,
     isEligible,
@@ -240,12 +275,21 @@ export function calculateOvertime(
 }
 
 // Pension estimate
+
+/**
+ * Минимальная пенсия по возрасту — 983 000 сум/мес. с 1 июля 2026 (Указ ПФ-115
+ * от 23.06.2026, повышение на 7%). Назначенная пенсия не может быть ниже.
+ */
+export const MIN_OLD_AGE_PENSION = 983_000
+
 export interface PensionResult {
   currentAge: number
   retirementAge: number
   yearsToRetirement: number
   estimatedMonthlyPension: number
   pensionAsPercentOfSalary: number
+  /** Расчёт по проценту от заработка оказался ниже минимума — начислен минимум. */
+  minimumApplied: boolean
 }
 
 export function calculatePension(
@@ -268,7 +312,11 @@ export function calculatePension(
   const additionalYears = Math.max(0, yearsOfService - requiredYears)
   const pensionPercent = Math.min(75, basePercent + additionalYears)
 
-  const estimatedMonthlyPension = averageMonthlySalary * (pensionPercent / 100)
+  // Процент от заработка — не вся история: назначенная пенсия не бывает ниже
+  // минимальной, а калькулятор показывал и 660 000 при низкой зарплате.
+  const byPercent = averageMonthlySalary * (pensionPercent / 100)
+  const minimumApplied = byPercent > 0 && byPercent < MIN_OLD_AGE_PENSION
+  const estimatedMonthlyPension = minimumApplied ? MIN_OLD_AGE_PENSION : byPercent
 
   return {
     currentAge,
@@ -276,5 +324,6 @@ export function calculatePension(
     yearsToRetirement,
     estimatedMonthlyPension,
     pensionAsPercentOfSalary: pensionPercent,
+    minimumApplied,
   }
 }

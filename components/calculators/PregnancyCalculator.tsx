@@ -23,7 +23,7 @@ export default function PregnancyCalculator() {
     ? { lastPeriod: 'Oxirgi hayz sanasi', results: 'Natijalar', dueDate: 'Taxminiy tug\'ruq sanasi', currentWeek: 'Joriy hafta', trimester: 'Trimestr', daysRemaining: 'Qolgan kunlar', progress: 'Jarayon', conception: 'Taxminiy homiladorlik sanasi' }
     : { lastPeriod: 'Дата последних месячных', results: 'Результаты', dueDate: 'Предполагаемая дата родов', currentWeek: 'Текущая неделя', trimester: 'Триместр', daysRemaining: 'Осталось дней', progress: 'Прогресс', conception: 'Предполагаемая дата зачатия' }
 
-  const formatDate = (d: Date) => d.toLocaleDateString(locale === 'uz' ? 'uz-Latn' : 'ru-RU')
+  const formatDate = (d: Date) => d.toLocaleDateString('ru-RU')
 
   return (
     <div className="space-y-6">

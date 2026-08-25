@@ -83,7 +83,7 @@ export default function FitrSadakaCalculator() {
           <CardHeader><CardTitle className="text-lg">{t.results}</CardTitle></CardHeader>
           <CardContent className="space-y-3">
             <div className="flex justify-between"><span className="text-muted-foreground">{t.perPerson}</span><span>{formatCurrency(result.amountPerPerson, 'UZS', locale)}</span></div>
-            <div className="flex justify-between"><span className="text-muted-foreground">{t.totalKg}</span><span>{result.inKg} kg</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">{t.totalKg}</span><span>{result.inKg}</span></div>
             <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>{t.totalAmount}</span><span className="text-primary">{formatCurrency(result.totalAmount, 'UZS', locale)}</span></div>
           </CardContent>
         </Card>

@@ -190,7 +190,7 @@ export function Header() {
             <div className="flex items-center rounded-lg border border-border bg-muted/50 p-0.5">
               <button
                 onClick={() => switchLocale("ru")}
-                className={`px-2.5 py-1.5 text-xs font-semibold rounded-md transition-all ${
+                className={`px-3 min-h-11 min-w-11 inline-flex items-center justify-center text-xs font-semibold rounded-md transition-all ${
                   locale === "ru"
                     ? "bg-background text-foreground shadow-sm"
                     : "text-muted-foreground hover:text-foreground"
@@ -200,7 +200,7 @@ export function Header() {
               </button>
               <button
                 onClick={() => switchLocale("uz")}
-                className={`px-2.5 py-1.5 text-xs font-semibold rounded-md transition-all ${
+                className={`px-3 min-h-11 min-w-11 inline-flex items-center justify-center text-xs font-semibold rounded-md transition-all ${
                   locale === "uz"
                     ? "bg-background text-foreground shadow-sm"
                     : "text-muted-foreground hover:text-foreground"
@@ -214,7 +214,7 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="h-9 w-9 rounded-lg"
+              className="h-11 w-11 rounded-lg"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               aria-label={mounted && theme === "dark" ? t("theme_light") : t("theme_dark")}
             >
@@ -231,7 +231,7 @@ export function Header() {
 
             {/* Mobile Menu */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger className="inline-flex items-center justify-center h-9 w-9 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors lg:hidden">
+              <SheetTrigger className="inline-flex items-center justify-center h-11 w-11 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors lg:hidden">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Menu</span>
               </SheetTrigger>

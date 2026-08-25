@@ -30,8 +30,8 @@ export default function PropertyTaxCalculator() {
         results: 'Natijalar',
         taxRate: 'Soliq stavkasi',
         annualTax: 'Yillik soliq',
-        quarterlyTax: 'Choraklik soliq',
-        monthlyTax: 'Oylik soliq',
+        quarterlyTax: '15-aprelgacha to\'lov',
+        monthlyTax: '15-oktabrgacha to\'lov',
         placeholder: 'Summani kiriting',
       }
     : {
@@ -41,8 +41,8 @@ export default function PropertyTaxCalculator() {
         results: 'Результаты',
         taxRate: 'Ставка налога',
         annualTax: 'Годовой налог',
-        quarterlyTax: 'Квартальный налог',
-        monthlyTax: 'Ежемесячный налог',
+        quarterlyTax: 'Платёж к 15 апреля',
+        monthlyTax: 'Платёж к 15 октября',
         placeholder: 'Введите сумму',
       }
 
@@ -81,11 +81,11 @@ export default function PropertyTaxCalculator() {
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">{t.quarterlyTax}</span>
-              <span>{formatCurrency(result.quarterlyTax, 'UZS', locale)}</span>
+              <span>{formatCurrency(result.firstInstallment, 'UZS', locale)}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">{t.monthlyTax}</span>
-              <span>{formatCurrency(result.monthlyTax, 'UZS', locale)}</span>
+              <span>{formatCurrency(result.secondInstallment, 'UZS', locale)}</span>
             </div>
           </CardContent>
         </Card>

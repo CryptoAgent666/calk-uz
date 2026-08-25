@@ -38,6 +38,7 @@ export default function PensionCalculator() {
         monthlyPension: 'Taxminiy oylik pensiya',
         placeholder: 'Summani kiriting',
         years: 'yil',
+        minNotice: "Hisob-kitob eng kam pensiyadan past chiqdi — 2026-yil 1-iyuldan belgilangan 983 000 so'm ko'rsatildi.",
       }
     : {
         age: 'Текущий возраст',
@@ -49,6 +50,7 @@ export default function PensionCalculator() {
         yearsToRetirement: 'Лет до пенсии',
         pensionPercent: 'Процент пенсии',
         monthlyPension: 'Ориентировочная пенсия',
+        minNotice: 'Расчёт по проценту от заработка ниже минимальной пенсии — показан установленный минимум 983 000 сум (с 1 июля 2026).',
         placeholder: 'Введите сумму',
         years: 'лет',
       }
@@ -98,6 +100,9 @@ export default function PensionCalculator() {
               <span>{t.monthlyPension}</span>
               <span className="text-primary">{formatCurrency(result.estimatedMonthlyPension, 'UZS', locale)}</span>
             </div>
+            {result.minimumApplied && (
+              <p className="text-sm text-muted-foreground border-t pt-3">{t.minNotice}</p>
+            )}
           </CardContent>
         </Card>
       )}

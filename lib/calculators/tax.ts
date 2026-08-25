@@ -26,8 +26,10 @@ export interface PropertyTaxResult {
   area: number
   taxRate: number
   annualTax: number
-  quarterlyTax: number
-  monthlyTax: number
+  /** Половина годового налога — к 15 апреля. */
+  firstInstallment: number
+  /** Вторая половина — к 15 октября. */
+  secondInstallment: number
 }
 
 export function calculatePropertyTax(cadastralValue: number, areaM2: number, isLegalEntity: boolean = false): PropertyTaxResult {
@@ -51,8 +53,8 @@ export function calculatePropertyTax(cadastralValue: number, areaM2: number, isL
     area: areaM2,
     taxRate: taxRate * 100,
     annualTax,
-    quarterlyTax: annualTax / 4,
-    monthlyTax: annualTax / 12,
+    firstInstallment: annualTax / 2,
+    secondInstallment: annualTax / 2,
   }
 }
 

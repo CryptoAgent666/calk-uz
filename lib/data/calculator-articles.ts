@@ -401,7 +401,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'customs',
-    lastUpdated: '2025-08-21',
+    lastUpdated: '2026-08-25',
     sources: [
       { name: 'Таможенный кодекс РУз', url: 'https://lex.uz/docs/6365764' },
       { name: 'Государственный таможенный комитет', url: 'https://customs.uz' },
@@ -1425,7 +1425,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'maternity',
-    lastUpdated: '2026-02-03',
+    lastUpdated: '2026-08-25',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Минтруд РУз', url: 'https://mehnat.uz' },

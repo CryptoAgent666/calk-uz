@@ -18,7 +18,6 @@ export interface SalaryResult {
   ndflRate: number
   ndflAmount: number
   inpsAmount: number
-  ndflToBudget: number
   netSalary: number
   socialTaxRate: number
   socialTaxAmount: number
@@ -34,9 +33,6 @@ export function calculateSalaryGrossToNet(input: SalaryInput): SalaryResult {
 
   const ndflAmount = grossSalary * ndflRate
   const inpsAmount = grossSalary * 0.001
-  // NDFL goes entirely to the state budget; INPS is a separate deduction
-  // credited to the employee's personal pension account.
-  const ndflToBudget = ndflAmount
   const netSalary = grossSalary - ndflAmount - inpsAmount
   const socialTaxAmount = grossSalary * socialTaxRate
   const totalEmployerCost = grossSalary + socialTaxAmount
@@ -47,7 +43,6 @@ export function calculateSalaryGrossToNet(input: SalaryInput): SalaryResult {
     ndflRate: ndflRate * 100,
     ndflAmount,
     inpsAmount,
-    ndflToBudget,
     netSalary,
     socialTaxRate: socialTaxRate * 100,
     socialTaxAmount,

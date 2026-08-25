@@ -83,9 +83,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'customs',
     textRu:
-      'Растаможка автомобиля в Узбекистане в 2026: таможенная пошлина 15% от стоимости, акциз 1,5–10 USD за см³ объёма двигателя, НДС 12%, утильсбор 6–137 БРВ. Электромобили — 0% пошлины и акциза до 1 января 2030 года (утильсбор платится). На авто $20 000 с двигателем 2 000 см³ — ~$11 000 дополнительно к цене.',
+      'Растаможка автомобиля в Узбекистане в 2026: таможенная пошлина — процент от стоимости плюс надбавка за см³ объёма двигателя: до 1 года 15% + 0,4–1,0 USD/см³, от 1 до 3 лет 30% + 1,8–3,0, старше 3 лет 40% + 3,0. Отдельного акциза на легковые авто нет. Сверх этого — НДС 12% и утильсбор 6–137 БРВ. Электромобили — 0% пошлины и акциза до 1 января 2030 года (утильсбор платится). На авто $20 000 с двигателем 2 000 см³ — ~$11 000 дополнительно к цене.',
     textUz:
-      "2026-yilda O'zbekistonda avtomobilni bojxonadan o'tkazish: bojxona boji narxning 15%, aksiz har bir sm³ dvigatel hajmiga 1,5–10 USD, QQS 12%, utilizatsiya yig'imi 6–137 BHK. Elektromobillar — 2030-yil 1-yanvarigacha 0% boj va aksiz (utilizatsiya yig'imi to'lanadi). 2 000 sm³ dvigatelli $20 000 avto uchun — narxga qo'shimcha ~$11 000.",
+      "2026-yilda O'zbekistonda avtomobilni bojxonadan o'tkazish: bojxona boji — narxdan foiz va dvigatel hajmining har bir sm³ i uchun ustama: 1 yilgacha 15% + 0,4–1,0 USD/sm³, 1 yildan 3 yilgacha 30% + 1,8–3,0, 3 yildan katta 40% + 3,0. Yengil avtomobillarga alohida aksiz yo'q. Bundan tashqari — QQS 12% va utilizatsiya yig'imi 6–137 BHK. Elektromobillar — 2030-yil 1-yanvarigacha 0% boj va aksiz (utilizatsiya yig'imi to'lanadi). 2 000 sm³ dvigatelli $20 000 avto uchun — narxga qo'shimcha ~$11 000.",
   },
   {
     slug: 'brv',
@@ -139,9 +139,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'maternity',
     textRu:
-      'Декретное пособие в Узбекистане с 2026 года выплачивает Фонд госсоцстрахования. Минимум 10 месяцев страхового стажа. Размер: 75% при стаже 10–23 мес, 85% при 2–5 годах, 100% при стаже от 5 лет. Длительность: 70 дней до родов + 56 после (70 при осложнениях или двойне). НДФЛ не удерживается.',
+      'Декретное пособие в Узбекистане с 2026 года выплачивает Фонд госсоцстрахования. Минимум 10 месяцев страхового стажа. Размер: 75% при стаже 10–24 мес, 85% при 25–60 мес, 100% при стаже от 61 мес. Длительность: 70 дней до родов + 56 после (70 при осложнениях или двойне). НДФЛ не удерживается.',
     textUz:
-      "2026-yildan O'zbekistonda dekret nafaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Minimum 10 oy sug'urta staji. Miqdori: 10–23 oy stajda 75%, 2–5 yilda 85%, 5 yildan ortiqda 100%. Davomiyligi: tug'ruq oldidan 70 kun + tug'ruqdan keyin 56 (asoratlar yoki egizaklarda 70). JShShS ushlab qolinmaydi.",
+      "2026-yildan O'zbekistonda dekret nafaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Minimum 10 oy sug'urta staji. Miqdori: 10–24 oy stajda 75%, 25–60 oyda 85%, 61 oydan ortiqda 100%. Davomiyligi: tug'ruq oldidan 70 kun + tug'ruqdan keyin 56 (asoratlar yoki egizaklarda 70). JShShS ushlab qolinmaydi.",
   },
   {
     slug: 'sick-leave',

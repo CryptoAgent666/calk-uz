@@ -12,7 +12,6 @@ export default function ApartmentCostCalculator() {
   const locale = useLocale()
   const [area, setArea] = useState('')
   const [pricePerM2, setPricePerM2] = useState('')
-  const [rooms, setRooms] = useState('2')
 
   const result = useMemo(() => {
     const a = parseFloat(area) || 0
@@ -31,13 +30,13 @@ export default function ApartmentCostCalculator() {
 
   const t = locale === 'uz'
     ? {
-        area: 'Maydon (m\u00B2)', pricePerM2: 'Narx (UZS/m\u00B2)', rooms: 'Xonalar soni',
+        area: 'Maydon (m\u00B2)', pricePerM2: 'Narx (UZS/m\u00B2)',
         results: 'Natijalar', totalPrice: 'Kvartira narxi', registrationFee: 'Ro\'yxatga olish',
         notaryFee: 'Notarius xarajatlari', totalCost: 'Jami xarajat',
         placeholder: 'Summani kiriting', areaPlaceholder: 'Maydonni kiriting',
       }
     : {
-        area: 'Площадь (м\u00B2)', pricePerM2: 'Цена (UZS/м\u00B2)', rooms: 'Количество комнат',
+        area: 'Площадь (м\u00B2)', pricePerM2: 'Цена (UZS/м\u00B2)',
         results: 'Результаты', totalPrice: 'Стоимость квартиры', registrationFee: 'Регистрация',
         notaryFee: 'Нотариальные расходы', totalCost: 'Общая стоимость',
         placeholder: 'Введите сумму', areaPlaceholder: 'Введите площадь',

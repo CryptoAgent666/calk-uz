@@ -22,7 +22,7 @@ export default function AgeCalculator() {
     ? { birthDate: 'Tug\'ilgan sana', results: 'Natijalar', age: 'Yosh', totalDays: 'Jami kunlar', totalMonths: 'Jami oylar', nextBirthday: 'Keyingi tug\'ilgan kun', daysUntil: 'Qolgan kunlar', years: 'yil', months: 'oy', days: 'kun' }
     : { birthDate: 'Дата рождения', results: 'Результаты', age: 'Возраст', totalDays: 'Всего дней', totalMonths: 'Всего месяцев', nextBirthday: 'Следующий день рождения', daysUntil: 'Осталось дней', years: 'лет', months: 'мес.', days: 'дн.' }
 
-  const formatDate = (d: Date) => d.toLocaleDateString(locale === 'uz' ? 'uz-Latn' : 'ru-RU')
+  const formatDate = (d: Date) => d.toLocaleDateString('ru-RU')
 
   return (
     <div className="space-y-6">

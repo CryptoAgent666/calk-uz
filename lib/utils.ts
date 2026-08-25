@@ -5,8 +5,13 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+// Группировка разрядов пробелом для обеих локалей. НЕ подставлять сюда
+// 'uz-Latn': Node ICU форматирует его как «10 000 000», а браузерный — как
+// «10,000,000». Это и неверная для Узбекистана группировка, и расхождение
+// между серверным и клиентским рендером на каждой узбекской странице.
 export function formatNumber(num: number, locale: string = 'ru'): string {
-  return new Intl.NumberFormat(locale === 'uz' ? 'uz-Latn' : 'ru-RU', {
+  void locale
+  return new Intl.NumberFormat('ru-RU', {
     maximumFractionDigits: 2,
   }).format(num)
 }
@@ -16,7 +21,7 @@ export function formatCurrency(amount: number, currency: string = 'UZS', locale:
   if (currency === 'UZS') {
     return locale === 'uz' ? `${formatted} so'm` : `${formatted} сум`
   }
-  return new Intl.NumberFormat(locale === 'uz' ? 'uz-Latn' : 'ru-RU', {
+  return new Intl.NumberFormat('ru-RU', {
     style: 'currency',
     currency,
     maximumFractionDigits: 2,

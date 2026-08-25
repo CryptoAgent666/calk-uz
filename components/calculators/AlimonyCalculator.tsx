@@ -29,6 +29,7 @@ export default function AlimonyCalculator() {
         amount: 'Alimentlar summasi',
         remaining: 'Qolgan daromad',
         placeholder: 'Summani kiriting',
+        minNotice: "Daromaddan ulush qonuniy eng kam miqdordan past — har bir bolaga MIHning 26,5% i hisoblandi.",
       }
     : {
         income: 'Ежемесячный доход — после налогов (UZS)',
@@ -38,6 +39,7 @@ export default function AlimonyCalculator() {
         amount: 'Сумма алиментов',
         remaining: 'Остаток дохода',
         placeholder: 'Введите сумму',
+        minNotice: 'Доля от дохода ниже установленного минимума — начислено 26,5% МРОТ на каждого ребёнка.',
       }
 
   return (
@@ -63,7 +65,7 @@ export default function AlimonyCalculator() {
           <CardContent className="space-y-3">
             <div className="flex justify-between">
               <span className="text-muted-foreground">{t.rate}</span>
-              <span>{result.alimonyRate}%</span>
+              <span>{Number(result.alimonyRate.toFixed(1))}%</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">{t.amount}</span>
@@ -73,6 +75,9 @@ export default function AlimonyCalculator() {
               <span>{t.remaining}</span>
               <span className="text-primary">{formatCurrency(result.remainingIncome, 'UZS', locale)}</span>
             </div>
+            {result.minimumApplied && (
+              <p className="text-sm text-muted-foreground border-t pt-3">{t.minNotice}</p>
+            )}
           </CardContent>
         </Card>
       )}

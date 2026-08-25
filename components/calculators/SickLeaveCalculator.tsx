@@ -38,6 +38,7 @@ export default function SickLeaveCalculator() {
         placeholder: 'Summani kiriting',
         info2026: "2026-yildan kasallik nafaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Kamida 6 oy sug'urta staji talab qilinadi.",
         notEligible: "Sug'urta staji yetarli emas (minimum 6 oy)",
+        capped: "Bir kalendar yilda 182 kalendar kundan ortiq to'lanmaydi — hisob 182 kun bo'yicha (sil kasalligida — 240 kun).",
       }
     : {
         totalEarnings: 'Общий заработок за 12 мес. (UZS)',
@@ -52,6 +53,7 @@ export default function SickLeaveCalculator() {
         placeholder: 'Введите сумму',
         info2026: 'С 2026 года больничные платит Фонд государственного социального страхования. Нужно минимум 6 месяцев страхового стажа.',
         notEligible: 'Недостаточно страхового стажа (минимум 6 месяцев)',
+        capped: 'За год оплачивается не больше 182 календарных дней — расчёт сделан по 182 дням (при туберкулёзе — до 240).',
       }
 
   return (
@@ -65,7 +67,7 @@ export default function SickLeaveCalculator() {
           </div>
           <div>
             <Label>{t.sickDays}</Label>
-            <Input type="number" value={sickDays} onChange={(e) => setSickDays(e.target.value)} className="mt-1" min={1} max={182} />
+            <Input type="number" value={sickDays} onChange={(e) => setSickDays(e.target.value)} className="mt-1" min={1} max={365} />
           </div>
           <div>
             <Label>{t.insurance}</Label>
@@ -84,6 +86,9 @@ export default function SickLeaveCalculator() {
               <Badge variant="destructive">{t.notEligible}</Badge>
             ) : (
               <>
+                {result.daysCapped && (
+                  <p className="text-sm text-muted-foreground bg-muted/40 rounded-md px-3 py-2">{t.capped}</p>
+                )}
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">{t.avgDaily}</span>
                   <span>{formatCurrency(result.averageDailyEarnings, 'UZS', locale)}</span>

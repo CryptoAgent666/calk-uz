@@ -11,7 +11,6 @@ import { BRV } from '@/lib/constants/brv'
 export interface CustomsInput {
   carPrice: number       // Price in USD
   engineVolumeCc: number // Engine volume in cubic centimeters
-  carYear: number        // Year of manufacture
   fuelType: 'petrol' | 'diesel' | 'electric' | 'hybrid'
   /**
    * Возрастная группа по тарифу ПП-3818 — их ТРИ, а не две:

@@ -25,13 +25,13 @@ export default function ElectricityCalculator() {
         consumption: 'Iste\'mol (kVt*soat)', electricStove: 'Elektr plita mavjud',
         results: 'Natijalar', breakdown: 'Tarif bo\'yicha', from: 'dan', to: 'gacha',
         rate: 'Tarif', cost: 'Summa', discount: 'Chegirma (elektr plita)',
-        total: 'Jami to\'lov', placeholder: 'kVt*soatni kiriting',
+        total: 'Jami to\'lov', placeholder: 'kVt*soatni kiriting', unit: 'kVt·soat', currency: "so'm",
       }
     : {
         consumption: 'Потребление (кВт*ч)', electricStove: 'Электрическая плита',
         results: 'Результаты', breakdown: 'По тарифам', from: 'от', to: 'до',
         rate: 'Тариф', cost: 'Сумма', discount: 'Скидка (эл. плита)',
-        total: 'Итого к оплате', placeholder: 'Введите кВт*ч',
+        total: 'Итого к оплате', placeholder: 'Введите кВт*ч', unit: 'кВт·ч', currency: 'сум',
       }
 
   return (
@@ -55,7 +55,7 @@ export default function ElectricityCalculator() {
           <CardContent className="space-y-3">
             {result.breakdown.map((tier, i) => (
               <div key={i} className="flex justify-between text-sm">
-                <span className="text-muted-foreground">{formatNumber(tier.from, locale)}–{formatNumber(tier.to, locale)} kWh ({formatNumber(tier.rate, locale)} UZS)</span>
+                <span className="text-muted-foreground">{formatNumber(tier.from, locale)}–{formatNumber(tier.to, locale)} {t.unit} ({formatNumber(tier.rate, locale)} {t.currency})</span>
                 <span>{formatCurrency(tier.cost, 'UZS', locale)}</span>
               </div>
             ))}
