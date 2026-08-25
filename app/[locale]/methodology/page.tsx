@@ -161,10 +161,10 @@ export default async function MethodologyPage({
                 </div>
                 <div className="rounded-xl border border-border bg-background p-4">
                   <p className="text-xs font-medium text-muted-foreground mb-1">
-                    {isUz ? "Omonat foiz daromadi" : "Доход по вкладу"}
+                    {isUz ? "Omonat (kapitallashuv bilan)" : "Вклад с капитализацией"}
                   </p>
                   <p className="text-sm font-mono text-foreground">
-                    {isUz ? "Daromad = Summa × (Stavka / 12) × Oylar" : "Доход = Сумма × (Ставка / 12) × Месяцы"}
+                    {isUz ? "FV = PV × (1 + r/n)^(n·t)" : "FV = PV × (1 + r/n)^(n·t)"}
                   </p>
                 </div>
               </div>

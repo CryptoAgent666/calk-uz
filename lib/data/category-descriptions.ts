@@ -16,13 +16,13 @@ export const CATEGORY_DESCRIPTIONS: Record<CategoryId, CategoryDescription> = {
     titleRu: 'Налоговые калькуляторы',
     titleUz: 'Soliq kalkulyatorlari',
     descriptionRu:
-      'Рассчитайте все виды налогов в Узбекистане: НДФЛ, НДС, налог на имущество, земельный и госпошлины за постановку на учёти, налог на прибыль и единый налоговый платёж. Наши калькуляторы основаны на актуальных ставках Налогового кодекса Республики Узбекистан и ежегодно обновляются в соответствии с постановлениями Президента и Кабинета Министров. Вы можете быстро определить сумму налога, проверить порог НДС, рассчитать пени за просрочку или узнать налоговую нагрузку для ИП и самозанятых. Все расчёты бесплатны и не требуют регистрации.',
+      'Рассчитайте все виды налогов в Узбекистане: НДФЛ, НДС, налог на имущество, земельный и госпошлины за постановку на учёт, налог на прибыль и налог с оборота. Наши калькуляторы основаны на актуальных ставках Налогового кодекса Республики Узбекистан и ежегодно обновляются в соответствии с постановлениями Президента и Кабинета Министров. Вы можете быстро определить сумму налога, проверить порог НДС, рассчитать пени за просрочку или узнать налоговую нагрузку для ИП и самозанятых. Все расчёты бесплатны и не требуют регистрации.',
     descriptionUz:
-      "O'zbekistondagi barcha turdagi soliqlarni hisoblang: JShShS, QQS, mol-mulk solig'i, yer va transport soliqlari, foyda solig'i va yagona soliq to'lovi. Bizning kalkulyatorlarimiz O'zbekiston Respublikasi Soliq kodeksining dolzarb stavkalariga asoslangan va Prezident hamda Vazirlar Mahkamasi qarorlariga muvofiq har yili yangilanadi. Soliq summasini tez aniqlash, QQS chegarasini tekshirish, kechikish uchun peniya hisoblash yoki YaTT va o'z-o'zini band qilganlar uchun soliq yukini bilish mumkin. Barcha hisob-kitoblar bepul va ro'yxatdan o'tishni talab qilmaydi.",
+      "O'zbekistondagi barcha turdagi soliqlarni hisoblang: JShShS, QQS, mol-mulk solig'i, yer solig'i va avtomobilni hisobga qo'yish bojlari, foyda solig'i va aylanma solig'i. Bizning kalkulyatorlarimiz O'zbekiston Respublikasi Soliq kodeksining dolzarb stavkalariga asoslangan va Prezident hamda Vazirlar Mahkamasi qarorlariga muvofiq har yili yangilanadi. Soliq summasini tez aniqlash, QQS chegarasini tekshirish, kechikish uchun peniya hisoblash yoki YaTT va o'z-o'zini band qilganlar uchun soliq yukini bilish mumkin. Barcha hisob-kitoblar bepul va ro'yxatdan o'tishni talab qilmaydi.",
     seoTitleRu: 'Налоговые калькуляторы Узбекистана — НДФЛ, НДС, налог на прибыль',
     seoTitleUz: "O'zbekiston soliq kalkulyatorlari — JShShS, QQS, foyda solig'i",
-    seoDescriptionRu: 'Бесплатные онлайн калькуляторы налогов Узбекистана: НДФЛ 12%, НДС, налог на имущество, земельный и госпошлины за постановку на учёти. Актуальные ставки 2025–2026.',
-    seoDescriptionUz: "O'zbekiston soliqlari uchun bepul onlayn kalkulyatorlar: JShShS 12%, QQS, mol-mulk solig'i, yer va transport soliqlari. 2025–2026 yil dolzarb stavkalari.",
+    seoDescriptionRu: 'Бесплатные онлайн калькуляторы налогов Узбекистана: НДФЛ 12%, НДС, налог на имущество, земельный и госпошлины за постановку авто на учёт. Актуальные ставки 2026.',
+    seoDescriptionUz: "O'zbekiston soliqlari uchun bepul onlayn kalkulyatorlar: JShShS 12%, QQS, mol-mulk solig'i, yer solig'i va avtomobilni hisobga qo'yish bojlari. 2026-yil dolzarb stavkalari.",
   },
   salary: {
     titleRu: 'Калькуляторы зарплаты',
