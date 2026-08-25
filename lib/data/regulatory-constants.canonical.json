@@ -5,13 +5,13 @@
     "currency": "UZS (сум)",
     "generated": "2026-06-25",
     "note": "Audit ledger (NOT imported by site). Constants are CENTRALIZED: lib/constants/{brv,tax-rates,utility-tariffs}.ts + inline in lib/calculators/*.ts. Apply fixes there. БРВ=412000 anchors most state duties/fines as BRV-multiples. tax-rates.ts & utility-tariffs.ts headers say 2025 (freshness flag).",
-    "total": 161,
+    "total": 162,
     "gov_regulated": 145,
     "market_or_other": 16,
     "conflicts": 10,
     "status_summary": {
       "current": 136,
-      "uncertain": 3,
+      "uncertain": 4,
       "removed": 6,
       "unverified": 16
     },
@@ -3799,6 +3799,17 @@
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
       "last_verified": "2026-07-03"
+    },
+    {
+      "id": "tax.ts__TAX_PENALTY_CAP_VS_PRINCIPAL",
+      "key": "calculateTaxPenalty — предел пени относительно суммы недоимки",
+      "value": "НЕ РЕАЛИЗОВАНО: пеня считается без верхнего предела (на 3000 днях даёт 140% долга)",
+      "status": "uncertain",
+      "source_url": "https://www.gazeta.uz/ru/2026/05/06/tax-vat/",
+      "source_hint": "Президентское решение от 05.05.2026: «сумма пени не должна превышать сумму основной налоговой задолженности». Нормативное оформление найти не удалось.",
+      "last_verified": "2026-08-25",
+      "file": "lib/calculators/tax.ts",
+      "notes": "Найдено browser-QA 2026-08-25: калькулятор при 3000 днях просрочки показывает пеню 140 млн на долг 100 млн. Об ограничении объявлено на презентации у президента 5 мая 2026, но ни даты вступления, ни статьи НК, ни документа найти не удалось — поэтому потолок в код НЕ вносился. Проверить по ст. 110 НК в действующей редакции; если норма в силе — добавить cap и пояснение в UI, как сделано для 182 дней больничного."
     }
   ],
   "meta": {
