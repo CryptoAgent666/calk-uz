@@ -22,10 +22,13 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<!-- Версии — ТОЛЬКО переменные из pbxproj (MARKETING_VERSION /
+	     CURRENT_PROJECT_VERSION). Литерал здесь молча перекрывает pbxproj —
+	     грабля CALK-AU 1.2 (ушёл в ASC как build 4 вместо 5). -->
 	<key>CFBundleShortVersionString</key>
-	<string>1.3.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>10</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-4859241862365215~3767750966</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
