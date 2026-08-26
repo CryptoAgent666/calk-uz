@@ -116,7 +116,8 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
             tabBar.scrollEdgeAppearance = appearance
         }
 
-        setupAdBanner()
+        // Баннер НЕ здесь: рекламные запросы разрешены только после UMP-консента,
+        // цепочка запускается из viewDidAppear (gatherConsentThenStart → setupAdBanner).
         setupRemoveAdsBar()
         // Tear the banner + bar down instantly if "remove ads" is purchased/restored.
         NotificationCenter.default.addObserver(forName: PurchasesManager.adFreeChanged, object: nil, queue: .main) { [weak self] _ in
@@ -124,9 +125,17 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
         }
     }
 
+    private var consentFlowStarted = false
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AdMobManager.shared.requestTrackingIfNeeded()
+        guard !consentFlowStarted else { return }
+        consentFlowStarted = true
+        // UMP-форма (только там, где обязана) → старт SDK → ATT → баннер.
+        // ATT запрашивается внутри цепочки, отдельный вызов не нужен.
+        AdMobManager.shared.gatherConsentThenStart(from: self) { [weak self] in
+            self?.setupAdBanner()
+        }
     }
 
     // MARK: - AdMob banner + "remove ads" bar (stacked just above the tab bar)
@@ -139,7 +148,9 @@ final class RootTabBarController: UITabBarController, UITabBarControllerDelegate
     private func setupAdBanner() {
         // No ads in App Store screenshots / IAP review captures.
         if ProcessInfo.processInfo.environment["CALK_SCREENSHOT_MODE"] == "1" { return }
-        guard !PurchasesManager.shared.adsHidden else { return }
+        guard adBanner == nil,
+              AdMobManager.shared.canRequestAds,
+              !PurchasesManager.shared.adsHidden else { return }
         let banner = AdMobManager.shared.makeBanner(width: view.bounds.width, root: self)
         banner.backgroundColor = .clear
         view.addSubview(banner)

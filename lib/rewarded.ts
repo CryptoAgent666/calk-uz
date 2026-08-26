@@ -1,5 +1,5 @@
 /**
- * Rewarded ads: watch a video → 24 hours without ads.
+ * Rewarded ads: watch a video → REWARD_HOURS (6 ч) without ads.
  *
  * A middle rung between "free with ads" and the one-time "remove ads" purchase:
  * users who won't pay can still buy quiet time with attention, and the rewarded
@@ -9,9 +9,9 @@
  * `now < calk_ad_free_until`. Purchase (lib/purchases.ts) stays separate and
  * permanent — `adsHidden()` is the OR of the two, and the ad code gates on that.
  *
- * Deliberately client-side: the grant is worth 24 h of banner suppression, so
- * the downside of someone editing localStorage is that they see fewer ads —
- * not that they get paid content. No server round-trip needed.
+ * Deliberately client-side: the grant is worth a few hours of banner
+ * suppression, so the downside of someone editing localStorage is that they see
+ * fewer ads — not that they get paid content. No server round-trip needed.
  */
 import { isAdFree, onAdFreeChange } from "@/lib/purchases"
 

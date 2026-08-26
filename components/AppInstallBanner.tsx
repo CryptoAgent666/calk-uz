@@ -48,18 +48,11 @@ export function AppInstallBanner() {
     }
     setPlatform(p)
 
-    let timer: ReturnType<typeof setTimeout>
-    const tryShow = () => {
-      let cookieDecided = true
-      try {
-        cookieDecided = !!localStorage.getItem("cookie-consent")
-      } catch {
-        /* ignore */
-      }
-      if (cookieDecided) setVisible(true)
-      else timer = setTimeout(tryShow, 1500)
-    }
-    timer = setTimeout(tryShow, 2000)
+    // Раньше здесь было ожидание localStorage["cookie-consent"] — решения в
+    // своём cookie-баннере. Баннер заменён Google CMP (Monetization.tsx),
+    // который основной (UZ) аудитории вообще не показывается, а ключ больше
+    // никто не пишет — ожидание зависло бы навсегда. Показываем по таймеру.
+    const timer = setTimeout(() => setVisible(true), 2000)
     return () => clearTimeout(timer)
   }, [])
 

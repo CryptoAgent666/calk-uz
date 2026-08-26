@@ -99,8 +99,9 @@ Splash: `ios/App/App/Assets.xcassets/Splash.imageset` (исходник — `spl
    `xcrun altool` / Transporter.
 5. **Листинг.** Заполнить по `app-store-listing.md`, иконка `app-store-icon-1024.png`,
    описания `description-ru.txt` / `description-uz.txt`.
-6. **Реклама и приватность.** Следовать `privacy-and-ads.md` (реклама заявлена,
-   AdMob добавляется отдельной фазой после модерации).
+6. **Реклама и приватность.** Следовать `privacy-and-ads.md` — AdMob, ATT и IAP
+   УЖЕ в бинаре (с 1.1); App Privacy заполнять по актуальной таблице там,
+   двухфазная стратегия «реклама после модерации» завершена.
 
 ## Что коммитим / что нет
 

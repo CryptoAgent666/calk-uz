@@ -18,8 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // In-app purchases (RevenueCat) — configure first so isAdFree reflects a
         // prior "remove ads" purchase before ads are gated.
         PurchasesManager.shared.configure()
-        // AdMob: start the SDK (ATT prompt is requested once the UI is up).
-        AdMobManager.shared.start()
+        // AdMob: стартует только при разрешении UMP. Для повторных запусков
+        // (консент сохранён / не требуется) SDK поднимается сразу; на самом
+        // первом запуске старт произойдёт из цепочки консента в
+        // RootTabBarController (gatherConsentThenStart → ATT → баннер).
+        AdMobManager.shared.startIfConsented()
         return true
     }
 

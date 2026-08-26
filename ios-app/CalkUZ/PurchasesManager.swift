@@ -28,12 +28,15 @@ final class PurchasesManager: NSObject {
     static let adFreeChanged = Notification.Name("calk.adFreeChanged")
 
     /// Fallback price shown until StoreKit returns the localized string.
+    /// ⚠️ НАМЕРЕННО отличается от веб/Android-фолбэка («24 900 сум» в
+    /// lib/purchases.ts) — это ОДИН тир в валютах своих сторов: App Store для UZ
+    /// ценит в долларах, Google Play — в сумах. НЕ «синхронизировать».
     let fallbackPrice = "$1.99"
 
     /// Synchronous, cached — safe to gate ads instantly and offline.
     var isAdFree: Bool { UserDefaults.standard.bool(forKey: cacheKey) }
 
-    // MARK: - Rewarded window (watch a video → 24 h without ads)
+    // MARK: - Rewarded window (watch a video → rewardHours (6 ч) without ads)
 
     private let untilKey = "calk_ad_free_until"
 

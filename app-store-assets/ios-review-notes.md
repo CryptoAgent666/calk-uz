@@ -1,3 +1,9 @@
+> ⚠️ **ИСТОРИЧЕСКИЙ ДОКУМЕНТ — сборка 1.0 build 4 (ответ на реджект).**
+> Утверждения «рекламы нет», «IDFA не используется», «Data Not Collected»
+> были верны ТОЛЬКО для той сборки. С 1.1 в бинаре AdMob + ATT + IAP —
+> актуальные ответы App Privacy и review-заметки см. `privacy-and-ads.md`.
+> Для новых сабмитов этим файлом НЕ пользоваться.
+
 # App Store Connect — App Review Information → Notes (Calk.UZ 1.0, build 4)
 
 Submission ID of the rejection being addressed: `67b86a01-6bc7-41d5-afc7-712820113f56`
@@ -58,8 +64,8 @@ We respectfully ask you to re-review. Thank you.
 - Uses Advertising Identifier (IDFA): **No**
 - Tracking: **No**
 
-> Когда позже добавим рекламу (AdMob) — App Privacy и IDFA нужно будет обновить
-> (см. `privacy-and-ads.md`). В ТЕКУЩЕЙ нативной сборке рекламы и трекинга нет.
+> [Устарело] Реклама (AdMob) добавлена в 1.1 — App Privacy и IDFA уже обновлены,
+> актуальные ответы в `privacy-and-ads.md`.
 
 ## Build / version
 - Bundle ID: `uz.calk.calculator`  ·  Version 1.0  ·  Build 4

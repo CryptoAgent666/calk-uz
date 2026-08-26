@@ -71,3 +71,43 @@ Monitored by DATA_HUB: Tier-1 weekly (`calk-uz-monitor-config.json`) + Tier-2 qu
 повод перечитать константу, а не описание расхождения. Loop: alert → verify → fix `lib/constants` /
 `lib/calculators` / прозу в `lib/data` → changelog в `updates.ts` → `npm run check:stale` → build → push.
 Деплой идёт через GitHub Actions: push в `main` → сборка → снапшот в ветку `deploy` → Plesk подхватывает.
+
+# Monetization (сайт + приложения) — не переоткрывать обследованием
+
+Четыре канала, других (партнёрки/донаты/подписки) НЕТ намеренно. Стек общий с
+флотом (US/AU/KZ); calk.uz был пилотом IAP.
+
+- **Сайт — AdSense Auto Ads** (ручных слотов нет ни одного): грузится из
+  `components/Monetization.tsx`, паблишер в `NEXT_PUBLIC_ADSENSE_ID`
+  (CI vars), `public/ads.txt`. Consent — **Google CMP** (AdSense → Privacy &
+  messaging), НЕ свой баннер: Consent Mode v2 дефолты регионально-скоупнуты
+  (denied только EEA/UK/CH), «Настройки конфиденциальности» =
+  `components/PrivacySettings.tsx` в футере. Самописный CookieConsent удалён
+  2026-08 — он ничего не отключал. В нативных приложениях веб-AdSense глушится
+  (`lib/platform.ts isNativeApp()`).
+- **Приложения — AdMob** (баннер + интерстишл 4-я навигация/120с + rewarded):
+  Android — `components/NativeAds.tsx` + `lib/rewarded.ts` (unit id в JS →
+  меняются OTA без пересборки .aab); iOS — `ios-app/CalkUZ/AdMobManager.swift`
+  (юниты в Swift). iOS-цепочка запуска: **UMP-консент → старт SDK → ATT →
+  баннер** (`gatherConsentThenStart`); GDPR-сообщения ОПУБЛИКОВАНЫ 2026-08-26:
+  AdSense «calk.uz — GDPR (EEA/UK/CH)» (сайт) и AdMob «Calk UZ - GDPR consent»
+  (оба приложения), en+ru; Consent Mode флаги в AdSense включены на аккаунте.
+- **Rewarded**: ролик → `REWARD_HOURS = 6` часов без рекламы (НЕ 24 — 24 в
+  старых коммит-месседжах устарели). Гейт всей рекламы:
+  `adsHidden() = isAdFree() || isTempAdFree()`.
+- **IAP «Убрать рекламу»**: RevenueCat, продукт `uz.calk.calculator.removeads`
+  (namespaced — голый `removeads` занят KZ на том же Apple team), entitlement
+  `ad_free`, non-consumable. Android/веб — `lib/purchases.ts`, iOS —
+  `PurchasesManager.swift`. **Фолбэк-цены платформ РАЗНЫЕ намеренно**
+  (Play UZ в сумах «24 900 сум», App Store UZ в долларах «$1.99») — не
+  «синхронизировать». 4 поверхности оффера: кнопка в мобильном меню
+  (`RemoveAdsButton`), плашка (`RemoveAdsBar`), тост после 2-го интерстишла
+  (`RemoveAdsToast`), футер (`RemoveAdsFooterLink`). Телеметрия воронки —
+  `lib/telemetry.ts` → `/api/iap-telemetry` → DATA_HUB.
+- **Нативные модули (AdMob/Purchases) едут ТОЛЬКО стор-билдом**, не OTA:
+  все UI-поверхности гейтятся `purchasesAvailable()` /
+  `isPluginAvailable("Purchases")`, чтобы в старых бинарях не было мёртвых кнопок.
+- **App Privacy iOS**: источник истины `ios-app/CalkUZ/PrivacyInfo.xcprivacy`
+  (tracking=true, IDFA) + актуальные ответы в
+  `app-store-assets/privacy-and-ads.md`. `ios-review-notes.md` — исторический
+  (сборка 1.0 без рекламы), для новых сабмитов НЕ использовать.

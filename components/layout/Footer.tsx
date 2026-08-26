@@ -3,6 +3,8 @@ import { Link } from "@/i18n/navigation"
 import { Calculator, Mail, Send, Smartphone } from "lucide-react"
 import { CATEGORIES } from "@/lib/data/categories"
 import type { CategoryId } from "@/lib/types/calculator"
+import { PrivacySettings } from "@/components/PrivacySettings"
+import { RemoveAdsFooterLink } from "@/components/RemoveAdsFooterLink"
 
 const FOOTER_CATEGORIES: CategoryId[] = [
   "tax",
@@ -220,6 +222,12 @@ export async function Footer() {
                   {t("contact_title")}
                 </Link>
               </li>
+              {/* Веб: повторное открытие consent-диалога Google CMP (рендерится
+                  только тем, кому CMP показывал сообщение — EEA/UK/CH). */}
+              <PrivacySettings />
+              {/* Приложения: постоянный вход в покупку «Убрать рекламу»
+                  (на сайте — null). См. комментарий в самом компоненте. */}
+              <RemoveAdsFooterLink />
             </ul>
             <p className="text-xs text-muted-foreground/70 leading-relaxed pt-2">
               {t("footer_disclaimer")}

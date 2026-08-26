@@ -1,53 +1,51 @@
-# Конфиденциальность и реклама — Calk.UZ iOS
+# Конфиденциальность и реклама — Calk.UZ iOS (актуально с 1.1+)
 
-## Стратегия по рекламе (важно)
+> ⚠️ Прежняя версия этого файла описывала стратегию первой сборки 1.0
+> («реклама заявлена, SDK не интегрирован, App Privacy = Data Not Collected»).
+> Та фаза ЗАВЕРШЕНА: AdMob и покупки в бинаре с 1.1. По старым ответам App
+> Privacy заполнять НЕЛЬЗЯ — это была бы ложная декларация.
 
-В описании и метаданных приложение **заявлено как содержащее рекламу**, однако
-SDK Google AdMob **намеренно не интегрирован** в первую сборку. План — две фазы:
+## Что реально есть в бинаре (сверено с кодом 2026-08-26)
 
-1. **Сейчас (отправка на модерацию).** Реклама в коде не показывается. В описании
-   указано «с показом рекламы». В App Privacy указываем фактическое состояние:
-   **данные не собираются** (нет SDK, нет IDFA, нет аналитики в нативной оболочке).
-2. **После одобрения.** Добавляем Google Mobile Ads SDK (см. ниже), затем
-   **обновляем App Privacy**: декларируем IDFA и сбор данных рекламной сетью.
-   Обновление nutrition labels можно отправить без новой бинарной сборки.
+| Компонент | Где в коде |
+|---|---|
+| Google Mobile Ads SDK: баннер + интерстишл + rewarded | `ios-app/CalkUZ/AdMobManager.swift`, юниты продовые |
+| UMP (Google CMP): GDPR-форма там, где обязательна | `AdMobManager.gatherConsentThenStart` (цепочка: UMP → старт SDK → ATT → баннер) |
+| App Tracking Transparency (IDFA) | `AdMobManager.requestTrackingIfNeeded`, `Info.plist NSUserTrackingUsageDescription` |
+| RevenueCat: разовая покупка «Убрать рекламу» | `PurchasesManager.swift`, продукт `uz.calk.calculator.removeads`, entitlement `ad_free` |
+| Rewarded-окно: ролик → 6 ч без рекламы | `PurchasesManager.rewardHours = 6` |
+| Privacy Manifest: tracking=true, домены, типы данных | `ios-app/CalkUZ/PrivacyInfo.xcprivacy` — ОБЯЗАН совпадать с App Privacy в ASC |
 
-> Почему так: позволяет пройти ревью с минимальной поверхностью риска, а рекламу
-> подключить отдельным шагом, когда аккаунт AdMob и mediation будут готовы.
-
-## App Privacy — ответы на ревью (для ПЕРВОЙ сборки, без AdMob)
+## App Privacy — актуальные ответы (App Store Connect)
 
 | Вопрос | Ответ |
 |---|---|
-| Does this app collect data? | **No** (нативная оболочка не собирает данные) |
-| Uses Advertising Identifier (IDFA)? | **No** |
-| Third-party analytics in the app? | **No** |
-| Tracking (App Tracking Transparency)? | **No** |
+| Does this app collect data? | **Yes** |
+| Uses Advertising Identifier (IDFA)? | **Yes** — Third-Party Advertising (AdMob) |
+| Tracking (App Tracking Transparency)? | **Yes** — ATT-промпт показывается; данные (IDFA) используются для рекламы третьей стороной |
+| Data types | **Identifiers → Device ID** (tracking, third-party advertising); **Usage Data → Product Interaction** (tracking, advertising + analytics); **Purchases → Purchase History** (не linked, не tracking — RevenueCat, анонимный app user id); **Diagnostics → Crash Data** (не linked — Google Mobile Ads SDK) |
+| Data linked to the user? | **No** — всё собирается не привязанным к личности (анонимные идентификаторы) |
 
-> Примечание: сайт calk.uz внутри WebView может использовать веб-аналитику/рекламу
-> через cookie. Это веб-контент, а не нативный сбор данных SDK; для App Privacy
-> декларируется поведение приложения. После интеграции AdMob — пересмотреть.
+Источник истины — `PrivacyInfo.xcprivacy`; менять декларации только синхронно
+(манифест + ASC + этот файл). ✅ ASC App Privacy обновлён 2026-08-26: 4 типа
+данных (Device ID, Product Interaction, Purchase History, Crash Data) — совпадает
+с манифестом.
 
-## После интеграции AdMob (ВТОРАЯ фаза) — что поменять
+## Консент-цепочка (порядок диалогов)
 
-1. Установить SDK: `npm i @capacitor-community/admob` и `npx cap sync ios`.
-2. В `Info.plist` добавить `GADApplicationIdentifier` (App ID из AdMob) и
-   `SKAdNetworkItems` (список из документации AdMob).
-3. Реализовать запрос App Tracking Transparency (ATT) перперсонализированной рекламы.
-4. В App Store Connect → App Privacy обновить:
-   - Identifiers → **Device ID (IDFA)** → Used for **Third-Party Advertising**.
-   - Usage Data → как требует выбранная рекламная сеть.
-   - Uses Advertising Identifier → **Yes**.
-5. Обновить текст политики конфиденциальности на calk.uz.
+1. **UMP / Google CMP** — на первом запуске делает geo-детект: EEA/UK/CH видят
+   GDPR-форму, остальные (вся основная UZ-аудитория) не видят ничего.
+   Требует опубликованного GDPR-сообщения в AdMob → Privacy & messaging
+   для приложения Calk.UZ (консольная настройка, не код).
+2. **ATT** — после UMP-формы (рекомендованный Google порядок, диалоги не
+   штабелируются). Отказ = non-personalized ads, реклама не пропадает.
+3. Реклама стартует только при `canRequestAds` (UMP).
 
 ## Прочее для ревью
 
-- **Age rating:** 4+ (нет нежелательного контента; реклама — общая аудитория).
-- **Export compliance:** только стандартный HTTPS → в Info.plist выставлено
-  `ITSAppUsesNonExemptEncryption = NO`, отдельный вопрос при загрузке не задаётся.
-- **Guideline 4.2 (minimum functionality):** приложение — обёртка над calk.uz, но
-  имеет нативную ценность: офлайн-режим (кэш + экран без сети), нативные иконка и
-  splash, фокус на финансовых расчётах. Если ревьюер потребует больше «нативности»,
-  усилить офлайн-функции и нативную навигацию.
-- **Content rights:** используются только открытые данные госисточников; чужой
-  защищённый контент не размещается.
+- **Age rating:** 4+ (реклама — общая аудитория).
+- **Export compliance:** только стандартный HTTPS → `ITSAppUsesNonExemptEncryption = NO`.
+- **IAP:** non-consumable, кнопка Restore обязательна (Guideline 3.1.1) — есть
+  в экране покупки и в «Ещё». Review-скриншот IAP: `iap-review-screenshot.png`
+  (снимается с живого UI: `CALK_SCREENSHOT_MODE=1` + `CALK_OPEN_REMOVEADS=1`).
+- **Скриншоты App Store:** реклама подавляется `CALK_SCREENSHOT_MODE=1`.

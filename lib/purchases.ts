@@ -36,7 +36,14 @@ export function purchasesAvailable(): boolean {
   return Capacitor.isNativePlatform() && Capacitor.isPluginAvailable("Purchases")
 }
 
-/** Запасная цена для UI, пока RevenueCat не вернул локализованную (getRemoveAdsPrice). */
+/**
+ * Запасная цена для UI, пока RevenueCat не вернул локализованную (getRemoveAdsPrice).
+ *
+ * ⚠️ НАМЕРЕННО отличается от iOS-фолбэка ($1.99 в PurchasesManager.swift) — это
+ * ОДИН ценовой тир в валютах своих сторов: Google Play в Узбекистане ценит в
+ * сумах (24 900 сум), App Store для UZ — в долларах ($1.99). НЕ «синхронизировать»
+ * их друг с другом (этот файл — Android/веб, Swift-файл — iOS).
+ */
 export const REMOVE_ADS_FALLBACK_PRICE = "24 900 сум"
 
 // Публичные SDK-ключи RevenueCat (Project Settings → API keys, по одному на

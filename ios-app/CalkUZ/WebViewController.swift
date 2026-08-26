@@ -45,10 +45,11 @@ final class WebViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
         // simply not load tracking/ads in the iOS app instead of implementing ATT, since
         // calculations are the core value — ads were only the website's monetization.
         let js = """
-            // 1. Accept cookies preemptively — no banner shown to iOS users.
-            //    Key matches calk.uz's CookieConsent.tsx (localStorage "cookie-consent").
-            //    Setting it before page scripts run means the banner never renders,
-            //    so no tracking-consent UI appears on Apple devices (Guideline 5.1.2).
+            // 1. Legacy: pre-accept the OLD cookie banner's localStorage key.
+            //    The site's own banner was replaced by Google's CMP (which never
+            //    runs here — adsbygoogle is stubbed below), but cached older
+            //    pages may still look for the key; keep it harmless-set so no
+            //    consent UI ever renders on Apple devices (Guideline 5.1.2).
             try { localStorage.setItem('cookie-consent', 'accepted'); } catch (e) {}
 
             // 2. Stub adsbygoogle.push() so Google's AdSense script does nothing.

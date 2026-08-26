@@ -8,12 +8,18 @@
 //  - Banner: adaptive, pinned above the tab bar (added by RootTabBarController).
 //  - Interstitial: shown on calculator navigations, frequency-capped locally
 //    (every 4th open, ≥120s apart); AdMob also enforces 1/3min at app level.
-//  - ATT: we request App Tracking Transparency so ads can be personalized; if the
-//    user declines, the SDK serves non-personalized ads.
+//  - UMP: Google's consent platform runs FIRST — geo-detects the visitor and
+//    shows a GDPR form only where one is required (EEA/UK/CH); everyone else
+//    (i.e. the UZ audience) passes straight through. The SDK starts and ads
+//    load only once canRequestAds is true. Требует опубликованного GDPR-сообщения
+//    в AdMob → Privacy & messaging для этого приложения.
+//  - ATT: requested AFTER the UMP form (Google's recommended order) so ads can
+//    be personalized; if the user declines, the SDK serves non-personalized ads.
 //
 
 import UIKit
 import GoogleMobileAds
+import UserMessagingPlatform
 import AppTrackingTransparency
 
 final class AdMobManager: NSObject {
@@ -31,16 +37,51 @@ final class AdMobManager: NSObject {
     private var rewardEarned = false
     private var lastInterstitial = Date.distantPast
     private var navSinceInterstitial = 0
+    private var started = false
 
-    /// Start the SDK (call once at launch) and preload the first interstitial.
-    func start() {
+    /// Start the SDK — but ONLY when UMP allows ad requests. Safe to call from
+    /// several places; the first allowed call wins. On the very first launch
+    /// canRequestAds stays false until gatherConsentThenStart() finishes the
+    /// consent round-trip; on later launches the stored consent lets the launch
+    /// path (AppDelegate) start the SDK immediately.
+    func startIfConsented() {
+        guard !started, ConsentInformation.shared.canRequestAds else { return }
+        started = true
         MobileAds.shared.start(completionHandler: { [weak self] _ in
             self?.loadInterstitial()
             self?.loadRewarded()
         })
     }
 
-    /// Ask for App Tracking Transparency once the UI is on screen.
+    /// The full consent chain, run once the UI is on screen:
+    /// UMP consent info update → GDPR form (only where required) → SDK start →
+    /// ATT prompt. `completion` fires on the main queue when ads may be set up
+    /// (or were declined/failed — check canRequestAds inside if it matters).
+    func gatherConsentThenStart(from vc: UIViewController, completion: @escaping () -> Void) {
+        let params = RequestParameters()
+        ConsentInformation.shared.requestConsentInfoUpdate(with: params) { [weak self] error in
+            guard error == nil else {
+                // Offline / UMP unreachable — proceed on the stored consent state.
+                DispatchQueue.main.async {
+                    self?.startIfConsented()
+                    self?.requestTrackingIfNeeded()
+                    completion()
+                }
+                return
+            }
+            ConsentForm.loadAndPresentIfRequired(from: vc) { _ in
+                self?.startIfConsented()
+                self?.requestTrackingIfNeeded()
+                completion()
+            }
+        }
+    }
+
+    /// Whether UMP currently allows ad requests (stored consent, or none required).
+    var canRequestAds: Bool { ConsentInformation.shared.canRequestAds }
+
+    /// Ask for App Tracking Transparency once the UI is on screen (and after
+    /// the UMP form, so the two dialogs never stack).
     func requestTrackingIfNeeded() {
         guard #available(iOS 14, *) else { return }
         if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
@@ -66,7 +107,7 @@ final class AdMobManager: NSObject {
         }
     }
 
-    // MARK: - Rewarded ("watch a video → 24 h without ads")
+    // MARK: - Rewarded ("watch a video → PurchasesManager.rewardHours (6 ч) without ads")
 
     private func loadRewarded() {
         RewardedAd.load(with: rewardedUnitID, request: Request()) { [weak self] ad, _ in
@@ -79,7 +120,7 @@ final class AdMobManager: NSObject {
 
     /// Present the rewarded video. `completion(true)` only when the user watched
     /// far enough to earn the reward — dismissing early grants nothing, per AdMob
-    /// policy. Grants the 24 h window itself so every caller behaves the same.
+    /// policy. Grants the reward window itself so every caller behaves the same.
     /// Settled once from `adDidDismissFullScreenContent` (or immediately on failure).
     func showRewarded(from vc: UIViewController, completion: @escaping (Bool) -> Void) {
         guard let ad = rewarded else {

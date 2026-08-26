@@ -18,7 +18,7 @@ import { SUGGEST_REMOVE_ADS_EVENT } from "@/components/RemoveAdsToast"
  *   open, min 120s apart) per AdMob policy — never on first load / unexpectedly.
  * - All ads are gated on adsHidden(): either the one-time "remove ads" purchase
  *   (RevenueCat, permanent — lib/purchases.ts) or an active rewarded-video window
- *   (24 h — lib/rewarded.ts). Both tear the banner down instantly.
+ *   (REWARD_HOURS, 6 ч — lib/rewarded.ts). Both tear the banner down instantly.
  */
 const BANNER_ID = "ca-app-pub-4859241862365215/5901135885"
 const INTERSTITIAL_ID = "ca-app-pub-4859241862365215/1401442070"
@@ -57,8 +57,22 @@ export function NativeAds() {
 
     ;(async () => {
       try {
-        const { AdMob, BannerAdSize, BannerAdPosition, BannerAdPluginEvents } = await import("@capacitor-community/admob")
+        const { AdMob, AdmobConsentStatus, BannerAdSize, BannerAdPosition, BannerAdPluginEvents } = await import("@capacitor-community/admob")
         await AdMob.initialize({})
+        if (!active) return
+
+        // GDPR/UMP-консент: форма показывается только там, где обязательна
+        // (EEA/UK/CH) — для основной UZ-аудитории это no-op. Требует
+        // опубликованного GDPR-сообщения в AdMob → Privacy & messaging.
+        // Ошибки глотаем: офлайн/старый бинарь не должны ронять рекламу.
+        try {
+          const consent = await AdMob.requestConsentInfo()
+          if (consent.isConsentFormAvailable && consent.status === AdmobConsentStatus.REQUIRED) {
+            await AdMob.showConsentForm()
+          }
+        } catch {
+          /* ignore */
+        }
         if (!active) return
 
         // Publish the real banner height so the upsell bar lands right above it.
@@ -84,7 +98,7 @@ export function NativeAds() {
       }
     })()
 
-    // Preload a rewarded video so the "watch for 24 h" button responds instantly.
+    // Preload a rewarded video so the "смотреть ролик" button responds instantly.
     if (!isAdFree()) void prepareRewardedAd()
 
     // Purchase OR a granted reward window: tear ads down immediately.

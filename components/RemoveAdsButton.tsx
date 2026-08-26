@@ -131,7 +131,7 @@ export function RemoveAdsButton() {
         </>
       )}
 
-      {/* Free rung: a rewarded video buys 24 h of quiet. Hidden once a window is
+      {/* Free rung: a rewarded video buys REWARD_HOURS of quiet. Hidden once a window is
           already running — nothing to gain from stacking, and it would read as
           a broken button. */}
       {rewardedAvailable() &&

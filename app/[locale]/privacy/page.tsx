@@ -260,8 +260,8 @@ export default async function PrivacyPage({
           </ul>
           <p className="text-muted-foreground leading-relaxed text-sm">
             {isUz
-              ? "Yevropa Ittifoqi foydalanuvchilari uchun saytga birinchi tashrifda ko'rsatiladigan cookie bannerida reklama cookie fayllariga rozilik berish yoki rad etish imkoniyati taqdim etiladi (Google Consent Mode v2)."
-              : "Для пользователей из Европейского Союза при первом посещении сайта в cookie-баннере предоставляется возможность дать согласие или отказаться от рекламных cookie (Google Consent Mode v2)."}
+              ? "Yevropa Iqtisodiy Hududi, Buyuk Britaniya va Shveytsariya foydalanuvchilariga birinchi tashrifda Google'ning rozilik so'rovi (CMP) ko'rsatiladi: reklama cookie fayllariga rozilik berish yoki ularni rad etish mumkin (Google Consent Mode v2). Tanlovni istalgan vaqtda sayt pastidagi «Maxfiylik sozlamalari» havolasi orqali o'zgartirish mumkin."
+              : "Пользователям из Европейской экономической зоны, Великобритании и Швейцарии при первом посещении показывается запрос согласия Google (CMP): можно дать согласие на рекламные cookie или отказаться от них (Google Consent Mode v2). Выбор можно изменить в любой момент по ссылке «Настройки конфиденциальности» внизу сайта."}
           </p>
         </section>
 

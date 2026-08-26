@@ -9,7 +9,6 @@ import { ThemeProvider } from "@/components/layout/ThemeProvider"
 import { ToastProvider } from "@/components/ui/toast-simple"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
-import { CookieConsent } from "@/components/CookieConsent"
 import { AppInstallBanner } from "@/components/AppInstallBanner"
 import { Monetization } from "@/components/Monetization"
 import { NativeAds } from "@/components/NativeAds"
@@ -193,7 +192,8 @@ export default async function LocaleLayout({
               <main className="flex-1">{children}</main>
             </ToastProvider>
             <Footer />
-            <CookieConsent />
+            {/* Cookie-баннера больше нет: consent собирает Google CMP внутри
+                adsbygoogle.js (см. Monetization.tsx), отозвать — PrivacySettings в футере. */}
             <AppInstallBanner />
             <Monetization />
             <NativeAds />
