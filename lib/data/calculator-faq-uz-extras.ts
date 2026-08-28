@@ -44,7 +44,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "OTMda o'qiyotgan bo'lsam, ish beruvchi qo'shimcha imtiyoz beradimi?",
         answer:
-          "OTM (oliy ta'lim muassasasi) talabasi bo'lib ishlasangiz, qonun bo'yicha ish beruvchi sizga maxsus soliq imtiyozi bermaydi. Lekin yiliga 4,22 MIH gacha bo'lgan moddiy yordam JShShSdan ozod (5 363 620 so'm), o'qish to'lovi esa summa cheklovisiz JShShSdan ozod (SK 378-moddasi 16-bandi) — my.soliq.uz dagi deklaratsiyangiz orqali.",
+          "OTM (oliy ta'lim muassasasi) talabasi bo'lib ishlasangiz, qonun bo'yicha ish beruvchi sizga maxsus soliq imtiyozi bermaydi. Lekin yiliga 4,22 MIH gacha bo'lgan moddiy yordam JShShSdan ozod (5 739 200 so'm), o'qish to'lovi esa summa cheklovisiz JShShSdan ozod (SK 378-moddasi 16-bandi) — my.soliq.uz dagi deklaratsiyangiz orqali.",
       },
       {
         question: "Qishloqda joylashgan ishxonada ish haqi shaharnikidan farq qiladimi?",
@@ -74,7 +74,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Bozorda sotuvchi bo'lsam, QQS to'lashim kerakmi?",
         answer:
-          "Yo'q, agar soliq davri uchun daromadingiz 12 000 BHK (4 944 000 000 so'm) dan kam bo'lsa, QQS to'lovchisi emassiz. Bozordagi ko'pchilik chakana sotuvchilar bu chegaradan oshmaydi.",
+          "Yo'q, agar soliq davri uchun daromadingiz 12 000 BHK (5 280 000 000 so'm) dan kam bo'lsa, QQS to'lovchisi emassiz. Bozordagi ko'pchilik chakana sotuvchilar bu chegaradan oshmaydi.",
       },
       {
         question: "Faktura.soliq.uz da hisob-faktura qanday rasmiylashtirish?",
@@ -124,7 +124,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "OSAGO yo'q haydovchi jarima qancha?",
         answer:
-          "Ma'muriy javobgarlik kodeksining 135-1-moddasi bo'yicha 1 BHK jarima (hozir 412 000 so'm); ogohlantirish nazarda tutilmagan. Baxtsiz hodisada zarar o'z hisobingizdan to'lanadi.",
+          "Ma'muriy javobgarlik kodeksining 135-1-moddasi bo'yicha 1 BHK jarima (hozir 440 000 so'm); ogohlantirish nazarda tutilmagan. Baxtsiz hodisada zarar o'z hisobingizdan to'lanadi.",
       },
     ],
   },
@@ -149,7 +149,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "BHK qachon va kim tomonidan tasdiqlanadi?",
         answer:
-          "BHK (bazaviy hisoblash kattaligi) Vazirlar Mahkamasi qaroriga ko'ra yangilanadi. Odatda yiliga bir marta avgust-sentabr oylarida indeksatsiya qilinadi. Joriy 2026-yil holati: 412 000 so'm (2025-yil avgustdan).",
+          "BHK (bazaviy hisoblash kattaligi) Prezident Farmoni bilan belgilanadi. Odatda yiliga bir marta avgust-sentabr oylarida indeksatsiya qilinadi. Joriy holat: 2026-yil 1-sentabridan 440 000 so'm (PF-115 Farmoni); bundan oldin 412 000 so'm edi.",
       },
       {
         question: "BHK va minimal ish haqi bir xilmi?",
