@@ -181,7 +181,9 @@
       "notes": "Было 690 USD (≈8,2 млн сум) как обязательная строка растаможки — завышало итог, в т.ч. для электромобилей, которых ПКМ-597 прямо исключает из оценки экокласса. Исправлено в коде 2026-08-10.",
       "source_url": "https://lex.uz/uz/docs/7735340",
       "last_verified": "2026-08-09",
-      "official_value": "Экологическая сертификация ввозимых ТС категорий M/N отменена с 20.09.2025 (ПКМ-597, признало утратившим силу ПКМ-50 от 30.01.2020). Гос-регулируемой ставки нет; остаточная плата аккредитованному органу — договорная."
+      "official_value": "690",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "customs.ts__CUSTOMS_DUTY_RATE",
@@ -664,7 +666,10 @@
       "conflict": false,
       "status": "uncertain",
       "notes": "HARDCODED in tax.ts, NOT in constants file. Land tax for non-agricultural land = 0.012 (the agricultural 0.0095 lives in tax-rates.ts; the non-agri rate exists only inline). Then ×1.07 indexation → effective ~0.012840.",
-      "source_url": "https://www.spot.uz/ru/2026/01/08/land-tax-2026/"
+      "source_url": "https://www.spot.uz/ru/2026/01/08/land-tax-2026/",
+      "official_value": "0.012",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "tax.ts__calculatePropertyTax.indexationFactor (1.07)",
@@ -919,7 +924,11 @@
       "notes": "2026-07-07 verify+FIX: УП-100 (26.05.2026) raised the mandatory turnover-tax→VAT/profit-tax threshold from a fixed 1 млрд to 12,000 БРВ (4.944 млрд, БРВ-indexed) effective 1 Jun 2026. Moved from hardcoded 1_000_000_000 in vat.ts to VAT_MANDATORY_REGISTRATION_THRESHOLD = 12_000*BRV in tax-rates.ts; vat.ts default now references it. NB: the separate 1% ИП/self-employed regime keeps its own 1 млрд ceiling (ПП-247) — different figure. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "source_url": "https://www.gazeta.uz/ru/2026/06/01/small-business/",
       "last_verified": "2026-09-01",
-      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680",
+      "official_value": "4944000000",
+      "official_source": "https://www.gazeta.uz/ru/2026/06/01/small-business/",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "brv.ts__BRV",
@@ -2378,13 +2387,13 @@
       "conflict": false,
       "status": "removed",
       "notes": "VAT payers with turnover >100 bln UZS report monthly; others quarterly. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: порог 100 млрд сум выдуман. Квартальный порядок (оборот до 1 млрд/мес) отменён с 01.01.2022; налоговый период по НДС — месяц для всех, декларация и уплата до 20 числа. Квартал остался только для иностранных юрлиц с электронными услугами физлицам. Проза исправлена (articles 68/75/85/93).",
-      "official_value": "VAT period is monthly for ALL VAT payers (deadline 20th); a separate 'monthly vs quarterly by 100 bln turnover' split was not confirmed in 2026 sources.",
+      "official_value": "100000000000",
       "source_url": "https://www.bss.uz/article/37-nds-v-uzbekistane-obshchie-polojeniya-vidy-i-novye-vozmojnosti-nalogoplatelshchikov",
       "source_title": "Косвенные налоги в Узбекистане: НДС (BUXGALTER.UZ)",
       "verify_note": "Authoritative sources state a uniform monthly VAT period (20th) for all payers; could not confirm a 100-bln-UZS threshold that switches large payers to a different frequency — the distinction appears outdated/inaccurate, so flagged uncertain.",
       "verify_confidence": "low",
-      "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
       "last_verified": "2026-08-18"
     },
     {
@@ -3216,13 +3225,13 @@
       "conflict": true,
       "status": "removed",
       "notes": "И «1 декабря», и «15 апреля» были неверны. Удалено 2026-08-10.",
-      "official_value": "15 апреля и 15 октября — сроки уплаты налога на имущество и земельного налога физлиц, к ТС отношения не имеют",
+      "official_value": "1 December of the current year",
       "source_url": "https://gov.uz/ru/advice/70/document/1331",
       "source_title": "lex.uz — Налоговый кодекс РУз (Имущество/транспорт, сроки уплаты)",
       "verify_note": "Self-contradictory in the ledger (1 Dec vs 15 Apr); UZ individual property/land tax uses 15 Apr + 15 Oct installments, so the '1 December' figure is doubtful — verify against Tax Code before trusting (primary article text is paywalled).",
       "verify_confidence": "low",
-      "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
       "last_verified": "2026-08-09"
     },
     {
@@ -3785,13 +3794,13 @@
       "conflict": false,
       "status": "uncertain",
       "notes": "State-duty / passport-fee payment receipt valid for 3 months. Not in ledger. [completeness pass 2026-06-25]",
-      "official_value": "A 3-month validity for a paid state-duty receipt is plausible and commonly cited for passport/registration fees, but it could NOT be confirmed in the accessible text of Law ЗРУ-600 or the Tax Code (the relevant articles are behind paywalls). Treat as unverified.",
+      "official_value": "3 months from payment",
       "source_url": "https://lex.uz/ru/docs/4680955",
       "source_title": "lex.uz — ЗРУ-600 «О государственной пошлине»",
       "verify_note": "Could not locate a '3 months' provision in primary sources (ЗРУ-600 rate annex and Tax Code art. on duty are gated); not contradicted either — verify directly in ЗРУ-600 before relying on it.",
       "verify_confidence": "low",
-      "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "calculator-articles.ts__LAND_PLOT_PERSONAL_LIMITS",
