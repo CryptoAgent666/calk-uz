@@ -346,9 +346,10 @@
       "source_hint": "lex.uz (Семейный кодекс РУз, размер алиментов)",
       "conflict": false,
       "status": "current",
-      "notes": "Statutory child-support shares of income: 25% / 33% (≈1/3) / 50%.",
+      "notes": "Statutory child-support shares of income: 25% / 33% (≈1/3) / 50%. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
       "official_value": "1 ребёнок 1/4 (0.25); 2 детей 1/3 (≈0.33); 3+ детей 1/2 (0.50)",
-      "source_url": "https://ru.ryskiyeva.com/articles/post/alimenty-v-semejnom-prave-respubliki-uzbekistan"
+      "source_url": "https://ru.ryskiyeva.com/articles/post/alimenty-v-semejnom-prave-respubliki-uzbekistan",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "social.ts__calculateAlimony.rates",
@@ -366,9 +367,10 @@
       "source_hint": "lex.uz (Семейный кодекс РУз, статья об алиментах)",
       "conflict": false,
       "status": "current",
-      "notes": "HARDCODED in social.ts. Statutory alimony shares: 1 child=25%, 2 children=33% (1/3), 3+ children=50% of income. Set by Family Code, not Tax Code.",
+      "notes": "HARDCODED in social.ts. Statutory alimony shares: 1 child=25%, 2 children=33% (1/3), 3+ children=50% of income. Set by Family Code, not Tax Code. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
       "official_value": "{\"1child\":0.25,\"2children\":0.333,\"3+children\":0.50}",
-      "source_url": "https://ru.ryskiyeva.com/articles/post/alimenty-v-semejnom-prave-respubliki-uzbekistan"
+      "source_url": "https://ru.ryskiyeva.com/articles/post/alimenty-v-semejnom-prave-respubliki-uzbekistan",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "social.ts__calculateMaternity.leaveDays",
@@ -449,9 +451,10 @@
       "source_hint": "lex.uz (Закон РУз 'О государственном пенсионном обеспечении граждан')",
       "conflict": false,
       "status": "current",
-      "notes": "HARDCODED in social.ts. Statutory retirement age: men 60 (25 yrs service required), women 55 (20 yrs required; 54 with full record per comment). Required-years thresholds (25/20) are also hardcoded.",
+      "notes": "HARDCODED in social.ts. Statutory retirement age: men 60 (25 yrs service required), women 55 (20 yrs required; 54 with full record per comment). Required-years thresholds (25/20) are also hardcoded. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
       "official_value": "{\"male\":60,\"female\":55}",
-      "source_url": "https://bankchart.uz/stati/pensiya_po_vozrastu_v_uzbekistane_komu_polozhena_kak_oformit"
+      "source_url": "https://bankchart.uz/stati/pensiya_po_vozrastu_v_uzbekistane_komu_polozhena_kak_oformit",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "social.ts__calculateSickLeave/Maternity.calendarDaysIn12Months (default 365)",
@@ -534,9 +537,10 @@
       "source_hint": "lex.uz (ПКМ № 796 от 17.12.2025); mehnat.uz",
       "conflict": false,
       "status": "current",
-      "notes": "2026 rules: maternity benefit % scales with insurance months; min 10 months experience. Benefit is tax-exempt (ndflAmount=0, line 150).",
+      "notes": "2026 rules: maternity benefit % scales with insurance months; min 10 months experience. Benefit is tax-exempt (ndflAmount=0, line 150). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
       "official_value": "<10mo: 0; 10-24mo: 75; 25-60mo: 85; 61mo+: 100",
-      "source_url": "https://kadrovik.uz/publish/doc/text212515_kak_budut_vyplachivat_dekretnye_i_bolnichnye_s_2026_goda_v_ramkah_novoy_sistemy_socstrahovaniya"
+      "source_url": "https://kadrovik.uz/publish/doc/text212515_kak_budut_vyplachivat_dekretnye_i_bolnichnye_s_2026_goda_v_ramkah_novoy_sistemy_socstrahovaniya",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "social.ts__maternity leave days",
@@ -616,9 +620,10 @@
       "source_hint": "lex.uz / mehnat.uz (пенсионный возраст и стаж)",
       "conflict": false,
       "status": "current",
-      "notes": "Statutory pension age and required service years. Comment also notes women 54 with full 20-yr record.",
+      "notes": "Statutory pension age and required service years. Comment also notes women 54 with full 20-yr record. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
       "official_value": "men: 60 (25 yrs); women: 55 (20 yrs)",
-      "source_url": "https://bankchart.uz/stati/pensiya_po_vozrastu_v_uzbekistane_komu_polozhena_kak_oformit"
+      "source_url": "https://bankchart.uz/stati/pensiya_po_vozrastu_v_uzbekistane_komu_polozhena_kak_oformit",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "social.ts__sick leave experience percent (PKM #796)",
@@ -846,9 +851,11 @@
       "last_updated_hint": null,
       "source_hint": "lex.uz / Иссиклик манбаи (тарифы на отопление)",
       "conflict": false,
-      "status": "current",
-      "notes": "Regulated central-heating tariff per m² per day. Duplicated in constants/utility-tariffs.ts (HEATING_RATE_PER_M2_DAY). Heating season Oct-Mar, ~180 days.",
-      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
+      "status": "uncertain",
+      "notes": "Regulated central-heating tariff per m² per day. Duplicated in constants/utility-tariffs.ts (HEATING_RATE_PER_M2_DAY). Heating season Oct-Mar, ~180 days. || 2026-09-01 verify: UNCERTAIN. Тариф отопления в Ташкенте задан в Гкал (139 860 сум/Гкал без НДС) при норме ~0,025 Гкал/м² в месяц: это ≈3 916 сум/м² в месяц с НДС ≈ 130 сум/м² в сутки. Наши 241,44 сум/м²/сутки дают ≈7 243/м² в месяц — расхождение ~1,85x. Прежняя пометка «unchanged in 2026» подтверждала стабильность значения, а не его правильность. НЕ МЕНЯТЬ до сверки с тарифным решением хокимията Ташкента.",
+      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://blog.salomuy.uz/ru/articles/5/200312"
     },
     {
       "id": "utilities.ts__WASTE_PER_PERSON_PER_MONTH",
@@ -867,8 +874,10 @@
       "source_hint": "lex.uz / Махсустранс (тариф на вывоз ТБО)",
       "conflict": false,
       "status": "current",
-      "notes": "Regulated solid-waste disposal fee per person per month. Duplicated in constants/utility-tariffs.ts (WASTE_FEE_PER_PERSON).",
-      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
+      "notes": "Regulated solid-waste disposal fee per person per month. Duplicated in constants/utility-tariffs.ts (WASTE_FEE_PER_PERSON). || 2026-09-01 verify: current для ТАШКЕНТА — 7 500 сум/чел без НДС = 8 400 с НДС. ВНИМАНИЕ: в Ташкентской ОБЛАСТИ с 01.04.2026 тариф иной (9 700 без НДС / 10 864 с НДС) — калькулятор считает по городу.",
+      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://blog.salomuy.uz/ru/articles/5/200312"
     },
     {
       "id": "utilities.ts__WATER_RATES",
@@ -949,8 +958,9 @@
       "source_hint": "cbu.uz (Основная ставка ЦБ РУз)",
       "conflict": false,
       "status": "current",
-      "notes": "Central Bank key/refinancing rate (14%). Gov-regulated but set by the Central Bank, not a tax law. Used to derive PENALTY_RATE and the tax-penalty daily rate (CB_RATE/300) in tax.ts.",
-      "source_url": "https://www.gazeta.uz/ru/2026/06/17/main-rate/"
+      "notes": "Central Bank key/refinancing rate (14%). Gov-regulated but set by the Central Bank, not a tax law. Used to derive PENALTY_RATE and the tax-penalty daily rate (CB_RATE/300) in tax.ts. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
+      "source_url": "https://www.gazeta.uz/ru/2026/06/17/main-rate/",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "brv.ts__MIN_WAGE",
@@ -1009,9 +1019,10 @@
       "source_hint": "soliq.uz / lex.uz (Налоговый кодекс РУз, налог на прибыль)",
       "conflict": false,
       "status": "current",
-      "notes": "Corporate profit tax standard rate 15%. Same value hardcoded in tax.ts calculateCorporateTax default and business.ts calculateLLCTax (profit*0.15).",
+      "notes": "Corporate profit tax standard rate 15%. Same value hardcoded in tax.ts calculateCorporateTax default and business.ts calculateLLCTax (profit*0.15). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
       "official_value": "0.15",
-      "source_url": "https://www.spot.uz/ru/2025/11/26/taxes-for-2026/"
+      "source_url": "https://www.spot.uz/ru/2025/11/26/taxes-for-2026/",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.INPS",
@@ -1073,8 +1084,9 @@
       "source_hint": "soliq.uz / lex.uz (Налоговый кодекс РУз)",
       "conflict": false,
       "status": "current",
-      "notes": "Personal income tax standard flat rate 12%. Same value also hardcoded in tax.ts (calculateIncomeTax), salary.ts (gross↔net), social.ts (vacation/sick NDFL), business.ts (employer cost ndfl).",
-      "source_url": "https://uz.sputniknews.ru/20251202/osnovnye-nalogovye-stavki-uzbekistan-2026-53876549.html"
+      "notes": "Personal income tax standard flat rate 12%. Same value also hardcoded in tax.ts (calculateIncomeTax), salary.ts (gross↔net), social.ts (vacation/sick NDFL), business.ts (employer cost ndfl). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
+      "source_url": "https://uz.sputniknews.ru/20251202/osnovnye-nalogovye-stavki-uzbekistan-2026-53876549.html",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.NDFL_IT_PARK",
@@ -1115,8 +1127,10 @@
       "source_hint": "soliq.uz / lex.uz (Налоговый кодекс РУз, налог на имущество юрлиц)",
       "conflict": false,
       "status": "current",
-      "notes": "Property tax for legal entities: 1.5%. Same value hardcoded in tax.ts calculatePropertyTax (isLegalEntity → 0.015), then ×1.07 indexation → effective ~1.605%.",
-      "source_url": "https://www.gazeta.uz/ru/2026/01/13/property-tax/"
+      "notes": "Property tax for legal entities: 1.5%. Same value hardcoded in tax.ts calculatePropertyTax (isLegalEntity → 0.015), then ×1.07 indexation → effective ~1.605%. || 2026-09-01 verify: current. Ставки налога на имущество физлиц на 2026 — 0,36% / 0,48% / 0,64%, юрлица 1,5% (рост 5,9-6,6% к 2025). Прежние 0,2/0,25/0,35% — норма образца 2018 г., не действует.",
+      "source_url": "https://www.gazeta.uz/ru/2026/01/13/property-tax/",
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE",
@@ -1136,10 +1150,11 @@
       "source_hint": "soliq.uz / lex.uz (Налоговый кодекс РУз, налог на имущество)",
       "conflict": false,
       "status": "current",
-      "notes": "Property tax for residential over 200 m2: 0.6%. tax.ts applies +7% indexation (×1.07) → effective ~0.642%. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Property tax for residential over 200 m2: 0.6%. tax.ts applies +7% indexation (×1.07) → effective ~0.642%. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 verify: current. Ставки налога на имущество физлиц на 2026 — 0,36% / 0,48% / 0,64%, юрлица 1,5% (рост 5,9-6,6% к 2025). Прежние 0,2/0,25/0,35% — норма образца 2018 г., не действует.",
       "official_value": "0.0064 (0.64%) for 2026 — and this band is >500 m2 in cities, not >200 m2",
       "source_url": "https://www.gazeta.uz/ru/2026/01/13/property-tax/",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM",
@@ -1159,10 +1174,11 @@
       "source_hint": "soliq.uz / lex.uz (Налоговый кодекс РУз, налог на имущество)",
       "conflict": false,
       "status": "current",
-      "notes": "Property tax for residential 100-200 m2: 0.45%. tax.ts applies +7% indexation (×1.07) → effective ~0.4815%. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Property tax for residential 100-200 m2: 0.45%. tax.ts applies +7% indexation (×1.07) → effective ~0.4815%. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 verify: current. Ставки налога на имущество физлиц на 2026 — 0,36% / 0,48% / 0,64%, юрлица 1,5% (рост 5,9-6,6% к 2025). Прежние 0,2/0,25/0,35% — норма образца 2018 г., не действует.",
       "official_value": "0.0048 (0.48%) for 2026 — and this band is 200-500 m2 in cities (or >200 m2 in rural areas), not 100-200 m2",
       "source_url": "https://www.gazeta.uz/ru/2026/01/13/property-tax/",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL",
@@ -1182,10 +1198,11 @@
       "source_hint": "soliq.uz / lex.uz (Налоговый кодекс РУз, налог на имущество)",
       "conflict": false,
       "status": "current",
-      "notes": "Property tax for residential up to 100 m2: 0.34%. NOTE: tax.ts calculatePropertyTax multiplies this base rate by 1.07 (+7% indexation from 2026) → effective 0.3638%, so the surfaced/computed rate differs from this raw constant. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Property tax for residential up to 100 m2: 0.34%. NOTE: tax.ts calculatePropertyTax multiplies this base rate by 1.07 (+7% indexation from 2026) → effective 0.3638%, so the surfaced/computed rate differs from this raw constant. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 verify: current. Ставки налога на имущество физлиц на 2026 — 0,36% / 0,48% / 0,64%, юрлица 1,5% (рост 5,9-6,6% к 2025). Прежние 0,2/0,25/0,35% — норма образца 2018 г., не действует.",
       "official_value": "0.0036 (0.36%) for 2026 — band is up to 200 m2 (incl. dachas/parking), not up to 100 m2",
       "source_url": "https://www.gazeta.uz/ru/2026/01/13/property-tax/",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.SELF_EMPLOYED_TAX",
@@ -1226,9 +1243,10 @@
       "source_hint": "soliq.uz / lex.uz (Налоговый кодекс РУз, социальный налог)",
       "conflict": false,
       "status": "current",
-      "notes": "Employer social tax standard rate 12%. Same value hardcoded in salary.ts, business.ts (employer cost, LLC payroll, IP general regime).",
+      "notes": "Employer social tax standard rate 12%. Same value hardcoded in salary.ts, business.ts (employer cost, LLC payroll, IP general regime). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
       "official_value": "0.12",
-      "source_url": "https://www.spot.uz/ru/2025/11/26/taxes-for-2026/"
+      "source_url": "https://www.spot.uz/ru/2025/11/26/taxes-for-2026/",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.SOCIAL_TAX_BUDGET",
@@ -1290,8 +1308,9 @@
       "source_hint": "soliq.uz / lex.uz (Налоговый кодекс РУз, раздел НДС)",
       "conflict": false,
       "status": "current",
-      "notes": "Value-added tax standard rate 12%. Also hardcoded as VAT_RATE in vat.ts and inline in business.ts calculateLLCTax (0.12 on revenue-expenses).",
-      "source_url": "https://uz.sputniknews.ru/20251202/osnovnye-nalogovye-stavki-uzbekistan-2026-53876549.html"
+      "notes": "Value-added tax standard rate 12%. Also hardcoded as VAT_RATE in vat.ts and inline in business.ts calculateLLCTax (0.12 on revenue-expenses). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
+      "source_url": "https://uz.sputniknews.ru/20251202/osnovnye-nalogovye-stavki-uzbekistan-2026-53876549.html",
+      "last_verified": "2026-08-18"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS",
@@ -1707,10 +1726,11 @@
       "last_updated_hint": "2025 (file header) — freshness flag",
       "source_hint": "Тарифная комиссия / теплоснабжение (Issiqlik ta'minoti)",
       "conflict": false,
-      "status": "current",
-      "notes": "Central heating tariff 241.44 UZS per m2 per day. Used in calculateHeatingCost(area × rate × days).  ||  2026-06-30 verify: current (241.44; unchanged in 2026).",
+      "status": "uncertain",
+      "notes": "Central heating tariff 241.44 UZS per m2 per day. Used in calculateHeatingCost(area × rate × days).  ||  2026-06-30 verify: current (241.44; unchanged in 2026). || 2026-09-01 verify: UNCERTAIN. Тариф отопления в Ташкенте задан в Гкал (139 860 сум/Гкал без НДС) при норме ~0,025 Гкал/м² в месяц: это ≈3 916 сум/м² в месяц с НДС ≈ 130 сум/м² в сутки. Наши 241,44 сум/м²/сутки дают ≈7 243/м² в месяц — расхождение ~1,85x. Прежняя пометка «unchanged in 2026» подтверждала стабильность значения, а не его правильность. НЕ МЕНЯТЬ до сверки с тарифным решением хокимията Ташкента.",
       "source_url": "https://www.goldenpages.uz/en/komunal-tarifi/",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://blog.salomuy.uz/ru/articles/5/200312"
     },
     {
       "id": "utility-tariffs.ts__HEATING_SEASON_MONTHS",
@@ -1747,8 +1767,10 @@
       "source_hint": "Тарифная комиссия / Maxsustrans (оператор ТБО)",
       "conflict": false,
       "status": "current",
-      "notes": "Waste disposal (TBO) fee 8400 UZS per person per month. Gov-regulated sanitation tariff. Declared/exported; not referenced by a compute helper in the read files.",
-      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
+      "notes": "Waste disposal (TBO) fee 8400 UZS per person per month. Gov-regulated sanitation tariff. Declared/exported; not referenced by a compute helper in the read files. || 2026-09-01 verify: current для ТАШКЕНТА — 7 500 сум/чел без НДС = 8 400 с НДС. ВНИМАНИЕ: в Ташкентской ОБЛАСТИ с 01.04.2026 тариф иной (9 700 без НДС / 10 864 с НДС) — калькулятор считает по городу.",
+      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://blog.salomuy.uz/ru/articles/5/200312"
     },
     {
       "id": "utility-tariffs.ts__WATER_COLD_RATE",
@@ -2803,14 +2825,16 @@
       "source_hint": "lex.uz — штраф за нарушение норм о сверхурочных 5-10 БРВ",
       "conflict": false,
       "status": "current",
-      "notes": "Fine on officials for breaching overtime-duration rules = 5-10 БРВ. Not in ledger. [completeness pass 2026-06-25]",
+      "notes": "Fine on officials for breaching overtime-duration rules = 5-10 БРВ. Not in ledger. [completeness pass 2026-06-25] || 2026-09-01 verify: current. Ст. 49 КоАО — 5-10 БРВ на должностных лиц за первое нарушение; повторное в течение года (кроме незаконного увольнения) — 10-15 БРВ.",
       "official_value": "5-10 БРВ on officials for a first violation of labour/overtime rules (= 2,060,000 - 4,120,000 UZS at БРВ 412,000); 10-15 БРВ on repeat within a year.",
       "source_url": "https://www.kadry.uz/article/3106-sverhurochnaya-rabota-otvety-na-chastye-voprosy-kadrovika",
       "source_title": "Kadry.uz — сверхурочная работа: лимиты и ответственность",
       "verify_note": "Confirmed: officials' fine for breaching working-time/overtime rules is 5-10 БРВ (first) / 10-15 БРВ (repeat) under the Administrative Code; the 2.06-4.12 млн range implied is consistent with БРВ=412,000.",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verify_method": "tier2-web-2026-06-27",
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://www.norma.uz/novoe_v_zakonodatelstve/shtrafy_za_narusheniya_trudovogo_zakonodatelstva_povysili"
     },
     {
       "id": "calculator-articles.ts__PROBATION_PERIOD_MAX",
