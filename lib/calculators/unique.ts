@@ -3,6 +3,7 @@
  */
 
 import { BRV } from '@/lib/constants/brv'
+import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
 
 // Passport Fees
 export interface PassportFeesResult {
@@ -179,7 +180,7 @@ export function calculateRemittance(
   sendAmount: number,
   sendCurrency: string = 'USD',
   /** USD→UZS rate. Default is a fallback; pass the live cbu.uz rate. */
-  exchangeRate: number = 11_938,
+  exchangeRate: number = USD_UZS_FALLBACK,
   feePercent: number = 1.5
 ): RemittanceResult {
   const fee = sendAmount * feePercent / 100
@@ -236,7 +237,7 @@ export const VISA_COSTS_USD: Record<
 
 export function calculateVisaCost(
   country: string,
-  exchangeRate: number = 11_938,
+  exchangeRate: number = USD_UZS_FALLBACK,
   insuranceDays: number = 30,
   insuranceRatePerDay: number = 15_000
 ): VisaCostResult {

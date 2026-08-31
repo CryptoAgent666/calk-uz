@@ -1877,7 +1877,7 @@
       "id": "customs.ts__USD_UZS_FALLBACK",
       "file": "lib/calculators/customs.ts",
       "key": "USD_UZS_FALLBACK",
-      "value": "11938",
+      "value": "11801.23",
       "unit": "UZS per USD",
       "law": "n/a (CBU reference FX rate fallback, 1 May 2026)",
       "theme": "fx_rate",
@@ -1889,8 +1889,11 @@
       "last_updated_hint": null,
       "source_hint": "cbu.uz (official daily USD/UZS reference rate)",
       "conflict": false,
-      "status": "unverified",
-      "notes": "Market/reference FX rate (cbu.uz), not a regulated fee. Duplicated in unique.ts remittance (11938) and visa (11938). Changes daily."
+      "status": "current",
+      "notes": "Market/reference FX rate (cbu.uz), not a regulated fee. Duplicated in unique.ts remittance (11938) and visa (11938). Changes daily. || 2026-09-01: курс сведён в ЕДИНСТВЕННЫЙ модуль lib/constants/fx.ts (11 801,23 — ЦБ РУз 28.08.2026). Было четыре разошедшиеся копии: FALLBACK_USD_RATE=12 850 в BankRates/Visa/MoneyTransfer/Remittances/CurrencyConverter и USD_UZS_FALLBACK=11 938 в customs.ts. Главное: CustomsCalculator живой курс НЕ запрашивал, поэтому «фолбэк» был у него единственным путём и с 1 мая завышал пошлину и НДС на ~1,2% (на авто $20 000 — ~2,5 млн сум). Компонент подключён к useCurrencyRates, курс и его дата показаны в результате.",
+      "official_value": "11801.23",
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://cbu.uz/ru/arkhiv-kursov-valyut/json/USD/"
     },
     {
       "id": "religion.ts__FITR_OFFICIAL_2026",
@@ -2077,7 +2080,7 @@
       "id": "unique.ts__remittance default FX / fee",
       "file": "lib/calculators/unique.ts",
       "key": "remittance default FX / fee",
-      "value": "exchangeRate 11938 UZS/USD; feePercent 1.5%",
+      "value": "exchangeRate 11801.23 UZS/USD (живой курс ЦБ); feePercent 1.5%",
       "unit": "UZS per USD; % fee",
       "law": "n/a (market FX + transfer fee)",
       "theme": "fx_rate",
@@ -2088,8 +2091,11 @@
       "last_updated_hint": null,
       "source_hint": "cbu.uz (FX reference) / money-transfer market",
       "conflict": false,
-      "status": "unverified",
-      "notes": "Market FX fallback (11938, same as customs) and 1.5% transfer fee default. Not regulated."
+      "status": "current",
+      "notes": "Market FX fallback (11938, same as customs) and 1.5% transfer fee default. Not regulated. || 2026-09-01: курс сведён в ЕДИНСТВЕННЫЙ модуль lib/constants/fx.ts (11 801,23 — ЦБ РУз 28.08.2026). Было четыре разошедшиеся копии: FALLBACK_USD_RATE=12 850 в BankRates/Visa/MoneyTransfer/Remittances/CurrencyConverter и USD_UZS_FALLBACK=11 938 в customs.ts. Главное: CustomsCalculator живой курс НЕ запрашивал, поэтому «фолбэк» был у него единственным путём и с 1 мая завышал пошлину и НДС на ~1,2% (на авто $20 000 — ~2,5 млн сум). Компонент подключён к useCurrencyRates, курс и его дата показаны в результате.",
+      "official_value": "exchangeRate 11801.23 UZS/USD (живой курс ЦБ); feePercent 1.5%",
+      "last_verified": "2026-09-01",
+      "source_url_verify": "https://cbu.uz/ru/arkhiv-kursov-valyut/json/USD/"
     },
     {
       "id": "unique.ts__wedding reference prices",

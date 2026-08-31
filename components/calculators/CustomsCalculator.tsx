@@ -7,6 +7,8 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { calculateCustomsClearance, type AgeBand } from '@/lib/calculators/customs'
+import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
+import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
 import { formatCurrency } from '@/lib/utils'
 
 export default function CustomsCalculator() {
@@ -18,14 +20,22 @@ export default function CustomsCalculator() {
   // «новый до 3 лет» отправлял авто 1–3 лет в льготные 15% вместо 30%.
   const [ageBand, setAgeBand] = useState<AgeBand>('upTo1')
 
+  // Пошлина, акциз и НДС считаются от цены в сумах, поэтому курс — не
+  // косметика, а множитель всего результата. Берём живой курс ЦБ; захардкоженный
+  // USD_UZS_FALLBACK остаётся только страховкой на случай недоступности cbu.uz.
+  const { rates } = useCurrencyRates()
+  const usd = rates.find((r) => r.code === 'USD')
+  const usdToUzs = usd && usd.rate > 0 ? usd.rate / (usd.nominal || 1) : USD_UZS_FALLBACK
+  const isLiveRate = Boolean(usd && usd.rate > 0)
+
   const result = useMemo(() => {
     const p = parseFloat(price) || 0
     const ev = parseInt(engineVolume) || 0
     if (p <= 0 || ev <= 0) return null
     // Возраст задаётся селектором ageBand — отдельный «Год выпуска» на расчёт
     // не влиял и противоречил ему (2022 год + «до 1 года»), поэтому убран.
-    return calculateCustomsClearance({ carPrice: p, engineVolumeCc: ev, fuelType, ageBand })
-  }, [price, engineVolume, fuelType, ageBand])
+    return calculateCustomsClearance({ carPrice: p, engineVolumeCc: ev, fuelType, ageBand }, usdToUzs)
+  }, [price, engineVolume, fuelType, ageBand, usdToUzs])
 
   const labels: Record<string, Record<string, string>> = {
     uz: {
@@ -36,6 +46,7 @@ export default function CustomsCalculator() {
       vat: 'QQS', utilizationFee: 'Utilizatsiya yig\'imi', registrationFee: 'Ro\'yxatga olish',
       certificationFee: 'Sertifikatsiya', totalCustoms: 'Jami rasmiylashtirish',
       totalWithCar: 'Avtomobil + rasmiylashtirish',
+      rateLive: 'Hisob MB kursi bo\'yicha', rateFallback: 'Zaxira kurs (cbu.uz mavjud emas)',
     },
     ru: {
       price: 'Цена авто (USD)', engineVolume: 'Объём двигателя (см\u00B3)',
@@ -44,6 +55,7 @@ export default function CustomsCalculator() {
       results: 'Результаты', customsDuty: 'Таможенная пошлина', exciseTax: 'Акцизный налог',
       vat: 'НДС', utilizationFee: 'Утилизационный сбор', registrationFee: 'Регистрация',
       certificationFee: 'Сертификация', totalCustoms: 'Итого растаможка',
+      rateLive: 'Расчёт по курсу ЦБ', rateFallback: 'Резервный курс (cbu.uz недоступен)',
       totalWithCar: 'Авто + растаможка',
     }
   }
@@ -101,6 +113,12 @@ export default function CustomsCalculator() {
               <span>{tl.totalWithCar}</span>
               <span className="text-primary">{formatCurrency(result.totalWithCarPrice, 'UZS', locale)}</span>
             </div>
+            <p className="border-t pt-3 text-xs text-muted-foreground">
+              {isLiveRate ? tl.rateLive : tl.rateFallback}: 1 USD ={' '}
+              {usdToUzs.toLocaleString(locale === 'uz' ? 'uz-UZ' : 'ru-RU', { maximumFractionDigits: 2 })}{' '}
+              {locale === 'uz' ? "so'm" : 'сум'}
+              {isLiveRate && usd?.date ? ` (${usd.date})` : null}
+            </p>
           </CardContent>
         </Card>
       )}
