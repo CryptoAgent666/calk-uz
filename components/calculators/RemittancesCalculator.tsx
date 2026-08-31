@@ -8,16 +8,10 @@ import { Input } from '@/components/ui/input'
 import { calculateRemittance } from '@/lib/calculators/unique'
 import { formatCurrency, formatNumber } from '@/lib/utils'
 import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
-import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
+import { FX_FALLBACK_UZS } from '@/lib/constants/fx'
 
-const FALLBACK_RATES: Record<string, number> = {
-  // USD — из общего модуля; остальные валюты пока живут здесь
-  USD: USD_UZS_FALLBACK,
-  EUR: 14_200,
-  RUB: 135,
-  GBP: 16_500,
-  KZT: 26,
-}
+// Страховочные курсы — общие для всего сайта, см. lib/constants/fx.ts
+const FALLBACK_RATES = FX_FALLBACK_UZS
 
 const CURRENCIES = ['USD', 'EUR', 'RUB', 'GBP', 'KZT']
 
@@ -27,7 +21,9 @@ export default function RemittancesCalculator() {
   const [amount, setAmount] = useState('1000')
   const [currency, setCurrency] = useState('USD')
   const [feePercent, setFeePercent] = useState('1.5')
-  const [rate, setRate] = useState('12850')
+  // Стартовое значение — из общей страховочной карты, чтобы до загрузки
+  // живого курса пользователь не видел мигающее устаревшее число.
+  const [rate, setRate] = useState(String(Math.round(FX_FALLBACK_UZS.USD)))
 
   // Build a map of per-unit rates from live data
   const ratesMap = useMemo(() => {

@@ -7,22 +7,10 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { formatNumber } from '@/lib/utils'
 import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
-import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
+import { FX_FALLBACK_UZS } from '@/lib/constants/fx'
 
-const FALLBACK_RATES: Record<string, number> = {
-  // USD — из общего модуля; остальные валюты пока живут здесь
-  USD: USD_UZS_FALLBACK,
-  EUR: 14_200,
-  RUB: 135,
-  GBP: 16_500,
-  KZT: 26,
-  TRY: 380,
-  CNY: 1_780,
-  KRW: 9.5,
-  KGS: 145,
-  AED: 3_500,
-  JPY: 86,
-}
+// Страховочные курсы — общие для всего сайта, см. lib/constants/fx.ts
+const FALLBACK_RATES = FX_FALLBACK_UZS
 
 export default function CurrencyConverterCalculator() {
   const locale = useLocale()

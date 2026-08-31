@@ -18,7 +18,8 @@ export default function MoneyTransferCalculator() {
   const { rates: liveRates, loading, error, lastUpdated } = useCurrencyRates()
   const [amount, setAmount] = useState('500')
   const [feePercent, setFeePercent] = useState('1.5')
-  const [exchangeRate, setExchangeRate] = useState('12850')
+  // См. RemittancesCalculator: стартуем от общей страховочной карты.
+  const [exchangeRate, setExchangeRate] = useState(String(Math.round(USD_UZS_FALLBACK)))
 
   // Auto-populate USD exchange rate from live data
   const liveUsdRate = useMemo(() => {

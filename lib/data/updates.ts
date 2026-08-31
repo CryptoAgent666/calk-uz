@@ -33,6 +33,14 @@ export const UPDATES: UpdateBlock[] = [
           "Bojxona kalkulyatori dollar kursini cbu.uz dan emas, kodga qat'iy yozilgan 11 938 so'mdan — MB ning 2026-yil 1-may kursidan olardi. Konstanta zaxira deb atalgan bo'lsa-da, komponent jonli kursni umuman so'ramagan, shuning uchun zaxira yagona yo'l edi. Haqiqiy kurs 11 801,23 bo'lganda boj va QQS taxminan 1,2% ga oshib ketardi: 20 000 dollarlik avtomobilda bu ~2,5 mln so'm ortiqcha. Kalkulyator MB ning jonli kursiga ulandi, natija ostida esa hisob qaysi kurs va sana bo'yicha qilingani ko'rsatiladi.",
       },
       {
+        titleRu: "Страховочные курсы остальных валют отстали сильнее доллара",
+        titleUz: "Boshqa valyutalarning zaxira kurslari dollardan ham ko'proq eskirgan edi",
+        descRu:
+          "Проверили всю карту резервных курсов, а не только доллар. Турецкая лира стояла 380 сум при фактических 245 — промах на 55%. Иена 86 против 74, дирхам ОАЭ 3 500 против 3 213, киргизский сом 145 против 135, вон 9,5 против 8,55. Эти курсы подставляются только когда cbu.uz недоступен, но при таком расхождении подстановка вреднее пустого поля. Вся карта обновлена по курсам ЦБ на 28 августа 2026 и снабжена датой, чтобы следующее протухание было видно сразу.",
+        descUz:
+          "Faqat dollarni emas, butun zaxira kurslar jadvalini tekshirdik. Turk lirasi haqiqiy 245 o'rniga 380 so'm turgan — 55 foiz xato. Iyena 74 o'rniga 86, BAA dirhami 3 213 o'rniga 3 500, qirg'iz somi 135 o'rniga 145, von 8,55 o'rniga 9,5. Bu kurslar faqat cbu.uz mavjud bo'lmaganda ishlatiladi, lekin bunday farqda ular bo'sh maydondan ham zararli. Butun jadval MB ning 2026-yil 28-avgust kurslari bo'yicha yangilandi va sanasi qo'shildi.",
+      },
+      {
         titleRu: "Страховочный курс доллара теперь в одном месте",
         titleUz: "Dollarning zaxira kursi endi bitta joyda",
         descRu:
