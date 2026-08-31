@@ -29,6 +29,9 @@ const STALE = [
   { was: '12 700',    now: '11 801',             what: 'курс USD в примерах до 31.08.2026', ctx: /курс|kurs|USD/i },
   { was: '12 850',    now: '11 801',             what: 'страховочный курс USD до 31.08.2026', ctx: /курс|kurs|USD/i },
   { was: '11 938',    now: '11 801',             what: 'страховочный курс USD (май 2026)', ctx: /курс|kurs|USD/i },
+  { was: '14 500',    now: '16 200',             what: 'цена АИ-95 до августа 2026', ctx: /АИ-9|AI-9|бензин|benzin|топлив|yoqilg/i },
+  { was: '5 200',     now: '5 750',              what: 'цена метана до августа 2026', ctx: /метан|metan/i },
+  { was: 'АИ-91',     now: 'АИ-92',              what: 'АИ-91 снят с продажи', ctx: /~|сум\/л|so'm\/l|стоит|turadi/i },
 ]
 
 const FILES = readdirSync('lib/data')
