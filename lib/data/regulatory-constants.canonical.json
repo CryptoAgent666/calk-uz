@@ -921,13 +921,13 @@
       "source_hint": "gazeta.uz / spot.uz / norma.uz (УП-100, порог 12 000 БРВ)",
       "conflict": false,
       "status": "current",
-      "notes": "2026-07-07 verify+FIX: УП-100 (26.05.2026) raised the mandatory turnover-tax→VAT/profit-tax threshold from a fixed 1 млрд to 12,000 БРВ (4.944 млрд, БРВ-indexed) effective 1 Jun 2026. Moved from hardcoded 1_000_000_000 in vat.ts to VAT_MANDATORY_REGISTRATION_THRESHOLD = 12_000*BRV in tax-rates.ts; vat.ts default now references it. NB: the separate 1% ИП/self-employed regime keeps its own 1 млрд ceiling (ПП-247) — different figure. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
+      "notes": "2026-07-07 verify+FIX: УП-100 (26.05.2026) raised the mandatory turnover-tax→VAT/profit-tax threshold from a fixed 1 млрд to 12,000 БРВ (4.944 млрд, БРВ-indexed) effective 1 Jun 2026. Moved from hardcoded 1_000_000_000 in vat.ts to VAT_MANDATORY_REGISTRATION_THRESHOLD = 12_000*BRV in tax-rates.ts; vat.ts default now references it. NB: the separate 1% ИП/self-employed regime keeps its own 1 млрд ceiling (ПП-247) — different figure. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано. || 2026-09-01: official_value подтянут к применённому значению (12 000 БРВ × 440 000 = 5 280 000 000). Раньше оставался 4 944 000 000 от доролловерной БРВ — такая запись пере-флагается аудитом бесконечно.",
       "source_url": "https://www.gazeta.uz/ru/2026/06/01/small-business/",
       "last_verified": "2026-09-01",
       "source_url_rollover": "https://www.lex.uz/ru/docs/8283680",
-      "official_value": "4944000000",
+      "official_value": "5280000000",
       "official_source": "https://www.gazeta.uz/ru/2026/06/01/small-business/",
-      "verified_date": "2026-07-08",
+      "verified_date": "2026-09-01",
       "verify_method": "tier2-llm"
     },
     {
