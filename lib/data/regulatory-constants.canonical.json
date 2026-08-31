@@ -334,7 +334,7 @@
       "id": "social.ts__alimony rates",
       "file": "lib/calculators/social.ts",
       "key": "alimony rates",
-      "value": "1 child: 0.25; 2 children: 0.33; 3+: 0.50",
+      "value": "1 child: 0.25; 2 children: 1/3 (0.3333); 3+: 0.50",
       "unit": "ratio of income",
       "law": "Алименты — Семейный кодекс РУз (1/4, 1/3, 1/2 заработка на 1/2/3+ детей)",
       "theme": "social_benefit",
@@ -346,16 +346,16 @@
       "source_hint": "lex.uz (Семейный кодекс РУз, размер алиментов)",
       "conflict": false,
       "status": "current",
-      "notes": "Statutory child-support shares of income: 25% / 33% (≈1/3) / 50%. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
-      "official_value": "1 ребёнок 1/4 (0.25); 2 детей 1/3 (≈0.33); 3+ детей 1/2 (0.50)",
+      "notes": "Statutory child-support shares of income: 25% / 33% (≈1/3) / 50%. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось. || 2026-09-01: в коде ставка на 2 детей задана как 1/3 (0.3333…), а не округлённые 0.33 — округление в аудит-копии расходилось с расчётом.",
+      "official_value": "1 child: 0.25; 2 children: 1/3 (0.3333); 3+: 0.50",
       "source_url": "https://ru.ryskiyeva.com/articles/post/alimenty-v-semejnom-prave-respubliki-uzbekistan",
-      "last_verified": "2026-08-18"
+      "last_verified": "2026-09-01"
     },
     {
       "id": "social.ts__calculateAlimony.rates",
       "file": "lib/calculators/social.ts",
       "key": "calculateAlimony.rates",
-      "value": "{\"1child\":0.25,\"2children\":0.33,\"3+children\":0.50}",
+      "value": "{\"1child\": 0.25, \"2children\": 0.3333, \"3+children\": 0.5}",
       "unit": "percent of income (alimony / алименты shares)",
       "law": "Семейный кодекс РУз (доли алиментов: 1/4, 1/3, 1/2 дохода)",
       "theme": "alimony",
@@ -367,10 +367,10 @@
       "source_hint": "lex.uz (Семейный кодекс РУз, статья об алиментах)",
       "conflict": false,
       "status": "current",
-      "notes": "HARDCODED in social.ts. Statutory alimony shares: 1 child=25%, 2 children=33% (1/3), 3+ children=50% of income. Set by Family Code, not Tax Code. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
-      "official_value": "{\"1child\":0.25,\"2children\":0.333,\"3+children\":0.50}",
+      "notes": "HARDCODED in social.ts. Statutory alimony shares: 1 child=25%, 2 children=33% (1/3), 3+ children=50% of income. Set by Family Code, not Tax Code. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось. || 2026-09-01: в коде ставка на 2 детей задана как 1/3 (0.3333…), а не округлённые 0.33 — округление в аудит-копии расходилось с расчётом.",
+      "official_value": "{\"1child\": 0.25, \"2children\": 0.3333, \"3+children\": 0.5}",
       "source_url": "https://ru.ryskiyeva.com/articles/post/alimenty-v-semejnom-prave-respubliki-uzbekistan",
-      "last_verified": "2026-08-18"
+      "last_verified": "2026-09-01"
     },
     {
       "id": "social.ts__calculateMaternity.leaveDays",
@@ -503,7 +503,7 @@
       "id": "social.ts__getSickLeavePercent.tiers",
       "file": "lib/calculators/social.ts",
       "key": "getSickLeavePercent.tiers",
-      "value": "{\"<6mo\":0,\"6-59mo\":60,\"60-95mo\":80,\">=96mo\":100}",
+      "value": "{\"<6mo\": 0, \"6-96mo\": 60, \">=97mo\": 80}",
       "unit": "percent of average earnings by insurance experience (months)",
       "law": "ПКМ №796 от 17.12.2025 (пособия по временной нетрудоспособности, ФГСС, с 2026)",
       "theme": "social",
@@ -515,16 +515,16 @@
       "source_hint": "lex.uz (Постановление КМ РУз №796 от 17.12.2025)",
       "conflict": false,
       "status": "current",
-      "notes": "HARDCODED tiers in social.ts. Sick-leave benefit % by insurance months: <6mo=0 (ineligible, min 6mo required), 6–23mo=60%, 2–5yr (24–59mo)=70%, 5–8yr (60–95mo)=80%, 8yr+ (≥96mo)=100%. 2026 rules, paid by State Social Insurance Fund (ФГСС). NDFL 12% withheld on benefit. || 2026-07-03 phase4-reconcile RE-VERIFY: prior Tier-2 verdict (60% <8yrs / 80% 8yrs+) was WRONG — its cited source is a 2021 table (80%/<8, 100%/8+, pre-2024 rules) and the verdict matched neither it nor current law. Current scale per PKM-314 (31.05.2024, lex.uz/docs/6978572, corroborated by legalise.uz 2026 review): 60% (<5 yrs), 80% (5-8 yrs), 100% (8+ yrs). social.ts fixed 2026-07-03 to 60/80/100; article + quick-answers aligned. status -> current.",
-      "official_value": "до 5 лет — 60%; 5–8 лет — 80%; 8+ лет — 100% (также 100% льготным категориям); мин. страховой стаж 6 мес. ПКМ №314 от 31.05.2024",
+      "notes": "HARDCODED tiers in social.ts. Sick-leave benefit % by insurance months: <6mo=0 (ineligible, min 6mo required), 6–23mo=60%, 2–5yr (24–59mo)=70%, 5–8yr (60–95mo)=80%, 8yr+ (≥96mo)=100%. 2026 rules, paid by State Social Insurance Fund (ФГСС). NDFL 12% withheld on benefit. || 2026-07-03 phase4-reconcile RE-VERIFY: prior Tier-2 verdict (60% <8yrs / 80% 8yrs+) was WRONG — its cited source is a 2021 table (80%/<8, 100%/8+, pre-2024 rules) and the verdict matched neither it nor current law. Current scale per PKM-314 (31.05.2024, lex.uz/docs/6978572, corroborated by legalise.uz 2026 review): 60% (<5 yrs), 80% (5-8 yrs), 100% (8+ yrs). social.ts fixed 2026-07-03 to 60/80/100; article + quick-answers aligned. status -> current. || 2026-09-01: значение приведено к коду (lib/calculators/social.ts getSickLeavePercent) и к AGENTS.md. В реестре стояла НЕСУЩЕСТВУЮЩАЯ ступень 100% и граница 60 мес.; ПКМ-796 даёт две ступени — 60% и 80% с границей 8 лет (96 мес.). Сайт всегда считал верно, ошибка была только в аудит-копии.",
+      "official_value": "{\"<6mo\": 0, \"6-96mo\": 60, \">=97mo\": 80}",
       "source_url": "https://lex.uz/docs/6978572",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-09-01"
     },
     {
       "id": "social.ts__maternity benefit percent (PKM #796)",
       "file": "lib/calculators/social.ts",
       "key": "maternity benefit percent (PKM #796)",
-      "value": "<10mo: 0 (ineligible); 10-23mo: 75; 24-59mo: 85; 60mo+: 100",
+      "value": "<10mo: 0 (права нет); 10-24mo: 75; 25-60mo: 85; 61mo+: 100",
       "unit": "% of average earnings",
       "law": "Пособие по беременности и родам — ПКМ № 796 от 17.12.2025; выплачивает ФГСС; мин. 10 мес. страхового стажа",
       "theme": "social_benefit",
@@ -537,10 +537,10 @@
       "source_hint": "lex.uz (ПКМ № 796 от 17.12.2025); mehnat.uz",
       "conflict": false,
       "status": "current",
-      "notes": "2026 rules: maternity benefit % scales with insurance months; min 10 months experience. Benefit is tax-exempt (ndflAmount=0, line 150). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
-      "official_value": "<10mo: 0; 10-24mo: 75; 25-60mo: 85; 61mo+: 100",
+      "notes": "2026 rules: maternity benefit % scales with insurance months; min 10 months experience. Benefit is tax-exempt (ndflAmount=0, line 150). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось. || 2026-09-01: границы приведены к коду (getMaternityPercent) и к AGENTS.md — 10-24 / 25-60 / 61+ мес. В реестре стояло 10-23 / 24-59 / 60+, сдвиг на месяц. Дублирующая запись getMaternityPercent.tiers всё это время была верной — записи разошлись между собой.",
+      "official_value": "<10mo: 0 (права нет); 10-24mo: 75; 25-60mo: 85; 61mo+: 100",
       "source_url": "https://kadrovik.uz/publish/doc/text212515_kak_budut_vyplachivat_dekretnye_i_bolnichnye_s_2026_goda_v_ramkah_novoy_sistemy_socstrahovaniya",
-      "last_verified": "2026-08-18"
+      "last_verified": "2026-09-01"
     },
     {
       "id": "social.ts__maternity leave days",
@@ -629,7 +629,7 @@
       "id": "social.ts__sick leave experience percent (PKM #796)",
       "file": "lib/calculators/social.ts",
       "key": "sick leave experience percent (PKM #796)",
-      "value": "{\"<6mo\":0,\"6-59mo\":60,\"60-95mo\":80,\">=96mo\":100}",
+      "value": "до 8 лет (<=96 мес) — 60%; свыше 8 лет (>=97 мес) — 80%; ступени 100% НЕТ (ПКМ-796)",
       "unit": "% of average earnings",
       "law": "Пособие по временной нетрудоспособности — ПКМ № 796 от 17.12.2025; выплачивает ФГСС; мин. 6 мес. страхового стажа",
       "theme": "social_benefit",
@@ -642,10 +642,10 @@
       "source_hint": "lex.uz (ПКМ № 796 от 17.12.2025); mehnat.uz",
       "conflict": false,
       "status": "current",
-      "notes": "2026 rules: sick-pay % of avg earnings scales with insurance months; min 6 months experience to qualify. Paid by State Social Insurance Fund (ФГСС). || 2026-07-03 phase4-reconcile RE-VERIFY: prior Tier-2 verdict (60% <8yrs / 80% 8yrs+) was WRONG — its cited source is a 2021 table (80%/<8, 100%/8+, pre-2024 rules) and the verdict matched neither it nor current law. Current scale per PKM-314 (31.05.2024, lex.uz/docs/6978572, corroborated by legalise.uz 2026 review): 60% (<5 yrs), 80% (5-8 yrs), 100% (8+ yrs). social.ts fixed 2026-07-03 to 60/80/100; article + quick-answers aligned. status -> current.",
-      "official_value": "до 5 лет — 60%; 5–8 лет — 80%; 8+ лет — 100% (также 100% льготным категориям); мин. страховой стаж 6 мес. ПКМ №314 от 31.05.2024",
+      "notes": "2026 rules: sick-pay % of avg earnings scales with insurance months; min 6 months experience to qualify. Paid by State Social Insurance Fund (ФГСС). || 2026-07-03 phase4-reconcile RE-VERIFY: prior Tier-2 verdict (60% <8yrs / 80% 8yrs+) was WRONG — its cited source is a 2021 table (80%/<8, 100%/8+, pre-2024 rules) and the verdict matched neither it nor current law. Current scale per PKM-314 (31.05.2024, lex.uz/docs/6978572, corroborated by legalise.uz 2026 review): 60% (<5 yrs), 80% (5-8 yrs), 100% (8+ yrs). social.ts fixed 2026-07-03 to 60/80/100; article + quick-answers aligned. status -> current. || 2026-09-01: значение приведено к коду (lib/calculators/social.ts getSickLeavePercent) и к AGENTS.md. В реестре стояла НЕСУЩЕСТВУЮЩАЯ ступень 100% и граница 60 мес.; ПКМ-796 даёт две ступени — 60% и 80% с границей 8 лет (96 мес.). Сайт всегда считал верно, ошибка была только в аудит-копии.",
+      "official_value": "до 8 лет (<=96 мес) — 60%; свыше 8 лет (>=97 мес) — 80%; ступени 100% НЕТ (ПКМ-796)",
       "source_url": "https://lex.uz/docs/6978572",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-09-01"
     },
     {
       "id": "tax.ts__calculateLandTax.NON_AGRICULTURAL_RATE (0.012)",
