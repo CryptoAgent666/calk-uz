@@ -7,8 +7,10 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { formatNumber } from '@/lib/utils'
 import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
+import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
 
-const FALLBACK_USD_RATE = 12_850
+// Единый страховочный курс на весь сайт — см. lib/constants/fx.ts
+const FALLBACK_USD_RATE = USD_UZS_FALLBACK
 
 export default function BankRatesCalculator() {
   const locale = useLocale()

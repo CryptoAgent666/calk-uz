@@ -7,9 +7,11 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { formatNumber } from '@/lib/utils'
 import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
+import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
 
 const FALLBACK_RATES: Record<string, number> = {
-  USD: 12_850,
+  // USD — из общего модуля; остальные валюты пока живут здесь
+  USD: USD_UZS_FALLBACK,
   EUR: 14_200,
   RUB: 135,
   GBP: 16_500,

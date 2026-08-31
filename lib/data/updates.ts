@@ -20,6 +20,29 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-08-31",
+    dateLabelRu: "31 августа 2026",
+    dateLabelUz: "2026-yil 31-avgust",
+    items: [
+      {
+        titleRu: "Растаможка считалась по курсу четырёхмесячной давности",
+        titleUz: "Bojxona rasmiylashtiruvi to'rt oylik eski kurs bo'yicha hisoblanardi",
+        descRu:
+          "Калькулятор растаможки брал курс доллара не с cbu.uz, а из захардкоженного значения 11 938 сум — курса ЦБ на 1 мая 2026 года. Константа называлась резервной, но живой курс компонент не запрашивал вовсе, поэтому резерв был единственным путём. При фактическом курсе 11 801,23 пошлина и НДС завышались примерно на 1,2%: на автомобиле за 20 000 долларов это около 2,5 млн сум лишних. Калькулятор подключён к живому курсу ЦБ, а под результатом теперь видно, по какому курсу и на какую дату сделан расчёт.",
+        descUz:
+          "Bojxona kalkulyatori dollar kursini cbu.uz dan emas, kodga qat'iy yozilgan 11 938 so'mdan — MB ning 2026-yil 1-may kursidan olardi. Konstanta zaxira deb atalgan bo'lsa-da, komponent jonli kursni umuman so'ramagan, shuning uchun zaxira yagona yo'l edi. Haqiqiy kurs 11 801,23 bo'lganda boj va QQS taxminan 1,2% ga oshib ketardi: 20 000 dollarlik avtomobilda bu ~2,5 mln so'm ortiqcha. Kalkulyator MB ning jonli kursiga ulandi, natija ostida esa hisob qaysi kurs va sana bo'yicha qilingani ko'rsatiladi.",
+      },
+      {
+        titleRu: "Страховочный курс доллара теперь в одном месте",
+        titleUz: "Dollarning zaxira kursi endi bitta joyda",
+        descRu:
+          "Резервный курс USD жил в четырёх копиях, и все разошлись: 12 850 сум в калькуляторах банковских ставок, виз, переводов и конвертера, 11 938 в растаможке. Плюс примеры расчётов считались по третьему курсу — 12 700. Копии сведены в один модуль, а примеры (доход фрилансера-нерезидента, перевод 5 000 USD, ввоз iPhone) пересчитаны по курсу ЦБ на 28 августа 2026 с указанием даты курса прямо в расчёте.",
+        descUz:
+          "USD zaxira kursi to'rtta nusxada yashagan va barchasi farq qilgan: bank stavkalari, vizalar, pul o'tkazmalari va konvertorda 12 850 so'm, bojxonada 11 938. Bundan tashqari hisob misollari uchinchi kurs — 12 700 bo'yicha hisoblangan. Nusxalar bitta modulga jamlandi, misollar esa MB ning 2026-yil 28-avgust kursi bo'yicha qayta hisoblandi va kurs sanasi hisobning o'zida ko'rsatildi.",
+      },
+    ],
+  },
+  {
     date: "2026-08-18",
     dateLabelRu: "18 августа 2026",
     dateLabelUz: "2026-yil 18-avgust",

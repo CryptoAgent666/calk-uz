@@ -7,6 +7,7 @@
  */
 
 import { BRV } from '@/lib/constants/brv'
+import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
 
 export interface CustomsInput {
   carPrice: number       // Price in USD
@@ -88,9 +89,7 @@ const UTILIZATION_FEE_EV_BRV = { newCar: 120, usedCar: 210 }
 // Registration: vehicle reg 6.84 + tech passport 0.7 + plates 5.5 = 13.04 БРВ.
 const REGISTRATION_FEE_BRV = 6.84 + 0.7 + 5.5
 
-// Default fallback rate. The currency-converter calculator pulls live rates
-// from cbu.uz; pass `usdToUzs` explicitly for accurate cost projections.
-const USD_UZS_FALLBACK = 11_938 // CBU reference rate, 1 May 2026
+
 const VAT_RATE = 0.12 // 12%
 /**
  * Экологическая сертификация ввозимых ТС категорий «M»/«N» ОТМЕНЕНА
