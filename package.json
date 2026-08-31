@@ -8,7 +8,7 @@
     "start": "next start",
     "postinstall": "next build",
     "lint": "eslint",
-    "check:stale": "node scripts/check-stale-prose.mjs"
+    "check:stale": "node scripts/check-stale-prose.mjs && node scripts/check-ledger-consistency.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
