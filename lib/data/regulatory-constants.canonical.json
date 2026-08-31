@@ -1859,7 +1859,7 @@
       "id": "auto.ts__FUEL_PRICES",
       "file": "lib/calculators/auto.ts",
       "key": "FUEL_PRICES",
-      "value": "ai-92:11200, ai-95:13500, ai-100:16000, diesel:12500, gas_lpg:5500, gas_cng:5350",
+      "value": "ai-92:12500, ai-95:16200, ai-100:24000, diesel:14200, gas_lpg:5500 (НЕ ПОДТВЕРЖДЁН), gas_cng:5750",
       "unit": "UZS per liter (per m³ for CNG)",
       "law": "n/a (market retail fuel prices, Uzbekneftegas reference, April 2026)",
       "theme": "fuel_price",
@@ -1870,8 +1870,11 @@
       "last_updated_hint": null,
       "source_hint": "Uzbekneftegas / fuel retail price monitoring",
       "conflict": true,
-      "status": "unverified",
-      "notes": "Market reference fuel prices (not formula). Note comment: AI-80 banned from 1 Dec 2025; AI-91 no longer sold. Fuel is partly liberalized — treat as market, re-verify periodically."
+      "status": "current",
+      "notes": "Market reference fuel prices (not formula). Note comment: AI-80 banned from 1 Dec 2025; AI-91 no longer sold. Fuel is partly liberalized — treat as market, re-verify periodically. || 2026-08-31: цены обновлены по средним ташкентским на 28.08.2026 (avtoelon.uz; метан — autostrada.uz). Прежние были сняты в апреле и отстали на 10-33%. Топливо в РУз НЕ регулируется государством, цена отличается по сетям — это средняя. ПРОПАН НЕ ПОДТВЕРЖДЁН: сводки по автогазу расходятся, значение 5500 оставлено без изменения. ВАЖНО: в калькуляторе нет поля своей цены, поэтому константа = ответ пользователю, держать свежей обязательно.",
+      "official_value": "ai-92:12500, ai-95:16200, ai-100:24000, diesel:14200, gas_lpg:5500 (НЕ ПОДТВЕРЖДЁН), gas_cng:5750",
+      "last_verified": "2026-08-31",
+      "source_url_verify": "https://avtoelon.uz/yangiliklar/articles/skol-ko-stoit-benzin-v-taskente/"
     },
     {
       "id": "customs.ts__USD_UZS_FALLBACK",

@@ -33,6 +33,14 @@ export const UPDATES: UpdateBlock[] = [
           "Bojxona kalkulyatori dollar kursini cbu.uz dan emas, kodga qat'iy yozilgan 11 938 so'mdan — MB ning 2026-yil 1-may kursidan olardi. Konstanta zaxira deb atalgan bo'lsa-da, komponent jonli kursni umuman so'ramagan, shuning uchun zaxira yagona yo'l edi. Haqiqiy kurs 11 801,23 bo'lganda boj va QQS taxminan 1,2% ga oshib ketardi: 20 000 dollarlik avtomobilda bu ~2,5 mln so'm ortiqcha. Kalkulyator MB ning jonli kursiga ulandi, natija ostida esa hisob qaysi kurs va sana bo'yicha qilingani ko'rsatiladi.",
       },
       {
+        titleRu: "Цены на топливо отстали на четыре месяца, а в статьях жил снятый с продажи АИ-91",
+        titleUz: "Yoqilg'i narxlari to'rt oyga eskirgan, maqolalarda esa sotuvdan olingan AI-91 saqlanib qolgan edi",
+        descRu:
+          "Калькулятор расхода топлива считал по ценам апреля: АИ-95 стоял 13 500 сум при фактических 16 200, АИ-100 — 16 000 при 24 000, дизель 12 500 при 14 200. Поездка на 500 км при расходе 8 л/100 км на АИ-95 занижалась на 108 000 сум. Своей цены в калькуляторе задать нельзя, поэтому константа и есть ответ. Цены обновлены по средним ташкентским на 28 августа 2026 и снабжены датой. Заодно в статье и FAQ жил бензин АИ-91, который больше не продаётся, а примеры поездок Ташкент — Самарканд и Ташкент — Бухара считались по нему; примеры пересчитаны, а расхождение в них (русский текст обещал экономию на метане в 3,4 раза, узбекский — в 2,7 при одних и тех же числах) устранено: верно 2,5 раза. Цена пропана осталась прежней и помечена как неподтверждённая — сводки по нему расходятся.",
+        descUz:
+          "Yoqilg'i sarfi kalkulyatori aprel narxlari bo'yicha hisoblardi: AI-95 haqiqiy 16 200 o'rniga 13 500, AI-100 24 000 o'rniga 16 000, dizel 14 200 o'rniga 12 500 turgan. 8 l/100 km sarfda 500 km sayohat 108 000 so'mga kam ko'rsatilardi. Kalkulyatorda o'z narxini kiritib bo'lmaydi, shuning uchun konstanta javobning o'zi. Narxlar 2026-yil 28-avgustdagi Toshkent o'rtacha narxlari bo'yicha yangilandi va sana qo'shildi. Bundan tashqari maqola va FAQ da endi sotilmaydigan AI-91 benzini saqlanib qolgan, sayohat misollari ham unga hisoblangan edi; misollar qayta hisoblandi va ulardagi ziddiyat (ruscha matn metanda 3,4 marta tejash va'da qilgan, o'zbekcha 2,7 — bir xil raqamlarda) tuzatildi: to'g'risi 2,5 marta. Propan narxi o'zgarmadi va tasdiqlanmagan deb belgilandi.",
+      },
+      {
         titleRu: "Страховочные курсы остальных валют отстали сильнее доллара",
         titleUz: "Boshqa valyutalarning zaxira kurslari dollardan ham ko'proq eskirgan edi",
         descRu:
