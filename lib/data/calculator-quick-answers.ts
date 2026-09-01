@@ -104,9 +104,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'vehicle-tax',
     textRu:
-      'Ежегодного транспортного налога в Узбекистане нет: перечень налогов в статье 17 Налогового кодекса закрытый, транспортного среди них не значится. Владелец платит разово при постановке на учёт — 13,04 БРВ (5 372 480 сум) с новыми номерами: регистрация 6,84 БРВ, техпаспорт 0,7 БРВ, номера 5,5 БРВ. Со своими номерами — 7,54 БРВ. Сроки 15 апреля и 15 октября относятся к налогу на имущество и земельному, а не к автомобилю.',
+      'Ежегодного транспортного налога в Узбекистане нет: перечень налогов в статье 17 Налогового кодекса закрытый, транспортного среди них не значится. Владелец платит разово при постановке на учёт — 13,04 БРВ (5 737 600 сум) с новыми номерами: регистрация 6,84 БРВ, техпаспорт 0,7 БРВ, номера 5,5 БРВ. Со своими номерами — 7,54 БРВ. Сроки 15 апреля и 15 октября относятся к налогу на имущество и земельному, а не к автомобилю.',
     textUz:
-      "O'zbekistonda yillik transport solig'i yo'q: Soliq kodeksining 17-moddasidagi soliqlar ro'yxati yopiq va transport solig'i unda yo'q. Egasi hisobga qo'yishda bir marta to'laydi — yangi raqam bilan 13,04 BHM (5 372 480 so'm): ro'yxatga olish 6,84 BHM, texpasport 0,7 BHM, raqamlar 5,5 BHM. O'z raqamlari bilan — 7,54 BHM. 15-aprel va 15-oktabr muddatlari mol-mulk va yer solig'iga tegishli, avtomobilga emas.",
+      "O'zbekistonda yillik transport solig'i yo'q: Soliq kodeksining 17-moddasidagi soliqlar ro'yxati yopiq va transport solig'i unda yo'q. Egasi hisobga qo'yishda bir marta to'laydi — yangi raqam bilan 13,04 BHM (5 737 600 so'm): ro'yxatga olish 6,84 BHM, texpasport 0,7 BHM, raqamlar 5,5 BHM. O'z raqamlari bilan — 7,54 BHM. 15-aprel va 15-oktabr muddatlari mol-mulk va yer solig'iga tegishli, avtomobilga emas.",
   },
   {
     slug: 'property-tax',
