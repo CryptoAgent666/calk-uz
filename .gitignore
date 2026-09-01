@@ -86,3 +86,6 @@ ios-app/DerivedData/
 # локальные бэкапы правок констант
 *.bak-*
 *.bak2-*
+
+# служебные git-worktree агентов — не версионируются
+.claude/worktrees/

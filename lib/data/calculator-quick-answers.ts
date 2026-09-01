@@ -27,9 +27,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'vat',
     textRu:
-      'Ставка НДС в Узбекистане — 12%, одна из самых низких в СНГ. Для выделения НДС из суммы с НДС: сумма × 12 / 112. Для начисления НДС на сумму без НДС: сумма × 12%. Обязательная регистрация плательщиком НДС — при совокупном доходе за налоговый период свыше 12 000 БРВ (4 944 000 000 сум).',
+      'Ставка НДС в Узбекистане — 12%, одна из самых низких в СНГ. Для выделения НДС из суммы с НДС: сумма × 12 / 112. Для начисления НДС на сумму без НДС: сумма × 12%. Обязательная регистрация плательщиком НДС — при совокупном доходе за налоговый период свыше 12 000 БРВ (5 280 000 000 сум).',
     textUz:
-      "O'zbekistonda QQS stavkasi — 12%, MDHdagi eng past stavkalardan biri. QQS bilan summadan QQS ajratish: summa × 12 / 112. QQSsiz summaga QQS qo'shish: summa × 12%. QQS to'lovchisi sifatida majburiy ro'yxatga olish — soliq davri uchun umumiy daromad 12 000 BHK (4 944 000 000 so'm) dan oshganda.",
+      "O'zbekistonda QQS stavkasi — 12%, MDHdagi eng past stavkalardan biri. QQS bilan summadan QQS ajratish: summa × 12 / 112. QQSsiz summaga QQS qo'shish: summa × 12%. QQS to'lovchisi sifatida majburiy ro'yxatga olish — soliq davri uchun umumiy daromad 12 000 BHK (5 280 000 000 so'm) dan oshganda.",
   },
   {
     slug: 'salary',
@@ -90,9 +90,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'brv',
     textRu:
-      'БРВ (Базовая расчётная величина) в Узбекистане с августа 2025 года — 412 000 сум; с 1 сентября 2026 года повышается до 440 000 сум (Указ ПФ-115). Используется для расчёта государственных пошлин, штрафов и налоговых порогов. Например: регистрация ООО — 5 БРВ, порог обязательной регистрации по НДС — 12 000 БРВ. Льготы по НДФЛ считаются не в БРВ, а в МРОТ (1 271 000 сум).',
+      'БРВ (Базовая расчётная величина) в Узбекистане с 1 сентября 2026 года — 440 000 сум (Указ УП-115 от 23.06.2026); до этого, с августа 2025 года, было 412 000 сум. Используется для расчёта государственных пошлин, штрафов и налоговых порогов. Например: регистрация ООО — 5 БРВ, порог обязательной регистрации по НДС — 12 000 БРВ. Льготы по НДФЛ считаются не в БРВ, а в МРОТ (1 360 000 сум).',
     textUz:
-      "O'zbekistonda BHK (Bazaviy hisoblash kattaligi) 2025-yil avgustdan — 412 000 so'm; 2026-yil 1-sentabrdan 440 000 so'mgacha oshiriladi (PF-115 Farmoni). Davlat bojlari, jarimalar va soliq chegaralarini hisoblash uchun ishlatiladi. Masalan: MChJ ro'yxatdan o'tkazish — 5 BHK, QQS bo'yicha majburiy ro'yxatdan o'tish chegarasi — 12 000 BHK. JShShS imtiyozlari esa BHK da emas, MIH da (1 271 000 so'm) hisoblanadi.",
+      "O'zbekistonda BHK (Bazaviy hisoblash kattaligi) 2026-yil 1-sentabridan — 440 000 so'm (23.06.2026-yildagi PF-115 Farmoni); bundan oldin, 2025-yil avgustdan, 412 000 so'm edi. Davlat bojlari, jarimalar va soliq chegaralarini hisoblash uchun ishlatiladi. Masalan: MChJ ro'yxatdan o'tkazish — 5 BHK, QQS bo'yicha majburiy ro'yxatdan o'tish chegarasi — 12 000 BHK. JShShS imtiyozlari esa BHK da emas, MIH da (1 360 000 so'm) hisoblanadi.",
   },
   {
     slug: 'osago',
@@ -125,9 +125,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'self-employed',
     textRu:
-      'С 2026 года самозанятые в Узбекистане платят налог 1% с оборота через приложение Soliq.uz. Регистрация бесплатная, без поездок в налоговую. Прежний лимит 100 млн сум отменён, но доход должен оставаться в пределах порога налога с оборота — 12 000 БРВ (4 944 000 000 сум) за налоговый период; сверх него нужно переходить на НДС и налог на прибыль. Социальный налог не платится. Декларации — автоматически. Подходит для фрилансеров, репетиторов, частных мастеров.',
+      'С 2026 года самозанятые в Узбекистане платят налог 1% с оборота через приложение Soliq.uz. Регистрация бесплатная, без поездок в налоговую. Прежний лимит 100 млн сум отменён, но доход должен оставаться в пределах порога налога с оборота — 12 000 БРВ (5 280 000 000 сум) за налоговый период; сверх него нужно переходить на НДС и налог на прибыль. Социальный налог не платится. Декларации — автоматически. Подходит для фрилансеров, репетиторов, частных мастеров.',
     textUz:
-      "2026-yildan O'zbekistondagi o'z-o'zini band qilganlar Soliq.uz ilovasi orqali aylanmadan 1% soliq to'laydilar. Ro'yxatga olish bepul, soliq idorasiga borishsiz. Avvalgi 100 mln so'mlik limit bekor qilindi, lekin daromad aylanma solig'i chegarasi — soliq davri uchun 12 000 BHK (4 944 000 000 so'm) doirasida qolishi kerak; undan oshsa QQS va foyda solig'iga o'tish kerak. Ijtimoiy soliq to'lanmaydi. Deklaratsiyalar — avtomatik. Frilanserlar, repetitorlar, xususiy ustalar uchun mos.",
+      "2026-yildan O'zbekistondagi o'z-o'zini band qilganlar Soliq.uz ilovasi orqali aylanmadan 1% soliq to'laydilar. Ro'yxatga olish bepul, soliq idorasiga borishsiz. Avvalgi 100 mln so'mlik limit bekor qilindi, lekin daromad aylanma solig'i chegarasi — soliq davri uchun 12 000 BHK (5 280 000 000 so'm) doirasida qolishi kerak; undan oshsa QQS va foyda solig'iga o'tish kerak. Ijtimoiy soliq to'lanmaydi. Deklaratsiyalar — avtomatik. Frilanserlar, repetitorlar, xususiy ustalar uchun mos.",
   },
   {
     slug: 'vacation-pay',

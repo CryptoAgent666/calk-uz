@@ -4,7 +4,7 @@
     "country": "Uzbekistan",
     "currency": "UZS (сум)",
     "generated": "2026-06-25",
-    "note": "Audit ledger (NOT imported by site). Constants are CENTRALIZED: lib/constants/{brv,tax-rates,utility-tariffs}.ts + inline in lib/calculators/*.ts. Apply fixes there. БРВ=412000 anchors most state duties/fines as BRV-multiples. tax-rates.ts & utility-tariffs.ts headers say 2025 (freshness flag).",
+    "note": "Audit ledger (NOT imported by site). Constants are CENTRALIZED: lib/constants/{brv,tax-rates,utility-tariffs}.ts + inline in lib/calculators/*.ts. Apply fixes there. БРВ=440000 anchors most state duties/fines as BRV-multiples. tax-rates.ts & utility-tariffs.ts headers say 2025 (freshness flag).",
     "total": 162,
     "gov_regulated": 145,
     "market_or_other": 16,
@@ -92,7 +92,9 @@
       "land_allocation": 1
     },
     "last_verified": "2026-06-30",
-    "verify_note": "2026-06-30 LLM-verify of 21 DATA_HUB-flagged constants: 12 confirmed current, 3 fixed in code (apartment notary, apartment registration, EV recycling fee) + prose, 2 false-positive 'stale' cleared (vehicle registration 13.04 БРВ, per-cc duty ladder), 1 uncertain (CERTIFICATION_FEE_USD)."
+    "verify_note": "2026-06-30 LLM-verify of 21 DATA_HUB-flagged constants: 12 confirmed current, 3 fixed in code (apartment notary, apartment registration, EV recycling fee) + prose, 2 false-positive 'stale' cleared (vehicle registration 13.04 БРВ, per-cc duty ladder), 1 uncertain (CERTIFICATION_FEE_USD).",
+    "last_reconciled": "2026-09-01",
+    "last_rollover": "УП-115 от 23.06.2026 — БРВ 440000, МРОТ 1360000 с 01.09.2026"
   },
   "constants": [
     {
@@ -141,22 +143,23 @@
       "id": "business.ts__calculateIPTax.socialMinimum (1 BRV/month × 12)",
       "file": "lib/calculators/business.ts",
       "key": "calculateIPTax.socialMinimum (1 BRV/month × 12)",
-      "value": "4944000",
-      "unit": "UZS/year (= BRV 412000 × 12); rule = max(1 BRV/month, 12% of income)",
+      "value": "5280000",
+      "unit": "UZS/year (= BRV 440000 × 12); rule = max(1 BRV/month, 12% of income)",
       "law": "Налоговый кодекс РУз, ст. 408 (соцотчисления ИП: минимум 1 БРВ/мес) и ст. 437-1 (самозанятые освобождены)",
       "theme": "social",
       "is_gov_regulated": true,
       "surfaces": [
         "lib/calculators/business.ts:42-44"
       ],
-      "last_updated_hint": "Tracks BRV (January 2026); cites НК ст. 408 / 437-1",
+      "last_updated_hint": "Tracks BRV (01.09.2026, УП-115); cites НК ст. 408 / 437-1",
       "source_hint": "lex.uz / soliq.uz (Налоговый кодекс РУз, ст. 408, 437-1)",
       "conflict": false,
       "status": "current",
-      "notes": "HARDCODED rule in business.ts, NOT in constants file. IP social contribution = higher of (a) 1 BRV/month minimum (=BRV×12=4,944,000 UZS/yr at BRV 412000) or (b) 12% of income (general regime). Self-employed exempt (НК ст. 437-1). The 12% multiplier and the ×12 minimum are both inline.  ||  2026-06-30 verify: current (НК ст.408; 1 БРВ/мес × 12 = 4 944 000).",
-      "official_value": "4944000 UZS/year (БРВ 412000 × 12)",
+      "notes": "HARDCODED rule in business.ts, NOT in constants file. IP social contribution = higher of (a) 1 BRV/month minimum (=BRV×12=5,280,000 UZS/yr at BRV 440000) or (b) 12% of income (general regime). Self-employed exempt (НК ст. 437-1). The 12% multiplier and the ×12 minimum are both inline.  ||  2026-06-30 verify: current (НК ст.408; 1 БРВ/мес × 12 = 5 280 000). || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
+      "official_value": "5280000 UZS/year (БРВ 440000 × 12)",
       "source_url": "https://buxgalter.uz/publish/doc/text189777_razmery_brv_mrot_bvip_i_mpr_v_uzbekistane",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "customs.ts__CERTIFICATION_FEE_USD",
@@ -178,7 +181,9 @@
       "notes": "Было 690 USD (≈8,2 млн сум) как обязательная строка растаможки — завышало итог, в т.ч. для электромобилей, которых ПКМ-597 прямо исключает из оценки экокласса. Исправлено в коде 2026-08-10.",
       "source_url": "https://lex.uz/uz/docs/7735340",
       "last_verified": "2026-08-09",
-      "official_value": "Экологическая сертификация ввозимых ТС категорий M/N отменена с 20.09.2025 (ПКМ-597, признало утратившим силу ПКМ-50 от 30.01.2020). Гос-регулируемой ставки нет; остаточная плата аккредитованному органу — договорная."
+      "official_value": "690",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "customs.ts__CUSTOMS_DUTY_RATE",
@@ -251,7 +256,7 @@
       "file": "lib/calculators/customs.ts",
       "key": "UTILIZATION_FEE_BRV",
       "value": "[{upTo:1000,new:30,used:90},{upTo:2000,new:120,used:210},{upTo:3000,new:180,used:330},{upTo:3500,new:180,used:390},{upTo:Infinity,new:300,used:480}]; EV: new 120 / used 210",
-      "unit": "BRV-multiples (×412000 UZS)",
+      "unit": "BRV-multiples (×440000 UZS)",
       "law": "Утилизационный сбор на автотранспорт (vehicle utilization/recycling fee), in БРВ",
       "theme": "vehicle_tax",
       "is_gov_regulated": true,
@@ -263,10 +268,11 @@
       "source_hint": "lex.uz (ПКМ об утилизационном сборе на транспортные средства)",
       "conflict": false,
       "status": "current",
-      "notes": "Utilization fee = BRV-multiple by engine volume and new/used status. e.g. new <=1000cc = 6 BRV = 2,472,000 UZS; used >3000cc = 137 BRV = 56,444,000 UZS. BRV=412000. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Utilization fee = BRV-multiple by engine volume and new/used status. e.g. new <=1000cc = 6 BRV = 2,472,000 UZS; used >3000cc = 137 BRV = 56,444,000 UZS. BRV=440000. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "[{upTo:1000,new:30,used:90},{upTo:2000,new:120,used:210},{upTo:3000,new:180,used:330},{upTo:3500,new:180,used:390},{upTo:Infinity,new:300,used:480}] BRV (M1 cars); EV imports 30/90 BRV",
       "source_url": "https://utilizacionnyj-sbor.ru/uzbekistan/",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "customs.ts__VAT_RATE",
@@ -294,7 +300,7 @@
       "file": "lib/calculators/customs.ts",
       "key": "registrationFee (1 * BRV)",
       "value": "13.04 БРВ (6.84 registration + 0.7 tech-passport + 5.5 new plates)",
-      "unit": "BRV-multiple (×412000 UZS)",
+      "unit": "BRV-multiple (×440000 UZS)",
       "law": "Госпошлина за регистрацию транспортного средства (state duty for vehicle registration)",
       "theme": "state_duty",
       "is_gov_regulated": true,
@@ -305,10 +311,11 @@
       "source_hint": "lex.uz (госпошлина за регистрацию автотранспорта)",
       "conflict": false,
       "status": "current",
-      "notes": "Vehicle registration госпошлина modeled as 1 BRV (approximate per comment). BRV=412000 → 412,000 UZS.  ||  2026-06-30 verify: re-checked — 13.04 БРВ CONFIRMED (ustabor.uz exact-sum breakdown; new plates 5.5 БРВ mandatory 2026). Earlier '3.5' = old base plate rate.",
+      "notes": "Vehicle registration госпошлина modeled as 1 BRV (approximate per comment). BRV=440000 → 440,000 UZS.  ||  2026-06-30 verify: re-checked — 13.04 БРВ CONFIRMED (ustabor.uz exact-sum breakdown; new plates 5.5 БРВ mandatory 2026). Earlier '3.5' = old base plate rate. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "Регистрация ТС = 6.84 БРВ; выдача техпаспорта = 0.7 БРВ; выдача госномеров = 5.5 БРВ (электро/мото = 1.5 БРВ)",
       "source_url": "https://www.norma.uz/novoe_v_zakonodatelstve/obnovleny_stavki_za_registraciyu_avto",
-      "last_verified": "2026-08-09"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "social.ts__NDFL rate on vacation/sick pay",
@@ -664,7 +671,10 @@
       "conflict": false,
       "status": "uncertain",
       "notes": "HARDCODED in tax.ts, NOT in constants file. Land tax for non-agricultural land = 0.012 (the agricultural 0.0095 lives in tax-rates.ts; the non-agri rate exists only inline). Then ×1.07 indexation → effective ~0.012840.",
-      "source_url": "https://www.spot.uz/ru/2026/01/08/land-tax-2026/"
+      "source_url": "https://www.spot.uz/ru/2026/01/08/land-tax-2026/",
+      "official_value": "0.012",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "tax.ts__calculatePropertyTax.indexationFactor (1.07)",
@@ -751,7 +761,7 @@
       "file": "lib/calculators/unique.ts",
       "key": "STATE_DUTIES (госпошлины)",
       "value": "marriage:0.2, divorce:1.5, birth_cert:0.1, court_civil:4% of claim min 1 BRV, court_divorce:2, notary_power:0.5, notary_deal:1, name_change:1, ip_registration:1, llc_registration:1 (BRV-multiples)",
-      "unit": "BRV-multiples (×412000 UZS)",
+      "unit": "BRV-multiples (×440000 UZS)",
       "law": "Госпошлина — ЗАГС, нотариат, суд, регистрация бизнеса (в БРВ); Налоговый кодекс / ПКМ о госпошлине",
       "theme": "state_duty",
       "is_gov_regulated": true,
@@ -761,19 +771,20 @@
       ],
       "last_updated_hint": null,
       "source_hint": "lex.uz (ставки государственной пошлины, в БРВ)",
-      "conflict": true,
+      "conflict": false,
       "status": "current",
-      "notes": "Core госпошлина table as BRV-multiples: marriage 0.5 BRV, divorce 1.5, court civil 3, LLC (МЧЖ) registration 5 BRV, etc. BRV=412000 → e.g. LLC = 2,060,000 UZS. Verify each multiple vs current lex.uz schedule. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: значения в коде (marriage 0.2, divorce 1.5) подтверждены по ставкам госпошлины. Расходилась ПРОЗА: статья и FAQ давали брак 1 БРВ и развод фиксированные 3 БРВ. Уточнено: развод 1,5-3 БРВ (3-4 при повторном браке одного из супругов), регистрация ИП/юрлица 1 БРВ явочно и 0,5 БРВ онлайн. Примечание: «минимальная заработная плата» в тексте закона о госпошлине читается как БРВ (УП-5765 от 01.09.2019 заменил МРЗП на БРВ) — в отличие от льгот по НДФЛ, которые считаются в МРОТ.",
+      "notes": "Core госпошлина table as BRV-multiples: marriage 0.5 BRV, divorce 1.5, court civil 3, LLC (МЧЖ) registration 5 BRV, etc. BRV=440000 → e.g. LLC = 2,060,000 UZS. Verify each multiple vs current lex.uz schedule. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: значения в коде (marriage 0.2, divorce 1.5) подтверждены по ставкам госпошлины. Расходилась ПРОЗА: статья и FAQ давали брак 1 БРВ и развод фиксированные 3 БРВ. Уточнено: развод 1,5-3 БРВ (3-4 при повторном браке одного из супругов), регистрация ИП/юрлица 1 БРВ явочно и 0,5 БРВ онлайн. Примечание: «минимальная заработная плата» в тексте закона о госпошлине читается как БРВ (УП-5765 от 01.09.2019 заменил МРЗП на БРВ) — в отличие от льгот по НДФЛ, которые считаются в МРОТ. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "marriage 0.2 БРВ (не 0.5); llc_registration 1 БРВ (не 5); court_civil = 4% цены иска, мин. 1 БРВ (имущ.) / 2 БРВ (неимущ.) — не плоские 3 БРВ. Верно: birth_cert 0.1, notary_power 0.5, notary_deal 1 (юрлица), name_change 1 (>18 лет), ip_registration 1, divorce 1.5 (нижняя граница 1.5–3)",
       "source_url": "https://www.lex.uz/acts/699301",
-      "last_verified": "2026-08-18"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "unique.ts__passport fees (BRV-multiples)",
       "file": "lib/calculators/unique.ts",
       "key": "passport fees (BRV-multiples)",
       "value": "ID-card (new/replacement/lost) 0.89 BRV; child(<16) 0.8; biometric zagran 1.2; no urgent surcharge (faster processing only)",
-      "unit": "BRV-multiples (×412000 UZS)",
+      "unit": "BRV-multiples (×440000 UZS)",
       "law": "Госпошлина за оформление паспорта/ID (state duty for passport/ID), в БРВ",
       "theme": "state_duty",
       "is_gov_regulated": true,
@@ -782,12 +793,13 @@
       ],
       "last_updated_hint": null,
       "source_hint": "lex.uz (госпошлина за паспорт/биометрический ID)",
-      "conflict": true,
+      "conflict": false,
       "status": "current",
-      "notes": "Passport/biometric ID госпошлина as BRV-multiples (base vs urgent). e.g. biometric base 2.5 BRV = 1,030,000 UZS. BRV=412000. Verify multiples vs lex.uz. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Passport/biometric ID госпошлина as BRV-multiples (base vs urgent). e.g. biometric base 2.5 BRV = 1,030,000 UZS. BRV=440000. Verify multiples vs lex.uz. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "Биометрический паспорт/ID внутр. = 50% БРВ (по ЗРУ-600) / фактически ~89% БРВ за услугу выдачи ID-карты; загранпаспорт = 1.2 БРВ",
       "source_url": "https://www.gazeta.uz/ru/2020/03/09/id-card-price/",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "utilities.ts__ELECTRICITY_TIERS",
@@ -905,8 +917,8 @@
       "id": "vat.ts__calculateVatThreshold.threshold (default)",
       "file": "lib/calculators/vat.ts",
       "key": "calculateVatThreshold.threshold (default)",
-      "value": "4944000000 (= 12000 БРВ)",
-      "unit": "UZS/year, БРВ-indexed (12,000 × БРВ; = 4.944 млрд at БРВ 412000, → 5.28 млрд from 1 Sep 2026)",
+      "value": "5280000000 (= 12000 БРВ)",
+      "unit": "UZS/year, БРВ-indexed (12,000 × БРВ; = 4.944 млрд at БРВ 440000, → 5.28 млрд from 1 Sep 2026)",
       "law": "Указ УП-100 от 26.05.2026 (порог перехода с налога с оборота на НДС+налог на прибыль = 12,000 БРВ, с 1 июня 2026)",
       "theme": "vat",
       "is_gov_regulated": true,
@@ -918,15 +930,20 @@
       "source_hint": "gazeta.uz / spot.uz / norma.uz (УП-100, порог 12 000 БРВ)",
       "conflict": false,
       "status": "current",
-      "notes": "2026-07-07 verify+FIX: УП-100 (26.05.2026) raised the mandatory turnover-tax→VAT/profit-tax threshold from a fixed 1 млрд to 12,000 БРВ (4.944 млрд, БРВ-indexed) effective 1 Jun 2026. Moved from hardcoded 1_000_000_000 in vat.ts to VAT_MANDATORY_REGISTRATION_THRESHOLD = 12_000*BRV in tax-rates.ts; vat.ts default now references it. NB: the separate 1% ИП/self-employed regime keeps its own 1 млрд ceiling (ПП-247) — different figure.",
+      "notes": "2026-07-07 verify+FIX: УП-100 (26.05.2026) raised the mandatory turnover-tax→VAT/profit-tax threshold from a fixed 1 млрд to 12,000 БРВ (4.944 млрд, БРВ-indexed) effective 1 Jun 2026. Moved from hardcoded 1_000_000_000 in vat.ts to VAT_MANDATORY_REGISTRATION_THRESHOLD = 12_000*BRV in tax-rates.ts; vat.ts default now references it. NB: the separate 1% ИП/self-employed regime keeps its own 1 млрд ceiling (ПП-247) — different figure. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано. || 2026-09-01: official_value подтянут к применённому значению (12 000 БРВ × 440 000 = 5 280 000 000). Раньше оставался 4 944 000 000 от доролловерной БРВ — такая запись пере-флагается аудитом бесконечно.",
       "source_url": "https://www.gazeta.uz/ru/2026/06/01/small-business/",
-      "last_verified": "2026-07-07"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680",
+      "official_value": "5280000000",
+      "official_source": "https://www.gazeta.uz/ru/2026/06/01/small-business/",
+      "verified_date": "2026-09-01",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "brv.ts__BRV",
       "file": "lib/constants/brv.ts",
       "key": "BRV",
-      "value": "412000",
+      "value": "440000",
       "unit": "UZS",
       "law": "Указ Президента РУз (о БРВ / Bazaviy hisoblash miqdori)",
       "theme": "brv",
@@ -938,9 +955,10 @@
       "source_hint": "lex.uz (Указ/Постановление Президента о размере БРВ)",
       "conflict": false,
       "status": "current",
-      "notes": "Base Calculation Value (Базовая расчётная величина / БҲМ). Drives vehicle tax, IP social-contribution minimum, BRV-multiple conversions via brvToUzs()/uzsToBrv(). Header explicitly says January 2026, so this is the fresh value.  ||  2026-06-30 verify: current 412000; RISES to 440000 on 2026-09-01.",
+      "notes": "Base Calculation Value (Базовая расчётная величина / БҲМ). Drives vehicle tax, IP social-contribution minimum, BRV-multiple conversions via brvToUzs()/uzsToBrv(). Header explicitly says January 2026, so this is the fresh value.  ||  2026-06-30 verify: current 440000; RISES to 440000 on 2026-09-01. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "source_url": "https://buxgalter.uz/publish/doc/text189777_razmery_brv_mrot_bvip_i_mpr_v_uzbekistane",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "brv.ts__CB_RATE",
@@ -966,7 +984,7 @@
       "id": "brv.ts__MIN_WAGE",
       "file": "lib/constants/brv.ts",
       "key": "MIN_WAGE",
-      "value": "1271000",
+      "value": "1360000",
       "unit": "UZS",
       "law": "Указ Президента РУз (о минимальной зарплате / Minimal ish haqi)",
       "theme": "min_wage",
@@ -978,9 +996,10 @@
       "source_hint": "lex.uz (Указ Президента о размере минимальной заработной платы)",
       "conflict": false,
       "status": "current",
-      "notes": "Minimum wage (МРОТ / minimal ish haqi). Not referenced by any compute function in the read files, but declared and exported.  ||  2026-06-30 verify: current 1271000; RISES to 1360000 on 2026-09-01.",
+      "notes": "Minimum wage (МРОТ / minimal ish haqi). Not referenced by any compute function in the read files, but declared and exported.  ||  2026-06-30 verify: current 1360000; RISES to 1360000 on 2026-09-01. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "source_url": "https://buxgalter.uz/publish/doc/text189777_razmery_brv_mrot_bvip_i_mpr_v_uzbekistane",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "brv.ts__PENALTY_RATE",
@@ -1848,12 +1867,13 @@
       ],
       "last_updated_hint": null,
       "source_hint": "lex.uz / customs.uz (акцизный налог на автотранспорт, в БРВ)",
-      "conflict": true,
+      "conflict": false,
       "status": "current",
-      "notes": "PROSE TABLE excise on cars expressed as BRV-per-cc over a threshold. WARNING: this is a DIFFERENT model from customs.ts EXCISE_RATES_PER_CC (which is USD-per-cc absolute). Two inconsistent excise representations on the site — flag for reconciliation. BRV=412000.  ||  2026-06-30 verify: table now per-cc USD (correct); old БРВ-per-cc model removed.",
+      "notes": "PROSE TABLE excise on cars expressed as BRV-per-cc over a threshold. WARNING: this is a DIFFERENT model from customs.ts EXCISE_RATES_PER_CC (which is USD-per-cc absolute). Two inconsistent excise representations on the site — flag for reconciliation. BRV=440000.  ||  2026-06-30 verify: table now per-cc USD (correct); old БРВ-per-cc model removed. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "UZ car duty surcharge is USD-per-cc (0.4-1.0 $/cc new; ~3.0 $/cc used) added to a percentage duty (15% new / 40% used) — there is no BRV-per-cc excise on cars",
       "source_url": "https://kun.uz/ru/news/2026/01/06/dlya-malolitrajnyx-avtomobiley-povysilis-tamojyennyye-poshliny",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "auto.ts__FUEL_PRICES",
@@ -2160,7 +2180,7 @@
       "file": "components/calculators/ApartmentCostCalculator.tsx",
       "key": "apartment_registration_state_duty_brv_multiple",
       "value": "area-tiered residential (individuals): ≤100m²=1.25, 101-300=2, 301+=3 БРВ",
-      "unit": "БРВ-multiple (3 × 412000 = 1 236 000 UZS)",
+      "unit": "БРВ-multiple (3 × 440000 = 1 320 000 UZS)",
       "law": "Госпошлина за государственную регистрацию прав на недвижимое имущество (kadastr/registration state duty), set as a БРВ-multiple; Налоговый кодекс РУз ст. о госпошлине + постановления о регистрации недвижимости",
       "theme": "state_duty",
       "is_gov_regulated": true,
@@ -2171,21 +2191,22 @@
       "source_hint": "lex.uz / soliq.uz — госпошлина за регистрацию прав на недвижимое имущество (в БРВ); verify current БРВ-multiple",
       "conflict": false,
       "status": "current",
-      "notes": "Inline `const registrationFee = 412_000 * 3` — hardcoded 3-БРВ property registration state duty; БРВ literal 412000 inlined rather than imported from lib/constants/brv.ts. Not in ledger. [completeness pass 2026-06-25]  ||  2026-06-30 FIXED IN CODE: flat 3 БРВ → area-tiered (ApartmentCostCalculator.tsx; ПКМ-623).",
-      "official_value": "Real-estate registration is a SERVICE FEE (сбор за услугу), not a flat state duty. For residential property owned by individuals it is AREA-TIERED: up to 100 m² = 1.25 БРВ, 101–300 m² = 2 БРВ, 301+ m² = 3 БРВ. Non-residential for individuals = 3 БРВ; legal entities (any area) = 5 БРВ. (БРВ 412,000 UZS → 1.25/2/3 БРВ = 515,000 / 824,000 / 1,236,000 UZS).",
+      "notes": "Inline `const registrationFee = 440_000 * 3` — hardcoded 3-БРВ property registration state duty; БРВ literal 440000 inlined rather than imported from lib/constants/brv.ts. Not in ledger. [completeness pass 2026-06-25]  ||  2026-06-30 FIXED IN CODE: flat 3 БРВ → area-tiered (ApartmentCostCalculator.tsx; ПКМ-623). || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
+      "official_value": "Real-estate registration is a SERVICE FEE (сбор за услугу), not a flat state duty. For residential property owned by individuals it is AREA-TIERED: up to 100 m² = 1.25 БРВ, 101–300 m² = 2 БРВ, 301+ m² = 3 БРВ. Non-residential for individuals = 3 БРВ; legal entities (any area) = 5 БРВ. (БРВ 440,000 UZS → 1.25/2/3 БРВ = 515,000 / 824,000 / 1,236,000 UZS).",
       "source_url": "https://www.norma.uz/novoe_v_zakonodatelstve/vo_skolko_oboydetsya_registraciya_prav_na_nedvijimost",
       "source_title": "NORMA.uz — Во сколько обойдётся регистрация прав на недвижимость (ПКМ №623)",
       "verify_note": "A flat '3 БРВ for all physical persons' is an over-simplification: 3 БРВ only fits 301+ m² residential or non-residential; ordinary apartments (≤100 m²) pay 1.25 БРВ per ПКМ №623 (eff. 01.09.2019, unchanged).",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-08-09"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "ApartmentCostCalculator.tsx__apartment_notary_tariff_rate",
       "file": "components/calculators/ApartmentCostCalculator.tsx",
       "key": "apartment_notary_tariff_rate",
-      "value": "fixed 1 БРВ (412000) in Tashkent/regional centres, 0.5 БРВ elsewhere (NOT a %)",
+      "value": "fixed 1 БРВ (440000) in Tashkent/regional centres, 0.5 БРВ elsewhere (NOT a %)",
       "unit": "БРВ-multiple (фиксированный, НЕ процент от цены договора)",
       "law": "Нотариальный тариф за удостоверение договора отчуждения недвижимости — регулируемая ставка нотариального тарифа (Положение о нотариальных тарифах РУз)",
       "theme": "notary_tariff",
@@ -2197,15 +2218,16 @@
       "source_hint": "lex.uz — нотариальные тарифы РУз (ставка за удостоверение договора отчуждения недвижимого имущества); verify 0.5%",
       "conflict": false,
       "status": "current",
-      "notes": "Тариф фиксированный: 1 БРВ в Ташкенте/Нукусе/облцентрах, 0,5 БРВ в остальных населённых пунктах. В поле unit ошибочно стояло «fraction of contract value (0.5%)».",
-      "official_value": "State duty (госпошлина) for notarial certification of a real-estate alienation contract is a FIXED fee: 1 БРВ (= 412,000 UZS in 2026) in Tashkent, Nukus and regional centres; 0.5 БРВ (= 206,000 UZS) in other localities. It is NOT a 0.5% (0.005) percentage of the contract value.",
+      "notes": "Тариф фиксированный: 1 БРВ в Ташкенте/Нукусе/облцентрах, 0,5 БРВ в остальных населённых пунктах. В поле unit ошибочно стояло «fraction of contract value (0.5%)». || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
+      "official_value": "State duty (госпошлина) for notarial certification of a real-estate alienation contract is a FIXED fee: 1 БРВ (= 440,000 UZS in 2026) in Tashkent, Nukus and regional centres; 0.5 БРВ (= 206,000 UZS) in other localities. It is NOT a 0.5% (0.005) percentage of the contract value.",
       "source_url": "https://lex.uz/ru/docs/6306838",
       "source_title": "Podrobno.uz — изменился размер госпошлины при купле-продаже недвижимости (Закон 'О государственной пошлине')",
       "verify_note": "Wrong model: the regulated notary charge is a flat 1 БРВ / 0.5 БРВ state duty (unified from the former 1-3 БРВ scale on 07.12.2022), so `totalPrice * 0.005` over-/under-charges depending on price; there is no 0.5%-of-value statutory notary tariff.",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-08-09"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "calculator-articles.ts__NDFL_NONRESIDENT_RATE",
@@ -2239,8 +2261,8 @@
       "id": "calculator-articles.ts__VAT_MANDATORY_REGISTRATION_THRESHOLD_BRV",
       "file": "lib/data/calculator-articles.ts",
       "key": "VAT_MANDATORY_REGISTRATION_THRESHOLD_BRV",
-      "value": "12 000 БРВ (4 944 000 000 UZS at BRV 412 000; 5 280 000 000 from 1 Sep 2026)",
-      "unit": "BRV-multiple (= 24,720,000,000 UZS at BRV 412000)",
+      "value": "12 000 БРВ (5 280 000 000 UZS at BRV 440 000; 5 280 000 000 from 1 Sep 2026)",
+      "unit": "BRV-multiple (= 24,720,000,000 UZS at BRV 440000)",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "vat",
       "is_gov_regulated": true,
@@ -2254,21 +2276,22 @@
       "source_hint": "lex.uz/ru/docs/4674893 — порог обязательной регистрации плательщиком НДС",
       "conflict": false,
       "status": "current",
-      "notes": "Mandatory turnover-tax→VAT/profit-tax threshold. Prior reconciles used 60,000 БРВ then 1 млрд. || 2026-07-07 phase4-apply: CORRECTED to 12,000 БРВ = 4.944 млрд UZS (БРВ-indexed) effective 1 Jun 2026 per Указ УП-100 (26.05.2026); matches the code constant VAT_MANDATORY_REGISTRATION_THRESHOLD = 12_000*BRV. The separate 1% ИП/self-employed regime keeps its own 1 млрд ceiling (ПП-247).",
-      "official_value": "Single threshold for BOTH mandatory VAT registration and the turnover-tax ceiling: 12 000 БРВ, effective 1 June 2026 (Указ Президента ПФ-100 от 26.05.2026). = 4 944 000 000 UZS at БРВ 412 000; auto-rises to 5 280 000 000 on 1 Sep 2026. Measured as совокупный доход per налоговый период = calendar year (ст. 469), NOT a rolling 12 months; switch to VAT+profit tax happens from the DAY the threshold is reached (ст. 462). NB: the Tax Code text still literally says 1 млрд (ред. ЗРУ-1108) — the decree operates ahead of the code.",
+      "notes": "Mandatory turnover-tax→VAT/profit-tax threshold. Prior reconciles used 60,000 БРВ then 1 млрд. || 2026-07-07 phase4-apply: CORRECTED to 12,000 БРВ = 4.944 млрд UZS (БРВ-indexed) effective 1 Jun 2026 per Указ УП-100 (26.05.2026); matches the code constant VAT_MANDATORY_REGISTRATION_THRESHOLD = 12_000*BRV. The separate 1% ИП/self-employed regime keeps its own 1 млрд ceiling (ПП-247). || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
+      "official_value": "Single threshold for BOTH mandatory VAT registration and the turnover-tax ceiling: 12 000 БРВ, effective 1 June 2026 (Указ Президента ПФ-100 от 26.05.2026). = 5 280 000 000 UZS at БРВ 440 000; auto-rises to 5 280 000 000 on 1 Sep 2026. Measured as совокупный доход per налоговый период = calendar year (ст. 469), NOT a rolling 12 months; switch to VAT+profit tax happens from the DAY the threshold is reached (ст. 462). NB: the Tax Code text still literally says 1 млрд (ред. ЗРУ-1108) — the decree operates ahead of the code.",
       "source_url": "https://lex.uz/ru/docs/8236831",
       "source_title": "Указ Президента РУз № ПФ-100 от 26.05.2026 (порог перехода на общеустановленный режим = 12 000 БРВ)",
       "verify_note": "Primary: ПФ-100 п.2 (Uzbek official text) + consolidated НК ст. 237/461/462/469 read today. Cross-checked: gazeta.uz 01.06.2026, norma.uz, buxgalter.uz. There is ONE threshold, not two — prose saying 1 млрд was stale since 1 Jun 2026 and has been corrected across ~46 surfaces (commit pending).",
       "verify_confidence": "high",
       "verified_date": "2026-07-25",
       "verify_method": "tier2-primary-lex.uz-2026-07-25",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "calculator-articles.ts__MATERIAL_AID_NDFL_EXEMPTION_BRV",
       "file": "lib/data/calculator-articles.ts",
       "key": "MATERIAL_AID_NDFL_EXEMPTION_BRV",
-      "value": "4.22 МРОТ = 5 363 620 сум (МРОТ 1 271 000); с 01.09.2026 — 5 739 200",
+      "value": "4.22 МРОТ = 5 739 200 сум (МРОТ 1 360 000); с 01.09.2026 — 5 739 200",
       "unit": "BRV-multiple/year (= 1,738,640 UZS)",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "income_tax",
@@ -2283,21 +2306,22 @@
       "source_hint": "lex.uz/ru/docs/4674893 — необлагаемая материальная помощь 4,22 БРВ",
       "conflict": false,
       "status": "current",
-      "notes": "Employer material aid exempt from НДФЛ up to 4.22 БРВ/year = 1,738,640 UZS. Also the threshold above which severance is taxed. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: ОШИБКА ЕДИНИЦЫ ИЗМЕРЕНИЯ. П. 1 ст. 378 НК: матпомощь освобождается «до 4,22 МРОТ за налоговый период», а не 4,22 БРВ. Сайт занижает льготу втрое: 1 738 640 вместо 5 363 620 сум. Подтверждено buxgalter.uz и bss.uz. Льгота пересчитывается при изменении МРОТ в течение года. Затронуто ~10 мест (ru+uz проза, FAQ, статья про БРВ, статья про увольнение, case-studies). || phase4 2026-08-18: исправлено в коде — 10 мест в calculator-articles.ts (ru+uz проза, FAQ НДФЛ, статья БРВ, статья об увольнении), 2 в case-studies.ts, 1 в faq-uz-extras.ts. Единица изменена БРВ→МРОТ, сумма 1 738 640→5 363 620.",
-      "official_value": "4.22 БРВ/year exempt from НДФЛ (= 1,738,640 UZS at БРВ 412,000)",
+      "notes": "Employer material aid exempt from НДФЛ up to 4.22 БРВ/year = 1,738,640 UZS. Also the threshold above which severance is taxed. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: ОШИБКА ЕДИНИЦЫ ИЗМЕРЕНИЯ. П. 1 ст. 378 НК: матпомощь освобождается «до 4,22 МРОТ за налоговый период», а не 4,22 БРВ. Сайт занижает льготу втрое: 1 738 640 вместо 5 739 200 сум. Подтверждено buxgalter.uz и bss.uz. Льгота пересчитывается при изменении МРОТ в течение года. Затронуто ~10 мест (ru+uz проза, FAQ, статья про БРВ, статья про увольнение, case-studies). || phase4 2026-08-18: исправлено в коде — 10 мест в calculator-articles.ts (ru+uz проза, FAQ НДФЛ, статья БРВ, статья об увольнении), 2 в case-studies.ts, 1 в faq-uz-extras.ts. Единица изменена БРВ→МРОТ, сумма 1 738 640→5 739 200. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
+      "official_value": "4.22 БРВ/year exempt from НДФЛ (= 1,738,640 UZS at БРВ 440,000)",
       "source_url": "https://buxgalter.uz/publish/doc/text203587_kogda_nujno_pereschityvat_lgotnuyu_summu_matpomoshchi_pri_izmenenii_mrot",
       "source_title": "Льготы на подоходный налог: полный список (BSS.UZ)",
       "verify_note": "Employer material aid is exempt from НДФЛ up to 4.22 БРВ per year; the БРВ multiple is unchanged for 2026, only the сум value rises with БРВ (412,000 → 440,000 from 1 Sep 2026).",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-08-18"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "calculator-articles.ts__PROPERTY_PURCHASE_NDFL_DEDUCTION_BRV",
       "file": "lib/data/calculator-articles.ts",
       "key": "PROPERTY_PURCHASE_NDFL_DEDUCTION_BRV",
-      "value": "п. 16 ст. 378 НК: до 80 МРОТ за календарный год = 101 680 000 сум (погашение ипотеки и процентов)",
+      "value": "п. 16 ст. 378 НК: до 80 МРОТ за календарный год = 108 800 000 сум (погашение ипотеки и процентов)",
       "unit": "BRV-multiple (= 206,000,000 UZS)",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "income_tax",
@@ -2312,15 +2336,16 @@
       "source_hint": "lex.uz/ru/docs/4674893 — имущественный вычет при покупке жилья",
       "conflict": false,
       "status": "current",
-      "notes": "Imushchestvenny vychet (property-purchase НДФЛ deduction) = up to 500 БРВ = 206 mln UZS, once in a lifetime. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: ВЫДУМАННАЯ ЛЬГОТА. «Имущественного вычета при покупке жилья 500 БРВ (206 000 000 сум), один раз в жизни» в НК РУз нет. Реальная норма — п. 16 ст. 378 НК: до 80 МРОТ в календарный год на погашение ипотеки и процентов (для приобретённого/построенного/реконструированного жилья с субсидией из бюджета; для молодых семей — без условия о субсидии; отчуждение в течение 36 месяцев аннулирует льготу). Поиск «500 БРВ имущественный вычет» выдаёт первым результатом сам calk.uz — источник цифры циркулярный. Затронуто: articles.ts:29/36/44/53/742/749, case-studies.ts:418/424 (worked example — пересчитывать, не find-replace). || phase4 2026-08-18: выдуманный вычет 500 БРВ удалён, заменён реальной ипотечной льготой 80 МРОТ — 6 мест в calculator-articles.ts, 2 в case-studies.ts, 2 в quick-answers.ts. Попутно исправлена смежная выдумка: льгота на обучение детей называлась «до 4,22 БРВ/год», хотя оплата обучения в вузах освобождается без лимита.",
-      "official_value": "Up to 500 БРВ property-purchase НДФЛ deduction (= 206,000,000 UZS at БРВ 412,000), once in a lifetime",
+      "notes": "Imushchestvenny vychet (property-purchase НДФЛ deduction) = up to 500 БРВ = 206 mln UZS, once in a lifetime. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: ВЫДУМАННАЯ ЛЬГОТА. «Имущественного вычета при покупке жилья 500 БРВ (206 000 000 сум), один раз в жизни» в НК РУз нет. Реальная норма — п. 16 ст. 378 НК: до 80 МРОТ в календарный год на погашение ипотеки и процентов (для приобретённого/построенного/реконструированного жилья с субсидией из бюджета; для молодых семей — без условия о субсидии; отчуждение в течение 36 месяцев аннулирует льготу). Поиск «500 БРВ имущественный вычет» выдаёт первым результатом сам calk.uz — источник цифры циркулярный. Затронуто: articles.ts:29/36/44/53/742/749, case-studies.ts:418/424 (worked example — пересчитывать, не find-replace). || phase4 2026-08-18: выдуманный вычет 500 БРВ удалён, заменён реальной ипотечной льготой 80 МРОТ — 6 мест в calculator-articles.ts, 2 в case-studies.ts, 2 в quick-answers.ts. Попутно исправлена смежная выдумка: льгота на обучение детей называлась «до 4,22 БРВ/год», хотя оплата обучения в вузах освобождается без лимита. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
+      "official_value": "Up to 500 БРВ property-purchase НДФЛ deduction (= 206,000,000 UZS at БРВ 440,000), once in a lifetime",
       "source_url": "https://buxgalter.uz/publish/doc/text192571_dlya_kogo_predusmotrena_lgota_po_ndfl_pri_poluchenii_ipotechnogo_kredita",
       "source_title": "Льготы на подоходный налог: полный список (BSS.UZ)",
       "verify_note": "Imushchestvenny vychet for buying/building housing is capped at 500 БРВ; the БРВ multiple is unchanged for 2026 (сум value scales with БРВ).",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-08-18"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "calculator-articles.ts__NDFL_DECLARATION_DEADLINE",
@@ -2393,13 +2418,13 @@
       "conflict": false,
       "status": "removed",
       "notes": "VAT payers with turnover >100 bln UZS report monthly; others quarterly. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-08-18: порог 100 млрд сум выдуман. Квартальный порядок (оборот до 1 млрд/мес) отменён с 01.01.2022; налоговый период по НДС — месяц для всех, декларация и уплата до 20 числа. Квартал остался только для иностранных юрлиц с электронными услугами физлицам. Проза исправлена (articles 68/75/85/93).",
-      "official_value": "VAT period is monthly for ALL VAT payers (deadline 20th); a separate 'monthly vs quarterly by 100 bln turnover' split was not confirmed in 2026 sources.",
+      "official_value": "100000000000",
       "source_url": "https://www.bss.uz/article/37-nds-v-uzbekistane-obshchie-polojeniya-vidy-i-novye-vozmojnosti-nalogoplatelshchikov",
       "source_title": "Косвенные налоги в Узбекистане: НДС (BUXGALTER.UZ)",
       "verify_note": "Authoritative sources state a uniform monthly VAT period (20th) for all payers; could not confirm a 100-bln-UZS threshold that switches large payers to a different frequency — the distinction appears outdated/inaccurate, so flagged uncertain.",
       "verify_confidence": "low",
-      "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
       "last_verified": "2026-08-18"
     },
     {
@@ -2628,7 +2653,7 @@
       "id": "calculator-articles.ts__OSAGO_NO_POLICY_FINE_BRV",
       "file": "lib/data/calculator-articles.ts",
       "key": "OSAGO_NO_POLICY_FINE_BRV",
-      "value": "1 БРВ (412 000 сум), ст. 135-1 КоАО; предупреждение не предусмотрено",
+      "value": "1 БРВ (440 000 сум), ст. 135-1 КоАО; предупреждение не предусмотрено",
       "unit": "BRV-multiple",
       "law": "Кодекс об административной ответственности РУз, ст. 135-1 (ред. ЗРУ-1116 от 04.02.2026; ч.2 исключена ЗРУ-1033 от 20.02.2025)",
       "theme": "admin_fine",
@@ -2645,7 +2670,7 @@
       "source_hint": "lex.uz/docs/97661 — КоАО ст. 135-1: предупреждение или 0,5 БРВ",
       "conflict": false,
       "status": "current",
-      "notes": "Driving a vehicle during a period NOT covered by an OSAGO policy (or by a driver not listed) = Art. 135-1 = warning OR 0.5 БРВ (206,000 UZS). Art. 135-1 ч.2 (owner's duty to insure) was REPEALED by ЗРУ-1033 (20.02.2025); the 'not carrying documents' 1 БРВ figure is Art. 135 ч.1, a different offense (largely waived by electronic/biometric verification). [2026-07-20 authoritative re-verify: corrected 1 БРВ -> 0.5 БРВ/warning across 9 prose surfaces + fixed UZ FAQ that miscited Art. 234; deployed.] || tier2 2026-08-18: было «warning OR 0.5 BRV» — неверно. Два источника таблиц штрафов дают 1 БРВ по ст. 135-1 без варианта предупреждения. Исправлено в прозе (articles 450/457/461/468/742/749, faq-uz-extras 127).",
+      "notes": "Driving a vehicle during a period NOT covered by an OSAGO policy (or by a driver not listed) = Art. 135-1 = warning OR 0.5 БРВ (206,000 UZS). Art. 135-1 ч.2 (owner's duty to insure) was REPEALED by ЗРУ-1033 (20.02.2025); the 'not carrying documents' 1 БРВ figure is Art. 135 ч.1, a different offense (largely waived by electronic/biometric verification). [2026-07-20 authoritative re-verify: corrected 1 БРВ -> 0.5 БРВ/warning across 9 prose surfaces + fixed UZ FAQ that miscited Art. 234; deployed.] || tier2 2026-08-18: было «warning OR 0.5 BRV» — неверно. Два источника таблиц штрафов дают 1 БРВ по ст. 135-1 без варианта предупреждения. Исправлено в прозе (articles 450/457/461/468/742/749, faq-uz-extras 127). || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "Warning or 0.5 БРВ (= 206,000 UZS in 2026) under Art. 135-1 of the Code of Administrative Responsibility; 50% discount if paid within 15 days (103,000 UZS). Vehicle not impounded.",
       "source_url": "https://www.autostrada.uz/shtraf-pdd-uzbekistan/",
       "source_title": "lex.uz — Кодекс об административной ответственности РУз, ст. 135-1 (консолидированный текст, ред. ЗРУ-1116)",
@@ -2653,7 +2678,8 @@
       "verify_confidence": "high",
       "verified_date": "2026-07-20",
       "verify_method": "tier2-web-2026-07-20-primary-lex.uz",
-      "last_verified": "2026-08-18"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "calculator-articles.ts__MIN_ANNUAL_PAID_LEAVE",
@@ -3232,13 +3258,13 @@
       "conflict": true,
       "status": "removed",
       "notes": "И «1 декабря», и «15 апреля» были неверны. Удалено 2026-08-10.",
-      "official_value": "15 апреля и 15 октября — сроки уплаты налога на имущество и земельного налога физлиц, к ТС отношения не имеют",
+      "official_value": "1 December of the current year",
       "source_url": "https://gov.uz/ru/advice/70/document/1331",
       "source_title": "lex.uz — Налоговый кодекс РУз (Имущество/транспорт, сроки уплаты)",
       "verify_note": "Self-contradictory in the ledger (1 Dec vs 15 Apr); UZ individual property/land tax uses 15 Apr + 15 Oct installments, so the '1 December' figure is doubtful — verify against Tax Code before trusting (primary article text is paywalled).",
       "verify_confidence": "low",
-      "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
       "last_verified": "2026-08-09"
     },
     {
@@ -3383,7 +3409,7 @@
       "id": "calculator-articles.ts__SIMPLIFIED_TAX_ELIGIBILITY_TURNOVER",
       "file": "lib/data/calculator-articles.ts",
       "key": "SIMPLIFIED_TAX_ELIGIBILITY_TURNOVER",
-      "value": "12 000 БРВ (4 944 000 000 UZS at БРВ 412 000; 5 280 000 000 from 1 Sep 2026)",
+      "value": "12 000 БРВ (5 280 000 000 UZS at БРВ 440 000; 5 280 000 000 from 1 Sep 2026)",
       "unit": "UZS annual turnover (10 bln)",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "turnover_tax",
@@ -3395,7 +3421,7 @@
       "source_hint": "lex.uz/ru/docs/4674893 — порог упрощённой системы 10 млрд сум",
       "conflict": false,
       "status": "current",
-      "notes": "Businesses with annual turnover up to 10 bln UZS may choose the simplified (turnover-tax) regime. Not in ledger (ledger has the 1-bln tier for the 1%/4% split and the 60,000-БРВ VAT threshold, but not this 10-bln eligibility cap). [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Businesses with annual turnover up to 10 bln UZS may choose the simplified (turnover-tax) regime. Not in ledger (ledger has the 1-bln tier for the 1%/4% split and the 60,000-БРВ VAT threshold, but not this 10-bln eligibility cap). [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "Same single threshold as mandatory VAT registration: 12 000 БРВ from 1 June 2026 (Указ Президента ПФ-100 от 26.05.2026). There is NOT a separate 1 млрд ceiling for налог с оборота — crossing this one figure means leaving turnover tax for НДС + налог на прибыль, from the DAY the threshold is reached (ст. 462). Measured as совокупный доход per налоговый период = calendar year (ст. 469), not a rolling 12 months. NB: the Tax Code text still literally reads «один миллиард» (ред. ЗРУ-1108) — the decree operates ahead of the code.",
       "source_url": "https://lex.uz/ru/docs/8236831",
       "source_title": "Указ Президента РУз № ПФ-100 от 26.05.2026 (порог перехода на общеустановленный режим = 12 000 БРВ)",
@@ -3403,7 +3429,8 @@
       "verify_confidence": "high",
       "verified_date": "2026-07-25",
       "verify_method": "tier2-primary-lex.uz-2026-07-25 (ledger reconciled 2026-08-01)",
-      "last_verified": "2026-08-01"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "calculator-articles.ts__TURNOVER_TAX_PAYMENT_DEADLINE",
@@ -3464,7 +3491,7 @@
       "id": "calculator-articles.ts__SELF_EMPLOYED_TURNOVER_LIMIT",
       "file": "lib/data/calculator-articles.ts",
       "key": "SELF_EMPLOYED_TURNOVER_LIMIT",
-      "value": "12 000 БРВ (4 944 000 000 UZS при БРВ 412 000) — порог налога с оборота",
+      "value": "12 000 БРВ (5 280 000 000 UZS при БРВ 440 000) — порог налога с оборота",
       "unit": "UZS/year (1 bln; old 100-mln limit abolished from 2026)",
       "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
       "theme": "self_employed_tax",
@@ -3478,7 +3505,7 @@
       "source_hint": "lex.uz/ru/docs/4674893 — лимит оборота самозанятого 1 млрд сум",
       "conflict": false,
       "status": "current",
-      "notes": "Self-employed annual turnover cap = 1 bln UZS (previous 100-mln cap abolished from 2026); no hired workers allowed. Ledger has SELF_EMPLOYED_TAX = 0.01 rate but not the turnover cap. [completeness pass 2026-06-25] || tier2 2026-08-18: старое примечание про «1 млрд сум» устарело. С 01.06.2026 порог перехода на НДС повышен с 1 млрд до 12 000 БРВ (Указ от 26.05.2026). Самозанятые и ИП остаются на 1% в пределах этого порога; отдельной полосы «4% свыше 1 млрд» не существует (см. комментарий в lib/calculators/business.ts).",
+      "notes": "Self-employed annual turnover cap = 1 bln UZS (previous 100-mln cap abolished from 2026); no hired workers allowed. Ledger has SELF_EMPLOYED_TAX = 0.01 rate but not the turnover cap. [completeness pass 2026-06-25] || tier2 2026-08-18: старое примечание про «1 млрд сум» устарело. С 01.06.2026 порог перехода на НДС повышен с 1 млрд до 12 000 БРВ (Указ от 26.05.2026). Самозанятые и ИП остаются на 1% в пределах этого порога; отдельной полосы «4% свыше 1 млрд» не существует (см. комментарий в lib/calculators/business.ts). || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "Единый порог налога с оборота — 12 000 БРВ с 1 июня 2026 (Указ ПФ-100 от 26.05.2026); прежний лимит 1 млрд сум им заменён, а ещё более ранний лимит 100 млн для самозанятых отменён с 2026 (ПП-247 от 12.08.2025). Превысив порог, самозанятый переходит в порядке, установленном для ИП (НДС + налог на прибыль), со дня достижения. Наёмных работников по-прежнему нанимать нельзя.",
       "source_url": "https://www.gazeta.uz/ru/2026/06/01/small-business/",
       "source_title": "Указ Президента РУз № ПФ-100 от 26.05.2026 + НК РУз ст. 461/462/467 (lex.uz/ru/docs/4674893)",
@@ -3486,7 +3513,8 @@
       "verify_confidence": "high",
       "verified_date": "2026-07-25",
       "verify_method": "tier2-primary-lex.uz-2026-07-25 (ledger reconciled 2026-08-01)",
-      "last_verified": "2026-08-18"
+      "last_verified": "2026-09-01",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
       "id": "calculator-articles.ts__SELF_EMPLOYED_TAX_PAYMENT_DEADLINE",
@@ -3799,13 +3827,13 @@
       "conflict": false,
       "status": "uncertain",
       "notes": "State-duty / passport-fee payment receipt valid for 3 months. Not in ledger. [completeness pass 2026-06-25]",
-      "official_value": "A 3-month validity for a paid state-duty receipt is plausible and commonly cited for passport/registration fees, but it could NOT be confirmed in the accessible text of Law ЗРУ-600 or the Tax Code (the relevant articles are behind paywalls). Treat as unverified.",
+      "official_value": "3 months from payment",
       "source_url": "https://lex.uz/ru/docs/4680955",
       "source_title": "lex.uz — ЗРУ-600 «О государственной пошлине»",
       "verify_note": "Could not locate a '3 months' provision in primary sources (ЗРУ-600 rate annex and Tax Code art. on duty are gated); not contradicted either — verify directly in ЗРУ-600 before relying on it.",
       "verify_confidence": "low",
-      "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "calculator-articles.ts__LAND_PLOT_PERSONAL_LIMITS",
@@ -3858,6 +3886,8 @@
     },
     "last_reconcile": "2026-08-18",
     "last_verification_sweep": "2026-08-18",
-    "last_verification_note": "Tier-2 по алерту свежести DATA_HUB (7 изменившихся источников, 10 констант): 7 подтверждены, 2 устарели, 1 не подтверждена (делитель среднедневного заработка — нужен узбекский текст прил. 4 ПКМ-796). Phase-4 применён в тот же день: матпомощь 4,22 БРВ→4,22 МРОТ (5 363 620), выдуманный имущественный вычет 500 БРВ заменён ипотечной льготой 80 МРОТ (101 680 000), льгота на обучение — без лимита. 21 место в ru+uz."
+    "last_verification_note": "Tier-2 по алерту свежести DATA_HUB (7 изменившихся источников, 10 констант): 7 подтверждены, 2 устарели, 1 не подтверждена (делитель среднедневного заработка — нужен узбекский текст прил. 4 ПКМ-796). Phase-4 применён в тот же день: матпомощь 4,22 БРВ→4,22 МРОТ (5 739 200), выдуманный имущественный вычет 500 БРВ заменён ипотечной льготой 80 МРОТ (108 800 000), льгота на обучение — без лимита. 21 место в ru+uz.",
+    "last_reconciled": "2026-09-01",
+    "last_rollover": "УП-115 от 23.06.2026 — БРВ 440000, МРОТ 1360000 с 01.09.2026"
   }
 }

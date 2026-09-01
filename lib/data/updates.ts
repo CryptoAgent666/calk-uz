@@ -20,6 +20,29 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-09-01",
+    dateLabelRu: "1 сентября 2026",
+    dateLabelUz: "2026-yil 1-sentabr",
+    items: [
+      {
+        titleRu: "БРВ 412 000 → 440 000, МРОТ 1 271 000 → 1 360 000",
+        titleUz: "BHK 412 000 → 440 000, MIH 1 271 000 → 1 360 000",
+        descRu:
+          "С 1 сентября 2026 года обе базовые величины повышены на 7% Указом Президента УП-115 от 23 июня 2026 года: базовая расчётная величина — с 412 000 до 440 000 сум, минимальный размер оплаты труда — с 1 271 000 до 1 360 000 сум. БРВ переоценивает всё, что закон задаёт в её кратных: штраф за езду без ОСАГО стал 440 000 сум, госпошлина за регистрацию юрлица — 440 000 сум, загранпаспорт стандартного оформления — 880 000 сум, порог обязательной регистрации по НДС (12 000 БРВ) — 5 280 000 000 сум. От МРОТ считаются льготы по НДФЛ: необлагаемая материальная помощь (4,22 МРОТ) выросла до 5 739 200 сум в год, льгота на погашение ипотеки (80 МРОТ) — до 108 800 000 сум. Пересчитаны все калькуляторы, статьи, FAQ и примеры расчётов.",
+        descUz:
+          "2026-yil 1-sentabridan ikkala bazaviy miqdor 2026-yil 23-iyundagi PF-115 Farmoni bilan 7% ga oshirildi: bazaviy hisoblash kattaligi 412 000 dan 440 000 so'mgacha, minimal ish haqi 1 271 000 dan 1 360 000 so'mgacha. BHK qonun uning kratlarida belgilagan hamma narsani qayta baholaydi: OSAGOsiz haydash uchun jarima 440 000 so'm bo'ldi, yuridik shaxsni ro'yxatdan o'tkazish boji — 440 000 so'm, QQS bo'yicha majburiy ro'yxatdan o'tish chegarasi (12 000 BHK) — 5 280 000 000 so'm. MIH dan JShShS imtiyozlari hisoblanadi: moddiy yordam (4,22 MIH) yiliga 5 739 200 so'mgacha, ipotekani to'lash imtiyozi (80 MIH) — 108 800 000 so'mgacha oshdi. Barcha kalkulyatorlar, maqolalar, FAQ va hisob misollari qayta hisoblandi.",
+      },
+      {
+        titleRu: "БРВ устанавливает Указ Президента, а не постановление Кабмина",
+        titleUz: "BHK ni Vazirlar Mahkamasi qarori emas, Prezident Farmoni belgilaydi",
+        descRu:
+          "В узбекской версии FAQ говорилось, что БРВ обновляется постановлением Кабинета Министров. На самом деле размер БРВ устанавливается Указом Президента — как и указано в русской версии той же статьи. Формулировки приведены к одному виду.",
+        descUz:
+          "FAQ ning o'zbekcha versiyasida BHK Vazirlar Mahkamasi qarori bilan yangilanadi deb yozilgan edi. Aslida BHK miqdori Prezident Farmoni bilan belgilanadi — xuddi shu maqolaning ruscha versiyasida to'g'ri ko'rsatilgan. Ta'riflar bir xillashtirildi.",
+      },
+    ],
+  },
+  {
     date: "2026-08-31",
     dateLabelRu: "31 августа 2026",
     dateLabelUz: "2026-yil 31-avgust",
@@ -130,7 +153,7 @@ export const UPDATES: UpdateBlock[] = [
         titleRu: "БРВ вырастет до 440 000 сум с 1 сентября 2026",
         titleUz: "BHK 2026-yil 1-sentabrdan 440 000 so'mgacha oshadi",
         descRu:
-          "Базовая расчётная величина повышается с 412 000 до 440 000 сум (Указ ПФ-115 от 23.06.2026). К БРВ привязаны штрафы, госпошлины, налоговые вычеты и пороги — в том числе порог перехода на НДС, который станет 5,28 млрд сум. Анонс добавлен на страницы БРВ и порога НДС; после 1 сентября значения пересчитаются.",
+          "Базовая расчётная величина повышается с 412 000 до 440 000 сум (Указ УП-115 от 23.06.2026). К БРВ привязаны штрафы, госпошлины, налоговые вычеты и пороги — в том числе порог перехода на НДС, который станет 5,28 млрд сум. Анонс добавлен на страницы БРВ и порога НДС; после 1 сентября значения пересчитаются.",
         descUz:
           "Bazaviy hisoblash kattaligi 412 000 dan 440 000 so'mga oshiriladi (PF-115 Farmoni, 23.06.2026). Jarimalar, davlat bojlari, soliq chegirmalari va chegaralar BHKga bog'langan — shu jumladan QQSga o'tish chegarasi 5,28 mlrd so'm bo'ladi.",
       },
