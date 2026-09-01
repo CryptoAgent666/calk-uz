@@ -1,0 +1,329 @@
+/**
+ * Social calculators: alimony, vacation pay, sick leave, maternity, severance, overtime, pension
+ */
+
+import { MIN_WAGE } from '@/lib/constants/brv'
+
+/** Минимальный размер алиментов — 26,5% МРОТ на каждого ребёнка. */
+export const ALIMONY_MIN_SHARE_OF_MIN_WAGE = 0.265
+
+// Alimony
+export interface AlimonyResult {
+  income: number
+  childrenCount: number
+  alimonyRate: number
+  alimonyAmount: number
+  remainingIncome: number
+  /** 26,5% МРОТ на каждого ребёнка — ниже этой суммы алименты не назначаются. */
+  statutoryMinimum: number
+  /** Доля от дохода оказалась ниже минимума, начислен минимум. */
+  minimumApplied: boolean
+}
+
+export function calculateAlimony(monthlyIncome: number, childrenCount: number): AlimonyResult {
+  // Ст. 99 СК: 1/4 на одного ребёнка, 1/3 на двух, 1/2 на трёх и более.
+  // Именно 1/3, а не 0,33 — округление занижало алименты на двоих детей.
+  let alimonyRate: number
+  if (childrenCount === 1) alimonyRate = 0.25
+  else if (childrenCount === 2) alimonyRate = 1 / 3
+  else alimonyRate = 0.50
+
+  // Доля от дохода не может быть ниже 26,5% МРОТ на каждого ребёнка:
+  // при низком доходе суд назначает этот минимум, а не долю.
+  const statutoryMinimum = ALIMONY_MIN_SHARE_OF_MIN_WAGE * MIN_WAGE * childrenCount
+  const shareOfIncome = monthlyIncome * alimonyRate
+  const minimumApplied = shareOfIncome < statutoryMinimum
+  const alimonyAmount = minimumApplied ? statutoryMinimum : shareOfIncome
+
+  return {
+    income: monthlyIncome,
+    childrenCount,
+    alimonyRate: alimonyRate * 100,
+    alimonyAmount,
+    remainingIncome: monthlyIncome - alimonyAmount,
+    statutoryMinimum,
+    minimumApplied,
+  }
+}
+
+// Vacation pay
+export interface VacationPayResult {
+  averageDailyEarnings: number
+  vacationDays: number
+  vacationPay: number
+  ndflAmount: number
+  netVacationPay: number
+}
+
+export function calculateVacationPay(
+  totalEarnings12Months: number,
+  vacationDays: number,
+  workingDaysIn12Months: number = 247
+): VacationPayResult {
+  const averageDailyEarnings = totalEarnings12Months / workingDaysIn12Months
+  const vacationPay = averageDailyEarnings * vacationDays
+  const ndflAmount = vacationPay * 0.12
+  return {
+    averageDailyEarnings,
+    vacationDays,
+    vacationPay,
+    ndflAmount,
+    netVacationPay: vacationPay - ndflAmount,
+  }
+}
+
+// Sick leave
+// 2026 RULES (PKM #796 from 17.12.2025):
+// Benefits are paid by the State Social Insurance Fund (ФГСС).
+// Minimum 6 months of insurance experience required.
+// Percentage of average earnings depends on insurance experience (months).
+/**
+ * Максимум оплачиваемых дней болезни — 182 календарных дня в течение
+ * календарного года (при туберкулёзе — 240, отдельного режима в калькуляторе нет).
+ */
+export const SICK_LEAVE_MAX_PAID_DAYS = 182
+
+export interface SickLeaveResult {
+  averageDailyEarnings: number
+  sickDays: number
+  /** Сколько дней реально оплачивается — не больше годового лимита. */
+  paidDays: number
+  /** Введённых дней больше лимита, выплата ограничена. */
+  daysCapped: boolean
+  insuranceMonths: number
+  experiencePercent: number
+  isEligible: boolean
+  grossAmount: number
+  ndflAmount: number
+  netAmount: number
+}
+
+/**
+ * Процент пособия по временной нетрудоспособности от среднего заработка.
+ *
+ * ПКМ № 796 от 17.12.2025, приложение № 4, п. 18 — шкала ДВУХступенчатая:
+ * «олти ойдан тўқсон олти ойгача (тўқсон олтинчи ой ҳам киради) — 60 фоиз;
+ *  тўқсон етти ва ундан ортиқ ой — 80 фоиз».
+ * То есть 6–96 месяцев включительно = 60%, 97+ = 80%. Ступени 100% НЕТ.
+ * Применяется к страховым случаям с 1 июля 2026 г.
+ *
+ * Раньше здесь стояла четырёхступенчатая шкала 60/80/100 с границами по 60 и 96
+ * месяцам — она завышала выплату всем со стажем от 5 лет.
+ */
+export function getSickLeavePercent(insuranceMonths: number): number {
+  if (insuranceMonths < 6) return 0        // <6 месяцев — права на пособие нет
+  if (insuranceMonths <= 96) return 60     // 6–96 месяцев включительно
+  return 80                                // 97 месяцев и больше
+}
+
+export function calculateSickLeave(
+  totalEarnings12Months: number,
+  sickDays: number,
+  insuranceMonths: number,
+  calendarDaysIn12Months: number = 365
+): SickLeaveResult {
+  const experiencePercent = getSickLeavePercent(insuranceMonths)
+  const isEligible = experiencePercent > 0
+  // 2026: payments are calendar-day based, funded by ФГСС
+  const averageDailyEarnings = totalEarnings12Months / calendarDaysIn12Months
+  // Сверх 182 дней в году пособие не выплачивается — раньше калькулятор
+  // оплачивал сколько угодно дней, завышая выплату при долгой болезни.
+  const paidDays = Math.min(sickDays, SICK_LEAVE_MAX_PAID_DAYS)
+  const daysCapped = sickDays > SICK_LEAVE_MAX_PAID_DAYS
+  const grossAmount = isEligible
+    ? averageDailyEarnings * paidDays * (experiencePercent / 100)
+    : 0
+  const ndflAmount = grossAmount * 0.12
+
+  return {
+    averageDailyEarnings,
+    sickDays,
+    paidDays,
+    daysCapped,
+    insuranceMonths,
+    experiencePercent,
+    isEligible,
+    grossAmount,
+    ndflAmount,
+    netAmount: grossAmount - ndflAmount,
+  }
+}
+
+// Maternity benefits
+// 2026 RULES (PKM #796 from 17.12.2025):
+// Benefits are paid by ФГСС. Minimum 10 months of insurance experience required.
+// Benefit percentage depends on insurance experience.
+export interface MaternityResult {
+  averageDailyEarnings: number
+  insuranceMonths: number
+  benefitPercent: number
+  isEligible: boolean
+  totalDays: number
+  grossBenefit: number
+  ndflAmount: number
+  netBenefit: number
+  prebirthDays: number
+  postbirthDays: number
+}
+
+/**
+ * Процент пособия по беременности и родам от среднего заработка.
+ *
+ * ПКМ № 796 от 17.12.2025 — границы включающие: 10–24 мес. = 75%,
+ * 25–60 мес. = 85%, 61 мес. и более = 100%. Применяется с 1 января 2026 г.
+ * Прежние границы (10–23 / 24–59 / ≥60) промахивались на месяц на всех трёх.
+ */
+export function getMaternityPercent(insuranceMonths: number): number {
+  if (insuranceMonths < 10) return 0       // права на пособие нет
+  if (insuranceMonths <= 24) return 75     // 10–24 месяца включительно
+  if (insuranceMonths <= 60) return 85     // 25–60 месяцев включительно
+  return 100                               // 61 месяц и больше
+}
+
+export function calculateMaternity(
+  totalEarnings12Months: number,
+  insuranceMonths: number = 24,
+  isComplicatedBirth: boolean = false,
+  isMultipleBirth: boolean = false,
+  calendarDaysIn12Months: number = 365
+): MaternityResult {
+  const benefitPercent = getMaternityPercent(insuranceMonths)
+  const isEligible = benefitPercent > 0
+  const averageDailyEarnings = totalEarnings12Months / calendarDaysIn12Months
+  const prebirthDays = 70
+  let postbirthDays = 56
+  if (isComplicatedBirth) postbirthDays = 70
+  if (isMultipleBirth) postbirthDays = 70
+
+  const totalDays = prebirthDays + postbirthDays
+  const grossBenefit = isEligible
+    ? averageDailyEarnings * totalDays * (benefitPercent / 100)
+    : 0
+  const ndflAmount = 0 // Maternity benefits are tax-exempt
+
+  return {
+    averageDailyEarnings,
+    insuranceMonths,
+    benefitPercent,
+    isEligible,
+    totalDays,
+    grossBenefit,
+    ndflAmount,
+    netBenefit: grossBenefit,
+    prebirthDays,
+    postbirthDays,
+  }
+}
+
+// Severance pay
+export interface SeveranceResult {
+  averageMonthlyEarnings: number
+  severanceMonths: number
+  severancePay: number
+  unusedVacationDays: number
+  vacationCompensation: number
+  totalPayout: number
+}
+
+export function calculateSeverance(
+  averageMonthlyEarnings: number,
+  severanceMonths: number,
+  unusedVacationDays: number
+): SeveranceResult {
+  const severancePay = averageMonthlyEarnings * severanceMonths
+  const dailyRate = averageMonthlyEarnings / 21 // average working days per month
+  const vacationCompensation = dailyRate * unusedVacationDays
+
+  return {
+    averageMonthlyEarnings,
+    severanceMonths,
+    severancePay,
+    unusedVacationDays,
+    vacationCompensation,
+    totalPayout: severancePay + vacationCompensation,
+  }
+}
+
+// Overtime
+export interface OvertimeResult {
+  hourlyRate: number
+  overtimeHours: number
+  overtimeMultiplier: number
+  overtimePay: number
+}
+
+export function calculateOvertime(
+  monthlyeSalary: number,
+  overtimeHours: number,
+  isHoliday: boolean = false,
+  workingHoursPerMonth: number = 168
+): OvertimeResult {
+  const hourlyRate = monthlyeSalary / workingHoursPerMonth
+  let overtimePay: number
+  let overtimeMultiplier: number
+  if (isHoliday) {
+    overtimeMultiplier = 2.0
+    overtimePay = hourlyRate * 2.0 * overtimeHours
+  } else {
+    overtimeMultiplier = 1.5 // average shown in UI
+    const first2h = Math.min(overtimeHours, 2)
+    const rest = Math.max(0, overtimeHours - 2)
+    overtimePay = hourlyRate * (first2h * 1.5 + rest * 2.0)
+  }
+
+  return { hourlyRate, overtimeHours, overtimeMultiplier, overtimePay }
+}
+
+// Pension estimate
+
+/**
+ * Минимальная пенсия по возрасту — 983 000 сум/мес. с 1 июля 2026 (Указ ПФ-115
+ * от 23.06.2026, повышение на 7%). Назначенная пенсия не может быть ниже.
+ */
+export const MIN_OLD_AGE_PENSION = 983_000
+
+export interface PensionResult {
+  currentAge: number
+  retirementAge: number
+  yearsToRetirement: number
+  estimatedMonthlyPension: number
+  pensionAsPercentOfSalary: number
+  /** Расчёт по проценту от заработка оказался ниже минимума — начислен минимум. */
+  minimumApplied: boolean
+}
+
+export function calculatePension(
+  currentAge: number,
+  isMale: boolean,
+  averageMonthlySalary: number,
+  yearsOfService: number
+): PensionResult {
+  // Statutory retirement age in Uzbekistan:
+  // Men — 60 (25 years of service required)
+  // Women — 55 (20 years of service required); 54 with full 20-year record
+  const retirementAge = isMale ? 60 : 55
+  const yearsToRetirement = Math.max(0, retirementAge - currentAge)
+
+  // Simplified pension calculation for UZ
+  // Base: 55% of average salary for 25 years (men) / 20 years (women) of service
+  // +1% for each additional year
+  const requiredYears = isMale ? 25 : 20
+  const basePercent = 55
+  const additionalYears = Math.max(0, yearsOfService - requiredYears)
+  const pensionPercent = Math.min(75, basePercent + additionalYears)
+
+  // Процент от заработка — не вся история: назначенная пенсия не бывает ниже
+  // минимальной, а калькулятор показывал и 660 000 при низкой зарплате.
+  const byPercent = averageMonthlySalary * (pensionPercent / 100)
+  const minimumApplied = byPercent > 0 && byPercent < MIN_OLD_AGE_PENSION
+  const estimatedMonthlyPension = minimumApplied ? MIN_OLD_AGE_PENSION : byPercent
+
+  return {
+    currentAge,
+    retirementAge,
+    yearsToRetirement,
+    estimatedMonthlyPension,
+    pensionAsPercentOfSalary: pensionPercent,
+    minimumApplied,
+  }
+}

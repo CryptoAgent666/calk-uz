@@ -1,0 +1,231 @@
+import { Capacitor } from "@capacitor/core"
+import { emitIap } from "@/lib/telemetry"
+
+/**
+ * RevenueCat: разовая покупка «Убрать рекламу» (non-consumable / durable one-time).
+ *
+ * Модель: в дашборде RevenueCat entitlement `ad_free` привязан к продукту
+ * `removeads` (App Store non-consumable + Google Play one-time durable).
+ * Покупка одна, навсегда, привязана к Apple ID / Google-аккаунту → переживает
+ * переустановку и работает на всех устройствах пользователя (через restore).
+ *
+ * - На вебе (сайт calk.uz) — полный no-op: нативный плагин не грузится.
+ * - Статус ad-free кэшируется в localStorage, чтобы isAdFree() отвечал
+ *   СИНХРОННО и мгновенно (важно для гейта рекламы до ответа сети / офлайн).
+ *
+ * ⚠️ Нативный плагин RevenueCat живёт в БИНАРЕ Android-приложения (.aab) — доедет
+ *    до пользователей только новой сборкой в стор (НЕ через OTA/живой сайт). IAP
+ *    ревьюится вместе со сборкой. iOS-приложение (нативный UIKit) реализует
+ *    покупку отдельно нативным Swift-SDK — там этот файл неактивен.
+ */
+
+const ENTITLEMENT_ID = "ad_free"
+// Team-unique store product ID. App Store product IDs are unique across the whole
+// Apple team (SRKYS78RMQ), and the KZ app already claimed bare "removeads" — so UZ
+// must namespace it. Kept identical on Play for a single code path.
+const REMOVE_ADS_PRODUCT_ID = "uz.calk.calculator.removeads"
+const CACHE_KEY = "calk_ad_free"
+
+/**
+ * Покупки доступны только когда в БИНАРЕ зарегистрирован нативный модуль
+ * RevenueCat. Критично: JS прилетает с живого сайта и в старые сборки
+ * (build ≤5 без RevenueCat) — без этого гейта там показывались бы мёртвые
+ * кнопки «Убрать рекламу» (native bridge отсутствует, покупка невозможна).
+ */
+export function purchasesAvailable(): boolean {
+  return Capacitor.isNativePlatform() && Capacitor.isPluginAvailable("Purchases")
+}
+
+/**
+ * Запасная цена для UI, пока RevenueCat не вернул локализованную (getRemoveAdsPrice).
+ *
+ * ⚠️ НАМЕРЕННО отличается от iOS-фолбэка ($1.99 в PurchasesManager.swift) — это
+ * ОДИН ценовой тир в валютах своих сторов: Google Play в Узбекистане ценит в
+ * сумах (24 900 сум), App Store для UZ — в долларах ($1.99). НЕ «синхронизировать»
+ * их друг с другом (этот файл — Android/веб, Swift-файл — iOS).
+ */
+export const REMOVE_ADS_FALLBACK_PRICE = "24 900 сум"
+
+// Публичные SDK-ключи RevenueCat (Project Settings → API keys, по одному на
+// платформу). Их МОЖНО держать в клиенте — это НЕ секретные `sk_`-ключи.
+// Задаются через env (NEXT_PUBLIC_RC_*) в .github/workflows/deploy.yml.
+const RC_API_KEYS = {
+  ios: process.env.NEXT_PUBLIC_RC_IOS_KEY ?? "appl_XXXXXXXXXXXXXXXXXXXXXXXX",
+  android: process.env.NEXT_PUBLIC_RC_ANDROID_KEY ?? "goog_XXXXXXXXXXXXXXXXXXXXXXXX",
+}
+
+function readCache(): boolean {
+  try {
+    return localStorage.getItem(CACHE_KEY) === "1"
+  } catch {
+    return false
+  }
+}
+function writeCache(v: boolean): void {
+  try {
+    localStorage.setItem(CACHE_KEY, v ? "1" : "0")
+  } catch {
+    /* ignore */
+  }
+}
+
+let adFree = typeof window !== "undefined" ? readCache() : false
+const listeners = new Set<(v: boolean) => void>()
+
+/** Синхронно: реклама отключена? Читает кэш — мгновенно и офлайн. */
+export function isAdFree(): boolean {
+  return adFree
+}
+
+/** Подписка на изменение статуса (UI, скрытие баннера после покупки). Возвращает unsubscribe. */
+export function onAdFreeChange(cb: (v: boolean) => void): () => void {
+  listeners.add(cb)
+  return () => {
+    listeners.delete(cb)
+  }
+}
+
+function setAdFree(v: boolean): void {
+  if (v === adFree) return
+  adFree = v
+  writeCache(v)
+  listeners.forEach((cb) => {
+    try {
+      cb(v)
+    } catch {
+      /* ignore */
+    }
+  })
+}
+
+async function loadSdk() {
+  return import("@revenuecat/purchases-capacitor")
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function hasEntitlement(customerInfo: any): boolean {
+  return !!customerInfo?.entitlements?.active?.[ENTITLEMENT_ID]
+}
+
+/** Инициализация RevenueCat при старте приложения. No-op на вебе и в бинарях без модуля. */
+export async function initPurchases(): Promise<void> {
+  if (!purchasesAvailable()) return
+
+  let Purchases: typeof import("@revenuecat/purchases-capacitor").Purchases
+  try {
+    ;({ Purchases } = await loadSdk())
+  } catch {
+    return
+  }
+
+  try {
+    const platform = Capacitor.getPlatform()
+    const apiKey = platform === "ios" ? RC_API_KEYS.ios : RC_API_KEYS.android
+    await Purchases.configure({ apiKey })
+
+    // Любые изменения entitlement (покупка, restore, синк с другого устройства).
+    await Purchases.addCustomerInfoUpdateListener((info) => {
+      setAdFree(hasEntitlement(info))
+    })
+
+    // Актуализировать статус из стора (тихо подтягивает и уже совершённые покупки).
+    try {
+      const { customerInfo } = await Purchases.getCustomerInfo()
+      setAdFree(hasEntitlement(customerInfo))
+    } catch {
+      /* офлайн — остаёмся на закэшированном значении */
+    }
+  } catch {
+    /* конфиг не удался → безопасный дефолт: реклама показывается */
+  }
+}
+
+/**
+ * Запрос продукта в сторе.
+ *
+ * ⚠️ `type` ОБЯЗАТЕЛЕН. Нативный Android-плагин по умолчанию спрашивает Google
+ * Play про ПОДПИСКУ (`call.getString("type") ?: "SUBSCRIPTION"`,
+ * PurchasesPlugin.kt), а «убрать рекламу» — разовая покупка. Без параметра Play
+ * не находил ничего, список приходил пустым → цена null → пользователь видел
+ * «продукт ещё активируется в Google Play». На iOS параметр игнорируется —
+ * поэтому там покупка работала, а на Android нет.
+ */
+type ProductCategory = NonNullable<
+  Parameters<typeof import("@revenuecat/purchases-capacitor").Purchases.getProducts>[0]["type"]
+>
+// Enum PRODUCT_CATEGORY лежит в транзитивной зависимости SDK: импортировать его
+// в рантайме — тянуть лишний чанк ради одной строки. Берём литерал, а тип
+// выводим из сигнатуры самого getProducts, так что опечатка не скомпилируется.
+// Тот же приём на calk.kz, где эта схема уже приносит реальные покупки.
+const NON_SUBSCRIPTION = "NON_SUBSCRIPTION" as ProductCategory
+
+async function fetchRemoveAdsProduct() {
+  const { Purchases } = await loadSdk()
+  const { products } = await Purchases.getProducts({
+    productIdentifiers: [REMOVE_ADS_PRODUCT_ID],
+    type: NON_SUBSCRIPTION,
+  })
+  return products[0] ?? null
+}
+
+/** Локализованная цена продукта (напр. «49 000 сум») для кнопки, или null. */
+export async function getRemoveAdsPrice(): Promise<string | null> {
+  if (!purchasesAvailable()) return null
+  try {
+    return (await fetchRemoveAdsProduct())?.priceString ?? null
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Исход покупки. Раньше был просто boolean, и вызывающий не мог отличить «юзер
+ * передумал» от «стор не отдал продукт» — а сообщать об этом надо по-разному.
+ */
+export type BuyResult = "ok" | "cancelled" | "unavailable" | "failed"
+
+/** Купить «Убрать рекламу». */
+export async function buyRemoveAds(): Promise<BuyResult> {
+  if (!purchasesAvailable()) return "unavailable"
+  emitIap("purchase_tapped")
+  try {
+    const { Purchases } = await loadSdk()
+    const product = await fetchRemoveAdsProduct()
+    if (!product) {
+      emitIap("purchase_failed")
+      return "unavailable"
+    }
+    const { customerInfo } = await Purchases.purchaseStoreProduct({ product })
+    const ok = hasEntitlement(customerInfo)
+    setAdFree(ok)
+    return ok ? "ok" : "failed"
+  } catch (e) {
+    // Отмена пользователем — не ошибка; различаем её от реального сбоя для воронки.
+    const cancelled = isUserCancelled(e)
+    emitIap(cancelled ? "purchase_cancelled" : "purchase_failed")
+    return cancelled ? "cancelled" : "failed"
+  }
+}
+
+/** RevenueCat отдаёт отмену как `userCancelled: true` (или code/message с "cancel"). */
+function isUserCancelled(e: unknown): boolean {
+  if (!e || typeof e !== "object") return false
+  const err = e as { userCancelled?: boolean; code?: string | number; message?: string }
+  if (err.userCancelled) return true
+  const hay = `${err.code ?? ""} ${err.message ?? ""}`.toUpperCase()
+  return hay.includes("CANCEL")
+}
+
+/** Восстановить покупку — ОБЯЗАТЕЛЬНАЯ кнопка для Apple (Guideline 3.1.1). */
+export async function restorePurchases(): Promise<boolean> {
+  if (!purchasesAvailable()) return false
+  try {
+    const { Purchases } = await loadSdk()
+    const { customerInfo } = await Purchases.restorePurchases()
+    const ok = hasEntitlement(customerInfo)
+    setAdFree(ok)
+    return ok
+  } catch {
+    return false
+  }
+}

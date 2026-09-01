@@ -1,0 +1,23 @@
+{
+  "/[locale]/about/page": "app/[locale]/about/page.js",
+  "/[locale]/author/[slug]/page": "app/[locale]/author/[slug]/page.js",
+  "/[locale]/calculator/[slug]/opengraph-image/route": "app-edge-has-no-entrypoint",
+  "/[locale]/calculator/[slug]/page": "app/[locale]/calculator/[slug]/page.js",
+  "/[locale]/category/[id]/page": "app/[locale]/category/[id]/page.js",
+  "/[locale]/contact/page": "app/[locale]/contact/page.js",
+  "/[locale]/methodology/page": "app/[locale]/methodology/page.js",
+  "/[locale]/opengraph-image/route": "app-edge-has-no-entrypoint",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/privacy/page": "app/[locale]/privacy/page.js",
+  "/[locale]/terms/page": "app/[locale]/terms/page.js",
+  "/[locale]/updates/page": "app/[locale]/updates/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/exchange-rates/route": "app/api/exchange-rates/route.js",
+  "/api/iap-telemetry/route": "app/api/iap-telemetry/route.js",
+  "/api/indexnow/route": "app/api/indexnow/route.js",
+  "/api/telegram/webhook/route": "app/api/telegram/webhook/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js"
+}
