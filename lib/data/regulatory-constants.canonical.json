@@ -94,7 +94,12 @@
     "last_verified": "2026-06-30",
     "verify_note": "2026-06-30 LLM-verify of 21 DATA_HUB-flagged constants: 12 confirmed current, 3 fixed in code (apartment notary, apartment registration, EV recycling fee) + prose, 2 false-positive 'stale' cleared (vehicle registration 13.04 БРВ, per-cc duty ladder), 1 uncertain (CERTIFICATION_FEE_USD).",
     "last_reconciled": "2026-09-01",
-    "last_rollover": "УП-115 от 23.06.2026 — БРВ 440000, МРОТ 1360000 с 01.09.2026"
+    "last_rollover": "УП-115 от 23.06.2026 — БРВ 440000, МРОТ 1360000 с 01.09.2026",
+    "last_tier2_sweep": {
+      "date": "2026-09-10",
+      "scope": "5 констант по алерту монитора свежести",
+      "result": "все current"
+    }
   },
   "constants": [
     {
@@ -455,13 +460,18 @@
         "lib/calculators/social.ts:249"
       ],
       "last_updated_hint": "No year marker in file",
-      "source_hint": "lex.uz (Закон РУз 'О государственном пенсионном обеспечении граждан')",
+      "source_hint": "lex.uz/docs/112312 — ст. 7 (возраст и стаж), ст. 12-1 (54 года для женщин)",
       "conflict": false,
       "status": "current",
-      "notes": "HARDCODED in social.ts. Statutory retirement age: men 60 (25 yrs service required), women 55 (20 yrs required; 54 with full record per comment). Required-years thresholds (25/20) are also hardcoded. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
+      "notes": "HARDCODED in social.ts. Statutory retirement age: men 60 (25 yrs service required), women 55 (20 yrs required; 54 with full record per comment). Required-years thresholds (25/20) are also hardcoded. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось. || tier2 2026-09-10: подтверждено ДОСЛОВНО по действующей редакции lex.uz/docs/112312 (ст. 7: мужчины 60 лет / стаж 25, женщины 55 лет / стаж 20; ст. 12-1: женщины со стажем 20 лет по пунктам «а»—«г» и «к» ч.1 ст. 37 — в 54 года, ред. ЗРУ-922 от 18.03.2024). Последняя редакция закона — ЗРУ-1066 от 19.05.2025, ст. 7 и 12-1 не затрагивает; поправок в 2026 нет. ВНИМАНИЕ на будущие алерты: (а) повышение 60→63 / 55→58 обсуждается Пенсионным фондом с 09.2025, НО законом не стало — это проект; (б) волна публикаций 02–07.2026 «женщинам разрешат в 54» — неверное прочтение: с 01.06.2026 автоматизируется НАЗНАЧЕНИЕ уже существующего с 2024 права, сама норма не новая.",
       "official_value": "{\"male\":60,\"female\":55}",
-      "source_url": "https://bankchart.uz/stati/pensiya_po_vozrastu_v_uzbekistane_komu_polozhena_kak_oformit",
-      "last_verified": "2026-08-18"
+      "source_url": "https://lex.uz/docs/112312",
+      "last_verified": "2026-09-10",
+      "source_title": "Закон РУз от 03.09.1993 № 938-XII «О государственном пенсионном обеспечении граждан», ст. 7 и 12-1 (действующая редакция, lex.uz)",
+      "verify_confidence": "high",
+      "verify_note": "Ст. 7 дословно: «мужчины — по достижении 60 лет и при стаже работы не менее 25 лет; женщины — по достижении 55 лет и при стаже работы не менее 20 лет». Изменений на 10.09.2026 нет.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2-primary-lex.uz-2026-09-10"
     },
     {
       "id": "social.ts__calculateSickLeave/Maternity.calendarDaysIn12Months (default 365)",
@@ -624,13 +634,18 @@
         "lib/calculators/social.ts:240-249"
       ],
       "last_updated_hint": null,
-      "source_hint": "lex.uz / mehnat.uz (пенсионный возраст и стаж)",
+      "source_hint": "lex.uz/docs/112312 — ст. 7 (возраст и стаж), ст. 12-1 (54 года для женщин)",
       "conflict": false,
       "status": "current",
-      "notes": "Statutory pension age and required service years. Comment also notes women 54 with full 20-yr record. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
+      "notes": "Statutory pension age and required service years. Comment also notes women 54 with full 20-yr record. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось. || tier2 2026-09-10: подтверждено ДОСЛОВНО по действующей редакции lex.uz/docs/112312 (ст. 7: мужчины 60 лет / стаж 25, женщины 55 лет / стаж 20; ст. 12-1: женщины со стажем 20 лет по пунктам «а»—«г» и «к» ч.1 ст. 37 — в 54 года, ред. ЗРУ-922 от 18.03.2024). Последняя редакция закона — ЗРУ-1066 от 19.05.2025, ст. 7 и 12-1 не затрагивает; поправок в 2026 нет. ВНИМАНИЕ на будущие алерты: (а) повышение 60→63 / 55→58 обсуждается Пенсионным фондом с 09.2025, НО законом не стало — это проект; (б) волна публикаций 02–07.2026 «женщинам разрешат в 54» — неверное прочтение: с 01.06.2026 автоматизируется НАЗНАЧЕНИЕ уже существующего с 2024 права, сама норма не новая.",
       "official_value": "men: 60 (25 yrs); women: 55 (20 yrs)",
-      "source_url": "https://bankchart.uz/stati/pensiya_po_vozrastu_v_uzbekistane_komu_polozhena_kak_oformit",
-      "last_verified": "2026-08-18"
+      "source_url": "https://lex.uz/docs/112312",
+      "last_verified": "2026-09-10",
+      "source_title": "Закон РУз от 03.09.1993 № 938-XII «О государственном пенсионном обеспечении граждан», ст. 7 и 12-1 (действующая редакция, lex.uz)",
+      "verify_confidence": "high",
+      "verify_note": "Ст. 7 дословно: «мужчины — по достижении 60 лет и при стаже работы не менее 25 лет; женщины — по достижении 55 лет и при стаже работы не менее 20 лет». Изменений на 10.09.2026 нет.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2-primary-lex.uz-2026-09-10"
     },
     {
       "id": "social.ts__sick leave experience percent (PKM #796)",
@@ -1237,13 +1252,18 @@
         "lib/data/calculator-tables.ts:189"
       ],
       "last_updated_hint": "2025 (file header), but inline code comments say '1% from 2026' — freshness flag",
-      "source_hint": "soliq.uz / lex.uz (нормы о самозанятых)",
+      "source_hint": "lex.uz/docs/7951016 (ЗРУ-1108, ст. 467 НК); ПП-247 от 12.08.2025",
       "conflict": false,
       "status": "current",
-      "notes": "Self-employed tax rate 1%. Same value hardcoded in tax.ts calculateSelfEmployedTax ('1% from 2026') and business.ts calculateIPTax self_employed regime. || tier2 2026-08-18: 1% подтверждено (ПП-247 от 12.08.2025, НК-2026): единая ставка 1% для самозанятых и ИП с оборотом до 1 млрд сум, порог необлагаемых 100 млн сум отменён — налог с первого сума.",
+      "notes": "Self-employed tax rate 1%. Same value hardcoded in tax.ts calculateSelfEmployedTax ('1% from 2026') and business.ts calculateIPTax self_employed regime. || tier2 2026-08-18: 1% подтверждено (ПП-247 от 12.08.2025, НК-2026): единая ставка 1% для самозанятых и ИП с оборотом до 1 млрд сум, порог необлагаемых 100 млн сум отменён — налог с первого сума. || tier2 2026-09-10: 1% подтверждена, изменений нет. Соцналог самозанятых — ОТДЕЛЬНЫЙ и ДОБРОВОЛЬНЫЙ платёж (ч.2 ст. 408 НК), минимум 1 БРВ в ГОД (440 000 сум с 01.09.2026), повышен с 0,5 БРВ законом ЗРУ-1117 от 05.02.2026; не путать со ставкой 1% и с ежемесячным платежом ИП. Watch-item: пересмотр порядка соцналога единым платежом для ИП и самозанятых обсуждается с 07.2026, на 10.09.2026 НЕ принят.",
       "official_value": "0.01",
-      "source_url": "https://buxgalter.uz/publish/doc/text212712_nk-2026_izmeneniya_po_nalogu_s_oborota_dlya_ip_i_samozanyatyh",
-      "last_verified": "2026-08-18"
+      "source_url": "https://lex.uz/docs/7951016",
+      "last_verified": "2026-09-10",
+      "source_title": "ЗРУ-1108 от 25.12.2025 — ставка 1% кодифицирована в ст. 467 НК РУз с 01.01.2026 (lex.uz)",
+      "verify_confidence": "high",
+      "verify_note": "Ставка 1% установлена подп. «б» п. 5 ПП-247 от 12.08.2025 и кодифицирована в ст. 467 НК законом ЗРУ-1108 от 25.12.2025 с 01.01.2026; тем же законом переписаны ст. 461 и 462, а освобождение самозанятых с доходом до 100 млн сум упразднено. Отдельной повышенной ступени нет: 4% — ставка налога с оборота для юрлиц.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2-primary-lex.uz-2026-09-10"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.SOCIAL_TAX",
@@ -2244,18 +2264,18 @@
         "lib/data/calculator-case-studies.ts:92"
       ],
       "last_updated_hint": null,
-      "source_hint": "lex.uz/ru/docs/4674893 — НК РУз, ставки НДФЛ для нерезидентов",
+      "source_hint": "lex.uz/ru/docs/4674893 — ст. 382 (нерезиденты-физлица), ст. 381 (резиденты), ст. 353 (нерезиденты-юрлица)",
       "conflict": false,
       "status": "current",
-      "notes": "Non-resident PIT (НДФЛ для нерезидентов) = 20% on Uzbek-source income. Ledger has NDFL 12% and NDFL_IT_PARK 7.5% but NOT the 20% non-resident rate. Stated as the rule throughout. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
-      "official_value": "0.12 (general non-resident Uzbek-source income, incl. employment); 0.10 on dividends/interest; 0.06 on freight income. The 20% rate was abolished.",
-      "source_url": "https://sv.zarnews.uz/post/nalogi-s-nerezidentov",
-      "source_title": "Налоги с нерезидентов (Самаркандский вестник) — ст. 382 НК РУз",
-      "verify_note": "Non-resident PIT on income other than dividends/interest/freight was cut from 20% to 12% (Art. 382 НК); dividends & interest 10%, freight 6% — so a flat 0.20 is no longer correct for 2026.",
+      "notes": "НДФЛ нерезидента-физлица по доходам из источников в Узбекистане — 12% (как у резидентов); дивиденды и проценты — 10%; фрахт — 6%. || 2026-07-03 phase4-reconcile: правка применена в коде и прозе (коммиты d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed). || tier2 2026-09-10: перепроверено по первоисточнику, изменений нет; единственная правка 2026 по нерезидентам (ЗРУ-1108 от 25.12.2025) касается механизма зачёта налога при выплате дивидендов (ст. 354), а не ставок. ! ФОРМУЛИРОВКА: «ставка 20% для нерезидентов отменена» верна ТОЛЬКО для физлиц. Для нерезидентов-ЮРЛИЦ ст. 353 сохраняет 20% на «иные доходы» (дивиденды/проценты/страховые премии 10%, телеком и фрахт 6%, кредиты иностранных финансовых институтов под инвестпроекты и корсчета 0%). Не обобщать.",
+      "official_value": "Ст. 382 НК: дивиденды и проценты — 10%; доходы от фрахта (международные перевозки) — 6%; доходы по трудовым и ГПХ договорам и все прочие — 12%. Ставка 20% для ФИЗЛИЦ-нерезидентов отменена (УП-101 от 08.04.2022 с 01.05.2022, кодифицировано ЗРУ-785 от 26.07.2022).",
+      "source_url": "https://lex.uz/ru/docs/4674893",
+      "source_title": "НК РУз, ст. 382 «Налоговые ставки для физических лиц-нерезидентов» (ред. ЗРУ-785 от 26.07.2022), lex.uz",
+      "verify_note": "Ставки 10/6/12 подтверждены дословно по действующей редакции ст. 382. Для резидентов (ст. 381) — 12%, дивиденды и проценты 5%.",
       "verify_confidence": "high",
-      "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2-primary-lex.uz-2026-09-10",
+      "last_verified": "2026-09-10"
     },
     {
       "id": "calculator-articles.ts__VAT_MANDATORY_REGISTRATION_THRESHOLD_BRV",
@@ -2723,18 +2743,18 @@
         "lib/data/calculator-articles.ts:166"
       ],
       "last_updated_hint": null,
-      "source_hint": "lex.uz/docs/6257288 — 11 праздничных нерабочих дней в году",
+      "source_hint": "lex.uz — ст. 208 ТК РУз, 9 праздничных нерабочих дней",
       "conflict": false,
       "status": "current",
-      "notes": "11 official non-working public holidays per year (not counted as leave days). Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: Подтверждено: 9 праздничных нерабочих дней (1 января, 8 марта, Рамазан хайит, 21 марта Навруз, 9 мая, Курбан хайит, 1 сентября, 1 октября, 8 декабря). Дополнительные выходные и переносы указом президента на 2026 — отдельно, в счёт 9 не входят.",
+      "notes": "11 official non-working public holidays per year (not counted as leave days). Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: Подтверждено: 9 праздничных нерабочих дней (1 января, 8 марта, Рамазан хайит, 21 марта Навруз, 9 мая, Курбан хайит, 1 сентября, 1 октября, 8 декабря). Дополнительные выходные и переносы указом президента на 2026 — отдельно, в счёт 9 не входят. || tier2 2026-09-10: подтверждено, уверенность поднята medium→high. Нового статутного праздника на 2026 не добавлено. 31 августа — НЕ статутный праздник: это День памяти жертв репрессий (памятная дата), а в 2026 ещё и дополнительный выходной по УП-257 от 24.12.2025 как мост к 1 сентября. Допвыходные и переносы 2026 (2 января, 28–29 мая, 31 августа) в счёт девяти не входят. Особенность 2026: Руза хайит (20.03) и Навруз (21.03) идут подряд — это два разных дня из девяти.",
       "official_value": "9 official non-working public holidays per year (7 fixed secular: 1 Jan, 8 Mar, 21 Mar, 9 May, 1 Sep, 1 Oct, 8 Dec + 2 religious: first days of Ruza Hayit and Kurban Hayit). Labor Code Art. 208.",
       "source_url": "https://buxgalter.uz/publish/doc/text212379_proizvodstvennyy_kalendar_2026",
-      "source_title": "Gazeta.uz — Какие дни будут выходными в 2026 году",
-      "verify_note": "Statutory list under Art. 208 (ex-131) is 9 holidays, not 11; the '11' value is incorrect (extra government-decreed long-weekend transfer days vary yearly and are not part of the fixed statutory count).",
-      "verify_confidence": "medium",
-      "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-08-18"
+      "source_title": "Трудовой кодекс РУз от 28.10.2022, ст. 208 «Праздничные нерабочие дни» (перекрёстно подтверждено ст. 221 и производственным календарём 2026)",
+      "verify_note": "Перечень ст. 208 — 7 фиксированных дат (1 января, 8 марта, 21 марта, 9 мая, 1 сентября, 1 октября, 8 декабря) + первые дни Руза хайит и Курбан хайит = 9. Число независимо подтверждается ст. 221 ТК, которая прямо оперирует «девятью праздничными нерабочими днями», не включаемыми в дни отпуска.",
+      "verify_confidence": "high",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2-primary-lex.uz-2026-09-10",
+      "last_verified": "2026-09-10"
     },
     {
       "id": "calculator-articles.ts__VACATION_PAY_DEADLINE",
@@ -2848,7 +2868,7 @@
       "file": "lib/data/calculator-articles.ts",
       "key": "OVERTIME_VIOLATION_FINE_BRV",
       "value": "5-10",
-      "unit": "BRV-multiple (5-10 БРВ = 2,200,000 - 4,400,000 UZS at БРВ 440,000)",
+      "unit": "BRV-multiple (5-10 БРВ = 2 200 000 – 4 400 000 сум при БРВ 440 000)",
       "law": "Кодекс об административной ответственности РУз",
       "theme": "admin_fine",
       "is_gov_regulated": true,
@@ -2857,18 +2877,18 @@
         "lib/data/calculator-articles.ts:1566"
       ],
       "last_updated_hint": null,
-      "source_hint": "lex.uz — штраф за нарушение норм о сверхурочных 5-10 БРВ",
+      "source_hint": "lex.uz/ru/docs/97661 — ст. 49 КоАО, санкции в БРВ",
       "conflict": false,
       "status": "current",
-      "notes": "Fine on officials for breaching overtime-duration rules = 5-10 БРВ. Not in ledger. [completeness pass 2026-06-25] || 2026-09-01 verify: current. Ст. 49 КоАО — 5-10 БРВ на должностных лиц за первое нарушение; повторное в течение года (кроме незаконного увольнения) — 10-15 БРВ. || 2026-09-01: поля unit/official_value несли суммы от старой БРВ/МРОТ либо восстанавливали уже опровергнутое чтение базы; гард сверяет только value vs official_value численно, а свободный текст не читает — поэтому не ловилось.",
-      "official_value": "5-10 БРВ on officials for a first violation of labour/overtime rules (= 2,200,000 - 4,400,000 UZS at БРВ 440,000); 10-15 БРВ on repeat within a year.",
-      "source_url": "https://www.kadry.uz/article/3106-sverhurochnaya-rabota-otvety-na-chastye-voprosy-kadrovika",
-      "source_title": "Kadry.uz — сверхурочная работа: лимиты и ответственность",
-      "verify_note": "Confirmed: officials' fine for breaching working-time/overtime rules is 5-10 БРВ (first) / 10-15 БРВ (repeat) under the Administrative Code; the 2.06-4.12 млн range implied is consistent with БРВ=412,000.",
+      "notes": "Штраф на должностных лиц за нарушение норм о продолжительности сверхурочных работ — 5–10 БРВ (ст. 49 КоАО). || tier2 2026-09-10: подтверждено дословно по lex.uz. База — БРВ, и это НЕ вопрос интерпретации: в действующей редакции написано «базовых расчетных величин» (перевод из МРЗП сделан ЗРУ-586 от 03.12.2019). МРОТ здесь ни при чём. || Ложный триггер монитора: статья norma.uz «Штрафы за нарушения трудового законодательства повысили» — от 29.08.2019, она и зафиксировала переход 2–5 → 5–10; это не свежее повышение. || Добавлена ранее отсутствовавшая ч.3: 10–20 БРВ за то же нарушение в отношении несовершеннолетнего.",
+      "official_value": "Ст. 49 КоАО: ч.1 — на должностных лиц 5–10 БРВ (2 200 000 – 4 400 000 сум при БРВ 440 000); ч.2 — повторно в течение года, кроме заведомо незаконного увольнения, 10–15 БРВ (4 400 000 – 6 600 000); ч.3 — то же в отношении несовершеннолетнего, 10–20 БРВ (4 400 000 – 8 800 000).",
+      "source_url": "https://lex.uz/ru/docs/97661",
+      "source_title": "Кодекс РУз об административной ответственности, ст. 49 «Нарушение законодательства о труде и об охране труда» (lex.uz)",
+      "verify_note": "Дословно по действующей редакции: «Нарушение должностным лицом законодательства о труде и охране труда — влечет наложение штрафа от пяти до десяти базовых расчетных величин». Санкция в этом размере установлена ЗРУ-558 от 28.08.2019 и переведена из МРЗП в БРВ ЗРУ-586 от 03.12.2019; с тех пор не менялась.",
       "verify_confidence": "high",
-      "verified_date": "2026-06-27",
-      "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-09-01",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2-primary-lex.uz-2026-09-10",
+      "last_verified": "2026-09-10",
       "source_url_verify": "https://www.norma.uz/novoe_v_zakonodatelstve/shtrafy_za_narusheniya_trudovogo_zakonodatelstva_povysili"
     },
     {
