@@ -20,6 +20,21 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-09-10",
+    dateLabelRu: "10 сентября 2026",
+    dateLabelUz: "2026-yil 10-sentabr",
+    items: [
+      {
+        titleRu: "Проценты по вкладам: резиденты НДФЛ не платят",
+        titleUz: "Omonat foizlari: rezidentlar JShShS to'lamaydi",
+        descRu:
+          "Статьи про вклады, сложные проценты и сравнение депозитов утверждали, что проценты по вкладам облагаются НДФЛ по ставке 5% для резидентов и 10% для нерезидентов. Верна только вторая половина. Проценты и выигрыши по вкладам в банках прямо названы в перечне доходов, не подлежащих налогообложению (п. 13 ст. 378 Налогового кодекса), — льгота действует с 1998 года, и налоговый резидент Узбекистана НДФЛ с процентов по вкладу не платит. Ставка 5% из ст. 381 относится к прочим процентам — по займам, облигациям, сберегательным сертификатам, — но до вкладов не доходит: доход исключается из налоговой базы раньше, чем применяется ставка. С нерезидентов банк по-прежнему удерживает 10% при выплате процентов, потому что льготы раздела о НДФЛ на них не распространяются (п. 2 ч. 1 ст. 366 НК); снизить или вернуть налог можно только по соглашению об избежании двойного налогообложения, предъявив сертификат резидентства. Исправлено 13 мест в русских и узбекских текстах. Обсуждаемое с июля 2026 предложение облагать проценты по депозитам ставкой 5% официально не внесено и в силу не вступило.",
+        descUz:
+          "Omonatlar, murakkab foizlar va depozitlarni taqqoslash haqidagi maqolalarda omonat foizlari rezidentlar uchun 5%, norezidentlar uchun 10% stavkada JShShSga tortiladi deyilgan edi. Faqat ikkinchi qismi to'g'ri. Banklardagi omonatlar bo'yicha foizlar va yutuqlar soliqqa tortilmaydigan daromadlar ro'yxatida bevosita ko'rsatilgan (Soliq kodeksi 378-moddasi 13-bandi) — imtiyoz 1998-yildan amal qiladi va O'zbekiston soliq rezidenti omonat foizlaridan JShShS to'lamaydi. 381-moddadagi 5% stavka boshqa foizlarga — qarzlar, obligatsiyalar, jamg'arma sertifikatlariga — tegishli, lekin omonatlarga yetib bormaydi: daromad stavka qo'llanilishidan oldin soliq bazasidan chiqariladi. Norezidentlardan bank avvalgidek foizlarni to'lashda 10% ushlab qoladi, chunki JShShS bo'limidagi imtiyozlar ularga tatbiq etilmaydi (SK 366-moddasi 1-qismi 2-bandi); soliqni faqat qo'sh soliqqa tortishning oldini olish to'g'risidagi bitim asosida, rezidentlik sertifikatini taqdim etib, kamaytirish yoki qaytarish mumkin. Rus va o'zbek matnlarida 13 ta joy tuzatildi. 2026-yil iyulidan muhokama qilinayotgan depozit foizlarini 5% stavkada soliqqa tortish taklifi rasman kiritilmagan va kuchga kirmagan.",
+      },
+    ],
+  },
+  {
     date: "2026-09-01",
     dateLabelRu: "1 сентября 2026",
     dateLabelUz: "2026-yil 1-sentabr",
