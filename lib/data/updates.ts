@@ -25,6 +25,30 @@ export const UPDATES: UpdateBlock[] = [
     dateLabelUz: "2026-yil 10-sentabr",
     items: [
       {
+        titleRu: "Упрощённый НДС 6% для общепита, торговли и услуг",
+        titleUz: "Umumiy ovqatlanish, savdo va xizmatlar uchun soddalashtirilgan 6% QQS",
+        descRu:
+          "Указом Президента № УП-100 от 26 мая 2026 года у субъектов предпринимательства, основной вид деятельности которых — общественное питание, торговля или оказание услуг, появилась добровольная альтернатива обычному НДС: ставка 6% со всего оборота по реализации при налоге на прибыль 0%. Режим действует до 1 января 2030 года. Права на зачёт входного НДС у продавца нет, отрицательная разница списывается — но покупатель у такого поставщика зачёт получает. Импорт облагается по 12%, экспорт — по 6% без нулевой ставки. Крупным налогоплательщикам и компаниям с госдолей от 50% режим недоступен, ограничений по обороту и числу работников у него нет. Добавили описание в статью про НДС с двумя оговорками: фактически ставка применяется не ранее 1 июля 2026 года, а изменения в Налоговый кодекс под этот режим до сих пор не внесены. Попутно исправили название указа: на lex.uz он значится как УП-100, а не ПФ-100 — «ПФ» это узбекский префикс Prezident Farmoni, в русских текстах он не используется.",
+        descUz:
+          "Prezidentning 2026-yil 26-maydagi UP-100 Farmoni bilan asosiy faoliyat turi umumiy ovqatlanish, savdo yoki xizmat ko'rsatish bo'lgan tadbirkorlik subyektlarida oddiy QQSga ixtiyoriy muqobil paydo bo'ldi: foyda solig'i 0% bo'lganda realizatsiya bo'yicha butun aylanmadan 6% stavka. Rejim 2030-yil 1-yanvarigacha amal qiladi. Sotuvchida kirim QQSni hisobga olish huquqi yo'q, manfiy farq hisobdan chiqariladi — lekin bunday yetkazib beruvchidan sotib oluvchi hisobga olish huquqini oladi. Import 12%, eksport esa nol stavkasiz 6% bilan soliqqa tortiladi. Yirik soliq to'lovchilar va davlat ulushi 50% dan ortiq kompaniyalar uchun rejim mavjud emas, aylanma va xodimlar soni bo'yicha cheklovlari yo'q. QQS haqidagi maqolaga ikkita izoh bilan tavsif qo'shdik: amalda stavka 2026-yil 1-iyuldan oldin qo'llanilmaydi, Soliq kodeksiga esa bu rejim bo'yicha o'zgartishlar hanuz kiritilmagan. Shu bilan birga farmon nomini tuzatdik: lex.uzda u PF-100 emas, UP-100 deb yuritiladi.",
+      },
+      {
+        titleRu: "Налоги ИП: пример считался по ставке 4%, ИНПС убран",
+        titleUz: "YaTT soliqlari: misol 4% stavkada hisoblangan edi, IJPH olib tashlandi",
+        descRu:
+          "На странице калькулятора ИП пример расчёта считал налог с оборота по ставке 4%, хотя FAQ той же статьи и сам калькулятор используют 1% — единую ставку для ИП и самозанятых по ст. 467 НК. Заодно из расчёта убран взнос на ИНПС: со своего предпринимательского дохода ИП его не платит, участие в накопительной пенсионной системе для ИП добровольное (ст. 6 Закона № 702-II), а 0,1% он удерживает только за наёмных работников как налоговый агент. Пример пересчитан: при выручке 30 000 000 сум в месяц налоги составляют 740 000 сум (2,47% от выручки) вместо прежних 1 642 000, годовые — 8 880 000 сум. В сравнении самозанятого с ИП тоже был заложен старый 4%: на самом деле налог с оборота у них одинаковый, 1%, а разницу создаёт социальный налог — ИП платит фиксированный 1 БРВ в месяц даже при нулевой выручке, самозанятый платит его добровольно.",
+        descUz:
+          "YaTT kalkulyatori sahifasida hisoblash misoli aylanma solig'ini 4% stavkada hisoblardi, holbuki o'sha maqolaning FAQi va kalkulyatorning o'zi 1% dan foydalanadi — SKning 467-moddasi bo'yicha YaTT va o'z-o'zini band qilganlar uchun yagona stavka. Shu bilan birga hisobdan IJPH badali olib tashlandi: o'z tadbirkorlik daromadidan YaTT uni to'lamaydi, jamg'arma pensiya tizimida ishtirok etish YaTT uchun ixtiyoriy (702-II sonli Qonunning 6-moddasi), 0,1% ni esa u faqat yollanma xodimlar uchun soliq agenti sifatida ushlab qoladi. Misol qayta hisoblandi: oyiga 30 000 000 so'm tushumda soliqlar avvalgi 1 642 000 o'rniga 740 000 so'mni (tushumning 2,47%) tashkil etadi, yillik — 8 880 000 so'm. O'z-o'zini band qilganni YaTT bilan solishtirishda ham eski 4% qolgan edi: aslida ularning aylanma solig'i bir xil, 1%, farqni esa ijtimoiy soliq yaratadi.",
+      },
+      {
+        titleRu: "Пенсия в 54 года: уточнили, какой именно стаж нужен",
+        titleUz: "54 yoshda pensiya: qanday staj kerakligi aniqlashtirildi",
+        descRu:
+          "Статья о пенсии писала, что выйти на пенсию в 54 года может женщина «с 20-летним трудовым стажем». Формулировка шире закона: ст. 12¹ требует не любого трудового стажа, а 20 лет стажа, засчитываемого по пунктам «а»—«г» и «к» части первой ст. 37 — это работа с уплатой взносов, военная служба и приравненные к ней периоды. Уточнили формулировку. Заодно добавили нижнюю границу, которой не хватало: при неполном стаже (но не менее 7 лет) пенсия назначается в пропорциональном размере, однако не ниже 50% минимальной пенсии по возрасту (ст. 8 в редакции ЗРУ-922 от 18.03.2024). Сами пенсионные возрасты не изменились — мужчины 60, женщины 55; обсуждаемое повышение до 63 и 58 лет остаётся проектом.",
+        descUz:
+          "Pensiya haqidagi maqolada 54 yoshda pensiyaga «20 yillik mehnat stajiga ega» ayol chiqishi mumkinligi yozilgan edi. Bu ifoda qonundan kengroq: 12¹-modda har qanday mehnat stajini emas, 37-modda birinchi qismining «a»—«g» va «k» bandlari bo'yicha hisobga olinadigan 20 yillik stajni talab qiladi — bu badallar to'langan ish, harbiy xizmat va unga tenglashtirilgan davrlar. Ifoda aniqlashtirildi. Shu bilan birga yetishmayotgan quyi chegara qo'shildi: staj to'liq bo'lmaganda (lekin 7 yildan kam bo'lmasa) pensiya mutanosib miqdorda, lekin yoshi bo'yicha minimal pensiyaning 50% idan kam bo'lmagan miqdorda tayinlanadi (18.03.2024-yildagi ZRU-922 tahriridagi 8-modda). Pensiya yoshlari o'zgargani yo'q — erkaklar 60, ayollar 55.",
+      },
+      {
         titleRu: "Проценты по вкладам: резиденты НДФЛ не платят",
         titleUz: "Omonat foizlari: rezidentlar JShShS to'lamaydi",
         descRu:

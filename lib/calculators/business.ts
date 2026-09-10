@@ -43,7 +43,10 @@ export function calculateIPTax(
   // Social contributions for IP (НК ст. 408): the higher of
   //   (a) 1 BRV per month — minimum, paid even at zero income
   //   (b) 12% of net income — actual liability for IPs on the general regime
-  // Self-employed individuals are exempt (НК ст. 437-1).
+  // Самозанятые платят соцналог ДОБРОВОЛЬНО (ч. 2 ст. 408 НК), минимум —
+  // 1 БРВ в ГОД (440 000 сум; поднят с 0,5 БРВ Законом ЗРУ-1117 от 05.02.2026),
+  // и платят его ради зачёта периода в трудовой стаж. Обязанности нет, поэтому
+  // в расчёте берём 0 — но это не «освобождение».
   const socialMinimum = BRV * 12
   const socialActual = regime === 'general' ? annualRevenue * 0.12 : 0
   const socialTax = regime === 'self_employed' ? 0 : Math.max(socialMinimum, socialActual)
