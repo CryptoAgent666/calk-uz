@@ -76,9 +76,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'utilities-total',
     textRu:
-      'Коммунальные услуги в Узбекистане для семьи из 4 человек в Ташкенте (квартира 70 м²) в 2026 после подорожания 1 июня: зимой около 600 000 сум/мес, летом примерно 400 000. Точная сумма сильно зависит от расхода — посчитайте в калькуляторе. Электричество — 650–2 200 сум/кВт·ч (по тарифным ступеням), газ — 1 100–3 300 сум/м³, холодная вода — 3 808 сум/м³.',
+      'Коммунальные услуги в Узбекистане для семьи из 4 человек в Ташкенте (квартира 70 м²) в 2026 после подорожания 1 июня: зимой около 600 000 сум/мес, летом примерно 400 000. Точная сумма сильно зависит от расхода — посчитайте в калькуляторе. Электричество — 650–2 200 сум/кВт·ч (по тарифным ступеням), газ — 1 100–3 300 сум/м³, холодная вода с канализацией — 3 808 сум/м³ в Ташкенте, в областях от 3 696 до 12 992 сум/м³.',
     textUz:
-      "2026-yilda O'zbekistonda Toshkentdagi 4 kishilik oila uchun (70 m² kvartira) kommunal xizmatlar 1-iyundagi qimmatlashuvdan keyin: qishda taxminan 600 000 so'm/oy, yozda 400 000 atrofida. Aniq summa sarfga juda bog'liq — kalkulyatorda hisoblang. Elektr — 650–2 200 so'm/kVt·s (tarif bosqichlari bo'yicha), gaz — 1 100–3 300 so'm/m³, sovuq suv — 3 808 so'm/m³.",
+      "2026-yilda O'zbekistonda Toshkentdagi 4 kishilik oila uchun (70 m² kvartira) kommunal xizmatlar 1-iyundagi qimmatlashuvdan keyin: qishda taxminan 600 000 so'm/oy, yozda 400 000 atrofida. Aniq summa sarfga juda bog'liq — kalkulyatorda hisoblang. Elektr — 650–2 200 so'm/kVt·s (tarif bosqichlari bo'yicha), gaz — 1 100–3 300 so'm/m³, kanalizatsiya bilan sovuq suv — Toshkentda 3 808 so'm/m³, viloyatlarda 3 696 dan 12 992 so'm/m³ gacha.",
   },
   {
     slug: 'customs',

@@ -6,23 +6,26 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateHeating } from '@/lib/calculators/utilities'
+import { HEATING_RATE_PER_M2_DAY } from '@/lib/constants/utility-tariffs'
 import { formatCurrency } from '@/lib/utils'
 
 export default function HeatingCalculator() {
   const locale = useLocale()
   const [area, setArea] = useState('')
   const [days, setDays] = useState('30')
+  const [rate, setRate] = useState(String(HEATING_RATE_PER_M2_DAY))
 
   const result = useMemo(() => {
     const a = parseFloat(area) || 0
     const d = parseInt(days) || 30
     if (a <= 0) return null
-    return calculateHeating(a, d)
-  }, [area, days])
+    const r = parseFloat(rate.replace(',', '.'))
+    return calculateHeating(a, d, Number.isFinite(r) && r >= 0 ? r : HEATING_RATE_PER_M2_DAY)
+  }, [area, days, rate])
 
   const t = locale === 'uz'
-    ? { area: 'Maydon (m\u00B2)', days: 'Oydagi kunlar', results: 'Natijalar', dailyRate: 'Kunlik tarif (m\u00B2)', total: 'Jami to\'lov', placeholder: 'Maydonni kiriting', offSeason: 'Isitish mavsumi: oktyabr — mart. Hozir mavsumdan tashqarida bo\'lishi mumkin.' }
-    : { area: 'Площадь (м\u00B2)', days: 'Дней в месяце', results: 'Результаты', dailyRate: 'Дневной тариф (м\u00B2)', total: 'Итого к оплате', placeholder: 'Введите площадь', offSeason: 'Отопительный сезон: октябрь — март. Сейчас может быть вне сезона.' }
+    ? { area: 'Maydon (m²)', days: 'Oydagi kunlar', rate: 'Tarif (so\'m/m² kuniga)', rateNote: 'Standart qiymat — Toshkent tarifi. Boshqa shaharlarda tarif o\'zgacha: uni kvitansiyadan oling. Agar unda oylik narx ko\'rsatilgan bo\'lsa, uni kunlar soniga bo\'ling.', results: 'Natijalar', dailyRate: 'Kunlik tarif (m²)', total: 'Jami to\'lov', placeholder: 'Maydonni kiriting', offSeason: 'Isitish mavsumi: oktyabr — mart. Hozir mavsumdan tashqarida bo\'lishi mumkin.' }
+    : { area: 'Площадь (м²)', days: 'Дней в месяце', rate: 'Тариф (сум/м² в сутки)', rateNote: 'По умолчанию — тариф Ташкента. В других городах тариф свой: возьмите его из квитанции. Если там указана цена за месяц, разделите её на число дней.', results: 'Результаты', dailyRate: 'Дневной тариф (м²)', total: 'Итого к оплате', placeholder: 'Введите площадь', offSeason: 'Отопительный сезон: октябрь — март. Сейчас может быть вне сезона.' }
 
   const currentMonth = new Date().getMonth() + 1
   const isHeatingSeason = [10, 11, 12, 1, 2, 3].includes(currentMonth)
@@ -43,6 +46,11 @@ export default function HeatingCalculator() {
           <div>
             <Label>{t.days}</Label>
             <Input type="number" value={days} onChange={(e) => setDays(e.target.value)} className="mt-1 w-24" min={1} max={31} />
+          </div>
+          <div>
+            <Label htmlFor="heating-rate">{t.rate}</Label>
+            <Input id="heating-rate" type="number" value={rate} onChange={(e) => setRate(e.target.value)} className="mt-1 w-32" min={0} step={0.01} />
+            <p className="mt-1 text-xs text-muted-foreground">{t.rateNote}</p>
           </div>
         </CardContent>
       </Card>

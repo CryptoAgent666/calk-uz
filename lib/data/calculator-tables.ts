@@ -1,6 +1,8 @@
 import type { CategoryId } from "@/lib/types/calculator"
 import { TAX_RATES } from "@/lib/constants/tax-rates"
-import { ELECTRICITY_TIERS, GAS_TIERS_SUMMER, WATER_COLD_RATE, WATER_HOT_RATE } from "@/lib/constants/utility-tariffs"
+import { ELECTRICITY_TIERS, GAS_TIERS_SUMMER, WATER_HOT_RATE } from "@/lib/constants/utility-tariffs"
+import { UTILITY_REGIONS } from "@/lib/constants/utility-regions"
+import { coldWaterRatePerM3 } from "@/lib/calculators/utilities"
 import { BANKS } from "@/lib/constants/banks"
 
 /**
@@ -143,15 +145,28 @@ const UTILITIES_TABLES: CalculatorTable[] = [
     })),
   },
   {
-    titleRu: "Тарифы на воду",
-    titleUz: "Suv tariflari",
+    titleRu: "Холодная вода и канализация по регионам (сум/м\u00B3 с НДС)",
+    titleUz: "Hududlar bo'yicha sovuq suv va kanalizatsiya (so'm/m\u00B3, QQS bilan)",
+    headers: [
+      { ru: "Регион", uz: "Hudud" },
+      { ru: "Без центрального ГВС", uz: "Markaziy issiq suvsiz" },
+      { ru: "С центральным ГВС", uz: "Markaziy issiq suv bilan" },
+    ],
+    rows: UTILITY_REGIONS.map((region) => {
+      const plain = coldWaterRatePerM3(region, { hasSewerage: true, centralHotWater: false }).toLocaleString("ru-RU")
+      const withHotWater = coldWaterRatePerM3(region, { hasSewerage: true, centralHotWater: true }).toLocaleString("ru-RU")
+      return { ru: [region.nameRu, plain, withHotWater], uz: [region.nameUz, plain, withHotWater] }
+    }),
+  },
+  {
+    titleRu: "Горячая вода",
+    titleUz: "Issiq suv",
     headers: [
       { ru: "Услуга", uz: "Xizmat" },
       { ru: "Тариф (сум/м\u00B3)", uz: "Tarif (so'm/m\u00B3)" },
     ],
     rows: [
-      { ru: ["Холодная вода (с канализацией)", `${WATER_COLD_RATE.toLocaleString("ru-RU")} сум`], uz: ["Sovuq suv (kanalizatsiya bilan)", `${WATER_COLD_RATE.toLocaleString("ru-RU")} so'm`] },
-      { ru: ["Горячая вода", `${WATER_HOT_RATE.toLocaleString("ru-RU")} сум`], uz: ["Issiq suv", `${WATER_HOT_RATE.toLocaleString("ru-RU")} so'm`] },
+      { ru: ["Горячая вода (г. Ташкент)", `${WATER_HOT_RATE.toLocaleString("ru-RU")} сум`], uz: ["Issiq suv (Toshkent shahri)", `${WATER_HOT_RATE.toLocaleString("ru-RU")} so'm`] },
     ],
   },
 ]

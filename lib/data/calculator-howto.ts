@@ -726,14 +726,14 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     totalTimeMinutes: 2,
     stepsRu: [
       { name: 'Введите показания счётчиков', text: 'Укажите потребление электричества (кВт·ч), газа (м³) и воды (м³).' },
-      { name: 'Укажите площадь жилья', text: 'Введите площадь квартиры для расчёта отопления и вывоза мусора.' },
-      { name: 'Выберите тарифы', text: 'Выберите применимые тарифы (бытовой, льготный).' },
+      { name: 'Укажите площадь и число жильцов', text: 'Площадь нужна для расчёта отопления, число членов семьи — для вывоза мусора.' },
+      { name: 'Выберите регион', text: 'От региона зависят тарифы на воду и вывоз мусора; тарифы отопления и горячей воды при необходимости замените своими из квитанции.' },
       { name: 'Получите общую сумму', text: 'Результат появится сразу — вы узнаете общую сумму коммунальных платежей за месяц.' },
     ],
     stepsUz: [
       { name: "Hisoblagich ko'rsatkichlarini kiriting", text: "Elektr (kVt·s), gaz (m³) va suv (m³) sarfini ko'rsating." },
-      { name: "Uy-joy maydonini ko'rsating", text: "Isitish va chiqindi chiqarish hisobi uchun kvartira maydonini kiriting." },
-      { name: 'Tariflarni tanlang', text: "Tegishli tariflarni tanlang (maishiy, imtiyozli)." },
+      { name: "Maydon va yashovchilar sonini ko'rsating", text: "Maydon isitishni, oila a'zolari soni — chiqindi olib chiqishni hisoblash uchun kerak." },
+      { name: 'Hududni tanlang', text: "Suv va chiqindi olib chiqish tariflari hududga bog'liq; isitish va issiq suv tariflarini kerak bo'lsa kvitansiyadagi o'zingiznikiga almashtiring." },
       { name: "Umumiy summani oling", text: "Natija darhol chiqadi — oylik kommunal to'lovlarning umumiy summasini bilib oling." },
     ],
   },

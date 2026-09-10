@@ -594,9 +594,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Вода',
     titleUz: 'Suv',
     descriptionRu:
-      'Рассчитайте стоимость холодной и горячей воды по тарифам Узбекистана. Водоотведение включено.',
+      'Рассчитайте стоимость холодной и горячей воды по тарифам своего региона — с канализацией и центральным горячим водоснабжением или без.',
     descriptionUz:
-      "O'zbekiston tariflari bo'yicha sovuq va issiq suv narxini hisoblang. Kanalizatsiya xizmati kiritilgan.",
+      "Sovuq va issiq suv narxini hududingiz tariflari bo'yicha hisoblang — kanalizatsiya va markaziy issiq suv ta'minoti bilan yoki ularsiz.",
     category: 'utilities',
     icon: 'Droplets',
     keywords: ['вода', 'suv', 'water', 'тариф на воду', 'водоснабжение'],
