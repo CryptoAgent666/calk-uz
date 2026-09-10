@@ -215,9 +215,11 @@ export function calculateEmployerCost(grossSalary: number, isBudgetOrg: boolean 
   const socialTax = grossSalary * socialTaxRate
   const inps = grossSalary * 0.001
 
-  // NDFL (12% to budget) + INPS (0.1% to personal pension account) — separate deductions
+  // ИНПС 0,1% — ЧАСТЬ НДФЛ, а не удержание сверх него: исчисленный налог
+  // уменьшается на взнос (НК ст. 385, ПП-4086 п. 5). С работника удерживается
+  // ровно 12%, из них 11,9% в бюджет и 0,1% на его накопительный счёт.
   const ndfl = grossSalary * 0.12
-  const netSalary = grossSalary - ndfl - inps
+  const netSalary = grossSalary - ndfl
 
   const totalCost = grossSalary + socialTax
   const employerOverhead = totalCost - netSalary

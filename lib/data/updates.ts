@@ -25,6 +25,14 @@ export const UPDATES: UpdateBlock[] = [
     dateLabelUz: "2026-yil 10-sentabr",
     items: [
       {
+        titleRu: "ИНПС входит в 12% НДФЛ: на руки 88%, а не 87,9%",
+        titleUz: "IJPH 12% JShShS ichida: qo'lga 88%, 87,9% emas",
+        descRu:
+          "Калькулятор зарплаты и тексты вокруг него вычитали взнос на ИНПС 0,1% сверх НДФЛ и показывали удержание 12,1% и «на руки» 87,9%. Это неверно. Взнос не добавляется к налогу, а входит в него: исчисленный НДФЛ уменьшается на сумму взноса, и в бюджет уходит 11,9%, а 0,1% зачисляется на накопительный счёт работника. Норма сформулирована прямо в двух актах — п. 5 постановления ПП-4086 от 26 декабря 2018 года («сумма налога на доходы физических лиц… подлежащая уплате в Государственный бюджет… уменьшается на сумму обязательных ежемесячных взносов… в размере 0,1 процента») и ст. 385 Налогового кодекса («Исчисленная сумма налога уменьшается на сумму обязательных ежемесячных взносов на индивидуальные накопительные пенсионные счета»). Конструкция действует без изменений с 2005 года, менялась только ставка — с 1% на 0,1% с 2019 года. Итог: с зарплаты удерживается ровно 12%, на руки работник получает 88%, делитель для обратного расчёта — 0,88, а не 0,879. Для резидентов IT Park удержание 7,5%, на руки 92,5%, делитель 0,925. Исправлены сам калькулятор, расчёт стоимости сотрудника для работодателя и около двадцати мест в русских и узбекских текстах, включая все примеры расчётов и разборы кейсов. Ошибка была внесена правкой от 29 апреля 2026 года, которая развернула изначально верную формулу в неверную.",
+        descUz:
+          "Ish haqi kalkulyatori va uning atrofidagi matnlar 0,1% lik IJPH badalini JShShS ustidan ayirib, 12,1% ushlanma va «qo'lga» 87,9% ni ko'rsatardi. Bu noto'g'ri. Badal soliqqa qo'shilmaydi, uning ichiga kiradi: hisoblangan JShShS badal summasiga kamaytiriladi, byudjetga 11,9% ketadi, 0,1% esa xodimning jamg'arma hisobiga o'tkaziladi. Norma ikkita hujjatda bevosita yozilgan — 2018-yil 26-dekabrdagi PQ-4086 qarorining 5-bandi va Soliq kodeksining 385-moddasi. Bu tuzilma 2005-yildan beri o'zgarmagan, faqat stavka 2019-yildan 1% dan 0,1% ga o'zgargan. Xulosa: ish haqidan aynan 12% ushlanadi, xodim qo'liga 88% oladi, teskari hisob uchun bo'luvchi — 0,879 emas, 0,88. IT Park rezidentlari uchun ushlanma 7,5%, qo'lga 92,5%, bo'luvchi 0,925. Kalkulyatorning o'zi, ish beruvchi uchun xodim qiymati hisobi va rus hamda o'zbek matnlaridagi yigirmaga yaqin joy tuzatildi. Xato 2026-yil 29-apreldagi tahrir bilan kiritilgan edi.",
+      },
+      {
         titleRu: "Упрощённый НДС 6% для общепита, торговли и услуг",
         titleUz: "Umumiy ovqatlanish, savdo va xizmatlar uchun soddalashtirilgan 6% QQS",
         descRu:

@@ -61,7 +61,7 @@ const SALARY_TABLES: CalculatorTable[] = [
     ],
     rows: [
       { ru: ["НДФЛ", `${pct(TAX_RATES.NDFL)}`, "Удерживается из зарплаты"], uz: ["JShShS", `${pct(TAX_RATES.NDFL)}`, "Ish haqidan ushlab qolinadi"] },
-      { ru: ["ИНПС", `${pct(TAX_RATES.INPS)}`, "Удерживается из зарплаты"], uz: ["MHTJ", `${pct(TAX_RATES.INPS)}`, "Ish haqidan ushlab qolinadi"] },
+      { ru: ["ИНПС", `${pct(TAX_RATES.INPS)}`, "Часть НДФЛ: зачисляется на накопительный счёт работника, а не в бюджет"], uz: ["MHTJ", `${pct(TAX_RATES.INPS)}`, "JShShSning bir qismi: byudjetga emas, xodimning jamg'arma hisobiga o'tkaziladi"] },
       { ru: ["Социальный налог (коммерч.)", `${pct(TAX_RATES.SOCIAL_TAX)}`, "За счёт работодателя"], uz: ["Ijtimoiy soliq (tijoriy)", `${pct(TAX_RATES.SOCIAL_TAX)}`, "Ish beruvchi hisobidan"] },
       { ru: ["Социальный налог (бюджет.)", `${pct(TAX_RATES.SOCIAL_TAX_BUDGET)}`, "За счёт работодателя"], uz: ["Ijtimoiy soliq (byudjet)", `${pct(TAX_RATES.SOCIAL_TAX_BUDGET)}`, "Ish beruvchi hisobidan"] },
     ],

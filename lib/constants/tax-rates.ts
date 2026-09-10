@@ -32,7 +32,12 @@ export const TAX_RATES = {
   /** Social tax for budget organizations */
   SOCIAL_TAX_BUDGET: 0.25,
 
-  /** Individual accumulative pension contribution (ИНПС) */
+  /**
+   * ИНПС — обязательный накопительный пенсионный взнос, 0,1%.
+   * ВНИМАНИЕ: это НЕ удержание сверх НДФЛ. Исчисленный налог уменьшается на
+   * сумму взноса (НК ст. 385; ПП-4086 от 26.12.2018 п. 5), поэтому с работника
+   * удерживается 12% всего, а не 12,1%: 11,9% в бюджет + 0,1% на его счёт.
+   */
   INPS: 0.001,
 
   /** Turnover tax for simplified taxation (Налог с оборота / Aylanma solig'i) */

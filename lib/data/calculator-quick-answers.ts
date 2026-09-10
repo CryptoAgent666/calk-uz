@@ -20,9 +20,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'income-tax',
     textRu:
-      'НДФЛ в Узбекистане в 2026 году — 12% от начисленной зарплаты, в том числе для нерезидентов (7,5% для резидентов IT Park). Дополнительно удерживается 0,1% ИНПС на персональный пенсионный счёт. Итого с зарплаты удерживается 12,1%, на руки работник получает 87,9%.',
+      'НДФЛ в Узбекистане в 2026 году — 12% от начисленной зарплаты, в том числе для нерезидентов (7,5% для резидентов IT Park). Взнос на ИНПС 0,1% — не отдельное удержание сверх налога, а часть этих 12%: исчисленный НДФЛ уменьшается на сумму взноса, и в бюджет уходит 11,9%, а 0,1% зачисляется на персональный пенсионный счёт работника (НК ст. 385, ПП-4086 от 26.12.2018). Итого с зарплаты удерживается ровно 12%, на руки работник получает 88% (для IT Park — 92,5%).',
     textUz:
-      "2026-yilda O'zbekistonda JShShS — hisoblangan ish haqining 12%, shu jumladan norezidentlar uchun ham (IT Park rezidentlari uchun 7,5%). Qo'shimcha 0,1% IJPH shaxsiy pensiya hisobiga ushlab qolinadi. Jami ish haqidan 12,1% ushlanadi, xodim qo'liga 87,9% oladi.",
+      "2026-yilda O'zbekistonda JShShS — hisoblangan ish haqining 12%, shu jumladan norezidentlar uchun ham (IT Park rezidentlari uchun 7,5%). 0,1% IJPH badali soliq ustidan alohida ushlanma emas, balki ana shu 12% ning bir qismi: hisoblangan JShShS badal summasiga kamaytiriladi, byudjetga 11,9% ketadi, 0,1% esa xodimning shaxsiy pensiya hisobiga o'tkaziladi (SK 385-moddasi, 26.12.2018-yildagi PQ-4086). Jami ish haqidan aynan 12% ushlanadi, xodim qo'liga 88% oladi (IT Park uchun — 92,5%).",
   },
   {
     slug: 'vat',
@@ -34,9 +34,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'salary',
     textRu:
-      'Зарплата «на руки» в Узбекистане = начисленная × 0,879 (для IT Park × 0,924). Из зарплаты удерживается НДФЛ 12% и ИНПС 0,1%. Работодатель сверх зарплаты платит соцналог 12% (25% для бюджетных организаций), что увеличивает полную стоимость сотрудника на 12%.',
+      'Зарплата «на руки» в Узбекистане = начисленная × 0,88 (для IT Park × 0,925). Из зарплаты удерживается НДФЛ 12%, и взнос на ИНПС 0,1% входит в него, а не добавляется сверх. Работодатель сверх зарплаты платит соцналог 12% (25% для бюджетных организаций), что увеличивает полную стоимость сотрудника на 12%.',
     textUz:
-      "O'zbekistonda «qo'lga» ish haqi = hisoblangan × 0,879 (IT Park uchun × 0,924). Ish haqidan JShShS 12% va IJPH 0,1% ushlanadi. Ish beruvchi ish haqi ustiga ijtimoiy soliq 12% to'laydi (byudjet tashkilotlari uchun 25%), bu xodimning to'liq qiymatini 12% ga oshiradi.",
+      "O'zbekistonda «qo'lga» ish haqi = hisoblangan × 0,88 (IT Park uchun × 0,925). Ish haqidan JShShS 12% ushlanadi, 0,1% IJPH badali esa uning ustiga qo'shilmay, ichiga kiradi. Ish beruvchi ish haqi ustiga ijtimoiy soliq 12% to'laydi (byudjet tashkilotlari uchun 25%), bu xodimning to'liq qiymatini 12% ga oshiradi.",
   },
   {
     slug: 'mortgage',
