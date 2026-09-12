@@ -50,6 +50,7 @@ const SOURCE_NAMES_UZ: Record<string, string> = {
   'Судебная практика': 'Sud amaliyoti',
   'Таможенный кодекс РУз': "O'zbekiston Respublikasi Bojxona kodeksi",
   'Тарифы на коммунальные услуги': 'Kommunal xizmatlar tariflari',
+  'Постановление Кабмина № 796 от 17.12.2025, приложение 4': "Vazirlar Mahkamasining 17.12.2025 yildagi 796-son qarori, 4-ilova",
   'Трудовой кодекс РУз': "O'zbekiston Respublikasi Mehnat kodeksi",
   'Узбекэнерго — Тарифы': "O'zbekenergo — Tariflar",
   'Узсувтаъминот': "O'zsuvta'minot",

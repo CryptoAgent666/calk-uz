@@ -3,6 +3,7 @@
  */
 
 import { MIN_WAGE } from '@/lib/constants/brv'
+import { holidaysOfYear, mayBeUnannouncedHoliday } from '@/lib/constants/holidays'
 
 /** Минимальный размер алиментов — 26,5% МРОТ на каждого ребёнка. */
 export const ALIMONY_MIN_SHARE_OF_MIN_WAGE = 0.265
@@ -72,27 +73,162 @@ export function calculateVacationPay(
   }
 }
 
-// Sick leave
-// 2026 RULES (PKM #796 from 17.12.2025):
-// Benefits are paid by the State Social Insurance Fund (ФГСС).
-// Minimum 6 months of insurance experience required.
-// Percentage of average earnings depends on insurance experience (months).
+// ─────────────────────────────────────────────────────────────────────────────
+// Пособия по временной нетрудоспособности и по беременности и родам.
+//
+// ПКМ № 796 от 17.12.2025, приложение № 4 (ред. 13.08.2026, lex.uz/docs/7926684):
+//   п. 16: Пособие = ЎОИҲ ÷ 25,3 × СК × КС, где ЎОИҲ — среднемесячный заработок,
+//          25,3 — среднемесячное число рабочих дней, СК — стажевый коэффициент,
+//          КС — число оплачиваемых дней периода нетрудоспособности;
+//   п. 17: воскресенья и нерабочие праздничные дни (ст. 208 ТК) в периоде при
+//          расчёте не учитываются — суббота оплачивается;
+//   п. 25: пособие по беременности и родам считается с учётом п. 17;
+//   п. 26: среднемесячный заработок = заработок за 12 месяцев страхового стажа
+//          перед месяцем назначения ÷ 12 (стаж меньше 12 мес. — ÷ число месяцев
+//          стажа); у застрахованных в обязательном порядке учитывается часть не
+//          выше 10 МРОТ, действующих на дату назначения.
+//
+// Раньше калькуляторы делили заработок за 12 месяцев на 365 и умножали на все
+// календарные дни — это другой метод, не из постановления.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** Среднемесячное число рабочих дней — делитель из п. 16 прил. 4 ПКМ-796. */
+export const BENEFIT_WORKING_DAYS_PER_MONTH = 25.3
+
+/** Потолок учитываемого среднемесячного заработка — 10 МРОТ (п. 26 прил. 4 ПКМ-796). */
+export const BENEFIT_EARNINGS_CAP_MIN_WAGES = 10
+
+const DAY_MS = 86_400_000
+
+/** «YYYY-MM-DD» → полночь UTC в мс; null, если дата некорректна. */
+export function parseIsoDateUtc(iso: string): number | null {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso)
+  if (!m) return null
+  const y = Number(m[1]), mo = Number(m[2]), d = Number(m[3])
+  const t = Date.UTC(y, mo - 1, d)
+  const check = new Date(t)
+  if (check.getUTCFullYear() !== y || check.getUTCMonth() !== mo - 1 || check.getUTCDate() !== d) return null
+  return t
+}
+
+function toIso(t: number): string {
+  return new Date(t).toISOString().slice(0, 10)
+}
+
+export interface BenefitEarnings {
+  /** Среднемесячный заработок по введённым данным. */
+  averageMonthlyEarnings: number
+  /** Сколько месяцев в делителе: 12 или меньше, если стаж короче. */
+  monthsCounted: number
+  /** Потолок 10 МРОТ. */
+  earningsCap: number
+  /** Среднемесячный заработок выше 10 МРОТ — в расчёт взят потолок. */
+  earningsCapApplied: boolean
+  /** Учитываемый среднемесячный заработок (не выше потолка). */
+  countedMonthlyEarnings: number
+  /** Учитываемый среднемесячный ÷ 25,3. */
+  averageDailyEarnings: number
+}
+
 /**
- * Максимум оплачиваемых дней болезни — 182 календарных дня в течение
- * календарного года (при туберкулёзе — 240, отдельного режима в калькуляторе нет).
+ * Среднемесячный и среднедневной заработок для пособий (п. 16, 26 прил. 4 ПКМ-796).
+ * totalEarnings — заработок за последние 12 месяцев стажа, а если стаж короче —
+ * за имеющиеся месяцы: делится на min(12, стаж в месяцах).
+ * МРОТ берётся текущий (MIN_WAGE); норма говорит о МРОТ на дату назначения.
+ */
+export function calculateBenefitEarnings(totalEarnings: number, insuranceMonths: number): BenefitEarnings {
+  const monthsCounted = Math.min(12, Math.max(1, Math.floor(insuranceMonths)))
+  const averageMonthlyEarnings = totalEarnings / monthsCounted
+  const earningsCap = BENEFIT_EARNINGS_CAP_MIN_WAGES * MIN_WAGE
+  const earningsCapApplied = averageMonthlyEarnings > earningsCap
+  const countedMonthlyEarnings = earningsCapApplied ? earningsCap : averageMonthlyEarnings
+  return {
+    averageMonthlyEarnings,
+    monthsCounted,
+    earningsCap,
+    earningsCapApplied,
+    countedMonthlyEarnings,
+    averageDailyEarnings: countedMonthlyEarnings / BENEFIT_WORKING_DAYS_PER_MONTH,
+  }
+}
+
+export interface BenefitDaysBreakdown {
+  startDate: string
+  /** Последний календарный день периода. */
+  endDate: string
+  /** Воскресений в оплачиваемой части периода — не оплачиваются (п. 17). */
+  sundays: number
+  /** Нерабочих праздников ст. 208 ТК, не совпавших с воскресеньем, — не оплачиваются. */
+  holidays: number
+  /** Оплачиваемых дней: календарные минус воскресенья и праздники. */
+  paidDays: number
+  /**
+   * false — период задевает год, для которого даты Рамазан/Курбан хайита ещё
+   * не объявлены, и хайит может выпасть на один из дней: тогда оплачиваемых
+   * дней будет на один меньше. Исключены только известные праздники.
+   */
+  holidayDatesComplete: boolean
+}
+
+type DayKind = 'sunday' | 'holiday' | 'paid'
+
+function classifyDay(t: number, holidayCache: Map<number, Set<string>>): { iso: string; year: number; kind: DayKind; uncertain: boolean } {
+  const date = new Date(t)
+  const year = date.getUTCFullYear()
+  const iso = toIso(t)
+  if (date.getUTCDay() === 0) return { iso, year, kind: 'sunday', uncertain: false }
+  let set = holidayCache.get(year)
+  if (!set) { set = holidaysOfYear(year); holidayCache.set(year, set) }
+  if (set.has(iso)) return { iso, year, kind: 'holiday', uncertain: false }
+  return { iso, year, kind: 'paid', uncertain: mayBeUnannouncedHoliday(iso) }
+}
+
+// Sick leave
+/**
+ * Лимит оплаты — 182 календарных дня в календарном году (п. 20 прил. 4 ПКМ-796).
+ * Единственное исключение — п. 21, уход за больным ребёнком: +20 календарных
+ * дней за ребёнка до 14 лет, +40 за ребёнка с инвалидностью до 16 лет
+ * (в калькуляторе этого режима нет). Других удлинённых лимитов норма не знает.
  */
 export const SICK_LEAVE_MAX_PAID_DAYS = 182
 
-export interface SickLeaveResult {
-  averageDailyEarnings: number
+/** Первые 5 дней нетрудоспособности в календарном году оплачивает работодатель (п. 20 ч. 2). */
+export const SICK_LEAVE_EMPLOYER_DAYS = 5
+
+/** Сверх 77 календарных дней больничных в году коэффициент ниже на 10 п.п. (п. 19). */
+export const SICK_LEAVE_REDUCED_AFTER_DAYS = 77
+export const SICK_LEAVE_REDUCTION_PP = 10
+
+/**
+ * +20 п.п. к коэффициенту (п. 19 в ред. ПКМ-440): инвалидность I или II группы,
+ * четверо и больше детей до 18 лет на иждивении или ребёнок с инвалидностью до
+ * 18 лет. При нескольких основаниях льгота одна.
+ */
+export const SICK_LEAVE_PRIVILEGE_PP = 20
+
+export interface SickLeaveResult extends BenefitEarnings, BenefitDaysBreakdown {
+  /** Календарных дней по больничному (введено). */
   sickDays: number
-  /** Сколько дней реально оплачивается — не больше годового лимита. */
-  paidDays: number
-  /** Введённых дней больше лимита, выплата ограничена. */
+  /** Календарных дней в пределах годового лимита 182. */
+  limitDays: number
+  /** Часть дней за пределами лимита 182 — не оплачивается. */
   daysCapped: boolean
+  unpaidOverLimitDays: number
   insuranceMonths: number
+  /** Коэффициент по стажу (п. 18): 60 или 80. */
   experiencePercent: number
+  /** Применена льгота +20 п.п. */
+  privilegeApplied: boolean
+  /** Коэффициент с льготой — для первых 77 дней в году. */
+  appliedPercent: number
+  /** Оплачиваемых дней после 77-го календарного дня в году (коэффициент −10 п.п.). */
+  reducedDays: number
+  reducedPercent: number
   isEligible: boolean
+  /** Часть за первые 5 календарных дней в году — работодатель (если больничный первый в году). */
+  employerAmount: number
+  /** Часть с 6-го дня — Фонд государственного социального страхования. */
+  fundAmount: number
   grossAmount: number
   ndflAmount: number
   netAmount: number
@@ -116,33 +252,81 @@ export function getSickLeavePercent(insuranceMonths: number): number {
   return 80                                // 97 месяцев и больше
 }
 
+/**
+ * Пособие по временной нетрудоспособности (п. 16–20 прил. 4 ПКМ-796).
+ * Считается, что это первый больничный в календарном году: от этого зависят
+ * счёт 5 дней работодателя, порог 77 дней и лимит 182 дня. Если период
+ * переходит на следующий год, счётчики с 1 января начинаются заново.
+ */
 export function calculateSickLeave(
   totalEarnings12Months: number,
   sickDays: number,
   insuranceMonths: number,
-  calendarDaysIn12Months: number = 365
+  startDate: string,
+  hasPrivilege: boolean = false
 ): SickLeaveResult {
+  const start = parseIsoDateUtc(startDate)
+  if (start === null) throw new RangeError(`calculateSickLeave: invalid startDate ${startDate}`)
+
+  const earnings = calculateBenefitEarnings(totalEarnings12Months, insuranceMonths)
   const experiencePercent = getSickLeavePercent(insuranceMonths)
   const isEligible = experiencePercent > 0
-  // 2026: payments are calendar-day based, funded by ФГСС
-  const averageDailyEarnings = totalEarnings12Months / calendarDaysIn12Months
-  // Сверх 182 дней в году пособие не выплачивается — раньше калькулятор
-  // оплачивал сколько угодно дней, завышая выплату при долгой болезни.
-  const paidDays = Math.min(sickDays, SICK_LEAVE_MAX_PAID_DAYS)
-  const daysCapped = sickDays > SICK_LEAVE_MAX_PAID_DAYS
-  const grossAmount = isEligible
-    ? averageDailyEarnings * paidDays * (experiencePercent / 100)
-    : 0
+  const privilegeApplied = isEligible && hasPrivilege
+  const appliedPercent = experiencePercent + (privilegeApplied ? SICK_LEAVE_PRIVILEGE_PP : 0)
+  const reducedPercent = appliedPercent - SICK_LEAVE_REDUCTION_PP
+
+  const days = Math.max(0, Math.floor(sickDays))
+  const cache = new Map<number, Set<string>>()
+  let yearOfCount = -1
+  let dayOfYearCount = 0
+  let limitDays = 0, unpaidOverLimitDays = 0
+  let sundays = 0, holidays = 0, paidDays = 0, reducedDays = 0
+  let employerAmount = 0, fundAmount = 0
+  let holidayDatesComplete = true
+
+  for (let i = 0; i < days; i++) {
+    const day = classifyDay(start + i * DAY_MS, cache)
+    if (day.year !== yearOfCount) { yearOfCount = day.year; dayOfYearCount = 0 }
+    dayOfYearCount++
+    if (dayOfYearCount > SICK_LEAVE_MAX_PAID_DAYS) { unpaidOverLimitDays++; continue }
+    limitDays++
+    if (day.kind === 'sunday') { sundays++; continue }
+    if (day.kind === 'holiday') { holidays++; continue }
+    if (day.uncertain) holidayDatesComplete = false
+    paidDays++
+    const reduced = dayOfYearCount > SICK_LEAVE_REDUCED_AFTER_DAYS
+    if (reduced) reducedDays++
+    const amount = isEligible
+      ? earnings.averageDailyEarnings * ((reduced ? reducedPercent : appliedPercent) / 100)
+      : 0
+    if (dayOfYearCount <= SICK_LEAVE_EMPLOYER_DAYS) employerAmount += amount
+    else fundAmount += amount
+  }
+
+  const grossAmount = employerAmount + fundAmount
   const ndflAmount = grossAmount * 0.12
 
   return {
-    averageDailyEarnings,
-    sickDays,
+    ...earnings,
+    startDate,
+    endDate: toIso(start + Math.max(0, days - 1) * DAY_MS),
+    sundays,
+    holidays,
     paidDays,
-    daysCapped,
+    holidayDatesComplete,
+    sickDays: days,
+    limitDays,
+    daysCapped: unpaidOverLimitDays > 0,
+    unpaidOverLimitDays,
     insuranceMonths,
     experiencePercent,
+    privilegeApplied,
+    appliedPercent,
+    reducedDays,
+    reducedPercent,
     isEligible,
+    employerAmount,
+    fundAmount,
     grossAmount,
     ndflAmount,
     netAmount: grossAmount - ndflAmount,
@@ -150,26 +334,23 @@ export function calculateSickLeave(
 }
 
 // Maternity benefits
-// 2026 RULES (PKM #796 from 17.12.2025):
-// Benefits are paid by ФГСС. Minimum 10 months of insurance experience required.
-// Benefit percentage depends on insurance experience.
-export interface MaternityResult {
-  averageDailyEarnings: number
+export interface MaternityResult extends BenefitEarnings, BenefitDaysBreakdown {
   insuranceMonths: number
   benefitPercent: number
   isEligible: boolean
+  /** Календарных дней отпуска: 126 или 140 (ст. 404 ТК). */
   totalDays: number
+  prebirthDays: number
+  postbirthDays: number
   grossBenefit: number
   ndflAmount: number
   netBenefit: number
-  prebirthDays: number
-  postbirthDays: number
 }
 
 /**
  * Процент пособия по беременности и родам от среднего заработка.
  *
- * ПКМ № 796 от 17.12.2025 — границы включающие: 10–24 мес. = 75%,
+ * ПКМ № 796 от 17.12.2025, прил. 4, п. 24 — границы включающие: 10–24 мес. = 75%,
  * 25–60 мес. = 85%, 61 мес. и более = 100%. Применяется с 1 января 2026 г.
  * Прежние границы (10–23 / 24–59 / ≥60) промахивались на месяц на всех трёх.
  */
@@ -180,38 +361,64 @@ export function getMaternityPercent(insuranceMonths: number): number {
   return 100                               // 61 месяц и больше
 }
 
+/**
+ * Пособие по беременности и родам (п. 16, 17, 24–26 прил. 4 ПКМ-796).
+ * Отпуск 70 + 56 календарных дней (70 + 70 при осложнённых родах или рождении
+ * двух и более детей, ст. 404 ТК), оплачиваются дни без воскресений и праздников.
+ * НДФЛ не удерживается. Потолок 5 МРОТ для застрахованных добровольно
+ * (самозанятые и т.п., п. 25) здесь не применяется — калькулятор для работников.
+ */
 export function calculateMaternity(
   totalEarnings12Months: number,
-  insuranceMonths: number = 24,
-  isComplicatedBirth: boolean = false,
-  isMultipleBirth: boolean = false,
-  calendarDaysIn12Months: number = 365
+  insuranceMonths: number,
+  isComplicatedBirth: boolean,
+  isMultipleBirth: boolean,
+  startDate: string
 ): MaternityResult {
+  const start = parseIsoDateUtc(startDate)
+  if (start === null) throw new RangeError(`calculateMaternity: invalid startDate ${startDate}`)
+
+  const earnings = calculateBenefitEarnings(totalEarnings12Months, insuranceMonths)
   const benefitPercent = getMaternityPercent(insuranceMonths)
   const isEligible = benefitPercent > 0
-  const averageDailyEarnings = totalEarnings12Months / calendarDaysIn12Months
   const prebirthDays = 70
-  let postbirthDays = 56
-  if (isComplicatedBirth) postbirthDays = 70
-  if (isMultipleBirth) postbirthDays = 70
-
+  const postbirthDays = isComplicatedBirth || isMultipleBirth ? 70 : 56
   const totalDays = prebirthDays + postbirthDays
+
+  const cache = new Map<number, Set<string>>()
+  let sundays = 0, holidays = 0, paidDays = 0
+  let holidayDatesComplete = true
+  for (let i = 0; i < totalDays; i++) {
+    const day = classifyDay(start + i * DAY_MS, cache)
+    if (day.kind === 'sunday') sundays++
+    else if (day.kind === 'holiday') holidays++
+    else {
+      paidDays++
+      if (day.uncertain) holidayDatesComplete = false
+    }
+  }
+
   const grossBenefit = isEligible
-    ? averageDailyEarnings * totalDays * (benefitPercent / 100)
+    ? earnings.averageDailyEarnings * (benefitPercent / 100) * paidDays
     : 0
-  const ndflAmount = 0 // Maternity benefits are tax-exempt
 
   return {
-    averageDailyEarnings,
+    ...earnings,
+    startDate,
+    endDate: toIso(start + (totalDays - 1) * DAY_MS),
+    sundays,
+    holidays,
+    paidDays,
+    holidayDatesComplete,
     insuranceMonths,
     benefitPercent,
     isEligible,
     totalDays,
-    grossBenefit,
-    ndflAmount,
-    netBenefit: grossBenefit,
     prebirthDays,
     postbirthDays,
+    grossBenefit,
+    ndflAmount: 0, // пособие по беременности и родам НДФЛ не облагается
+    netBenefit: grossBenefit,
   }
 }
 
