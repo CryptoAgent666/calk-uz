@@ -11,6 +11,7 @@ import {
 } from "@/lib/purchases"
 import { useRemoveAdsPrice } from "@/lib/use-remove-ads-price"
 import { emitIap } from "@/lib/telemetry"
+import { Capacitor } from "@capacitor/core"
 
 /** Событие «предложить убрать рекламу» — шлётся из NativeAds после интерстишелов. */
 export const SUGGEST_REMOVE_ADS_EVENT = "calk:suggest-remove-ads"
@@ -67,7 +68,7 @@ export function RemoveAdsToast() {
 
   // Каждое появление тоста после интерстишела — отдельный показ оффера.
   useEffect(() => {
-    if (visible) emitIap("paywall_shown")
+    if (visible) emitIap("paywall_shown", { platform: Capacitor.getPlatform() })
   }, [visible])
 
   // Стор не отдал продукт → тост не показываем.

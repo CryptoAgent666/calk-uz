@@ -28,7 +28,7 @@ final class PurchasesManager: NSObject {
     static let adFreeChanged = Notification.Name("calk.adFreeChanged")
 
     /// Fallback price shown until StoreKit returns the localized string.
-    /// ⚠️ НАМЕРЕННО отличается от веб/Android-фолбэка («24 900 сум» в
+    /// ⚠️ НАМЕРЕННО отличается от веб/Android-фолбэка («$1.90» — Play ценит UZ в долларах в
     /// lib/purchases.ts) — это ОДИН тир в валютах своих сторов: App Store для UZ
     /// ценит в долларах, Google Play — в сумах. НЕ «синхронизировать».
     let fallbackPrice = "$1.99"

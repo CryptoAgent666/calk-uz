@@ -12,6 +12,7 @@ import {
 } from "@/lib/purchases"
 import { useRemoveAdsPrice } from "@/lib/use-remove-ads-price"
 import { emitIap } from "@/lib/telemetry"
+import { Capacitor } from "@capacitor/core"
 import {
   rewardedAvailable,
   showRewardedAd,
@@ -72,7 +73,7 @@ export function RemoveAdsButton() {
   // Оффер реально показан только когда есть покупки и реклама ещё не отключена
   // (компонент монтируется при открытии мобильного меню).
   useEffect(() => {
-    if (purchasesAvailable() && !isAdFree()) emitIap("paywall_shown")
+    if (purchasesAvailable() && !isAdFree()) emitIap("paywall_shown", { platform: Capacitor.getPlatform() })
   }, [])
 
   // Только в приложении С нативным модулем покупок (не в старых бинарях / не на сайте).
