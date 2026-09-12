@@ -139,13 +139,13 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
           { label: 'Входящий НДС (500 × 12 / 112)', value: '53 571 429 сум' },
           { label: 'Исходящий НДС (800 × 12 / 112)', value: '85 714 286 сум' },
           { label: 'НДС к уплате', value: '32 142 857 сум' },
-          { label: 'Срок уплаты (квартал)', value: 'до 20-го числа след. месяца' },
+          { label: 'Срок уплаты (налоговый период — месяц)', value: 'до 20-го числа след. месяца' },
         ],
         stepsUz: [
           { label: "Kirish QQS (500 × 12 / 112)", value: "53 571 429 so'm" },
           { label: "Chiqish QQS (800 × 12 / 112)", value: "85 714 286 so'm" },
           { label: "To'lanadigan QQS", value: "32 142 857 so'm" },
-          { label: "To'lash muddati (chorak)", value: "keyingi oy 20-sanasigacha" },
+          { label: "To'lash muddati (soliq davri — oy)", value: "keyingi oy 20-sanasigacha" },
         ],
         conclusionRu:
           'Без электронных счетов-фактур (faktura.soliq.uz) зачёт входящего НДС не предоставляется. Проверяйте статус контрагента в реестре.',

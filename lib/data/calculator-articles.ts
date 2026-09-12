@@ -444,36 +444,37 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'osago',
-    lastUpdated: '2026-01-14',
+    lastUpdated: '2026-09-13',
     sources: [
       { name: 'Закон об ОСАГО', url: 'https://lex.uz/docs/5765051' },
+      { name: 'КоАО РУз, ст. 135 и 135-1 (ред. ЗРУ-1116 от 04.02.2026)', url: 'https://lex.uz/ru/docs/97661' },
     ],
     paragraphsRu: [
       'Обязательное страхование автогражданской ответственности (ОСАГО) в Узбекистане является обязательным для всех владельцев транспортных средств. С 1 января 2026 года (ПКМ №458) действуют плоские тарифы: 192 000 сум в Ташкенте и Ташкентской области при ограниченном круге водителей, 384 000 без ограничения, 160 000 и 320 000 соответственно в других регионах. Коэффициента стажа в новом тарифе нет, скидки за безаварийную езду тоже: чистая история — это базовый тариф, а каждое ДТП по вине умножает премию на 1,3, 2,0 или 3,0. Калькулятор ОСАГО рассчитает точную стоимость полиса с учётом всех коэффициентов.',
-      'Формула расчёта: Стоимость ОСАГО = Базовый тариф × Кт (территория) × Кс (стаж) × Кбм (бонус-малус) × Км (мощность). Территориальный коэффициент (Кт) для Ташкента — 1,7; для Ташкентской области — 1,3; для других регионов — 0,8-1,2. Коэффициент стажа (Кс): менее 2 лет — 1,8; 2-5 лет — 1,2; 5-10 лет — 1,0; более 10 лет — 0,9. Бонус-малус (Кбм): от 0,5 (за 5+ лет без ДТП) до 2,5 (при частых ДТП).',
+      'Формула расчёта по тарифу 2026 года: Стоимость ОСАГО = Базовый тариф × Коэффициент аварийности (КБМ). Базовый тариф уже зависит от региона и круга водителей: 192 000 / 384 000 сум в Ташкенте и Ташкентской области, 160 000 / 320 000 сум в других регионах. КБМ зависит от числа ДТП по вине за прошлый период: 0 — 1,0; 1 — 1,3; 2 — 2,0; 3 и более — 3,0. Коэффициентов территории, стажа и мощности, а также скидки за безаварийную езду в тарифе 2026 года нет — они остались от прежней модели.',
       'Пример расчёта по тарифу 2026 года: легковой автомобиль в Ташкенте, полис на ограниченный круг водителей, аварий по вине не было. Базовый тариф 192 000 сум, коэффициент истории 1,0 — к оплате 192 000 сум в год. Если за прошлый период было одно ДТП по вине, коэффициент 1,3 и премия 249 600 сум; при двух — 2,0 и 384 000 сум. Полис без ограничения числа водителей в Ташкенте стоит 384 000 сум, в других регионах — 320 000. Коэффициентов по стажу водителя и скидок за безаварийную езду тариф не предусматривает.',
       'Максимальные суммы страховых выплат по ОСАГО: за вред жизни и здоровью — до 52 млн сум; за вред имуществу — до 28 млн сум (общий лимит 80 млн сум). При наступлении страхового случая необходимо: вызвать ГАИ, зафиксировать обстоятельства ДТП, обратиться в страховую компанию в течение 3 рабочих дней.',
-      'Полис ОСАГО оформляется на 12 месяцев и может быть приобретён в офисах страховых компаний или онлайн. Вождение без действующего полиса ОСАГО — административное правонарушение (ст. 135-1 КоАО): штраф 1 БРВ (440 000 сум). Предупреждение по этой статье не предусмотрено. При покупке автомобиля в кредит ОСАГО является обязательным (помимо КАСКО). Для расчёта полной стоимости владения автомобилем используйте наш калькулятор расхода топлива и калькулятор автокредита.',
+      'Полис ОСАГО оформляется на 12 месяцев и может быть приобретён в офисах страховых компаний или онлайн. Езда в период, не покрытый полисом ОСАГО, или водителем, не вписанным в полис с ограниченным кругом водителей, — административное правонарушение (ст. 135-1 КоАО): предупреждение или штраф 0,5 БРВ (220 000 сум). Если полис есть, но водитель не имеет его при себе, это другой состав — ст. 135 ч. 1, штраф 1 БРВ; при биометрическом паспорте или ID-карте возить полис с собой не требуется. При покупке автомобиля в кредит ОСАГО является обязательным (помимо КАСКО). Для расчёта полной стоимости владения автомобилем используйте наш калькулятор расхода топлива и калькулятор автокредита.',
     ],
     paragraphsUz: [
       "O'zbekistonda avtofuqarolik javobgarligini majburiy sug'urtalash (OSAGO) barcha transport vositasi egalari uchun majburiy hisoblanadi. 2026-yil 1-yanvardan (458-son QQ) tekis tariflar amal qiladi: Toshkent va Toshkent viloyatida cheklangan haydovchilar doirasida 192 000 so'm, cheklovsiz 384 000, boshqa hududlarda mos ravishda 160 000 va 320 000. Yangi tarifda staj koeffitsiyenti ham, avariyasizlik chegirmasi ham yo'q: toza tarix — bu bazaviy tarif, aybdor har bir hodisa esa mukofotni 1,3, 2,0 yoki 3,0 ga ko'paytiradi.",
-      "Hisoblash formulasi: OSAGO narxi = Bazaviy tarif × Kt (hudud) × Ks (staj) × Kbm (bonus-malus) × Km (quvvat). Hududiy koeffitsient (Kt) Toshkent uchun — 1,7; Toshkent viloyati — 1,3; boshqa hududlar — 0,8-1,2. Staj koeffitsienti (Ks): 2 yildan kam — 1,8; 2-5 yil — 1,2; 5-10 yil — 1,0; 10 yildan ortiq — 0,9.",
+      "2026-yil tarifi bo'yicha hisoblash formulasi: OSAGO narxi = Bazaviy tarif × Avariyalilik koeffitsiyenti (KBM). Bazaviy tarif hudud va haydovchilar doirasiga bog'liq: Toshkent va Toshkent viloyatida 192 000 / 384 000 so'm, boshqa hududlarda 160 000 / 320 000 so'm. KBM o'tgan davrdagi aybdor YTHlar soniga bog'liq: 0 — 1,0; 1 — 1,3; 2 — 2,0; 3 va undan ko'p — 3,0. Hudud, staj va quvvat koeffitsiyentlari hamda avariyasizlik chegirmasi 2026-yil tarifida yo'q — ular avvalgi modeldan qolgan.",
       "2026-yil tarifi bo'yicha hisoblash misoli: Toshkentda yengil avtomobil, cheklangan haydovchilar doirasidagi polis, aybdor hodisalar bo'lmagan. Bazaviy tarif 192 000 so'm, tarix koeffitsiyenti 1,0 — yiliga 192 000 so'm to'lanadi. O'tgan davrda aybdor bitta hodisa bo'lsa, koeffitsiyent 1,3 va mukofot 249 600 so'm; ikkitasida — 2,0 va 384 000 so'm. Toshkentda cheklovsiz polis 384 000 so'm, boshqa hududlarda — 320 000. Tarifda haydovchi staji koeffitsiyenti ham, avariyasizlik chegirmasi ham yo'q.",
       "OSAGO bo'yicha maksimal sug'urta to'lovlari: hayot va sog'likka zarar uchun — 52 mln so'mgacha; mol-mulkka zarar uchun — 28 mln so'mgacha (umumiy limit 80 mln so'm). Sug'urta hodisasi yuz berganda: YHXni chaqirish, YTH holatlarini qayd etish, 3 ish kuni ichida sug'urta kompaniyasiga murojaat qilish kerak.",
-      "OSAGO polisi 12 oyga rasmiylashtiriladi va sug'urta kompaniyalari ofislarida yoki onlayn sotib olinishi mumkin. OSAGOsiz haydash — ma'muriy huquqbuzarlik (MJtKning 135-1-moddasi): 1 BHK jarima (440 000 so'm). Bu modda bo'yicha ogohlantirish nazarda tutilmagan.",
+      "OSAGO polisi 12 oyga rasmiylashtiriladi va sug'urta kompaniyalari ofislarida yoki onlayn sotib olinishi mumkin. Polis qamramagan davrda yoki cheklangan polisga kiritilmagan haydovchi tomonidan boshqarish — ma'muriy huquqbuzarlik (MJtKning 135-1-moddasi): ogohlantirish yoki 0,5 BHK (220 000 so'm) jarima. Polis bor-u, haydovchining yonida bo'lmasa — bu boshqa tarkib, 135-moddaning birinchi qismi: 1 BHK jarima; biometrik pasport yoki ID-karta bo'lsa, polisni yonda olib yurish talab etilmaydi.",
     ],
     faqRu: [
       { question: 'Сколько стоит ОСАГО в Узбекистане?', answer: '192 000 сум в Ташкенте при ограниченном круге водителей и 384 000 без ограничения; в других регионах 160 000 и 320 000. При одном ДТП по вине премия умножается на 1,3 — например, 249 600 сум вместо 192 000.' },
-      { question: 'Какой штраф за езду без ОСАГО?', answer: 'Штраф 1 БРВ (440 000 сум) по ст. 135-1 Кодекса об административной ответственности. Предупреждение не предусмотрено.' },
+      { question: 'Какой штраф за езду без ОСАГО?', answer: 'Предупреждение или штраф 0,5 БРВ (220 000 сум) по ст. 135-1 КоАО — за езду в период, не покрытый полисом, или водителем, не вписанным в полис. Штраф 1 БРВ (440 000 сум) — по ст. 135 ч. 1, если полис есть, но не при себе; с ID-картой или биометрическим паспортом возить его не нужно.' },
       { question: 'Какая максимальная выплата по ОСАГО?', answer: 'За вред здоровью — до 52 млн сум. За вред имуществу — до 28 млн сум (общий лимит 80 млн).' },
-      { question: 'Что такое коэффициент бонус-малус?', answer: 'Скидка за безаварийную езду: от 0,5 (5+ лет без ДТП — 50% скидка) до 2,5 (частые ДТП — надбавка 150%).' },
+      { question: 'Что такое коэффициент бонус-малус?', answer: 'Множитель к базовому тарифу по числу ДТП по вине за прошлый период: 0 — 1,0; 1 — 1,3; 2 — 2,0; 3 и более — 3,0. Скидки за безаварийную езду в тарифе 2026 года нет — чистая история означает базовый тариф.' },
       { question: 'Можно ли оформить ОСАГО онлайн?', answer: 'Да, полис ОСАГО можно приобрести онлайн через сайты страховых компаний.' },
     ],
     faqUz: [
       { question: "O'zbekistonda OSAGO qancha turadi?", answer: "Toshkentda cheklangan haydovchilar doirasida 192 000 so'm, cheklovsiz 384 000; boshqa hududlarda 160 000 va 320 000. Aybdor bitta hodisada mukofot 1,3 ga ko'payadi — masalan, 192 000 o'rniga 249 600 so'm." },
-      { question: "OSAGOsiz haydash uchun jarima qancha?", answer: "1 BHK (440 000 so'm) jarima — MJtKning 135-1-moddasi bo'yicha. Ogohlantirish nazarda tutilmagan." },
+      { question: "OSAGOsiz haydash uchun jarima qancha?", answer: "Ogohlantirish yoki 0,5 BHK (220 000 so'm) jarima — MJtKning 135-1-moddasi bo'yicha, polis qamramagan davrda yoki polisga kiritilmagan haydovchi boshqarganda. Polis bor-u, yonida bo'lmasa — 135-moddaning birinchi qismi bo'yicha 1 BHK (440 000 so'm); ID-karta yoki biometrik pasport bo'lsa, polisni olib yurish shart emas." },
       { question: "OSAGO bo'yicha maksimal to'lov qancha?", answer: "Sog'likka zarar uchun — 52 mln so'mgacha. Mol-mulkka — 28 mln so'mgacha (umumiy limit 80 mln so'm)." },
-      { question: "Bonus-malus koeffitsienti nima?", answer: "Avariyasiz haydash uchun chegirma: 0,5 dan (5+ yil YTHsiz — 50% chegirma) 2,5 gacha (tez-tez YTH — 150% ustama)." },
+      { question: "Bonus-malus koeffitsienti nima?", answer: "Bazaviy tarifga o'tgan davrdagi aybdor YTHlar soni bo'yicha ko'paytiruvchi: 0 — 1,0; 1 — 1,3; 2 — 2,0; 3 va undan ko'p — 3,0. 2026-yil tarifida avariyasiz haydash uchun chegirma yo'q — toza tarix bazaviy tarifni anglatadi." },
       { question: "OSAGOni onlayn rasmiylashtirish mumkinmi?", answer: "Ha, OSAGO polisini sug'urta kompaniyalari saytlari orqali onlayn sotib olish mumkin." },
     ],
   },
@@ -701,7 +702,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'employer-cost',
-    lastUpdated: '2026-01-20',
+    lastUpdated: '2026-09-13',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
@@ -710,27 +711,27 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'Полная стоимость сотрудника для работодателя в Узбекистане складывается из начисленной заработной платы и обязательных отчислений: социальный налог 12% от фонда оплаты труда (25% для бюджетных организаций). Калькулятор стоимости работника для работодателя рассчитывает полные расходы на сотрудника и разбивку всех удержаний и начислений.',
       'Структура расходов работодателя на сотрудника с зарплатой 10 000 000 сум «на руки»: начисленная зарплата (гросс) = 10 000 000 / 0,88 = 11 363 636 сум; НДФЛ (удерживается из зарплаты): 11 363 636 × 12% = 1 363 636 сум, из них 11 364 сум (0,1%) уходит на ИНПС работника, а 1 352 272 — в бюджет; социальный налог (за счёт работодателя): 11 363 636 × 12% = 1 363 636 сум; полная стоимость: 11 363 636 + 1 363 636 = 12 727 273 сум. Работодатель платит на 27,3% больше, чем работник получает на руки.',
       'Для резидентов IT Park расходы ниже: при той же зарплате «на руки» 10 000 000 сум гросс = 10 000 000 / 0,925 = 10 810 811 сум; социальный налог: 10 810 811 × 12% = 1 297 297 сум; полная стоимость: 12 108 108 сум. Экономия для работодателя: 619 165 сум на одного сотрудника в месяц по сравнению с обычным режимом.',
-      'Помимо прямых налоговых расходов работодатель несёт дополнительные затраты: оплата больничных (первые 10 дней — за счёт работодателя); отпускные (среднедневной заработок × дни отпуска); компенсация при увольнении; обязательное страхование от несчастных случаев на производстве; расходы на охрану труда. Эти расходы увеличивают стоимость сотрудника ещё на 10-20%.',
+      'Помимо прямых налоговых расходов работодатель несёт дополнительные затраты: оплата больничных (первые 5 дней нетрудоспособности в календарном году — за счёт работодателя, с 6-го дня платит Фонд государственного социального страхования); отпускные (среднедневной заработок × дни отпуска); компенсация при увольнении; обязательное страхование от несчастных случаев на производстве; расходы на охрану труда. Эти расходы увеличивают стоимость сотрудника ещё на 10-20%.',
       'Сравнение режимов: обычный работодатель — полная стоимость 112% от гросс (или 127,3% от нетто); IT Park — полная стоимость 112% от гросс (или 121,1% от нетто); бюджетная организация — полная стоимость 125% от гросс. Для оптимизации расходов на персонал рассмотрите: получение статуса резидента IT Park (для IT-компаний); аутсорсинг непрофильных функций; автоматизацию рутинных процессов.',
     ],
     paragraphsUz: [
       "O'zbekistonda ish beruvchi uchun xodimning to'liq qiymati hisoblangan ish haqi va majburiy ajratmalardan tashkil topadi: ish haqi fondidan 12% ijtimoiy soliq (byudjet tashkilotlari uchun 25%). Ish beruvchi uchun xodim qiymati kalkulyatori xodimga ketadigan to'liq xarajatlarni va barcha ushlanmalar va hisob-kitoblarning taqsimotini hisoblaydi.",
       "Qo'lga 10 000 000 so'm ish haqili xodimga ish beruvchi xarajatlari tarkibi: hisoblangan ish haqi (gross) = 10 000 000 / 0,88 = 11 363 636 so'm; JShShS: 1 363 636 so'm, shundan 11 364 so'm (0,1%) xodimning IJPHsiga, 1 352 272 so'm byudjetga; ijtimoiy soliq: 1 363 636 so'm; to'liq qiymat: 12 727 273 so'm. Ish beruvchi xodim qo'liga oladigan summadan 27,3% ko'proq to'laydi.",
       "IT Park rezidentlari uchun xarajatlar pastroq: xuddi shu 10 000 000 so'm qo'lga ish haqida gross = 10 822 511 so'm; ijtimoiy soliq: 1 298 701 so'm; to'liq qiymat: 12 121 212 so'm. Ish beruvchi uchun tejash: oddiy rejimga nisbatan bir xodimga oyiga 620 540 so'm.",
-      "Bevosita soliq xarajatlaridan tashqari ish beruvchi qo'shimcha xarajatlarga duchor bo'ladi: kasallik varag'ini to'lash (birinchi 10 kun — ish beruvchi hisobidan); ta'til haqi; ishdan bo'shatishda kompensatsiya; ishlab chiqarishdagi baxtsiz hodisalardan majburiy sug'urta. Bu xarajatlar xodim qiymatini yana 10-20% ga oshiradi.",
+      "Bevosita soliq xarajatlaridan tashqari ish beruvchi qo'shimcha xarajatlarga duchor bo'ladi: kasallik varag'ini to'lash (kalendar yil davomida birinchi 5 kun — ish beruvchi hisobidan, 6-kundan boshlab — Davlat ijtimoiy sug'urta jamg'armasi); ta'til haqi; ishdan bo'shatishda kompensatsiya; ishlab chiqarishdagi baxtsiz hodisalardan majburiy sug'urta. Bu xarajatlar xodim qiymatini yana 10-20% ga oshiradi.",
       "Rejimlarni solishtirish: oddiy ish beruvchi — grossdan 112% (yoki nettodan 127,3%); IT Park — grossdan 112% (nettodan 121,1%); byudjet tashkilot — grossdan 125%. Xodimlar xarajatlarini optimallashtirish uchun: IT Park rezidenti maqomini olish; noprofilga funksiyalarni autsorsing qilish; oddiy jarayonlarni avtomatlashtirish.",
     ],
     faqRu: [
       { question: 'Сколько работодатель платит сверх зарплаты в Узбекистане?', answer: 'Социальный налог 12% от начисленной зарплаты (25% для бюджетных). Полная стоимость = зарплата на руки × 1,274.' },
       { question: 'Как рассчитать полную стоимость сотрудника?', answer: 'Гросс = Нетто / 0,88. Полная стоимость = Гросс × 1,12. Для IT Park: Гросс = Нетто / 0,925, Полная стоимость = Гросс × 1,12.' },
-      { question: 'Какие ещё расходы несёт работодатель?', answer: 'Больничные (первые 10 дней), отпускные, компенсация при увольнении, страхование, охрана труда. Дополнительно 10-20% к ФОТ.' },
+      { question: 'Какие ещё расходы несёт работодатель?', answer: 'Больничные (первые 5 дней в календарном году), отпускные, компенсация при увольнении, страхование, охрана труда. Дополнительно 10-20% к ФОТ.' },
       { question: 'Выгоднее ли нанимать через IT Park?', answer: 'Да, экономия ~620 000 сум/мес на сотрудника с зарплатой 10 млн «на руки» (около 5% общих расходов).' },
       { question: 'Какой социальный налог для бюджетных организаций?', answer: '25% от ФОТ вместо стандартных 12%. Полная стоимость = Гросс × 1,25.' },
     ],
     faqUz: [
       { question: "O'zbekistonda ish beruvchi ish haqidan tashqari qancha to'laydi?", answer: "Hisoblangan ish haqidan 12% ijtimoiy soliq (byudjet uchun 25%). To'liq qiymat = qo'ldagi ish haqi × 1,274." },
       { question: "Xodimning to'liq qiymatini qanday hisoblash mumkin?", answer: "Gross = Netto / 0,88. To'liq qiymat = Gross × 1,12. IT Park uchun: Gross = Netto / 0,925." },
-      { question: "Ish beruvchi yana qanday xarajatlarga duchor bo'ladi?", answer: "Kasallik varag'i (birinchi 10 kun), ta'til haqi, ishdan bo'shatish kompensatsiyasi, sug'urta, mehnat muhofazasi. IHFga qo'shimcha 10-20%." },
+      { question: "Ish beruvchi yana qanday xarajatlarga duchor bo'ladi?", answer: "Kasallik varag'i (kalendar yilda birinchi 5 kun), ta'til haqi, ishdan bo'shatish kompensatsiyasi, sug'urta, mehnat muhofazasi. IHFga qo'shimcha 10-20%." },
       { question: "IT Park orqali yollash foydaliroqmi?", answer: "Ha, 10 mln so'm qo'ldagi ish haqili xodimga oyiga ~620 000 so'm tejash (umumiy xarajatlarning taxminan 5%)." },
       { question: "Byudjet tashkilotlari uchun ijtimoiy soliq qancha?", answer: "Standart 12% o'rniga IHFdan 25%. To'liq qiymat = Gross × 1,25." },
     ],
@@ -738,21 +739,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'brv',
-    lastUpdated: '2026-08-18',
+    lastUpdated: '2026-09-13',
     sources: [
       { name: 'Указ Президента о БРВ', url: 'https://lex.uz' },
     ],
     paragraphsRu: [
       'Базовая расчётная величина (БРВ) в Узбекистане с 1 сентября 2026 года составляет 440 000 сум (Указ УП-115 от 23.06.2026); до этого, с августа 2025 года, она была равна 412 000 сум. БРВ — это универсальный экономический показатель, который используется для расчёта штрафов, государственных пошлин, социальных пособий, налоговых порогов и ограничений. Калькулятор БРВ переводит суммы из БРВ в сумы и обратно, что необходимо для понимания законодательных норм и расчёта платежей.',
       'Динамика БРВ за последние годы: 2023 — 330 000 сум; 2024 — 375 000 сум (рост 13,6%); с августа 2025 — 412 000 сум (рост 9,9%); с 1 сентября 2026 — 440 000 сум (рост 6,8%). БРВ индексируется с учётом инфляции и роста экономики. Размер БРВ устанавливается Указом Президента и публикуется в официальных источниках. Каждое изменение БРВ автоматически влияет на все привязанные к нему показатели: штрафы, пороги, пособия.',
-      'Примеры использования БРВ: порог для обязательной регистрации плательщиком НДС — 12 000 БРВ = 5 280 000 000 сум; штраф за вождение без полиса ОСАГО — 1 БРВ = 440 000 сум; гарантия по банковским вкладам — ~455 БРВ (200 000 000 сум). Внимание: не все налоговые лимиты считаются в БРВ — льготы по НДФЛ привязаны к МРОТ (1 360 000 сум): необлагаемая материальная помощь — 4,22 МРОТ = 5 739 200 сум/год, погашение ипотеки — до 80 МРОТ = 108 800 000 сум/год.',
+      'Примеры использования БРВ: порог для обязательной регистрации плательщиком НДС — 12 000 БРВ = 5 280 000 000 сум; штраф за езду без действующего полиса ОСАГО — 0,5 БРВ = 220 000 сум (или предупреждение); гарантия по банковским вкладам — ~455 БРВ (200 000 000 сум). Внимание: не все налоговые лимиты считаются в БРВ — льготы по НДФЛ привязаны к МРОТ (1 360 000 сум): необлагаемая материальная помощь — 4,22 МРОТ = 5 739 200 сум/год, погашение ипотеки — до 80 МРОТ = 108 800 000 сум/год.',
       'Минимальная заработная плата (МЗП) с 1 сентября 2026 года составляет 1 360 000 сум — это примерно 3,09 БРВ. МЗП и БРВ — разные показатели: МЗП определяет минимальный уровень оплаты труда, а БРВ — базу для расчёта различных нормативов. Ранее МЗП и БРВ были привязаны друг к другу, но с реформы 2022 года они устанавливаются независимо.',
       'Для быстрого расчёта: 1 БРВ = 440 000 сум; 10 БРВ = 4 400 000 сум; 100 БРВ = 44 000 000 сум; 1 000 БРВ = 440 000 000 сум; 10 000 БРВ = 4 400 000 000 сум. При чтении законодательных актов, где суммы указаны в БРВ, используйте наш калькулятор для мгновенного перевода в сумы.',
     ],
     paragraphsUz: [
       "O'zbekistonda bazaviy hisoblash kattaligi (BHK) 2026-yil 1-sentabridan 440 000 so'mni tashkil etadi (23.06.2026-yildagi PF-115 Farmoni); bundan oldin, 2025-yil avgustidan, u 412 000 so'm edi. BHK — jarimalar, davlat bojlari, ijtimoiy nafaqalar, soliq chegaralari va cheklovlarni hisoblash uchun ishlatiladigan universal iqtisodiy ko'rsatkich. BHK kalkulyatori summalarni BHKdan so'mga va aksincha o'giradi.",
       "So'nggi yillardagi BHK dinamikasi: 2023 — 330 000 so'm; 2024 — 375 000 so'm (13,6% o'sish); 2025-yil avgustidan — 412 000 so'm (9,9% o'sish); 2026-yil 1-sentabridan — 440 000 so'm (6,8% o'sish). BHK inflyatsiya va iqtisodiy o'sishni hisobga olgan holda indekslanadi. BHK miqdori Prezident Farmoni bilan belgilanadi.",
-      "BHK qo'llanilishi misollari: QQS to'lovchisi sifatida majburiy ro'yxatdan o'tish chegarasi — 12 000 BHK = 5 280 000 000 so'm; OSAGOsiz haydash uchun jarima — 1 BHK = 440 000 so'm; bank omonatlari kafolati — ~455 BHK (200 000 000 so'm). Diqqat: barcha soliq limitlari BHK da hisoblanmaydi — JShShS imtiyozlari MIH ga (1 360 000 so'm) bog'langan: JShShSga tortilmaydigan moddiy yordam — yiliga 4,22 MIH = 5 739 200 so'm, ipotekani to'lash — yiliga 80 MIH gacha = 108 800 000 so'm.",
+      "BHK qo'llanilishi misollari: QQS to'lovchisi sifatida majburiy ro'yxatdan o'tish chegarasi — 12 000 BHK = 5 280 000 000 so'm; amal qiluvchi OSAGO polisisiz haydash uchun jarima — 0,5 BHK = 220 000 so'm (yoki ogohlantirish); bank omonatlari kafolati — ~455 BHK (200 000 000 so'm). Diqqat: barcha soliq limitlari BHK da hisoblanmaydi — JShShS imtiyozlari MIH ga (1 360 000 so'm) bog'langan: JShShSga tortilmaydigan moddiy yordam — yiliga 4,22 MIH = 5 739 200 so'm, ipotekani to'lash — yiliga 80 MIH gacha = 108 800 000 so'm.",
       "Minimal ish haqi (MIH) 2026-yil 1-sentabridan 1 360 000 so'mni tashkil etadi — bu taxminan 3,09 BHK. MIH va BHK turli ko'rsatkichlardir: MIH mehnat haqi to'lashning minimal darajasini belgilaydi, BHK esa turli normativlarni hisoblash uchun asosdir. 2022-yil islohidan beri ular mustaqil belgilanadi.",
       "Tez hisoblash uchun: 1 BHK = 440 000 so'm; 10 BHK = 4 400 000 so'm; 100 BHK = 44 000 000 so'm; 1 000 BHK = 440 000 000 so'm; 10 000 BHK = 4 400 000 000 so'm. Summalar BHK da ko'rsatilgan qonun hujjatlarini o'qiyotganda, so'mga bir zumda o'girish uchun kalkulyatorimizdan foydalaning.",
     ],
@@ -778,7 +779,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'llc-calculator',
-    lastUpdated: '2026-02-16',
+    lastUpdated: '2026-09-13',
     sources: [{ name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' }],
     paragraphsRu: [
       'Калькулятор ООО помогает предпринимателям в Узбекистане рассчитать налоговую нагрузку при различных системах налогообложения. Общество с ограниченной ответственностью (ООО) — самая распространённая форма ведения бизнеса в стране. Согласно Налоговому кодексу, ООО может работать на общей системе (налог на прибыль 15% + НДС 12%) или на упрощённой (налог с оборота 4% без вычета расходов).',
@@ -798,13 +799,13 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Какой налог на прибыль ООО?', answer: '15% на общей системе. На упрощённой — 4% от оборота (без вычета расходов).' },
       { question: 'Какой налог на дивиденды?', answer: 'НДФЛ 5% с дивидендов резидентам, 10% — нерезидентам.' },
       { question: 'Когда выгоднее общая система?', answer: 'При расходах более 60% от выручки. При расходах менее 40% выгоднее упрощённая (4% от оборота).' },
-      { question: 'Какие отчёты сдаёт ООО?', answer: 'Декларация по налогу на прибыль (ежеквартально), НДС (ежемесячно/квартально), расчёт социального налога, финансовая отчётность.' },
+      { question: 'Какие отчёты сдаёт ООО?', answer: 'Декларация по налогу на прибыль (ежеквартально), НДС (ежемесячно, до 20-го числа следующего месяца), расчёт социального налога, финансовая отчётность.' },
     ],
     faqUz: [
       { question: "MChJ foyda solig'i qancha?", answer: "Umumiy tizimda 15%. Soddalashtirilda — aylanmaning 4% (xarajatlarni chegirmasdan)." },
       { question: 'Dividendlarga soliq qancha?', answer: "Rezidentlarga to'langan dividendlardan JShShS 5%, norezidentlarga — 10%." },
       { question: "Umumiy tizim qachon foydaliroq?", answer: "Xarajatlar tushumning 60% dan ortiq bo'lganda. 40% dan kam bo'lsa soddalashtilgan (aylanmadan 4%) foydaliroq." },
-      { question: 'MChJ qanday hisobotlar topshiradi?', answer: "Foyda solig'i deklaratsiyasi (har chorak), QQS (oylik/choraklik), ijtimoiy soliq hisobi, moliyaviy hisobot." },
+      { question: 'MChJ qanday hisobotlar topshiradi?', answer: "Foyda solig'i deklaratsiyasi (har chorak), QQS (har oy, keyingi oyning 20-sanasigacha), ijtimoiy soliq hisobi, moliyaviy hisobot." },
     ],
   },
 
@@ -1468,20 +1469,20 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'severance',
-    lastUpdated: '2026-08-18',
+    lastUpdated: '2026-09-13',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Минтруд РУз', url: 'https://mehnat.uz' },
     ],
     paragraphsRu: [
-      'Выходное пособие при увольнении в Узбекистане зависит от основания увольнения и стажа работы в организации. При сокращении штата размер выходного пособия определяется по градуированной шкале: при стаже до 3 лет — 50% среднемесячного заработка, от 3 до 5 лет — 75%, от 5 до 10 лет — 100%, от 10 до 15 лет — 150%, свыше 15 лет — 200% (2 среднемесячных заработка). При ликвидации организации дополнительно сохраняется заработная плата на период трудоустройства до 2 месяцев (до 3 месяцев при регистрации в службе занятости в течение 10 дней после увольнения). Минимальная заработная плата в Узбекистане составляет 1 360 000 сум.',
+      'Выходное пособие при увольнении в Узбекистане зависит от основания увольнения и стажа работы в организации. При сокращении штата размер выходного пособия зависит от стажа у этого работодателя и не может быть меньше: при стаже до 3 лет — 50% среднемесячного заработка, от 3 до 5 лет — 75%, от 5 до 10 лет — 100%, от 10 до 15 лет — 150%, свыше 15 лет — 200% (2 среднемесячных заработка). При ликвидации, сокращении и ряде других оснований (отказ от работы на новых условиях или от переезда вместе с работодателем, отсутствие подходящей работы при переводе по состоянию здоровья и др.) за работником на время поиска работы сохраняется среднемесячный заработок — не более 2 месяцев, причём выходное пособие засчитывается в эту сумму, а не выплачивается сверх неё. За третий месяц заработок сохраняется, если в течение 30 календарных дней после увольнения работник встал на учёт в местном органе по труду как ищущий работу (ст. 100 ТК). Минимальная заработная плата в Узбекистане составляет 1 360 000 сум.',
       'Компенсация за неиспользованный отпуск выплачивается при увольнении по любому основанию. Базовый трудовой отпуск в Узбекистане — 21 календарный день (для отдельных категорий — до 30 дней). Расчёт: средний дневной заработок × количество неиспользованных дней. Средний дневной заработок определяется за последние 3 месяца работы. Если отпуск использован авансом — сумма удерживается при расчёте.',
       'При увольнении по собственному желанию выходное пособие не выплачивается — работник получает только компенсацию за неиспользованный отпуск и зарплату за отработанные дни. При увольнении по соглашению сторон — размер выплат определяется договорённостью и фиксируется в письменном соглашении. Судебная практика в Узбекистане признаёт такие соглашения обязательными для исполнения.',
       'Все выплаты при увольнении производятся в последний рабочий день. За задержку расчёта работодатель выплачивает компенсацию в размере среднего заработка за каждый день просрочки. Компенсация за неиспользованный отпуск облагается НДФЛ 12%, но не облагается социальным налогом. Выходное пособие при сокращении также облагается НДФЛ, за исключением сумм, не превышающих 4,22 МРОТ (5 739 200 сум).',
       'Пример расчёта при сокращении: зарплата 10 000 000 сум/мес, стаж 7 лет (100% по шкале), неиспользованный отпуск 10 дней. Выходное пособие: 10 000 000 × 100% = 10 000 000 сум. Компенсация за отпуск: (10 000 000 / 21,7) × 10 = 4 608 295 сум. Зарплата за отработанные дни (15 дней): 6 912 442 сум. Итого начислено: 21 520 737 сум. Минус НДФЛ 12%: чистая выплата ≈ 18 938 249 сум.',
     ],
     paragraphsUz: [
-      "O'zbekistonda ishdan bo'shatishda chiqish nafaqasi ishdan bo'shatish asosiga va tashkilotdagi ish stajiga bog'liq. Shtatni qisqartirishda chiqish nafaqasi miqdori graduatsiyalangan shkala bo'yicha belgilanadi: 3 yilgacha stajda — o'rtacha oylik ish haqining 50%, 3 dan 5 yilgacha — 75%, 5 dan 10 yilgacha — 100%, 10 dan 15 yilgacha — 150%, 15 yildan ortiq — 200% (2 o'rtacha oylik ish haqi). Tashkilotni tugatishda qo'shimcha ravishda ish topish davri uchun 2 oygacha (ishdan bo'shatilgandan keyin 10 kun ichida bandlik xizmatiga ro'yxatdan o'tganda 3 oygacha) ish haqi saqlanadi. O'zbekistonda minimal ish haqi 1 360 000 so'm.",
+      "O'zbekistonda ishdan bo'shatishda chiqish nafaqasi ishdan bo'shatish asosiga va tashkilotdagi ish stajiga bog'liq. Shtatni qisqartirishda chiqish nafaqasi miqdori shu ish beruvchidagi stajga bog'liq va quyidagidan kam bo'lishi mumkin emas: 3 yilgacha stajda — o'rtacha oylik ish haqining 50%, 3 dan 5 yilgacha — 75%, 5 dan 10 yilgacha — 100%, 10 dan 15 yilgacha — 150%, 15 yildan ortiq — 200% (2 o'rtacha oylik ish haqi). Tashkilot tugatilganda, shtat qisqartirilganda va boshqa ayrim asoslarda (yangi shartlarda ishlashdan yoki ish beruvchi bilan boshqa joyga ko'chishdan bosh tortish, sog'lig'i bo'yicha o'tkazishda mos ish yo'qligi va h.k.) ish qidirish davrida xodimning o'rtacha oylik ish haqi saqlanadi — ko'pi bilan ikki oy, bunda chiqish nafaqasi shu summaga hisobga olinadi, uning ustiga to'lanmaydi. Uchinchi oy uchun ham ish haqi saqlanadi, agar xodim mehnat shartnomasi bekor qilinganidan keyin o'ttiz kalendar kun ichida mahalliy mehnat organida ish qidirayotgan shaxs sifatida ro'yxatdan o'tgan bo'lsa (MKning 100-moddasi). O'zbekistonda minimal ish haqi 1 360 000 so'm.",
       "Foydalanilmagan ta'til uchun kompensatsiya har qanday asosda ishdan bo'shatishda to'lanadi. O'zbekistonda asosiy mehnat ta'tili — 21 kalendar kun (ayrim toifalar uchun — 30 kungacha). Hisob: o'rtacha kunlik ish haqi × foydalanilmagan kunlar soni. O'rtacha kunlik ish haqi oxirgi 3 oy uchun aniqlanadi. Ta'til avans bilan ishlatilgan bo'lsa — hisob-kitobda ushlab qolinadi.",
       "O'z xohishi bilan ishdan bo'shaganda chiqish nafaqasi to'lanmaydi — xodim faqat foydalanilmagan ta'til kompensatsiyasi va ishlagan kunlar uchun ish haqini oladi. Tomonlar kelishuvi bo'yicha ishdan bo'shatishda — to'lovlar miqdori kelishuv bilan aniqlanadi va yozma kelishuvda belgilanadi. O'zbekistondagi sud amaliyoti bunday kelishuvlarni bajarish uchun majburiy deb tan oladi.",
       "Ishdan bo'shatishdagi barcha to'lovlar oxirgi ish kunida amalga oshiriladi. Hisob-kitobni kechiktirganlik uchun ish beruvchi har kechiktirilgan kun uchun o'rtacha ish haqi miqdorida kompensatsiya to'laydi. Foydalanilmagan ta'til kompensatsiyasi JShShS 12% ga tortiladi, lekin ijtimoiy soliqqa tortilmaydi. Qisqartirish vaqtidagi chiqish nafaqasi ham 4,22 MIH (5 739 200 so'm) dan oshgan summada JShShSga tortiladi.",
@@ -1490,14 +1491,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     faqRu: [
       { question: 'Положено ли выходное пособие при увольнении?', answer: 'При сокращении — да, по градуированной шкале: до 3 лет стажа — 50%, 3-5 лет — 75%, 5-10 лет — 100%, 10-15 лет — 150%, 15+ лет — 200% среднемесячного заработка. По собственному желанию — нет (только компенсация за отпуск).' },
       { question: 'Как рассчитать компенсацию за неиспользованный отпуск?', answer: 'Средний дневной заработок (за 3 мес.) × количество неиспользованных дней отпуска.' },
-      { question: 'Какие выплаты при сокращении?', answer: 'Выходное пособие (по шкале от 50% до 200% среднемесячного в зависимости от стажа) + компенсация за отпуск + сохранение зарплаты на трудоустройство (до 2-3 мес.).' },
+      { question: 'Какие выплаты при сокращении?', answer: 'Выходное пособие (не менее 50–200% среднемесячного в зависимости от стажа) и компенсация за отпуск. На время поиска работы сохраняется среднемесячный заработок до 2 месяцев с зачётом выходного пособия; за третий месяц — если в течение 30 календарных дней встать на учёт в органе по труду.' },
       { question: 'В какой срок должны рассчитать при увольнении?', answer: 'В последний рабочий день. За каждый день просрочки — компенсация в размере среднего заработка.' },
       { question: 'Облагаются ли выплаты при увольнении налогом?', answer: 'Компенсация за отпуск — НДФЛ 12%. Выходное пособие — НДФЛ с суммы свыше 4,22 МРОТ (5 739 200 сум).' },
     ],
     faqUz: [
       { question: "Ishdan bo'shatishda chiqish nafaqasi beriladimi?", answer: "Qisqartirishda — ha, graduatsiyalangan shkala bo'yicha: 3 yilgacha staj — 50%, 3-5 yil — 75%, 5-10 yil — 100%, 10-15 yil — 150%, 15+ yil — o'rtacha oylik ish haqining 200%. O'z xohishi bilan — yo'q (faqat ta'til kompensatsiyasi)." },
       { question: "Foydalanilmagan ta'til kompensatsiyasini qanday hisoblash mumkin?", answer: "O'rtacha kunlik ish haqi (3 oy uchun) × foydalanilmagan kunlar soni." },
-      { question: "Qisqartirish vaqtida qanday to'lovlar bor?", answer: "Chiqish nafaqasi (stajga qarab o'rtacha oylikning 50% dan 200% gacha shkala bo'yicha) + ta'til kompensatsiyasi + ish topish davri uchun ish haqi (2-3 oygacha)." },
+      { question: "Qisqartirish vaqtida qanday to'lovlar bor?", answer: "Chiqish nafaqasi (stajga qarab o'rtacha oylikning kamida 50–200%) va ta'til kompensatsiyasi. Ish qidirish davrida o'rtacha oylik ish haqi chiqish nafaqasini hisobga olgan holda 2 oygacha saqlanadi; 30 kalendar kun ichida mehnat organida ro'yxatdan o'tilsa — uchinchi oy uchun ham." },
       { question: "Ishdan bo'shatishda qancha muddatda hisob-kitob qilishlari kerak?", answer: "Oxirgi ish kunida. Har kechiktirilgan kun uchun o'rtacha ish haqi miqdorida kompensatsiya." },
       { question: "Ishdan bo'shatish to'lovlari soliqqa tortiladimi?", answer: "Ta'til kompensatsiyasi — JShShS 12%. Chiqish nafaqasi — 4,22 MIH (5 739 200 so'm) dan ortiq summadan JShShS." },
     ],
