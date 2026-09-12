@@ -4,7 +4,7 @@
  */
 
 import { BRV, CB_RATE } from '@/lib/constants/brv'
-import { TAX_RATES } from '@/lib/constants/tax-rates'
+import { LAND_TAX_COEFFICIENT_RANGE, LAND_TAX_ZONES_2026, TAX_RATES, type LandTaxZone } from '@/lib/constants/tax-rates'
 
 // Income Tax (NDFL/JSHSHS) - covered in salary.ts, this is standalone
 export interface IncomeTaxResult {
@@ -172,9 +172,95 @@ export function calculateTurnoverTax(revenue: number, rate: number = 0.04): { re
   return { revenue, taxRate: rate * 100, taxAmount, netRevenue: revenue - taxAmount }
 }
 
-// Land tax
-export function calculateLandTax(normativeValue: number, isAgricultural: boolean = true): { value: number; taxRate: number; annualTax: number } {
-  const taxRate = isAgricultural ? 0.0095 : 0.012
-  const indexed = taxRate * 1.07 // +7% indexation from 2026
-  return { value: normativeValue, taxRate: indexed * 100, annualTax: normativeValue * indexed }
+// Land tax — НК гл. 61 (юрлица, ст. 424–432) и гл. 62 (физлица, ст. 433–440).
+// Ставки и коэффициенты — lib/constants/tax-rates.ts.
+export type LandCategory = 'agricultural' | 'non-agricultural'
+export type LandPayer = 'individual' | 'legal'
+
+export interface LandTaxInput {
+  category: LandCategory
+  payer: LandPayer
+  /** Сельхозземли: нормативная стоимость угодий, сум (база — ст. 427, 435). */
+  normativeValue?: number
+  /** Несельхозземли: площадь участка, кв. м (база — ст. 427, 435). */
+  areaM2?: number
+  /** Несельхозземли: id из LAND_TAX_ZONES_2026. */
+  zoneId?: string
+  /** Коэффициент кенгаша; по умолчанию 1 — базовая ставка НК. */
+  coefficient?: number
+}
+
+/** Сроки уплаты: физлица — ст. 440, юрлица — ст. 432 НК. */
+export type LandTaxSchedule =
+  /** Физлица и дехканские хозяйства: равными долями до 15 апреля и 15 октября. */
+  | { kind: 'individual'; april15: number; october15: number }
+  /** Юрлица, сельхозземли: 30% до 1 сентября, остаток до 1 декабря. */
+  | { kind: 'legal-agricultural'; september1: number; december1: number }
+  /**
+   * Юрлица, несельхозземли: плательщики налога с оборота — 1/4 до 20-го числа
+   * третьего месяца квартала; остальные — 1/12 до 10-го числа (за январь — до 20 января).
+   */
+  | { kind: 'legal-non-agricultural'; quarterly: number; monthly: number }
+
+export interface LandTaxResult {
+  category: LandCategory
+  payer: LandPayer
+  /** Сельхозземли: ставка в процентах от нормативной стоимости (0,95). */
+  ratePercent?: number
+  /** Несельхозземли: выбранная зона и её базовая ставка в пересчёте на 1 кв. м. */
+  zone?: LandTaxZone
+  baseRatePerM2?: number
+  coefficient: number
+  coefficientRange: readonly [number, number]
+  coefficientInRange: boolean
+  annualTax: number
+  schedule: LandTaxSchedule
+}
+
+export function getLandTaxZone(id: string): LandTaxZone {
+  return LAND_TAX_ZONES_2026.find((zone) => zone.id === id) ?? LAND_TAX_ZONES_2026[0]
+}
+
+export function calculateLandTax(input: LandTaxInput): LandTaxResult {
+  const k = input.coefficient
+  const coefficient = k !== undefined && Number.isFinite(k) && k > 0 ? k : 1
+
+  let annualTax: number
+  let coefficientRange: readonly [number, number]
+  let details: Pick<LandTaxResult, 'ratePercent' | 'zone' | 'baseRatePerM2'>
+
+  if (input.category === 'agricultural') {
+    const rate = TAX_RATES.LAND_TAX_AGRICULTURAL
+    annualTax = Math.max(0, input.normativeValue ?? 0) * rate * coefficient
+    coefficientRange = LAND_TAX_COEFFICIENT_RANGE.agricultural
+    details = { ratePercent: rate * 100 }
+  } else {
+    const zone = getLandTaxZone(input.zoneId ?? '')
+    const baseRatePerM2 = input.payer === 'legal' ? zone.legalPerHa / 10_000 : zone.individualPerM2
+    annualTax = Math.max(0, input.areaM2 ?? 0) * baseRatePerM2 * coefficient
+    coefficientRange = zone.isTashkentCity ? LAND_TAX_COEFFICIENT_RANGE.tashkentCity : LAND_TAX_COEFFICIENT_RANGE.regions
+    details = { zone, baseRatePerM2 }
+  }
+
+  let schedule: LandTaxSchedule
+  if (input.payer === 'individual') {
+    schedule = { kind: 'individual', april15: annualTax / 2, october15: annualTax / 2 }
+  } else if (input.category === 'agricultural') {
+    const september1 = annualTax * 0.3
+    schedule = { kind: 'legal-agricultural', september1, december1: annualTax - september1 }
+  } else {
+    schedule = { kind: 'legal-non-agricultural', quarterly: annualTax / 4, monthly: annualTax / 12 }
+  }
+
+  const eps = 1e-9
+  return {
+    category: input.category,
+    payer: input.payer,
+    ...details,
+    coefficient,
+    coefficientRange,
+    coefficientInRange: coefficient >= coefficientRange[0] - eps && coefficient <= coefficientRange[1] + eps,
+    annualTax,
+    schedule,
+  }
 }

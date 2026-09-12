@@ -1,5 +1,5 @@
 import type { CategoryId } from "@/lib/types/calculator"
-import { TAX_RATES } from "@/lib/constants/tax-rates"
+import { LAND_TAX_ZONES_2026, TAX_RATES } from "@/lib/constants/tax-rates"
 import { ELECTRICITY_TIERS, GAS_TIERS_SUMMER, WATER_HOT_RATE } from "@/lib/constants/utility-tariffs"
 import { UTILITY_REGIONS } from "@/lib/constants/utility-regions"
 import { coldWaterRatePerM3 } from "@/lib/calculators/utilities"
@@ -48,6 +48,27 @@ const TAX_TABLES: CalculatorTable[] = [
       { ru: ["200\u2013500 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`], uz: ["200\u2013500 m\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM)}`] },
       { ru: ["Свыше 500 м\u00B2", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`], uz: ["500 m\u00B2 dan ortiq", `${pct(TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE)}`] },
       { ru: ["Юридические лица", `${pct(TAX_RATES.PROPERTY_TAX_LEGAL)}`], uz: ["Yuridik shaxslar", `${pct(TAX_RATES.PROPERTY_TAX_LEGAL)}`] },
+    ],
+  },
+  {
+    // НК ст. 429 ч.1 и ст. 437 ч.1 в ред. ЗРУ-1108 (с 01.01.2026); к ставкам кенгаши применяют коэффициенты.
+    titleRu: "Земельный налог: базовые ставки 2026 года",
+    titleUz: "Yer solig'i: 2026-yil bazaviy stavkalari",
+    headers: [
+      { ru: "Регион, зона", uz: "Hudud, zona" },
+      { ru: "Физлица, сум за 1 м²", uz: "Jismoniy shaxslar, 1 m² uchun so'm" },
+      { ru: "Юрлица, млн сум за 1 га", uz: "Yuridik shaxslar, 1 ga uchun mln so'm" },
+    ],
+    rows: [
+      ...LAND_TAX_ZONES_2026.map((zone) => {
+        const perM2 = zone.individualPerM2.toLocaleString("ru-RU")
+        const perHa = (zone.legalPerHa / 1_000_000).toLocaleString("ru-RU", { minimumFractionDigits: 1, maximumFractionDigits: 1 })
+        return { ru: [zone.nameRu, perM2, perHa], uz: [zone.nameUz, perM2, perHa] }
+      }),
+      {
+        ru: ["Земли сельхозназначения (все регионы)", `${pct(TAX_RATES.LAND_TAX_AGRICULTURAL)} нормативной стоимости`, `${pct(TAX_RATES.LAND_TAX_AGRICULTURAL)} нормативной стоимости`],
+        uz: ["Qishloq xo'jaligi yerlari (barcha hududlar)", `normativ qiymatning ${pct(TAX_RATES.LAND_TAX_AGRICULTURAL)}`, `normativ qiymatning ${pct(TAX_RATES.LAND_TAX_AGRICULTURAL)}`],
+      },
     ],
   },
 ]
