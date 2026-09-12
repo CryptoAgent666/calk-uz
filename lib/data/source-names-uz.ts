@@ -43,6 +43,8 @@ const SOURCE_NAMES_UZ: Record<string, string> = {
   'Постановление о тарифах на воду': "Suv tariflari to'g'risidagi qaror",
   'Постановление о тарифах на газ': "Gaz tariflari to'g'risidagi qaror",
   'Постановление о тарифах на электроэнергию': "Elektr energiya tariflari to'g'risidagi qaror",
+  'ПКМ № 244 от 19.04.2025 — нормы беспошлинного ввоза': "VMQ № 244, 19.04.2025 — bojsiz olib kirish normalari",
+  'ПП-4508 — единый таможенный платёж': "PQ-4508 — yagona bojxona to'lovi",
   'Приказ МВД о госпошлинах за регистрацию ТС (рег. № 2303)': "IIVning transport vositalarini ro'yxatdan o'tkazish bojlari to'g'risidagi buyrug'i (ro'yxat № 2303)",
   'Программа «Эл-юрт умиди»': "«El-yurt umidi» dasturi",
   'Рынок недвижимости Узбекистана': "O'zbekiston ko'chmas mulk bozori",

@@ -134,7 +134,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "BAA dan elektronika olib kirish chegarasi qancha?",
         answer:
-          "Yakka shaxs uchun bojsiz olib kirish chegarasi — 1 000 EUR (~13,7 mln so'm joriy kursda) yoki 50 kg. Limitdan ortiq qiymatga 30% boj solinadi. Pochta yoki kuryer orqali kelgan paketlar uchun chegara 100 EUR.",
+          "Samolyotda kelganda jismoniy shaxs uchun bojsiz olib kirish normasi — 1 000 AQSh dollari, agar chet elda kamida 3 kalendar kun bo'lgan bo'lsangiz. Og'irlik bo'yicha umumiy cheklov yo'q. Normadan ortiq qismiga yagona bojxona to'lovi olinadi — 30%, lekin 1 kg uchun kamida 3 AQSh dollari (2027-yil 1-yanvardan — 20% va 1 kg uchun kamida 2 dollar). Xalqaro kuryerlik jo'natmalari uchun norma — kalendar oy davomida 200 AQSh dollari, xalqaro pochta jo'natmalari uchun — 100 AQSh dollari.",
       },
       {
         question: "Avtomobil rasmiylashtirishda «utilizatsiya yig'imi» qancha?",
