@@ -487,14 +487,16 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     slug: 'land-tax',
     totalTimeMinutes: 2,
     stepsRu: [
-      { name: 'Введите нормативную стоимость', text: 'Укажите нормативную стоимость участка в сумах — налог считается от неё.' },
-      { name: 'Отметьте назначение земли', text: 'Для сельскохозяйственных земель действует отдельная, пониженная ставка.' },
-      { name: 'Получите расчёт налога', text: 'Результат появится сразу: ставка, годовой налог и квартальный платёж.' },
+      { name: 'Выберите категорию земли и плательщика', text: 'За сельхозземли налог — 0,95% нормативной стоимости; за остальные участки — ставка в сумах за площадь: у физлиц за 1 кв. м, у юрлиц за 1 гектар.' },
+      { name: 'Укажите регион и площадь', text: 'Выберите регион или зону Ташкента и введите площадь в кв. м, сотках или гектарах; для сельхозземель — нормативную стоимость угодий.' },
+      { name: 'Проверьте коэффициент', text: 'По умолчанию 1 — базовая ставка Налогового кодекса. Если знаете коэффициент местного кенгаша для вашего района или махалли, введите его.' },
+      { name: 'Получите расчёт налога', text: 'Результат появится сразу: базовая ставка, годовой налог и сроки уплаты — у физлиц равными долями до 15 апреля и 15 октября.' },
     ],
     stepsUz: [
-      { name: 'Normativ qiymatni kiriting', text: 'Yer uchastkasining normativ qiymatini so\'mda kiriting — soliq shundan hisoblanadi.' },
-      { name: 'Yer maqsadini belgilang', text: 'Qishloq xo\'jaligi yerlari uchun alohida, pasaytirilgan stavka amal qiladi.' },
-      { name: 'Soliq hisobini oling', text: 'Natija darhol chiqadi: stavka, yillik soliq va choraklik to\'lov.' },
+      { name: 'Yer toifasi va to\'lovchini tanlang', text: 'Qishloq xo\'jaligi yerlari uchun soliq — normativ qiymatning 0,95%; qolgan uchastkalar uchun maydon uchun so\'mdagi stavka: jismoniy shaxslarga 1 kv. m, yuridik shaxslarga 1 gektar uchun.' },
+      { name: 'Hudud va maydonni ko\'rsating', text: 'Hududni yoki Toshkent zonasini tanlang va maydonni kv. m, sotix yoki gektarda kiriting; qishloq xo\'jaligi yerlari uchun — yerning normativ qiymatini.' },
+      { name: 'Koeffitsiyentni tekshiring', text: 'Standart 1 — Soliq kodeksidagi bazaviy stavka. Tuman yoki mahallangiz uchun mahalliy kengash koeffitsiyentini bilsangiz, uni kiriting.' },
+      { name: 'Soliq hisobini oling', text: 'Natija darhol chiqadi: bazaviy stavka, yillik soliq va to\'lov muddatlari — jismoniy shaxslar uchun teng ulushlarda 15-aprel va 15-oktabrgacha.' },
     ],
   },
   {
