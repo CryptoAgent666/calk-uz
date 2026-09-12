@@ -20,6 +20,46 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-09-13",
+    dateLabelRu: "13 сентября 2026",
+    dateLabelUz: "2026-yil 13-sentabr",
+    items: [
+      {
+        titleRu: "Штраф за езду без ОСАГО — предупреждение или 0,5 БРВ: прошлая правка была ошибкой",
+        titleUz: "OSAGOsiz haydash uchun jarima — ogohlantirish yoki 0,5 BHK: oldingi tuzatish xato edi",
+        descRu:
+          "18 августа мы заменили «предупреждение или штраф 0,5 БРВ» на «1 БРВ без предупреждения», опираясь на сводные таблицы штрафов. Это было ошибкой. По ст. 135-1 Кодекса об административной ответственности в редакции Закона ЗРУ-1116 от 4 февраля 2026 года за езду в период, не покрытый полисом ОСАГО, или водителем, не вписанным в полис, применяется предупреждение или штраф 0,5 БРВ — сейчас это 220 000 сум. Штраф 1 БРВ (440 000 сум) назначается по другой статье — 135 часть 1, когда полис оформлен, но водитель не имеет его при себе; при ID-карте или биометрическом паспорте возить полис с собой не требуется. Таблицы, на которые мы опирались, смешивают эти два состава. Исправлено на страницах ОСАГО и БРВ. Заодно из статьи об ОСАГО убрано описание старой формулы с коэффициентами стажа и территории и скидкой бонус-малус до 50%: по тарифу 2026 года стоимость полиса — базовый тариф региона, умноженный на 1,0, 1,3, 2,0 или 3,0 в зависимости от числа ДТП по вине, скидки за безаварийность нет.",
+        descUz:
+          "18-avgustda biz jarimalar jadvallariga tayanib, «ogohlantirish yoki 0,5 BHK jarima»ni «ogohlantirishsiz 1 BHK» ga almashtirgan edik. Bu xato edi. Ma'muriy javobgarlik to'g'risidagi kodeksning 2026-yil 4-fevraldagi O'RQ-1116 Qonuni tahriridagi 135-1-moddasiga ko'ra, OSAGO polisi qamramagan davrda yoki polisga kiritilmagan haydovchi tomonidan boshqarish uchun ogohlantirish yoki 0,5 BHK jarima qo'llaniladi — hozir bu 220 000 so'm. 1 BHK (440 000 so'm) jarima boshqa modda — 135-moddaning birinchi qismi bo'yicha, polis rasmiylashtirilgan, lekin haydovchining yonida bo'lmaganda beriladi; ID-karta yoki biometrik pasport bo'lsa, polisni olib yurish talab etilmaydi. Biz tayangan jadvallar bu ikki tarkibni aralashtirib yuboradi. OSAGO va BHK sahifalarida tuzatildi. Shu bilan birga OSAGO maqolasidan staj va hudud koeffitsiyentlari hamda 50% gacha bonus-malus chegirmasi bo'lgan eski formula tavsifi olib tashlandi: 2026-yil tarifida polis narxi — hududning bazaviy tarifi, aybdor YTHlar soniga qarab 1,0, 1,3, 2,0 yoki 3,0 ga ko'paytiriladi, avariyasizlik uchun chegirma yo'q.",
+      },
+      {
+        titleRu: "Беспошлинный ввоз: $1 000 без «50 кг», платёж 30% — до конца 2026 года",
+        titleUz: "Bojsiz olib kirish: «50 kg»siz $1 000, 30% to'lov — 2026-yil oxirigacha",
+        descRu:
+          "В статье о таможенных платежах к авиалимиту $1 000 был приписан вес «до 50 кг», а в разборах и FAQ норма стояла в евро (1 000 EUR, для посылок 100 EUR) и как «1 БРВ × 8». Ни того, ни другого в постановлении Кабмина № 244 от 19 апреля 2025 года нет. С 1 мая 2025 года нормы такие: самолётом — $1 000, поездом и речным транспортом — $500, через автомобильные (пешеходные) пункты пропуска — $300, в курьерских отправлениях — $200 за календарный месяц, в почтовых — $100. Общего ограничения по весу нет. Нормы действуют, если человек пробыл за рубежом не менее 2 календарных дней (3 — при въезде самолётом), иначе платёж берётся со всей стоимости. С суммы сверх нормы взимается единый таможенный платёж вместо пошлины, НДС и акциза: 30%, но не менее $3 за 1 кг, а с 1 января 2027 года, по указу УП-174 от 27 августа 2026 года, — 20% и $2 за 1 кг. Пример с iPhone 17 за $1 200 пересчитан: платёж $60 (708 074 сум), а не «~127 000 сум». Из примера лимитов в БРВ убрана несуществующая норма «1 БРВ × 8».",
+        descUz:
+          "Bojxona to'lovlari maqolasida $1 000 havo limitiga «50 kg gacha» og'irlik qo'shib yozilgan, tahlillar va FAQda esa norma yevroda (1 000 EUR, jo'natmalar uchun 100 EUR) va «1 BHK × 8» deb berilgan edi. Vazirlar Mahkamasining 2025-yil 19-apreldagi 244-son qarorida bularning hech biri yo'q. 2025-yil 1-maydan normalar: samolyotda — $1 000, poyezd va daryo transportida — $500, avtomobil (piyoda) o'tkazish punktlari orqali — $300, kuryerlik jo'natmalarida — kalendar oy davomida $200, pochta jo'natmalarida — $100. Umumiy og'irlik cheklovi yo'q. Normalar chet elda kamida 2 kalendar kun (samolyotda — 3 kun) bo'lganda amal qiladi, aks holda to'lov butun qiymatdan olinadi. Normadan ortiq summaga boj, QQS va aksiz o'rniga yagona bojxona to'lovi olinadi: 30%, lekin 1 kg uchun kamida $3, 2027-yil 1-yanvardan esa 2026-yil 27-avgustdagi PF-174 Farmoniga ko'ra — 20% va 1 kg uchun $2. $1 200 lik iPhone 17 misoli qayta hisoblandi: to'lov «~127 000 so'm» emas, $60 (708 074 so'm). BHK limitlari misolidan mavjud bo'lmagan «1 BHK × 8» normasi olib tashlandi.",
+      },
+      {
+        titleRu: "Увольнение: заработок на время поиска работы — с зачётом выходного пособия, учёт в течение 30 дней",
+        titleUz: "Ishdan bo'shatish: ish qidirish davridagi ish haqi — chiqish nafaqasini hisobga olgan holda, ro'yxatdan o'tish 30 kun ichida",
+        descRu:
+          "Мы писали, что при ликвидации организации зарплата на период трудоустройства сохраняется «дополнительно» до 2 месяцев, а третий месяц — при регистрации в службе занятости в течение 10 дней. По ст. 100 действующего Трудового кодекса это неверно в трёх местах. Среднемесячный заработок сохраняется не более 2 месяцев с учётом уже выплаченного выходного пособия, а не сверх него. Гарантия действует не только при ликвидации, но и при сокращении, отказе от работы на новых условиях или от переезда вместе с работодателем и по ряду других оснований. За третий месяц заработок сохраняется, если работник встал на учёт в местном органе по труду в течение 30 календарных дней после увольнения — срок 10 дней был в Трудовом кодексе 1995 года. Уточнена и шкала выходного пособия по ст. 173: 50–200% среднемесячного заработка в зависимости от стажа — это минимумы, и считается стаж у этого работодателя.",
+        descUz:
+          "Tashkilot tugatilganda ish topish davri uchun ish haqi «qo'shimcha ravishda» 2 oygacha saqlanadi, uchinchi oy esa 10 kun ichida bandlik xizmatida ro'yxatdan o'tilganda, deb yozgan edik. Amaldagi Mehnat kodeksining 100-moddasiga ko'ra bu uch joyda noto'g'ri. O'rtacha oylik ish haqi to'langan chiqish nafaqasini hisobga olgan holda ko'pi bilan 2 oy saqlanadi, uning ustiga emas. Kafolat faqat tugatishda emas, shtat qisqartirilganda, yangi shartlarda ishlashdan yoki ish beruvchi bilan ko'chishdan bosh tortilganda va boshqa ayrim asoslarda ham amal qiladi. Uchinchi oy uchun ish haqi xodim ishdan bo'shatilganidan keyin 30 kalendar kun ichida mahalliy mehnat organida ro'yxatdan o'tgan bo'lsa saqlanadi — 10 kunlik muddat 1995-yilgi Mehnat kodeksida bo'lgan. 173-modda bo'yicha chiqish nafaqasi shkalasi ham aniqlashtirildi: stajga qarab o'rtacha oylik ish haqining 50–200% — bu eng kam miqdorlar, staj esa shu ish beruvchida hisoblanadi.",
+      },
+      {
+        titleRu: "Больничный за счёт работодателя — 5 дней в году, а не 10",
+        titleUz: "Ish beruvchi hisobidan kasallik varag'i — yiliga 10 emas, 5 kun",
+        descRu:
+          "В статье о стоимости сотрудника оставалось «первые 10 дней больничного — за счёт работодателя». По приложению 4 к постановлению Кабмина № 796 работодатель оплачивает первые 5 дней нетрудоспособности в календарном году, с шестого дня платит Фонд государственного социального страхования. В статье о больничном это было написано верно — правка не доехала до соседней страницы. Там же, в разделе про отчётность ООО и в примере зачёта НДС, убраны остатки квартального НДС: налоговый период по НДС — месяц для всех плательщиков с 2022 года.",
+        descUz:
+          "Xodim qiymati haqidagi maqolada «kasallik varag'ining birinchi 10 kuni — ish beruvchi hisobidan» degan jumla qolgan edi. Vazirlar Mahkamasining 796-son qaroriga 4-ilovaga ko'ra ish beruvchi kalendar yil davomida mehnatga layoqatsizlikning birinchi 5 kunini to'laydi, oltinchi kundan boshlab Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Kasallik varag'i haqidagi maqolada bu to'g'ri yozilgan edi — tuzatish qo'shni sahifaga yetib bormagan. Shu yerda, MChJ hisobotlari bo'limida va QQSni hisobga olish misolida choraklik QQS qoldiqlari olib tashlandi: QQS bo'yicha soliq davri 2022-yildan beri barcha to'lovchilar uchun — oy.",
+      },
+      // PHASE4-AGENT-ITEMS
+    ],
+  },
+  {
     date: "2026-09-10",
     dateLabelRu: "10 сентября 2026",
     dateLabelUz: "2026-yil 10-sentabr",
