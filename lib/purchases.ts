@@ -187,31 +187,59 @@ export type BuyResult = "ok" | "cancelled" | "unavailable" | "failed"
 /** Купить «Убрать рекламу». */
 export async function buyRemoveAds(): Promise<BuyResult> {
   if (!purchasesAvailable()) return "unavailable"
-  emitIap("purchase_tapped")
+  const platform = Capacitor.getPlatform()
+  emitIap("purchase_tapped", { platform })
   try {
     const { Purchases } = await loadSdk()
     const product = await fetchRemoveAdsProduct()
     if (!product) {
-      emitIap("purchase_failed")
+      // Тап был, а покупать нечего — без отдельного типа этот путь сливался со сбоями.
+      emitIap("purchase_unavailable", { platform, code: "product_not_found" })
       return "unavailable"
     }
     const { customerInfo } = await Purchases.purchaseStoreProduct({ product })
     const ok = hasEntitlement(customerInfo)
     setAdFree(ok)
+    if (!ok) emitIap("purchase_failed", { platform, code: "no_entitlement_after_purchase" })
     return ok ? "ok" : "failed"
   } catch (e) {
     // Отмена пользователем — не ошибка; различаем её от реального сбоя для воронки.
+    // Код пишем И для отмены: Google Play отдаёт USER_CANCELED не только когда окно
+    // закрыл человек, но и когда оно схлопнулось само — 13 из 14 отмен на calk.uz
+    // приходили через 1–7 с после тапа, и по голому типу события причину не видно.
     const cancelled = isUserCancelled(e)
-    emitIap(cancelled ? "purchase_cancelled" : "purchase_failed")
+    emitIap(cancelled ? "purchase_cancelled" : "purchase_failed", { platform, code: rcErrorCode(e) })
     return cancelled ? "cancelled" : "failed"
   }
 }
 
-/** RevenueCat отдаёт отмену как `userCancelled: true` (или code/message с "cancel"). */
+/**
+ * Ошибка Capacitor-плагина RevenueCat: `code` — PURCHASES_ERROR_CODE строкой,
+ * `message` — текст, а самое полезное (readableErrorCode, underlyingErrorMessage
+ * с исходным ответом Play/StoreKit) лежит в `data` и через JSON.stringify
+ * теряется. Собираем в одну короткую строку для воронки.
+ */
+function rcErrorCode(e: unknown): string {
+  const err = e as
+    | { code?: unknown; message?: unknown; data?: { readableErrorCode?: unknown; underlyingErrorMessage?: unknown } }
+    | null
+  const parts = [err?.code, err?.data?.readableErrorCode, err?.data?.underlyingErrorMessage ?? err?.message]
+    .filter((v) => v !== undefined && v !== null && v !== "")
+    .map(String)
+  return (parts.length ? parts.join(":") : String(e)).slice(0, 64)
+}
+
+/**
+ * Отмена пользователем. Поле `userCancelled` — из React-Native-SDK, Capacitor-плагин
+ * его не шлёт (на calk.kz из-за этого каждая отмена уходила в воронку как сбой).
+ * Отмена приходит как `code === "1"` (PURCHASE_CANCELLED_ERROR); проверка текста —
+ * страховка на случай смены кодов.
+ */
 function isUserCancelled(e: unknown): boolean {
   if (!e || typeof e !== "object") return false
   const err = e as { userCancelled?: boolean; code?: string | number; message?: string }
   if (err.userCancelled) return true
+  if (String(err.code ?? "") === "1") return true
   const hay = `${err.code ?? ""} ${err.message ?? ""}`.toUpperCase()
   return hay.includes("CANCEL")
 }

@@ -23,14 +23,36 @@ export type IapFunnelEvent =
   | "purchase_tapped"
   | "purchase_cancelled"
   | "purchase_failed"
+  | "purchase_unavailable"
 
-export function emitIap(type: IapFunnelEvent): void {
+/**
+ * Доп. поля события. DATA_HUB принимает только allowlist (platform, store,
+ * product_id, code) и режет каждое до 64 символов — длинное сообщение стора
+ * ужимаем сами.
+ *
+ * Зачем: за 28 дней до 12.09.2026 на calk.uz было 15 тапов и 14 отмен, и 13 из
+ * них пришли через 1–7 с после тапа — человек за это время не успевает даже
+ * прочитать окно Google Play. Play возвращает USER_CANCELED и когда окно закрыл
+ * пользователь, и когда оно схлопнулось само (аккаунт без способа оплаты, регион,
+ * ограничение профиля); различить можно только по underlyingErrorMessage, а по
+ * голому типу события 15 тапов не рассказали ничего.
+ */
+export interface IapEventDetail {
+  platform?: string
+  code?: string
+}
+
+export function emitIap(type: IapFunnelEvent, detail?: IapEventDetail): void {
   if (typeof window === "undefined") return
   try {
     void fetch("/api/iap-telemetry", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ type }),
+      body: JSON.stringify({
+        type,
+        ...(detail?.platform ? { platform: String(detail.platform).slice(0, 16) } : {}),
+        ...(detail?.code ? { code: String(detail.code).slice(0, 64) } : {}),
+      }),
       keepalive: true, // still delivered if the view is navigating away
     }).catch(() => {})
   } catch {

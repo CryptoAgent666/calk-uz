@@ -29,18 +29,32 @@ const ALLOWED = new Set<string>([
   "purchase_tapped",
   "purchase_cancelled",
   "purchase_failed",
+  "purchase_unavailable",
 ])
+const PLATFORMS = new Set<string>(["ios", "android", "web"])
+
+/** Короткая строка из клиентского тела: только известные скаляры, обрезанные по длине. */
+function shortString(v: unknown, max: number): string | undefined {
+  if (typeof v !== "string" && typeof v !== "number") return undefined
+  const s = String(v).trim()
+  return s ? s.slice(0, max) : undefined
+}
 
 export async function POST(req: Request): Promise<NextResponse> {
-  let type: unknown
+  let body: Record<string, unknown>
   try {
-    ;({ type } = await req.json())
+    body = (await req.json()) as Record<string, unknown>
   } catch {
     return noContent()
   }
+  const type = body?.type
   if (typeof type !== "string" || !ALLOWED.has(type)) {
     return noContent()
   }
+  // platform/code — диагностика воронки (см. lib/telemetry.ts). Пропускаем только
+  // ожидаемые значения: DATA_HUB всё равно оставляет лишь свой allowlist полей.
+  const platform = shortString(body.platform, 16)
+  const code = shortString(body.code, 64)
 
   const token = process.env.DATAHUB_TELEMETRY_TOKEN
   try {
@@ -51,7 +65,14 @@ export async function POST(req: Request): Promise<NextResponse> {
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
       body: JSON.stringify({
-        event: { id: crypto.randomUUID(), type, app: "calk.uz", ts: Date.now() },
+        event: {
+          id: crypto.randomUUID(),
+          type,
+          app: "calk.uz",
+          ts: Date.now(),
+          ...(platform && PLATFORMS.has(platform) ? { platform } : {}),
+          ...(code ? { code } : {}),
+        },
       }),
       // Bounded so a slow/down DATA_HUB never holds the request open.
       signal: AbortSignal.timeout(2500),

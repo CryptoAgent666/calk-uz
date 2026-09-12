@@ -11,6 +11,7 @@ import {
 } from "@/lib/purchases"
 import { useRemoveAdsPrice } from "@/lib/use-remove-ads-price"
 import { emitIap } from "@/lib/telemetry"
+import { Capacitor } from "@capacitor/core"
 
 const DISMISS_KEY = "calk_removeads_bar_dismissed"
 const VARIANT_KEY = "calk_removeads_bar_variant"
@@ -74,7 +75,7 @@ export function RemoveAdsBar() {
   // Плашка — показ оффера, если она реально видима (есть покупки, не куплено,
   // не скрыта в этой сессии).
   useEffect(() => {
-    if (purchasesAvailable() && !isAdFree() && !dismissed) emitIap("paywall_shown")
+    if (purchasesAvailable() && !isAdFree() && !dismissed) emitIap("paywall_shown", { platform: Capacitor.getPlatform() })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
