@@ -39,12 +39,16 @@ export function purchasesAvailable(): boolean {
 /**
  * Запасная цена для UI, пока RevenueCat не вернул локализованную (getRemoveAdsPrice).
  *
- * ⚠️ НАМЕРЕННО отличается от iOS-фолбэка ($1.99 в PurchasesManager.swift) — это
- * ОДИН ценовой тир в валютах своих сторов: Google Play в Узбекистане ценит в
- * сумах (24 900 сум), App Store для UZ — в долларах ($1.99). НЕ «синхронизировать»
- * их друг с другом (этот файл — Android/веб, Swift-файл — iOS).
+ * Google Play ценит товар для Узбекистана В ДОЛЛАРАХ: региональная цена UZ в
+ * Play Console — 1.90 USD, сумовой цены у Play нет (monetization.oneTimeProducts,
+ * 12.09.2026). До этого здесь стояло «24 900 сум»: человек видел сумы на кнопке,
+ * а в окне Play получал $1.90.
+ *
+ * ⚠️ От iOS-фолбэка ($1.99 в PurchasesManager.swift) отличается намеренно: это
+ * один ценовой тир, но тиры сторов не совпадают центами. НЕ «синхронизировать»
+ * (этот файл — Android/веб, Swift-файл — iOS).
  */
-export const REMOVE_ADS_FALLBACK_PRICE = "24 900 сум"
+export const REMOVE_ADS_FALLBACK_PRICE = "$1.90"
 
 // Публичные SDK-ключи RevenueCat (Project Settings → API keys, по одному на
 // платформу). Их МОЖНО держать в клиенте — это НЕ секретные `sk_`-ключи.

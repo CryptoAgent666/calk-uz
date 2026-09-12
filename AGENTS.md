@@ -99,8 +99,8 @@ Monitored by DATA_HUB: Tier-1 weekly (`calk-uz-monitor-config.json`) + Tier-2 qu
   (namespaced — голый `removeads` занят KZ на том же Apple team), entitlement
   `ad_free`, non-consumable. Android/веб — `lib/purchases.ts`, iOS —
   `PurchasesManager.swift`. **Фолбэк-цены платформ РАЗНЫЕ намеренно**
-  (Play UZ в сумах «24 900 сум», App Store UZ в долларах «$1.99») — не
-  «синхронизировать». 4 поверхности оффера: кнопка в мобильном меню
+  (Play UZ — «$1.90»: Google ценит товар для Узбекистана в долларах, сумовой
+  цены у Play нет; App Store UZ — «$1.99») — не «синхронизировать». 4 поверхности оффера: кнопка в мобильном меню
   (`RemoveAdsButton`), плашка (`RemoveAdsBar`), тост после 2-го интерстишла
   (`RemoveAdsToast`), футер (`RemoveAdsFooterLink`). Телеметрия воронки —
   `lib/telemetry.ts` → `/api/iap-telemetry` → DATA_HUB.
