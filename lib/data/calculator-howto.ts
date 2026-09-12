@@ -261,16 +261,16 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     slug: 'sick-leave',
     totalTimeMinutes: 2,
     stepsRu: [
-      { name: 'Введите заработок за 12 месяцев', text: 'Укажите общую сумму заработка за последние 12 месяцев, а не среднемесячную зарплату.' },
+      { name: 'Введите заработок за 12 месяцев', text: 'Укажите общую сумму заработка за последние 12 месяцев, а не среднемесячную зарплату. Если стаж меньше 12 месяцев — заработок за эти месяцы.' },
       { name: 'Укажите страховой стаж', text: 'Стаж в месяцах: 6-96 месяцев — 60% среднего заработка, от 97 месяцев — 80%.' },
-      { name: 'Укажите дни болезни', text: 'Введите число календарных дней по больничному листу.' },
-      { name: 'Получите расчёт', text: 'Результат появится сразу: среднедневной заработок, процент, пособие и НДФЛ.' },
+      { name: 'Укажите даты больничного', text: 'Выберите дату начала и введите число календарных дней по больничному листу — воскресенья и праздники калькулятор исключит сам.' },
+      { name: 'Получите расчёт', text: 'Результат появится сразу: среднедневной заработок (÷ 25,3), оплачиваемые дни, процент, доли работодателя и Фонда, пособие и НДФЛ.' },
     ],
     stepsUz: [
-      { name: '12 oylik daromadni kiriting', text: 'Oxirgi 12 oydagi umumiy daromadni kiriting — o\'rtacha oylik ish haqini emas.' },
+      { name: '12 oylik daromadni kiriting', text: 'Oxirgi 12 oydagi umumiy daromadni kiriting — o\'rtacha oylik ish haqini emas. Staj 12 oydan kam bo\'lsa — shu oylardagi daromad.' },
       { name: 'Sug\'urta stajini ko\'rsating', text: 'Staj oylarda: 6-96 oy — o\'rtacha daromadning 60% i, 97 oydan boshlab — 80%.' },
-      { name: 'Kasallik kunlarini ko\'rsating', text: 'Kasallik varaqasidagi taqvim kunlari sonini kiriting.' },
-      { name: 'Hisobni oling', text: 'Natija darhol chiqadi: o\'rtacha kunlik daromad, foiz, nafaqa va JShShS.' },
+      { name: 'Kasallik sanalarini ko\'rsating', text: 'Boshlanish sanasini tanlang va kasallik varaqasidagi taqvim kunlari sonini kiriting — yakshanba va bayramlarni kalkulyator o\'zi chiqarib tashlaydi.' },
+      { name: 'Hisobni oling', text: 'Natija darhol chiqadi: o\'rtacha kunlik daromad (÷ 25,3), to\'lanadigan kunlar, foiz, ish beruvchi va Jamg\'arma ulushlari, nafaqa va JShShS.' },
     ],
   },
   {
@@ -279,12 +279,14 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     stepsRu: [
       { name: 'Введите заработок за 12 месяцев', text: 'Укажите общую сумму заработка за последние 12 месяцев, а не среднемесячную зарплату.' },
       { name: 'Укажите страховой стаж', text: 'Стаж в месяцах — от него зависит процент: 10-24 мес. 75%, 25-60 мес. 85%, от 61 мес. 100%.' },
+      { name: 'Укажите дату начала отпуска', text: 'От даты зависит, сколько воскресений и праздников попадёт в 126 или 140 дней отпуска — они не оплачиваются.' },
       { name: 'Отметьте особые случаи', text: 'Осложнённые роды или многоплодная беременность продлевают отпуск со 126 до 140 дней.' },
       { name: 'Получите расчёт', text: 'Результат появится сразу — вы узнаете размер пособия по беременности и родам.' },
     ],
     stepsUz: [
       { name: "12 oylik daromadni kiriting", text: "Oxirgi 12 oydagi umumiy daromad summasini kiriting — o'rtacha oylik ish haqini emas." },
       { name: "Sug'urta stajini ko'rsating", text: "Staj oylarda — foiz shunga bog'liq: 10-24 oy 75%, 25-60 oy 85%, 61 oydan ortiq 100%." },
+      { name: "Ta'til boshlanish sanasini ko'rsating", text: "Sanaga qarab 126 yoki 140 kunlik ta'tilga nechta yakshanba va bayram tushishi aniqlanadi — ular to'lanmaydi." },
       { name: 'Maxsus hollarni belgilang', text: "Murakkab tug'ruq yoki ko'p homilalik ta'tilni 126 kundan 140 kunga uzaytiradi." },
       { name: 'Hisobni oling', text: "Natija darhol chiqadi — homiladorlik va tug'ruq nafaqasi miqdorini bilib oling." },
     ],

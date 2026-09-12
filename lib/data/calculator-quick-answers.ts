@@ -139,16 +139,16 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'maternity',
     textRu:
-      'Декретное пособие в Узбекистане с 2026 года выплачивает Фонд госсоцстрахования. Минимум 10 месяцев страхового стажа. Размер: 75% при стаже 10–24 мес, 85% при 25–60 мес, 100% при стаже от 61 мес. Длительность: 70 дней до родов + 56 после (70 при осложнениях или двойне). НДФЛ не удерживается.',
+      'Декретное пособие в Узбекистане с 2026 года выплачивает Фонд госсоцстрахования. Минимум 10 месяцев страхового стажа. Размер: 75% при стаже 10–24 мес, 85% при 25–60 мес, 100% при стаже от 61 мес. Длительность: 70 дней до родов + 56 после (70 при осложнениях или двойне). Расчёт: среднемесячный заработок (не выше 10 МРОТ) ÷ 25,3 × процент × дни отпуска без воскресений и праздников. НДФЛ не удерживается.',
     textUz:
-      "2026-yildan O'zbekistonda dekret nafaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Minimum 10 oy sug'urta staji. Miqdori: 10–24 oy stajda 75%, 25–60 oyda 85%, 61 oydan ortiqda 100%. Davomiyligi: tug'ruq oldidan 70 kun + tug'ruqdan keyin 56 (asoratlar yoki egizaklarda 70). JShShS ushlab qolinmaydi.",
+      "2026-yildan O'zbekistonda dekret nafaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Minimum 10 oy sug'urta staji. Miqdori: 10–24 oy stajda 75%, 25–60 oyda 85%, 61 oydan ortiqda 100%. Davomiyligi: tug'ruq oldidan 70 kun + tug'ruqdan keyin 56 (asoratlar yoki egizaklarda 70). Hisob: o'rtacha oylik ish haqi (10 MROT dan oshmagan) ÷ 25,3 × foiz × yakshanba va bayramlarsiz ta'til kunlari. JShShS ushlab qolinmaydi.",
   },
   {
     slug: 'sick-leave',
     textRu:
-      'Больничный в Узбекистане с 2026 года выплачивает Фонд госсоцстрахования. Минимум 6 месяцев страхового стажа. Размер: 60% при стаже до 5 лет, 80% при 5–8 годах, 100% при стаже от 8 лет. Расчёт по среднему заработку за 12 месяцев в календарных днях.',
+      'Больничный в Узбекистане с 1 июля 2026 года: первые 5 дней в году оплачивает работодатель, с 6-го дня — Фонд госсоцстрахования. Минимум 6 месяцев страхового стажа. Размер: 60% при стаже от 6 до 96 месяцев, 80% — от 97 месяцев. Расчёт: среднемесячный заработок за 12 месяцев (не выше 10 МРОТ) ÷ 25,3 × процент × дни болезни без воскресений и праздников. Оплачивается не больше 182 календарных дней в году.',
     textUz:
-      "2026-yildan O'zbekistonda kasallik varaqasini Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Minimum 6 oy sug'urta staji. Miqdori: 5 yilgacha stajda 60%, 5–8 yilda 80%, 8 yildan ortiqda 100%. Hisoblash 12 oy o'rtacha ish haqi bo'yicha kalendar kunlarida.",
+      "2026-yil 1-iyuldan O'zbekistonda kasallik varaqasining yildagi dastlabki 5 kunini ish beruvchi, 6-kundan Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Minimum 6 oy sug'urta staji. Miqdori: 6 oydan 96 oygacha stajda 60%, 97 oydan boshlab 80%. Hisob: 12 oylik o'rtacha oylik ish haqi (10 MROT dan oshmagan) ÷ 25,3 × foiz × yakshanba va bayramlarsiz kasallik kunlari. Yiliga 182 kalendar kundan ortig'i to'lanmaydi.",
   },
   {
     slug: 'pension',
