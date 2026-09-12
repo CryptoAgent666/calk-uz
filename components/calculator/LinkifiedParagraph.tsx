@@ -85,8 +85,12 @@ export function LinkifiedParagraph({ text, locale, currentSlug }: Props) {
 
   for (const rule of rules) {
     if (used.has(rule.term.toLowerCase())) continue
-    const flags = rule.caseInsensitive === false ? "" : "i"
-    const re = new RegExp(`(${escapeRegex(rule.term)})`, flags)
+    const flags = (rule.caseInsensitive === false ? "" : "i") + "u"
+    // Термин должен начинаться с начала слова: без границы «ндс» линковался внутри
+    // «Самаркандская». Граница через \p{L}, а не \b — \b в JS не считает кириллицу
+    // буквами. Справа границы нет намеренно: ссылка на основу с окончанием —
+    // норма и для русского («автокредит|а»), и для узбекского («ipoteka|ni»).
+    const re = new RegExp(`(?<![\\p{L}\\p{N}])(${escapeRegex(rule.term)})`, flags)
     const next: Segment[] = []
     let consumed = false
     for (const seg of segments) {
