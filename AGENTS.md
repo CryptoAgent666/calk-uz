@@ -21,7 +21,7 @@ calk.uz hard-codes Uzbekistan government-set values. They are inventoried + fres
 - **БРВ (базовая расчётная величина) = 412,000 anchors most fines/duties** as BRV-multiples. ⚠️ **Rises 1 Sep 2026 →
   440,000** (МРОТ → 1,360,000) — re-values every БРВ-multiple. Utility tariffs change mid-year (last hike 1 Jun 2026, ПКМ-243).
 
-### State as of 2026-08-18 (ledger 161: 136 current · 3 uncertain · 6 removed · 16 unverified-market)
+### State as of 2026-09-13 (ledger 166: 145 current · 1 uncertain · 7 removed · 13 unverified-market)
 The June-2026 pilot verified all 145 gov constants and found 65 stale; **those fixes have since been applied**
 (July reconcile + 2026-08-09 sweep + 2026-08-18 sweep). Do NOT treat the old June findings as open work —
 several of them were already superseded, and re-"fixing" them re-introduces errors. Check the ledger's
@@ -46,11 +46,16 @@ social 12%, самозанятые 1%, формула пенсии (55% +1%/го
 **Removed as non-existent:** транспортный налог (нет в ст. 17 НК — была белорусская норма), «имущественный
 вычет 500 БРВ при покупке жилья», порог «100 млрд» для ежемесячной отчётности по НДС.
 
-**Still open (`uncertain`, 3):** делитель среднедневного заработка `calendarDaysIn12Months=365` в
-`social.ts` (текст прил. 4 ПКМ-796 только на узбекском, lex.uz не отдаётся WebFetch/r.jina.ai; вторичные
-источники расходятся — 25,3 рабочих дня vs календарная база); `calculateLandTax.NON_AGRICULTURAL_RATE`
-(0.012, инлайн в tax.ts); `STATE_DUTY_RECEIPT_VALIDITY` (3 месяца). 16 `unverified` — рыночные, не
-регуляторные (топливо, курсы банков, визы, свадьбы).
+**Still open (`uncertain`, 1):** `STATE_DUTY_RECEIPT_VALIDITY` («квитанция госпошлины действительна
+3 месяца») — в ЗРУ-600 и порядке выдачи ID/паспорта такой нормы нет; скорее всего убрать из прозы.
+13 `unverified` — рыночные, не регуляторные (топливо, курсы банков, визы, свадьбы).
+
+**Закрыто tier2+phase4 13.09.2026** (тексты НК, КоАО, ТК, ПКМ-796 узб. оригинал lex.uz/docs/7926684, ПКМ-244
+читались с lex.uz целиком): пособия по ПКМ-796 — среднемесячный ÷ **25,3** × % × дни БЕЗ воскресений и
+праздников ст. 208 ТК, потолок 10 МРОТ, −10 п.п. сверх 77 дней, +20 п.п. льготникам (п. 16–19, 25, 26); делителя
+365 нет. Земналог несельхоз — **абсолютные ставки за м²/га** по региону/зоне (ст. 429/437), процента и ×1,07 нет.
+Штраф ст. 223 — 20% от **базы** (от налога — это ст. 224). Беспошлинный ввоз — $1000/500/300/200 в мес./100
+(ПКМ-244), «50 кг» и EUR нет; с 01.01.2027 платёж 30%→20% (УП-174) — rollover. Тариф отопления 241,44 верен.
 
 **Осторожно с циркулярными источниками:** по редким цифрам поиск первым результатом выдаёт сам calk.uz.
 Так «подтверждался» выдуманный вычет 500 БРВ. Засчитывать только lex.uz/soliq.uz или отраслевые издания
