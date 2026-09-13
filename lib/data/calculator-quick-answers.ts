@@ -111,9 +111,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'property-tax',
     textRu:
-      'Налог на имущество физлиц в Узбекистане: жильё до 200 м² — 0,36%, 200–500 м² — 0,48%, свыше 500 м² — 0,64% от кадастровой стоимости (ставки на 2026 год с индексацией +7%). Для юридических лиц — 1,5%. Уплата — равными долями до 15 апреля и 15 октября текущего года.',
+      'Налог на имущество физлиц в Узбекистане: жильё до 200 м² — 0,36%, 200–500 м² — 0,48%, свыше 500 м² — 0,64% от кадастровой стоимости (ст. 422 НК; ступень 0,64% — только в городах, в прочих населённых пунктах всё свыше 200 м² — 0,48%). Для юридических лиц — 1,5%. Уплата — равными долями до 15 апреля и 15 октября текущего года.',
     textUz:
-      "O'zbekistonda jismoniy shaxslar mulk solig'i: 200 m² gacha uy-joy — 0,36%, 200–500 m² — 0,48%, 500 m² dan ortiq — 0,64% kadastr qiymatidan (2026-yil uchun +7% indeksatsiya bilan). Yuridik shaxslar uchun — 1,5%. To'lov — joriy yilning 15-aprel va 15-oktabrigacha teng ulushlarda.",
+      "O'zbekistonda jismoniy shaxslar mulk solig'i: 200 m² gacha uy-joy — 0,36%, 200–500 m² — 0,48%, 500 m² dan ortiq — 0,64% kadastr qiymatidan (SK 422-moddasi; 0,64% — faqat shaharlarda, boshqa aholi punktlarida 200 m² dan ortig'i — 0,48%). Yuridik shaxslar uchun — 1,5%. To'lov — joriy yilning 15-aprel va 15-oktabrigacha teng ulushlarda.",
   },
   {
     slug: 'corporate-tax',

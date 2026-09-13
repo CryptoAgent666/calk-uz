@@ -46,13 +46,13 @@ export const TAX_RATES = {
   /** Self-employed tax rate */
   SELF_EMPLOYED_TAX: 0.01,
 
-  /** Property tax — residential, up to 200 m2 (2026, indexed +7%) */
+  /** Property tax — residential, up to 200 m2 (ст. 422 НК, ред. ЗРУ-1108) */
   PROPERTY_TAX_RESIDENTIAL_SMALL: 0.0036,
 
-  /** Property tax — residential, 200-500 m2 (2026, indexed +7%) */
+  /** Property tax — residential over 200 m2: 200-500 m2 in cities, any area above 200 m2 outside cities (ст. 422 п. 2–3) */
   PROPERTY_TAX_RESIDENTIAL_MEDIUM: 0.0048,
 
-  /** Property tax — residential, over 500 m2 (2026, indexed +7%) */
+  /** Property tax — residential over 500 m2, CITIES ONLY (ст. 422 п. 2) */
   PROPERTY_TAX_RESIDENTIAL_LARGE: 0.0064,
 
   /** Property tax — legal entities */

@@ -14,36 +14,42 @@ export default function PropertyTaxCalculator() {
   const [cadastralValue, setCadastralValue] = useState('')
   const [area, setArea] = useState('')
   const [isLegalEntity, setIsLegalEntity] = useState(false)
+  // Ступень 0,64% (свыше 500 м²) есть только для городов — ст. 422 НК.
+  const [isCity, setIsCity] = useState(true)
 
   const result = useMemo(() => {
     const val = parseFloat(cadastralValue.replace(/\s/g, '')) || 0
     const a = parseFloat(area) || 0
     if (val <= 0 || a <= 0) return null
-    return calculatePropertyTax(val, a, isLegalEntity)
-  }, [cadastralValue, area, isLegalEntity])
+    return calculatePropertyTax(val, a, isLegalEntity, isCity)
+  }, [cadastralValue, area, isLegalEntity, isCity])
 
   const t = locale === 'uz'
     ? {
         cadastralValue: 'Kadastr qiymati (UZS)',
-        area: 'Maydon (m\u00B2)',
+        area: 'Maydon (m²)',
         legalEntity: 'Yuridik shaxs',
+        inCity: 'Shaharda joylashgan',
         results: 'Natijalar',
         taxRate: 'Soliq stavkasi',
         annualTax: 'Yillik soliq',
         quarterlyTax: '15-aprelgacha to\'lov',
         monthlyTax: '15-oktabrgacha to\'lov',
         placeholder: 'Summani kiriting',
+        coeffNote: 'Qoraqalpog\'iston Jo\'qorg\'i Kengesi, viloyatlar va Toshkent shahar kengashlari stavkaga 0,7–1,3 koeffitsiyent qo\'llashi mumkin — hisobda inobatga olinmagan (SK 422-moddasi).',
       }
     : {
         cadastralValue: 'Кадастровая стоимость (UZS)',
-        area: 'Площадь (м\u00B2)',
+        area: 'Площадь (м²)',
         legalEntity: 'Юридическое лицо',
+        inCity: 'Объект в городе',
         results: 'Результаты',
         taxRate: 'Ставка налога',
         annualTax: 'Годовой налог',
         quarterlyTax: 'Платёж к 15 апреля',
         monthlyTax: 'Платёж к 15 октября',
         placeholder: 'Введите сумму',
+        coeffNote: 'Жокаргы Кенес Каракалпакстана, кенгаши областей и Ташкента вправе применить к ставке коэффициент 0,7–1,3 — в расчёте он не учитывается (ст. 422 НК).',
       }
 
   return (
@@ -62,6 +68,12 @@ export default function PropertyTaxCalculator() {
             <Label htmlFor="legal" className="cursor-pointer">{t.legalEntity}</Label>
             <Switch id="legal" checked={isLegalEntity} onCheckedChange={setIsLegalEntity} />
           </div>
+          {!isLegalEntity && (
+            <div className="flex items-center justify-between">
+              <Label htmlFor="city" className="cursor-pointer">{t.inCity}</Label>
+              <Switch id="city" checked={isCity} onCheckedChange={setIsCity} />
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -87,6 +99,7 @@ export default function PropertyTaxCalculator() {
               <span className="text-muted-foreground">{t.monthlyTax}</span>
               <span>{formatCurrency(result.secondInstallment, 'UZS', locale)}</span>
             </div>
+            {!isLegalEntity && <p className="text-xs text-muted-foreground pt-2">{t.coeffNote}</p>}
           </CardContent>
         </Card>
       )}

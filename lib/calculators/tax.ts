@@ -32,15 +32,22 @@ export interface PropertyTaxResult {
   secondInstallment: number
 }
 
-export function calculatePropertyTax(cadastralValue: number, areaM2: number, isLegalEntity: boolean = false): PropertyTaxResult {
-  // 2026 residential rates (already indexed). Bands: <=200 / 200-500 / >500 m2.
-  // Legal-entity rate is flat 1.5% (NOT indexed).
+export function calculatePropertyTax(
+  cadastralValue: number,
+  areaM2: number,
+  isLegalEntity: boolean = false,
+  isCity: boolean = true
+): PropertyTaxResult {
+  // Ставки ст. 422 НК в ред. ЗРУ-1108 (с 01.01.2026). Шкала 0,36 / 0,48 / 0,64% действует
+  // для домов и квартир В ГОРОДАХ; в прочих населённых пунктах всё свыше 200 м² — 0,48%
+  // (п. 3 ч. 1 ст. 422), ступени 0,64% там нет. Кенгаши вправе применять коэффициент
+  // 0,7–1,3 — в расчёте не учитывается. Юрлица и объекты для бизнеса — 1,5% (ст. 415).
   let taxRate: number
   if (isLegalEntity) {
     taxRate = TAX_RATES.PROPERTY_TAX_LEGAL
   } else if (areaM2 <= 200) {
     taxRate = TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL
-  } else if (areaM2 <= 500) {
+  } else if (!isCity || areaM2 <= 500) {
     taxRate = TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM
   } else {
     taxRate = TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE
