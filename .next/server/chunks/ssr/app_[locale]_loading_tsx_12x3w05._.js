@@ -1,0 +1,3 @@
+module.exports=[448545,a=>{"use strict";var b=a.i(187924),c=a.i(415925);a.s(["default",0,function(){let a=(0,c.useTranslations)();return(0,b.jsx)("div",{className:"min-h-screen flex items-center justify-center",children:(0,b.jsxs)("div",{className:"flex flex-col items-center gap-4",children:[(0,b.jsx)("div",{className:"animate-spin rounded-full h-12 w-12 border-b-2 border-primary"}),(0,b.jsx)("p",{className:"text-muted-foreground text-sm",children:a("common_loading")})]})})}])}];
+
+//# sourceMappingURL=app_%5Blocale%5D_loading_tsx_12x3w05._.js.map
