@@ -120,8 +120,9 @@
       "status": "current",
       "notes": "Government-set mandatory motor TPL (ОСАГО) base tariffs by region and limited/unlimited driver list. Cited as Cabinet of Ministers Resolution No. 458, July 2025.  ||  2026-06-30 verify: current (ПКМ-458, eff 1 Jan 2026).",
       "official_value": "Tashkent limited base = 192000 UZS; other regions limited base = 160000 UZS",
-      "source_url": "https://www.gazeta.uz/ru/2025/07/25/osago/",
-      "last_verified": "2026-08-09"
+      "source_url": "https://lex.uz/ru/docs/1366341",
+      "last_verified": "2026-08-09",
+      "source_url_prev": "https://www.gazeta.uz/ru/2025/07/25/osago/"
     },
     {
       "id": "auto.ts__OSAGO coefficients (ageExp, bonus-malus)",
@@ -140,8 +141,9 @@
       "conflict": false,
       "status": "current",
       "notes": "2026-07-07 verify+FIX: coded 0.9/1.0/1.4/1.7 + age/exp 1.8/1.6/1.7 were pre-2026 leftovers. Per ПКМ №458 (2026): clean record = base 1.0 (no discount), then 1.3/2.0/3.0 — back-calculated exactly from gazeta.uz money figures (249600/192000=1.3, 384000/192000=2.0, 576000/192000=3.0). The 2026 tariff has NO driver age/experience coefficient — removed from calculateOsago + OsagoCalculator (age/exp inputs dropped).",
-      "source_url": "https://www.gazeta.uz/ru/2025/07/25/osago/",
-      "last_verified": "2026-07-07"
+      "source_url": "https://lex.uz/ru/docs/1366341",
+      "last_verified": "2026-07-07",
+      "source_url_prev": "https://www.gazeta.uz/ru/2025/07/25/osago/"
     },
     {
       "id": "business.ts__calculateIPTax.socialMinimum (1 BRV/month × 12)",
@@ -183,11 +185,12 @@
       "conflict": true,
       "status": "current",
       "notes": "Было 690 USD (≈8,2 млн сум) как обязательная строка растаможки — завышало итог, в т.ч. для электромобилей, которых ПКМ-597 прямо исключает из оценки экокласса. Исправлено в коде 2026-08-10.",
-      "source_url": "https://lex.uz/uz/docs/7735340",
+      "source_url": "https://lex.uz/docs/7735340",
       "last_verified": "2026-08-09",
       "official_value": "690",
       "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verify_method": "tier2-llm",
+      "source_url_prev": "https://lex.uz/uz/docs/7735340"
     },
     {
       "id": "customs.ts__CUSTOMS_DUTY_RATE",
@@ -207,8 +210,9 @@
       "conflict": false,
       "status": "current",
       "notes": "15% customs duty on car CIF price; 0% for electric vehicles (see EV exemption).  ||  2026-06-30 verify: current 15% new / 40% used (eff 1 Jan 2026).",
-      "source_url": "https://kun.uz/ru/news/2026/01/06/dlya-malolitrajnyx-avtomobiley-povysilis-tamojyennyye-poshliny",
-      "last_verified": "2026-06-30"
+      "source_url": "https://lex.uz/ru/docs/3802366",
+      "last_verified": "2026-06-30",
+      "source_url_prev": "https://kun.uz/ru/news/2026/01/06/dlya-malolitrajnyx-avtomobiley-povysilis-tamojyennyye-poshliny"
     },
     {
       "id": "customs.ts__EV customs duty exemption (until 2027)",
@@ -230,8 +234,9 @@
       "status": "current",
       "notes": "Привязка нуля к сроку 2030 была неверной атрибуцией; цифры не менялись. Комментарии в коде исправлены 2026-08-10.",
       "official_value": "0% — постоянная ставка, а не срочная льгота. Срок «до 1 января 2030» из ПП-443 относится к машинокомплектам и оборудованию для ПРОИЗВОДСТВА электромобилей, к ввозу готовых — нет.",
-      "source_url": "https://lex.uz/docs/3802366",
-      "last_verified": "2026-08-09"
+      "source_url": "https://lex.uz/ru/docs/3802366",
+      "last_verified": "2026-08-09",
+      "source_url_prev": "https://lex.uz/docs/3802366"
     },
     {
       "id": "customs.ts__EXCISE_RATES_PER_CC",
@@ -408,10 +413,10 @@
       "status": "current",
       "notes": "HARDCODED in social.ts. Maternity leave: 70 days prenatal + 56 days postnatal (normal), raised to 70 postnatal for complicated or multiple births → total 126 or 140 days. Statutory durations set by Labor Code. || tier2 2026-09-13: current. Длительность 70+56 (70 при тяжёлых родах или рождении двух и более детей) совпадает с ТК-2023, ст. 404, и с определением в прил. 4 ПКМ-796, п. 3 (lex.uz/docs/7926684). В реестре official_value ссылается на «ст. 233» — это неверно, правильно ст. 404. Норма говорит о многоплодных РОДАХ, а не о «многоплодной беременности»: по смыслу одно и то же.",
       "official_value": "{\"prebirth\":70,\"postbirth_normal\":56,\"postbirth_complicated_or_multiple\":70}",
-      "source_url": "https://lex.uz/docs/6257288",
+      "source_url": "https://lex.uz/ru/docs/6257291",
       "last_verified": "2026-09-13",
       "verify_method": "tier2-2026-09-13-primary",
-      "source_url_prev": "https://gov.uz/en/advice/673/document/2982",
+      "source_url_prev": "https://lex.uz/docs/6257288",
       "verify_note": "Длительность 70+56 (70 при тяжёлых родах или рождении двух и более детей) совпадает с ТК-2023, ст. 404, и с определением в прил. 4 ПКМ-796, п. 3 (lex.uz/docs/7926684). В реестре official_value ссылается на «ст. 233» — это неверно, правильно ст. 404. Норма говорит о многоплодных РОДАХ, а не о «многоплодной беременности»: по смыслу одно и то же. Цитата: ТК РУз (ЗРУ-798), ст. 404, ред. 12.09.2026: «Аёлга туғруққача етмиш календарь кун ҳамда туғруқдан кейин эллик олти календарь кун (туғиш қийин кечган ёхуд икки ёки ундан ортиқ бола туғилган тақдирда етмиш календарь кун) ҳомиладорлик ва туғиш таътили берилиб…»",
       "verify_confidence": "high",
       "verified_date": "2026-09-13"
@@ -434,8 +439,9 @@
       "status": "current",
       "notes": "HARDCODED in social.ts. Overtime pay: first 2 hours on a weekday ×1.5, beyond 2 hours ×2.0; holiday/rest-day work ×2.0. overtimeMultiplier field reports 1.5 as the 'average shown in UI'. Statutory minimums per Labor Code.  ||  2026-06-30 verify: current (ст.262/263 ТК; 1.5×/2.0×; 120h cap repealed ЗРУ-1095).",
       "official_value": "{\"holiday\":2.0,\"first_2h_weekday\":1.5,\"after_2h_weekday\":2.0}",
-      "source_url": "https://www.spot.uz/ru/2025/11/12/overtime",
-      "last_verified": "2026-08-09"
+      "source_url": "https://lex.uz/ru/docs/6257291",
+      "last_verified": "2026-08-09",
+      "source_url_prev": "https://www.spot.uz/ru/2025/11/12/overtime"
     },
     {
       "id": "social.ts__calculatePension.formula (base 55%, +1%/yr, cap 75%)",
@@ -552,8 +558,9 @@
       "status": "current",
       "notes": "HARDCODED tiers in social.ts. Sick-leave benefit % by insurance months: <6mo=0 (ineligible, min 6mo required), 6–23mo=60%, 2–5yr (24–59mo)=70%, 5–8yr (60–95mo)=80%, 8yr+ (≥96mo)=100%. 2026 rules, paid by State Social Insurance Fund (ФГСС). NDFL 12% withheld on benefit. || 2026-07-03 phase4-reconcile RE-VERIFY: prior Tier-2 verdict (60% <8yrs / 80% 8yrs+) was WRONG — its cited source is a 2021 table (80%/<8, 100%/8+, pre-2024 rules) and the verdict matched neither it nor current law. Current scale per PKM-314 (31.05.2024, lex.uz/docs/6978572, corroborated by legalise.uz 2026 review): 60% (<5 yrs), 80% (5-8 yrs), 100% (8+ yrs). social.ts fixed 2026-07-03 to 60/80/100; article + quick-answers aligned. status -> current. || 2026-09-01: значение приведено к коду (lib/calculators/social.ts getSickLeavePercent) и к AGENTS.md. В реестре стояла НЕСУЩЕСТВУЮЩАЯ ступень 100% и граница 60 мес.; ПКМ-796 даёт две ступени — 60% и 80% с границей 8 лет (96 мес.). Сайт всегда считал верно, ошибка была только в аудит-копии.",
       "official_value": "{\"<6mo\": 0, \"6-96mo\": 60, \">=97mo\": 80}",
-      "source_url": "https://lex.uz/docs/6978572",
-      "last_verified": "2026-09-01"
+      "source_url": "https://lex.uz/docs/7926684",
+      "last_verified": "2026-09-01",
+      "source_url_prev": "https://lex.uz/docs/6978572"
     },
     {
       "id": "social.ts__maternity benefit percent (PKM #796)",
@@ -574,8 +581,9 @@
       "status": "current",
       "notes": "2026 rules: maternity benefit % scales with insurance months; min 10 months experience. Benefit is tax-exempt (ndflAmount=0, line 150). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось. || 2026-09-01: границы приведены к коду (getMaternityPercent) и к AGENTS.md — 10-24 / 25-60 / 61+ мес. В реестре стояло 10-23 / 24-59 / 60+, сдвиг на месяц. Дублирующая запись getMaternityPercent.tiers всё это время была верной — записи разошлись между собой.",
       "official_value": "<10mo: 0 (права нет); 10-24mo: 75; 25-60mo: 85; 61mo+: 100",
-      "source_url": "https://kadrovik.uz/publish/doc/text212515_kak_budut_vyplachivat_dekretnye_i_bolnichnye_s_2026_goda_v_ramkah_novoy_sistemy_socstrahovaniya",
-      "last_verified": "2026-09-01"
+      "source_url": "https://lex.uz/docs/7926684",
+      "last_verified": "2026-09-01",
+      "source_url_prev": "https://kadrovik.uz/publish/doc/text212515_kak_budut_vyplachivat_dekretnye_i_bolnichnye_s_2026_goda_v_ramkah_novoy_sistemy_socstrahovaniya"
     },
     {
       "id": "social.ts__maternity leave days",
@@ -595,10 +603,10 @@
       "status": "current",
       "notes": "Statutory maternity leave duration: 70 days prenatal + 56 normal / 70 complicated or multiple. || tier2 2026-09-13: current. Дублирует social.ts__calculateMaternity.leaveDays: факт один, значения в обеих записях одинаковые. Surfaces в реестре (141-146) устарели: код сейчас на строках 193-196.",
       "official_value": "prebirth: 70; postbirth: 56 (70 if complicated or multiple)",
-      "source_url": "https://lex.uz/docs/6257288",
+      "source_url": "https://lex.uz/ru/docs/6257291",
       "last_verified": "2026-09-13",
       "verify_method": "tier2-2026-09-13-primary",
-      "source_url_prev": "https://gov.uz/en/advice/673/document/2982",
+      "source_url_prev": "https://lex.uz/docs/6257288",
       "verify_note": "Дублирует social.ts__calculateMaternity.leaveDays: факт один, значения в обеих записях одинаковые. Surfaces в реестре (141-146) устарели: код сейчас на строках 193-196. Цитата: ТК РУз, ст. 404: «туғруққача етмиш календарь кун ҳамда туғруқдан кейин эллик олти календарь кун (туғиш қийин кечган ёхуд икки ёки ундан ортиқ бола туғилган тақдирда етмиш календарь кун)»",
       "verify_confidence": "high",
       "verified_date": "2026-09-13"
@@ -621,8 +629,9 @@
       "status": "current",
       "notes": "Statutory overtime pay: 1.5× first 2 hours, 2.0× thereafter; 2.0× for holiday work.  ||  2026-06-30 verify: current (1.5×/2.0×; 120h annual cap repealed).",
       "official_value": "holiday: 2.0; weekday first 2h: 1.5, beyond 2h: 2.0",
-      "source_url": "https://www.spot.uz/ru/2025/11/12/overtime",
-      "last_verified": "2026-06-30"
+      "source_url": "https://lex.uz/ru/docs/6257291",
+      "last_verified": "2026-06-30",
+      "source_url_prev": "https://www.spot.uz/ru/2025/11/12/overtime"
     },
     {
       "id": "social.ts__pension formula (base % + per-year)",
@@ -690,8 +699,9 @@
       "status": "current",
       "notes": "2026 rules: sick-pay % of avg earnings scales with insurance months; min 6 months experience to qualify. Paid by State Social Insurance Fund (ФГСС). || 2026-07-03 phase4-reconcile RE-VERIFY: prior Tier-2 verdict (60% <8yrs / 80% 8yrs+) was WRONG — its cited source is a 2021 table (80%/<8, 100%/8+, pre-2024 rules) and the verdict matched neither it nor current law. Current scale per PKM-314 (31.05.2024, lex.uz/docs/6978572, corroborated by legalise.uz 2026 review): 60% (<5 yrs), 80% (5-8 yrs), 100% (8+ yrs). social.ts fixed 2026-07-03 to 60/80/100; article + quick-answers aligned. status -> current. || 2026-09-01: значение приведено к коду (lib/calculators/social.ts getSickLeavePercent) и к AGENTS.md. В реестре стояла НЕСУЩЕСТВУЮЩАЯ ступень 100% и граница 60 мес.; ПКМ-796 даёт две ступени — 60% и 80% с границей 8 лет (96 мес.). Сайт всегда считал верно, ошибка была только в аудит-копии.",
       "official_value": "до 8 лет (<=96 мес) — 60%; свыше 8 лет (>=97 мес) — 80%; ступени 100% НЕТ (ПКМ-796)",
-      "source_url": "https://lex.uz/docs/6978572",
-      "last_verified": "2026-09-01"
+      "source_url": "https://lex.uz/docs/7926684",
+      "last_verified": "2026-09-01",
+      "source_url_prev": "https://lex.uz/docs/6978572"
     },
     {
       "id": "tax.ts__calculateLandTax.NON_AGRICULTURAL_RATE (0.012)",
@@ -856,9 +866,10 @@
       "status": "current",
       "notes": "Passport/biometric ID госпошлина as BRV-multiples (base vs urgent). e.g. biometric base 2.5 BRV = 1,030,000 UZS. BRV=440000. Verify multiples vs lex.uz. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "Биометрический паспорт/ID внутр. = 50% БРВ (по ЗРУ-600) / фактически ~89% БРВ за услугу выдачи ID-карты; загранпаспорт = 1.2 БРВ",
-      "source_url": "https://www.gazeta.uz/ru/2020/03/09/id-card-price/",
+      "source_url": "https://lex.uz/ru/docs/4680955",
       "last_verified": "2026-09-01",
-      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680",
+      "source_url_prev": "https://www.gazeta.uz/ru/2020/03/09/id-card-price/"
     },
     {
       "id": "utilities.ts__ELECTRICITY_TIERS",
@@ -880,8 +891,9 @@
       "status": "current",
       "notes": "Government-regulated tiered electricity tariff (effective 1 May 2025). Duplicated in utilities.ts AND constants/utility-tariffs.ts AND surfaced in UTILITIES_TABLES — 3 copies, keep in sync. 50% discount if electric stove (line 76). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "<=200:650, <=500:900, <=1000:1100, <=5000:1600, <=10000:1900, >10000:2200",
-      "source_url": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz"
     },
     {
       "id": "utilities.ts__GAS_SUMMER_TIERS / GAS_WINTER_TIERS",
@@ -903,8 +915,9 @@
       "status": "current",
       "notes": "Government-regulated tiered natural-gas tariff, summer vs winter first-tier threshold differs (100 vs 500 m³). Duplicated across 3 files (summer table surfaced in calculator-tables). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "summer: <=100:1100, <=2500:2000, <=5000:2300, <=10000:2700, >10000:3300; winter: <=500:1100, <=2500:2000, <=5000:2300, <=10000:2700, >10000:3300",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utilities.ts__HEATING_RATE_PER_M2_PER_DAY",
@@ -1030,12 +1043,12 @@
       "conflict": false,
       "status": "current",
       "notes": "Central Bank key/refinancing rate (14%). Gov-regulated but set by the Central Bank, not a tax law. Used to derive PENALTY_RATE and the tax-penalty daily rate (CB_RATE/300) in tax.ts. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось. || alert 2026-09-21: current, 14% сохранена 16.09.2026, след. заседание 28.10.",
-      "source_url": "https://www.gazeta.uz/ru/2026/09/16/main-rate/",
+      "source_url": "https://cbu.uz/ru/monetary-policy/publications/press-releases/?print=Y",
       "last_verified": "2026-09-21",
       "verified_date": "2026-09-21",
       "verify_confidence": "high",
       "verify_method": "tier2-alert-2026-09-21",
-      "source_url_prev": "https://www.gazeta.uz/ru/2026/06/17/main-rate/",
+      "source_url_prev": "https://www.gazeta.uz/ru/2026/09/16/main-rate/",
       "verify_note": "Правление ЦБ 16.09.2026 сохранило основную ставку 14% годовых; следующее заседание 28.10.2026 (gazeta.uz 16.09.2026, spot.uz 16.09.2026, interfax). Дифф алерта — счётчик просмотров старой статьи."
     },
     {
@@ -1105,8 +1118,9 @@
       "status": "current",
       "notes": "Corporate profit tax standard rate 15%. Same value hardcoded in tax.ts calculateCorporateTax default and business.ts calculateLLCTax (profit*0.15). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
       "official_value": "0.15",
-      "source_url": "https://www.spot.uz/ru/2025/11/26/taxes-for-2026/",
-      "last_verified": "2026-08-18"
+      "source_url": "https://lex.uz/ru/docs/4674893",
+      "last_verified": "2026-08-18",
+      "source_url_prev": "https://www.spot.uz/ru/2025/11/26/taxes-for-2026/"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.INPS",
@@ -1232,9 +1246,10 @@
       "conflict": false,
       "status": "current",
       "notes": "Property tax for legal entities: 1.5%. Same value hardcoded in tax.ts calculatePropertyTax (isLegalEntity → 0.015), then ×1.07 indexation → effective ~1.605%. || 2026-09-01 verify: current. Ставки налога на имущество физлиц на 2026 — 0,36% / 0,48% / 0,64%, юрлица 1,5% (рост 5,9-6,6% к 2025). Прежние 0,2/0,25/0,35% — норма образца 2018 г., не действует.",
-      "source_url": "https://www.gazeta.uz/ru/2026/01/13/property-tax/",
+      "source_url": "https://lex.uz/ru/docs/4674893",
       "last_verified": "2026-09-01",
-      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu"
+      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu",
+      "source_url_prev": "https://www.gazeta.uz/ru/2026/01/13/property-tax/"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.PROPERTY_TAX_RESIDENTIAL_LARGE",
@@ -1256,9 +1271,10 @@
       "status": "current",
       "notes": "Property tax for residential over 200 m2: 0.6%. tax.ts applies +7% indexation (×1.07) → effective ~0.642%. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 verify: current. Ставки налога на имущество физлиц на 2026 — 0,36% / 0,48% / 0,64%, юрлица 1,5% (рост 5,9-6,6% к 2025). Прежние 0,2/0,25/0,35% — норма образца 2018 г., не действует.",
       "official_value": "0.0064 (0.64%) for 2026 — and this band is >500 m2 in cities, not >200 m2",
-      "source_url": "https://www.gazeta.uz/ru/2026/01/13/property-tax/",
+      "source_url": "https://lex.uz/ru/docs/4674893",
       "last_verified": "2026-09-01",
-      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu"
+      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu",
+      "source_url_prev": "https://www.gazeta.uz/ru/2026/01/13/property-tax/"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.PROPERTY_TAX_RESIDENTIAL_MEDIUM",
@@ -1280,9 +1296,10 @@
       "status": "current",
       "notes": "Property tax for residential 100-200 m2: 0.45%. tax.ts applies +7% indexation (×1.07) → effective ~0.4815%. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 verify: current. Ставки налога на имущество физлиц на 2026 — 0,36% / 0,48% / 0,64%, юрлица 1,5% (рост 5,9-6,6% к 2025). Прежние 0,2/0,25/0,35% — норма образца 2018 г., не действует.",
       "official_value": "0.0048 (0.48%) for 2026 — and this band is 200-500 m2 in cities (or >200 m2 in rural areas), not 100-200 m2",
-      "source_url": "https://www.gazeta.uz/ru/2026/01/13/property-tax/",
+      "source_url": "https://lex.uz/ru/docs/4674893",
       "last_verified": "2026-09-01",
-      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu"
+      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu",
+      "source_url_prev": "https://www.gazeta.uz/ru/2026/01/13/property-tax/"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.PROPERTY_TAX_RESIDENTIAL_SMALL",
@@ -1304,9 +1321,10 @@
       "status": "current",
       "notes": "Property tax for residential up to 100 m2: 0.34%. NOTE: tax.ts calculatePropertyTax multiplies this base rate by 1.07 (+7% indexation from 2026) → effective 0.3638%, so the surfaced/computed rate differs from this raw constant. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-09-01 verify: current. Ставки налога на имущество физлиц на 2026 — 0,36% / 0,48% / 0,64%, юрлица 1,5% (рост 5,9-6,6% к 2025). Прежние 0,2/0,25/0,35% — норма образца 2018 г., не действует.",
       "official_value": "0.0036 (0.36%) for 2026 — band is up to 200 m2 (incl. dachas/parking), not up to 100 m2",
-      "source_url": "https://www.gazeta.uz/ru/2026/01/13/property-tax/",
+      "source_url": "https://lex.uz/ru/docs/4674893",
       "last_verified": "2026-09-01",
-      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu"
+      "source_url_verify": "https://buxgalter.uz/publish/doc/text212837_chto_menyaetsya_v_naloge_na_imushchestvo_v_2026_godu",
+      "source_url_prev": "https://www.gazeta.uz/ru/2026/01/13/property-tax/"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.SELF_EMPLOYED_TAX",
@@ -1354,8 +1372,9 @@
       "status": "current",
       "notes": "Employer social tax standard rate 12%. Same value hardcoded in salary.ts, business.ts (employer cost, LLC payroll, IP general regime). || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось.",
       "official_value": "0.12",
-      "source_url": "https://www.spot.uz/ru/2025/11/26/taxes-for-2026/",
-      "last_verified": "2026-08-18"
+      "source_url": "https://lex.uz/ru/docs/4674893",
+      "last_verified": "2026-08-18",
+      "source_url_prev": "https://www.spot.uz/ru/2025/11/26/taxes-for-2026/"
     },
     {
       "id": "tax-rates.ts__TAX_RATES.SOCIAL_TAX_BUDGET",
@@ -1451,8 +1470,9 @@
       "status": "current",
       "notes": "Full 6-tier monthly electricity tariff table (per household): ≤200 kWh=600, ≤500=800, ≤1000=1000, ≤5000=1500, ≤10000=1750, >10000=2000 UZS/kWh. Consumed by calculateTieredCost(). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "[{upTo:200,pricePerUnit:650},{upTo:500,pricePerUnit:900},{upTo:1000,pricePerUnit:1100},{upTo:5000,pricePerUnit:1600},{upTo:10000,pricePerUnit:1900},{upTo:null,pricePerUnit:2200}]",
-      "source_url": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[0]",
@@ -1472,8 +1492,9 @@
       "status": "current",
       "notes": "Electricity tier 1: up to 200 kWh/month at 600 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "650",
-      "source_url": "https://www.spot.uz/ru/2026/05/30/new-tariffs/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/30/new-tariffs/"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[1]",
@@ -1493,8 +1514,9 @@
       "status": "current",
       "notes": "Electricity tier 2: up to 500 kWh/month at 800 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "900",
-      "source_url": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[2]",
@@ -1514,8 +1536,9 @@
       "status": "current",
       "notes": "Electricity tier 3: up to 1000 kWh/month at 1000 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "1100",
-      "source_url": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[3]",
@@ -1535,8 +1558,9 @@
       "status": "current",
       "notes": "Electricity tier 4: up to 5000 kWh/month at 1500 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "1600",
-      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[4]",
@@ -1556,8 +1580,9 @@
       "status": "current",
       "notes": "Electricity tier 5: up to 10000 kWh/month at 1750 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "1900",
-      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[5]",
@@ -1577,8 +1602,9 @@
       "status": "current",
       "notes": "Electricity tier 6 (top): over 10000 kWh/month at 2000 UZS/kWh (upTo: null = unlimited). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "2200",
-      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER",
@@ -1598,8 +1624,9 @@
       "status": "current",
       "notes": "Full 5-tier SUMMER natural-gas tariff table: ≤100 m3=1000, ≤2500=1800, ≤5000=2100, ≤10000=2500, >10000=3000 UZS/m3. Differs from winter only in the first tier threshold (100 vs 500 m3). Consumed by calculateTieredCost(). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "[{upTo:100,pricePerUnit:1100},{upTo:2500,pricePerUnit:2000},{upTo:5000,pricePerUnit:2300},{upTo:10000,pricePerUnit:2700},{upTo:null,pricePerUnit:3300}]",
-      "source_url": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[0]",
@@ -1619,8 +1646,9 @@
       "status": "current",
       "notes": "Summer gas tier 1: up to 100 m3/month at 1000 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "1100",
-      "source_url": "https://www.spot.uz/ru/2026/05/30/new-tariffs/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/30/new-tariffs/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[1]",
@@ -1640,8 +1668,9 @@
       "status": "current",
       "notes": "Summer gas tier 2: up to 2500 m3/month at 1800 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "2000",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[2]",
@@ -1661,8 +1690,9 @@
       "status": "current",
       "notes": "Summer gas tier 3: up to 5000 m3/month at 2100 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "2300",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[3]",
@@ -1682,8 +1712,9 @@
       "status": "current",
       "notes": "Summer gas tier 4: up to 10000 m3/month at 2500 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "2700",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[4]",
@@ -1703,8 +1734,9 @@
       "status": "current",
       "notes": "Summer gas tier 5 (top): over 10000 m3/month at 3000 UZS/m3 (upTo: null). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "3300",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER",
@@ -1724,8 +1756,9 @@
       "status": "current",
       "notes": "Full 5-tier WINTER natural-gas tariff table: ≤500 m3=1000, ≤2500=1800, ≤5000=2100, ≤10000=2500, >10000=3000 UZS/m3. First-tier threshold is 500 m3 (vs 100 in summer); prices identical to summer. Header comment notes 'typically same structure, higher consumption'. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "[{upTo:500,pricePerUnit:1100},{upTo:2500,pricePerUnit:2000},{upTo:5000,pricePerUnit:2300},{upTo:10000,pricePerUnit:2700},{upTo:null,pricePerUnit:3300}]",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[0]",
@@ -1745,8 +1778,9 @@
       "status": "current",
       "notes": "Winter gas tier 1: up to 500 m3/month at 1000 UZS/m3 (threshold differs from summer's 100 m3). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "1100",
-      "source_url": "https://www.spot.uz/ru/2026/05/30/new-tariffs/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/30/new-tariffs/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[1]",
@@ -1766,8 +1800,9 @@
       "status": "current",
       "notes": "Winter gas tier 2: up to 2500 m3/month at 1800 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "2000",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[2]",
@@ -1787,8 +1822,9 @@
       "status": "current",
       "notes": "Winter gas tier 3: up to 5000 m3/month at 2100 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "2300",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[3]",
@@ -1808,8 +1844,9 @@
       "status": "current",
       "notes": "Winter gas tier 4: up to 10000 m3/month at 2500 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "2700",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[4]",
@@ -1829,8 +1866,9 @@
       "status": "current",
       "notes": "Winter gas tier 5 (top): over 10000 m3/month at 3000 UZS/m3 (upTo: null). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "3300",
-      "source_url": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
-      "last_verified": "2026-07-03"
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
     },
     {
       "id": "utility-tariffs.ts__HEATING_RATE_PER_M2_DAY",
@@ -1986,9 +2024,10 @@
       "status": "current",
       "notes": "PROSE TABLE excise on cars expressed as BRV-per-cc over a threshold. WARNING: this is a DIFFERENT model from customs.ts EXCISE_RATES_PER_CC (which is USD-per-cc absolute). Two inconsistent excise representations on the site — flag for reconciliation. BRV=440000.  ||  2026-06-30 verify: table now per-cc USD (correct); old БРВ-per-cc model removed. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "UZ car duty surcharge is USD-per-cc (0.4-1.0 $/cc new; ~3.0 $/cc used) added to a percentage duty (15% new / 40% used) — there is no BRV-per-cc excise on cars",
-      "source_url": "https://kun.uz/ru/news/2026/01/06/dlya-malolitrajnyx-avtomobiley-povysilis-tamojyennyye-poshliny",
+      "source_url": "https://lex.uz/ru/docs/3802366",
       "last_verified": "2026-09-01",
-      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680",
+      "source_url_prev": "https://kun.uz/ru/news/2026/01/06/dlya-malolitrajnyx-avtomobiley-povysilis-tamojyennyye-poshliny"
     },
     {
       "id": "auto.ts__FUEL_PRICES",
@@ -2340,14 +2379,15 @@
       "status": "current",
       "notes": "Тариф фиксированный: 1 БРВ в Ташкенте/Нукусе/облцентрах, 0,5 БРВ в остальных населённых пунктах. В поле unit ошибочно стояло «fraction of contract value (0.5%)». || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
       "official_value": "State duty (госпошлина) for notarial certification of a real-estate alienation contract is a FIXED fee: 1 БРВ (= 440,000 UZS in 2026) in Tashkent, Nukus and regional centres; 0.5 БРВ (= 206,000 UZS) in other localities. It is NOT a 0.5% (0.005) percentage of the contract value.",
-      "source_url": "https://lex.uz/ru/docs/6306838",
+      "source_url": "https://lex.uz/ru/docs/4680955",
       "source_title": "Podrobno.uz — изменился размер госпошлины при купле-продаже недвижимости (Закон 'О государственной пошлине')",
       "verify_note": "Wrong model: the regulated notary charge is a flat 1 БРВ / 0.5 БРВ state duty (unified from the former 1-3 БРВ scale on 07.12.2022), so `totalPrice * 0.005` over-/under-charges depending on price; there is no 0.5%-of-value statutory notary tariff.",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
       "last_verified": "2026-09-01",
-      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680",
+      "source_url_prev": "https://lex.uz/ru/docs/6306838"
     },
     {
       "id": "calculator-articles.ts__NDFL_NONRESIDENT_RATE",
@@ -2782,13 +2822,14 @@
       "status": "current",
       "notes": "Maximum OSAGO payout: 200 БРВ for life/health, 100 БРВ for property. Ledger has OSAGO tariffs/coefficients but not the БРВ-denominated payout caps. (Quick-answer line 100 also states a flat '80 mln сум' limit — slight inconsistency with the 82.4/41.2 mln split.) [completeness pass 2026-06-25]  ||  2026-06-30 verify: 80 млн confirmed current (Phase 4 fix; eff 1 Jan 2026).",
       "official_value": "Maximum insurance sum doubled to 80,000,000 UZS total from 1 Jan 2026 (was 40 млн), split 65% to life/health (~52,000,000 UZS) and 35% to property (~28,000,000 UZS). The limit is denominated in сумы, NOT in БРВ; there is no separate '200 БРВ / 100 БРВ' cap.",
-      "source_url": "https://kun.uz/ru/news/2025/07/25/s-1-yanvarya-2026-goda-v-uzbekistane-izmenyatsya-pravila-i-tarify-osago",
+      "source_url": "https://lex.uz/ru/docs/1366341",
       "source_title": "Kun.uz — с 1 января 2026 года изменятся правила и тарифы ОСАГО (Постановление КМ №458 от 23.07.2025)",
       "verify_note": "Both the БРВ denomination and the 200/100 figures are wrong as of 2026: Постановление КМ №458 от 23.07.2025 sets a single 80 млн сум ceiling (65% life/health, 35% property) effective 1 Jan 2026; the quick-answer '80 млн сум' line is the closer figure.",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-06-30"
+      "last_verified": "2026-06-30",
+      "source_url_prev": "https://kun.uz/ru/news/2025/07/25/s-1-yanvarya-2026-goda-v-uzbekistane-izmenyatsya-pravila-i-tarify-osago"
     },
     {
       "id": "calculator-articles.ts__OSAGO_NO_POLICY_FINE_BRV",
@@ -2953,14 +2994,14 @@
       "status": "current",
       "notes": "Standard working week = 40 hours (5 days x 8h). Not in ledger. [completeness pass 2026-06-25] || tier2 2026-09-13: current. 40 часов в неделю — ст. 182 ТК-2023, одинаково при пятидневке и шестидневке. В реестре official_value ссылается на «Art. 115 / ex-114» — это неверно, правильно ст. 182. Surfaces в реестре (1556/1563) сдвинулись: сейчас это 1551/1558.",
       "official_value": "40 hours per week (Labor Code Art. 115 / ex-114).",
-      "source_url": "https://lex.uz/docs/6257288",
+      "source_url": "https://lex.uz/ru/docs/6257291",
       "source_title": "gov.uz — Рабочее время",
       "verify_note": "40 часов в неделю — ст. 182 ТК-2023, одинаково при пятидневке и шестидневке. В реестре official_value ссылается на «Art. 115 / ex-114» — это неверно, правильно ст. 182. Surfaces в реестре (1556/1563) сдвинулись: сейчас это 1551/1558. Цитата: ТК РУз, ст. 182: «Ходим учун иш вақтининг нормал давомийлиги беш кунлик ёки олти кунлик иш ҳафтасида ҳафтасига қирқ соатдан ортиқ бўлиши мумкин эмас.»",
       "verify_confidence": "high",
       "verified_date": "2026-09-13",
       "verify_method": "tier2-2026-09-13-primary",
       "last_verified": "2026-09-13",
-      "source_url_prev": "https://gov.uz/ru/advice/NaN/document/2236"
+      "source_url_prev": "https://lex.uz/docs/6257288"
     },
     {
       "id": "calculator-articles.ts__NIGHT_WORK_SURCHARGE",
@@ -2981,14 +3022,14 @@
       "status": "current",
       "notes": "Night work (22:00-06:00) paid with surcharge of at least 50% of the hourly rate. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-09-13: current. Время (ст. 188) и размер оплаты (ст. 264) совпадают с сайтом. В реестре ссылка на «art. 265» ошибочна: оплата ночных — ст. 264, а ст. 265 про невыполнение норм труда.",
       "official_value": "Night work (22:00-06:00) paid at not less than 1.5x: time-rate with coefficient >=1.5, or piece-rate plus a supplement of >=50% of the hourly tariff rate. (Labor Code art. 265; night time defined in art. 188.)",
-      "source_url": "https://lex.uz/docs/6257288",
+      "source_url": "https://lex.uz/ru/docs/6257291",
       "source_title": "Gov.uz — Оплата работы в ночное время (Трудовой кодекс РУз)",
       "verify_note": "Время (ст. 188) и размер оплаты (ст. 264) совпадают с сайтом. В реестре ссылка на «art. 265» ошибочна: оплата ночных — ст. 264, а ст. 265 про невыполнение норм труда. Цитата: ТК РУз, ст. 188: «Соат 22-00 дан то соат 6-00 гача бўлган вақт тунги вақт ҳисобланади»; ст. 264: «тунги вақтдаги меҳнат учун ҳақ тўлаш камида бир ярим баравар миқдорида амалга оширилади» (повременщикам коэффициент ≥1,5, сдельщикам доплата ≥50% часовой тарифной ставки)",
       "verify_confidence": "high",
       "verified_date": "2026-09-13",
       "verify_method": "tier2-2026-09-13-primary",
       "last_verified": "2026-09-13",
-      "source_url_prev": "https://gov.uz/ru/advice/673/document/2936"
+      "source_url_prev": "https://lex.uz/docs/6257288"
     },
     {
       "id": "calculator-articles.ts__OVERTIME_VIOLATION_FINE_BRV",
@@ -3036,14 +3077,14 @@
       "status": "current",
       "notes": "Probationary (испытательный) period may not exceed 3 months. Stated as the Labor Code rule. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-09-13: current. Общее правило «3 месяца» верно. На сайте не упомянуто исключение до 6 месяцев для руководителей и главбухов — это неполнота, а не ошибка значения. В реестре «Art. 234 new code / ex-130» перепутано: в новом ТК это ст. 130. Surface в реестре 2468 сдвинулся: сейчас 2463/2464.",
       "official_value": "3 months (испытательный срок, Labor Code Art. 234 new code / ex-130); cannot be extended even by agreement.",
-      "source_url": "https://lex.uz/docs/6257288",
+      "source_url": "https://lex.uz/ru/docs/6257291",
       "source_title": "Kadrovik.uz — Каковы временные пределы испытательного срока",
       "verify_note": "Общее правило «3 месяца» верно. На сайте не упомянуто исключение до 6 месяцев для руководителей и главбухов — это неполнота, а не ошибка значения. В реестре «Art. 234 new code / ex-130» перепутано: в новом ТК это ст. 130. Surface в реестре 2468 сдвинулся: сейчас 2463/2464. Цитата: ТК РУз, ст. 130: «Дастлабки синов муддати уч ойдан, ташкилотларнинг раҳбарлари ва уларнинг ўринбосарлари, бош бухгалтерлар ҳамда ташкилотлар алоҳида бўлинмаларининг раҳбарлари учун эса олти ойдан ошмаслиги керак.»",
       "verify_confidence": "high",
       "verified_date": "2026-09-13",
       "verify_method": "tier2-2026-09-13-primary",
       "last_verified": "2026-09-13",
-      "source_url_prev": "https://kadrovik.uz/publish/doc/text185673_kakovy_vremennye_predely_ispytatelnogo_sroka2"
+      "source_url_prev": "https://lex.uz/docs/6257288"
     },
     {
       "id": "calculator-articles.ts__SEVERANCE_PAY_SCALE_BY_TENURE",
@@ -3065,14 +3106,14 @@
       "status": "current",
       "notes": "Redundancy severance pay graduated by tenure (50/75/100/150/200% of avg monthly). Ledger only has calculateSeverance.workingDaysPerMonth=21; the tenure scale is not present. [completeness pass 2026-06-25] || tier2 2026-09-13: current. Шкала в новом ТК действительно зависит от стажа и совпадает с сайтом. Два уточнения. Это МИНИМУМЫ («кам бўлиши мумкин эмас»), и считается стаж у ЭТОГО работодателя. Пособие платится не только при сокращении, но и по другим основаниям ч. 2 (ред. ЗРУ-1070 с 25.09.2025): ликвидация, отказ от новых условий или переезда и т.п.",
       "official_value": "<3yr: 50%; 3-5yr: 75%; 5-10yr: 100%; 10-15yr: 150%; >15yr: 200% of average monthly earnings (Labor Code Art. 173).",
-      "source_url": "https://lex.uz/docs/6257288",
+      "source_url": "https://lex.uz/ru/docs/6257291",
       "source_title": "Kadrovik.uz — Размеры выходного пособия (таблица)",
       "verify_note": "Шкала в новом ТК действительно зависит от стажа и совпадает с сайтом. Два уточнения. Это МИНИМУМЫ («кам бўлиши мумкин эмас»), и считается стаж у ЭТОГО работодателя. Пособие платится не только при сокращении, но и по другим основаниям ч. 2 (ред. ЗРУ-1070 с 25.09.2025): ликвидация, отказ от новых условий или переезда и т.п. Цитата: ТК РУз, ст. 173 ч. 3: «Ишдан бўшатиш нафақасининг миқдори мазкур иш берувчидаги иш стажига боғлиқ бўлади ва у: уч йилгача… эллик фоизидан; уч йилдан беш йилгача… етмиш беш фоизидан; … ўн беш йилдан ортиқ… икки юз фоизидан кам бўлиши мумкин эмас.»",
       "verify_confidence": "high",
       "verified_date": "2026-09-13",
       "verify_method": "tier2-2026-09-13-primary",
       "last_verified": "2026-09-13",
-      "source_url_prev": "https://kadrovik.uz/publish/doc/text185895_kogda_rabotodatel_obyazan_platit_vyhodnoe_posobie_tablica11"
+      "source_url_prev": "https://lex.uz/docs/6257288"
     },
     {
       "id": "calculator-articles.ts__SEVERANCE_JOB_SEARCH_SALARY_RETENTION",
@@ -3092,13 +3133,13 @@
       "status": "current",
       "notes": "On liquidation, salary retained during job search up to 2 months (3 if registered with employment service within 10 days). Not in ledger. [completeness pass 2026-06-25] || tier2 2026-09-13: stale_confirmed — на сайте: «При ликвидации организации ДОПОЛНИТЕЛЬНО сохраняется зарплата на период трудоустройства до 2 месяцев (до 3 месяцев при регистрации в службе занятости в течение 10 дней после увольнения)»: calculator-articles.ts:1477, 1484 (uz); FAQ «до 2-3 мес.» 1493, 1500 (uz); по норме: Среднемесячный заработок сохраняется на время поиска работы не более 2 месяцев, причём выходное пособие засчитывается в эту сумму (не «дополнительно»). Право есть не только при ликвидации: также при сокращении, отказе от новых условий, переезда или перевода по здоровью и др. (ст. 100 ч. 1). За 3-й месяц — если человек встал на учёт в местном органе по труду в течение 30 календарных дней (не 10). На сайте три ошибки. Срок постановки на учёт — 30 календарных дней, а не 10 (10 дней, похоже, перенесено из старого ТК-1995). Сохранение заработка идёт с зачётом выходного пособия, а не сверх него. Гарантия действует не только при ликвидации. Часть 4 ст. 100 поправками не менялась, это исходная редакция ТК-2023. || phase4 2026-09-13: применено — статья severance ru+uz + FAQ; коммит db804670.",
       "official_value": "average monthly earnings kept during job search for up to 2 months INCLUDING severance pay; 3rd month if registered with the local labour body within 30 calendar days (ТК ст. 100 ч.1, ч.4); applies on liquidation, redundancy and other grounds of ч.1",
-      "source_url": "https://lex.uz/docs/6257288",
+      "source_url": "https://lex.uz/ru/docs/6257291",
       "source_title": "Norma.uz — Выходное пособие (переходный период)",
       "verify_note": "На сайте три ошибки. Срок постановки на учёт — 30 календарных дней, а не 10 (10 дней, похоже, перенесено из старого ТК-1995). Сохранение заработка идёт с зачётом выходного пособия, а не сверх него. Гарантия действует не только при ликвидации. Часть 4 ст. 100 поправками не менялась, это исходная редакция ТК-2023. Цитата: ТК РУз, ст. 100 ч. 1: «ўртача ойлик иш ҳақининг ишдан бўшатиш нафақаси ҳисобга олинган ҳолда, бироқ кўпи билан икки ойга сақланиб қолиши… кафолатланади»; ч. 4: «ўттиз календарь кун ичида маҳаллий меҳнат органида… рўйхатдан ўтган бўлса… учинчи ой учун ҳам»",
       "verify_confidence": "high",
       "verify_method": "tier2-2026-09-13-primary",
       "last_verified": "2026-09-13",
-      "source_url_prev": "https://www.norma.uz/nashi_obzori/po_kakomu_kodeksu_vyplatit_vyhodnoe_posobie_esli_srok_preduprejdeniya_vypal_na_perehodnyy_period",
+      "source_url_prev": "https://lex.uz/docs/6257288",
       "value_before_phase4": "up to 2 months (3 months if registered with employment service within 10 days)",
       "verified_date": "2026-09-13"
     },
@@ -3179,14 +3220,14 @@
       "status": "current",
       "notes": "Maternity leave = 126 calendar days total (140 if complicated/multiple). Ledger has the 70/56/70 split in days but the named 126/140 totals are stated as the rule and the calendar-day framing differs. [completeness pass 2026-06-25] || tier2 2026-09-13: current. Итоги 126 и 140 дней отпуска верны. Не путать с числом ОПЛАЧИВАЕМЫХ дней: по п. 25 и п. 17 прил. 4 ПКМ-796 воскресенья и нерабочие праздники не оплачиваются. Поэтому пример «500 000 × 126» (1444/1451) неверен по методу — см. запись calendarDaysIn12Months. Ссылка реестра на «ст. 233» ошибочна, правильно ст. 404.",
       "official_value": "126 calendar days (70 before + 56 after); 140 (70 + 70) for complicated births or multiple children. Labor Code Art. 233 (new code).",
-      "source_url": "https://lex.uz/docs/6257288",
+      "source_url": "https://lex.uz/ru/docs/6257291",
       "source_title": "gov.uz — Отпуск по беременности и родам",
       "verify_note": "Итоги 126 и 140 дней отпуска верны. Не путать с числом ОПЛАЧИВАЕМЫХ дней: по п. 25 и п. 17 прил. 4 ПКМ-796 воскресенья и нерабочие праздники не оплачиваются. Поэтому пример «500 000 × 126» (1444/1451) неверен по методу — см. запись calendarDaysIn12Months. Ссылка реестра на «ст. 233» ошибочна, правильно ст. 404. Цитата: ТК РУз, ст. 404: «туғруққача етмиш календарь кун ҳамда туғруқдан кейин эллик олти календарь кун (туғиш қийин кечган ёхуд икки ёки ундан ортиқ бола туғилган тақдирда етмиш календарь кун)»",
       "verify_confidence": "high",
       "verified_date": "2026-09-13",
       "verify_method": "tier2-2026-09-13-primary",
       "last_verified": "2026-09-13",
-      "source_url_prev": "https://gov.uz/en/advice/673/document/2982"
+      "source_url_prev": "https://lex.uz/docs/6257288"
     },
     {
       "id": "calculator-articles.ts__BIRTH_ONE_TIME_ALLOWANCE_BRV",
@@ -3953,13 +3994,14 @@
       "status": "current",
       "notes": "Court-claim filing duty = 2% of claim (physical) / 5% (legal), min 1 БРВ. Ledger has a flat court_civil=3 БРВ entry; the percentage-of-claim rule is a distinct, missing concept. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "State duty on property-nature claims is split by COURT TYPE, not by person type: civil courts — 4% of the claim value (min 1 МРЗП/min wage); economic courts — 2% of the claim value (min 1 МРЗП). The ledger's '2% physical / 5% legal, min 1 БРВ' does not match the published rate table.",
-      "source_url": "https://www.lex.uz/acts/699301",
+      "source_url": "https://lex.uz/ru/docs/4680955",
       "source_title": "lex.uz — Ставки государственной пошлины (исковые заявления)",
       "verify_note": "STALE framing: rate is 4% (civil) / 2% (economic) by court, minimum tied to МРЗП — not '2%/5% by physical/legal'. Re-state the rule and the min basis (МРЗП vs БРВ) before use.",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.lex.uz/acts/699301"
     },
     {
       "id": "calculator-articles.ts__NOTARY_PROPERTY_DEAL_DUTY_PERCENT",
@@ -3980,13 +4022,14 @@
       "status": "current",
       "notes": "Notarial certification of a real-estate sale = 1% of the transaction (min 1 БРВ); will = 0.5 БРВ; copy certification = 0.1 БРВ/page. Ledger STATE_DUTIES has notary_deal=1 (БРВ flat) which differs from this 1%-of-sum rule; will/copy duties absent. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
       "official_value": "Notarial certification of a real-estate sale/transfer is NOT 1% of the transaction. It is a FLAT amount tied to area/location: in Tashkent/Nukus/regional centres — 1 МРЗП (≤100 m²), 2 МРЗП (100–200 m²), 3 МРЗП (200+ m²); other settlements 50%/1/1.5 МРЗП; close relatives pay 50% of the rate. Will certification = 5% of МРЗП (not 0.5 БРВ).",
-      "source_url": "https://www.lex.uz/acts/699301",
+      "source_url": "https://lex.uz/ru/docs/4680955",
       "source_title": "lex.uz — Ставки госпошлины (нотариальные действия)",
       "verify_note": "STALE: a '1% of deal' notary duty is not the Uzbek rule — real-estate certification is flat МРЗП by area, and will certification is 5% of МРЗП. The percentage formulation likely came from another jurisdiction.",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-07-03",
+      "source_url_prev": "https://www.lex.uz/acts/699301"
     },
     {
       "id": "calculator-articles.ts__STATE_DUTY_RECEIPT_VALIDITY",
