@@ -20,6 +20,21 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-09-21",
+    dateLabelRu: "21 сентября 2026",
+    dateLabelUz: "2026-yil 21-sentabr",
+    items: [
+      {
+        titleRu: "Цены на топливо на сентябрь 2026 и поле своей цены в калькуляторе",
+        titleUz: "2026-yil sentabr yoqilg'i narxlari va kalkulyatorda o'z narxingiz maydoni",
+        descRu:
+          "Калькулятор расхода топлива считал по ценам конца августа: АИ-92 12 500, АИ-95 16 200, АИ-100 24 000, дизель 14 200 сум, пропан 5 500 сум. С весны Россия не экспортирует бензин, и в сентябре топливо в Ташкенте подорожало, а АИ-95 бывает в дефиците. Теперь по умолчанию стоят цены сети «Узбекнефтегаз» на 18 сентября 2026 года: АИ-92 — 13 500, АИ-95 — 17 000, АИ-100 — 28 000, дизель — 15 500 сум за литр, метан — 5 750 сум за кубометр. Пропан — 8 800 сум, это последняя подтверждённая цена на заправках (август); 16–18 сентября биржевая цена сжиженного газа выросла на 65%, и на АГЗС он, скорее всего, дороже. Цены не регулируются и отличаются по сетям, поэтому в калькулятор добавлено поле своей цены — впишите цену с чека вашей заправки. Калькулятор стоимости поездки тоже подставляет по умолчанию актуальную цену АИ-92, а не 12 000 сум. Примеры в статье пересчитаны: Ташкент — Самарканд на АИ-92 — 324 000 сум вместо 300 000, Ташкент — Бухара — 729 000 сум за топливо вместо 675 000.",
+        descUz:
+          "Yoqilg'i sarfi kalkulyatori avgust oxiri narxlari bo'yicha hisoblardi: AI-92 12 500, AI-95 16 200, AI-100 24 000, dizel 14 200 so'm, propan 5 500 so'm. Bahordan beri Rossiya benzin eksport qilmaydi, sentabrda Toshkentda yoqilg'i qimmatlashdi, AI-95 esa tanqis bo'lib qoladi. Endi standart holda «O'zbekneftgaz» shoxobchalarining 2026-yil 18-sentabrdagi narxlari turadi: AI-92 — 13 500, AI-95 — 17 000, AI-100 — 28 000, dizel — litri 15 500 so'm, metan — kub metri 5 750 so'm. Propan — 8 800 so'm, bu shoxobchalardagi so'nggi tasdiqlangan narx (avgust); 16–18 sentabrda suyultirilgan gazning birja narxi 65% ga oshdi, AGTKSlarda u ehtimol qimmatroq. Narxlar tartibga solinmaydi va shoxobchalar bo'yicha farq qiladi, shuning uchun kalkulyatorga o'z narxingiz maydoni qo'shildi — shoxobchangiz chekidagi narxni kiriting. Sayohat narxi kalkulyatori ham standart holda 12 000 so'm emas, AI-92 ning joriy narxini qo'yadi. Maqoladagi misollar qayta hisoblandi: Toshkent — Samarqand AI-92 da 300 000 o'rniga 324 000 so'm, Toshkent — Buxoro yoqilg'iga 675 000 o'rniga 729 000 so'm.",
+      },
+    ],
+  },
+  {
     date: "2026-09-13",
     dateLabelRu: "13 сентября 2026",
     dateLabelUz: "2026-yil 13-sentabr",

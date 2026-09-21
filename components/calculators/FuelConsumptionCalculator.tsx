@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { calculateFuelConsumption, FUEL_PRICES } from '@/lib/calculators/auto'
+import { calculateFuelConsumption, FUEL_PRICES, FUEL_PRICES_DATE } from '@/lib/calculators/auto'
 import { formatCurrency, formatNumber } from '@/lib/utils'
 
 export default function FuelConsumptionCalculator() {
@@ -13,24 +13,29 @@ export default function FuelConsumptionCalculator() {
   const [distance, setDistance] = useState('100')
   const [consumption, setConsumption] = useState('8')
   const [fuelType, setFuelType] = useState('ai-92')
+  // Цены не регулируются и отличаются по сетям — пользователь может вписать свою с чека.
+  const [customPrice, setCustomPrice] = useState('')
 
   const result = useMemo(() => {
     const d = parseFloat(distance) || 0
     const c = parseFloat(consumption) || 0
     if (d <= 0 || c <= 0) return null
-    return calculateFuelConsumption(d, c, fuelType)
-  }, [distance, consumption, fuelType])
+    const p = parseFloat(customPrice)
+    return calculateFuelConsumption(d, c, fuelType, p > 0 ? p : undefined)
+  }, [distance, consumption, fuelType, customPrice])
 
   const t = locale === 'uz'
     ? {
         distance: 'Masofa (km)', consumption: 'Sarfiyot (l/100km)', fuelType: 'Yoqilg\'i turi',
         results: 'Natijalar', unit: 'l', totalFuel: 'Jami yoqilg\'i (l)', fuelPrice: 'Yoqilg\'i narxi',
         totalCost: 'Jami xarajat', costPerKm: 'Km uchun xarajat',
+        ownPrice: "O'z narxingiz (so'm/l), ixtiyoriy", defaults: "Standart narxlar: Toshkent, «O'zbekneftgaz» shoxobchalari, holati",
       }
     : {
         distance: 'Расстояние (км)', consumption: 'Расход (л/100км)', fuelType: 'Тип топлива',
         results: 'Результаты', unit: 'л', totalFuel: 'Всего топлива (л)', fuelPrice: 'Цена топлива',
         totalCost: 'Общая стоимость', costPerKm: 'Стоимость за км',
+        ownPrice: 'Своя цена (сум/л), необязательно', defaults: 'Цены по умолчанию: Ташкент, сеть «Узбекнефтегаз», на',
       }
 
   const fuelLabels: Record<string, string> = locale === 'uz'
@@ -51,9 +56,14 @@ export default function FuelConsumptionCalculator() {
           </div>
           <div>
             <Label>{t.fuelType}</Label>
-            <select value={fuelType} onChange={(e) => setFuelType(e.target.value)} className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
+            <select value={fuelType} onChange={(e) => { setFuelType(e.target.value); setCustomPrice('') }} className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
               {Object.entries(fuelLabels).map(([k, v]) => <option key={k} value={k}>{v} — {formatNumber(FUEL_PRICES[k], locale)} UZS/l</option>)}
             </select>
+            <p className="mt-1 text-xs text-muted-foreground">{t.defaults} {FUEL_PRICES_DATE.split('-').reverse().join('.')}</p>
+          </div>
+          <div>
+            <Label>{t.ownPrice}</Label>
+            <Input type="number" value={customPrice} onChange={(e) => setCustomPrice(e.target.value)} className="mt-1" min={0} placeholder={String(FUEL_PRICES[fuelType] ?? '')} />
           </div>
         </CardContent>
       </Card>

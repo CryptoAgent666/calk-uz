@@ -7,12 +7,13 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateTripCost } from '@/lib/calculators/auto'
 import { formatCurrency } from '@/lib/utils'
+import { FUEL_PRICES } from '@/lib/calculators/auto'
 
 export default function TripCostCalculator() {
   const locale = useLocale()
   const [distance, setDistance] = useState('')
   const [consumption, setConsumption] = useState('8')
-  const [fuelPrice, setFuelPrice] = useState('12000')
+  const [fuelPrice, setFuelPrice] = useState(String(FUEL_PRICES['ai-92']))
   const [tollRoads, setTollRoads] = useState('0')
   const [parking, setParking] = useState('0')
   const [passengers, setPassengers] = useState('1')
