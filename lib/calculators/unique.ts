@@ -2,43 +2,69 @@
  * Unique Uzbekistan calculators: passport fees, state duties, wedding, cotton, remittances, visa, BRV
  */
 
-import { BRV } from '@/lib/constants/brv'
+import { BRV, brvToUzs } from '@/lib/constants/brv'
 import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
 
 // Passport Fees
+//
+// Ставки — ЗРУ-600 «О государственной пошлине», приложение, п. 6 (в ред.
+// ЗРУ-759 от 14.03.2022; «а»–«г» с тех пор не менялись):
+//   а) ID-карта — 89% БРВ, одинаково для новорождённого, ребёнка и взрослого;
+//   б) биометрический паспорт для выезда за границу — 1 БРВ;
+//   в) он же гражданам до 16 лет — 80% БРВ.
+// Отдельной пошлины за замену или утерю нет: новый документ оформляется в общем
+// порядке по той же ставке (п. 53 Положения, ПП-4079; п. 9 Положения, УП-6065).
+// Срочного/ускоренного оформления и надбавки за него нормы не предусматривают.
+// Загранпаспорт через my.gov.uz (ЕПИГУ) — 90% пошлины (п. 27 Положения, ПП-4079).
+// Сроки: ID-карта — 1 рабочий день (п. 9, 12 Положения, УП-6065); загранпаспорт —
+// 10 рабочих дней (п. 31), при утере или порче могут продлить ещё на 10 (п. 54).
+export type PassportDocType = 'id-card' | 'passport' | 'passport-child'
+export type PassportReason = 'first' | 'replacement' | 'lost'
+
+export const PASSPORT_FEE_BRV: Record<PassportDocType, number> = {
+  'id-card': 0.89,
+  passport: 1,
+  'passport-child': 0.8,
+}
+
+/** Доля пошлины при подаче заявления на загранпаспорт через my.gov.uz (п. 27 Положения, ПП-4079) */
+export const PASSPORT_ONLINE_SHARE = 0.9
+
 export interface PassportFeesResult {
-  type: string
+  type: PassportDocType
+  reason: PassportReason
+  brvMultiplier: number
   baseFee: number
-  urgentFee: number
+  onlineApplied: boolean
   totalFee: number
-  isUrgent: boolean
+  /** рабочих дней */
   processingDays: number
+  /** верхняя граница, если срок могут продлить (утеря/порча загранпаспорта) */
+  processingDaysMax: number
 }
 
 export function calculatePassportFees(
-  type: 'new' | 'replacement' | 'lost' | 'child' | 'biometric',
-  isUrgent: boolean = false
+  type: PassportDocType,
+  reason: PassportReason = 'first',
+  online: boolean = false
 ): PassportFeesResult {
-  const fees: Record<string, { base: number; urgent: number; days: number; urgentDays: number }> = {
-    // 2026 (ЗРУ-600): ID-card issuance ≈ 0.89 БРВ; child (<16) 0.8; biometric
-    // international passport (загран) 1.2 БРВ. No urgent surcharge (faster days only).
-    new: { base: BRV * 0.89, urgent: BRV * 0.89, days: 15, urgentDays: 3 },
-    replacement: { base: BRV * 0.89, urgent: BRV * 0.89, days: 15, urgentDays: 3 },
-    lost: { base: BRV * 0.89, urgent: BRV * 0.89, days: 15, urgentDays: 3 },
-    child: { base: BRV * 0.8, urgent: BRV * 0.8, days: 10, urgentDays: 3 },
-    biometric: { base: BRV * 1.2, urgent: BRV * 1.2, days: 15, urgentDays: 5 },
-  }
-
-  const fee = fees[type] ?? fees.new
-  const totalFee = isUrgent ? fee.urgent : fee.base
+  const brvMultiplier = PASSPORT_FEE_BRV[type] ?? PASSPORT_FEE_BRV['id-card']
+  const baseFee = brvToUzs(brvMultiplier)
+  const isPassport = type !== 'id-card'
+  const onlineApplied = online && isPassport
+  const totalFee = onlineApplied ? Math.round(baseFee * PASSPORT_ONLINE_SHARE) : baseFee
+  const processingDays = isPassport ? 10 : 1
+  const processingDaysMax = isPassport && reason === 'lost' ? 20 : processingDays
 
   return {
     type,
-    baseFee: fee.base,
-    urgentFee: fee.urgent,
+    reason,
+    brvMultiplier,
+    baseFee,
+    onlineApplied,
     totalFee,
-    isUrgent,
-    processingDays: isUrgent ? fee.urgentDays : fee.days,
+    processingDays,
+    processingDaysMax,
   }
 }
 
