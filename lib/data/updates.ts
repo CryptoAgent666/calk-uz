@@ -1,0 +1,694 @@
+/**
+ * Single source of truth for the changelog shown both on /updates and on
+ * the homepage "Что недавно обновили" block. Edit only here.
+ */
+
+export interface UpdateItem {
+  titleRu: string
+  titleUz: string
+  descRu: string
+  descUz: string
+}
+
+export interface UpdateBlock {
+  /** ISO date — used for sorting and JSON-LD `dateModified` */
+  date: string
+  dateLabelRu: string
+  dateLabelUz: string
+  items: UpdateItem[]
+}
+
+export const UPDATES: UpdateBlock[] = [
+  {
+    date: "2026-09-21",
+    dateLabelRu: "21 сентября 2026",
+    dateLabelUz: "2026-yil 21-sentabr",
+    items: [
+      {
+        titleRu: "Паспортные пошлины: ставки приведены к закону, «срочное оформление» и «двойная пошлина при утере» убраны",
+        titleUz: "Pasport bojlari: stavkalar qonunga moslashtirildi, «shoshilinch rasmiylashtirish» va «yo'qotishda ikki baravar boj» olib tashlandi",
+        descRu:
+          "На странице паспортных пошлин стояли неверные ставки. В статье загранпаспорт стоил 2 БРВ (880 000 сум), в калькуляторе — 1,2 БРВ; ID-карта — 0,5 БРВ (220 000); было «ускоренное оформление» за 4 БРВ и «срочное» за 8 БРВ; при утере пошлина якобы удваивалась. Ставка 1,2 БРВ действовала до 14 марта 2022 года. По закону «О государственной пошлине» ЗРУ-600 (приложение, п. 6, в редакции ЗРУ-759 от 14.03.2022) ID-карта стоит 89% БРВ — 391 600 сум в любом возрасте, загранпаспорт — 1 БРВ (440 000), загранпаспорт ребёнку до 16 лет — 80% БРВ (352 000). Платного срочного оформления нет. При утере пошлина та же — паспорт меняют в общем порядке (п. 53 Положения, утверждённого ПП-4079), а пострадавшим от ЧС, одиноким престарелым и людям с инвалидностью, которым нужен уход, замена бесплатна (ст. 13 ЗРУ-600). Добавили: при подаче через my.gov.uz за загранпаспорт платится 90% пошлины — 396 000 и 316 800 сум (п. 27 Положения). Исправили сроки изготовления (ID-карта — 1 рабочий день, загранпаспорт — 10) и сроки действия по возрасту.",
+        descUz:
+          "Pasport bojlari sahifasida stavkalar noto'g'ri edi. Maqolada xorijga chiqish pasporti 2 BHM (880 000 so'm), kalkulyatorda 1,2 BHM edi; ID-karta — 0,5 BHM (220 000); 4 BHM lik «tezlashtirilgan» va 8 BHM lik «shoshilinch» rasmiylashtirish bor edi; yo'qotishda boj go'yo ikki baravar oshardi. 1,2 BHM stavkasi 2022-yil 14-martgacha amal qilgan. «Davlat boji to'g'risida»gi O'RQ-600 Qonuniga ko'ra (ilova, 6-band, 2022-yil 14-martdagi O'RQ-759 tahririda) ID-karta har qanday yoshda BHMning 89 foizi — 391 600 so'm, xorijga chiqish pasporti — 1 BHM (440 000), 16 yoshgacha bolaga — BHMning 80 foizi (352 000). Pullik shoshilinch rasmiylashtirish yo'q. Yo'qotishda boj o'zgarmaydi — pasport umumiy tartibda almashtiriladi (PQ-4079 Nizomining 53-bandi), favqulodda vaziyatdan jabrlanganlar, yolg'iz keksalar va parvarishga muhtoj nogironligi bo'lgan shaxslar esa yangisini bepul oladi (O'RQ-600, 13-modda). Qo'shildi: my.gov.uz orqali ariza berilganda xorijga chiqish pasporti uchun bojning 90 foizi to'lanadi — 396 000 va 316 800 so'm (27-band). Tayyorlanish muddatlari (ID-karta — 1 ish kuni, pasport — 10) va yosh bo'yicha amal qilish muddatlari tuzatildi.",
+      },
+      {
+        titleRu: "Цены на топливо на сентябрь 2026 и поле своей цены в калькуляторе",
+        titleUz: "2026-yil sentabr yoqilg'i narxlari va kalkulyatorda o'z narxingiz maydoni",
+        descRu:
+          "Калькулятор расхода топлива считал по ценам конца августа: АИ-92 12 500, АИ-95 16 200, АИ-100 24 000, дизель 14 200 сум, пропан 5 500 сум. С весны Россия не экспортирует бензин, и в сентябре топливо в Ташкенте подорожало, а АИ-95 бывает в дефиците. Теперь по умолчанию стоят цены сети «Узбекнефтегаз» на 18 сентября 2026 года: АИ-92 — 13 500, АИ-95 — 17 000, АИ-100 — 28 000, дизель — 15 500 сум за литр, метан — 5 750 сум за кубометр. Пропан — 8 800 сум, это последняя подтверждённая цена на заправках (август); 16–18 сентября биржевая цена сжиженного газа выросла на 65%, и на АГЗС он, скорее всего, дороже. Цены не регулируются и отличаются по сетям, поэтому в калькулятор добавлено поле своей цены — впишите цену с чека вашей заправки. Калькулятор стоимости поездки тоже подставляет по умолчанию актуальную цену АИ-92, а не 12 000 сум. Примеры в статье пересчитаны: Ташкент — Самарканд на АИ-92 — 324 000 сум вместо 300 000, Ташкент — Бухара — 729 000 сум за топливо вместо 675 000.",
+        descUz:
+          "Yoqilg'i sarfi kalkulyatori avgust oxiri narxlari bo'yicha hisoblardi: AI-92 12 500, AI-95 16 200, AI-100 24 000, dizel 14 200 so'm, propan 5 500 so'm. Bahordan beri Rossiya benzin eksport qilmaydi, sentabrda Toshkentda yoqilg'i qimmatlashdi, AI-95 esa tanqis bo'lib qoladi. Endi standart holda «O'zbekneftgaz» shoxobchalarining 2026-yil 18-sentabrdagi narxlari turadi: AI-92 — 13 500, AI-95 — 17 000, AI-100 — 28 000, dizel — litri 15 500 so'm, metan — kub metri 5 750 so'm. Propan — 8 800 so'm, bu shoxobchalardagi so'nggi tasdiqlangan narx (avgust); 16–18 sentabrda suyultirilgan gazning birja narxi 65% ga oshdi, AGTKSlarda u ehtimol qimmatroq. Narxlar tartibga solinmaydi va shoxobchalar bo'yicha farq qiladi, shuning uchun kalkulyatorga o'z narxingiz maydoni qo'shildi — shoxobchangiz chekidagi narxni kiriting. Sayohat narxi kalkulyatori ham standart holda 12 000 so'm emas, AI-92 ning joriy narxini qo'yadi. Maqoladagi misollar qayta hisoblandi: Toshkent — Samarqand AI-92 da 300 000 o'rniga 324 000 so'm, Toshkent — Buxoro yoqilg'iga 675 000 o'rniga 729 000 so'm.",
+      },
+    ],
+  },
+  {
+    date: "2026-09-13",
+    dateLabelRu: "13 сентября 2026",
+    dateLabelUz: "2026-yil 13-sentabr",
+    items: [
+      {
+        titleRu: "Налог на имущество физлиц: ставки 0,70% нет, в сёлах свыше 200 м² — 0,48%, льготы по ст. 421",
+        titleUz: "Jismoniy shaxslar mol-mulk solig'i: 0,70% stavka yo'q, qishloqlarda 200 m² dan ortig'i — 0,48%, imtiyozlar 421-modda bo'yicha",
+        descRu:
+          "В статье о налоге на имущество была «пониженная ставка 0,70% для отдельных категорий» — в ст. 422 Налогового кодекса такой ставки для физлиц нет. Не было и «индексации +7%»: ставки 2026 года прямо записаны в ст. 422 в редакции закона ЗРУ-1108. Калькулятор применял ставку 0,64% ко всем домам больше 500 м², хотя эта ступень есть только для городов — в прочих населённых пунктах всё свыше 200 м² облагается по 0,48%. Теперь в калькуляторе можно указать, находится ли объект в городе. Исправлен перечень льгот: пенсионеры, лица с инвалидностью I–II групп и родитель десяти и более детей освобождаются не полностью, а в пределах 60 м², «многодетных семей с 4 детьми» и «одиноких пенсионеров» в ст. 421 нет (последние — льгота по земельному налогу); полностью освобождено имущество Героев, инвалидов и участников войны, семей погибших военнослужащих и ряда других категорий. Для юрлиц уточнены авансы: не «по 25% ежеквартально», а четверть годовой суммы раз в квартал у плательщиков налога с оборота и двенадцатая часть ежемесячно у остальных (ст. 417); из льгот убраны СЭЗ и религиозные организации, которых нет в ст. 414. Добавлено, что кенгаши вправе применить к ставкам коэффициент 0,7–1,3.",
+        descUz:
+          "Mol-mulk solig'i maqolasida «ayrim toifalar uchun pasaytirilgan 0,70% stavka» bor edi — Soliq kodeksining 422-moddasida jismoniy shaxslar uchun bunday stavka yo'q. «+7% indeksatsiya» ham bo'lmagan: 2026-yil stavkalari O'RQ-1108 tahriridagi 422-moddada to'g'ridan-to'g'ri yozilgan. Kalkulyator 500 m² dan katta barcha uylarga 0,64% stavkani qo'llardi, holbuki bu pog'ona faqat shaharlar uchun — boshqa aholi punktlarida 200 m² dan ortig'i 0,48% bilan soliqqa tortiladi. Endi kalkulyatorda ob'ekt shaharda joylashganini ko'rsatish mumkin. Imtiyozlar ro'yxati tuzatildi: pensionerlar, I–II guruh nogironligi bo'lgan shaxslar va o'n va undan ortiq farzandli ota-ona to'liq emas, 60 m² doirasida ozod qilinadi, 421-moddada «4 bolali ko'p bolali oilalar» va «yolg'iz pensionerlar» yo'q (ikkinchisi — yer solig'i imtiyozi); Qahramonlar, urush nogironlari va qatnashchilari, halok bo'lgan harbiy xizmatchilar oilalari va boshqa ayrim toifalarning mol-mulki to'liq ozod. Yuridik shaxslar uchun avanslar aniqlashtirildi: «har chorakda 25%» emas, aylanma solig'i to'lovchilar chorakda bir marta yillik summaning to'rtdan birini, qolganlar har oy o'n ikkidan birini to'laydi (417-modda); imtiyozlardan 414-moddada yo'q EIZ va diniy tashkilotlar olib tashlandi. Kengashlar stavkalarga 0,7–1,3 koeffitsiyent qo'llashi mumkinligi qo'shildi.",
+      },
+      {
+        titleRu: "Штраф за несвоевременную налоговую отчётность: должностным лицам — 10 БРВ, малым предприятиям — 3 БРВ",
+        titleUz: "Soliq hisobotini kechiktirish jarimasi: mansabdor shaxslarga — 10 BHK, kichik korxonalarga — 3 BHK",
+        descRu:
+          "В статье о налоговых пенях штраф за несвоевременную декларацию был указан как 1 БРВ для физлиц и 3 БРВ для должностных лиц. По ст. 175 Кодекса об административной ответственности в редакции закона ЗРУ-1108 (с 1 января 2026 года) гражданам назначается 1 БРВ (440 000 сум), должностным лицам — 10 БРВ (4 400 000 сум), а микрофирмам и малым предприятиям — 3 БРВ (1 320 000 сум). Штраф за непредставление документов для исчисления налогов — 3 БРВ по той же статье, а не 5 БРВ. Вместо «рассрочки пени при реструктуризации» описан реальный порядок: отсрочка или рассрочка налога, пени и штрафа по ст. 97–101 Налогового кодекса, при этом заявление не останавливает начисление пени. Убрано обещание ввода дат и помесячной разбивки — калькулятор считает по сумме долга и числу дней просрочки.",
+        descUz:
+          "Soliq penyalari maqolasida deklaratsiyani kechiktirganlik uchun jarima jismoniy shaxslarga 1 BHK, mansabdor shaxslarga 3 BHK deb ko'rsatilgan edi. Ma'muriy javobgarlik to'g'risidagi kodeksning O'RQ-1108 tahriridagi 175-moddasiga ko'ra (2026-yil 1-yanvardan) fuqarolarga 1 BHK (440 000 so'm), mansabdor shaxslarga — 10 BHK (4 400 000 so'm), mikrofirmalar va kichik korxonalarga — 3 BHK (1 320 000 so'm) jarima solinadi. Soliqlarni hisoblash uchun hujjatlarni taqdim etmaganlik jarimasi — o'sha modda bo'yicha 5 BHK emas, 3 BHK. «Qayta tuzilashda penyani bo'lib to'lash» o'rniga haqiqiy tartib yozildi: Soliq kodeksining 97–101-moddalari bo'yicha soliq, penya va jarimani kechiktirish yoki bo'lib to'lash, ariza esa penya hisoblanishini to'xtatmaydi. Sanalarni kiritish va oylik taqsimot haqidagi va'da olib tashlandi — kalkulyator qarz summasi va kechikish kunlari bo'yicha hisoblaydi.",
+      },
+      {
+        titleRu: "Больничный: пособие назначается автоматически, «10 рабочих дней» у работодателя — нет",
+        titleUz: "Kasallik varag'i: nafaqa avtomatik tayinlanadi, ish beruvchida «10 ish kuni» yo'q",
+        descRu:
+          "В статье о больничном оставалась фраза «работодатель обязан принять больничный лист и произвести расчёт в течение 10 рабочих дней». В постановлении Кабмина № 796 такого срока нет: больничный лист электронный и автоматически передаётся из системы «Ягона тиббий» в модуль «Социальное страхование», где пособие назначается автоматически (прил. 4, п. 10, 13). Выплату производит финансовый агент: деньги по пособиям, назначенным с 1-го по 15-е число, передаются ему до 25-го числа того же месяца, по назначенным позже — до 10-го числа следующего месяца (п. 34).",
+        descUz:
+          "Kasallik varag'i maqolasida «ish beruvchi kasallik varag'ini qabul qilishi va 10 ish kuni ichida hisob-kitob qilishi shart» degan jumla qolgan edi. Vazirlar Mahkamasining 796-son qarorida bunday muddat yo'q: kasallik varag'i elektron va «Yagona tibbiy» tizimidan «Ijtimoiy sug'urta» moduliga avtomatik yuboriladi, nafaqa u yerda avtomatik tayinlanadi (4-ilova, 10, 13-bandlar). To'lovni moliyaviy agent amalga oshiradi: oyning 1–15-sanalarida tayinlangan nafaqalar bo'yicha mablag' unga shu oyning 25-sanasigacha, keyinroq tayinlanganlari bo'yicha — keyingi oyning 10-sanasigacha o'tkaziladi (34-band).",
+      },
+      {
+        titleRu: "Квитанция об уплате госпошлины: срока действия «3 месяца» нет",
+        titleUz: "Davlat boji to'langanligi haqidagi kvitansiya: «3 oy» amal qilish muddati yo'q",
+        descRu:
+          "На страницах о паспортных пошлинах и госпошлинах было написано, что квитанция действительна 3 месяца. Такой нормы нет ни в законе о государственной пошлине ЗРУ-600, ни в положениях о выдаче загранпаспортов и ID-карт: квитанция лишь подтверждает уплату (ст. 17 ЗРУ-600), а при электронной оплате её обычно не требуют. Реальный срок рядом другой: заявку на загранпаспорт через my.gov.uz не рассмотрят, если в течение месяца со дня отправки не прийти в пункт сбора данных (п. 20 Положения, утверждённого ПП-4079). Фразу исправили.",
+        descUz:
+          "Pasport va davlat bojlari sahifalarida kvitansiya 3 oy amal qiladi deb yozilgan edi. Bunday norma na O'RQ-600 davlat boji to'g'risidagi qonunda, na chet elga chiqish pasporti va ID-karta berish nizomlarida bor: kvitansiya faqat to'lovni tasdiqlaydi (O'RQ-600, 17-modda), elektron to'lovda esa odatda talab qilinmaydi. Yaqin haqiqiy muddat boshqacha: chet elga chiqish pasportiga my.gov.uz orqali berilgan ariza, yuborilgan kundan bir oy ichida ma'lumotlarni yig'ish punktiga kelinmasa, ko'rib chiqilmaydi (PQ-4079 bilan tasdiqlangan Nizomning 20-bandi). Jumla tuzatildi.",
+      },
+      {
+        titleRu: "Штраф за езду без ОСАГО — предупреждение или 0,5 БРВ: прошлая правка была ошибкой",
+        titleUz: "OSAGOsiz haydash uchun jarima — ogohlantirish yoki 0,5 BHK: oldingi tuzatish xato edi",
+        descRu:
+          "18 августа мы заменили «предупреждение или штраф 0,5 БРВ» на «1 БРВ без предупреждения», опираясь на сводные таблицы штрафов. Это было ошибкой. По ст. 135-1 Кодекса об административной ответственности в редакции Закона ЗРУ-1116 от 4 февраля 2026 года за езду в период, не покрытый полисом ОСАГО, или водителем, не вписанным в полис, применяется предупреждение или штраф 0,5 БРВ — сейчас это 220 000 сум. Штраф 1 БРВ (440 000 сум) назначается по другой статье — 135 часть 1, когда полис оформлен, но водитель не имеет его при себе; при ID-карте или биометрическом паспорте возить полис с собой не требуется. Таблицы, на которые мы опирались, смешивают эти два состава. Исправлено на страницах ОСАГО и БРВ. Заодно из статьи об ОСАГО убрано описание старой формулы с коэффициентами стажа и территории и скидкой бонус-малус до 50%: по тарифу 2026 года стоимость полиса — базовый тариф региона, умноженный на 1,0, 1,3, 2,0 или 3,0 в зависимости от числа ДТП по вине, скидки за безаварийность нет.",
+        descUz:
+          "18-avgustda biz jarimalar jadvallariga tayanib, «ogohlantirish yoki 0,5 BHK jarima»ni «ogohlantirishsiz 1 BHK» ga almashtirgan edik. Bu xato edi. Ma'muriy javobgarlik to'g'risidagi kodeksning 2026-yil 4-fevraldagi O'RQ-1116 Qonuni tahriridagi 135-1-moddasiga ko'ra, OSAGO polisi qamramagan davrda yoki polisga kiritilmagan haydovchi tomonidan boshqarish uchun ogohlantirish yoki 0,5 BHK jarima qo'llaniladi — hozir bu 220 000 so'm. 1 BHK (440 000 so'm) jarima boshqa modda — 135-moddaning birinchi qismi bo'yicha, polis rasmiylashtirilgan, lekin haydovchining yonida bo'lmaganda beriladi; ID-karta yoki biometrik pasport bo'lsa, polisni olib yurish talab etilmaydi. Biz tayangan jadvallar bu ikki tarkibni aralashtirib yuboradi. OSAGO va BHK sahifalarida tuzatildi. Shu bilan birga OSAGO maqolasidan staj va hudud koeffitsiyentlari hamda 50% gacha bonus-malus chegirmasi bo'lgan eski formula tavsifi olib tashlandi: 2026-yil tarifida polis narxi — hududning bazaviy tarifi, aybdor YTHlar soniga qarab 1,0, 1,3, 2,0 yoki 3,0 ga ko'paytiriladi, avariyasizlik uchun chegirma yo'q.",
+      },
+      {
+        titleRu: "Беспошлинный ввоз: $1 000 без «50 кг», платёж 30% — до конца 2026 года",
+        titleUz: "Bojsiz olib kirish: «50 kg»siz $1 000, 30% to'lov — 2026-yil oxirigacha",
+        descRu:
+          "В статье о таможенных платежах к авиалимиту $1 000 был приписан вес «до 50 кг», а в разборах и FAQ норма стояла в евро (1 000 EUR, для посылок 100 EUR) и как «1 БРВ × 8». Ни того, ни другого в постановлении Кабмина № 244 от 19 апреля 2025 года нет. С 1 мая 2025 года нормы такие: самолётом — $1 000, поездом и речным транспортом — $500, через автомобильные (пешеходные) пункты пропуска — $300, в курьерских отправлениях — $200 за календарный месяц, в почтовых — $100. Общего ограничения по весу нет. Нормы действуют, если человек пробыл за рубежом не менее 2 календарных дней (3 — при въезде самолётом), иначе платёж берётся со всей стоимости. С суммы сверх нормы взимается единый таможенный платёж вместо пошлины, НДС и акциза: 30%, но не менее $3 за 1 кг, а с 1 января 2027 года, по указу УП-174 от 27 августа 2026 года, — 20% и $2 за 1 кг. Пример с iPhone 17 за $1 200 пересчитан: платёж $60 (708 074 сум), а не «~127 000 сум». Из примера лимитов в БРВ убрана несуществующая норма «1 БРВ × 8».",
+        descUz:
+          "Bojxona to'lovlari maqolasida $1 000 havo limitiga «50 kg gacha» og'irlik qo'shib yozilgan, tahlillar va FAQda esa norma yevroda (1 000 EUR, jo'natmalar uchun 100 EUR) va «1 BHK × 8» deb berilgan edi. Vazirlar Mahkamasining 2025-yil 19-apreldagi 244-son qarorida bularning hech biri yo'q. 2025-yil 1-maydan normalar: samolyotda — $1 000, poyezd va daryo transportida — $500, avtomobil (piyoda) o'tkazish punktlari orqali — $300, kuryerlik jo'natmalarida — kalendar oy davomida $200, pochta jo'natmalarida — $100. Umumiy og'irlik cheklovi yo'q. Normalar chet elda kamida 2 kalendar kun (samolyotda — 3 kun) bo'lganda amal qiladi, aks holda to'lov butun qiymatdan olinadi. Normadan ortiq summaga boj, QQS va aksiz o'rniga yagona bojxona to'lovi olinadi: 30%, lekin 1 kg uchun kamida $3, 2027-yil 1-yanvardan esa 2026-yil 27-avgustdagi PF-174 Farmoniga ko'ra — 20% va 1 kg uchun $2. $1 200 lik iPhone 17 misoli qayta hisoblandi: to'lov «~127 000 so'm» emas, $60 (708 074 so'm). BHK limitlari misolidan mavjud bo'lmagan «1 BHK × 8» normasi olib tashlandi.",
+      },
+      {
+        titleRu: "Увольнение: заработок на время поиска работы — с зачётом выходного пособия, учёт в течение 30 дней",
+        titleUz: "Ishdan bo'shatish: ish qidirish davridagi ish haqi — chiqish nafaqasini hisobga olgan holda, ro'yxatdan o'tish 30 kun ichida",
+        descRu:
+          "Мы писали, что при ликвидации организации зарплата на период трудоустройства сохраняется «дополнительно» до 2 месяцев, а третий месяц — при регистрации в службе занятости в течение 10 дней. По ст. 100 действующего Трудового кодекса это неверно в трёх местах. Среднемесячный заработок сохраняется не более 2 месяцев с учётом уже выплаченного выходного пособия, а не сверх него. Гарантия действует не только при ликвидации, но и при сокращении, отказе от работы на новых условиях или от переезда вместе с работодателем и по ряду других оснований. За третий месяц заработок сохраняется, если работник встал на учёт в местном органе по труду в течение 30 календарных дней после увольнения — срок 10 дней был в Трудовом кодексе 1995 года. Уточнена и шкала выходного пособия по ст. 173: 50–200% среднемесячного заработка в зависимости от стажа — это минимумы, и считается стаж у этого работодателя.",
+        descUz:
+          "Tashkilot tugatilganda ish topish davri uchun ish haqi «qo'shimcha ravishda» 2 oygacha saqlanadi, uchinchi oy esa 10 kun ichida bandlik xizmatida ro'yxatdan o'tilganda, deb yozgan edik. Amaldagi Mehnat kodeksining 100-moddasiga ko'ra bu uch joyda noto'g'ri. O'rtacha oylik ish haqi to'langan chiqish nafaqasini hisobga olgan holda ko'pi bilan 2 oy saqlanadi, uning ustiga emas. Kafolat faqat tugatishda emas, shtat qisqartirilganda, yangi shartlarda ishlashdan yoki ish beruvchi bilan ko'chishdan bosh tortilganda va boshqa ayrim asoslarda ham amal qiladi. Uchinchi oy uchun ish haqi xodim ishdan bo'shatilganidan keyin 30 kalendar kun ichida mahalliy mehnat organida ro'yxatdan o'tgan bo'lsa saqlanadi — 10 kunlik muddat 1995-yilgi Mehnat kodeksida bo'lgan. 173-modda bo'yicha chiqish nafaqasi shkalasi ham aniqlashtirildi: stajga qarab o'rtacha oylik ish haqining 50–200% — bu eng kam miqdorlar, staj esa shu ish beruvchida hisoblanadi.",
+      },
+      {
+        titleRu: "Больничный за счёт работодателя — 5 дней в году, а не 10",
+        titleUz: "Ish beruvchi hisobidan kasallik varag'i — yiliga 10 emas, 5 kun",
+        descRu:
+          "В статье о стоимости сотрудника оставалось «первые 10 дней больничного — за счёт работодателя». По приложению 4 к постановлению Кабмина № 796 работодатель оплачивает первые 5 дней нетрудоспособности в календарном году, с шестого дня платит Фонд государственного социального страхования. В статье о больничном это было написано верно — правка не доехала до соседней страницы. Там же, в разделе про отчётность ООО и в примере зачёта НДС, убраны остатки квартального НДС: налоговый период по НДС — месяц для всех плательщиков с 2022 года.",
+        descUz:
+          "Xodim qiymati haqidagi maqolada «kasallik varag'ining birinchi 10 kuni — ish beruvchi hisobidan» degan jumla qolgan edi. Vazirlar Mahkamasining 796-son qaroriga 4-ilovaga ko'ra ish beruvchi kalendar yil davomida mehnatga layoqatsizlikning birinchi 5 kunini to'laydi, oltinchi kundan boshlab Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Kasallik varag'i haqidagi maqolada bu to'g'ri yozilgan edi — tuzatish qo'shni sahifaga yetib bormagan. Shu yerda, MChJ hisobotlari bo'limida va QQSni hisobga olish misolida choraklik QQS qoldiqlari olib tashlandi: QQS bo'yicha soliq davri 2022-yildan beri barcha to'lovchilar uchun — oy.",
+      },
+      {
+        titleRu: "Больничный и декретные: формула постановления № 796 — делитель 25,3 и без воскресений",
+        titleUz: "Kasallik varag'i va dekret nafaqasi: 796-son qaror formulasi — 25,3 ga bo'lish, yakshanbalarsiz",
+        descRu:
+          "Калькуляторы больничного и декретных считали пособие не по постановлению Кабмина № 796: заработок за 12 месяцев делился на 365 и умножался на все календарные дни. По п. 16 приложения 4 пособие равно среднемесячному заработку, делённому на 25,3 (среднемесячное число рабочих дней), умноженному на процент по стажу и на число оплачиваемых дней. По п. 17 воскресенья и нерабочие праздники по ст. 208 Трудового кодекса не оплачиваются; для декретных действует то же правило (п. 25). Добавлен потолок: среднемесячный заработок учитывается не выше 10 МРОТ, сейчас 13 600 000 сум (п. 26). Разница зависит от периода. Больничный на 10 дней с 14 сентября 2026 года при зарплате 5 млн сум и стаже 10 лет — 1 422 925 сум вместо 1 315 068. Декретные с 1 октября 2026 года при стаже 30 месяцев — 17 638 340 сум вместо 17 605 479. При зарплате выше 13,6 млн сум пособие меньше, чем показывал калькулятор. В оба калькулятора добавлена дата начала: по ней считаются воскресенья и праздники, даты Рамазан и Курбан хайита 2026 года взяты из постановлений Президента. В больничном учтены снижение процента на 10 п.п. за дни сверх 77 в году и повышение на 20 п.п. при инвалидности I–II группы, четырёх и более детях до 18 лет или ребёнке с инвалидностью (п. 19). В статьях исправлены шкала больничного (60% при стаже до 96 месяцев, 80% — от 97, ступени 100% нет) и продление лимита при уходе за больным ребёнком (+20 и +40 дней к 182, п. 21). Удалён лимит «240 дней при туберкулёзе» — такой нормы нет. Примеры расчётов пересчитаны.",
+        descUz:
+          "Kasallik varag'i va dekret kalkulyatorlari nafaqani Vazirlar Mahkamasining 796-son qaroriga ko'ra hisoblamasdi: 12 oylik daromad 365 ga bo'linib, barcha kalendar kunlarga ko'paytirilardi. 4-ilovaning 16-bandiga ko'ra nafaqa o'rtacha oylik ish haqini 25,3 ga (ish kunlarining o'rtacha oylik soni) bo'lib, staj foiziga va to'lanadigan kunlar soniga ko'paytirishga teng. 17-bandga ko'ra yakshanba va Mehnat kodeksining 208-moddasidagi ishlanmaydigan bayram kunlari to'lanmaydi; dekret nafaqasiga ham shu qoida qo'llanadi (25-band). Chegara qo'shildi: o'rtacha oylik ish haqi MROTning 10 baravaridan, hozir 13 600 000 so'mdan ortiq hisobga olinmaydi (26-band). Farq davrga bog'liq. 2026-yil 14-sentabrdan 10 kunlik kasallik varag'i, ish haqi 5 mln so'm va staj 10 yil bo'lsa — 1 315 068 o'rniga 1 422 925 so'm. 2026-yil 1-oktabrdan dekret, staj 30 oy — 17 605 479 o'rniga 17 638 340 so'm. Ish haqi 13,6 mln so'mdan yuqori bo'lsa, nafaqa kalkulyator ko'rsatganidan kam. Ikkala kalkulyatorga boshlanish sanasi qo'shildi: yakshanba va bayramlar shu bo'yicha hisoblanadi, 2026-yil Ramazon va Qurbon hayiti sanalari Prezident qarorlaridan olindi. Kasallik varag'ida yil davomida 77 kundan ortiq kunlar uchun foizning 10 foiz bandga kamayishi va I–II guruh nogironligi, 18 yoshgacha to'rt va undan ortiq farzand yoki nogironligi bo'lgan farzand bo'lganda 20 foiz bandga oshishi hisobga olindi (19-band). Maqolalarda kasallik varag'i shkalasi (96 oygacha staj — 60%, 97 oydan — 80%, 100% li pog'ona yo'q) va kasal bolaga qarashda limitning uzayishi (182 kunga +20 va +40 kun, 21-band) tuzatildi. «Silda 240 kun» limiti olib tashlandi — bunday norma yo'q. Hisoblash misollari qayta hisoblandi.",
+      },
+      {
+        titleRu: "Земельный налог: площадь × ставка региона, а не процент от стоимости",
+        titleUz: "Yer solig'i: foiz emas, maydon × hudud stavkasi",
+        descRu:
+          "Калькулятор земельного налога считал несельхозземли как 1,2% нормативной стоимости с надбавкой +7% (итого 1,284%), а сельхозземли — 0,95% × 1,07 = 1,017%. Обе формулы неверны. По Налоговому кодексу в ред. ЗРУ-1108 (с 1 января 2026) у несельхозземель процентной ставки нет: налог равен площади участка, умноженной на базовую ставку региона, а в Ташкенте — зоны. Для физлиц ставка установлена за 1 кв. м (ст. 437, от 297 до 1 856 сум), для юрлиц — за 1 гектар (ст. 429, от 31,8 до 319,0 млн сум). К ней кенгаши применяют коэффициенты: в Ташкенте 0,7–3,0, в областях 0,5–2,0 и ещё 0,7–3,0 на уровне района. За сельхозземли ставка 0,95% без надбавок. Вместо «квартального налога» калькулятор показывает сроки из ст. 440 и 432: физлица платят равными долями до 15 апреля и 15 октября, юрлица за несельхозземли — ежемесячно до 10-го числа (плательщики налога с оборота — поквартально до 20-го числа третьего месяца квартала), за сельхозземли — 30% до 1 сентября и остаток до 1 декабря. Из статьи убраны ставки «0,1–0,3% кадастровой стоимости» и «0,01–0,05%», а также льготы, которых нет в ст. 436: «фермеры первые 2 года», «до 6 соток», «СЭЗ». Примеры пересчитаны: участок 6 соток в 1-й зоне Ташкента — 1 113 600 сум в год.",
+        descUz:
+          "Yer solig'i kalkulyatori qishloq xo'jaligiga mo'ljallanmagan yerlarni normativ qiymatning 1,2% i va +7% ustama bilan (jami 1,284%), qishloq xo'jaligi yerlarini esa 0,95% × 1,07 = 1,017% bilan hisoblardi. Ikkala formula ham noto'g'ri edi. O'RQ-1108 tahriridagi Soliq kodeksiga ko'ra (2026-yil 1-yanvardan) bunday yerlar uchun foizli stavka yo'q: soliq uchastka maydonini hudud, Toshkentda esa zona bazaviy stavkasiga ko'paytirib hisoblanadi. Jismoniy shaxslarga stavka 1 kv. m uchun (437-modda, 297 dan 1 856 so'mgacha), yuridik shaxslarga 1 gektar uchun (429-modda, 31,8 dan 319,0 mln so'mgacha) belgilangan. Unga kengashlar koeffitsiyent qo'llaydi: Toshkentda 0,7–3,0, viloyatlarda 0,5–2,0 va tuman darajasida yana 0,7–3,0. Qishloq xo'jaligi yerlari uchun stavka ustamasiz 0,95%. «Choraklik soliq» o'rniga 440 va 432-moddalardagi muddatlar ko'rsatiladi: jismoniy shaxslar 15-aprel va 15-oktabrgacha teng ulushlarda, yuridik shaxslar qishloq xo'jaligiga mo'ljallanmagan yerlar uchun har oyning 10-sanasigacha (aylanmadan olinadigan soliq to'lovchilar — har chorakning uchinchi oyi 20-sanasigacha), qishloq xo'jaligi yerlari uchun 1-sentabrgacha 30% va qolganini 1-dekabrgacha to'laydi. Maqoladan «kadastr qiymatining 0,1–0,3%», «0,01–0,05%» stavkalari va 436-moddada yo'q imtiyozlar olib tashlandi. Misollar qayta hisoblandi: Toshkentning 1-zonasida 6 sotix — yiliga 1 113 600 so'm.",
+      },
+      {
+        titleRu: "Штраф за сокрытие базы — 20% от самой базы, а не от налога",
+        titleUz: "Soliq bazasini yashirish jarimasi — soliqdan emas, bazaning 20%",
+        descRu:
+          "Статья о налоговых пенях утверждала, что за занижение налоговой базы штраф — 20% от недоплаченного налога. Статья 223 Налогового кодекса считает штраф иначе: 20% от суммы сокрытой (заниженной) базы, а налоги с неё доначисляются сверх штрафа. При налоге 4% это разница в 25 раз: за неотражённую выручку 50 млн сум штраф 10 млн, а не 400 тысяч. 20% от неуплаченного налога — это другая норма, ст. 224: неполная уплата без признаков сокрытия базы. Уточнено и освобождение от штрафа. Уточнённая отчётность после срока уплаты освобождает от ответственности, только если подана до того, как налогоплательщик узнал о выявлении ошибки или назначении аудита, и если налог с пеней уплачены до её подачи (ст. 83). Добавлено, что штраф уменьшается вдвое при признании вины и уплате в течение 10 дней со дня получения решения (ст. 218).",
+        descUz:
+          "Penya maqolasida soliq bazasini kamaytirganlik uchun jarima kam to'langan soliqning 20% i deb yozilgan edi. Soliq kodeksining 223-moddasi boshqacha: jarima yashirilgan (kamaytirilgan) baza summasining 20% i, bu bazadan soliqlar esa jarimadan tashqari hisoblanadi. 4% li soliqda farq 25 baravar: 50 mln so'm aks ettirilmagan tushum uchun jarima 400 ming emas, 10 mln so'm. To'lanmagan soliqning 20% i — boshqa norma, 224-modda: bazani yashirish belgilarisiz to'liq to'lamaslik. Jarimadan ozod qilish sharti ham aniqlashtirildi: to'lov muddati o'tgandan keyin topshirilgan aniqlashtirilgan hisobot, agar u soliq to'lovchi xato aniqlangani yoki audit tayinlangani haqida bilgunga qadar topshirilgan va soliq hamda penya undan oldin to'langan bo'lsa, javobgarlikdan ozod qiladi (83-modda). Aybni tan olib, jarimani qaror olingan kundan boshlab 10 kun ichida to'laganda u ikki baravar kamayishi qo'shildi (218-modda).",
+      },
+    ],
+  },
+  {
+    date: "2026-09-10",
+    dateLabelRu: "10 сентября 2026",
+    dateLabelUz: "2026-yil 10-sentabr",
+    items: [
+      {
+        titleRu: "Коммуналка: вода и мусор теперь по вашему региону",
+        titleUz: "Kommunal xizmatlar: suv va chiqindi endi hududingiz bo'yicha",
+        descRu:
+          "Читатель спросил, почему калькулятор считает коммунальные услуги только по Ташкенту. Он был прав: вода, канализация и вывоз мусора считались по тарифам города Ташкента, а это самый дешёвый регион страны по воде. Тарифы на воду утверждают областные кенгаши, и разница доходит до четырёх раз: кубометр воды с канализацией стоит от 2 688 сум в Ташкенте до 11 256 сум в Сурхандарьинской области. Теперь в калькуляторах воды и коммунальных услуг можно выбрать один из 14 регионов. Цены на воду берутся из единого реестра «Узсувтаъминот», который стоит у нас на мониторинге, тарифы на вывоз мусора — из решений областных кенгашей: от 4 032 сум с человека в Каракалпакстане до 10 864 сум в Ташкентской области. Калькулятор учитывает и то, подключён ли дом к канализации и есть ли в нём центральное горячее водоснабжение, — от этого зависит цена кубометра. Тарифы на отопление и горячую воду в регионах публикуются разрозненно и в разных единицах, поэтому по умолчанию остаются ташкентскими, но теперь их можно заменить своими из квитанции. Заодно исправлен норматив воды без счётчика: вместо «150–200 литров в сутки» — официальные 350 литров в доме с водопроводом по постановлению Кабмина № 194 с повышающим коэффициентом 1,5. И убрано неверное утверждение, будто калькулятор отопления учитывает регион, тип здания и утепление.",
+        descUz:
+          "O'quvchi nega kalkulyator kommunal xizmatlarni faqat Toshkent bo'yicha hisoblashini so'radi. U haq edi: suv, kanalizatsiya va chiqindi olib chiqish Toshkent shahri tariflari bo'yicha hisoblanardi, bu esa suv bo'yicha mamlakatdagi eng arzon hudud. Suv tariflarini viloyat kengashlari tasdiqlaydi va farq to'rt baravargacha yetadi: kanalizatsiya bilan bir kub metr suv Toshkentda 2 688 so'mdan Surxondaryo viloyatida 11 256 so'mgacha turadi. Endi suv va kommunal xizmatlar kalkulyatorlarida 14 ta hududdan birini tanlash mumkin. Suv narxlari biz kuzatib boradigan «O'zsuvta'minot» yagona reyestridan, chiqindi olib chiqish tariflari viloyat kengashlari qarorlaridan olinadi: Qoraqalpog'istonda kishi boshiga 4 032 so'mdan Toshkent viloyatida 10 864 so'mgacha. Kalkulyator uy kanalizatsiyaga ulanganmi va unda markaziy issiq suv ta'minoti bormi — buni ham hisobga oladi, kub metr narxi shunga bog'liq. Hududlarda isitish va issiq suv tariflari tarqoq va turli birliklarda e'lon qilinadi, shuning uchun standart holda Toshkent tariflari qoladi, lekin endi ularni kvitansiyadagi o'z tariflaringiz bilan almashtirish mumkin. Shu bilan birga hisoblagichsiz suv normativi tuzatildi: «kuniga 150–200 litr» o'rniga Vazirlar Mahkamasining 194-son qaroriga ko'ra suv quvuri ulangan uyda rasmiy 350 litr, 1,5 oshiruvchi koeffitsiyent bilan. Isitish kalkulyatori hudud, bino turi va izolyatsiyani hisobga oladi degan noto'g'ri da'vo ham olib tashlandi.",
+      },
+      {
+        titleRu: "ИНПС входит в 12% НДФЛ: на руки 88%, а не 87,9%",
+        titleUz: "IJPH 12% JShShS ichida: qo'lga 88%, 87,9% emas",
+        descRu:
+          "Калькулятор зарплаты и тексты вокруг него вычитали взнос на ИНПС 0,1% сверх НДФЛ и показывали удержание 12,1% и «на руки» 87,9%. Это неверно. Взнос не добавляется к налогу, а входит в него: исчисленный НДФЛ уменьшается на сумму взноса, и в бюджет уходит 11,9%, а 0,1% зачисляется на накопительный счёт работника. Норма сформулирована прямо в двух актах — п. 5 постановления ПП-4086 от 26 декабря 2018 года («сумма налога на доходы физических лиц… подлежащая уплате в Государственный бюджет… уменьшается на сумму обязательных ежемесячных взносов… в размере 0,1 процента») и ст. 385 Налогового кодекса («Исчисленная сумма налога уменьшается на сумму обязательных ежемесячных взносов на индивидуальные накопительные пенсионные счета»). Конструкция действует без изменений с 2005 года, менялась только ставка — с 1% на 0,1% с 2019 года. Итог: с зарплаты удерживается ровно 12%, на руки работник получает 88%, делитель для обратного расчёта — 0,88, а не 0,879. Для резидентов IT Park удержание 7,5%, на руки 92,5%, делитель 0,925. Исправлены сам калькулятор, расчёт стоимости сотрудника для работодателя и около двадцати мест в русских и узбекских текстах, включая все примеры расчётов и разборы кейсов. Ошибка была внесена правкой от 29 апреля 2026 года, которая развернула изначально верную формулу в неверную.",
+        descUz:
+          "Ish haqi kalkulyatori va uning atrofidagi matnlar 0,1% lik IJPH badalini JShShS ustidan ayirib, 12,1% ushlanma va «qo'lga» 87,9% ni ko'rsatardi. Bu noto'g'ri. Badal soliqqa qo'shilmaydi, uning ichiga kiradi: hisoblangan JShShS badal summasiga kamaytiriladi, byudjetga 11,9% ketadi, 0,1% esa xodimning jamg'arma hisobiga o'tkaziladi. Norma ikkita hujjatda bevosita yozilgan — 2018-yil 26-dekabrdagi PQ-4086 qarorining 5-bandi va Soliq kodeksining 385-moddasi. Bu tuzilma 2005-yildan beri o'zgarmagan, faqat stavka 2019-yildan 1% dan 0,1% ga o'zgargan. Xulosa: ish haqidan aynan 12% ushlanadi, xodim qo'liga 88% oladi, teskari hisob uchun bo'luvchi — 0,879 emas, 0,88. IT Park rezidentlari uchun ushlanma 7,5%, qo'lga 92,5%, bo'luvchi 0,925. Kalkulyatorning o'zi, ish beruvchi uchun xodim qiymati hisobi va rus hamda o'zbek matnlaridagi yigirmaga yaqin joy tuzatildi. Xato 2026-yil 29-apreldagi tahrir bilan kiritilgan edi.",
+      },
+      {
+        titleRu: "Упрощённый НДС 6% для общепита, торговли и услуг",
+        titleUz: "Umumiy ovqatlanish, savdo va xizmatlar uchun soddalashtirilgan 6% QQS",
+        descRu:
+          "Указом Президента № УП-100 от 26 мая 2026 года у субъектов предпринимательства, основной вид деятельности которых — общественное питание, торговля или оказание услуг, появилась добровольная альтернатива обычному НДС: ставка 6% со всего оборота по реализации при налоге на прибыль 0%. Режим действует до 1 января 2030 года. Права на зачёт входного НДС у продавца нет, отрицательная разница списывается — но покупатель у такого поставщика зачёт получает. Импорт облагается по 12%, экспорт — по 6% без нулевой ставки. Крупным налогоплательщикам и компаниям с госдолей от 50% режим недоступен, ограничений по обороту и числу работников у него нет. Добавили описание в статью про НДС с двумя оговорками: фактически ставка применяется не ранее 1 июля 2026 года, а изменения в Налоговый кодекс под этот режим до сих пор не внесены. Попутно исправили название указа: на lex.uz он значится как УП-100, а не ПФ-100 — «ПФ» это узбекский префикс Prezident Farmoni, в русских текстах он не используется.",
+        descUz:
+          "Prezidentning 2026-yil 26-maydagi UP-100 Farmoni bilan asosiy faoliyat turi umumiy ovqatlanish, savdo yoki xizmat ko'rsatish bo'lgan tadbirkorlik subyektlarida oddiy QQSga ixtiyoriy muqobil paydo bo'ldi: foyda solig'i 0% bo'lganda realizatsiya bo'yicha butun aylanmadan 6% stavka. Rejim 2030-yil 1-yanvarigacha amal qiladi. Sotuvchida kirim QQSni hisobga olish huquqi yo'q, manfiy farq hisobdan chiqariladi — lekin bunday yetkazib beruvchidan sotib oluvchi hisobga olish huquqini oladi. Import 12%, eksport esa nol stavkasiz 6% bilan soliqqa tortiladi. Yirik soliq to'lovchilar va davlat ulushi 50% dan ortiq kompaniyalar uchun rejim mavjud emas, aylanma va xodimlar soni bo'yicha cheklovlari yo'q. QQS haqidagi maqolaga ikkita izoh bilan tavsif qo'shdik: amalda stavka 2026-yil 1-iyuldan oldin qo'llanilmaydi, Soliq kodeksiga esa bu rejim bo'yicha o'zgartishlar hanuz kiritilmagan. Shu bilan birga farmon nomini tuzatdik: lex.uzda u PF-100 emas, UP-100 deb yuritiladi.",
+      },
+      {
+        titleRu: "Налоги ИП: пример считался по ставке 4%, ИНПС убран",
+        titleUz: "YaTT soliqlari: misol 4% stavkada hisoblangan edi, IJPH olib tashlandi",
+        descRu:
+          "На странице калькулятора ИП пример расчёта считал налог с оборота по ставке 4%, хотя FAQ той же статьи и сам калькулятор используют 1% — единую ставку для ИП и самозанятых по ст. 467 НК. Заодно из расчёта убран взнос на ИНПС: со своего предпринимательского дохода ИП его не платит, участие в накопительной пенсионной системе для ИП добровольное (ст. 6 Закона № 702-II), а 0,1% он удерживает только за наёмных работников как налоговый агент. Пример пересчитан: при выручке 30 000 000 сум в месяц налоги составляют 740 000 сум (2,47% от выручки) вместо прежних 1 642 000, годовые — 8 880 000 сум. В сравнении самозанятого с ИП тоже был заложен старый 4%: на самом деле налог с оборота у них одинаковый, 1%, а разницу создаёт социальный налог — ИП платит фиксированный 1 БРВ в месяц даже при нулевой выручке, самозанятый платит его добровольно.",
+        descUz:
+          "YaTT kalkulyatori sahifasida hisoblash misoli aylanma solig'ini 4% stavkada hisoblardi, holbuki o'sha maqolaning FAQi va kalkulyatorning o'zi 1% dan foydalanadi — SKning 467-moddasi bo'yicha YaTT va o'z-o'zini band qilganlar uchun yagona stavka. Shu bilan birga hisobdan IJPH badali olib tashlandi: o'z tadbirkorlik daromadidan YaTT uni to'lamaydi, jamg'arma pensiya tizimida ishtirok etish YaTT uchun ixtiyoriy (702-II sonli Qonunning 6-moddasi), 0,1% ni esa u faqat yollanma xodimlar uchun soliq agenti sifatida ushlab qoladi. Misol qayta hisoblandi: oyiga 30 000 000 so'm tushumda soliqlar avvalgi 1 642 000 o'rniga 740 000 so'mni (tushumning 2,47%) tashkil etadi, yillik — 8 880 000 so'm. O'z-o'zini band qilganni YaTT bilan solishtirishda ham eski 4% qolgan edi: aslida ularning aylanma solig'i bir xil, 1%, farqni esa ijtimoiy soliq yaratadi.",
+      },
+      {
+        titleRu: "Пенсия в 54 года: уточнили, какой именно стаж нужен",
+        titleUz: "54 yoshda pensiya: qanday staj kerakligi aniqlashtirildi",
+        descRu:
+          "Статья о пенсии писала, что выйти на пенсию в 54 года может женщина «с 20-летним трудовым стажем». Формулировка шире закона: ст. 12¹ требует не любого трудового стажа, а 20 лет стажа, засчитываемого по пунктам «а»—«г» и «к» части первой ст. 37 — это работа с уплатой взносов, военная служба и приравненные к ней периоды. Уточнили формулировку. Заодно добавили нижнюю границу, которой не хватало: при неполном стаже (но не менее 7 лет) пенсия назначается в пропорциональном размере, однако не ниже 50% минимальной пенсии по возрасту (ст. 8 в редакции ЗРУ-922 от 18.03.2024). Сами пенсионные возрасты не изменились — мужчины 60, женщины 55; обсуждаемое повышение до 63 и 58 лет остаётся проектом.",
+        descUz:
+          "Pensiya haqidagi maqolada 54 yoshda pensiyaga «20 yillik mehnat stajiga ega» ayol chiqishi mumkinligi yozilgan edi. Bu ifoda qonundan kengroq: 12¹-modda har qanday mehnat stajini emas, 37-modda birinchi qismining «a»—«g» va «k» bandlari bo'yicha hisobga olinadigan 20 yillik stajni talab qiladi — bu badallar to'langan ish, harbiy xizmat va unga tenglashtirilgan davrlar. Ifoda aniqlashtirildi. Shu bilan birga yetishmayotgan quyi chegara qo'shildi: staj to'liq bo'lmaganda (lekin 7 yildan kam bo'lmasa) pensiya mutanosib miqdorda, lekin yoshi bo'yicha minimal pensiyaning 50% idan kam bo'lmagan miqdorda tayinlanadi (18.03.2024-yildagi ZRU-922 tahriridagi 8-modda). Pensiya yoshlari o'zgargani yo'q — erkaklar 60, ayollar 55.",
+      },
+      {
+        titleRu: "Проценты по вкладам: резиденты НДФЛ не платят",
+        titleUz: "Omonat foizlari: rezidentlar JShShS to'lamaydi",
+        descRu:
+          "Статьи про вклады, сложные проценты и сравнение депозитов утверждали, что проценты по вкладам облагаются НДФЛ по ставке 5% для резидентов и 10% для нерезидентов. Верна только вторая половина. Проценты и выигрыши по вкладам в банках прямо названы в перечне доходов, не подлежащих налогообложению (п. 13 ст. 378 Налогового кодекса), — льгота действует с 1998 года, и налоговый резидент Узбекистана НДФЛ с процентов по вкладу не платит. Ставка 5% из ст. 381 относится к прочим процентам — по займам, облигациям, сберегательным сертификатам, — но до вкладов не доходит: доход исключается из налоговой базы раньше, чем применяется ставка. С нерезидентов банк по-прежнему удерживает 10% при выплате процентов, потому что льготы раздела о НДФЛ на них не распространяются (п. 2 ч. 1 ст. 366 НК); снизить или вернуть налог можно только по соглашению об избежании двойного налогообложения, предъявив сертификат резидентства. Исправлено 13 мест в русских и узбекских текстах. Обсуждаемое с июля 2026 предложение облагать проценты по депозитам ставкой 5% официально не внесено и в силу не вступило.",
+        descUz:
+          "Omonatlar, murakkab foizlar va depozitlarni taqqoslash haqidagi maqolalarda omonat foizlari rezidentlar uchun 5%, norezidentlar uchun 10% stavkada JShShSga tortiladi deyilgan edi. Faqat ikkinchi qismi to'g'ri. Banklardagi omonatlar bo'yicha foizlar va yutuqlar soliqqa tortilmaydigan daromadlar ro'yxatida bevosita ko'rsatilgan (Soliq kodeksi 378-moddasi 13-bandi) — imtiyoz 1998-yildan amal qiladi va O'zbekiston soliq rezidenti omonat foizlaridan JShShS to'lamaydi. 381-moddadagi 5% stavka boshqa foizlarga — qarzlar, obligatsiyalar, jamg'arma sertifikatlariga — tegishli, lekin omonatlarga yetib bormaydi: daromad stavka qo'llanilishidan oldin soliq bazasidan chiqariladi. Norezidentlardan bank avvalgidek foizlarni to'lashda 10% ushlab qoladi, chunki JShShS bo'limidagi imtiyozlar ularga tatbiq etilmaydi (SK 366-moddasi 1-qismi 2-bandi); soliqni faqat qo'sh soliqqa tortishning oldini olish to'g'risidagi bitim asosida, rezidentlik sertifikatini taqdim etib, kamaytirish yoki qaytarish mumkin. Rus va o'zbek matnlarida 13 ta joy tuzatildi. 2026-yil iyulidan muhokama qilinayotgan depozit foizlarini 5% stavkada soliqqa tortish taklifi rasman kiritilmagan va kuchga kirmagan.",
+      },
+    ],
+  },
+  {
+    date: "2026-09-01",
+    dateLabelRu: "1 сентября 2026",
+    dateLabelUz: "2026-yil 1-sentabr",
+    items: [
+      {
+        titleRu: "БРВ 412 000 → 440 000, МРОТ 1 271 000 → 1 360 000",
+        titleUz: "BHK 412 000 → 440 000, MIH 1 271 000 → 1 360 000",
+        descRu:
+          "С 1 сентября 2026 года обе базовые величины повышены на 7% Указом Президента УП-115 от 23 июня 2026 года: базовая расчётная величина — с 412 000 до 440 000 сум, минимальный размер оплаты труда — с 1 271 000 до 1 360 000 сум. БРВ переоценивает всё, что закон задаёт в её кратных: штраф за езду без ОСАГО стал 440 000 сум, госпошлина за регистрацию юрлица — 440 000 сум, загранпаспорт стандартного оформления — 880 000 сум, порог обязательной регистрации по НДС (12 000 БРВ) — 5 280 000 000 сум. От МРОТ считаются льготы по НДФЛ: необлагаемая материальная помощь (4,22 МРОТ) выросла до 5 739 200 сум в год, льгота на погашение ипотеки (80 МРОТ) — до 108 800 000 сум. Пересчитаны все калькуляторы, статьи, FAQ и примеры расчётов.",
+        descUz:
+          "2026-yil 1-sentabridan ikkala bazaviy miqdor 2026-yil 23-iyundagi PF-115 Farmoni bilan 7% ga oshirildi: bazaviy hisoblash kattaligi 412 000 dan 440 000 so'mgacha, minimal ish haqi 1 271 000 dan 1 360 000 so'mgacha. BHK qonun uning kratlarida belgilagan hamma narsani qayta baholaydi: OSAGOsiz haydash uchun jarima 440 000 so'm bo'ldi, yuridik shaxsni ro'yxatdan o'tkazish boji — 440 000 so'm, QQS bo'yicha majburiy ro'yxatdan o'tish chegarasi (12 000 BHK) — 5 280 000 000 so'm. MIH dan JShShS imtiyozlari hisoblanadi: moddiy yordam (4,22 MIH) yiliga 5 739 200 so'mgacha, ipotekani to'lash imtiyozi (80 MIH) — 108 800 000 so'mgacha oshdi. Barcha kalkulyatorlar, maqolalar, FAQ va hisob misollari qayta hisoblandi.",
+      },
+      {
+        titleRu: "БРВ устанавливает Указ Президента, а не постановление Кабмина",
+        titleUz: "BHK ni Vazirlar Mahkamasi qarori emas, Prezident Farmoni belgilaydi",
+        descRu:
+          "В узбекской версии FAQ говорилось, что БРВ обновляется постановлением Кабинета Министров. На самом деле размер БРВ устанавливается Указом Президента — как и указано в русской версии той же статьи. Формулировки приведены к одному виду.",
+        descUz:
+          "FAQ ning o'zbekcha versiyasida BHK Vazirlar Mahkamasi qarori bilan yangilanadi deb yozilgan edi. Aslida BHK miqdori Prezident Farmoni bilan belgilanadi — xuddi shu maqolaning ruscha versiyasida to'g'ri ko'rsatilgan. Ta'riflar bir xillashtirildi.",
+      },
+    ],
+  },
+  {
+    date: "2026-08-31",
+    dateLabelRu: "31 августа 2026",
+    dateLabelUz: "2026-yil 31-avgust",
+    items: [
+      {
+        titleRu: "Растаможка считалась по курсу четырёхмесячной давности",
+        titleUz: "Bojxona rasmiylashtiruvi to'rt oylik eski kurs bo'yicha hisoblanardi",
+        descRu:
+          "Калькулятор растаможки брал курс доллара не с cbu.uz, а из захардкоженного значения 11 938 сум — курса ЦБ на 1 мая 2026 года. Константа называлась резервной, но живой курс компонент не запрашивал вовсе, поэтому резерв был единственным путём. При фактическом курсе 11 801,23 пошлина и НДС завышались примерно на 1,2%: на автомобиле за 20 000 долларов это около 2,5 млн сум лишних. Калькулятор подключён к живому курсу ЦБ, а под результатом теперь видно, по какому курсу и на какую дату сделан расчёт.",
+        descUz:
+          "Bojxona kalkulyatori dollar kursini cbu.uz dan emas, kodga qat'iy yozilgan 11 938 so'mdan — MB ning 2026-yil 1-may kursidan olardi. Konstanta zaxira deb atalgan bo'lsa-da, komponent jonli kursni umuman so'ramagan, shuning uchun zaxira yagona yo'l edi. Haqiqiy kurs 11 801,23 bo'lganda boj va QQS taxminan 1,2% ga oshib ketardi: 20 000 dollarlik avtomobilda bu ~2,5 mln so'm ortiqcha. Kalkulyator MB ning jonli kursiga ulandi, natija ostida esa hisob qaysi kurs va sana bo'yicha qilingani ko'rsatiladi.",
+      },
+      {
+        titleRu: "Цены на топливо отстали на четыре месяца, а в статьях жил снятый с продажи АИ-91",
+        titleUz: "Yoqilg'i narxlari to'rt oyga eskirgan, maqolalarda esa sotuvdan olingan AI-91 saqlanib qolgan edi",
+        descRu:
+          "Калькулятор расхода топлива считал по ценам апреля: АИ-95 стоял 13 500 сум при фактических 16 200, АИ-100 — 16 000 при 24 000, дизель 12 500 при 14 200. Поездка на 500 км при расходе 8 л/100 км на АИ-95 занижалась на 108 000 сум. Своей цены в калькуляторе задать нельзя, поэтому константа и есть ответ. Цены обновлены по средним ташкентским на 28 августа 2026 и снабжены датой. Заодно в статье и FAQ жил бензин АИ-91, который больше не продаётся, а примеры поездок Ташкент — Самарканд и Ташкент — Бухара считались по нему; примеры пересчитаны, а расхождение в них (русский текст обещал экономию на метане в 3,4 раза, узбекский — в 2,7 при одних и тех же числах) устранено: верно 2,5 раза. Цена пропана осталась прежней и помечена как неподтверждённая — сводки по нему расходятся.",
+        descUz:
+          "Yoqilg'i sarfi kalkulyatori aprel narxlari bo'yicha hisoblardi: AI-95 haqiqiy 16 200 o'rniga 13 500, AI-100 24 000 o'rniga 16 000, dizel 14 200 o'rniga 12 500 turgan. 8 l/100 km sarfda 500 km sayohat 108 000 so'mga kam ko'rsatilardi. Kalkulyatorda o'z narxini kiritib bo'lmaydi, shuning uchun konstanta javobning o'zi. Narxlar 2026-yil 28-avgustdagi Toshkent o'rtacha narxlari bo'yicha yangilandi va sana qo'shildi. Bundan tashqari maqola va FAQ da endi sotilmaydigan AI-91 benzini saqlanib qolgan, sayohat misollari ham unga hisoblangan edi; misollar qayta hisoblandi va ulardagi ziddiyat (ruscha matn metanda 3,4 marta tejash va'da qilgan, o'zbekcha 2,7 — bir xil raqamlarda) tuzatildi: to'g'risi 2,5 marta. Propan narxi o'zgarmadi va tasdiqlanmagan deb belgilandi.",
+      },
+      {
+        titleRu: "Страховочные курсы остальных валют отстали сильнее доллара",
+        titleUz: "Boshqa valyutalarning zaxira kurslari dollardan ham ko'proq eskirgan edi",
+        descRu:
+          "Проверили всю карту резервных курсов, а не только доллар. Турецкая лира стояла 380 сум при фактических 245 — промах на 55%. Иена 86 против 74, дирхам ОАЭ 3 500 против 3 213, киргизский сом 145 против 135, вон 9,5 против 8,55. Эти курсы подставляются только когда cbu.uz недоступен, но при таком расхождении подстановка вреднее пустого поля. Вся карта обновлена по курсам ЦБ на 28 августа 2026 и снабжена датой, чтобы следующее протухание было видно сразу.",
+        descUz:
+          "Faqat dollarni emas, butun zaxira kurslar jadvalini tekshirdik. Turk lirasi haqiqiy 245 o'rniga 380 so'm turgan — 55 foiz xato. Iyena 74 o'rniga 86, BAA dirhami 3 213 o'rniga 3 500, qirg'iz somi 135 o'rniga 145, von 8,55 o'rniga 9,5. Bu kurslar faqat cbu.uz mavjud bo'lmaganda ishlatiladi, lekin bunday farqda ular bo'sh maydondan ham zararli. Butun jadval MB ning 2026-yil 28-avgust kurslari bo'yicha yangilandi va sanasi qo'shildi.",
+      },
+      {
+        titleRu: "Страховочный курс доллара теперь в одном месте",
+        titleUz: "Dollarning zaxira kursi endi bitta joyda",
+        descRu:
+          "Резервный курс USD жил в четырёх копиях, и все разошлись: 12 850 сум в калькуляторах банковских ставок, виз, переводов и конвертера, 11 938 в растаможке. Плюс примеры расчётов считались по третьему курсу — 12 700. Копии сведены в один модуль, а примеры (доход фрилансера-нерезидента, перевод 5 000 USD, ввоз iPhone) пересчитаны по курсу ЦБ на 28 августа 2026 с указанием даты курса прямо в расчёте.",
+        descUz:
+          "USD zaxira kursi to'rtta nusxada yashagan va barchasi farq qilgan: bank stavkalari, vizalar, pul o'tkazmalari va konvertorda 12 850 so'm, bojxonada 11 938. Bundan tashqari hisob misollari uchinchi kurs — 12 700 bo'yicha hisoblangan. Nusxalar bitta modulga jamlandi, misollar esa MB ning 2026-yil 28-avgust kursi bo'yicha qayta hisoblandi va kurs sanasi hisobning o'zida ko'rsatildi.",
+      },
+    ],
+  },
+  {
+    date: "2026-08-18",
+    dateLabelRu: "18 августа 2026",
+    dateLabelUz: "2026-yil 18-avgust",
+    items: [
+      {
+        titleRu: "НДС: отчётность ежемесячная у всех, а не только у крупных",
+        titleUz: "QQS: hisobot faqat yiriklarda emas, hammada oylik",
+        descRu:
+          "Мы писали, что ежемесячно отчитываются плательщики с оборотом свыше 100 млрд сум, а остальные — раз в квартал. Это неверно вдвойне: такого порога нет, а сам квартальный порядок отменён с 1 января 2022 года. Налоговый период по НДС — месяц для всех плательщиков независимо от оборота; декларация и уплата — до 20-го числа следующего месяца. Квартал остался только для иностранных юрлиц, оказывающих электронные услуги физлицам. Ошибка была из тех, что стоят денег: бухгалтер, поверивший в квартальную отчётность, пропустил бы восемь сроков из двенадцати.",
+        descUz:
+          "100 mlrd so'mdan ortiq aylanmaga ega to'lovchilar har oy, qolganlari chorakda bir marta hisobot beradi deb yozgan edik. Bu ikki tomonlama xato: bunday chegara yo'q, choraklik tartibning o'zi esa 2022-yil 1-yanvardan bekor qilingan. QQS bo'yicha soliq davri — aylanmadan qat'i nazar barcha uchun oy; deklaratsiya va to'lov — keyingi oyning 20-sanasigacha.",
+      },
+      {
+        titleRu: "Штраф за езду без ОСАГО — 1 БРВ, и предупреждения нет",
+        titleUz: "OSAGOsiz haydash uchun jarima — 1 BHK, ogohlantirish yo'q",
+        descRu:
+          "У нас стояло «предупреждение или штраф 0,5 БРВ (206 000 сум)». По ст. 135-1 КоАО штраф составляет 1 БРВ — 412 000 сум, и предупреждение по этой статье не предусмотрено. Исправлено на страницах ОСАГО и БРВ.",
+        descUz:
+          "Bizda «ogohlantirish yoki 0,5 BHK (206 000 so'm) jarima» deb turgan edi. MJtKning 135-1-moddasi bo'yicha jarima 1 BHK — 412 000 so'm, ogohlantirish esa nazarda tutilmagan. OSAGO va BHK sahifalarida tuzatildi.",
+      },
+      {
+        titleRu: "Госпошлины: брак 0,2 БРВ, развод — вилка, регистрация онлайн вдвое дешевле",
+        titleUz: "Davlat bojlari: nikoh 0,2 BHK, ajralish — oraliq, onlayn ro'yxat ikki barobar arzon",
+        descRu:
+          "Пошлина за регистрацию брака указана как 0,2 БРВ (82 400 сум) вместо прежнего 1 БРВ. Расторжение брака через суд — не фиксированные 3 БРВ, а вилка 1,5-3 БРВ, которая поднимается до 3-4 БРВ, если один из супругов вступает в брак повторно. Регистрация ИП стоит 1 БРВ при обращении в явочном порядке, а не 0,5 — 0,5 БРВ это льготная ставка при подаче через интернет, и та же скидка вдвое действует при регистрации юрлица.",
+        descUz:
+          "Nikohni ro'yxatdan o'tkazish boji avvalgi 1 BHK o'rniga 0,2 BHK (82 400 so'm) deb ko'rsatildi. Nikohni sud orqali bekor qilish — qat'iy 3 BHK emas, 1,5-3 BHK oralig'i, er-xotindan biri takroran nikohga kirsa 3-4 BHK. YaTTni ro'yxatdan o'tkazish yakka tartibda 1 BHK turadi, 0,5 BHK esa internet orqali topshirishdagi imtiyozli stavka; xuddi shu ikki barobar chegirma yuridik shaxsni ro'yxatdan o'tkazishda ham amal qiladi.",
+      },
+      {
+        titleRu: "Необлагаемая матпомощь считается в МРОТ, а не в БРВ — лимит втрое больше",
+        titleUz: "JShShSga tortilmaydigan moddiy yordam BHK da emas, MIH da hisoblanadi — limit uch barobar katta",
+        descRu:
+          "Мы писали, что материальная помощь от работодателя освобождается от НДФЛ в пределах 4,22 БРВ (1 738 640 сум). Пункт 1 статьи 378 НК считает эту льготу в МРОТ: 4,22 МРОТ — это 5 363 620 сум при МРОТ 1 271 000. Лимит втрое выше, чем у нас было указано. Исправлено везде: в статье про НДФЛ, в FAQ, в статье про БРВ, в разделе о выплатах при увольнении (там же — граница обложения выходного пособия) и в примерах расчёта. Льгота пересчитывается при изменении МРОТ в течение года, так что с 1 сентября 2026 она вырастет до 5 739 200 сум.",
+        descUz:
+          "Ish beruvchidan olingan moddiy yordam JShShSdan 4,22 BHK (1 738 640 so'm) doirasida ozod deb yozgan edik. SK 378-moddasi 1-bandi bu imtiyozni MIH da hisoblaydi: 4,22 MIH — MIH 1 271 000 so'mda 5 363 620 so'm. Limit biz ko'rsatganidan uch barobar yuqori. Hamma joyda tuzatildi. 2026-yil 1-sentabrdan imtiyoz 5 739 200 so'mgacha oshadi.",
+      },
+      {
+        titleRu: "«Имущественный вычет 500 БРВ при покупке жилья» — такой льготы нет",
+        titleUz: "«Uy-joy sotib olganda 500 BHK mulkiy chegirma» — bunday imtiyoz yo'q",
+        descRu:
+          "На страницах НДФЛ и БРВ говорилось про имущественный вычет до 500 БРВ (206 000 000 сум), предоставляемый один раз в жизни. В Налоговом кодексе Узбекистана такой нормы нет. Реальная льгота — пункт 16 статьи 378 НК: от НДФЛ освобождаются доходы, направляемые на погашение ипотечного кредита и процентов по нему, до 80 МРОТ (101 680 000 сум) за календарный год. Условие — жильё приобретено, построено или реконструировано с субсидией из бюджета; для молодых семей это условие не применяется, а продажа жилья в течение 36 месяцев льготу аннулирует. Заменили описание, FAQ и пример расчёта.",
+        descUz:
+          "JShShS va BHK sahifalarida umr davomida bir marta beriladigan 500 BHK (206 000 000 so'm) mulkiy chegirma haqida yozilgan edi. O'zbekiston Soliq kodeksida bunday norma yo'q. Haqiqiy imtiyoz — SK 378-moddasi 16-bandi: ipoteka krediti va u bo'yicha foizlarni to'lashga yo'naltirilgan daromadlar kalendar yil davomida 80 MIH (101 680 000 so'm) gacha JShShSdan ozod qilinadi.",
+      },
+      {
+        titleRu: "Льгота на оплату обучения — без ограничения по сумме",
+        titleUz: "O'qish to'loviga imtiyoz — summa cheklovisiz",
+        descRu:
+          "В примере расчёта зарплаты мы называли вычет за обучение детей «до 4,22 БРВ в год» — это была подставленная сумма от другой льготы. Оплата обучения в вузах Узбекистана освобождается от НДФЛ без ограничения по сумме (п. 16 ст. 378 НК), а возрастной предел для детей отменён с 2024 года.",
+        descUz:
+          "Ish haqi hisobi misolida bolalar ta'limi uchun chegirmani «yiliga 4,22 BHK gacha» deb atagan edik — bu boshqa imtiyozdan olingan summa edi. O'zbekiston oliy ta'lim muassasalarida o'qish to'lovi summa cheklovisiz JShShSdan ozod (SK 378-moddasi 16-bandi).",
+      },
+    ],
+  },
+  {
+    date: "2026-08-06",
+    dateLabelRu: "6 августа 2026",
+    dateLabelUz: "2026-yil 6-avgust",
+    items: [
+      {
+        titleRu: "В приложениях: посмотрите ролик — 6 часов без рекламы",
+        titleUz: "Ilovalarda: rolik ko'ring — 6 soat reklamasiz",
+        descRu:
+          "В приложениях для Android и iPhone появился бесплатный способ убрать рекламу: короткий видеоролик отключает баннеры и полноэкранную рекламу на 6 часов. Кнопка — в меню, в блоке «Убрать рекламу». Разовая покупка «навсегда» никуда не делась и остаётся выгоднее, если пользуетесь регулярно.",
+        descUz:
+          "Android va iPhone ilovalarida reklamani olib tashlashning bepul usuli paydo bo'ldi: qisqa videorolik bannerlar va to'liq ekranli reklamani 6 soatga o'chiradi. Tugma — menyuda, «Reklamani olib tashlash» blokida. «Abadiy» bir martalik xarid ham saqlanib qoldi.",
+      },
+      {
+        titleRu: "БРВ вырастет до 440 000 сум с 1 сентября 2026",
+        titleUz: "BHK 2026-yil 1-sentabrdan 440 000 so'mgacha oshadi",
+        descRu:
+          "Базовая расчётная величина повышается с 412 000 до 440 000 сум (Указ УП-115 от 23.06.2026). К БРВ привязаны штрафы, госпошлины, налоговые вычеты и пороги — в том числе порог перехода на НДС, который станет 5,28 млрд сум. Анонс добавлен на страницы БРВ и порога НДС; после 1 сентября значения пересчитаются.",
+        descUz:
+          "Bazaviy hisoblash kattaligi 412 000 dan 440 000 so'mga oshiriladi (PF-115 Farmoni, 23.06.2026). Jarimalar, davlat bojlari, soliq chegirmalari va chegaralar BHKga bog'langan — shu jumladan QQSga o'tish chegarasi 5,28 mlrd so'm bo'ladi.",
+      },
+      {
+        titleRu: "НДФЛ: добавлен срок уплаты и уточнено, кто подаёт декларацию",
+        titleUz: "JShShS: to'lov muddati qo'shildi va kim deklaratsiya topshirishi aniqlashtirildi",
+        descRu:
+          "Раньше был указан только срок подачи — 1 апреля. Добавлен срок уплаты налога по декларации: не позднее 1 июня (ст. 398 НК) — разница в два месяца, за которые начисляется пеня. Также исправлено основание подачи: декларируют доходы, с которых налог не удержан у источника (ст. 393), а не «доходы из нескольких источников» — при двух работодателях с удержанием декларация не нужна.",
+        descUz:
+          "Avval faqat topshirish muddati — 1-aprel ko'rsatilgan edi. Deklaratsiya bo'yicha soliqni to'lash muddati qo'shildi: 1-iyundan kechiktirmay (SK 398-moddasi). Topshirish asosi ham tuzatildi: to'lov manbaida soliq ushlab qolinmagan daromadlar deklaratsiya qilinadi (393-modda).",
+      },
+      {
+        titleRu: "Пенсии и сверхурочные — уточнены даты вступления норм",
+        titleUz: "Pensiya va ortiqcha ish — normalar kuchga kirish sanalari aniqlashtirildi",
+        descRu:
+          "Право женщин со стажем 20+ лет выйти на пенсию в 54 года действует с марта 2024 года (ЗРУ-922), а не «с июня 2026», как было указано. Годовой лимит сверхурочных 120 часов отменён Законом ЗРУ-1095 от 11.11.2025. Сами пенсионные возрасты не изменились: мужчины 60, женщины 55 — обсуждаемое повышение до 63/58 пока остаётся проектом.",
+        descUz:
+          "20+ yil stajga ega ayollarning 54 yoshda pensiyaga chiqish huquqi 2024-yil martdan amal qiladi (ZRU-922). Ortiqcha ishning yillik 120 soatlik limiti ZRU-1095 Qonuni bilan bekor qilindi (11.11.2025). Pensiya yoshlari o'zgarmadi: erkaklar 60, ayollar 55.",
+      },
+    ],
+  },
+  {
+    date: "2026-07-07",
+    dateLabelRu: "7 июля 2026",
+    dateLabelUz: "2026-yil 7-iyul",
+    items: [
+      {
+        titleRu: "Порог перехода на НДС — 12 000 БРВ (≈4,9 млрд сум)",
+        titleUz: "QQSga o'tish chegarasi — 12 000 BHK (≈4,9 mlrd so'm)",
+        descRu:
+          "С 1 июня 2026 порог обязательного перехода с налога с оборота на НДС и налог на прибыль повышен с 1 млрд до 12 000 БРВ = 4,944 млрд сум (Указ УП-100 от 26.05.2026). Порог индексируется к БРВ. Калькулятор порога НДС обновлён.",
+        descUz:
+          "2026-yil 1-iyundan aylanma solig'idan QQS va foyda solig'iga majburiy o'tish chegarasi 1 mlrd dan 12 000 BHK = 4,944 mlrd so'mga oshirildi (UP-100 Farmoni, 26.05.2026). Chegara BHKga bog'lab indeksatsiyalanadi.",
+      },
+      {
+        titleRu: "ОСАГО — исправлены коэффициенты (бонус-малус)",
+        titleUz: "ОСАГО — koeffitsiyentlar tuzatildi (bonus-malus)",
+        descRu:
+          "По тарифам 2026 (ПКМ №458) коэффициент по числу ДТП: без аварий 1,0 (без скидки), далее 1,3 / 2,0 / 3,0. Убран несуществующий в тарифе 2026 коэффициент возраста/стажа. База для Ташкента — 192 000 сум (ограниченный список), 384 000 (без ограничений).",
+        descUz:
+          "2026 tariflari (458-son qaror) bo'yicha ДТП soni koeffitsiyenti: avariyasiz 1,0 (chegirmasiz), keyin 1,3 / 2,0 / 3,0. 2026 tarifida mavjud bo'lmagan yosh/tajriba koeffitsiyenti olib tashlandi.",
+      },
+      {
+        titleRu: "Пособие при рождении ребёнка — 70,3% МРОТ",
+        titleUz: "Bola tug'ilganda nafaqa — MROTning 70,3%",
+        descRu:
+          "Уточнено: единовременное государственное пособие при рождении («суюнчи пули») — 70,3% МРОТ, около 893 500 сум в 2026 году (ПКМ №110 от 04.03.2024). Прежняя формулировка «единой государственной ставки нет» была неверной.",
+        descUz:
+          "Aniqlashtirildi: bola tug'ilganda bir martalik davlat nafaqasi («suyunchi puli») — MROTning 70,3%, 2026-yilda qariyb 893 500 so'm (110-son qaror, 04.03.2024).",
+      },
+    ],
+  },
+  {
+    date: "2026-07-06",
+    dateLabelRu: "6 июля 2026",
+    dateLabelUz: "2026-yil 6-iyul",
+    items: [
+      {
+        titleRu: "Калькулятор воды — исправлен двойной счёт канализации",
+        titleUz: "Suv kalkulyatori — kanalizatsiya ikki marta hisoblanishi tuzatildi",
+        descRu:
+          "В Ташкенте тариф на холодную воду по счётчику (3 808 сум/м³) уже включает водоотведение для холодной и горячей воды. Калькулятор ошибочно начислял канализацию ещё раз отдельной строкой (1 456 сум/м³), из-за чего счёт за воду завышался. Теперь вода считается корректно: холодная 3 808 + горячая 8 928,67 сум/м³, без повторного начисления.",
+        descUz:
+          "Toshkentda hisoblagich bo'yicha sovuq suv tarifi (3 808 so'm/m³) sovuq va issiq suv uchun kanalizatsiyani allaqachon o'z ichiga oladi. Kalkulyator kanalizatsiyani yana alohida (1 456 so'm/m³) qo'shib, suv hisobini oshirib yuborardi. Endi suv to'g'ri hisoblanadi: sovuq 3 808 + issiq 8 928,67 so'm/m³, takroriy hisoblashsiz.",
+      },
+    ],
+  },
+  {
+    date: "2026-07-01",
+    dateLabelRu: "1 июля 2026",
+    dateLabelUz: "2026-yil 1-iyul",
+    items: [
+      {
+        titleRu: "Приложение Calk.UZ вышло в App Store",
+        titleUz: "Calk.UZ ilovasi App Store'da chiqdi",
+        descRu:
+          "Мобильное приложение Calk.UZ теперь доступно для iPhone и iPad в App Store: нативные калькуляторы (зарплата, кредит, ипотека, растаможка, НДС и другие), курсы валют ЦБ, история расчётов и избранное — всё работает офлайн. Для Android приложение доступно в Google Play. Ссылки на оба магазина — в футере сайта.",
+        descUz:
+          "Calk.UZ mobil ilovasi endi iPhone va iPad uchun App Store'da mavjud: native kalkulyatorlar (ish haqi, kredit, ipoteka, bojxona, QQS va boshqalar), Markaziy bank valyuta kurslari, hisob-kitob tarixi va sevimlilar — barchasi oflayn ishlaydi. Android uchun ilova Google Play'da mavjud. Ikkala do'kon havolalari — sayt futerida.",
+      },
+    ],
+  },
+  {
+    date: "2026-06-27",
+    dateLabelRu: "27 июня 2026",
+    dateLabelUz: "2026-yil 27-iyun",
+    items: [
+      {
+        titleRu: "Коммунальные тарифы — повышение электричества и газа с 1 июня 2026",
+        titleUz: "Kommunal tariflar — elektr va gaz 2026-yil 1-iyundan oshdi",
+        descRu:
+          "Калькуляторы ЖКУ обновлены под новые ставки (ПКМ-243): электричество 650–2200 сум/кВт·ч по ступеням, газ от 1100 сум/м³. Тарифы 2025 года заменены актуальными.",
+        descUz:
+          "Kommunal kalkulyatorlar yangi tariflarga moslandi (243-son qaror): elektr energiyasi pog'onalar bo'yicha 650–2200 so'm/kVt·s, gaz 1100 so'm/m³ dan. 2025-yil tariflari yangilandi.",
+      },
+      {
+        titleRu: "Налог на имущество физлиц — ставки и площади 2026",
+        titleUz: "Jismoniy shaxslar mol-mulk solig'i — 2026 stavkalari va maydonlari",
+        descRu:
+          "Ставки проиндексированы: 0,36% (до 200 м²), 0,48% (200–500 м²), 0,64% (свыше 500 м²). Исправлены площадные диапазоны — раньше использовались устаревшие границы 100/200 м².",
+        descUz:
+          "Stavkalar indeksatsiya qilindi: 0,36% (200 m² gacha), 0,48% (200–500 m²), 0,64% (500 m² dan ortiq). Maydon oraliqlari to'g'rilandi — avval 100/200 m² eskirgan chegaralar edi.",
+      },
+      {
+        titleRu: "Растаможка авто — пересчитанная модель пошлины",
+        titleUz: "Avto bojxonasi — qayta hisoblangan boj modeli",
+        descRu:
+          "Таможенный калькулятор приведён к реальной схеме 2026: пошлина 15% (новые) / 40% (б/у) + надбавка 0,4–1,0 $/см³, корректный утильсбор и регистрация (~13 БРВ). Льгота на импорт электромобилей продлена до 2030 года.",
+        descUz:
+          "Bojxona kalkulyatori 2026-yilgi haqiqiy sxemaga keltirildi: boj 15% (yangi) / 40% (ishlatilgan) + sm³ uchun 0,4–1,0 $, to'g'ri utilizatsiya yig'imi va ro'yxatga olish (~13 BHM). Elektromobil importiga imtiyoz 2030-yilgacha.",
+      },
+      {
+        titleRu: "Налоги: порог НДС, НДФЛ нерезидентов, сроки уплаты",
+        titleUz: "Soliqlar: QQS bo'sag'asi, norezident JShShS, to'lov muddatlari",
+        descRu:
+          "Порог обязательной регистрации НДС и упрощёнки — 1 млрд сум оборота (вместо устаревших значений). НДФЛ нерезидентов — 12% (был 20%). Имущественный, земельный и транспортный налог физлица платят до 15 апреля и 15 октября. Перенос убытков — без ограничения по сроку.",
+        descUz:
+          "QQS va soddalashtirilgan soliqqa ro'yxatdan o'tish bo'sag'asi — 1 mlrd so'm aylanma. Norezident JShShS — 12% (20% edi). Mol-mulk, yer va transport solig'ini jismoniy shaxslar 15 aprel va 15 oktyabrgacha to'laydi. Zararlarni o'tkazish — muddat cheklovisiz.",
+      },
+      {
+        titleRu: "Трудовое и социальное: отпуск, больничный, алименты, пенсия",
+        titleUz: "Mehnat va ijtimoiy: ta'til, kasallik varaqasi, aliment, pensiya",
+        descRu:
+          "Минимальный отпуск — 21 календарный день, 9 праздничных дней, годовой лимит сверхурочных отменён. Больничный: до 8 лет стажа — 60%, свыше — 80%. Алименты — не менее 26,5% МРОТ; пособие по уходу за ребёнком до 2 лет — 60% МРОТ. Минимальная пенсия — 983 000 сум с 1 июля 2026.",
+        descUz:
+          "Eng kam ta'til — 21 kalendar kun, 9 bayram kuni, ortiqcha ish soatining yillik chegarasi bekor qilindi. Kasallik varaqasi: 8 yilgacha — 60%, undan ortiq — 80%. Aliment — MROTning kamida 26,5%; 2 yoshgacha bola parvarishi nafaqasi — MROTning 60%. Eng kam pensiya — 2026-yil 1-iyuldan 983 000 so'm.",
+      },
+      {
+        titleRu: "Госпошлины и ОСАГО",
+        titleUz: "Davlat bojlari va OSAGO",
+        descRu:
+          "Госпошлины уточнены: регистрация брака 0,2 БРВ, ООО — 1 БРВ, иск в суд — 4% цены иска. ОСАГО: максимальная выплата — до 80 млн сум, штраф за вождение без полиса — 0,5 БРВ (или предупреждение), ст. 135-1 КоАО.",
+        descUz:
+          "Davlat bojlari aniqlandi: nikoh ro'yxati 0,2 BHM, MChJ — 1 BHM, sudga da'vo — da'vo qiymatining 4%. OSAGO: maksimal to'lov — 80 mln so'mgacha, polissiz haydash uchun jarima — 0,5 BHM (yoki ogohlantirish), MJtK 135-1-modda.",
+      },
+    ],
+  },
+  {
+    date: "2026-05-23",
+    dateLabelRu: "23 мая 2026",
+    dateLabelUz: "2026-yil 23-may",
+    items: [
+      {
+        titleRu: "Блок «Краткий ответ» на страницах калькуляторов",
+        titleUz: "Kalkulyator sahifalarida «Qisqa javob» bloki",
+        descRu:
+          "Над основной статьёй калькуляторов добавлен блок «Краткий ответ» — прямой ответ в 1–3 предложениях с актуальными цифрами (ставки и суммы 2026 года). Помогает мгновенно получить суть расчёта и повышает цитируемость сайта в AI-поиске (ChatGPT, Perplexity, Google AI Overviews). Охвачено более 20 калькуляторов.",
+        descUz:
+          "Kalkulyatorlarning asosiy maqolasi tepasiga «Qisqa javob» bloki qo'shildi — dolzarb raqamlar (2026-yil stavkalari va summalari) bilan 1–3 jumlalik to'g'ridan-to'g'ri javob. Hisob mohiyatini darhol tushunishga yordam beradi va saytning AI-qidiruvda (ChatGPT, Perplexity, Google AI Overviews) iqtibos keltirilishini oshiradi. 20 dan ortiq kalkulyator qamrab olindi.",
+      },
+      {
+        titleRu: "Точность отображения процентных ставок",
+        titleUz: "Foiz stavkalarini ko'rsatish aniqligi",
+        descRu:
+          "Исправлены артефакты округления чисел с плавающей точкой в справочных таблицах ставок: теперь отображается, например, 0,34% вместо 0,33999999%. На сами расчёты это не влияло — только на отображение чисел в таблицах.",
+        descUz:
+          "Stavkalar jadvallaridagi suzuvchi nuqtali sonlarni yaxlitlash xatolari tuzatildi: endi, masalan, 0,33999999% o'rniga 0,34% ko'rsatiladi. Bu hisob-kitoblarning o'ziga ta'sir qilmadi — faqat jadvallardagi sonlar ko'rinishiga.",
+      },
+      {
+        titleRu: "Структурированные данные и страница автора",
+        titleUz: "Strukturalashgan ma'lumotlar va muallif sahifasi",
+        descRu:
+          "Углублена разметка Schema.org — поисковикам и AI-сервисам проще понимать содержимое страниц. Биография автора сокращена и приведена в соответствие с фактами (хронология проектов: Zanimaem.kz — 2016, Calk.kz — 2025, Profinance.kz и Calk.UZ — 2026).",
+        descUz:
+          "Schema.org razmetkasi chuqurlashtirildi — qidiruv tizimlari va AI-xizmatlar sahifa mazmunini osonroq tushunadi. Muallif biografiyasi qisqartirildi va faktlarga muvofiqlashtirildi (loyihalar xronologiyasi: Zanimaem.kz — 2016, Calk.kz — 2025, Profinance.kz va Calk.UZ — 2026).",
+      },
+    ],
+  },
+  {
+    date: "2026-05-03",
+    dateLabelRu: "3 мая 2026",
+    dateLabelUz: "2026-yil 3-may",
+    items: [
+      {
+        titleRu: "Транспортный налог — ставки приведены в соответствие с НК ст. 446",
+        titleUz: "Transport solig'i — stavkalar Soliq kodeksining 446-moddasiga muvofiqlashtirildi",
+        descRu:
+          "Калькулятор использовал самодельные ставки (1, 2, 3, 5, 7, 10 БРВ). Теперь ставки соответствуют закону: до 1.5 л — 1.5 БРВ (618 000), 1.5–2.0 л — 3 БРВ (1 236 000), 2.0–3.0 л — 5 БРВ (2 060 000), свыше 3.0 л — 7.5 БРВ (3 090 000). Возрастной коэффициент убран — НК Узбекистана его не предусматривает (ставка зависит только от объёма двигателя).",
+        descUz:
+          "Kalkulyator o'zboshimcha stavkalardan foydalanardi (1, 2, 3, 5, 7, 10 BHK). Endi stavkalar qonunga muvofiq: 1.5 l gacha — 1.5 BHK (618 000), 1.5–2.0 l — 3 BHK (1 236 000), 2.0–3.0 l — 5 BHK (2 060 000), 3.0 l dan ortiq — 7.5 BHK (3 090 000). Yosh koeffitsiyenti olib tashlandi — Soliq kodeksi uni nazarda tutmaydi (stavka faqat dvigatel hajmiga bog'liq).",
+      },
+      {
+        titleRu: "Курс USD по умолчанию обновлён",
+        titleUz: "Standart USD kursi yangilandi",
+        descRu:
+          "Резервный курс USD/UZS снижен с 12 780 до 11 938 сум — это курс ЦБ на 1 мая 2026. Затрагивает калькуляторы таможни, виз и переводов в случаях, когда live-курс с cbu.uz недоступен. Сум укрепился к доллару примерно на 6,6% за две недели.",
+        descUz:
+          "USD/UZS zaxira kursi 12 780 dan 11 938 so'mga tushirildi — bu MB ning 2026-yil 1-may holati. Cbu.uz ning jonli kursi mavjud bo'lmaganda bojxona, viza va pul o'tkazmalari kalkulyatorlariga ta'sir qiladi. So'm ikki hafta ichida dollarga nisbatan taxminan 6,6% ga mustahkamlandi.",
+      },
+    ],
+  },
+  {
+    date: "2026-04-29",
+    dateLabelRu: "29 апреля 2026",
+    dateLabelUz: "2026-yil 29-aprel",
+    items: [
+      {
+        titleRu: "ИНПС теперь считается отдельно от НДФЛ",
+        titleUz: "IJPH endi JShShSdan alohida hisoblanadi",
+        descRu:
+          "Зарплатный калькулятор и расчёт расходов работодателя обновлены. ИНПС 0,1% — это отдельное удержание поверх НДФЛ 12%, а не его часть. Итого с зарплаты удерживается 12,1% (7,6% для IT Park). Раньше формула давала на 0,1% больше «на руки».",
+        descUz:
+          "Ish haqi kalkulyatori va ish beruvchi xarajatlari yangilandi. IJPH 0,1% — bu JShShS 12% ustiga alohida ushlanma, uning bir qismi emas. Ish haqidan jami 12,1% ushlanadi (IT Park uchun 7,6%). Ilgari formula qo'lga 0,1% ko'p natija berardi.",
+      },
+      {
+        titleRu: "Транспортный налог — возрастной коэффициент исправлен",
+        titleUz: "Transport solig'i — yosh koeffitsiyenti tuzatildi",
+        descRu:
+          "Раньше старые автомобили платили меньше налога — это было неверно. По НК ст. 446 коэффициент идёт В СТОРОНУ ПОВЫШЕНИЯ: 0–3 года 1,0×, 3–7 лет 1,2×, 7–10 лет 1,4×, старше 10 лет — 1,5×. Налог на 10-летнее авто теперь рассчитывается корректно.",
+        descUz:
+          "Ilgari eski avtomobillar kamroq soliq to'lardi — bu noto'g'ri edi. Soliq kodeksining 446-moddasiga ko'ra koeffitsiyent OSHIRILADI: 0–3 yil 1,0×, 3–7 yil 1,2×, 7–10 yil 1,4×, 10 yildan eski 1,5×. 10 yillik avtoga soliq endi to'g'ri hisoblanadi.",
+      },
+      {
+        titleRu: "ИП на общем режиме — соцналог 12% от чистого дохода",
+        titleUz: "Umumiy rejimdagi YaTT — ijtimoiy soliq sof daromaddan 12%",
+        descRu:
+          "Калькулятор ИП теперь учитывает фактическую соцналоговую нагрузку: max(12 БРВ минимум, 12% от чистого дохода). Раньше всегда считалось только 12 БРВ — для ИП с большим доходом это занижало сумму налога.",
+        descUz:
+          "YaTT kalkulyatori endi haqiqiy ijtimoiy soliq yukini hisobga oladi: max(12 BHK minimum, sof daromaddan 12%). Ilgari faqat 12 BHK hisoblanardi — bu yuqori daromadli YaTTlar uchun soliq summasini kamaytirardi.",
+      },
+      {
+        titleRu: "ООО — отдельная строка «общий отток средств с НДС»",
+        titleUz: "MChJ — «QQS bilan jami pul oqimi» alohida qatori",
+        descRu:
+          "В калькуляторе ООО НДС теперь показывается отдельной строкой totalCashOutflow для планирования cash-flow. Сама нагрузка на прибыль (totalTaxBurden) НДС не включает — НДС платит покупатель, организация лишь перечисляет.",
+        descUz:
+          "MChJ kalkulyatorida QQS endi cash-flow rejalashtirish uchun alohida totalCashOutflow qatorida ko'rsatiladi. Foyda yuki (totalTaxBurden) QQSni o'z ichiga olmaydi — QQSni xaridor to'laydi, tashkilot esa faqat o'tkazadi.",
+      },
+      {
+        titleRu: "США — добавлен Visa Integrity Fee $250",
+        titleUz: "AQSh — Visa Integrity Fee $250 qo'shildi",
+        descRu:
+          "С октября 2024 США взимают дополнительный Visa Integrity Fee — $250 при выдаче туристической визы (B1/B2) сверх консульского сбора $185. Калькулятор виз теперь учитывает оба сбора. Шенген — €80 → €90 (с июня 2024).",
+        descUz:
+          "2024-yil oktyabrdan AQSh turistik viza (B1/B2) berilganda $185 konsullik to'lovidan tashqari qo'shimcha Visa Integrity Fee — $250 oladi. Viza kalkulyatori endi ikkala to'lovni hisobga oladi. Shengen — €80 → €90 (2024-yil iyundan).",
+      },
+      {
+        titleRu: "ОСАГО — реальный региональный множитель",
+        titleUz: "OSAGO — real hududiy ko'paytuvchi",
+        descRu:
+          "Поле «коэффициент региона» теперь показывает фактический множитель: 1,2 для Ташкента и области, 1,0 для других регионов. Раньше всегда отображалось «1» — было неинформативно.",
+        descUz:
+          "«Hudud koeffitsiyenti» maydoni endi haqiqiy ko'paytuvchini ko'rsatadi: Toshkent va viloyati uchun 1,2, boshqa hududlar uchun 1,0. Ilgari har doim «1» ko'rinardi — bu informativ emas edi.",
+      },
+      {
+        titleRu: "Свадьба, хлопок — цены актуализированы на 2026",
+        titleUz: "To'y, paxta — narxlar 2026-yilga yangilandi",
+        descRu:
+          "Свадебный калькулятор: блюдо 150 → 200 тыс., музыка 5 → 6,5 млн, платье 10 → 13 млн, фото 3 → 4 млн сум. Хлопок: урожайность 2800 → 3000 кг/га, закупочная цена 6 000 → 9 000 сум/кг (по данным Узпахтасаноат на 2026).",
+        descUz:
+          "To'y kalkulyatori: taom 150 → 200 ming, musiqa 5 → 6,5 mln, libos 10 → 13 mln, foto 3 → 4 mln so'm. Paxta: hosildorlik 2800 → 3000 kg/ga, xarid narxi 6 000 → 9 000 so'm/kg (Uzpaxtasanoat 2026 ma'lumoti).",
+      },
+      {
+        titleRu: "Курс USD как параметр",
+        titleUz: "USD kursi parametr sifatida",
+        descRu:
+          "Калькуляторы таможни, переводов и виз теперь принимают курс USD/UZS параметром, что позволяет передавать актуальный курс с cbu.uz без переразвёртывания. Курс по умолчанию обновлён до 12 780 сум (CBU, конец апреля 2026).",
+        descUz:
+          "Bojxona, pul o'tkazmalari va viza kalkulyatorlari endi USD/UZS kursini parametr sifatida qabul qiladi, bu cbu.uz dagi joriy kursni qayta yoyishsiz uzatish imkonini beradi. Standart kurs 12 780 so'mga yangilandi (CBU, 2026-yil aprel oxiri).",
+      },
+    ],
+  },
+  {
+    date: "2026-04-18",
+    dateLabelRu: "18 апреля 2026",
+    dateLabelUz: "2026-yil 18-aprel",
+    items: [
+      {
+        titleRu: "Больничный и декретный — новая формула 2026",
+        titleUz: "Kasallik varaqasi va dekret — 2026-yildagi yangi formula",
+        descRu:
+          "С 1 января 2026 пособия платит Фонд государственного социального страхования. Расчёт теперь по страховому стажу (в месяцах), а не по общему стажу. Больничный — нужно минимум 6 месяцев стажа, декретный — минимум 10 месяцев.",
+        descUz:
+          "2026-yil 1-yanvardan nafaqalarni Davlat ijtimoiy sug'urta jamg'armasi to'laydi. Hisob-kitob sug'urta staji bo'yicha (oylarda), umumiy staj bo'yicha emas. Kasallik varaqasi uchun — kamida 6 oy, dekret uchun — kamida 10 oy staj talab qilinadi.",
+      },
+      {
+        titleRu: "Пенсия — возраст женщин 55 лет",
+        titleUz: "Pensiya — ayollar uchun 55 yosh",
+        descRu:
+          "Исправлен возраст выхода на пенсию для женщин: 55 лет (54 года при стаже от 20 лет). Для мужчин — 60 лет, без изменений.",
+        descUz:
+          "Ayollar uchun pensiya yoshi tuzatildi: 55 yil (20 yildan ortiq staj bilan 54 yil). Erkaklar uchun — 60 yil, o'zgarishsiz.",
+      },
+      {
+        titleRu: "Закят — актуальная цена золота",
+        titleUz: "Zakat — oltinning joriy narxi",
+        descRu:
+          "Цена грамма золота по умолчанию поднята до 1 900 000 сум — это рыночная цена на апрель 2026. Нисаб теперь считается корректно.",
+        descUz:
+          "Gram oltinning standart narxi 1 900 000 so'mga ko'tarildi — bu 2026-yil apreldagi bozor narxi. Nisob endi to'g'ri hisoblanadi.",
+      },
+      {
+        titleRu: "Фитр-садака — все 6 вариантов на Рамадан-2026",
+        titleUz: "Fitr-sadaqa — Ramazon-2026 uchun 6 ta variant",
+        descRu:
+          "По данным Управления мусульман Узбекистана: пшеница 10 000, мука 12 000, ячмень 20 000, изюм 110 000, финики 200 000 сум на человека. Цена подставляется автоматически при выборе продукта.",
+        descUz:
+          "O'zbekiston musulmonlari idorasi ma'lumotlariga ko'ra: bug'doy 10 000, un 12 000, arpa 20 000, mayiz 110 000, xurmo 200 000 so'm kishi boshiga. Mahsulot tanlanganda narx avtomatik qo'yiladi.",
+      },
+      {
+        titleRu: "Цены на топливо — апрель 2026",
+        titleUz: "Yoqilg'i narxlari — 2026-yil aprel",
+        descRu:
+          "АИ-92 — 11 200, АИ-95 — 13 500, АИ-100 — 16 000, дизель — 12 500, метан — 5 350, пропан — 5 500 сум. AI-91 убран — больше не продаётся.",
+        descUz:
+          "AI-92 — 11 200, AI-95 — 13 500, AI-100 — 16 000, dizel — 12 500, metan — 5 350, propan — 5 500 so'm. AI-91 olib tashlandi — endi sotilmaydi.",
+      },
+      {
+        titleRu: "Ставки банков — реальный рынок на апрель 2026",
+        titleUz: "Banklar stavkalari — 2026-yil aprelgi real bozor",
+        descRu:
+          "Обновлены ставки 16 банков. Вклады в сумах — 18–22,5% годовых, кредиты — 22–28%, ипотека — 17–23%. Частные банки дают чуть больше, государственные — стабильнее.",
+        descUz:
+          "16 ta bankning stavkalari yangilandi. So'mdagi omonatlar — yillik 18–22,5%, kreditlar — 22–28%, ipoteka — 17–23%. Xususiy banklar biroz yuqoriroq, davlat banklari esa barqarorroq.",
+      },
+      {
+        titleRu: "Тариф канализации — 1 456 сум/м³",
+        titleUz: "Kanalizatsiya tarifi — 1 456 so'm/m³",
+        descRu:
+          "Обновлён на актуальный тариф Ташкентской области с июля 2025 (с НДС). Раньше калькулятор считал по устаревшему тарифу 2 182 сум/м³.",
+        descUz:
+          "2025-yil iyuldan Toshkent viloyati uchun amaldagi tarifga yangilandi (QQS bilan). Ilgari kalkulyator eskirgan 2 182 so'm/m³ bo'yicha hisoblab kelgan.",
+      },
+    ],
+  },
+  {
+    date: "2026-04-16",
+    dateLabelRu: "16 апреля 2026",
+    dateLabelUz: "2026-yil 16-aprel",
+    items: [
+      {
+        titleRu: "ОСАГО — новые тарифы 2026",
+        titleUz: "OSAGO — 2026-yildagi yangi tariflar",
+        descRu:
+          "С 1 января 2026 ОСАГО подорожало: Ташкент и область — 192 000 сум, другие регионы — 160 000. Лимит страховой выплаты удвоен — до 80 млн сум.",
+        descUz:
+          "2026-yil 1-yanvardan OSAGO qimmatladi: Toshkent shahri va viloyati — 192 000 so'm, boshqa hududlar — 160 000. Sug'urta to'lovi chegarasi ikki barobar oshib, 80 mln so'mga yetdi.",
+      },
+      {
+        titleRu: "Живые курсы Центрального банка",
+        titleUz: "Markaziy bankning jonli valyuta kurslari",
+        descRu:
+          "Валютные калькуляторы (конвертер, переводы, таможня и др.) теперь подтягивают актуальные курсы USD, EUR, RUB и других валют с сайта ЦБ РУз автоматически.",
+        descUz:
+          "Valyuta kalkulyatorlari (konverter, pul o'tkazmalari, bojxona va boshq.) endi USD, EUR, RUB va boshqa valyutalarning joriy kurslarini O'zR Markaziy banki saytidan avtomatik oladi.",
+      },
+      {
+        titleRu: "Сверхурочные по Трудовому кодексу",
+        titleUz: "Mehnat kodeksi bo'yicha ish vaqtidan tashqari ishlar",
+        descRu:
+          "Калькулятор переработки теперь считает правильно: первые 2 часа — 1,5×, дальше — 2×. В праздники — всегда 2×.",
+        descUz:
+          "Ish vaqtidan tashqari soatlar kalkulyatori endi to'g'ri hisoblaydi: dastlabki 2 soat — 1,5×, keyingi soatlar — 2×. Bayram kunlarida har doim 2×.",
+      },
+      {
+        titleRu: "Мобильное приложение в Google Play",
+        titleUz: "Google Play'dagi mobil ilova",
+        descRu:
+          "Теперь Calk.UZ доступен как приложение на Android. Ссылка в футере сайта.",
+        descUz:
+          "Endi Calk.UZ Android uchun ilova ko'rinishida ham mavjud. Havola sayt footerida.",
+      },
+    ],
+  },
+]
