@@ -1132,12 +1132,12 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Паспортные сборы',
     titleUz: "Pasport yig'imlari",
     descriptionRu:
-      'Рассчитайте госпошлину за оформление паспорта Узбекистана. Биометрический, загранпаспорт и замена.',
+      'Рассчитайте госпошлину за ID-карту и загранпаспорт Узбекистана — для взрослых и детей, при замене и утере, при подаче через my.gov.uz.',
     descriptionUz:
-      "O'zbekiston pasporti uchun davlat boji miqdorini hisoblang. Biometrik, xorijga chiqish pasporti va almashtirish.",
+      "O'zbekiston ID-kartasi va xorijga chiqish pasporti uchun davlat bojini hisoblang — kattalar va bolalar uchun, almashtirish va yo'qotishda, my.gov.uz orqali arizada.",
     category: 'unique',
     icon: 'IdCard',
-    keywords: ['паспорт', 'pasport', 'passport', 'госпошлина', 'загранпаспорт', 'биометрический'],
+    keywords: ['паспорт', 'pasport', 'passport', 'госпошлина', 'загранпаспорт', 'биометрический', 'ID-карта', 'ID-karta'],
     priority: 1,
   },
   {

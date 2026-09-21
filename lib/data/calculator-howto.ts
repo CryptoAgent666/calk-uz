@@ -1079,14 +1079,14 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     slug: 'passport-fees',
     totalTimeMinutes: 1,
     stepsRu: [
-      { name: 'Выберите тип документа', text: 'ID-карта: новая, замена или взамен утерянной; детская до 16 лет; биометрический загранпаспорт.' },
-      { name: 'Отметьте срочность', text: 'Срочное оформление сокращает срок изготовления, но госпошлину не меняет.' },
-      { name: 'Получите расчёт', text: 'Результат появится сразу: размер госпошлины и срок изготовления в днях.' },
+      { name: 'Выберите документ', text: 'ID-карта (ставка одна для взрослых и детей), загранпаспорт с 16 лет или загранпаспорт ребёнку до 16 лет.' },
+      { name: 'Укажите причину и способ подачи', text: 'Первичное оформление, замена или утеря — пошлина одна и та же. Для загранпаспорта отметьте подачу через my.gov.uz: в этом случае платится 90% пошлины.' },
+      { name: 'Получите расчёт', text: 'Результат появится сразу: ставка в БРВ, сумма к оплате и срок изготовления в рабочих днях.' },
     ],
     stepsUz: [
-      { name: 'Hujjat turini tanlang', text: 'ID-karta: yangi, almashtirish yoki yo\'qolgan o\'rniga; 16 yoshgacha bolalar uchun; biometrik xorijiy pasport.' },
-      { name: 'Shoshilinchlikni belgilang', text: 'Shoshilinch rasmiylashtirish tayyorlanish muddatini qisqartiradi, lekin davlat bojini o\'zgartirmaydi.' },
-      { name: 'Hisobni oling', text: 'Natija darhol chiqadi: davlat boji miqdori va tayyorlanish muddati kunlarda.' },
+      { name: 'Hujjatni tanlang', text: 'ID-karta (kattalar va bolalar uchun stavka bir xil), 16 yoshdan xorijga chiqish pasporti yoki 16 yoshgacha bolaga xorijga chiqish pasporti.' },
+      { name: 'Sabab va ariza usulini ko\'rsating', text: 'Birinchi marta, almashtirish yoki yo\'qotish — boj bir xil. Xorijga chiqish pasporti uchun my.gov.uz orqali arizani belgilang: bunda bojning 90 foizi to\'lanadi.' },
+      { name: 'Hisobni oling', text: 'Natija darhol chiqadi: BHMdagi stavka, to\'lanadigan summa va tayyorlanish muddati ish kunlarida.' },
     ],
   },
   {
