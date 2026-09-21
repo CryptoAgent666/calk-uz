@@ -25,6 +25,14 @@ export const UPDATES: UpdateBlock[] = [
     dateLabelUz: "2026-yil 21-sentabr",
     items: [
       {
+        titleRu: "Паспортные пошлины: ставки приведены к закону, «срочное оформление» и «двойная пошлина при утере» убраны",
+        titleUz: "Pasport bojlari: stavkalar qonunga moslashtirildi, «shoshilinch rasmiylashtirish» va «yo'qotishda ikki baravar boj» olib tashlandi",
+        descRu:
+          "На странице паспортных пошлин стояли неверные ставки. В статье загранпаспорт стоил 2 БРВ (880 000 сум), в калькуляторе — 1,2 БРВ; ID-карта — 0,5 БРВ (220 000); было «ускоренное оформление» за 4 БРВ и «срочное» за 8 БРВ; при утере пошлина якобы удваивалась. Ставка 1,2 БРВ действовала до 14 марта 2022 года. По закону «О государственной пошлине» ЗРУ-600 (приложение, п. 6, в редакции ЗРУ-759 от 14.03.2022) ID-карта стоит 89% БРВ — 391 600 сум в любом возрасте, загранпаспорт — 1 БРВ (440 000), загранпаспорт ребёнку до 16 лет — 80% БРВ (352 000). Платного срочного оформления нет. При утере пошлина та же — паспорт меняют в общем порядке (п. 53 Положения, утверждённого ПП-4079), а пострадавшим от ЧС, одиноким престарелым и людям с инвалидностью, которым нужен уход, замена бесплатна (ст. 13 ЗРУ-600). Добавили: при подаче через my.gov.uz за загранпаспорт платится 90% пошлины — 396 000 и 316 800 сум (п. 27 Положения). Исправили сроки изготовления (ID-карта — 1 рабочий день, загранпаспорт — 10) и сроки действия по возрасту.",
+        descUz:
+          "Pasport bojlari sahifasida stavkalar noto'g'ri edi. Maqolada xorijga chiqish pasporti 2 BHM (880 000 so'm), kalkulyatorda 1,2 BHM edi; ID-karta — 0,5 BHM (220 000); 4 BHM lik «tezlashtirilgan» va 8 BHM lik «shoshilinch» rasmiylashtirish bor edi; yo'qotishda boj go'yo ikki baravar oshardi. 1,2 BHM stavkasi 2022-yil 14-martgacha amal qilgan. «Davlat boji to'g'risida»gi O'RQ-600 Qonuniga ko'ra (ilova, 6-band, 2022-yil 14-martdagi O'RQ-759 tahririda) ID-karta har qanday yoshda BHMning 89 foizi — 391 600 so'm, xorijga chiqish pasporti — 1 BHM (440 000), 16 yoshgacha bolaga — BHMning 80 foizi (352 000). Pullik shoshilinch rasmiylashtirish yo'q. Yo'qotishda boj o'zgarmaydi — pasport umumiy tartibda almashtiriladi (PQ-4079 Nizomining 53-bandi), favqulodda vaziyatdan jabrlanganlar, yolg'iz keksalar va parvarishga muhtoj nogironligi bo'lgan shaxslar esa yangisini bepul oladi (O'RQ-600, 13-modda). Qo'shildi: my.gov.uz orqali ariza berilganda xorijga chiqish pasporti uchun bojning 90 foizi to'lanadi — 396 000 va 316 800 so'm (27-band). Tayyorlanish muddatlari (ID-karta — 1 ish kuni, pasport — 10) va yosh bo'yicha amal qilish muddatlari tuzatildi.",
+      },
+      {
         titleRu: "Цены на топливо на сентябрь 2026 и поле своей цены в калькуляторе",
         titleUz: "2026-yil sentabr yoqilg'i narxlari va kalkulyatorda o'z narxingiz maydoni",
         descRu:
