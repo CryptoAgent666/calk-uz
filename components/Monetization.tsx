@@ -32,6 +32,26 @@ const EEA_UK_CH = [
   "ES","SE","GB","CH",
 ]
 
+/**
+ * Auto Ads вставляет блоки ВНУТРЬ контента <main> (div.google-auto-placed,
+ * ссылки a.google-anno). Эффект этого компонента срабатывает сразу после
+ * коммита оболочки layout, а контент страницы лежит в Suspense-границе
+ * (app/[locale]/loading.tsx) и гидрируется следующими задачами. Если
+ * adsbygoogle.js из кэша успевает вставить блок до этого — React #418, граница
+ * перерисовывается на клиенте и выкидывает вставленное объявление (calk.uz,
+ * 06.10.2026: вставка на 92 мс, #418 на 122 мс). Поэтому AdSense — только после
+ * load + idle, как next/script strategy="lazyOnload": пока React догидрирует
+ * границы, idle-период не наступает.
+ */
+function afterLoadIdle(cb: () => void) {
+  const idle = () => {
+    if (typeof window.requestIdleCallback === "function") window.requestIdleCallback(cb, { timeout: 3000 })
+    else setTimeout(cb, 200) // старый Safari без requestIdleCallback
+  }
+  if (document.readyState === "complete") idle()
+  else window.addEventListener("load", idle, { once: true })
+}
+
 export function Monetization() {
   useEffect(() => {
     if (isNativeApp()) return
@@ -65,13 +85,16 @@ export function Monetization() {
       document.head.appendChild(init)
     }
 
-    if (ADSENSE_ID && !document.getElementById("adsense-lib")) {
-      const ads = document.createElement("script")
-      ads.id = "adsense-lib"
-      ads.async = true
-      ads.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`
-      ads.crossOrigin = "anonymous"
-      document.head.appendChild(ads)
+    if (ADSENSE_ID) {
+      afterLoadIdle(() => {
+        if (document.getElementById("adsense-lib")) return
+        const ads = document.createElement("script")
+        ads.id = "adsense-lib"
+        ads.async = true
+        ads.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`
+        ads.crossOrigin = "anonymous"
+        document.head.appendChild(ads)
+      })
     }
   }, [])
 
