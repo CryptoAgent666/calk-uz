@@ -77,11 +77,21 @@ export function calculatePropertyTax(
  * указывал на auto.onliner.by). Проверено по первоисточникам 2026-08-09.
  *
  * Владелец авто в РУз реально платит РАЗОВЫЕ госпошлины при регистрации,
- * а не ежегодный налог. Ставки — приказ МВД (рег. № 2303, ред. 2303-7
- * от 23.12.2024), в БРВ.
+ * а не ежегодный налог. Ставки — приложение к приказу МВД № 2303 в ред. 2303-7
+ * от 23.12.2024 (lex.uz/docs/1918264), в БРВ. Сверено с текстом 2026-10-06.
+ *
+ * ⚠️ Номера для автомобиля — 5,5 БРВ по ФАКТУ, а не по тексту приказа (там
+ * 3,5): с весны 2026 ГАИ берёт 5,5 без опубликованного акта, это видно по
+ * квитанциям (Автострада, «Оформление машины… 2026», ред. 05.07.2026).
+ * Калькулятор показывает то, что заплатят на кассе. Решение владельца сайта
+ * от 06.10.2026; если в приказе появится 5,5 или ГАИ вернётся к 3,5 — править здесь.
+ *
+ * Покупка подержанной машины — это РЕГИСТРАЦИЯ на нового владельца (6,84 БРВ
+ * и обязательная замена номеров), а не перерегистрация. Перерегистрация за
+ * 10% БРВ — смена учётных данных: установка ГБО, новый адрес владельца.
  */
 export interface VehicleRegistrationResult {
-  /** Госпошлина за регистрацию транспортного средства, сум */
+  /** Госпошлина за регистрацию или перерегистрацию транспортного средства, сум */
   registration: number
   /** Свидетельство о регистрации (техпаспорт), сум */
   techPassport: number
@@ -93,24 +103,37 @@ export interface VehicleRegistrationResult {
   totalBrv: number
 }
 
-/** Ставки в БРВ. Мото/прицепы и электромобили тарифицируются отдельно. */
-const REG_FEE_BRV = {
-  car: { registration: 6.84, techPassport: 0.7, plates: 5.5 },
-  motorcycle: { registration: 3.42, techPassport: 0.7, plates: 2.75 },
-  trailer: { registration: 3.42, techPassport: 0.7, plates: 2.75 },
+/** Регистрация (п. 7, 7¹) и номерные знаки (п. 1, 2), в БРВ. */
+export const REG_FEE_BRV = {
+  car: { registration: 6.84, plates: 5.5 },
+  // Электромобили и гибриды регистрируются по льготной ставке (п. 7), номера — как у авто.
+  electric: { registration: 1.5, plates: 5.5 },
+  // До 06.10.2026 здесь стояли 3,42 и 2,75 — половины автомобильных ставок, в приказе их нет.
+  motorcycle: { registration: 1.5, plates: 1.5 },
+  trailer: { registration: 1.5, plates: 1.5 },
 } as const
+
+/** Перерегистрация при смене учётных данных — для всех типов ТС, п. 7². */
+const REREGISTRATION_FEE_BRV = 0.1
+
+/** Свидетельство о регистрации (техпаспорт), п. 8 — выдаётся заново и при перерегистрации. */
+export const TECH_PASSPORT_FEE_BRV = 0.7
 
 export type VehicleKind = keyof typeof REG_FEE_BRV
 
+/** Регистрация (новое, ввезённое или купленное с рук ТС) или перерегистрация при смене данных. */
+export type RegistrationOperation = 'registration' | 'reregistration'
+
 export function calculateVehicleRegistration(
   kind: VehicleKind = 'car',
-  /** Нужны ли новые номера. При перерегистрации со «своими» номерами — false. */
+  /** Нужны ли новые номера. При регистрации на нового владельца — всегда да. */
   withNewPlates: boolean = true,
+  operation: RegistrationOperation = 'registration',
 ): VehicleRegistrationResult {
   const r = REG_FEE_BRV[kind]
   const plates = withNewPlates ? r.plates * BRV : 0
-  const registration = r.registration * BRV
-  const techPassport = r.techPassport * BRV
+  const registration = (operation === 'reregistration' ? REREGISTRATION_FEE_BRV : r.registration) * BRV
+  const techPassport = TECH_PASSPORT_FEE_BRV * BRV
   const total = registration + techPassport + plates
   return {
     registration,

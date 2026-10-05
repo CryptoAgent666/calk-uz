@@ -320,10 +320,10 @@
       "source_hint": "lex.uz (госпошлина за регистрацию автотранспорта)",
       "conflict": false,
       "status": "current",
-      "notes": "Vehicle registration госпошлина modeled as 1 BRV (approximate per comment). BRV=440000 → 440,000 UZS.  ||  2026-06-30 verify: re-checked — 13.04 БРВ CONFIRMED (ustabor.uz exact-sum breakdown; new plates 5.5 БРВ mandatory 2026). Earlier '3.5' = old base plate rate. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
+      "notes": "Vehicle registration госпошлина modeled as 1 BRV (approximate per comment). BRV=440000 → 440,000 UZS.  ||  2026-06-30 verify: re-checked — 13.04 БРВ CONFIRMED (ustabor.uz exact-sum breakdown; new plates 5.5 БРВ mandatory 2026). Earlier '3.5' = old base plate rate. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано. || 2026-10-06: приказ МВД № 2303, прил. (lex.uz/docs/1918264, ред. 2303-7 от 23.12.2024) — номера 3,5 БРВ, мото/прицеп 1,5; регистрация электромобилей/гибридов, мото, прицепов 1,5 (п. 7), прочих 6,84 (п. 7¹), перерегистрация 10% (п. 7²), техпаспорт 70% (п. 8). ГАИ с весны 2026 фактически берёт за номера 5,5 БРВ без опубликованного акта (Автострада «Оформление машины… 2026», ред. 05.07.2026: 2 420 000 сум при БРВ 440 000; «оставить старые номера при оформлении б/у нельзя»). По решению владельца сайта считаем по факту — 5,5. Исправлено в коде: электромобили/гибриды 1,5 (растаможка 13,04→7,7), мото/прицеп 3,42→1,5 и номера 2,75→1,5.",
       "official_value": "Регистрация ТС = 6.84 БРВ; выдача техпаспорта = 0.7 БРВ; выдача госномеров = 5.5 БРВ (электро/мото = 1.5 БРВ)",
-      "source_url": "https://www.norma.uz/novoe_v_zakonodatelstve/obnovleny_stavki_za_registraciyu_avto",
-      "last_verified": "2026-09-01",
+      "source_url": "https://lex.uz/docs/1918264",
+      "last_verified": "2026-10-06",
       "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
@@ -2355,15 +2355,15 @@
       "source_hint": "lex.uz / soliq.uz — госпошлина за регистрацию прав на недвижимое имущество (в БРВ); verify current БРВ-multiple",
       "conflict": false,
       "status": "current",
-      "notes": "Inline `const registrationFee = 440_000 * 3` — hardcoded 3-БРВ property registration state duty; БРВ literal 440000 inlined rather than imported from lib/constants/brv.ts. Not in ledger. [completeness pass 2026-06-25]  ||  2026-06-30 FIXED IN CODE: flat 3 БРВ → area-tiered (ApartmentCostCalculator.tsx; ПКМ-623). || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
+      "notes": "Inline `const registrationFee = 440_000 * 3` — hardcoded 3-БРВ property registration state duty; БРВ literal 440000 inlined rather than imported from lib/constants/brv.ts. Not in ledger. [completeness pass 2026-06-25]  ||  2026-06-30 FIXED IN CODE: flat 3 БРВ → area-tiered (ApartmentCostCalculator.tsx; ПКМ-623). || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано. || 2026-10-06 перевод источника с norma.uz на первоисточник, значение подтверждено: ПКМ-186 от 10.07.2014 (ред. 04.07.2026), разд. IV п. 1–3.",
       "official_value": "Real-estate registration is a SERVICE FEE (сбор за услугу), not a flat state duty. For residential property owned by individuals it is AREA-TIERED: up to 100 m² = 1.25 БРВ, 101–300 m² = 2 БРВ, 301+ m² = 3 БРВ. Non-residential for individuals = 3 БРВ; legal entities (any area) = 5 БРВ. (БРВ 440,000 UZS → 1.25/2/3 БРВ = 515,000 / 824,000 / 1,236,000 UZS).",
-      "source_url": "https://www.norma.uz/novoe_v_zakonodatelstve/vo_skolko_oboydetsya_registraciya_prav_na_nedvijimost",
+      "source_url": "https://lex.uz/ru/docs/2425160",
       "source_title": "NORMA.uz — Во сколько обойдётся регистрация прав на недвижимость (ПКМ №623)",
       "verify_note": "A flat '3 БРВ for all physical persons' is an over-simplification: 3 БРВ only fits 301+ m² residential or non-residential; ordinary apartments (≤100 m²) pay 1.25 БРВ per ПКМ №623 (eff. 01.09.2019, unchanged).",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-10-06",
       "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
     },
     {
@@ -2767,15 +2767,15 @@
       "source_hint": "customs.uz — требование минимального срока пребывания за рубежом с 20.07.2025",
       "conflict": false,
       "status": "current",
-      "notes": "Minimum stay abroad to qualify for duty-free allowance (from 20 July 2025): 2 days by car, 3 days by plane. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-09-13: current. Условие существует, цифры и дата 20.07.2025 (вступление ПКМ-244 в силу, совпадает с датой на lex.uz) верны. Проза упрощает: 2 дня касаются также ж/д и речного транспорта, а не только автомобиля; дни календарные; при невыполнении условия платёж берётся со всей стоимости, а не только с превышения.",
+      "notes": "Minimum stay abroad to qualify for duty-free allowance (from 20 July 2025): 2 days by car, 3 days by plane. Not in ledger. [completeness pass 2026-06-25] || tier2 2026-09-13: current. Условие существует, цифры и дата 20.07.2025 (вступление ПКМ-244 в силу, совпадает с датой на lex.uz) верны. Проза упрощает: 2 дня касаются также ж/д и речного транспорта, а не только автомобиля; дни календарные; при невыполнении условия платёж берётся со всей стоимости, а не только с превышения. || 2026-10-06 перевод источника с norma.uz на первоисточник, значение подтверждено: ПКМ-244 от 19.04.2025 (узб. оригинал): 2 календарных дня ж/д, речным, автотранспортом; 3 — воздушным.",
       "official_value": "If a person stays abroad fewer than 2 calendar days (entry by rail/river or via auto/foot border crossings) or fewer than 3 calendar days (entry by air), the duty-free allowances do NOT apply. (i.e. min 2 days car, min 3 days plane.)",
-      "source_url": "https://www.norma.uz/novoe_v_zakonodatelstve/izmeneny_normy_besposhlinnogo_vvoza_tovarov_fizlicami ; https://lex.uz/uz/docs/7486538",
+      "source_url": "https://lex.uz/docs/7484114",
       "source_title": "NORMA.uz — Нормы беспошлинного ввоза, мин. срок пребывания (ПКМ №244)",
       "verify_note": "Условие существует, цифры и дата 20.07.2025 (вступление ПКМ-244 в силу, совпадает с датой на lex.uz) верны. Проза упрощает: 2 дня касаются также ж/д и речного транспорта, а не только автомобиля; дни календарные; при невыполнении условия платёж берётся со всей стоимости, а не только с превышения. Цитата: ПКМ № 244: «При пребывании лица… ж/д и речным транспортом, а также через автомобильные пункты пропуска, в иностранном государстве менее 2 календарных дней, воздушным транспортом – менее 3 календарных дней, нормы беспошлинного ввоза не применяются… с полной стоимости товара взимается единый таможенный платеж». «Вступит в силу с 20.07.2025» (norma.uz, 21.04.2025).",
       "verify_confidence": "medium",
       "verified_date": "2026-09-13",
       "verify_method": "tier2-2026-09-13-primary",
-      "last_verified": "2026-09-13",
+      "last_verified": "2026-10-06",
       "source_url_prev": "https://www.norma.uz/novoe_v_zakonodatelstve/izmeneny_normy_besposhlinnogo_vvoza_tovarov_fizlicami"
     },
     {
@@ -2797,15 +2797,15 @@
       "source_hint": "customs.uz — сбор за таможенное оформление 0,2%",
       "conflict": false,
       "status": "current",
-      "notes": "Customs clearance fee (сбор за таможенное оформление) = 0.2% of customs value. Stated as the rule. Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Customs clearance fee (сбор за таможенное оформление) = 0.2% of customs value. Stated as the rule. Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-10-06 перевод источника с norma.uz на первоисточник, значение подтверждено: ПКМ-700 от 09.11.2020 (узб. оригинал — у русской страницы нет таблицы): шкала БРВ по таможенной стоимости.",
       "official_value": "The customs clearance fee (сбор за таможенное оформление) is NOT 0.2% of customs value. It is a TIERED schedule in БРВ by declared value: up to $10,000 = 1 БРВ; $10,000–$20,000 = 1.5 БРВ; $20,000–$40,000 = 2.5 БРВ; … rising to 75 БРВ for $1,000,001+. Export declarations get a ~50% discount on smaller tiers.",
-      "source_url": "https://www.norma.uz/novoe_v_zakonodatelstve/utverjdeny_stavki_tamojennyh_sborov",
+      "source_url": "https://lex.uz/docs/5087206",
       "source_title": "NORMA.uz — Утверждены ставки таможенных сборов (ПКМ №700)",
       "verify_note": "STALE: 0.002 (0.2%) was an old per-item personal-import duty; the clearance fee is a fixed БРВ ladder (ПКМ №700, eff. 01.01.2021), with export rates further cut ~35% from 2025. A single 0.2% rate is wrong.",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-10-06"
     },
     {
       "id": "calculator-articles.ts__OSAGO_MAX_PAYOUT_BRV",
@@ -2888,15 +2888,15 @@
       "source_hint": "lex.uz/docs/6257288 — минимальный ежегодный отпуск 15 рабочих дней",
       "conflict": false,
       "status": "current",
-      "notes": "Statutory minimum annual paid leave = 15 working days / 21 calendar days; pedagogical staff up to 56 calendar days; harmful-conditions +6 to 36 working days. Ledger has vacation working-days base 247 but NOT the statutory minimum leave duration. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Statutory minimum annual paid leave = 15 working days / 21 calendar days; pedagogical staff up to 56 calendar days; harmful-conditions +6 to 36 working days. Ledger has vacation working-days base 247 but NOT the statutory minimum leave duration. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-10-06 перевод источника с norma.uz на первоисточник, значение подтверждено: ТК РУз ст. 217: двадцать один календарный день.",
       "official_value": "21 calendar days (minimum annual basic leave under the 2023 Labor Code, Art. 217). The old '15 working days' (1995 code, Art. 134) no longer applies.",
-      "source_url": "https://www.norma.uz/nashi_obzori/kak_zaranee_predusmotret_prodoljitelnost_otpuskov_po_novomu_tk",
+      "source_url": "https://lex.uz/ru/docs/6257291",
       "source_title": "Norma.uz — Продолжительность отпусков по новому ТК",
       "verify_note": "New 2023 Labor Code (ZRU-798, effective 30 Apr 2023) switched the minimum to 21 CALENDAR days (Art. 217); the ledger's '15 working days' framing is repealed-code language and now misleading.",
       "verify_confidence": "high",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-10-06"
     },
     {
       "id": "calculator-articles.ts__PUBLIC_HOLIDAYS_PER_YEAR",
@@ -3943,15 +3943,15 @@
       "source_hint": "lex.uz — лимит перевода без декларации $10 000",
       "conflict": false,
       "status": "current",
-      "notes": "Maximum money transfer without declaration = USD 10,000 equivalent (currency-control rule). Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Maximum money transfer without declaration = USD 10,000 equivalent (currency-control rule). Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-10-06 перевод источника с norma.uz на первоисточник, значение подтверждено: ПКМ-66 от 30.01.2018 (в ред. ПКМ-443), п. 2, 3, 5: 100 000 000 сумов.",
       "official_value": "For physical cross-border movement of cash, the declaration-free / no-restriction threshold is now denominated in сумы: up to the equivalent of 100,000,000 UZS may be carried without restriction; amounts above 100 млн сум must be declared (raised from 70 млн). A fixed '$10,000 equivalent' figure is no longer the operative rule.",
-      "source_url": "https://www.norma.uz/novoe_v_zakonodatelstve/uvelichen_limit_vyvozimoy_nalichnoy_inostrannoy_valyuty",
+      "source_url": "https://lex.uz/ru/docs/3540206",
       "source_title": "Norma.uz — увеличен лимит вывозимой наличной иностранной валюты (Пост. КМ №443 от 04.09.2023)",
       "verify_note": "The current cash export/import rule (Пост. КМ №443, в силе с 06.12.2023) is a 100 млн сум declaration threshold, not a USD-10,000 figure; if the calculator means physical currency this is stale, and a distinct '$10,000' bank-remittance declaration rule could not be confirmed on an authoritative 2026 source.",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-10-06"
     },
     {
       "id": "calculator-articles.ts__STATE_DUTY_PROPERTY_REGISTRATION_BRV",
@@ -3970,15 +3970,15 @@
       "source_hint": "lex.uz/ru/docs/4674893 — госпошлина за регистрацию собственности 3/5 БРВ",
       "conflict": false,
       "status": "current",
-      "notes": "State duty to register real-estate ownership = 3 БРВ (physical) / 5 БРВ (legal). Ledger STATE_DUTIES has marriage/divorce/court/notary/registration items but NOT a property-ownership-registration duty. [completeness pass 2026-06-25]  ||  2026-06-30 FIXED IN PROSE: calculator-articles.ts updated to area-tiered.",
+      "notes": "State duty to register real-estate ownership = 3 БРВ (physical) / 5 БРВ (legal). Ledger STATE_DUTIES has marriage/divorce/court/notary/registration items but NOT a property-ownership-registration duty. [completeness pass 2026-06-25]  ||  2026-06-30 FIXED IN PROSE: calculator-articles.ts updated to area-tiered. || 2026-10-06 перевод источника с norma.uz на первоисточник, значение подтверждено: ПКМ-186 от 10.07.2014 (ред. 04.07.2026), разд. IV п. 1–6.",
       "official_value": "For real-estate registration: legal entities = 5 БРВ (correct) and non-residential for individuals = 3 БРВ (correct), BUT residential property for individuals is AREA-TIERED: ≤100 m² = 1.25 БРВ, 101–300 m² = 2 БРВ, 301+ m² = 3 БРВ. It is also a service fee (ПКМ №623), not a Tax-Code state duty.",
-      "source_url": "https://www.norma.uz/novoe_v_zakonodatelstve/vo_skolko_oboydetsya_registraciya_prav_na_nedvijimost",
+      "source_url": "https://lex.uz/ru/docs/2425160",
       "source_title": "NORMA.uz — Стоимость регистрации прав на недвижимость (ПКМ №623)",
       "verify_note": "Partly stale: 5 БРВ (legal) is right; '3 БРВ for all individuals' is only true for non-residential or 301+ m² residential — typical apartments are 1.25–2 БРВ. Source is ПКМ №623, not the Tax Code.",
       "verify_confidence": "medium",
       "verified_date": "2026-06-27",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-08-09"
+      "last_verified": "2026-10-06"
     },
     {
       "id": "calculator-articles.ts__STATE_DUTY_COURT_CLAIM_PERCENT",

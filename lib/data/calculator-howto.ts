@@ -405,13 +405,13 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     slug: 'vehicle-tax',
     totalTimeMinutes: 1,
     stepsRu: [
-      { name: 'Выберите тип ТС', text: 'Легковой автомобиль, мотоцикл или прицеп — ставки госпошлины различаются.' },
-      { name: 'Укажите, нужны ли новые номера', text: 'При перерегистрации со своими номерами платёж меньше на 5,5 БРВ.' },
+      { name: 'Выберите тип ТС', text: 'Легковой автомобиль, электромобиль или гибрид, мотоцикл или прицеп — ставки госпошлины различаются.' },
+      { name: 'Выберите, что оформляете', text: 'Регистрация — новая, ввезённая или купленная с рук машина: 6,84 БРВ (электромобиль — 1,5) и обязательно новые номера. Перерегистрация при смене данных (ГБО, адрес) — 10% БРВ; для неё можно указать, нужны ли новые номера.' },
       { name: 'Получите расчёт', text: 'Результат появится сразу — разовая госпошлина при постановке на учёт, в сумах и в БРВ.' },
     ],
     stepsUz: [
-      { name: 'TV turini tanlang', text: "Yengil avtomobil, mototsikl yoki tirkama — davlat boji stavkalari har xil." },
-      { name: 'Yangi raqam kerakmi, belgilang', text: "O'z raqamlari bilan qayta ro'yxatdan o'tishda to'lov 5,5 BHM ga kam." },
+      { name: 'TV turini tanlang', text: "Yengil avtomobil, elektromobil yoki gibrid, mototsikl yoki tirkama — davlat boji stavkalari har xil." },
+      { name: 'Nima rasmiylashtirilayotganini tanlang', text: "Ro'yxatga olish — yangi, olib kelingan yoki qo'ldan sotib olingan avtomobil: 6,84 BHM (elektromobil — 1,5) va albatta yangi raqamlar. Ma'lumotlar o'zgarganda (GBO, manzil) qayta ro'yxatga olish — BHMning 10 foizi; unda yangi raqam kerakligini belgilash mumkin." },
       { name: 'Hisobni oling', text: "Natija darhol chiqadi — hisobga qo'yishdagi bir martalik davlat boji, so'mda va BHM da." },
     ],
   },

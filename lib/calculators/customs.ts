@@ -8,6 +8,7 @@
 
 import { BRV } from '@/lib/constants/brv'
 import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
+import { REG_FEE_BRV, TECH_PASSPORT_FEE_BRV } from '@/lib/calculators/tax'
 
 export interface CustomsInput {
   carPrice: number       // Price in USD
@@ -86,8 +87,14 @@ const UTILIZATION_FEE_BRV: { upTo: number; newCar: number; usedCar: number }[] =
 // 3 лет) / 210 БРВ (старше).
 const UTILIZATION_FEE_EV_BRV = { newCar: 120, usedCar: 210 }
 
-// Registration: vehicle reg 6.84 + tech passport 0.7 + plates 5.5 = 13.04 БРВ.
-const REGISTRATION_FEE_BRV = 6.84 + 0.7 + 5.5
+// Постановка ввезённого авто на учёт: регистрация 6,84 БРВ + техпаспорт 0,7 +
+// номера 5,5 (фактическая ставка ГАИ, см. tax.ts) = 13,04 БРВ. У электромобилей
+// и гибридов регистрация 1,5 БРВ (приказ МВД № 2303, п. 7) — итого 7,7; до
+// 06.10.2026 им тоже считались 13,04.
+function registrationFeeBrv(isElectricOrHybrid: boolean): number {
+  const r = REG_FEE_BRV[isElectricOrHybrid ? 'electric' : 'car']
+  return r.registration + TECH_PASSPORT_FEE_BRV + r.plates
+}
 
 
 const VAT_RATE = 0.12 // 12%
@@ -155,8 +162,8 @@ export function calculateCustomsClearance(
     }
   }
 
-  // Registration (vehicle reg + tech passport + plates) ≈ 13.04 БРВ.
-  const registrationFee = REGISTRATION_FEE_BRV * BRV
+  // Регистрация + техпаспорт + номера: 13,04 БРВ, электромобиль или гибрид — 7,7 БРВ.
+  const registrationFee = registrationFeeBrv(isElectric || fuelType === 'hybrid') * BRV
 
   // Экологическая сертификация отменена (ПКМ-597) — строка остаётся в выдаче
   // нулём, чтобы не ломать типы и вёрстку у потребителей результата.

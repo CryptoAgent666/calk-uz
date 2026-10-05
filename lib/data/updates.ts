@@ -20,6 +20,21 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-10-06",
+    dateLabelRu: "6 октября 2026",
+    dateLabelUz: "2026-yil 6-oktabr",
+    items: [
+      {
+        titleRu: "Постановка авто на учёт: электромобили и гибриды за 1,5 БРВ, мотоциклы и прицепы по приказу МВД, перерегистрация отдельно",
+        titleUz: "Avtoni hisobga qo'yish: elektromobil va gibridlar 1,5 BHM, mototsikl va tirkamalar IIV buyrug'i bo'yicha, qayta ro'yxatga olish alohida",
+        descRu:
+          "Калькулятор растаможки начислял электромобилям и гибридам регистрацию по ставке обычного автомобиля — 13,04 БРВ (5 737 600 сум). По приказу МВД № 2303 их регистрация стоит 1,5 БРВ, поэтому итог постановки на учёт теперь 7,7 БРВ (3 388 000 сум). В калькуляторе постановки на учёт появились электромобиль или гибрид и перерегистрация при смене данных (ГБО, адрес) — 10% БРВ плюс техпаспорт, всего 0,8 БРВ. Регистрация мотоцикла и прицепа исправлена с 3,42 на 1,5 БРВ, номера к ним — с 2,75 на 1,5 БРВ. Номера для автомобиля по-прежнему 5,5 БРВ: в тексте приказа стоит 3,5, но с весны 2026 года ГАИ берёт 5,5, и калькулятор показывает фактическую сумму. Убрана строка «со своими номерами 7,54 БРВ»: при покупке подержанной машины номера теперь меняют обязательно.",
+        descUz:
+          "Bojxona kalkulyatori elektromobil va gibridlarga oddiy avtomobil stavkasi bo'yicha ro'yxatga olishni hisoblardi — 13,04 BHM (5 737 600 so'm). IIV buyrug'iga (№ 2303) ko'ra ularni ro'yxatga olish 1,5 BHM, shuning uchun hisobga qo'yish jami endi 7,7 BHM (3 388 000 so'm). Hisobga qo'yish kalkulyatoriga elektromobil yoki gibrid hamda ma'lumotlar o'zgarganda (GBO, manzil) qayta ro'yxatga olish qo'shildi — BHMning 10 foizi va texpasport, jami 0,8 BHM. Mototsikl va tirkamani ro'yxatga olish 3,42 dan 1,5 BHM ga, ularning raqamlari 2,75 dan 1,5 BHM ga tuzatildi. Avtomobil raqamlari avvalgidek 5,5 BHM: buyruq matnida 3,5, lekin 2026-yil bahoridan YHXX 5,5 undiradi va kalkulyator amalda to'lanadigan summani ko'rsatadi. «O'z raqamlari bilan 7,54 BHM» qatori olib tashlandi: ishlatilgan avtomobil sotib olinganda raqamlar endi albatta almashtiriladi.",
+      },
+    ],
+  },
+  {
     date: "2026-09-21",
     dateLabelRu: "21 сентября 2026",
     dateLabelUz: "2026-yil 21-sentabr",
