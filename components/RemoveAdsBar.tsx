@@ -42,17 +42,15 @@ function pickBarVariant(): "price" | "coffee" {
  */
 export function RemoveAdsBar() {
   const locale = useLocale()
-  const [adFree, setAdFree] = useState(isAdFree())
-  const [dismissed, setDismissed] = useState(() => {
-    try {
-      return sessionStorage.getItem(DISMISS_KEY) === "1"
-    } catch {
-      return false
-    }
-  })
+  // Стартовые значения обязаны совпадать с SSR (там плашки нет никогда): решение
+  // «показывать ли» принимается только после монтирования. Иначе в приложении
+  // первый клиентский рендер рисовал плашку поверх серверного null → #418 на
+  // каждой странице.
+  const [applies, setApplies] = useState(false)
+  const [dismissed, setDismissed] = useState(false)
+  const [variant, setVariant] = useState<"price" | "coffee">("price")
   const price = useRemoveAdsPrice()
   const [busy, setBusy] = useState(false)
-  const [variant] = useState(pickBarVariant)
 
   const t =
     locale === "uz"
@@ -71,16 +69,26 @@ export function RemoveAdsBar() {
           unavailable: "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов.",
         }
 
-  useEffect(() => onAdFreeChange(setAdFree), [])
-  // Плашка — показ оффера, если она реально видима (есть покупки, не куплено,
-  // не скрыта в этой сессии).
   useEffect(() => {
-    if (purchasesAvailable() && !isAdFree() && !dismissed) emitIap("paywall_shown", { platform: Capacitor.getPlatform() })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const compute = () => setApplies(purchasesAvailable() && !isAdFree())
+    compute()
+    if (!purchasesAvailable()) return
+    let wasDismissed = false
+    try {
+      wasDismissed = sessionStorage.getItem(DISMISS_KEY) === "1"
+    } catch {
+      /* ignore */
+    }
+    setDismissed(wasDismissed)
+    setVariant(pickBarVariant())
+    // Плашка — показ оффера, если она реально видима (есть покупки, не куплено,
+    // не скрыта в этой сессии).
+    if (!isAdFree() && !wasDismissed) emitIap("paywall_shown", { platform: Capacitor.getPlatform() })
+    return onAdFreeChange(compute)
   }, [])
 
   // Стор не отдал продукт → оффера нет вовсе (мёртвая кнопка хуже отсутствия).
-  if (!purchasesAvailable() || adFree || dismissed || price.state === "unavailable") return null
+  if (!applies || dismissed || price.state === "unavailable") return null
 
   const dismiss = () => {
     try {
