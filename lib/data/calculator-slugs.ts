@@ -146,6 +146,19 @@ export function getEnglishSlug(localizedSlug: string, locale: string): string | 
 }
 
 /**
+ * Translate a locale-less pathname (as returned by next-intl's usePathname) for the
+ * language switcher. Only calculator slugs differ between locales; category ids and
+ * author slugs are shared, so every other path is returned unchanged.
+ */
+export function getLocalizedPathname(pathname: string, fromLocale: string, toLocale: string): string {
+  const match = pathname.match(/^\/calculator\/([^/]+)(\/.*)?$/)
+  if (!match) return pathname
+  const englishSlug = getEnglishSlug(match[1], fromLocale)
+  if (!englishSlug) return pathname
+  return `/calculator/${getSlugByLocale(englishSlug, toLocale)}${match[2] ?? ''}`
+}
+
+/**
  * Get all localized slugs for generateStaticParams.
  * Returns an array of { slug, locale } for every combination.
  */

@@ -33,6 +33,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { RemoveAdsButton } from "@/components/RemoveAdsButton"
 import { CATEGORIES } from "@/lib/data/categories"
+import { getLocalizedPathname } from "@/lib/data/calculator-slugs"
 import type { CategoryId } from "@/lib/types/calculator"
 
 const CATEGORY_ICONS: Record<CategoryId, React.ComponentType<{ className?: string }>> = {
@@ -94,7 +95,11 @@ export function Header() {
   }, [])
 
   const switchLocale = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale as "ru" | "uz" })
+    if (newLocale === locale) return
+    // Calculator slugs are localized (ndfl ↔ jshshs) — swap the slug, or the other locale 404s.
+    router.replace(getLocalizedPathname(pathname, locale, newLocale), {
+      locale: newLocale as "ru" | "uz",
+    })
   }
 
   const getCategoryName = (id: CategoryId) => {
