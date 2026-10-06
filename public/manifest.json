@@ -1,0 +1,43 @@
+{
+  "name": "Calk.UZ — Онлайн калькуляторы для Узбекистана",
+  "short_name": "Calk.UZ",
+  "description": "78 бесплатных онлайн-калькуляторов для Узбекистана",
+  "start_url": "/ru",
+  "display": "standalone",
+  "background_color": "#FAFBFC",
+  "theme_color": "#00A86B",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "utilities"],
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

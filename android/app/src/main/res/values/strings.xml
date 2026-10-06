@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Calk.UZ</string>
+    <string name="title_activity_main">Calk.UZ</string>
+    <string name="package_name">uz.calk.calculator</string>
+    <string name="custom_url_scheme">uz.calk.calculator</string>
+</resources>
