@@ -20,6 +20,21 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-10-13",
+    dateLabelRu: "13 октября 2026",
+    dateLabelUz: "2026-yil 13-oktabr",
+    items: [
+      {
+        titleRu: "Вода в Ташкентской области: 3 472 и 1 680 сум/м³ с 1 октября",
+        titleUz: "Toshkent viloyatida suv: 1-oktabrdan 3 472 va 1 680 so'm/m³",
+        descRu:
+          "Кенгаш Ташкентской области решением от 16 сентября 2026 года (VII-43-127-10-0-K/26) поднял тарифы для населения, которое обслуживает «Тошкент вилояти сув таъминоти»: питьевая вода — с 2 912 до 3 472 сум/м³ с НДС (3 100 без НДС), канализация — с 1 456 до 1 680 сум/м³ (1 500 без НДС). Калькуляторы воды и коммунальных платежей для Ташкентской области считают по новым тарифам. В реестре «Узсувтаъминот» изменение пока не отражено, поэтому сверяли по самому решению.",
+        descUz:
+          "Toshkent viloyati Kengashi 2026-yil 16-sentabrdagi qarori (VII-43-127-10-0-K/26) bilan «Toshkent viloyati suv ta'minoti» xizmat ko'rsatadigan aholi uchun tariflarni oshirdi: ichimlik suvi — QQS bilan 2 912 dan 3 472 so'm/m³ gacha (QQSsiz 3 100), kanalizatsiya — 1 456 dan 1 680 so'm/m³ gacha (QQSsiz 1 500). Toshkent viloyati uchun suv va kommunal to'lovlar kalkulyatorlari yangi tariflar bo'yicha hisoblaydi. «O'zsuvta'minot» reestrida o'zgarish hali aks etmagan, shuning uchun qarorning o'zi bilan solishtirildi.",
+      },
+    ],
+  },
+  {
     date: "2026-10-06",
     dateLabelRu: "6 октября 2026",
     dateLabelUz: "2026-yil 6-oktabr",

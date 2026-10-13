@@ -9,6 +9,10 @@
  * Реестр стоит на мониторинге в DATA_HUB. Тарифные листы операторов местами
  * отстают от реестра (Джизак, Навои, Хорезм — ещё от 01.04.2024), поэтому цены
  * берутся из реестра, а не из листов.
+ * ⚠️ Но и реестр отстаёт от самих решений: на 13.10.2026 в нём нет новых тарифов
+ * Ташкентской области (с 01.10), Самарканда (с 15.10), Навои и Андижана. Первоисточник —
+ * решение кенгаша на e-qaror: api-eqaror.gov.uz/v2/doc/list?limit=20&lang=oz&decision_type_id=279
+ * (Самарканд лежит под типом 142), PDF — /v2/doc/show?code=<code>.
  *
  * Цена 1 м³ холодной воды по счётчику зависит от категории жилья
  * (ПКМ-194 от 15.07.2014, тарифные листы операторов):
@@ -67,7 +71,9 @@ export const UTILITY_REGIONS: UtilityRegion[] = [
   DEFAULT_REGION,
   {
     id: 'tashkent-region', nameRu: 'Ташкентская область', nameUz: 'Toshkent viloyati',
-    water: { operator: '«Toshkent suv taʼminoti» AJ', waterNet: 2600, sewerageNet: 1300, hotWaterSewerageFactor: 1.7, centralHotWaterDefault: false, effectiveDate: '2025-07-01' },
+    // Кенгаш Ташкентской обл. VII-43-127-10-0-K/26 от 16.09.2026 (e-qaror), в силе через 15 дней
+    // после опубликования — с 01.10.2026. Реестр «Узсувтаъминот» на 13.10 ещё держит 2600/1300.
+    water: { operator: '«Toshkent suv taʼminoti» AJ', waterNet: 3100, sewerageNet: 1500, hotWaterSewerageFactor: 1.7, centralHotWaterDefault: false, effectiveDate: '2026-10-01' },
     waste: { center: 10864, act: 'Кенгаш Ташкентской обл. VII-30-33-10-0-K/26' },
   },
   {
