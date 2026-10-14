@@ -20,6 +20,29 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-10-15",
+    dateLabelRu: "15 октября 2026",
+    dateLabelUz: "2026-yil 15-oktabr",
+    items: [
+      {
+        titleRu: "Вода в Самаркандской области: 4 032 и 2 520 сум/м³ с 15 октября",
+        titleUz: "Samarqand viloyatida suv: 15-oktabrdan 4 032 va 2 520 so'm/m³",
+        descRu:
+          "Кенгаш Самаркандской области решением от 22 сентября 2026 года (VII-37-177-7-0-K/26) поднял тарифы для населения, которое обслуживает «Самарканд сув таъминоти», с 15 октября: питьевая вода — с 3 136 до 4 032 сум/м³ с НДС (3 600 без НДС), канализация — с 2 128 до 2 520 сум/м³ (2 250 без НДС). Калькуляторы воды и коммунальных платежей для Самаркандской области считают по новым тарифам. В реестре «Узсувтаъминот» изменение пока не отражено, поэтому сверяли по самому решению.",
+        descUz:
+          "Samarqand viloyati Kengashi 2026-yil 22-sentabrdagi qarori (VII-37-177-7-0-K/26) bilan «Samarqand suv ta'minoti» xizmat ko'rsatadigan aholi uchun tariflarni 15-oktabrdan oshirdi: ichimlik suvi — QQS bilan 3 136 dan 4 032 so'm/m³ gacha (QQSsiz 3 600), kanalizatsiya — 2 128 dan 2 520 so'm/m³ gacha (QQSsiz 2 250). Samarqand viloyati uchun suv va kommunal to'lovlar kalkulyatorlari yangi tariflar bo'yicha hisoblaydi. «O'zsuvta'minot» reestrida o'zgarish hali aks etmagan, shuning uchun qarorning o'zi bilan solishtirildi.",
+      },
+      {
+        titleRu: "Вода в Навоийской области: 4 704 и 2 352 сум/м³ с 15 октября",
+        titleUz: "Navoiy viloyatida suv: 15-oktabrdan 4 704 va 2 352 so'm/m³",
+        descRu:
+          "Кенгаш Навоийской области решением от 30 сентября 2026 года (VII-38-111-5-0-K/26) поднял тарифы для населения, которое обслуживает «Навоий сув таъминоти»; решение вступает в силу через 15 дней после опубликования — с 15 октября. Питьевая вода — с 3 920 до 4 704 сум/м³ с НДС (4 200 без НДС), канализация — с 2 016 до 2 352 сум/м³ (2 100 без НДС). Калькуляторы воды и коммунальных платежей для Навоийской области считают по новым тарифам.",
+        descUz:
+          "Navoiy viloyati Kengashi 2026-yil 30-sentabrdagi qarori (VII-38-111-5-0-K/26) bilan «Navoiy suv ta'minoti» xizmat ko'rsatadigan aholi uchun tariflarni oshirdi; qaror rasmiy e'lon qilinganidan 15 kun o'tib — 15-oktabrdan kuchga kiradi. Ichimlik suvi — QQS bilan 3 920 dan 4 704 so'm/m³ gacha (QQSsiz 4 200), kanalizatsiya — 2 016 dan 2 352 so'm/m³ gacha (QQSsiz 2 100). Navoiy viloyati uchun suv va kommunal to'lovlar kalkulyatorlari yangi tariflar bo'yicha hisoblaydi.",
+      },
+    ],
+  },
+  {
     date: "2026-10-13",
     dateLabelRu: "13 октября 2026",
     dateLabelUz: "2026-yil 13-oktabr",

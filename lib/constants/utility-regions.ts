@@ -10,7 +10,7 @@
  * отстают от реестра (Джизак, Навои, Хорезм — ещё от 01.04.2024), поэтому цены
  * берутся из реестра, а не из листов.
  * ⚠️ Но и реестр отстаёт от самих решений: на 13.10.2026 в нём нет новых тарифов
- * Ташкентской области (с 01.10), Самарканда (с 15.10), Навои и Андижана. Первоисточник —
+ * Ташкентской области (с 01.10), Самарканда и Навои (с 15.10), Андижана. Первоисточник —
  * решение кенгаша на e-qaror: api-eqaror.gov.uz/v2/doc/list?limit=20&lang=oz&decision_type_id=279
  * (Самарканд лежит под типом 142), PDF — /v2/doc/show?code=<code>.
  *
@@ -23,7 +23,8 @@
  * оператор начисляет на счётчик холодной. В реестре k нет — он снят с листов
  * вручную и меняется редко.
  * Сверка с листами: г. Ташкент (1400 + 1000 × 2) × 1,12 = 3808,
- * Самарканд (2800 + 1900 × 1,3) × 1,12 = 5902 — до сума.
+ * Самарканд (2800 + 1900 × 1,3) × 1,12 = 5902 — до сума (по тарифу до 15.10.2026; с 15.10
+ * (3600 + 2250 × 1,3) × 1,12 = 7308).
  *
  * МУСОР. Тариф с человека в месяц утверждает областной кенгаш. `center` — для
  * областного центра, `districts` — для районов, если ставка там своя. С НДС 12%.
@@ -98,7 +99,9 @@ export const UTILITY_REGIONS: UtilityRegion[] = [
   },
   {
     id: 'navoi', nameRu: 'Навоийская область', nameUz: 'Navoiy viloyati',
-    water: { operator: '«Navoiy suv taʼminoti» AJ', waterNet: 3500, sewerageNet: 1800, hotWaterSewerageFactor: 1, centralHotWaterDefault: false, effectiveDate: '2025-09-01' },
+    // Кенгаш Навоийской обл. VII-38-111-5-0-K/26 от 30.09.2026 (e-qaror), в силе через 15 дней
+    // после опубликования (30.09) — с 15.10.2026. Реестр «Узсувтаъминот» на 15.10 ещё держит 3500/1800.
+    water: { operator: '«Navoiy suv taʼminoti» AJ', waterNet: 4200, sewerageNet: 2100, hotWaterSewerageFactor: 1, centralHotWaterDefault: false, effectiveDate: '2026-10-15' },
     waste: { center: 7900, act: 'Кенгаш Навоийской обл. VII-23-5-5-0-K/26' },
   },
   {
@@ -108,7 +111,9 @@ export const UTILITY_REGIONS: UtilityRegion[] = [
   },
   {
     id: 'samarkand', nameRu: 'Самаркандская область', nameUz: 'Samarqand viloyati',
-    water: { operator: '«Samarqand suv taʼminoti» AJ', waterNet: 2800, sewerageNet: 1900, hotWaterSewerageFactor: 1.3, centralHotWaterDefault: false, effectiveDate: '2025-04-15' },
+    // Кенгаш Самаркандской обл. VII-37-177-7-0-K/26 от 22.09.2026 (e-qaror), п. 4 — в силе
+    // с 15.10.2026. Реестр «Узсувтаъминот» на 15.10 ещё держит 2800/1900.
+    water: { operator: '«Samarqand suv taʼminoti» AJ', waterNet: 3600, sewerageNet: 2250, hotWaterSewerageFactor: 1.3, centralHotWaterDefault: false, effectiveDate: '2026-10-15' },
     waste: { center: 9500, districts: 8000, act: 'Кенгаш Самаркандской обл. VII-13-75-7-0-K/25 от 03.06.2025' },
   },
   {
