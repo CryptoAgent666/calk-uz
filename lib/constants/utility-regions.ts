@@ -73,8 +73,8 @@ export const UTILITY_REGIONS: UtilityRegion[] = [
   {
     id: 'tashkent-region', nameRu: 'Ташкентская область', nameUz: 'Toshkent viloyati',
     // Кенгаш Ташкентской обл. VII-43-127-10-0-K/26 от 16.09.2026 (e-qaror), в силе через 15 дней
-    // после опубликования — с 01.10.2026. Реестр «Узсувтаъминот» на 13.10 ещё держит 2600/1300.
-    water: { operator: '«Toshkent suv taʼminoti» AJ', waterNet: 3100, sewerageNet: 1500, hotWaterSewerageFactor: 1.7, centralHotWaterDefault: false, effectiveDate: '2026-10-01' },
+    // после опубликования; реестр «Узсувтаъминот» (обновлён к 19.10) даёт дату 03.10.2026.
+    water: { operator: '«Toshkent viloyati suv taʼminoti» AJ', waterNet: 3100, sewerageNet: 1500, hotWaterSewerageFactor: 1.7, centralHotWaterDefault: false, effectiveDate: '2026-10-03' },
     waste: { center: 10864, act: 'Кенгаш Ташкентской обл. VII-30-33-10-0-K/26' },
   },
   {
