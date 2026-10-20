@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Privacy Manifest для Calk.UZ iOS (нативный UIKit, bundle uz.calk.calculator).
+	  Обязателен с 1 мая 2024. Docs:
+	  https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
+
+	  Приложение показывает рекламу Google AdMob (banner / interstitial / rewarded),
+	  запрашивает App Tracking Transparency и продаёт разовую покупку «Убрать
+	  рекламу» через RevenueCat — поэтому tracking = true, задекларированы
+	  трекинг-домены и собираемые данные. Прежняя версия манифеста («данных нет,
+	  трекинга нет») описывала сборку 1.0 ДО интеграции AdMob и была неверна для
+	  1.1+ — не откатывать.
+
+	  GoogleMobileAds и RevenueCat несут СОБСТВЕННЫЕ манифесты (домены SDK,
+	  required-reason API SDK); здесь — только app-уровень.
+
+	  ⚠️ App Store Connect → App Privacy обязан совпадать с этим манифестом:
+	  Tracking = Yes, IDFA = Yes (актуальные ответы — app-store-assets/privacy-and-ads.md).
+	-->
+	<key>NSPrivacyTracking</key>
+	<true/>
+
+	<key>NSPrivacyTrackingDomains</key>
+	<array>
+		<string>googleads.g.doubleclick.net</string>
+		<string>googlesyndication.com</string>
+	</array>
+
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array>
+		<!-- IDFA — персонализация рекламы AdMob (после согласия в ATT) -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeDeviceID</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</string>
+			</array>
+		</dict>
+		<!-- Взаимодействие с рекламой / usage data рекламной сети -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeProductInteraction</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</string>
+				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+			</array>
+		</dict>
+		<!-- Покупка «Убрать рекламу» — RevenueCat (анонимный app user id, не связан с личностью) -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypePurchaseHistory</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+		<!-- Диагностика Google Mobile Ads SDK -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeCrashData</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+	</array>
+
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<!-- UserDefaults: история расчётов, закладки, кэш ad-free статуса
+		     (PurchasesManager), окно rewarded-видео -->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
