@@ -9,8 +9,8 @@
  * Реестр стоит на мониторинге в DATA_HUB. Тарифные листы операторов местами
  * отстают от реестра (Джизак, Навои, Хорезм — ещё от 01.04.2024), поэтому цены
  * берутся из реестра, а не из листов.
- * ⚠️ Но и реестр отстаёт от самих решений: на 13.10.2026 в нём нет новых тарифов
- * Ташкентской области (с 01.10), Самарканда и Навои (с 15.10), Андижана. Первоисточник —
+ * ⚠️ Но и реестр отстаёт от самих решений — осенью 2026 на 2–3 недели (Ташкентская обл.,
+ * Самарканд, Навои догнал к 19.10; Андижан на 26.10 ещё нет). Первоисточник —
  * решение кенгаша на e-qaror: api-eqaror.gov.uz/v2/doc/list?limit=20&lang=oz&decision_type_id=279
  * (Самарканд лежит под типом 142), PDF — /v2/doc/show?code=<code>.
  *
@@ -79,7 +79,9 @@ export const UTILITY_REGIONS: UtilityRegion[] = [
   },
   {
     id: 'andijan', nameRu: 'Андижанская область', nameUz: 'Andijon viloyati',
-    water: { operator: '«Andijon suv taʼminoti» AJ', waterNet: 1650, sewerageNet: 1650, hotWaterSewerageFactor: 1, centralHotWaterDefault: false, effectiveDate: '2025-06-01' },
+    // Кенгаш Андижанской обл. VII-22-193-1-0-K/26 от 07.10.2026 (e-qaror), в силе через 15 дней после
+    // опубликования в СМИ — ≈22.10.2026. На 26.10 реестр ещё держит 1650/1650: точную дату взять из реестра.
+    water: { operator: '«Andijon suv taʼminoti» AJ', waterNet: 2500, sewerageNet: 2500, hotWaterSewerageFactor: 1, centralHotWaterDefault: false, effectiveDate: '2026-10-22' },
     waste: { center: 6700, districts: 6200, act: 'Кенгаш Андижанской обл. VII-12-217-1-0-K/25 от 29.08.2025' },
   },
   {
