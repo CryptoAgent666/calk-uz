@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postinstall": "next build",
     "lint": "eslint",
     "check:stale": "node scripts/check-stale-prose.mjs && node scripts/check-ledger-consistency.mjs"
   },

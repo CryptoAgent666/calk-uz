@@ -78,6 +78,10 @@ jobs:
           git add -A                            # source (non-ignored): app.js, next.config.ts, public, package*.json …
           git add -f .next tmp/restart.txt      # force-add the built output + restart trigger (both gitignored)
           git reset -q -- .next/cache 2>/dev/null || true   # drop the huge build cache (not needed at runtime)
+          # Store assets and native app sources are not needed by the running site (~27 MB).
+          # Plesk never deletes files that disappear from the snapshot, so anything
+          # dropped here must also be removed from /calk.uz once by hand (FTP).
+          git reset -q -- app-store-assets play-store-assets android ios-app .github .claude 2>/dev/null || true
           git commit -q -m "deploy: build ${GITHUB_SHA::7}"
           git push -f origin deploy
           echo "Published $(git rev-parse --short HEAD) to deploy branch"

@@ -7,7 +7,7 @@
 #   [x] Включить дополнительные действия развёртывания
 #   command:  bash scripts/plesk-postdeploy.sh
 #
-# It installs deps (postinstall runs `next build`) and restarts the Node app,
+# It installs deps, runs `next build` and restarts the Node app,
 # auto-detecting the supervisor (Passenger → pm2 → systemd) so it never spawns
 # a duplicate. All output goes to deploy.log in the repo root.
 #
@@ -40,11 +40,11 @@ exec 2>&1
     exit 1
   fi
 
-  # Install deps + build. package.json has "postinstall": "next build",
-  # so this single step also produces the .next build. --include=dev ensures
-  # build-time packages are present even if NODE_ENV=production.
-  echo "-- npm install (+ postinstall next build) --"
-  if ! npm install --include=dev --no-audit --no-fund; then
+  # Install deps + build. --include=dev ensures build-time packages are present
+  # even if NODE_ENV=production. (No postinstall hook since 29.10.2026: the
+  # normal deploy ships a ready .next from CI and must not rebuild on the server.)
+  echo "-- npm install + next build --"
+  if ! npm install --include=dev --no-audit --no-fund || ! npm run build; then
     echo "!! npm install/build FAILED"; exit 1
   fi
 
