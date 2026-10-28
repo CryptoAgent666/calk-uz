@@ -33,6 +33,11 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
 
+// Только ru и uz. Без этого любой адрес сканера (/phpmyadmin, /.env, …) попадал в
+// [locale], рендерился как 404 и оседал на диске ISR-кэшем — по 9 файлов на адрес;
+// к 28.10.2026 так набралось 214 МБ и подписка упёрлась в квоту.
+export const dynamicParams = false
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://calk.uz"),
   title: { template: "%s | Calk.UZ", default: "Calk.UZ — Онлайн калькуляторы для Узбекистана" },
