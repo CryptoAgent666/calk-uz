@@ -28,9 +28,9 @@ export const UPDATES: UpdateBlock[] = [
         titleRu: "Вода в Андижанской области: 2 800 и 2 800 сум/м³",
         titleUz: "Andijon viloyatida suv: 2 800 va 2 800 so'm/m³",
         descRu:
-          "Кенгаш Андижанской области решением от 7 октября 2026 года (VII-22-193-1-0-K/26) поднял тарифы для населения, которое обслуживает «Андижон сув таъминоти»: питьевая вода — с 1 848 до 2 800 сум/м³ с НДС (2 500 без НДС), канализация — с 1 848 до 2 800 сум/м³ (2 500 без НДС). Тарифы действуют через 15 дней после опубликования решения, с 22 октября. Калькуляторы воды и коммунальных платежей для Андижанской области считают по новым тарифам.",
+          "Кенгаш Андижанской области решением от 7 октября 2026 года (VII-22-193-1-0-K/26) поднял тарифы для населения, которое обслуживает «Андижон сув таъминоти»: питьевая вода — с 1 848 до 2 800 сум/м³ с НДС (2 500 без НДС), канализация — с 1 848 до 2 800 сум/м³ (2 500 без НДС). По объявлению оператора от 8 октября новые тарифы применяются с 1 ноября 2026 года; до этой даты можно оплатить два месяца вперёд по старой цене. Калькуляторы воды и коммунальных платежей для Андижанской области считают по новым тарифам.",
         descUz:
-          "Andijon viloyati Kengashi 2026-yil 7-oktabrdagi qarori (VII-22-193-1-0-K/26) bilan «Andijon suv ta'minoti» xizmat ko'rsatadigan aholi uchun tariflarni oshirdi: ichimlik suvi — QQS bilan 1 848 dan 2 800 so'm/m³ gacha (QQSsiz 2 500), kanalizatsiya — 1 848 dan 2 800 so'm/m³ gacha (QQSsiz 2 500). Tariflar qaror e'lon qilinganidan 15 kun o'tib, 22-oktabrdan amal qiladi. Andijon viloyati uchun suv va kommunal to'lovlar kalkulyatorlari yangi tariflar bo'yicha hisoblaydi.",
+          "Andijon viloyati Kengashi 2026-yil 7-oktabrdagi qarori (VII-22-193-1-0-K/26) bilan «Andijon suv ta'minoti» xizmat ko'rsatadigan aholi uchun tariflarni oshirdi: ichimlik suvi — QQS bilan 1 848 dan 2 800 so'm/m³ gacha (QQSsiz 2 500), kanalizatsiya — 1 848 dan 2 800 so'm/m³ gacha (QQSsiz 2 500). Operatorning 8-oktabrdagi e'loniga ko'ra yangi tariflar 2026-yil 1-noyabrdan qo'llaniladi; shu sanagacha ikki oylik to'lovni eski narxda oldindan amalga oshirish mumkin. Andijon viloyati uchun suv va kommunal to'lovlar kalkulyatorlari yangi tariflar bo'yicha hisoblaydi.",
       },
     ],
   },
