@@ -56,7 +56,7 @@ export default function UtilitiesTotalCalculator() {
   const t = locale === 'uz'
     ? {
         region: 'Hudud', regionNote: 'Suv va chiqindi olib chiqish hudud tariflari bo\'yicha hisoblanadi. Elektr va gaz tariflari butun mamlakatda bir xil.',
-        electricity: 'Elektr (kVt*soat)', stove: 'Elektr plita', gas: 'Gaz (m³)', summer: 'Yoz',
+        electricity: 'Elektr (kVt*soat)', stove: 'Markazlashgan elektr plita', gas: 'Gaz (m³)', summer: 'Yoz',
         coldWater: 'Sovuq suv (m³)', hotWater: 'Issiq suv (m³)', heatingArea: 'Isitish maydoni (m²)',
         sewerage: 'Kanalizatsiyaga ulangan', centralHot: 'Markaziy issiq suv',
         persons: 'Oila a\'zolari', hotRate: 'Issiq suv tarifi (so\'m/m³)', heatingRate: 'Isitish tarifi (so\'m/m² kuniga)',
@@ -66,7 +66,7 @@ export default function UtilitiesTotalCalculator() {
       }
     : {
         region: 'Регион', regionNote: 'Вода и вывоз мусора считаются по тарифам региона. Электричество и газ стоят одинаково по всей стране.',
-        electricity: 'Электричество (кВт*ч)', stove: 'Эл. плита', gas: 'Газ (м³)', summer: 'Лето',
+        electricity: 'Электричество (кВт*ч)', stove: 'Централизованная электроплита', gas: 'Газ (м³)', summer: 'Лето',
         coldWater: 'Холодная вода (м³)', hotWater: 'Горячая вода (м³)', heatingArea: 'Площадь отопления (м²)',
         sewerage: 'Канализация', centralHot: 'Центральное ГВС',
         persons: 'Членов семьи', hotRate: 'Тариф горячей воды (сум/м³)', heatingRate: 'Тариф отопления (сум/м² в сутки)',

@@ -25,6 +25,54 @@ export const UPDATES: UpdateBlock[] = [
     dateLabelUz: "2026-yil 1-noyabr",
     items: [
       {
+        titleRu: "Пенсия: потолок заработка 6 048 000 сум",
+        titleUz: "Pensiya: ish haqi chegarasi 6 048 000 so'm",
+        descRu:
+          "Калькулятор считал пенсию от всего заработка. По ст. 31 Закона о государственном пенсионном обеспечении в расчёт берётся не более 12 базовых величин исчисления пенсии: с 1 июля 2026 года это 6 048 000 сум. При заработке 8 000 000 сум и стаже 30 лет оценка снизилась с 4 800 000 до 3 628 800 сум.",
+        descUz:
+          "Kalkulyator pensiyani butun ish haqidan hisoblar edi. Davlat pensiya ta'minoti to'g'risidagi Qonunning 31-moddasiga ko'ra hisobga pensiya hisoblash bazaviy miqdorining ko'pi bilan 12 baravari olinadi: 2026-yil 1-iyuldan 6 048 000 so'm. 8 000 000 so'm ish haqi va 30 yil stajda baho 4 800 000 dan 3 628 800 so'mga tushdi.",
+      },
+      {
+        titleRu: "Увольнение: компенсация за отпуск и сроки расчёта",
+        titleUz: "Ishdan bo'shatish: ta'til kompensatsiyasi va hisob-kitob muddatlari",
+        descRu:
+          "Компенсация за неиспользованный отпуск теперь считается как средняя зарплата ÷ 25,3 × дни без воскресений (ст. 234 и 257 ТК), а не ÷ 21. За задержку расчёта указана компенсация 10% от ставки рефинансирования за день (ст. 333 ТК). Выходное пособие облагается НДФЛ полностью, компенсация за отпуск — ещё и социальным налогом.",
+        descUz:
+          "Foydalanilmagan ta'til kompensatsiyasi endi o'rtacha ish haqi ÷ 25,3 × yakshanbalarsiz kunlar sifatida hisoblanadi (MK 234 va 257-moddalari), ÷ 21 emas. Hisob-kitob kechikishi uchun kuniga qayta moliyalash stavkasining 10% i ko'rsatildi (MK 333-moddasi). Chiqish nafaqasi to'liq JShShSga tortiladi, ta'til kompensatsiyasi esa ijtimoiy soliqqa ham.",
+      },
+      {
+        titleRu: "Сверхурочные: работа в выходной на окладе",
+        titleUz: "Ortiqcha ish: oklad bilan dam olish kunidagi ish",
+        descRu:
+          "По ст. 263 ТК работнику на окладе за выходной положена не менее чем одинарная ставка сверх оклада, калькулятор показывал двойную. Пример на 8 часов при окладе 10 млн: 476 192 сум сверх оклада вместо 952 384.",
+        descUz:
+          "MK 263-moddasiga ko'ra oklad oluvchi xodimga dam olish kuni uchun okladdan tashqari kamida bir baravar stavka beriladi, kalkulyator ikki baravar ko'rsatar edi. 10 mln oklad bilan 8 soat misolida: okladdan tashqari 952 384 emas, 476 192 so'm.",
+      },
+      {
+        titleRu: "Электроэнергия: скидка только для домов с централизованными электроплитами",
+        titleUz: "Elektr energiya: chegirma faqat markazlashgan elektr plitali uylar uchun",
+        descRu:
+          "Половинный тариф 325, 450 и 550 сум действует для многоквартирных домов и общежитий с централизованными электроплитами и только до 1 000 кВт·ч. Калькулятор снимал 50% со всей суммы при любой плите. В FAQ исправлены старые тарифы 600 и 800 сум.",
+        descUz:
+          "325, 450 va 550 so'mlik yarim tarif markazlashgan elektr plitali ko'p kvartirali uylar va yotoqxonalar uchun va faqat 1 000 kVt·soatgacha amal qiladi. Kalkulyator har qanday plitada butun summadan 50% olib tashlar edi. FAQda eski 600 va 800 so'm tariflari tuzatildi.",
+      },
+      {
+        titleRu: "Топливо: цены на 20 октября 2026",
+        titleUz: "Yoqilg'i: 2026-yil 20-oktabr narxlari",
+        descRu:
+          "Обновлены цены сети «Узбекнефтегаз» в Ташкенте: АИ-92 — 13 500, АИ-95 — 19 500, АИ-100 — 24 500, дизель — 18 500 сум за литр, метан — 5 750 сум за кубометр. Поле своей цены работает как раньше.",
+        descUz:
+          "Toshkentda «O'zbekneftgaz» tarmog'i narxlari yangilandi: AI-92 — 13 500, AI-95 — 19 500, AI-100 — 24 500, dizel — litri 18 500 so'm, metan — kub metri 5 750 so'm. O'z narxingizni kiritish maydoni avvalgidek ishlaydi.",
+      },
+      {
+        titleRu: "Переводы: восстановлены суммы и лимит вывоза наличных",
+        titleUz: "O'tkazmalar: summalar va naqd pul olib chiqish limiti tiklandi",
+        descRu:
+          "На странице денежных переводов из текста пропали суммы в долларах (SWIFT $15-30), они восстановлены. Объём переводов обновлён до $18,9 млрд за 2025 год. Уточнено: без декларации можно вывезти наличную валюту до эквивалента 100 млн сум.",
+        descUz:
+          "Pul o'tkazmalari sahifasida matndan dollardagi summalar yo'qolgan edi (SWIFT $15-30), ular tiklandi. O'tkazmalar hajmi 2025-yil uchun $18,9 mlrd ga yangilandi. Aniqlashtirildi: naqd valyutani deklaratsiyasiz 100 mln so'm ekvivalentigacha olib chiqish mumkin.",
+      },
+      {
         titleRu: "Отпускные считаются по статьям 233 и 257 Трудового кодекса",
         titleUz: "Ta'til puli Mehnat kodeksining 233 va 257-moddalari bo'yicha hisoblanadi",
         descRu:

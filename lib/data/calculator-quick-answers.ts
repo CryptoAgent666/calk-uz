@@ -153,9 +153,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'pension',
     textRu:
-      'Пенсионный возраст в Узбекистане: мужчины — 60 лет (стаж от 25 лет), женщины — 55 лет (стаж от 20 лет). Размер пенсии = 55% от среднего заработка за лучшие 5 лет + 1% за каждый год стажа сверх минимума (макс 75%). Льготные категории: шахтёры, химики — раньше.',
+      'Пенсионный возраст в Узбекистане: мужчины — 60 лет (стаж от 25 лет), женщины — 55 лет (стаж от 20 лет). Размер пенсии = 55% от среднего заработка за лучшие 5 лет + 1% за каждый год стажа сверх минимума (макс 75%). Заработок для расчёта — не выше 6 048 000 сум (12 базовых величин, с 1 июля 2026), поэтому такая пенсия не превышает 4 536 000 сум. Льготные категории: шахтёры, химики — раньше.',
     textUz:
-      "O'zbekistonda pensiya yoshi: erkaklar — 60 yosh (25 yildan ortiq staj), ayollar — 55 yosh (20 yildan ortiq staj). Pensiya miqdori = eng yaxshi 5 yillik o'rtacha ish haqining 55% + minimumdan ortiq har yillik staj uchun 1% (maks 75%). Imtiyozli toifalar: shaxtyorlar, kimyogarlar — erta.",
+      "O'zbekistonda pensiya yoshi: erkaklar — 60 yosh (25 yildan ortiq staj), ayollar — 55 yosh (20 yildan ortiq staj). Pensiya miqdori = eng yaxshi 5 yillik o'rtacha ish haqining 55% + minimumdan ortiq har yillik staj uchun 1% (maks 75%). Hisob uchun ish haqi 6 048 000 so'mdan oshmaydi (12 bazaviy miqdor, 2026-yil 1-iyuldan), shuning uchun bunday pensiya 4 536 000 so'mdan oshmaydi. Imtiyozli toifalar: shaxtyorlar, kimyogarlar — erta.",
   },
 ]
 

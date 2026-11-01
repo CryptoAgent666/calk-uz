@@ -26,7 +26,7 @@ export default function OvertimeCalculator() {
     ? {
         salary: 'Oylik maosh (UZS)',
         hours: 'Qo\'shimcha soatlar',
-        isHoliday: 'Dam olish / bayram kuni',
+        isHoliday: 'Dam olish / bayram kuni (okladdan tashqari)',
         results: 'Natijalar',
         hourlyRate: 'Soatlik stavka',
         multiplier: 'Koeffitsiyent',
@@ -36,7 +36,7 @@ export default function OvertimeCalculator() {
     : {
         salary: 'Месячная зарплата (UZS)',
         hours: 'Часов переработки',
-        isHoliday: 'Выходной / праздничный день',
+        isHoliday: 'Выходной / праздничный день (сверх оклада)',
         results: 'Результаты',
         hourlyRate: 'Часовая ставка',
         multiplier: 'Коэффициент',

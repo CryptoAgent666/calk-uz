@@ -444,7 +444,8 @@ export function calculateSeverance(
   unusedVacationDays: number
 ): SeveranceResult {
   const severancePay = averageMonthlyEarnings * severanceMonths
-  const dailyRate = averageMonthlyEarnings / 21 // average working days per month
+  // ТК ст. 257: дневная = средняя ÷ 25,3; ст. 234: дни компенсации без воскресений.
+  const dailyRate = averageMonthlyEarnings / BENEFIT_WORKING_DAYS_PER_MONTH
   const vacationCompensation = dailyRate * unusedVacationDays
 
   return {
@@ -475,8 +476,10 @@ export function calculateOvertime(
   let overtimePay: number
   let overtimeMultiplier: number
   if (isHoliday) {
-    overtimeMultiplier = 2.0
-    overtimePay = hourlyRate * 2.0 * overtimeHours
+    // ТК ст. 263: на окладе — не менее одинарной ставки сверх оклада (вместе с
+    // окладом это и есть двойной размер). Поле ввода — месячный оклад.
+    overtimeMultiplier = 1.0
+    overtimePay = hourlyRate * overtimeHours
   } else {
     overtimeMultiplier = 1.5 // average shown in UI
     const first2h = Math.min(overtimeHours, 2)
@@ -495,6 +498,11 @@ export function calculateOvertime(
  */
 export const MIN_OLD_AGE_PENSION = 983_000
 
+/** Базовая величина исчисления пенсии с 01.07.2026 (УП-115 от 23.06.2026). */
+export const PENSION_BASE_VALUE = 504_000
+/** Закон № 938-XII ст. 31: заработок для расчёта — не свыше 12 базовых величин. */
+export const PENSION_EARNINGS_CAP = 12 * PENSION_BASE_VALUE
+
 export interface PensionResult {
   currentAge: number
   retirementAge: number
@@ -503,6 +511,7 @@ export interface PensionResult {
   pensionAsPercentOfSalary: number
   /** Расчёт по проценту от заработка оказался ниже минимума — начислен минимум. */
   minimumApplied: boolean
+  earningsCapApplied: boolean
 }
 
 export function calculatePension(
@@ -527,7 +536,8 @@ export function calculatePension(
 
   // Процент от заработка — не вся история: назначенная пенсия не бывает ниже
   // минимальной, а калькулятор показывал и 660 000 при низкой зарплате.
-  const byPercent = averageMonthlySalary * (pensionPercent / 100)
+  const earningsCapApplied = averageMonthlySalary > PENSION_EARNINGS_CAP
+  const byPercent = Math.min(averageMonthlySalary, PENSION_EARNINGS_CAP) * (pensionPercent / 100)
   const minimumApplied = byPercent > 0 && byPercent < MIN_OLD_AGE_PENSION
   const estimatedMonthlyPension = minimumApplied ? MIN_OLD_AGE_PENSION : byPercent
 
@@ -536,6 +546,7 @@ export function calculatePension(
     retirementAge,
     yearsToRetirement,
     estimatedMonthlyPension,
+    earningsCapApplied,
     pensionAsPercentOfSalary: pensionPercent,
     minimumApplied,
   }

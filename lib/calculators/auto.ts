@@ -73,15 +73,15 @@ export interface FuelResult {
  */
 export const FUEL_PRICES: Record<string, number> = {
   'ai-92': 13_500,    // UNG; местный на частных сетях 11 500–13 800, импортный до 16 700
-  'ai-95': 17_000,    // UNG; частные сети 19 500–20 500, бывает в дефиците
-  'ai-100': 28_000,
-  'diesel': 15_500,   // UNG; Carvon 16 100
+  'ai-95': 19_500,    // UNG; частные сети 19 700–21 100
+  'ai-100': 24_500,   // UNG; Лукойл 28 000
+  'diesel': 18_500,   // UNG / Carvon; Лукойл 17 300
   'gas_lpg': 8_800,   // пропан за литр — август 2026, в сентябре дорожает вслед за биржей
   'gas_cng': 5_750,   // метан за м³
 }
 
 /** Дата, на которую действительны FUEL_PRICES. */
-export const FUEL_PRICES_DATE = '2026-09-18'
+export const FUEL_PRICES_DATE = '2026-10-20'
 
 export function calculateFuelConsumption(
   distance: number,

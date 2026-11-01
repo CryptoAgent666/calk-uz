@@ -500,9 +500,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'ОСАГО калькулятор',
     titleUz: 'OSAGO kalkulyatori',
     descriptionRu:
-      'Рассчитайте стоимость полиса ОСАГО в Узбекистане. Учитывает регион, стаж и мощность двигателя.',
+      'Рассчитайте стоимость полиса ОСАГО в Узбекистане. Учитывает регион, круг водителей и ДТП по вине.',
     descriptionUz:
-      "O'zbekistonda OSAGO polisi narxini hisoblang. Hudud, tajriba va dvigatel quvvatini hisobga oladi.",
+      "O'zbekistonda OSAGO polisi narxini hisoblang. Hudud, haydovchilar doirasi va aybli YTHlarni hisobga oladi.",
     category: 'auto',
     icon: 'Shield',
     keywords: ['ОСАГО', 'OSAGO', 'страховка', 'sug\'urta', 'автостраховка'],

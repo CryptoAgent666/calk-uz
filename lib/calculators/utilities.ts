@@ -75,7 +75,9 @@ export interface ElectricityResult {
 
 export function calculateElectricity(consumptionKwh: number, hasElectricStove: boolean = false): ElectricityResult {
   const result = calculateTiered(consumptionKwh, ELECTRICITY_TIERS)
-  const discount = hasElectricStove ? result.total * 0.5 : 0
+  // ПКМ-243: 325/450/550 сум для домов с централизованными электроплитами —
+  // половина тарифа только на первые 1 000 кВт·ч.
+  const discount = hasElectricStove ? calculateTiered(Math.min(consumptionKwh, 1000), ELECTRICITY_TIERS).total * 0.5 : 0
   return {
     consumption: consumptionKwh,
     total: result.total,

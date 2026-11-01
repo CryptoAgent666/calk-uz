@@ -183,7 +183,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     lastUpdated: '2026-03-16',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
-      { name: 'Банковское законодательство', url: 'https://lex.uz/docs/5765051' },
+      { name: 'Закон «О потребительском кредите» ЗРУ-33', url: 'https://lex.uz/ru/docs/1004490' },
     ],
     paragraphsRu: [
       'Ключевая ставка Центрального банка Узбекистана составляет 14% годовых, что формирует базу для кредитных ставок коммерческих банков. Средние ставки по потребительским кредитам в 2025 году варьируются от 22% до 33% годовых в зависимости от банка, срока кредита и кредитной истории заёмщика. Калькулятор кредита рассчитывает ежемесячный платёж, общую сумму выплат и переплату по аннуитетной или дифференцированной схеме погашения.',
@@ -222,7 +222,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     lastUpdated: '2026-03-02',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
-      { name: 'Государственная программа ипотеки', url: 'https://lex.uz/docs/5765051' },
+      { name: 'Центральный банк РУз — защита прав потребителей', url: 'https://cbu.uz/ru/consumer-protection/' },
     ],
     paragraphsRu: [
       'Ипотечное кредитование в Узбекистане активно развивается: ставки по ипотеке на 2025–2026 год варьируются от 17% (субсидированная ипотека по формуле ставка ЦБ + 6% ≈ 20%) до 23-31% (коммерческая ипотека). По государственным программам льготной ипотеки ставка для определённых категорий граждан (молодые семьи, многодетные, бюджетные работники) может составлять от 7% до 14%. Максимальный срок ипотеки — до 20 лет, первоначальный взнос — от 15% до 30% стоимости жилья.',
@@ -261,7 +261,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     lastUpdated: '2025-10-20',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
-      { name: 'Банковское законодательство', url: 'https://lex.uz/docs/5765051' },
+      { name: 'Закон «О потребительском кредите» ЗРУ-33', url: 'https://lex.uz/ru/docs/1004490' },
     ],
     paragraphsRu: [
       'Автокредитование в Узбекистане предлагают большинство коммерческих банков по ставкам от 22% до 33% годовых. Ставки зависят от срока кредита (1-7 лет), первоначального взноса, марки автомобиля (новый или б/у), а также от кредитной истории заёмщика. Для автомобилей отечественного производства (UzAuto Motors — Chevrolet) часто действуют специальные программы со ставками 19-24% (отдельные программы UzAuto — от 0% рассрочка) и увеличенным сроком кредита. Калькулятор автокредита рассчитает точный ежемесячный платёж и переплату.',
@@ -409,7 +409,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'customs',
     lastUpdated: '2026-09-13',
     sources: [
-      { name: 'Таможенный кодекс РУз', url: 'https://lex.uz/docs/6365764' },
+      { name: 'Таможенный кодекс РУз', url: 'https://lex.uz/ru/docs/2876352' },
       { name: 'ПКМ № 244 от 19.04.2025 — нормы беспошлинного ввоза', url: 'https://lex.uz/docs/7484114' },
       { name: 'ПП-4508 — единый таможенный платёж', url: 'https://lex.uz/ru/docs/4585744' },
       { name: 'Государственный таможенный комитет', url: 'https://customs.uz' },
@@ -448,7 +448,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'osago',
     lastUpdated: '2026-09-13',
     sources: [
-      { name: 'Закон об ОСАГО', url: 'https://lex.uz/docs/5765051' },
+      { name: 'ПКМ № 141 о мерах по реализации закона об ОСАГО', url: 'https://lex.uz/ru/docs/1366341' },
       { name: 'КоАО РУз, ст. 135 и 135-1 (ред. ЗРУ-1116 от 04.02.2026)', url: 'https://lex.uz/ru/docs/97661' },
     ],
     paragraphsRu: [
@@ -483,20 +483,20 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'electricity',
-    lastUpdated: '2026-03-29',
+    lastUpdated: '2026-11-01',
     sources: [
-      { name: 'Постановление о тарифах на электроэнергию', url: 'https://lex.uz' },
-      { name: 'Узэнерго', url: 'https://uzenergy.uz' },
+      { name: 'Постановление Кабмина № 243 от 15.05.2026', url: 'https://lex.uz/ru/docs/8195731' },
+      { name: 'Министерство энергетики РУз', url: 'https://minenergy.uz' },
     ],
     paragraphsRu: [
-      'Тарифы на электроэнергию для населения Узбекистана (действуют с мая 2025 года) установлены по 6-ступенчатой шкале: чем больше потребление, тем выше тариф за кВт·ч. Первые 200 кВт·ч в месяц обходятся дешевле всего, а потребление свыше 1 001 кВт·ч — по максимальному тарифу. Такая система стимулирует экономное потребление электроэнергии. Калькулятор электроэнергии рассчитает точную стоимость вашего ежемесячного потребления с учётом всех ступеней тарифа.',
+      'Тарифы на электроэнергию для населения Узбекистана (действуют с 1 июня 2026 года, ПКМ-243) установлены по 6-ступенчатой шкале: чем больше потребление, тем выше тариф за кВт·ч. Первые 200 кВт·ч в месяц обходятся дешевле всего, а потребление свыше 10 000 кВт·ч — по максимальному тарифу. Для многоквартирных домов и общежитий с централизованными электроплитами до 1 000 кВт·ч действует половинный тариф: 325, 450 и 550 сум. Такая система стимулирует экономное потребление электроэнергии. Калькулятор электроэнергии рассчитает точную стоимость вашего ежемесячного потребления с учётом всех ступеней тарифа.',
       'Тарифная сетка для населения (с 1 июня 2026, ПКМ-243): Тиер 1 (0-200 кВт·ч) — 650 сум/кВт·ч; Тиер 2 (201-500 кВт·ч) — 900 сум/кВт·ч; Тиер 3 (501-1 000 кВт·ч) — 1 100 сум/кВт·ч; Тиер 4 (1 001-5 000 кВт·ч) — 1 600 сум/кВт·ч; Тиер 5 (5 001-10 000 кВт·ч) — 1 900 сум/кВт·ч; Тиер 6 (свыше 10 000 кВт·ч) — 2 200 сум/кВт·ч. Тарифы могут пересматриваться постановлениями правительства.',
       'Пример расчёта: потребление 700 кВт·ч в месяц. Тиер 1: 200 × 650 = 130 000 сум. Тиер 2: 300 × 900 = 270 000 сум. Тиер 3: 200 × 1 100 = 220 000 сум. Итого: 620 000 сум. Средняя цена: 620 000 / 700 = 886 сум/кВт·ч. Для сравнения, если бы потребление составило всего 200 кВт·ч, оплата была бы 130 000 сум (650 сум/кВт·ч), а при 1 500 кВт·ч — 1 750 000 сум (1 167 сум/кВт·ч в среднем).',
       'Для юридических лиц действуют иные тарифы — единая ставка в зависимости от категории потребителя и времени суток (для крупных предприятий с дифференцированным учётом). Промышленные предприятия платят в среднем 700-1 200 сум/кВт·ч. Коммерческие организации — 800-1 500 сум/кВт·ч.',
       'Для снижения расходов на электроэнергию рекомендуется: использовать энергосберегающие LED-лампы (экономия до 80%); устанавливать таймеры на электроприборы; утеплять помещения для снижения расходов на обогрев; рассмотреть установку солнечных панелей (окупаемость 3-5 лет). Для расчёта полных коммунальных расходов воспользуйтесь калькулятором коммунальных услуг, который включает электроэнергию, газ и воду.',
     ],
     paragraphsUz: [
-      "O'zbekiston aholisi uchun elektr energiya tariflari 6 bosqichli shkala bo'yicha belgilangan: iste'mol qancha ko'p bo'lsa, kVt·soat uchun tarif shuncha yuqori. Oyiga birinchi 200 kVt·soat eng arzon, 1 001 kVt·soatdan ortiq iste'mol — maksimal tarif bo'yicha. Bunday tizim elektr energiyani tejab iste'mol qilishga rag'batlantiradi.",
+      "O'zbekiston aholisi uchun elektr energiya tariflari 6 bosqichli shkala bo'yicha belgilangan: iste'mol qancha ko'p bo'lsa, kVt·soat uchun tarif shuncha yuqori. Oyiga birinchi 200 kVt·soat eng arzon, 10 000 kVt·soatdan ortiq iste'mol — maksimal tarif bo'yicha. Markazlashgan elektr plitali ko'p kvartirali uylar va yotoqxonalar uchun 1 000 kVt·soatgacha yarim tarif amal qiladi: 325, 450 va 550 so'm. Bunday tizim elektr energiyani tejab iste'mol qilishga rag'batlantiradi.",
       "Aholi uchun tarif setkasi (2026-yil 1-iyundan, VMQ-243): 1-bosqich (0-200 kVt·soat) — 650 so'm/kVt·soat; 2-bosqich (201-500) — 900 so'm; 3-bosqich (501-1 000) — 1 100 so'm; 4-bosqich (1 001-5 000) — 1 600 so'm; 5-bosqich (5 001-10 000) — 1 900 so'm; 6-bosqich (10 000 dan ortiq) — 2 200 so'm/kVt·soat.",
       "Hisoblash misoli: oyiga 700 kVt·soat iste'mol. 1-bosqich: 200 × 650 = 130 000 so'm. 2-bosqich: 300 × 900 = 270 000 so'm. 3-bosqich: 200 × 1 100 = 220 000 so'm. Jami: 620 000 so'm. O'rtacha narx: 886 so'm/kVt·soat.",
       "Yuridik shaxslar uchun boshqa tariflar amal qiladi — iste'molchi toifasi va kunning vaqtiga qarab yagona stavka. Sanoat korxonalari o'rtacha 700-1 200 so'm/kVt·soat, tijorat tashkilotlari — 800-1 500 so'm/kVt·soat to'laydi.",
@@ -504,14 +504,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     ],
     faqRu: [
       { question: 'Сколько стоит электроэнергия в Узбекистане?', answer: 'По 6-ступенчатой шкале: от 650 сум/кВт·ч (до 200 кВт·ч) до 2 200 сум/кВт·ч (свыше 10 000 кВт·ч) — с 1 июня 2026 года. Чем больше потребление, тем дороже.' },
-      { question: 'Как рассчитать стоимость электроэнергии?', answer: 'Потребление разбивается по ступеням: первые 200 кВт·ч по 600 сум, следующие 300 по 800 сум и т.д. Наш калькулятор сделает это автоматически.' },
+      { question: 'Как рассчитать стоимость электроэнергии?', answer: 'Потребление разбивается по ступеням: первые 200 кВт·ч по 650 сум, следующие 300 по 900 сум и т.д. Наш калькулятор сделает это автоматически.' },
       { question: 'Какое среднее потребление электроэнергии в квартире?', answer: 'Для 2-комнатной квартиры: 200-400 кВт·ч летом, 300-600 кВт·ч зимой (с электрообогревом). Средний счёт: 150 000 - 500 000 сум.' },
       { question: 'Почему тарифы ступенчатые?', answer: 'Для стимулирования энергосбережения. Базовое потребление (до 200 кВт·ч) оплачивается по низкому тарифу, избыточное — по повышенному.' },
       { question: 'Как снизить расходы на электроэнергию?', answer: 'LED-лампы (экономия 80%), таймеры, утепление, солнечные панели. Стремитесь удержать потребление в пределах 500 кВт·ч для тарифов 1-2 ступеней.' },
     ],
     faqUz: [
       { question: "O'zbekistonda elektr energiya qancha turadi?", answer: "6 bosqichli shkala bo'yicha: 650 so'm/kVt·soat (200 kVt·soatgacha) dan 2 200 so'm/kVt·soat (10 000 dan ortiq) — 2026-yil 1-iyundan. Iste'mol qancha ko'p — shuncha qimmat." },
-      { question: "Elektr energiya narxini qanday hisoblash mumkin?", answer: "Iste'mol bosqichlarga bo'linadi: birinchi 200 kVt·soat 600 so'mdan, keyingi 300 ta 800 so'mdan va h.k. Kalkulyatorimiz buni avtomatik qiladi." },
+      { question: "Elektr energiya narxini qanday hisoblash mumkin?", answer: "Iste'mol bosqichlarga bo'linadi: birinchi 200 kVt·soat 650 so'mdan, keyingi 300 ta 900 so'mdan va h.k. Kalkulyatorimiz buni avtomatik qiladi." },
       { question: "Kvartirada o'rtacha elektr energiya iste'moli qancha?", answer: "2 xonali kvartira uchun: yozda 200-400 kVt·soat, qishda 300-600 kVt·soat. O'rtacha hisob: 150 000 - 500 000 so'm." },
       { question: "Nima uchun tariflar bosqichli?", answer: "Energiya tejashni rag'batlantirish uchun. Asosiy iste'mol (200 kVt·soatgacha) past tarif bo'yicha, ortiqchasi — yuqori tarif bo'yicha to'lanadi." },
       { question: "Elektr energiya xarajatlarini qanday kamaytirish mumkin?", answer: "LED-lampalar (80% tejash), taymerlar, izolyatsiya, quyosh panellari. Iste'molni 500 kVt·soat ichida ushlab turishga harakat qiling." },
@@ -522,7 +522,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'gas',
     lastUpdated: '2026-11-01',
     sources: [
-      { name: 'Постановление о тарифах на газ', url: 'https://lex.uz' },
+      { name: 'Постановление Кабмина № 243 от 15.05.2026', url: 'https://lex.uz/ru/docs/8195731' },
       { name: 'Худудгазтаъминот', url: 'https://hududgaz.uz' },
     ],
     paragraphsRu: [
@@ -630,21 +630,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'apartment-cost',
-    lastUpdated: '2025-12-26',
+    lastUpdated: '2026-11-01',
     sources: [
-      { name: 'Рынок недвижимости Узбекистана', url: 'https://lex.uz' },
+      { name: 'Закон о государственной пошлине ЗРУ-600', url: 'https://lex.uz/ru/docs/4680955' },
     ],
     paragraphsRu: [
-      'Средняя стоимость квадратного метра жилья в Ташкенте на 2025–2026 год варьируется от 8 000 000 до 15 000 000 сум в зависимости от района, класса жилья и удалённости от центра. Калькулятор стоимости квартиры позволяет рассчитать приблизительную стоимость жилья на основе площади, района, этажа и состояния ремонта. Это поможет определить бюджет покупки и необходимую сумму для ипотеки.',
+      'Средняя стоимость квадратного метра жилья в Ташкенте на 2025–2026 год варьируется от 8 000 000 до 15 000 000 сум в зависимости от района, класса жилья и удалённости от центра. Калькулятор стоимости квартиры считает приблизительную стоимость жилья по площади и цене за квадратный метр, которую вы указываете для своего района. Это поможет определить бюджет покупки и необходимую сумму для ипотеки.',
       'Ценовая карта Ташкента (2025–2026, средняя цена за м²): Мирзо-Улугбекский район — 12-15 млн сум; Юнусабадский район — 11-14 млн сум; Чиланзарский район — 10-13 млн сум; Яшнабадский район — 9-12 млн сум; Мирабадский район — 13-16 млн сум; Шайхантахурский район — 8-11 млн сум; Сергелийский район — 7-10 млн сум. Новостройки комфорт-класса: +20-30% к средней цене. Вторичное жильё с ремонтом: средняя цена.',
-      'Пример расчёта: 2-комнатная квартира 60 м² в Юнусабадском районе. Средняя цена: 12 000 000 сум/м². Стоимость: 60 × 12 000 000 = 720 000 000 сум (≈ 55 400 USD). С учётом ремонта средней категории (+15%): 828 000 000 сум. Для покупки в ипотеку с первоначальным взносом 20%: взнос = 165 600 000 сум, кредит = 662 400 000 сум. Рассчитать ипотечный платёж можно в нашем калькуляторе ипотеки.',
+      'Пример расчёта: 2-комнатная квартира 60 м² в Юнусабадском районе. Средняя цена: 12 000 000 сум/м². Стоимость: 60 × 12 000 000 = 720 000 000 сум (≈ 59 900 USD по курсу на 1 ноября 2026). С учётом ремонта средней категории (+15%): 828 000 000 сум. Для покупки в ипотеку с первоначальным взносом 20%: взнос = 165 600 000 сум, кредит = 662 400 000 сум. Рассчитать ипотечный платёж можно в нашем калькуляторе ипотеки.',
       'В областных центрах цены значительно ниже: Самарканд — 5-8 млн сум/м²; Бухара — 4-7 млн сум/м²; Наманган — 3-6 млн сум/м²; Андижан — 3-5 млн сум/м²; Нукус — 3-5 млн сум/м². Таким образом, квартира аналогичной площади в областном центре обойдётся в 2-3 раза дешевле, чем в Ташкенте.',
       'При покупке квартиры учтите дополнительные расходы: нотариальное оформление договора — фиксированная пошлина 1 БРВ (440 000 сум); госпошлина за регистрацию права (по площади) — до 100 м² 1,25 БРВ (550 000 сум), 101-300 м² 2 БРВ, свыше 300 м² 3 БРВ; оценка недвижимости — 200 000-500 000 сум; услуги риелтора — 1-2% от стоимости; ремонт (при необходимости) — от 3 000 000 до 8 000 000 сум/м². Суммарные доп. расходы обычно составляют 1-3% от стоимости квартиры.',
     ],
     paragraphsUz: [
-      "2025–2026-yilda Toshkentda turar-joy kvadrat metrining o'rtacha narxi tuman, uy-joy sinfi va markazdan uzoqligiga qarab 8 000 000 dan 15 000 000 so'mgacha o'zgaradi. Kvartira narxi kalkulyatori maydon, tuman, qavat va ta'mir holatiga qarab uy-joyning taxminiy qiymatini hisoblash imkonini beradi.",
+      "2025–2026-yilda Toshkentda turar-joy kvadrat metrining o'rtacha narxi tuman, uy-joy sinfi va markazdan uzoqligiga qarab 8 000 000 dan 15 000 000 so'mgacha o'zgaradi. Kvartira narxi kalkulyatori uy-joyning taxminiy qiymatini maydon va tumaningiz uchun ko'rsatgan bir kvadrat metr narxi bo'yicha hisoblaydi.",
       "Toshkentning narxlar xaritasi (2025–2026, m² uchun o'rtacha narx): Mirzo Ulug'bek tumani — 12-15 mln so'm; Yunusobod — 11-14 mln; Chilonzor — 10-13 mln; Yashnobod — 9-12 mln; Mirobod — 13-16 mln; Shayxontohur — 8-11 mln; Sergeli — 7-10 mln. Yangi qurilishlar komfort-sinf: o'rtacha narxga +20-30%.",
-      "Hisoblash misoli: Yunusobod tumanida 60 m² 2 xonali kvartira. O'rtacha narx: 12 000 000 so'm/m². Qiymati: 720 000 000 so'm (≈ 55 400 AQSh dollari). O'rtacha ta'mir bilan (+15%): 828 000 000 so'm. 20% boshlang'ich to'lov bilan ipotekada sotib olish uchun: to'lov = 165 600 000 so'm, kredit = 662 400 000 so'm.",
+      "Hisoblash misoli: Yunusobod tumanida 60 m² 2 xonali kvartira. O'rtacha narx: 12 000 000 so'm/m². Qiymati: 720 000 000 so'm (≈ 59 900 AQSh dollari, 2026-yil 1-noyabr kursida). O'rtacha ta'mir bilan (+15%): 828 000 000 so'm. 20% boshlang'ich to'lov bilan ipotekada sotib olish uchun: to'lov = 165 600 000 so'm, kredit = 662 400 000 so'm.",
       "Viloyat markazlarida narxlar sezilarli past: Samarqand — 5-8 mln so'm/m²; Buxoro — 4-7 mln; Namangan — 3-6 mln; Andijon — 3-5 mln; Nukus — 3-5 mln. Shunday qilib, viloyat markazida shunga o'xshash maydondagi kvartira Toshkentdagiga qaraganda 2-3 baravar arzon.",
       "Kvartira sotib olishda qo'shimcha xarajatlarni hisobga oling: shartnomani notarial rasmiylash — belgilangan boj 1 BHK (440 000 so'm); ro'yxatdan o'tish davlat boji (maydon bo'yicha) — 100 m² gacha 1,25 BHK (550 000 so'm), 101-300 m² 2 BHK, 300 dan ortiq 3 BHK; ko'chmas mulk baholash — 200 000-500 000 so'm; rieltor xizmatlari — qiymatning 1-2%; ta'mir — 3 000 000 dan 8 000 000 so'm/m² gacha.",
     ],
@@ -743,7 +743,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'brv',
     lastUpdated: '2026-09-13',
     sources: [
-      { name: 'Указ Президента о БРВ', url: 'https://lex.uz' },
+      { name: 'Указ Президента УП-115 от 23.06.2026', url: 'https://lex.uz/ru/docs/8283680' },
     ],
     paragraphsRu: [
       'Базовая расчётная величина (БРВ) в Узбекистане с 1 сентября 2026 года составляет 440 000 сум (Указ УП-115 от 23.06.2026); до этого, с августа 2025 года, она была равна 412 000 сум. БРВ — это универсальный экономический показатель, который используется для расчёта штрафов, государственных пошлин, социальных пособий, налоговых порогов и ограничений. Калькулятор БРВ переводит суммы из БРВ в сумы и обратно, что необходимо для понимания законодательных норм и расчёта платежей.',
@@ -1074,44 +1074,44 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'remittances',
-    lastUpdated: '2025-10-15',
+    lastUpdated: '2026-11-01',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Всемирный банк — Миграция', url: 'https://worldbank.org' },
     ],
     paragraphsRu: [
-      'Калькулятор денежных переводов рассчитывает стоимость отправки денег из/в Узбекистан с учётом комиссий и курсов обмена. Узбекистан входит в топ-5 стран-получателей денежных переводов в Центральной Азии: ежегодный объём входящих переводов превышает $10 млрд, что составляет значительную часть ВВП. Основные коридоры: Россия → Узбекистан, Казахстан → Узбекистан, Турция → Узбекистан, ОАЭ → Узбекистан.',
+      'Калькулятор денежных переводов рассчитывает стоимость отправки денег из/в Узбекистан с учётом комиссий и курсов обмена. Узбекистан — один из крупнейших получателей денежных переводов в Центральной Азии: в 2025 году поступило $18,9 млрд (данные Центрального банка). Основные коридоры: Россия → Узбекистан, Казахстан → Узбекистан, Турция → Узбекистан, ОАЭ → Узбекистан.',
       'Системы переводов и комиссии (ориентировочно): Western Union — 1-3% (от $5 за мелкие суммы); MoneyGram — 1,5-3%; Золотая Корона (Koronapay) — 1-1,5% (самая популярная для переводов из России); Contact — 1-2%; банковский SWIFT — $15-30 фиксированно; мобильные переводы через Uzum и Click — 0,5-1% внутри Узбекистана. Для крупных сумм (свыше $1 000) банковский SWIFT обычно выгоднее по совокупности расходов.',
       'Пример: трудовой мигрант отправляет $500 из России в Узбекистан. Koronapay: комиссия ~$7 (1,4%), получение ~$493 в сумах по курсу ЦБ. Western Union: комиссия ~$12 (2,4%), получение ~$488. Банковский SWIFT: комиссия ~$25, получение ~$475. Через Uzum Bank (карта→карта): комиссия ~$3 (0,6%) — самый выгодный вариант при наличии карт обоих банков.',
-      'При получении перевода в Узбекистане важно учитывать курс конвертации: коммерческие банки предлагают курс на 0,5-2% ниже официального курса ЦБ РУз. Получение через пункты выдачи банков (Ipoteka bank, Kapitalbank, NBU, Hamkorbank) — бесплатно при предъявлении паспорта и кода перевода. Наличную валюту в эквиваленте до 100 млн сум можно провозить через границу без ограничений, суммы свыше подлежат декларированию.',
-      'Калькулятор переводов на нашем сайте сравнивает все доступные способы отправки по стоимости, скорости и удобству. Введите сумму и направление — калькулятор покажет комиссию каждой системы, итоговую сумму к получению и рекомендуемый способ. Это поможет сэкономить на каждом переводе от $5 до $20 и более.',
+      'При получении перевода в Узбекистане важно учитывать курс конвертации: коммерческие банки предлагают курс на 0,5-2% ниже официального курса ЦБ РУз. Получение через пункты выдачи банков (Ipoteka bank, Kapitalbank, NBU, Hamkorbank) — бесплатно при предъявлении паспорта и кода перевода. Вывозить наличную валюту без декларации можно в эквиваленте до 100 млн сум, при большей сумме декларируется вся сумма. Указ от 27 августа 2026 года поручил подготовить повышение порога до $10 000, пока он не действует.',
+      'Калькулятор переводов считает один выбранный способ: введите сумму, валюту, комиссию и курс — он покажет, сколько получит адресат и каким вышел эффективный курс. Чтобы сравнить способы, подставьте их комиссии по очереди.',
     ],
     paragraphsUz: [
-      "Pul o'tkazmalari kalkulyatori O'zbekistonga/dan pul jo'natish narxini komissiyalar va ayirboshlash kurslarini hisobga olgan holda hisoblaydi. O'zbekiston Markaziy Osiyoda pul o'tkazmalari oluvchi top-5 mamlakatga kiradi: yillik kiruvchi o'tkazmalar hajmi $10 mlrd dan oshadi, bu YaIMning sezilarli qismini tashkil etadi. Asosiy yo'nalishlar: Rossiya → O'zbekiston, Qozog'iston → O'zbekiston, Turkiya → O'zbekiston, BAA → O'zbekiston.",
+      "Pul o'tkazmalari kalkulyatori O'zbekistonga/dan pul jo'natish narxini komissiyalar va ayirboshlash kurslarini hisobga olib hisoblaydi. O'zbekiston Markaziy Osiyoda pul o'tkazmalarining eng yirik oluvchilaridan biri: 2025-yilda $18,9 mlrd kelib tushgan (Markaziy bank ma'lumotlari). Asosiy yo'nalishlar: Rossiya → O'zbekiston, Qozog'iston → O'zbekiston, Turkiya → O'zbekiston, BAA → O'zbekiston.",
       "O'tkazma tizimlari va komissiyalar (taxminan): Western Union — 1-3% (kichik summalar uchun $5 dan); MoneyGram — 1,5-3%; Zolotaya Korona (Koronapay) — 1-1,5% (Rossiyadan o'tkazmalar uchun eng mashhur); Contact — 1-2%; bank SWIFT — qat'iy $15-30; Uzum va Click orqali mobil o'tkazmalar — O'zbekiston ichida 0,5-1%. Yirik summalar ($1 000 dan ortiq) uchun bank SWIFT odatda umumiy xarajatlar bo'yicha foydaliroq.",
       "Misol: mehnat migranti Rossiyadan O'zbekistonga $500 jo'natadi. Koronapay: komissiya ~$7 (1,4%), MB kursida ~$493 so'mda olinadi. Western Union: komissiya ~$12 (2,4%), ~$488 olinadi. Bank SWIFT: komissiya ~$25, ~$475 olinadi. Uzum Bank (karta→karta): komissiya ~$3 (0,6%) — ikkala bank kartasi mavjud bo'lganda eng foydali variant.",
-      "O'zbekistonda o'tkazma olishda konvertatsiya kursini hisobga olish muhim: tijorat banklari O'zbekiston MB rasmiy kursidan 0,5-2% past kurs taklif etadi. Banklarning berilish punktlari (Ipoteka bank, Kapitalbank, NBU, Hamkorbank) orqali olish — pasport va o'tkazma kodi taqdim etilganda bepul. 100 mln so'm ekvivalentigacha naqd valyutani chegara orqali cheklovsiz olib o'tish mumkin, undan ortiq summa deklaratsiya qilinadi.",
-      "Saytimizda o'tkazmalar kalkulyatori barcha mavjud jo'natish usullarini narx, tezlik va qulaylik bo'yicha solishtiradi. Summa va yo'nalishni kiriting — kalkulyator har bir tizimning komissiyasini, olish uchun yakuniy summani va tavsiya etilgan usulni ko'rsatadi. Bu har bir o'tkazma uchun $5 dan $20 va undan ko'proq tejash imkonini beradi.",
+      "O'zbekistonda o'tkazma olishda konvertatsiya kursini hisobga olish muhim: tijorat banklari O'zbekiston MB rasmiy kursidan 0,5-2% past kurs taklif etadi. Banklarning berilish punktlari (Ipoteka bank, Kapitalbank, NBU, Hamkorbank) orqali olish — pasport va o'tkazma kodi taqdim etilganda bepul. Naqd valyutani deklaratsiyasiz 100 mln so'm ekvivalentigacha olib chiqish mumkin, undan ko'p bo'lsa butun summa deklaratsiya qilinadi. 2026-yil 27-avgustdagi farmon chegarani $10 000 gacha oshirishni tayyorlashni topshirgan, u hali amal qilmaydi.",
+      "O'tkazmalar kalkulyatori tanlangan bitta usulni hisoblaydi: summa, valyuta, komissiya va kursni kiriting — oluvchi qancha olishini va samarali kursni ko'rsatadi. Usullarni solishtirish uchun ularning komissiyalarini navbat bilan kiriting.",
     ],
     faqRu: [
       { question: 'Какой самый дешёвый способ перевода?', answer: 'Карта→карта через Uzum/банк (0,5-1%). Из России — Koronapay (1-1,5%). Для крупных сумм — SWIFT ($15-30 фиксированно).' },
       { question: 'Сколько берёт Western Union?', answer: '1-3% от суммы. За перевод $500 — комиссия около $10-15. Koronapay дешевле: $5-7 за ту же сумму.' },
       { question: 'Как получить перевод в Узбекистане?', answer: 'В банковском отделении с паспортом и кодом перевода (Ipoteka bank, Kapitalbank, NBU). Или через мобильное приложение банка.' },
-      { question: 'Какой лимит на провоз наличных без декларации?', answer: 'Эквивалент 100 млн сум (при пересечении границы). Суммы свыше подлежат декларированию в соответствии с валютным законодательством Узбекистана.' },
-      { question: 'Какой объём переводов в Узбекистан?', answer: 'Более $10 млрд ежегодно. Основной коридор — из России (более 60% всех входящих переводов).' },
+      { question: 'Какой лимит на провоз наличных без декларации?', answer: 'Вывоз без декларации — до эквивалента 100 млн сум. При большей сумме декларируется вся сумма. Повышение порога до $10 000 пока только готовится.' },
+      { question: 'Какой объём переводов в Узбекистан?', answer: '$18,9 млрд в 2025 году. Основной коридор — Россия: 72,4% поступлений в I квартале 2026 года (годом ранее 77,6%).' },
     ],
     faqUz: [
       { question: "Pul o'tkazishning eng arzon usuli qanday?", answer: "Karta→karta Uzum/bank orqali (0,5-1%). Rossiyadan — Koronapay (1-1,5%). Yirik summalar uchun — SWIFT (qat'iy $15-30)." },
       { question: "Western Union qancha oladi?", answer: "Summaning 1-3%. $500 o'tkazma uchun komissiya taxminan $10-15. Koronapay arzonroq: xuddi shu summa uchun $5-7." },
       { question: "O'zbekistonda o'tkazmani qanday olish mumkin?", answer: "Bank bo'limida pasport va o'tkazma kodi bilan (Ipoteka bank, Kapitalbank, NBU). Yoki bank mobil ilovasi orqali." },
-      { question: "Deklaratsiyasiz naqd pul olib o'tish limiti qancha?", answer: "100 mln so'm ekvivalenti (chegarani kesib o'tishda). Bundan ortiq summalar O'zbekiston valyuta qonunchiligiga muvofiq deklaratsiya qilinishi kerak." },
-      { question: "O'zbekistonga o'tkazmalar hajmi qancha?", answer: "Yiliga $10 mlrd dan ortiq. Asosiy yo'nalish — Rossiyadan (barcha kiruvchi o'tkazmalarning 60% dan ortig'i)." },
+      { question: "Deklaratsiyasiz naqd pul olib o'tish limiti qancha?", answer: "Deklaratsiyasiz olib chiqish — 100 mln so'm ekvivalentigacha. Undan ko'p bo'lsa butun summa deklaratsiya qilinadi. Chegarani $10 000 gacha oshirish hali tayyorlanmoqda." },
+      { question: "O'zbekistonga o'tkazmalar hajmi qancha?", answer: "2025-yilda $18,9 mlrd. Asosiy yo'nalish — Rossiya: 2026-yil I choragida tushumlarning 72,4% i (bir yil oldin 77,6%)." },
     ],
   },
 
   {
     slug: 'vat-threshold',
-    lastUpdated: '2026-07-25',
+    lastUpdated: '2026-11-01',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
@@ -1120,26 +1120,26 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       'При приближении к порогу (80% и более) рекомендуется заранее подготовиться к переходу на режим НДС. Необходимо изучить механизм входящего и исходящего НДС, настроить бухгалтерский учёт для раздельного учёта сумм налога, зарегистрироваться на платформе faktura.soliq.uz для выставления электронных счетов-фактур. Также следует провести инвентаризацию товарных запасов, так как НДС по остаткам можно будет принять к вычету. Подготовка занимает 1-2 месяца, поэтому начинать следует заблаговременно.',
       'Добровольная регистрация возможна при любом обороте — ограничений нет. Это выгодно, если ваши основные клиенты являются плательщиками НДС: они смогут принять ваш НДС к зачёту и таким образом получат экономию. Для бизнеса B2B добровольная регистрация повышает конкурентоспособность. Однако для бизнеса B2C (розничная торговля, услуги населению) регистрация как плательщика НДС может привести к повышению цен на 12%, что снизит спрос.',
       'Расчёт оборота для определения порога включает все виды доходов от реализации товаров, работ и услуг, за исключением необлагаемых операций. Не учитываются: субсидии, безвозмездные поступления, курсовые разницы. Важно: при ведении нескольких видов деятельности обороты суммируются. Для ИП и самозанятых упрощённая система с налогом с оборота 1% (с 2026 года) зачастую выгоднее, чем общая система с НДС.',
-      'Наш калькулятор порога НДС рассчитывает текущий процент от порога, прогнозирует дату достижения порога на основе динамики оборота и помогает оценить финансовый эффект перехода на режим НДС. Введите ежемесячные обороты за последние 12 месяцев — калькулятор покажет, нужно ли вам регистрироваться и когда это может потребоваться.',
+      'Наш калькулятор порога НДС считает доход за указанный период и процент от порога. Введите среднюю месячную выручку и число месяцев — он покажет, близко ли вы к обязательной регистрации.',
     ],
     paragraphsUz: [
       "O'zbekistonda QQS to'lovchisi sifatida majburiy ro'yxatdan o'tish chegarasi 2026-yil 1-iyundan boshlab 12 000 BHK ni tashkil etadi — bu joriy 440 000 so'mlik BHKda 5 280 000 000 so'm. Avval chegara 1 mlrd so'm edi; u Prezidentning 26.05.2026-yildagi PF-100 Farmoni bilan oshirildi. Soliq davri uchun umumiy daromad hisobga olinadi, soliq davri esa kalendar yildir (SKning 469-moddasi) — bu sirpanuvchi 12 oy emas. Chegaradan oshganda QQS va foyda solig'iga o'tish ko'rsatilgan daromad miqdoriga erishilgan kundan boshlanadi (SKning 462-moddasi). QQS chegarasi kalkulyatori biznesingizning joriy aylanmasini kuzatib boradi va chegaraning necha foiziga yetganingizni ko'rsatadi.",
       "Chegaraga yaqinlashganda (80% va undan ortiq) QQS rejimiga o'tishga oldindan tayyorlanish tavsiya etiladi. Kirish va chiqish QQS mexanizmini o'rganish, soliq summasini alohida hisobga olish uchun buxgalteriya hisobini sozlash, elektron hisob-fakturalarni taqdim etish uchun faktura.soliq.uz platformasida ro'yxatdan o'tish zarur. Shuningdek, tovar zaxiralarining inventarizatsiyasini o'tkazish kerak, chunki qoldiqlar bo'yicha QQSni chegirishga olish mumkin bo'ladi. Tayyorgarlik 1-2 oy vaqt oladi.",
       "Ixtiyoriy ro'yxatdan o'tish har qanday aylanmada mumkin — cheklovlar yo'q. Bu asosiy mijozlaringiz QQS to'lovchilari bo'lsa foydali: ular sizning QQSni hisobga olishi mumkin va shu tariqa tejashga erishadi. B2B biznesi uchun ixtiyoriy ro'yxatdan o'tish raqobatbardoshlikni oshiradi. Lekin B2C biznesi (chakana savdo, aholiga xizmatlar) uchun QQS to'lovchisi sifatida ro'yxatdan o'tish narxlarning 12% ga oshishiga olib kelishi mumkin.",
       "Chegarani aniqlash uchun aylanma hisobi tovarlar, ishlar va xizmatlarni sotishdan olingan barcha turdagi daromadlarni o'z ichiga oladi, soliqqa tortilmaydigan operatsiyalar bundan mustasno. Hisobga olinmaydi: subsidiyalar, beg'araz tushumlar, valyuta kursi farqlari. Muhim: bir nechta faoliyat turlari yuritilganda aylanmalar jamlanadi. YaTTlar va o'z-o'zini band qilgan shaxslar uchun aylanma solig'i 1% (2026-yildan) bo'lgan soddalashtilgan tizim ko'pincha QQS bilan umumiy tizimdan foydaliroq.",
-      "Bizning QQS chegarasi kalkulyatorimiz chegaraning joriy foizini hisoblaydi, aylanma dinamikasiga asoslanib chegaraga yetish sanasini prognozlaydi va QQS rejimiga o'tishning moliyaviy ta'sirini baholashga yordam beradi. Oxirgi 12 oydagi oylik aylanmalarni kiriting — kalkulyator ro'yxatdan o'tish zarurmi va qachon kerak bo'lishi mumkinligini ko'rsatadi.",
+      "Bizning QQS chegarasi kalkulyatorimiz ko'rsatilgan davrdagi daromadni va chegaraning foizini hisoblaydi. O'rtacha oylik tushum va oylar sonini kiriting — majburiy ro'yxatdan o'tishga qanchalik yaqin ekaningizni ko'rsatadi.",
     ],
     faqRu: [
       { question: 'Какой порог для обязательной регистрации по НДС?', answer: '12 000 БРВ — 5 280 000 000 сум при БРВ 440 000 (с 1 июня 2026, Указ УП-100). Считается совокупный доход за налоговый период — календарный год.' },
       { question: 'Можно ли зарегистрироваться добровольно?', answer: 'Да, при любом обороте. Выгодно при работе с плательщиками НДС — они смогут принять ваш НДС к зачёту.' },
-      { question: 'Что будет при превышении порога без регистрации?', answer: 'Доначисление НДС за весь период превышения и штраф 5% от дохода, полученного за период работы без регистрации, но не менее 5 000 000 сум (ст. 219 НК).' },
+      { question: 'Что будет при превышении порога без регистрации?', answer: 'Доначисление НДС и штраф 5% от дохода за период без постановки на учёт, но не менее 5 000 000 сум (ст. 219 НК). С 1 января 2026 года штраф не применяется к тем, кто впервые переходит с налога с оборота и встал на учёт в течение года.' },
       { question: 'За какой период считается оборот?', answer: 'За налоговый период — календарный год (ст. 469 НК), нарастающим итогом, а не скользящими 12 месяцами. Суммируются все виды реализации. Переход на НДС — со дня достижения порога (ст. 462 НК).' },
       { question: 'Когда выгодна добровольная регистрация?', answer: 'Когда клиенты — плательщики НДС (B2B). Для розничной торговли (B2C) обычно невыгодна, так как придётся повысить цены на 12%.' },
     ],
     faqUz: [
       { question: "QQS bo'yicha majburiy ro'yxatdan o'tish chegarasi qancha?", answer: "12 000 BHK — 440 000 so'mlik BHKda 5 280 000 000 so'm (2026-yil 1-iyundan, PF-100 Farmoni). Soliq davri — kalendar yil uchun umumiy daromad hisobga olinadi." },
       { question: "Ixtiyoriy ro'yxatdan o'tish mumkinmi?", answer: "Ha, har qanday aylanmada. QQS to'lovchilari bilan ishlashda foydali — ular sizning QQSni hisobga olishi mumkin." },
-      { question: "Ro'yxatdan o'tmasdan chegaradan oshsa nima bo'ladi?", answer: "Oshish davri uchun QQS qayta hisoblanadi va ro'yxatsiz ishlangan davrdagi daromadning 5% miqdorida, lekin kamida 5 000 000 so'm jarima solinadi (SK 219-moddasi)." },
+      { question: "Ro'yxatdan o'tmasdan chegaradan oshsa nima bo'ladi?", answer: "QQS qayta hisoblanadi va ro'yxatdan o'tmagan davrdagi daromadning 5% miqdorida, lekin kamida 5 000 000 so'm jarima solinadi (SK 219-moddasi). 2026-yil 1-yanvardan aylanma solig'idan birinchi marta o'tayotgan va bir yil ichida ro'yxatdan o'tganlarga jarima qo'llanilmaydi." },
       { question: "Aylanma qaysi davr uchun hisoblanadi?", answer: "Soliq davri — kalendar yil uchun (SKning 469-moddasi), o'sib boruvchi yakun bilan, sirpanuvchi 12 oy emas. Barcha sotish turlari jamlanadi. QQSga o'tish chegaraga erishilgan kundan (SKning 462-moddasi)." },
       { question: "Ixtiyoriy ro'yxatdan o'tish qachon foydali?", answer: "Mijozlar QQS to'lovchilari bo'lganda (B2B). Chakana savdo (B2C) uchun odatda foydasiz, chunki narxlarni 12% ga oshirishga to'g'ri keladi." },
     ],
@@ -1479,38 +1479,38 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'severance',
-    lastUpdated: '2026-09-13',
+    lastUpdated: '2026-11-01',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Минтруд РУз', url: 'https://mehnat.uz' },
     ],
     paragraphsRu: [
       'Выходное пособие при увольнении в Узбекистане зависит от основания увольнения и стажа работы в организации. При сокращении штата размер выходного пособия зависит от стажа у этого работодателя и не может быть меньше: при стаже до 3 лет — 50% среднемесячного заработка, от 3 до 5 лет — 75%, от 5 до 10 лет — 100%, от 10 до 15 лет — 150%, свыше 15 лет — 200% (2 среднемесячных заработка). При ликвидации, сокращении и ряде других оснований (отказ от работы на новых условиях или от переезда вместе с работодателем, отсутствие подходящей работы при переводе по состоянию здоровья и др.) за работником на время поиска работы сохраняется среднемесячный заработок — не более 2 месяцев, причём выходное пособие засчитывается в эту сумму, а не выплачивается сверх неё. За третий месяц заработок сохраняется, если в течение 30 календарных дней после увольнения работник встал на учёт в местном органе по труду как ищущий работу (ст. 100 ТК). Минимальная заработная плата в Узбекистане составляет 1 360 000 сум.',
-      'Компенсация за неиспользованный отпуск выплачивается при увольнении по любому основанию. Базовый трудовой отпуск в Узбекистане — 21 календарный день (для отдельных категорий — до 30 дней). Расчёт: средний дневной заработок × количество неиспользованных дней. Средний дневной заработок определяется за последние 3 месяца работы. Если отпуск использован авансом — сумма удерживается при расчёте.',
+      'Компенсация за неиспользованный отпуск выплачивается при увольнении по любому основанию. Базовый трудовой отпуск в Узбекистане — 21 календарный день (для отдельных категорий — до 30 дней). Расчёт: средний дневной заработок × неиспользованные дни без воскресений (ст. 234 ТК). Средняя зарплата считается за 12 месяцев, дневная — средняя зарплата ÷ 25,3 (ст. 257 ТК). Если отпуск использован авансом — сумма удерживается при расчёте.',
       'При увольнении по собственному желанию выходное пособие не выплачивается — работник получает только компенсацию за неиспользованный отпуск и зарплату за отработанные дни. При увольнении по соглашению сторон — размер выплат определяется договорённостью и фиксируется в письменном соглашении. Судебная практика в Узбекистане признаёт такие соглашения обязательными для исполнения.',
-      'Все выплаты при увольнении производятся в последний рабочий день. За задержку расчёта работодатель выплачивает компенсацию в размере среднего заработка за каждый день просрочки. Компенсация за неиспользованный отпуск облагается НДФЛ 12%, но не облагается социальным налогом. Выходное пособие при сокращении также облагается НДФЛ, за исключением сумм, не превышающих 4,22 МРОТ (5 739 200 сум).',
-      'Пример расчёта при сокращении: зарплата 10 000 000 сум/мес, стаж 7 лет (100% по шкале), неиспользованный отпуск 10 дней. Выходное пособие: 10 000 000 × 100% = 10 000 000 сум. Компенсация за отпуск: (10 000 000 / 21,7) × 10 = 4 608 295 сум. Зарплата за отработанные дни (15 дней): 6 912 442 сум. Итого начислено: 21 520 737 сум. Минус НДФЛ 12%: чистая выплата ≈ 18 938 249 сум.',
+      'Все выплаты при увольнении производятся в день прекращения трудового договора; если в этот день работник не работал — не позднее трёх дней после его требования о расчёте (ст. 254 ТК). За задержку работодатель платит компенсацию 10% от ставки рефинансирования ЦБ за каждый день (ст. 333 ТК). Компенсация за неиспользованный отпуск входит в оплату труда (ст. 374 НК): с неё удерживается НДФЛ 12% и начисляется социальный налог. Выходное пособие — прочий доход (п. 9 ст. 377 НК), облагается НДФЛ; льгота 4,22 МРОТ относится к материальной помощи, а не к пособию.',
+      'Пример расчёта при сокращении: зарплата 10 000 000 сум/мес, стаж 7 лет (100% по шкале), неиспользованный отпуск 10 дней без воскресений. Выходное пособие: 10 000 000 × 100% = 10 000 000 сум. Компенсация за отпуск: (10 000 000 / 25,3) × 10 = 3 952 569 сум. Зарплата за отработанные дни (15 дней): 10 000 000 / 25,3 × 15 = 5 928 854 сум. Итого начислено: 19 881 423 сум. Минус НДФЛ 12%: чистая выплата ≈ 17 495 652 сум.',
     ],
     paragraphsUz: [
       "O'zbekistonda ishdan bo'shatishda chiqish nafaqasi ishdan bo'shatish asosiga va tashkilotdagi ish stajiga bog'liq. Shtatni qisqartirishda chiqish nafaqasi miqdori shu ish beruvchidagi stajga bog'liq va quyidagidan kam bo'lishi mumkin emas: 3 yilgacha stajda — o'rtacha oylik ish haqining 50%, 3 dan 5 yilgacha — 75%, 5 dan 10 yilgacha — 100%, 10 dan 15 yilgacha — 150%, 15 yildan ortiq — 200% (2 o'rtacha oylik ish haqi). Tashkilot tugatilganda, shtat qisqartirilganda va boshqa ayrim asoslarda (yangi shartlarda ishlashdan yoki ish beruvchi bilan boshqa joyga ko'chishdan bosh tortish, sog'lig'i bo'yicha o'tkazishda mos ish yo'qligi va h.k.) ish qidirish davrida xodimning o'rtacha oylik ish haqi saqlanadi — ko'pi bilan ikki oy, bunda chiqish nafaqasi shu summaga hisobga olinadi, uning ustiga to'lanmaydi. Uchinchi oy uchun ham ish haqi saqlanadi, agar xodim mehnat shartnomasi bekor qilinganidan keyin o'ttiz kalendar kun ichida mahalliy mehnat organida ish qidirayotgan shaxs sifatida ro'yxatdan o'tgan bo'lsa (MKning 100-moddasi). O'zbekistonda minimal ish haqi 1 360 000 so'm.",
-      "Foydalanilmagan ta'til uchun kompensatsiya har qanday asosda ishdan bo'shatishda to'lanadi. O'zbekistonda asosiy mehnat ta'tili — 21 kalendar kun (ayrim toifalar uchun — 30 kungacha). Hisob: o'rtacha kunlik ish haqi × foydalanilmagan kunlar soni. O'rtacha kunlik ish haqi oxirgi 3 oy uchun aniqlanadi. Ta'til avans bilan ishlatilgan bo'lsa — hisob-kitobda ushlab qolinadi.",
+      "Foydalanilmagan ta'til uchun kompensatsiya har qanday asosda ishdan bo'shatishda to'lanadi. O'zbekistonda asosiy mehnat ta'tili — 21 kalendar kun (ayrim toifalar uchun — 30 kungacha). Hisob: o'rtacha kunlik ish haqi × yakshanbalarsiz foydalanilmagan kunlar (MK 234-moddasi). O'rtacha ish haqi 12 oy uchun hisoblanadi, kunligi — o'rtacha ish haqi ÷ 25,3 (MK 257-moddasi). Ta'til avans bilan ishlatilgan bo'lsa — hisob-kitobda ushlab qolinadi.",
       "O'z xohishi bilan ishdan bo'shaganda chiqish nafaqasi to'lanmaydi — xodim faqat foydalanilmagan ta'til kompensatsiyasi va ishlagan kunlar uchun ish haqini oladi. Tomonlar kelishuvi bo'yicha ishdan bo'shatishda — to'lovlar miqdori kelishuv bilan aniqlanadi va yozma kelishuvda belgilanadi. O'zbekistondagi sud amaliyoti bunday kelishuvlarni bajarish uchun majburiy deb tan oladi.",
-      "Ishdan bo'shatishdagi barcha to'lovlar oxirgi ish kunida amalga oshiriladi. Hisob-kitobni kechiktirganlik uchun ish beruvchi har kechiktirilgan kun uchun o'rtacha ish haqi miqdorida kompensatsiya to'laydi. Foydalanilmagan ta'til kompensatsiyasi JShShS 12% ga tortiladi, lekin ijtimoiy soliqqa tortilmaydi. Qisqartirish vaqtidagi chiqish nafaqasi ham 4,22 MIH (5 739 200 so'm) dan oshgan summada JShShSga tortiladi.",
-      "Qisqartirishda hisoblash misoli: ish haqi 10 000 000 so'm/oy, staj 7 yil (shkala bo'yicha 100%), foydalanilmagan ta'til 10 kun. Chiqish nafaqasi: 10 000 000 × 100% = 10 000 000 so'm. Ta'til kompensatsiyasi: (10 000 000 / 21,7) × 10 = 4 608 295 so'm. Ishlangan kunlar uchun ish haqi (15 kun): 6 912 442 so'm. Jami hisoblangan: 21 520 737 so'm. Minus JShShS 12%: sof to'lov ≈ 18 938 249 so'm.",
+      "Ishdan bo'shatishdagi barcha to'lovlar mehnat shartnomasi bekor qilingan kuni amalga oshiriladi; xodim o'sha kuni ishlamagan bo'lsa — hisob-kitob talabidan keyin uch kundan kechiktirmay (MK 254-moddasi). Kechiktirilganda ish beruvchi har bir kun uchun MB qayta moliyalash stavkasining 10% i miqdorida kompensatsiya to'laydi (MK 333-moddasi). Foydalanilmagan ta'til kompensatsiyasi mehnatga haq to'lashga kiradi (SK 374-moddasi): undan JShShS 12% ushlanadi va ijtimoiy soliq hisoblanadi. Chiqish nafaqasi — boshqa daromad (SK 377-moddasi 9-bandi), JShShSga tortiladi; 4,22 MIH imtiyozi nafaqaga emas, moddiy yordamga tegishli.",
+      "Qisqartirishda hisoblash misoli: ish haqi 10 000 000 so'm/oy, staj 7 yil (shkala bo'yicha 100%), yakshanbalarsiz foydalanilmagan ta'til 10 kun. Chiqish nafaqasi: 10 000 000 × 100% = 10 000 000 so'm. Ta'til kompensatsiyasi: (10 000 000 / 25,3) × 10 = 3 952 569 so'm. Ishlangan kunlar uchun ish haqi (15 kun): 10 000 000 / 25,3 × 15 = 5 928 854 so'm. Jami hisoblangan: 19 881 423 so'm. Minus JShShS 12%: sof to'lov ≈ 17 495 652 so'm.",
     ],
     faqRu: [
       { question: 'Положено ли выходное пособие при увольнении?', answer: 'При сокращении — да, по градуированной шкале: до 3 лет стажа — 50%, 3-5 лет — 75%, 5-10 лет — 100%, 10-15 лет — 150%, 15+ лет — 200% среднемесячного заработка. По собственному желанию — нет (только компенсация за отпуск).' },
-      { question: 'Как рассчитать компенсацию за неиспользованный отпуск?', answer: 'Средний дневной заработок (за 3 мес.) × количество неиспользованных дней отпуска.' },
+      { question: 'Как рассчитать компенсацию за неиспользованный отпуск?', answer: 'Средняя зарплата за 12 месяцев ÷ 25,3 × неиспользованные дни отпуска без воскресений (ст. 234 и 257 ТК).' },
       { question: 'Какие выплаты при сокращении?', answer: 'Выходное пособие (не менее 50–200% среднемесячного в зависимости от стажа) и компенсация за отпуск. На время поиска работы сохраняется среднемесячный заработок до 2 месяцев с зачётом выходного пособия; за третий месяц — если в течение 30 календарных дней встать на учёт в органе по труду.' },
-      { question: 'В какой срок должны рассчитать при увольнении?', answer: 'В последний рабочий день. За каждый день просрочки — компенсация в размере среднего заработка.' },
-      { question: 'Облагаются ли выплаты при увольнении налогом?', answer: 'Компенсация за отпуск — НДФЛ 12%. Выходное пособие — НДФЛ с суммы свыше 4,22 МРОТ (5 739 200 сум).' },
+      { question: 'В какой срок должны рассчитать при увольнении?', answer: 'В день прекращения договора; если работник в этот день не работал — в течение 3 дней после его требования (ст. 254 ТК). За просрочку — компенсация 10% от ставки рефинансирования ЦБ за каждый день (ст. 333 ТК).' },
+      { question: 'Облагаются ли выплаты при увольнении налогом?', answer: 'Компенсация за отпуск — НДФЛ 12% и социальный налог. Выходное пособие — НДФЛ (п. 9 ст. 377 НК).' },
     ],
     faqUz: [
       { question: "Ishdan bo'shatishda chiqish nafaqasi beriladimi?", answer: "Qisqartirishda — ha, graduatsiyalangan shkala bo'yicha: 3 yilgacha staj — 50%, 3-5 yil — 75%, 5-10 yil — 100%, 10-15 yil — 150%, 15+ yil — o'rtacha oylik ish haqining 200%. O'z xohishi bilan — yo'q (faqat ta'til kompensatsiyasi)." },
-      { question: "Foydalanilmagan ta'til kompensatsiyasini qanday hisoblash mumkin?", answer: "O'rtacha kunlik ish haqi (3 oy uchun) × foydalanilmagan kunlar soni." },
+      { question: "Foydalanilmagan ta'til kompensatsiyasini qanday hisoblash mumkin?", answer: "O'rtacha ish haqi 12 oy uchun ÷ 25,3 × yakshanbalarsiz foydalanilmagan ta'til kunlari (MK 234 va 257-moddalari)." },
       { question: "Qisqartirish vaqtida qanday to'lovlar bor?", answer: "Chiqish nafaqasi (stajga qarab o'rtacha oylikning kamida 50–200%) va ta'til kompensatsiyasi. Ish qidirish davrida o'rtacha oylik ish haqi chiqish nafaqasini hisobga olgan holda 2 oygacha saqlanadi; 30 kalendar kun ichida mehnat organida ro'yxatdan o'tilsa — uchinchi oy uchun ham." },
-      { question: "Ishdan bo'shatishda qancha muddatda hisob-kitob qilishlari kerak?", answer: "Oxirgi ish kunida. Har kechiktirilgan kun uchun o'rtacha ish haqi miqdorida kompensatsiya." },
-      { question: "Ishdan bo'shatish to'lovlari soliqqa tortiladimi?", answer: "Ta'til kompensatsiyasi — JShShS 12%. Chiqish nafaqasi — 4,22 MIH (5 739 200 so'm) dan ortiq summadan JShShS." },
+      { question: "Ishdan bo'shatishda qancha muddatda hisob-kitob qilishlari kerak?", answer: "Shartnoma bekor qilingan kuni; xodim o'sha kuni ishlamagan bo'lsa — talabidan keyin 3 kun ichida (MK 254-moddasi). Kechiktirish uchun — har bir kunga MB qayta moliyalash stavkasining 10% i (MK 333-moddasi)." },
+      { question: "Ishdan bo'shatish to'lovlari soliqqa tortiladimi?", answer: "Ta'til kompensatsiyasi — JShShS 12% va ijtimoiy soliq. Chiqish nafaqasi — JShShS (SK 377-moddasi 9-bandi)." },
     ],
   },
 
@@ -1553,27 +1553,27 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'overtime',
-    lastUpdated: '2025-09-15',
+    lastUpdated: '2026-11-01',
     sources: [
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
       { name: 'Минтруд РУз', url: 'https://mehnat.uz' },
     ],
     paragraphsRu: [
-      'Сверхурочная работа в Узбекистане оплачивается в повышенном размере: первые 2 часа — в 1,5-кратном, каждый последующий час — в 2-кратном размере от обычной часовой ставки. Работа в выходные и праздничные дни оплачивается в 2-кратном размере или компенсируется предоставлением другого дня отдыха (по выбору работника). Стандартная продолжительность рабочей недели в Узбекистане — 40 часов (5 дней по 8 часов).',
-      'Максимальная продолжительность сверхурочных работ строго ограничена Трудовым кодексом: не более 4 часов за 2 дня подряд (годовой лимит 120 ч отменён Законом ЗРУ-1095 от 11.11.2025). Привлечение к сверхурочной работе допускается только с письменного согласия работника. Запрещено привлекать: беременных женщин, работников до 18 лет, инвалидов (без их письменного согласия и медицинского заключения об отсутствии противопоказаний).',
+      'Сверхурочная работа в Узбекистане оплачивается в повышенном размере: первые 2 часа — не менее чем в 1,5-кратном, последующие часы — не менее чем в 2-кратном размере от обычной часовой ставки, а при вредных или неблагоприятных условиях каждый час не менее чем в 2-кратном (ст. 262 ТК). Работа в выходные и праздничные дни оплачивается не ниже чем в двойном размере: работнику на окладе — не менее одинарной ставки сверх оклада (ст. 263 ТК). Стандартная продолжительность рабочей недели в Узбекистане — 40 часов (5 дней по 8 часов).',
+      'Максимальная продолжительность сверхурочных работ строго ограничена Трудовым кодексом: не более 4 часов за 2 дня подряд, на работах с неблагоприятными условиями — 2 часов в день (ст. 190; годовой лимит 120 ч отменён Законом ЗРУ-1095 от 11.11.2025). Привлечение к сверхурочной работе допускается только с письменного согласия работника. Запрещено привлекать: беременных женщин, работников до 18 лет, инвалидов (без их письменного согласия и медицинского заключения об отсутствии противопоказаний).',
       'Часовая ставка для расчёта определяется: для повременной оплаты — делением оклада на количество рабочих часов в месяце (обычно 168 часов); для сдельной — средняя дневная выработка делится на 8 часов. Ночная работа (с 22:00 до 06:00) оплачивается с доплатой не менее 50% от часовой ставки. При совпадении сверхурочных с ночным временем применяются обе надбавки одновременно.',
       'Оплата сверхурочных облагается НДФЛ 12% и социальным налогом на общих основаниях — льгот по налогообложению нет. Работодатель обязан вести точный учёт сверхурочных часов каждого работника. За нарушение норм о продолжительности сверхурочных работ предусмотрены административные штрафы для должностных лиц — от 5 до 10 БРВ (2 200 000 — 4 400 000 сум).',
-      'Пример расчёта: оклад 10 000 000 сум/мес, 168 рабочих часов. Часовая ставка = 59 524 сум. 4 часа сверхурочных: 2ч × 89 286 (×1,5) + 2ч × 119 048 (×2) = 416 668 сум (вместо 238 096 при обычной ставке). Доплата: 178 572 сум. Работа в выходной (8 часов): 8 × 119 048 = 952 384 сум. Наш калькулятор рассчитает оплату с учётом всех надбавок и налогов.',
+      'Пример расчёта: оклад 10 000 000 сум/мес, 168 рабочих часов. Часовая ставка = 59 524 сум. 4 часа сверхурочных: 2ч × 89 286 (×1,5) + 2ч × 119 048 (×2) = 416 668 сум (вместо 238 096 при обычной ставке). Доплата: 178 572 сум. Работа в выходной (8 часов) на окладе: сверх оклада 8 × 59 524 = 476 192 сум, всего за эти часы двойная ставка 952 384 сум. Наш калькулятор показывает начисление сверх оклада до налогов.',
     ],
     paragraphsUz: [
-      "O'zbekistonda ortiqcha ish oshirilgan miqdorda to'lanadi: dastlabki 2 soat — oddiy soatlik stavkadan 1,5 baravarda, har keyingi soat — 2 baravarda. Dam olish va bayram kunlaridagi ish 2 baravarda to'lanadi yoki boshqa dam olish kuni bilan qoplanadi (xodimning tanloviga ko'ra). O'zbekistonda standart ish haftasi — 40 soat (5 kun 8 soatdan).",
+      "O'zbekistonda ortiqcha ish oshirilgan miqdorda to'lanadi: dastlabki 2 soat — oddiy soatlik stavkadan 1,5 baravarda, har keyingi soat — 2 baravarda. Dam olish va bayram kunlaridagi ish kamida ikki baravar to'lanadi: oklad oluvchi xodimga — okladdan tashqari kamida bir baravar stavka (MK 263-moddasi). Zararli yoki noqulay sharoitlarda ortiqcha ishning har bir soati kamida ikki baravar to'lanadi (MK 262-moddasi). O'zbekistonda standart ish haftasi — 40 soat (5 kun 8 soatdan).",
       "Ortiqcha ishning maksimal davomiyligi Mehnat kodeksi bilan qat'iy cheklangan: ketma-ket 2 kun uchun 4 soatdan ko'p emas (yillik 120 soatlik limit ZRU-1095 Qonuni bilan 11.11.2025-yilda bekor qilingan). Ortiqcha ishga jalb qilish faqat xodimning yozma roziligi bilan ruxsat etiladi. Taqiqlangan: homilador ayollar, 18 yoshgacha xodimlar, nogironlar (ularning yozma roziligi va tibbiy xulosasiz).",
       "Hisoblash uchun soatlik stavka aniqlanadi: vaqtbay to'lovda — okladni oydagi ish soatlari soniga bo'lish (odatda 168 soat); ishbayda — o'rtacha kunlik ishlab chiqarishni 8 soatga bo'lish. Tungi ish (22:00 dan 06:00 gacha) soatlik stavkaning kamida 50% ustama bilan to'lanadi. Ortiqcha ish tungi vaqtga to'g'ri kelganda ikkala ustama bir vaqtda qo'llaniladi.",
       "Ortiqcha ish to'lovi JShShS 12% va ijtimoiy soliqqa umumiy asoslarda tortiladi — soliq bo'yicha imtiyozlar yo'q. Ish beruvchi har bir xodimning ortiqcha ish soatlarining aniq hisobini yuritishi shart. Ortiqcha ish davomiyligi normalari buzilganligi uchun mansabdor shaxslarga ma'muriy jarimalar nazarda tutilgan — 5 dan 10 BHKgacha (2 200 000 — 4 400 000 so'm).",
-      "Hisoblash misoli: oklad 10 000 000 so'm/oy, 168 ish soati. Soatlik stavka = 59 524 so'm. 4 soat ortiqcha ish: 2s × 89 286 (×1,5) + 2s × 119 048 (×2) = 416 668 so'm (oddiy stavkada 238 096 o'rniga). Ustama: 178 572 so'm. Dam olish kunida ish (8 soat): 8 × 119 048 = 952 384 so'm. Kalkulyatorimiz barcha ustamalar va soliqlarni hisobga olgan holda to'lovni hisoblaydi.",
+      "Hisoblash misoli: oklad 10 000 000 so'm/oy, 168 ish soati. Soatlik stavka = 59 524 so'm. 4 soat ortiqcha ish: 2s × 89 286 (×1,5) + 2s × 119 048 (×2) = 416 668 so'm (oddiy stavkada 238 096 o'rniga). Ustama: 178 572 so'm. Dam olish kunida ish (8 soat) oklad bilan: okladdan tashqari 8 × 59 524 = 476 192 so'm, bu soatlar uchun jami ikki baravar stavka 952 384 so'm. Kalkulyatorimiz okladdan tashqari hisoblangan summani soliqlargacha ko'rsatadi.",
     ],
     faqRu: [
-      { question: 'Как оплачивается сверхурочная работа?', answer: 'Первые 2 часа — ×1,5, далее — ×2 от часовой ставки. В выходные/праздники — ×2 или отгул.' },
+      { question: 'Как оплачивается сверхурочная работа?', answer: 'Первые 2 часа — не менее ×1,5, далее — не менее ×2 от часовой ставки; при вредных условиях каждый час не менее ×2. В выходные и праздники — на окладе не менее одинарной ставки сверх оклада.' },
       { question: 'Сколько часов можно работать сверхурочно?', answer: 'До 4 часов за 2 дня подряд (годовой лимит 120 ч отменён Законом ЗРУ-1095 от 11.11.2025). Только с письменного согласия работника.' },
       { question: 'Кого нельзя привлекать к сверхурочным?', answer: 'Беременных, несовершеннолетних (до 18), инвалидов (без их согласия и медзаключения).' },
       { question: 'Как оплачивается работа в ночное время?', answer: 'С доплатой не менее 50% от часовой ставки. Ночное время: с 22:00 до 06:00.' },
@@ -1590,39 +1590,39 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'pension',
-    lastUpdated: '2026-02-26',
+    lastUpdated: '2026-11-01',
     sources: [
-      { name: 'Закон о пенсионном обеспечении', url: 'https://lex.uz' },
+      { name: 'Закон о государственном пенсионном обеспечении граждан № 938-XII', url: 'https://lex.uz/ru/docs/112312' },
       { name: 'Пенсионный фонд РУз', url: 'https://pfru.uz' },
       { name: 'Закон ЗРУ-1101 «О государственном социальном страховании»', url: 'https://lex.uz/docs/7889171' },
     ],
     paragraphsRu: [
       'Пенсионный возраст в Узбекистане: мужчины — 60 лет, женщины — 55 лет. Женщины, имеющие не менее 20 лет стажа, засчитываемого по пунктам «а»—«г» и «к» части первой ст. 37 закона (работа с уплатой взносов, военная служба и приравненные к ней периоды), вправе выйти на пенсию на год раньше — в 54 года (ст. 12¹ Закона о государственном пенсионном обеспечении, в редакции ЗРУ-922 от 18.03.2024). Требуется именно такой стаж, а не любой трудовой. Для получения полной пенсии по возрасту необходим минимальный трудовой стаж: 25 лет для мужчин и 20 лет для женщин. При недостаточном стаже (но не менее 7 лет) назначается пенсия в пропорциональном размере, но не ниже 50% минимальной пенсии по возрасту (ст. 8 закона в редакции ЗРУ-922 от 18.03.2024). С 1 января 2026 года вступил в силу Закон ЗРУ-1101 от 09.12.2025 «О государственном социальном страховании», который реформирует систему социальных выплат, включая пенсионное обеспечение. Минимальная пенсия по возрасту с 1 июля 2026 года составляет 983 000 сум в месяц.',
-      'Формула расчёта пенсии: Пенсия = Средний заработок за лучшие 5 последовательных лет × (55% + 1% за каждый год стажа сверх минимального). Максимальный размер — 75% от среднего заработка. При стаже 25 лет: 55% + 0% = 55%. При стаже 35 лет: 55% + 10% = 65%. При стаже 45 лет: 55% + 20% = 75% (максимум). Средний заработок индексируется с учётом роста минимальной зарплаты.',
-      'С 2023 года в Узбекистане действует накопительная пенсионная система — индивидуальный накопительный пенсионный счёт (ИНПС). Обязательный взнос составляет 0,1% от начисленной заработной платы и удерживается работодателем. Накопления являются личной собственностью работника, наследуются и не подлежат изъятию. При выходе на пенсию накопленная сумма выплачивается единовременно или в рассрочку по выбору пенсионера.',
-      'Досрочная пенсия предусмотрена для ряда категорий: работники вредных производств (списки 1 и 2), педагоги (при стаже 25 лет), медработники (при стаже 25-30 лет), многодетные матери (5+ детей — с 50 лет). Военнослужащие и сотрудники силовых структур выходят на пенсию по выслуге лет (20 лет). Пенсии индексируются ежегодно в соответствии с ростом прожиточного минимума.',
-      'Пример расчёта: мужчина, стаж 30 лет, средний заработок за лучшие 5 лет — 8 000 000 сум/мес. Пенсия = 8 000 000 × (55% + 5%) = 8 000 000 × 60% = 4 800 000 сум/мес. С учётом индексации и ИНПС фактическая пенсия может быть выше. Наш калькулятор рассчитает вашу будущую пенсию по введённым данным о стаже, заработке и возрасте.',
+      'Формула расчёта пенсии: Пенсия = Средний заработок за лучшие 5 последовательных лет × (55% + 1% за каждый год стажа сверх минимального). Максимальный размер — 75% от среднего заработка. Заработок для расчёта ограничен двенадцатью базовыми величинами исчисления пенсии (ст. 31 закона): с 1 июля 2026 года это 12 × 504 000 = 6 048 000 сум, поэтому пенсия по этой формуле не превышает 4 536 000 сум. При стаже 25 лет: 55% + 0% = 55%. При стаже 35 лет: 55% + 10% = 65%. При стаже 45 лет: 55% + 20% = 75% (максимум). Средний заработок индексируется с учётом роста минимальной зарплаты.',
+      'В Узбекистане действует накопительная пенсионная система (Закон № 702-II от 2 декабря 2004 года) — индивидуальный накопительный пенсионный счёт (ИНПС). Обязательный взнос составляет 0,1% от начисленной заработной платы и входит в НДФЛ, сверх него не удерживается. Накопления являются личной собственностью работника и наследуются.',
+      'Льготная пенсия (ст. 9–12 закона) предусмотрена, в частности, для инвалидов войны, матерей детей с инвалидностью с детства, работников с вредными и тяжёлыми условиями труда по спискам, лётного состава, врачей и среднего медперсонала специализированных медучреждений. Размеры пенсий повышаются указами Президента: с 1 июля 2026 года на 7% (УП-115).',
+      'Пример расчёта: мужчина, стаж 30 лет, средний заработок за лучшие 5 лет — 8 000 000 сум/мес. В расчёт идёт не более 6 048 000 сум, поэтому пенсия = 6 048 000 × (55% + 5%) = 3 628 800 сум/мес. Наш калькулятор рассчитает вашу будущую пенсию по введённым данным о стаже, заработке и возрасте.',
     ],
     paragraphsUz: [
       "O'zbekistonda pensiya yoshi: erkaklar — 60 yosh, ayollar — 55 yosh. Qonunning 37-moddasi birinchi qismi «a»—«g» va «k» bandlari bo'yicha hisobga olinadigan kamida 20 yillik stajga ega ayollar bir yil erta — 54 yoshda pensiyaga chiqish huquqiga ega (Davlat pensiya ta'minoti to'g'risidagi qonunning 12¹-moddasi, 18.03.2024-yildagi ZRU-922 tahririda). Aynan shunday staj talab qilinadi, har qanday mehnat staji emas. Yoshi bo'yicha to'liq pensiya olish uchun minimal ish staji zarur: erkaklar uchun 25 yil va ayollar uchun 20 yil. Staj yetarli bo'lmaganda (lekin 7 yildan kam bo'lmasa) mutanosib miqdorda, lekin yoshi bo'yicha minimal pensiyaning 50% idan kam bo'lmagan pensiya tayinlanadi (qonunning 8-moddasi, 18.03.2024-yildagi ZRU-922 tahririda). 2026-yil 1-yanvardan davlat ijtimoiy sug'urta to'g'risidagi №1101-son Qonun kuchga kirdi, u ijtimoiy to'lovlar tizimini, jumladan pensiya ta'minotini isloh qiladi. Yoshi bo'yicha minimal pensiya 2026-yil 1-iyuldan oyiga 983 000 so'mni tashkil etadi.",
-      "Pensiya hisoblash formulasi: Pensiya = Eng yaxshi ketma-ket 5 yildagi o'rtacha ish haqi × (55% + minimaldan ortiq har yil staj uchun 1%). Maksimal miqdor — o'rtacha ish haqining 75%. 25 yil stajda: 55% + 0% = 55%. 35 yil stajda: 55% + 10% = 65%. 45 yil stajda: 55% + 20% = 75% (maksimum). O'rtacha ish haqi minimal ish haqi o'sishini hisobga olgan holda indeksatsiya qilinadi.",
-      "2023-yildan O'zbekistonda jamg'arma pensiya tizimi — individual jamg'arma pensiya hisobvarag'i (IJPH) amal qilmoqda. Majburiy to'lov hisoblangan ish haqining 0,1% ni tashkil etadi va ish beruvchi tomonidan ushlab qolinadi. Jamg'armalar xodimning shaxsiy mulki, meros qilib qoldiriladi va tortib olinishi mumkin emas. Pensiyaga chiqqanda yig'ilgan summa pensionerning tanloviga ko'ra bir martalik yoki bo'lib to'lanadi.",
-      "Bir qator toifalar uchun muddatidan oldingi pensiya nazarda tutilgan: zararli ishlab chiqarish xodimlari (1 va 2-ro'yxatlar), pedagoglar (25 yil stajda), tibbiyot xodimlari (25-30 yil stajda), ko'p bolali onalar (5+ bola — 50 yoshdan). Harbiylar va kuch tuzilmalari xodimlari xizmat muddati bo'yicha (20 yil) pensiyaga chiqadilar. Pensiyalar har yili yashash minimumi o'sishiga muvofiq indeksatsiya qilinadi.",
-      "Hisoblash misoli: erkak, staj 30 yil, eng yaxshi 5 yildagi o'rtacha ish haqi — 8 000 000 so'm/oy. Pensiya = 8 000 000 × (55% + 5%) = 8 000 000 × 60% = 4 800 000 so'm/oy. Indeksatsiya va IJPHni hisobga olsak, haqiqiy pensiya yuqoriroq bo'lishi mumkin. Kalkulyatorimiz staj, ish haqi va yosh haqidagi kiritilgan ma'lumotlar bo'yicha kelajakdagi pensiyangizni hisoblaydi.",
+      "Pensiya hisoblash formulasi: Pensiya = Eng yaxshi ketma-ket 5 yildagi o'rtacha ish haqi × (55% + minimaldan ortiq har yil staj uchun 1%). Maksimal miqdor — o'rtacha ish haqining 75%. 25 yil stajda: 55% + 0% = 55%. 35 yil stajda: 55% + 10% = 65%. 45 yil stajda: 55% + 20% = 75% (maksimum). Hisob uchun ish haqi pensiya hisoblash bazaviy miqdorining o'n ikki baravari bilan cheklangan (qonunning 31-moddasi): 2026-yil 1-iyuldan 12 × 504 000 = 6 048 000 so'm, shuning uchun bu formula bo'yicha pensiya 4 536 000 so'mdan oshmaydi.",
+      "O'zbekistonda jamg'arma pensiya tizimi amal qiladi (2004-yil 2-dekabrdagi 702-II-sonli Qonun) — individual jamg'arma pensiya hisobvarag'i (IJPH). Majburiy badal hisoblangan ish haqining 0,1% ini tashkil etadi va JShShS ichiga kiradi, uning ustiga ushlanmaydi. Jamg'armalar xodimning shaxsiy mulki bo'lib, meros qilib qoldiriladi.",
+      "Imtiyozli pensiya (qonunning 9–12-moddalari), xususan, urush nogironlari, bolalikdan nogironligi bo'lgan bolalarning onalari, ro'yxatlar bo'yicha zararli va og'ir sharoitlarda ishlovchilar, uchuvchi xodimlar, ixtisoslashgan tibbiyot muassasalarining shifokorlari va o'rta tibbiyot xodimlari uchun nazarda tutilgan. Pensiyalar Prezident farmonlari bilan oshiriladi: 2026-yil 1-iyuldan 7% ga (PF-115).",
+      "Hisoblash misoli: erkak, staj 30 yil, eng yaxshi 5 yildagi o'rtacha ish haqi — 8 000 000 so'm/oy. Hisobga ko'pi bilan 6 048 000 so'm olinadi, shuning uchun pensiya = 6 048 000 × (55% + 5%) = 3 628 800 so'm/oy. Kalkulyatorimiz staj, ish haqi va yosh haqidagi kiritilgan ma'lumotlar bo'yicha kelajakdagi pensiyangizni hisoblaydi.",
     ],
     faqRu: [
       { question: 'Какой пенсионный возраст в Узбекистане?', answer: 'Мужчины — 60 лет, женщины — 55 лет. Женщины, у которых не менее 20 лет стажа, засчитываемого по ст. 37 закона, могут выйти на пенсию в 54 года (норма действует с марта 2024 года). Есть и другие категории с правом на досрочную пенсию.' },
       { question: 'Какая минимальная пенсия?', answer: '983 000 сум (с 1 июля 2026). Конкретный размер зависит от стажа и среднего заработка.' },
-      { question: 'Что такое ИНПС?', answer: 'Индивидуальный накопительный пенсионный счёт. Взнос 0,1% от зарплаты. Личная собственность, наследуется.' },
+      { question: 'Что такое ИНПС?', answer: 'Индивидуальный накопительный пенсионный счёт. Взнос 0,1% от зарплаты входит в НДФЛ. Личная собственность, наследуется.' },
       { question: 'Какой стаж нужен для полной пенсии?', answer: 'Мужчины — 25 лет, женщины — 20 лет. При меньшем стаже (от 7 лет) — пропорциональная пенсия.' },
-      { question: 'Кто имеет право на досрочную пенсию?', answer: 'Работники вредных производств, педагоги (25 лет стажа), медработники (25-30 лет), многодетные матери (5+ детей — с 50 лет).' },
+      { question: 'Кто имеет право на досрочную пенсию?', answer: 'Инвалиды войны, матери детей с инвалидностью с детства, работники с вредными и тяжёлыми условиями по спискам, лётный состав, врачи и средний медперсонал специализированных медучреждений (ст. 9–12 закона).' },
     ],
     faqUz: [
       { question: "O'zbekistonda pensiya yoshi necha?", answer: "Erkaklar — 60 yosh, ayollar — 55 yosh. Qonunning 37-moddasi bo'yicha hisobga olinadigan kamida 20 yillik stajga ega ayollar 54 yoshda pensiyaga chiqishi mumkin (norma 2024-yil martdan amal qiladi). Muddatidan oldingi pensiya huquqiga ega boshqa toifalar ham bor." },
       { question: "Minimal pensiya qancha?", answer: "983 000 so'm (2026-yil 1-iyuldan). Aniq miqdor staj va o'rtacha ish haqiga bog'liq." },
       { question: "IJPH nima?", answer: "Individual jamg'arma pensiya hisobvarag'i. To'lov ish haqining 0,1%. Shaxsiy mulk, meros qilib qoldiriladi." },
       { question: "To'liq pensiya uchun qancha staj kerak?", answer: "Erkaklar — 25 yil, ayollar — 20 yil. Kam stajda (7 yildan) — mutanosib pensiya." },
-      { question: "Kim muddatidan oldingi pensiyaga haqli?", answer: "Zararli ishlab chiqarish xodimlari, pedagoglar (25 yil staj), tibbiyot xodimlari (25-30 yil), ko'p bolali onalar (5+ bola — 50 yoshdan)." },
+      { question: "Kim muddatidan oldingi pensiyaga haqli?", answer: "Urush nogironlari, bolalikdan nogironligi bo'lgan bolalarning onalari, ro'yxatlar bo'yicha zararli va og'ir sharoitlarda ishlovchilar, uchuvchi xodimlar, ixtisoslashgan tibbiyot muassasalari shifokorlari va o'rta tibbiyot xodimlari (qonunning 9–12-moddalari)." },
     ],
   },
 
@@ -1658,26 +1658,26 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'early-repayment',
-    lastUpdated: '2026-04-04',
-    sources: [{ name: 'Закон о банковской деятельности', url: 'https://lex.uz/docs/5765051' }],
+    lastUpdated: '2026-11-01',
+    sources: [{ name: 'Закон «О потребительском кредите» ЗРУ-33', url: 'https://lex.uz/ru/docs/1004490' }],
     paragraphsRu: [
-      'Калькулятор досрочного погашения кредита показывает, сколько вы сэкономите на процентах при частичном или полном внеочередном внесении средств. Согласно Закону Республики Узбекистан «О банках и банковской деятельности», заёмщик имеет право на досрочное погашение потребительского кредита без уплаты штрафов и комиссий. Это правило действует с 2020 года и распространяется на все банки страны.',
+      'Калькулятор досрочного погашения кредита показывает, сколько вы сэкономите на процентах при частичном или полном внеочередном внесении средств. Согласно ст. 16 Закона «О потребительском кредите» заёмщик вправе досрочно вернуть кредит, а проценты платит только за фактический срок пользования. Центральный банк не допускает дополнительных платежей за пользование кредитом, но порядок учёта досрочных взносов зависит от договора, и в октябре 2026 года Комитет по конкуренции предложил закрепить его в законе.',
       'После частичного досрочного погашения банк предлагает два варианта пересчёта графика: сокращение срока кредита при сохранении размера ежемесячного платежа или уменьшение платежа при сохранении первоначального срока. Математически сокращение срока всегда выгоднее, поскольку уменьшается период начисления процентов, а значит, общая переплата снижается значительнее.',
-      'Рассмотрим практический пример. Кредит 100 млн сум под 22% годовых на 5 лет, аннуитетные платежи — около 2 780 000 сум в месяц. Через 12 месяцев вы вносите 20 млн досрочно. При сокращении срока кредит закроется на 15 месяцев раньше, экономия на процентах составит порядка 12 млн сум. При уменьшении платежа ежемесячный взнос снизится до ~2 200 000 сум, но экономия составит лишь ~8 млн.',
+      'Рассмотрим практический пример. Кредит 100 млн сум под 22% годовых на 5 лет, аннуитетные платежи — около 2 760 000 сум в месяц. Через 12 месяцев вы вносите 20 млн досрочно. При сокращении срока кредит закроется на 15 месяцев раньше, экономия на процентах составит порядка 21,9 млн сум. При уменьшении платежа ежемесячный взнос снизится до ~2 130 000 сум, но экономия составит лишь ~10,2 млн.',
       'Оптимальная стратегия досрочного погашения зависит от ваших целей. Если приоритет — минимизация переплаты, выбирайте сокращение срока и вносите средства как можно раньше (процентная нагрузка наибольшая в первые годы кредита). Если важнее снизить текущую финансовую нагрузку — уменьшайте платёж. Многие заёмщики комбинируют: сначала снижают платёж до комфортного уровня, затем сокращают срок.',
-      'Наш калькулятор досрочного погашения рассчитает оба сценария одновременно: покажет новый график платежей, оставшийся срок, экономию на процентах и сравнение с первоначальным планом. Просто введите параметры кредита, дату и сумму досрочного взноса — и получите детальный расчёт за секунды. Рекомендуется уведомлять банк о намерении минимум за 30 дней.',
+      'Наш калькулятор досрочного погашения считает выбранный сценарий: покажет экономию на процентах и новый срок или новый платёж. Введите параметры кредита, месяц и сумму досрочного взноса. Условия и сроки уведомления банка проверьте в своём договоре.',
     ],
     paragraphsUz: [
-      "Kreditni muddatidan oldin to'lash kalkulyatori qisman yoki to'liq navbatdan tashqari mablag' kiritishda foizlarda qancha tejashingizni ko'rsatadi. O'zbekiston Respublikasining «Banklar va bank faoliyati to'g'risida»gi qonuniga ko'ra, qarz oluvchi iste'mol kreditini jarima va komissiyalarsiz muddatidan oldin to'lash huquqiga ega. Bu qoida 2020-yildan amal qiladi va mamlakatdagi barcha banklarga taalluqli.",
+      "Kreditni muddatidan oldin to'lash kalkulyatori qisman yoki to'liq navbatdan tashqari mablag' kiritganda foizlarda qancha tejashingizni ko'rsatadi. «Iste'mol krediti to'g'risida»gi Qonunning 16-moddasiga ko'ra qarz oluvchi kreditni muddatidan oldin qaytarishi mumkin, foizlarni esa faqat haqiqiy foydalanish muddati uchun to'laydi. Markaziy bank kreditdan foydalanganlik uchun qo'shimcha to'lovlarga yo'l qo'ymaydi, lekin muddatidan oldingi to'lovlarni hisobga olish tartibi shartnomaga bog'liq, 2026-yil oktabrida Raqobat qo'mitasi uni qonunda mustahkamlashni taklif qilgan.",
       "Qisman muddatidan oldin to'lashdan keyin bank jadval bo'yicha ikki variant taklif etadi: oylik to'lov miqdorini saqlab kredit muddatini qisqartirish yoki dastlabki muddatni saqlab to'lovni kamaytirish. Matematik jihatdan muddatni qisqartirish doimo foydaliroq, chunki foiz hisoblash davri qisqaradi va umumiy ortiqcha to'lov ko'proq kamayadi.",
-      "Amaliy misolni ko'rib chiqaylik. 100 mln so'mlik kredit yillik 22% da 5 yilga, annuitet to'lovlari — oyiga taxminan 2 780 000 so'm. 12 oydan keyin 20 mln muddatidan oldin kiritasiz. Muddatni qisqartirishda kredit 15 oy oldin yopiladi, foizlardagi tejash taxminan 12 mln so'm. To'lovni kamaytirishda oylik to'lov ~2 200 000 so'mga tushadi, lekin tejash atigi ~8 mln.",
+      "Amaliy misolni ko'rib chiqaylik. 100 mln so'mlik kredit yillik 22% da 5 yilga, annuitet to'lovlari — oyiga taxminan 2 780 000 so'm. 12 oydan keyin 20 mln muddatidan oldin kiritasiz. Muddatni qisqartirishda kredit 15 oy oldin yopiladi, foizlardagi tejash taxminan 21,9 mln so'm. To'lovni kamaytirishda oylik to'lov ~2 130 000 so'mga tushadi, lekin tejash atigi ~10,2 mln.",
       "Muddatidan oldin to'lashning optimal strategiyasi maqsadlaringizga bog'liq. Agar ustuvorlik ortiqcha to'lovni minimallashtirish bo'lsa — muddatni qisqartiring va mablag'ni iloji boricha ertaroq kiriting (foiz yuki kreditning dastlabki yillarida eng katta). Agar joriy moliyaviy yukni kamaytirish muhimroq bo'lsa — to'lovni kamaytiring. Ko'p qarz oluvchilar aralashtiradi: avval to'lovni qulay darajaga tushiradi, keyin muddatni qisqartiradi.",
-      "Bizning muddatidan oldin to'lash kalkulyatorimiz ikkala senariyni bir vaqtda hisoblaydi: yangi to'lov jadvalini, qolgan muddatni, foizlardagi tejashni va dastlabki reja bilan solishtirishni ko'rsatadi. Kredit parametrlarini, muddatidan oldin to'lov sanasi va summasini kiriting — bir necha soniyada batafsil hisob oling. Bankni kamida 30 kun oldin xabardor qilish tavsiya etiladi.",
+      "Bizning muddatidan oldin to'lash kalkulyatorimiz tanlangan senariyni hisoblaydi: foizlardagi tejashni va yangi muddat yoki yangi to'lovni ko'rsatadi. Kredit parametrlarini, muddatidan oldin to'lov oyi va summasini kiriting. Shartlar va bankni xabardor qilish muddatlarini shartnomangizdan tekshiring.",
     ],
     faqRu: [
-      { question: 'Можно ли досрочно погасить кредит без штрафа?', answer: 'Да, с 2020 года — без штрафов и комиссий.' },
+      { question: 'Можно ли досрочно погасить кредит без штрафа?', answer: 'Да, право закреплено в ст. 16 Закона «О потребительском кредите»: проценты платятся только за фактический срок. Порядок учёта взносов проверьте в договоре.' },
       { question: 'Что выгоднее — сокращать срок или платёж?', answer: 'Сокращение срока экономит больше на процентах. Уменьшение платежа снижает текущую нагрузку.' },
-      { question: 'Нужно ли уведомлять банк?', answer: 'Рекомендуется за 30 дней. Некоторые банки принимают досрочное погашение только в дату платежа.' },
+      { question: 'Нужно ли уведомлять банк?', answer: 'Зависит от договора. Некоторые банки принимают досрочное погашение только в дату платежа.' },
     ],
     faqUz: [
       { question: "Kreditni jarimasisz muddatidan oldin to'lash mumkinmi?", answer: "Ha, 2020-yildan — jarimalar va komissiyalarsiz." },
@@ -1688,21 +1688,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'refinancing',
-    lastUpdated: '2025-12-24',
+    lastUpdated: '2026-11-01',
     sources: [{ name: 'Центральный банк РУз', url: 'https://cbu.uz' }],
         paragraphsRu: [
       'Рефинансирование кредита — получение нового кредита на более выгодных условиях для погашения существующего. В Узбекистане эта услуга особенно актуальна: ключевая ставка Центрального банка в 2026 году составляет 14%, и многие заёмщики, оформившие кредиты при ставке 20–24%, могут значительно снизить переплату. Калькулятор рефинансирования покажет точную сумму экономии и поможет принять обоснованное решение.',
       'Рефинансирование выгодно при соблюдении нескольких условий: разница между текущей и новой ставкой составляет не менее 2–3 процентных пунктов; оставшийся срок кредита превышает 1 год; отсутствуют штрафы за досрочное погашение (по законодательству Узбекистана банки не вправе запрещать досрочное погашение потребительских кредитов). Также учтите сопутствующие расходы: переоценка залогового имущества, комиссия нового банка, переоформление страхового полиса.',
-      'Пример расчёта: остаток ипотечного кредита 150 млн сум, текущая ставка 22%, осталось 5 лет. При рефинансировании под 17% ежемесячный платёж снизится с 4 200 000 до 3 700 000 сум — экономия 500 000 сум в месяц. За 5 лет общая экономия составит около 30 млн сум, даже с учётом расходов на переоформление (3–5 млн сум). Рефинансирование особенно выгодно для ипотечных кредитов с длительным сроком.',
+      'Пример расчёта: остаток ипотечного кредита 150 млн сум, текущая ставка 22%, осталось 5 лет. При рефинансировании под 17% ежемесячный платёж снизится с 4 140 000 до 3 730 000 сум — экономия 415 000 сум в месяц. За 5 лет общая экономия составит около 25 млн сум, из которых нужно вычесть расходы на переоформление (3–5 млн сум). Рефинансирование особенно выгодно для ипотечных кредитов с длительным сроком.',
       'Рефинансирование в Узбекистане предлагают крупнейшие банки: Ипотека-банк, Капиталбанк, Хамкорбанк, Узнацбанк и другие. Некоторые банки проводят акции со сниженными ставками для рефинансирования. Возможно также внутреннее рефинансирование — снижение ставки в текущем банке без смены кредитора, что экономит время и расходы на переоформление документов.',
-      'Наш калькулятор сравнивает текущий и новый кредит по всем параметрам: ежемесячный платёж, общая переплата, процентная экономия, срок окупаемости расходов на рефинансирование. Введите остаток кредита, текущую ставку, новую ставку и оставшийся срок — и получите детальный расчёт. Помните: рефинансирование не увеличивает долг, а лишь меняет условия его обслуживания на более выгодные.',
+      'Наш калькулятор сравнивает текущий и новый кредит по платежу: показывает текущий и новый ежемесячный платёж, экономию в месяц и за весь срок. Расходы на переоформление вычтите отдельно. Введите остаток кредита, текущую ставку, новую ставку и оставшийся срок — и получите детальный расчёт. Помните: рефинансирование не увеличивает долг, а лишь меняет условия его обслуживания на более выгодные.',
     ],
     paragraphsUz: [
       "Kreditni qayta moliyalash — mavjud kreditni to'lash uchun yangi, foydaliroq shartlardagi kredit olish. O'zbekistonda bu xizmat ayniqsa dolzarb: Markaziy bankning 2026-yildagi kalit stavkasi 14% ni tashkil etadi va stavka 20–24% da kredit rasmiylashtirgan ko'plab qarz oluvchilar ortiqcha to'lovni sezilarli kamaytirishi mumkin. Qayta moliyalash kalkulyatori aniq tejash summasini ko'rsatadi va asoslangan qaror qabul qilishga yordam beradi.",
       "Qayta moliyalash bir necha shart bajarilganda foydali: joriy va yangi stavka o'rtasidagi farq kamida 2–3 foiz punkt; kreditning qolgan muddati 1 yildan ortiq; muddatidan oldin to'lash uchun jarimalar yo'q (O'zbekiston qonunchiligiga ko'ra banklar iste'mol kreditlarini muddatidan oldin to'lashni taqiqlash huquqiga ega emas). Qo'shimcha xarajatlarni ham hisobga oling: garov mulkni qayta baholash, yangi bank komissiyasi, sug'urta polisini qayta rasmiylashtirish.",
-      "Hisoblash misoli: ipoteka krediti qoldig'i 150 mln so'm, joriy stavka 22%, 5 yil qolgan. 17% da qayta moliyalashda oylik to'lov 4 200 000 dan 3 700 000 so'mga tushadi — oyiga 500 000 so'm tejash. 5 yilda umumiy tejash taxminan 30 mln so'mni tashkil etadi, hatto qayta rasmiylashtirish xarajatlarini (3–5 mln so'm) hisobga olganda ham. Qayta moliyalash uzoq muddatli ipoteka kreditlari uchun ayniqsa foydali.",
+      "Hisoblash misoli: ipoteka krediti qoldig'i 150 mln so'm, joriy stavka 22%, 5 yil qolgan. 17% ga qayta moliyalashda oylik to'lov 4 140 000 dan 3 730 000 so'mga tushadi — oyiga 415 000 so'm tejash. 5 yilda umumiy tejash taxminan 25 mln so'mni tashkil etadi, undan qayta rasmiylashtirish xarajatlarini (3–5 mln so'm) ayirish kerak. Qayta moliyalash uzoq muddatli ipoteka kreditlari uchun ayniqsa foydali.",
       "O'zbekistonda qayta moliyalashni yirik banklar taklif etadi: Ipoteka-bank, Kapitalbank, Hamkorbank, O'zMilliybank va boshqalar. Ba'zi banklar qayta moliyalash uchun pasaytirilgan stavkalar bo'yicha aksiyalar o'tkazadi. Ichki qayta moliyalash ham mumkin — kreditorni almashtirmasdan joriy bankda stavkani pasaytirish, bu hujjatlarni qayta rasmiylashtirish uchun vaqt va xarajatlarni tejaydi.",
-      "Bizning kalkulyatorimiz joriy va yangi kreditni barcha parametrlar bo'yicha solishtiradi: oylik to'lov, umumiy ortiqcha to'lov, foiz tejash, qayta moliyalash xarajatlarining o'zini oqlash muddati. Kredit qoldig'i, joriy stavka, yangi stavka va qolgan muddatni kiriting — batafsil hisob-kitobni olasiz. Esda tuting: qayta moliyalash qarzni oshirmaydi, faqat uning xizmat ko'rsatish shartlarini foydaliroqqa o'zgartiradi.",
+      "Bizning kalkulyatorimiz joriy va yangi kreditni to'lov bo'yicha solishtiradi: joriy va yangi oylik to'lovni, oylik va butun muddatdagi tejashni ko'rsatadi. Qayta rasmiylashtirish xarajatlarini alohida ayiring. Kredit qoldig'i, joriy stavka, yangi stavka va muddatlarni kiriting. Esda tuting: qayta moliyalash qarzni oshirmaydi, faqat uning xizmat ko'rsatish shartlarini o'zgartiradi.",
     ],
     faqRu: [
       { question: 'Когда выгодно рефинансировать?', answer: 'При разнице ставок ≥2%, остаточном сроке >1 года, отсутствии штрафов за досрочное погашение.' },
@@ -1754,20 +1754,20 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'deposit-comparison',
-    lastUpdated: '2026-02-16',
+    lastUpdated: '2026-11-01',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Фонд гарантирования вкладов', url: 'https://dif.uz' },
     ],
     paragraphsRu: [
-      'Калькулятор сравнения вкладов позволяет сопоставить условия депозитов в разных банках Узбекистана по эффективной доходности с учётом капитализации, возможности пополнения и условий досрочного снятия. Для объективного сравнения важно использовать эффективную годовую ставку (ЭГС), а не номинальную — вклад под 23% с ежемесячной капитализацией может быть выгоднее вклада под 24% с выплатой в конце срока.',
+      'Калькулятор сравнения вкладов позволяет сопоставить условия депозитов в разных банках Узбекистана по итоговой сумме с ежемесячной капитализацией. Для объективного сравнения важно использовать эффективную годовую ставку (ЭГС), а не номинальную — вклад под 23% с ежемесячной капитализацией может быть выгоднее вклада под 24% с выплатой в конце срока.',
       'Ставки по вкладам в банках Узбекистана (2025–2026): в сумах — 20-26% годовых (топ-ставки у Ипотека-банк, Капиталбанк, Давр Банк); в долларах США — 4-7% (Узнацбанк, Асакабанк); в евро — 2-4%. Срок вкладов: от 3 месяцев до 3 лет. Минимальная сумма: от 100 000 сум до 1 000 000 сум в зависимости от банка.',
       'Ключевые параметры для сравнения: номинальная ставка, частота капитализации (ежемесячная выгоднее квартальной на 1-2%), возможность пополнения, условия досрочного снятия (потеря процентов — полная или частичная), минимальная сумма и минимальный срок. Некоторые вклады с высокой ставкой не допускают досрочное снятие или пополнение.',
       'Все вклады физических лиц в банках Узбекистана гарантированы Фондом гарантирования вкладов граждан. Максимальная сумма возмещения — до 200 млн сум на одного вкладчика в одном банке. Проценты по вкладам физических лиц не облагаются НДФЛ, если вкладчик — налоговый резидент Узбекистана (п. 13 ст. 378 НК, льгота действует с 1998 года). С нерезидентов банк удерживает 10% при выплате процентов (п. 1 ст. 382 НК): льготы раздела о НДФЛ на нерезидентов не распространяются (п. 2 ч. 1 ст. 366 НК), снизить или вернуть налог можно только по соглашению об избежании двойного налогообложения, предъявив сертификат резидентства.',
       'Наш калькулятор сравнения вкладов позволяет ввести параметры двух и более вкладов и увидеть: эффективную ставку, итоговый доход, разницу между вкладами в абсолютных числах. Пример: Вклад А — 24% с годовой капитализацией (ЭГС 24%). Вклад Б — 23% с ежемесячной капитализацией (ЭГС 25,59%). На 50 млн за 1 год: А принесёт 12 000 000, Б — 12 795 000. Разница: 795 000 сум в пользу Б.',
     ],
     paragraphsUz: [
-      "Omonatlarni solishtirish kalkulyatori O'zbekiston turli banklaridagi depozit shartlarini kapitalizatsiya, to'ldirish imkoniyati va muddatidan oldin yechib olish shartlarini hisobga olgan holda samarali daromadlilik bo'yicha solishtirish imkonini beradi. Ob'ektiv solishtirish uchun nominal emas, samarali yillik stavkani (SYS) ishlatish muhim — oylik kapitalizatsiyali 23% omonat muddat oxiridagi to'lovli 24% omonatdan foydaliroq bo'lishi mumkin.",
+      "Omonatlarni solishtirish kalkulyatori O'zbekiston turli banklaridagi depozit shartlarini oylik kapitalizatsiyali yakuniy summa bo'yicha solishtiradi. Ob'ektiv solishtirish uchun nominal emas, samarali yillik stavkani (SYS) ishlatish muhim — oylik kapitalizatsiyali 23% omonat muddat oxiridagi to'lovli 24% omonatdan foydaliroq bo'lishi mumkin.",
       "O'zbekiston banklarida omonat stavkalari (2025–2026): so'mda — yillik 20-26% (eng yuqori stavkalar Ipoteka-bank, Kapitalbank, Davr Bank da); AQSh dollarida — 4-7% (O'zmilliybank, Asakabank); yevroda — 2-4%. Omonat muddatlari: 3 oydan 3 yilgacha. Minimal summa: bankga qarab 100 000 so'mdan 1 000 000 so'mgacha.",
       "Solishtirish uchun asosiy parametrlar: nominal stavka, kapitalizatsiya chastotasi (oylik choraklikdan 1-2% foydaliroq), to'ldirish imkoniyati, muddatidan oldin yechib olish shartlari (foizlarni yo'qotish — to'liq yoki qisman), minimal summa va minimal muddat. Yuqori stavkali ba'zi omonatlar muddatidan oldin yechib olish yoki to'ldirishga ruxsat bermaydi.",
       "O'zbekiston banklaridagi jismoniy shaxslarning barcha omonatlari Fuqarolar omonatlarini kafolatlash fondi tomonidan kafolatlangan. Maksimal qoplov summasi — bir omonatchiga bir bankda 200 mln so'mgacha. Jismoniy shaxslarning bank omonatlari bo'yicha foizlar, agar omonatchi O'zbekiston soliq rezidenti bo'lsa, JShShSga tortilmaydi (SK 378-moddasi 13-bandi, imtiyoz 1998-yildan amal qiladi). Norezidentlardan bank foizlarni to'lashda 10% ushlab qoladi (SK 382-moddasi 1-bandi): JShShS bo'limidagi imtiyozlar norezidentlarga tatbiq etilmaydi (SK 366-moddasi 1-qismi 2-bandi), soliqni faqat qo'sh soliqqa tortishning oldini olish to'g'risidagi bitim asosida, rezidentlik sertifikatini taqdim etib, kamaytirish yoki qaytarish mumkin.",
@@ -1791,7 +1791,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'money-transfer',
-    lastUpdated: '2025-09-08',
+    lastUpdated: '2026-11-01',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Uzum Bank', url: 'https://uzumbank.uz' },
@@ -1799,60 +1799,60 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     paragraphsRu: [
       'Калькулятор стоимости перевода рассчитывает итоговые расходы на перевод денег с учётом комиссий и разницы курсов. Позволяет сравнить варианты: банковский перевод, системы денежных переводов (Western Union, MoneyGram, Золотая Корона, Юнистрим), мобильные переводы (Uzum, Click, Payme). Итоговая стоимость перевода = сумма всех комиссий + потеря на курсе.',
       'Для переводов внутри Узбекистана самый дешёвый способ — мобильные приложения: Uzum — переводы между картами бесплатно до 10 млн сум/мес; Click — до 5 млн/мес бесплатно; Payme — до 3 млн бесплатно. Переводы между разными банками через мобильные приложения — комиссия 0,3-1%. Банковские переводы между счетами — 0,1-0,5%.',
-      'Для международных переводов из Узбекистана: Золотая Корона — комиссия 1-1,5%, популярна для переводов в Россию, получение наличными; Юнистрим — 1-2%; Western Union — 2-5% (дороже, но доступна в 200+ странах); SWIFT — фиксированная -30 (выгодна для крупных сумм свыше ). Мобильные кошельки для международных переводов: Uzum — в Россию от 1%.',
+      'Для международных переводов из Узбекистана: Золотая Корона — комиссия 1-1,5%, популярна для переводов в Россию, получение наличными; Юнистрим — 1-2%; Western Union — 2-5% (дороже, но доступна в 200+ странах); SWIFT — фиксированная $15-30 (выгодна для крупных сумм свыше $1 000). Мобильные кошельки для международных переводов: Uzum — в Россию от 1%.',
       'Факторы, влияющие на стоимость перевода: комиссия отправителя (0-3%), комиссия получателя (0-1%), разница курса (0,5-3% — скрытая комиссия за счёт менее выгодного курса конвертации), способ получения (наличные дороже, чем на карту). При крупных суммах SWIFT-перевод выгоднее из-за фиксированной комиссии. Для мелких регулярных переводов — мобильные приложения.',
-      'Пример: перевод 5 000 000 сум из Ташкента в Москву. Золотая Корона: комиссия 1,5% = 75 000 сум, итого расход 75 000. Western Union: 3% = 150 000 сум. SWIFT:  ≈ 325 000 сум (невыгодно для малых сумм). Uzum перевод: 1% = 50 000 сум. Для крупной суммы ( 000): SWIFT  выгоднее Золотой Короны (). Наш калькулятор найдёт оптимальный способ.',
+      'Пример: перевод 5 000 000 сум из Ташкента в Москву. Золотая Корона: комиссия 1,5% = 75 000 сум, итого расход 75 000. Western Union: 3% = 150 000 сум. SWIFT: $25 ≈ 300 000 сум (невыгодно для малых сумм). Uzum перевод: 1% = 50 000 сум. Для крупной суммы ($10 000): SWIFT $25 выгоднее Золотой Короны ($150 при 1,5%). В калькулятор введите сумму, комиссию и курс выбранного способа: он покажет, сколько получит адресат.',
     ],
     paragraphsUz: [
       "O'tkazma qiymati kalkulyatori komissiyalar va kurs farqini hisobga olgan holda pul o'tkazish yakuniy xarajatlarini hisoblaydi. Variantlarni solishtiradi: bank o'tkazmasi, pul o'tkazma tizimlari (Western Union, MoneyGram, Zolotaya Korona, Unistream), mobil o'tkazmalar (Uzum, Click, Payme). O'tkazmaning yakuniy qiymati = barcha komissiyalar yig'indisi + kursdagi yo'qotish.",
       "O'zbekiston ichida o'tkazmalar uchun eng arzon usul — mobil ilovalar: Uzum — kartalar o'rtasida oyiga 10 mln so'mgacha bepul; Click — oyiga 5 mln gacha bepul; Payme — 3 mln gacha bepul. Turli banklar o'rtasida mobil ilovalar orqali o'tkazmalar — komissiya 0,3-1%. Hisoblar o'rtasida bank o'tkazmalari — 0,1-0,5%.",
-      "O'zbekistondan xalqaro o'tkazmalar uchun: Zolotaya Korona — komissiya 1-1,5%, Rossiyaga o'tkazmalar uchun mashhur, naqd olish; Unistream — 1-2%; Western Union — 2-5% (qimmatroq, lekin 200+ mamlakatda mavjud); SWIFT — qat'iy -30 ( dan ortiq yirik summalar uchun foydali). Xalqaro o'tkazmalar uchun mobil hamyonlar: Uzum — Rossiyaga 1% dan.",
+      "O'zbekistondan xalqaro o'tkazmalar uchun: Zolotaya Korona — komissiya 1-1,5%, Rossiyaga o'tkazmalar uchun mashhur, naqd olish; Unistream — 1-2%; Western Union — 2-5% (qimmatroq, lekin 200+ mamlakatda mavjud); SWIFT — qat'iy $15-30 ($1 000 dan ortiq yirik summalar uchun foydali). Xalqaro o'tkazmalar uchun mobil hamyonlar: Uzum — Rossiyaga 1% dan.",
       "O'tkazma qiymatiga ta'sir etuvchi omillar: jo'natuvchi komissiyasi (0-3%), oluvchi komissiyasi (0-1%), kurs farqi (0,5-3% — kamroq foydali konvertatsiya kursi hisobiga yashirin komissiya), olish usuli (naqd kartaga qaraganda qimmatroq). Yirik summalarda qat'iy komissiya sababli SWIFT o'tkazma foydaliroq. Kichik muntazam o'tkazmalar uchun — mobil ilovalar.",
-      "Misol: Toshkentdan Moskvaga 5 000 000 so'm o'tkazma. Zolotaya Korona: komissiya 1,5% = 75 000 so'm. Western Union: 3% = 150 000 so'm. SWIFT:  ≈ 325 000 so'm (kichik summalar uchun foydasiz). Uzum o'tkazma: 1% = 50 000 so'm. Yirik summa ( 000) uchun: SWIFT  Zolotaya Koronadan () foydaliroq. Kalkulyatorimiz optimal usulni topadi.",
+      "Misol: Toshkentdan Moskvaga 5 000 000 so'm o'tkazma. Zolotaya Korona: komissiya 1,5% = 75 000 so'm. Western Union: 3% = 150 000 so'm. SWIFT: $25 ≈ 300 000 so'm (kichik summalar uchun foydasiz). Uzum o'tkazma: 1% = 50 000 so'm. Yirik summa ($10 000) uchun: SWIFT $25 Zolotaya Koronadan ($150, 1,5% da) foydaliroq. Kalkulyatorga tanlangan usulning summasi, komissiyasi va kursini kiriting: u oluvchi qancha olishini ko'rsatadi.",
     ],
     faqRu: [
       { question: 'Какой самый дешёвый перевод внутри Узбекистана?', answer: 'Мобильные приложения: Uzum (бесплатно до 10 млн/мес), Click (до 5 млн), Payme (до 3 млн).' },
-      { question: 'Какой самый дешёвый международный перевод?', answer: 'Мелкие суммы: Uzum (1%), Золотая Корона (1-1,5%). Крупные (+): SWIFT (-30 фиксированно).' },
+      { question: 'Какой самый дешёвый международный перевод?', answer: 'Мелкие суммы: Uzum (1%), Золотая Корона (1-1,5%). Крупные (от $1 000): SWIFT ($15-30 фиксированно).' },
       { question: 'Из чего складывается стоимость перевода?', answer: 'Комиссия отправителя + комиссия получателя + потеря на разнице курсов (скрытая комиссия 0,5-3%).' },
       { question: 'Как отправить деньги в Россию из Узбекистана?', answer: 'Золотая Корона (1-1,5%), Юнистрим (1-2%), Uzum (от 1%). Получение наличными или на карту.' },
-      { question: 'Есть ли лимиты на переводы?', answer: 'Мобильные: бесплатный лимит 3-10 млн/мес. Международные: без ограничений, но суммы свыше  требуют обоснования.' },
+      { question: 'Есть ли лимиты на переводы?', answer: 'Мобильные: бесплатный лимит 3-10 млн/мес. Международные: крупные суммы банк может попросить обосновать документами.' },
     ],
     faqUz: [
       { question: "O'zbekiston ichida eng arzon o'tkazma qanday?", answer: "Mobil ilovalar: Uzum (oyiga 10 mln gacha bepul), Click (5 mln gacha), Payme (3 mln gacha)." },
-      { question: "Eng arzon xalqaro o'tkazma qanday?", answer: "Kichik summalar: Uzum (1%), Zolotaya Korona (1-1,5%). Yirik (+): SWIFT (qat'iy -30)." },
+      { question: "Eng arzon xalqaro o'tkazma qanday?", answer: "Kichik summalar: Uzum (1%), Zolotaya Korona (1-1,5%). Yirik ($1 000 dan): SWIFT (qat'iy $15-30)." },
       { question: "O'tkazma qiymati nimalardan tashkil topadi?", answer: "Jo'natuvchi komissiyasi + oluvchi komissiyasi + kurs farqidagi yo'qotish (yashirin komissiya 0,5-3%)." },
       { question: "O'zbekistondan Rossiyaga pul qanday yuborish mumkin?", answer: "Zolotaya Korona (1-1,5%), Unistream (1-2%), Uzum (1% dan). Naqd yoki kartaga olish." },
-      { question: "O'tkazmalarda limitlar bormi?", answer: "Mobil: bepul limit oyiga 3-10 mln. Xalqaro: cheklovsiz, lekin  dan ortiq summalar uchun asos kerak." },
+      { question: "O'tkazmalarda limitlar bormi?", answer: "Mobil: bepul limit oyiga 3-10 mln. Xalqaro: yirik summalar uchun bank asoslovchi hujjatlar so'rashi mumkin." },
     ],
   },
 
   {
     slug: 'fuel-consumption',
-    lastUpdated: '2025-09-03',
+    lastUpdated: '2026-11-01',
     sources: [],
     paragraphsRu: [
-      'Калькулятор расхода топлива рассчитывает стоимость поездки и средний расход бензина или газа на 100 км пути. В Узбекистане топливный рынок отличается широким распространением метана (сжатого природного газа) — около 70% легковых автомобилей оборудованы газобаллонным оборудованием. Цены на топливо в Ташкенте на 18 сентября 2026 года на заправках «Узбекнефтегаза»: АИ-92 — ~13 500 сум/л, АИ-95 — ~17 000 сум/л, АИ-100 — ~28 000 сум/л, дизель — ~15 500 сум/л, метан — ~5 750 сум/м³; пропан в августе стоил до 8 800 сум/л и в сентябре дорожает вслед за биржей. На частных сетях дороже: импортный АИ-92 — до 16 700 сум, АИ-95 — 19 500–20 500 сум, и с сентября его бывает трудно найти. В калькуляторе можно указать свою цену с чека. Бензин АИ-80 снят с производства 1 декабря 2025 года, АИ-91 больше не продаётся. Цены на топливо в Узбекистане не регулируются государством и отличаются по сетям заправок.',
+      'Калькулятор расхода топлива рассчитывает стоимость поездки и средний расход бензина или газа на 100 км пути. В Узбекистане топливный рынок отличается широким распространением метана (сжатого природного газа) — около 70% легковых автомобилей оборудованы газобаллонным оборудованием. Цены на топливо в Ташкенте на 20 октября 2026 года на заправках «Узбекнефтегаза»: АИ-92 — ~13 500 сум/л, АИ-95 — ~19 500 сум/л, АИ-100 — ~24 500 сум/л, дизель — ~18 500 сум/л, метан — ~5 750 сум/м³; пропан в августе стоил до 8 800 сум/л. На частных сетях иначе: импортный АИ-92 — до 18 000 сум, местный — от 11 700 сум, АИ-95 — 19 700–21 100 сум. В калькуляторе можно указать свою цену с чека. Бензин АИ-80 снят с производства 1 декабря 2025 года, АИ-91 больше не продаётся. Цены на топливо в Узбекистане не регулируются государством и отличаются по сетям заправок.',
       'Формула расчёта: стоимость поездки = (расстояние / 100) × расход на 100 км × цена за литр (или м³). Средний расход популярных узбекистанских автомобилей: Chevrolet Cobalt — 7–8 л/100 км, Chevrolet Nexia — 8–9 л/100 км, Chevrolet Tracker — 9–10 л/100 км. На метане расход тех же моделей: 6–9 м³/100 км. Расход увеличивается при городской езде, использовании кондиционера и перегрузке.',
       'Пример: маршрут Ташкент — Самарканд (300 км) на Chevrolet Cobalt с расходом 8 л/100 км на бензине АИ-92 обойдётся в 324 000 сум. На метане та же поездка стоит 120 750 сум — экономия в 2,7 раза. При ежедневных поездках на работу (30 км в день, 22 рабочих дня) месячные расходы на бензин составят около 713 000 сум, а на метане — 265 650 сум.',
       'Переход на метан — одно из самых выгодных решений для автомобилиста в Узбекистане. Стоимость установки газобаллонного оборудования составляет 3–5 млн сум и окупается за 6–12 месяцев при среднем пробеге. В стране действует развитая сеть газозаправочных станций (АГНКС), особенно вдоль основных междугородних трасс. Однако следует учитывать, что мощность двигателя на газе снижается на 10–15%.',
-      'Наш калькулятор расхода топлива позволяет точно рассчитать затраты для любого маршрута: введите расстояние, расход вашего автомобиля и тип топлива — и мгновенно узнайте стоимость поездки. Калькулятор также сравнивает расходы на бензин и метан, помогая оценить выгоду от перехода на газ для вашего конкретного режима эксплуатации.',
+      'Наш калькулятор расхода топлива позволяет точно рассчитать затраты для любого маршрута: введите расстояние, расход вашего автомобиля и тип топлива — и мгновенно узнайте стоимость поездки. Чтобы оценить выгоду от перехода на газ, посчитайте один маршрут на бензине и на метане и сравните суммы.',
     ],
     paragraphsUz: [
-      "Yoqilg'i sarfi kalkulyatori sayohat narxini va 100 km yo'lga benzin yoki gaz o'rtacha sarfini hisoblaydi. O'zbekistonda yoqilg'i bozori metan (siqilgan tabiiy gaz) ning keng tarqalganligi bilan ajralib turadi — yengil avtomobillarning taxminan 70% gaz uskunasi bilan jihozlangan. Toshkentda 2026-yil 18-sentabr holatiga «O'zbekneftgaz» shoxobchalarida yoqilg'i narxlari: AI-92 — ~13 500 so'm/l, AI-95 — ~17 000 so'm/l, AI-100 — ~28 000 so'm/l, dizel — ~15 500 so'm/l, metan — ~5 750 so'm/m³; propan avgustda 8 800 so'mgacha turgan va sentabrda birja ortidan qimmatlashmoqda. Xususiy shoxobchalarda qimmatroq: import AI-92 — 16 700 so'mgacha, AI-95 — 19 500–20 500 so'm, sentabrdan uni topish qiyinlashgan. Kalkulyatorda chekdagi o'z narxingizni kiritish mumkin. AI-80 benzini 2025-yil 1-dekabrdan ishlab chiqarilmaydi, AI-91 endi sotilmaydi. O'zbekistonda yoqilg'i narxlari davlat tomonidan tartibga solinmaydi va shoxobchalar bo'yicha farq qiladi.",
+      "Yoqilg'i sarfi kalkulyatori sayohat narxini va 100 km yo'lga benzin yoki gaz o'rtacha sarfini hisoblaydi. O'zbekistonda yoqilg'i bozori metan (siqilgan tabiiy gaz) ning keng tarqalganligi bilan ajralib turadi — yengil avtomobillarning taxminan 70% gaz uskunasi bilan jihozlangan. Toshkentda 2026-yil 20-oktabr holatiga «O'zbekneftgaz» shoxobchalarida yoqilg'i narxlari: AI-92 — ~13 500 so'm/l, AI-95 — ~19 500 so'm/l, AI-100 — ~24 500 so'm/l, dizel — ~18 500 so'm/l, metan — ~5 750 so'm/m³; propan avgustda 8 800 so'mgacha turgan. Xususiy shoxobchalarda boshqacha: import AI-92 — 18 000 so'mgacha, mahalliy — 11 700 so'mdan, AI-95 — 19 700–21 100 so'm. Kalkulyatorda chekdagi o'z narxingizni kiritish mumkin. AI-80 benzini 2025-yil 1-dekabrdan ishlab chiqarilmaydi, AI-91 endi sotilmaydi. O'zbekistonda yoqilg'i narxlari davlat tomonidan tartibga solinmaydi va shoxobchalar bo'yicha farq qiladi.",
       "Hisoblash formulasi: sayohat narxi = (masofa / 100) × 100 km ga sarf × litr (yoki m³) narxi. O'zbekistonda mashhur avtomobillarning o'rtacha sarfi: Chevrolet Cobalt — 7–8 l/100 km, Chevrolet Nexia — 8–9 l/100 km, Chevrolet Tracker — 9–10 l/100 km. Metanda xuddi shu modellarning sarfi: 6–9 m³/100 km. Shahar ichida haydash, konditsioner ishlatish va ortiqcha yuklashda sarf oshadi.",
       "Misol: Toshkent — Samarqand marshruti (300 km) Chevrolet Cobalt da AI-92 benzinda 8 l/100 km sarfda 324 000 so'mga tushadi. Metanda xuddi shu sayohat 120 750 so'm — 2,7 marta tejash. Har kungi ishga sayohatlarda (kuniga 30 km, 22 ish kuni) oylik benzin xarajatlari taxminan 713 000 so'm, metanda esa 265 650 so'm.",
       "Metanga o'tish — O'zbekistondagi avtomobilist uchun eng foydali qarorlardan biri. Gaz uskunasini o'rnatish narxi 3–5 mln so'm bo'lib, o'rtacha yurishda 6–12 oyda o'zini oqlaydi. Mamlakatda rivojlangan gaz to'ldirish stansiyalari (AGNKS) tarmog'i mavjud, ayniqsa asosiy shaharlararo trassalar bo'ylab. Biroq, gazdagi dvigatel quvvati 10–15% ga kamayishini hisobga olish kerak.",
-      "Bizning yoqilg'i sarfi kalkulyatorimiz har qanday marshrut uchun xarajatlarni aniq hisoblash imkonini beradi: masofani, avtomobilingizning sarfini va yoqilg'i turini kiriting — sayohat narxini bir zumda bilib olasiz. Kalkulyator shuningdek benzin va metan xarajatlarini solishtiradi, bu sizning aniq foydalanish rejimingiz uchun gazga o'tish foydasini baholashga yordam beradi.",
+      "Bizning yoqilg'i sarfi kalkulyatorimiz har qanday marshrut uchun xarajatlarni aniq hisoblash imkonini beradi: masofani, avtomobilingizning sarfini va yoqilg'i turini kiriting — sayohat narxini bir zumda bilib olasiz. Gazga o'tish foydasini baholash uchun bitta marshrutni benzinda va metanda hisoblab, summalarni solishtiring.",
     ],
     faqRu: [
-      { question: 'Сколько стоит бензин в Узбекистане?', answer: 'АИ-92: ~13 500 сум/л, АИ-95: ~17 000 сум/л, АИ-100: ~28 000 сум/л, дизель: ~15 500 сум/л, метан: ~5 750 сум/м³ (Ташкент, «Узбекнефтегаз», 18 сентября 2026). На частных сетях дороже, АИ-95 бывает в дефиците. АИ-80 снят с производства с декабря 2025, АИ-91 не продаётся. Цены не регулируются и отличаются по сетям.' },
+      { question: 'Сколько стоит бензин в Узбекистане?', answer: 'АИ-92: ~13 500 сум/л, АИ-95: ~19 500 сум/л, АИ-100: ~24 500 сум/л, дизель: ~18 500 сум/л, метан: ~5 750 сум/м³ (Ташкент, «Узбекнефтегаз», 20 октября 2026). На частных сетях цены другие. АИ-80 снят с производства с декабря 2025, АИ-91 не продаётся. Цены не регулируются и отличаются по сетям.' },
       { question: 'Сколько стоит поездка Ташкент — Самарканд?', answer: 'На бензине (АИ-92 по 13 500 сум/л): ~324 000 сум. На метане: ~121 000 сум. Расстояние 300 км, расход 8 л или 7 м³ на 100 км.' },
-      { question: 'Выгоднее ли метан?', answer: 'Да, в 3-4 раза дешевле бензина. Расходы на переоборудование (3-5 млн сум) окупаются за 6-12 месяцев.' },
+      { question: 'Выгоднее ли метан?', answer: 'Да, поездка на метане примерно в 2,7 раза дешевле, чем на АИ-92. Расходы на переоборудование (3-5 млн сум) окупаются за 6-12 месяцев.' },
     ],
     faqUz: [
-      { question: "O'zbekistonda benzin qancha turadi?", answer: "AI-92: ~13 500 so'm/l, AI-95: ~17 000 so'm/l, AI-100: ~28 000 so'm/l, dizel: ~15 500 so'm/l, metan: ~5 750 so'm/m³ (Toshkent, «O'zbekneftgaz», 2026-yil 18-sentabr). Xususiy shoxobchalarda qimmatroq, AI-95 tanqis bo'lishi mumkin. AI-80 2025-yil dekabrdan ishlab chiqarilmaydi, AI-91 sotilmaydi." },
+      { question: "O'zbekistonda benzin qancha turadi?", answer: "AI-92: ~13 500 so'm/l, AI-95: ~19 500 so'm/l, AI-100: ~24 500 so'm/l, dizel: ~18 500 so'm/l, metan: ~5 750 so'm/m³ (Toshkent, «O'zbekneftgaz», 2026-yil 20-oktabr). Xususiy shoxobchalarda narxlar boshqacha. AI-80 2025-yil dekabridan ishlab chiqarilmaydi, AI-91 sotilmaydi. Narxlar tartibga solinmaydi va shoxobchalar bo'yicha farq qiladi." },
       { question: "Toshkent — Samarqand sayohati qancha turadi?", answer: "Benzinda (AI-92 litri 13 500 so'm): ~324 000 so'm. Metanda: ~121 000 so'm. Masofa 300 km, sarf 100 km ga 8 l yoki 7 m³." },
-      { question: "Metan foydaliroqmi?", answer: "Ha, benzindan 3-4 marta arzon. Qayta jihozlash xarajatlari (3-5 mln so'm) 6-12 oyda o'zini oqlaydi." },
+      { question: "Metan foydaliroqmi?", answer: "Ha, metanda sayohat AI-92 ga qaraganda taxminan 2,7 baravar arzon. Qayta jihozlash xarajatlari (3-5 mln so'm) 6-12 oyda o'zini oqlaydi." },
     ],
   },
 
@@ -1923,8 +1923,8 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     slug: 'heating',
     lastUpdated: '2026-11-01',
     sources: [
-      { name: 'Узтрансгаз — Тарифы', url: 'https://uztransgaz.uz' },
-      { name: 'Узбекэнерго — Тарифы', url: 'https://uzbekenergo.uz' },
+      { name: 'Постановление Кабмина № 243 от 15.05.2026 (газ, электроэнергия)', url: 'https://lex.uz/ru/docs/8195731' },
+      { name: 'Министерство энергетики РУз', url: 'https://minenergy.uz' },
     ],
     paragraphsRu: [
       'Калькулятор отопления рассчитывает стоимость центрального отопления в Узбекистане, а ниже приведены ориентиры по другим способам: газовый котёл, электрический обогреватель, тепловой насос. Сезон начинается, когда среднесуточная температура пять дней подряд держится ниже +8°C: в Ташкенте прошлый сезон начался в начале ноября и завершился поэтапно с 24 марта (около 140 дней), а средняя температура зимой составляет 0-5°C в Ташкенте и до −10°C в Каракалпакстане.',
@@ -1958,30 +1958,30 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'internet',
-    lastUpdated: '2025-09-05',
+    lastUpdated: '2026-11-01',
     sources: [
       { name: 'Uztelecom — Тарифы', url: 'https://uztelecom.uz' },
       { name: 'Министерство цифровых технологий', url: 'https://mitc.uz' },
     ],
     paragraphsRu: [
-      'Калькулятор стоимости интернета сравнивает тарифы всех крупных провайдеров Узбекистана. По данным Министерства цифровых технологий, в 2025 году проникновение интернета в Узбекистане превысило 85%, а число абонентов широкополосного доступа достигло 10 млн. Основные операторы: Uztelecom (GPON), TuronTelecom, Humans (бывш. Turontelecom), Beeline, Ucell, Mobiuz.',
+      'Калькулятор стоимости интернета считает расход по ориентировочной цене выбранной скорости за нужное число месяцев. По данным Министерства цифровых технологий, в 2025 году проникновение интернета в Узбекистане превысило 85%, а число абонентов широкополосного доступа достигло 10 млн. Основные операторы: Uztelecom (GPON), TuronTelecom, Humans (бывш. Turontelecom), Beeline, Ucell, Mobiuz.',
       'Тарифы домашнего интернета (ориентировочно): Uztelecom GPON — от 89 000 сум/мес (50 Мбит/с) до 399 000 сум/мес (500 Мбит/с); TuronTelecom — от 79 000 сум/мес (30 Мбит/с) до 449 000 сум/мес (1 Гбит/с); Humans — от 99 000 сум/мес (100 Мбит/с). Подключение GPON обычно бесплатное или за символическую плату 100 000-200 000 сум.',
       'Мобильный интернет: Beeline — от 25 000 сум/мес (3 ГБ) до 159 000 сум/мес (безлимит 4G); Ucell — от 29 000 сум/мес (5 ГБ) до 179 000 сум/мес (безлимит); Mobiuz — от 25 000 сум/мес (3 ГБ) до 149 000 сум/мес (безлимит). 5G запущен в пилотном режиме в центре Ташкента с теоретической скоростью до 1 Гбит/с, коммерческие тарифы — от 200 000 сум/мес.',
       'При выборе провайдера учитывайте: для соцсетей и мессенджеров достаточно 30 Мбит/с (~80 000 сум/мес), для стриминга видео 4K — от 100 Мбит/с (~150 000 сум/мес), для работы из дома (видеозвонки, VPN) — 50-100 Мбит/с, для геймеров — от 100 Мбит/с с низким пингом. В Ташкенте и областных центрах доступна оптика, в сельской местности — ADSL или мобильный 4G.',
-      'Калькулятор интернета на нашем сайте поможет выбрать оптимальный тариф: введите нужную скорость, объём трафика и район проживания — получите сравнение всех доступных провайдеров с точными ценами. Оплата возможна через Click, Payme, Uzum, банковские терминалы или в офисах провайдеров.',
+      'Калькулятор интернета считает годовой бюджет: выберите скорость и число месяцев. Цены в нём ориентировочные, точный тариф смотрите у провайдера. Оплата возможна через Click, Payme, Uzum, банковские терминалы или в офисах провайдеров.',
     ],
     paragraphsUz: [
       "Internet narxi kalkulyatori O'zbekistonning barcha yirik provayderlari tariflarini solishtiradi. Raqamli texnologiyalar vazirligi ma'lumotlariga ko'ra, 2025-yilda O'zbekistonda internet penetratsiyasi 85% dan oshdi, keng polosali ulanish abonentlari soni 10 mln ga yetdi. Asosiy operatorlar: Uztelecom (GPON), TuronTelecom, Humans, Beeline, Ucell, Mobiuz.",
       "Uy interneti tariflari (taxminan): Uztelecom GPON — 89 000 so'm/oy (50 Mbit/s) dan 399 000 so'm/oy (500 Mbit/s) gacha; TuronTelecom — 79 000 so'm/oy (30 Mbit/s) dan 449 000 so'm/oy (1 Gbit/s) gacha; Humans — 99 000 so'm/oy (100 Mbit/s) dan. GPON ulash odatda bepul yoki 100 000-200 000 so'm ramziy to'lov evaziga.",
       "Mobil internet: Beeline — 25 000 so'm/oy (3 GB) dan 159 000 so'm/oy (cheksiz 4G) gacha; Ucell — 29 000 so'm/oy (5 GB) dan 179 000 so'm/oy (cheksiz) gacha; Mobiuz — 25 000 so'm/oy (3 GB) dan 149 000 so'm/oy (cheksiz) gacha. 5G Toshkent markazida sinov rejimida ishga tushirilgan, nazariy tezlik 1 Gbit/s gacha, tijorat tariflari — 200 000 so'm/oy dan.",
       "Provayder tanlashda hisobga oling: ijtimoiy tarmoqlar va messenjerlar uchun 30 Mbit/s yetarli (~80 000 so'm/oy), 4K video striming uchun — 100 Mbit/s dan (~150 000 so'm/oy), uydan ishlash (videoqung'iroqlar, VPN) uchun — 50-100 Mbit/s, geymerlar uchun — past ping bilan 100 Mbit/s dan. Toshkent va viloyat markazlarida optika mavjud, qishloq joylarda — ADSL yoki mobil 4G.",
-      "Saytimizda internet kalkulyatori optimal tarifni tanlashga yordam beradi: kerakli tezlik, trafik hajmi va yashash tumanini kiriting — barcha mavjud provayderlarning aniq narxlari bilan solishtirishini olasiz. To'lov Click, Payme, Uzum, bank terminallari yoki provayderlar ofislarida amalga oshiriladi.",
+      "Internet kalkulyatori yillik byudjetni hisoblaydi: tezlik va oylar sonini tanlang. Undagi narxlar taxminiy, aniq tarifni provayderdan bilib oling. To'lov Click, Payme, Uzum, bank terminallari yoki provayderlar ofislarida amalga oshiriladi.",
     ],
     faqRu: [
       { question: 'Сколько стоит домашний интернет?', answer: 'От 79 000 сум (30 Мбит/с) до 449 000 сум (1 Гбит/с) в месяц. Uztelecom GPON: от 89 000 (50 Мбит/с).' },
       { question: 'Какой интернет самый быстрый?', answer: 'GPON-оптика (Uztelecom, TuronTelecom): до 1 Гбит/с. 5G (пилот в Ташкенте): до 1 Гбит/с. Мобильный 4G: до 150 Мбит/с.' },
       { question: 'Какую скорость выбрать?', answer: 'Соцсети: 30 Мбит/с (~80 000 сум). Стриминг 4K: 100+ Мбит/с (~150 000). Работа из дома: 50-100 Мбит/с. Геймерам: 100+ Мбит/с.' },
-      { question: 'Есть ли 5G в Узбекистане?', answer: 'Да, 5G запущен в пилотном режиме в центре Ташкента. Коммерческие тарифы от 200 000 сум/мес. Массовое покрытие ожидается в 2026 году.' },
+      { question: 'Есть ли 5G в Узбекистане?', answer: 'Да, 5G запущен в пилотном режиме в центре Ташкента. Коммерческие тарифы от 200 000 сум/мес.' },
       { question: 'Как оплатить интернет?', answer: 'Через Click, Payme, Uzum, банковские терминалы, в офисах провайдеров или настроить автоплатёж.' },
     ],
     faqUz: [
@@ -2095,21 +2095,21 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'break-even',
-    lastUpdated: '2025-09-02',
+    lastUpdated: '2026-11-01',
     sources: [],
         paragraphsRu: [
       'Калькулятор точки безубыточности (ТБУ) — ключевой инструмент для любого предпринимателя в Узбекистане. Он определяет минимальный объём продаж, при котором доходы полностью покрывают все постоянные и переменные расходы. Формула расчёта: ТБУ (шт) = Постоянные расходы / (Цена за единицу − Переменные расходы на единицу). Знание точки безубыточности позволяет оценить реалистичность бизнес-плана ещё до вложения средств.',
       'Постоянные расходы — это затраты, которые не зависят от объёма производства: аренда помещения, зарплаты сотрудников, коммунальные платежи, налоги на имущество, страховка. В Узбекистане аренда торгового помещения в Ташкенте обходится от 3 до 15 млн сум в месяц в зависимости от локации, а минимальная заработная плата в 2026 году составляет 1 360 000 сум. Эти расходы необходимо покрывать вне зависимости от продаж.',
       'Переменные расходы растут пропорционально объёму продаж: себестоимость товара, упаковка, доставка, комиссия маркетплейсов (Uzum Market, Sello берут 5–15%). Разница между ценой продажи и переменными расходами на единицу называется маржинальной прибылью — именно она покрывает постоянные расходы. Чем выше маржа, тем быстрее бизнес выходит на окупаемость.',
       'Рассмотрим пример: вы открываете пекарню в Ташкенте. Постоянные расходы: аренда 5 млн, зарплаты 8 млн, коммуналка 2 млн — итого 15 млн сум в месяц. Себестоимость буханки хлеба 4 000 сум, цена продажи 8 000 сум. ТБУ = 15 000 000 / (8 000 − 4 000) = 3 750 штук в месяц, или примерно 125 буханок в день. Всё, что продано сверх этого — ваша чистая прибыль.',
-      'Калькулятор также рассчитывает ТБУ в денежном выражении (сум), запас прочности и срок выхода на окупаемость. Это особенно важно при подаче заявки на кредит: банки Узбекистана (Ипотека-банк, Асака-банк) требуют бизнес-план с обоснованием окупаемости. Регулярный пересчёт ТБУ помогает адаптировать ценовую политику при изменении курса доллара или стоимости сырья.',
+      'Калькулятор также рассчитывает ТБУ в денежном выражении (сум) и маржинальную прибыль на единицу. Это особенно важно при подаче заявки на кредит: банки Узбекистана (Ипотека-банк, Асака-банк) требуют бизнес-план с обоснованием окупаемости. Регулярный пересчёт ТБУ помогает адаптировать ценовую политику при изменении курса доллара или стоимости сырья.',
     ],
     paragraphsUz: [
       "Zararsizlik nuqtasi (ZN) kalkulyatori O'zbekistondagi har qanday tadbirkor uchun muhim vosita hisoblanadi. U daromadlar barcha doimiy va o'zgaruvchan xarajatlarni to'liq qoplovchi minimal sotish hajmini aniqlaydi. Hisoblash formulasi: ZN (dona) = Doimiy xarajatlar / (Birlik narxi − Birlik uchun o'zgaruvchan xarajatlar). Zararsizlik nuqtasini bilish mablag' kiritishdan oldin biznes-rejaning realligini baholash imkonini beradi.",
       "Doimiy xarajatlar — ishlab chiqarish hajmiga bog'liq bo'lmagan xarajatlar: binoni ijaraga olish, xodimlar ish haqi, kommunal to'lovlar, mol-mulk soliqlari, sug'urta. O'zbekistonda Toshkentda savdo binosi ijarasi joylashuviga qarab oyiga 3 dan 15 mln so'mgacha, 2026-yilda eng kam ish haqi esa 1 360 000 so'mni tashkil etadi. Bu xarajatlar sotish hajmidan qat'i nazar qoplanishi shart.",
       "O'zgaruvchan xarajatlar sotish hajmiga mutanosib ravishda o'sadi: tovar tannarxi, qadoqlash, yetkazib berish, marketpleyslar komissiyasi (Uzum Market, Sello 5–15% oladi). Sotish narxi va birlik uchun o'zgaruvchan xarajatlar o'rtasidagi farq marjinal foyda deyiladi — aynan shu doimiy xarajatlarni qoplaydi. Marja qanchalik yuqori bo'lsa, biznes shunchalik tez o'zini oqlaydi.",
       "Misolni ko'rib chiqaylik: Toshkentda novvoyxona ochmoqchisiz. Doimiy xarajatlar: ijara 5 mln, ish haqi 8 mln, kommunal 2 mln — jami oyiga 15 mln so'm. Non tannarxi 4 000 so'm, sotish narxi 8 000 so'm. ZN = 15 000 000 / (8 000 − 4 000) = oyiga 3 750 dona, ya'ni kuniga taxminan 125 dona non. Bundan ortiq sotilgan har bir non — sof foydangiz.",
-      "Kalkulyator shuningdek pul ifodasida (so'mda) ZNni, xavfsizlik zaxirasini va o'zini oqlash muddatini hisoblaydi. Bu kredit uchun ariza berishda ayniqsa muhim: O'zbekiston banklari (Ipoteka-bank, Asaka-bank) o'zini oqlash asoslanmasi bilan biznes-rejani talab qiladi. ZNni muntazam qayta hisoblash dollar kursi yoki xom ashyo narxi o'zgarganda narx siyosatini moslashtirishga yordam beradi.",
+      "Kalkulyator shuningdek pul ifodasida (so'mda) ZNni va birlik uchun marjinal foydani hisoblaydi. Bu kredit uchun ariza berishda ayniqsa muhim: O'zbekiston banklari (Ipoteka-bank, Asaka-bank) o'zini oqlash asoslanmasi bilan biznes-rejani talab qiladi. ZNni muntazam qayta hisoblash dollar kursi yoki xom ashyo narxi o'zgarganda narx siyosatini moslashtirishga yordam beradi.",
     ],
     faqRu: [{ question: 'Что такое точка безубыточности?', answer: 'Объём продаж, при котором доход = расходы. Ниже ТБУ — убыток, выше — прибыль.' }, { question: 'Как рассчитать ТБУ?', answer: 'Постоянные расходы / (Цена − Переменные расходы на единицу).' }, { question: 'Зачем считать ТБУ?', answer: 'Чтобы понять минимальный объём продаж для выхода в прибыль и оценить реалистичность бизнес-плана.' }],
     faqUz: [{ question: 'Zararsizlik nuqtasi nima?', answer: "Daromad = xarajatlar bo'ladigan sotish hajmi. ZNdan past — zarar, yuqori — foyda." }, { question: "ZNni qanday hisoblash mumkin?", answer: "Doimiy xarajatlar / (Narx − Birlik uchun o'zgaruvchan xarajatlar)." }, { question: "ZNni nima uchun hisoblash kerak?", answer: "Foydaga chiqish uchun minimal sotish hajmini tushunish va biznes-rejaning realligini baholash uchun." }],
@@ -2117,38 +2117,38 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'roi',
-    lastUpdated: '2025-07-20',
+    lastUpdated: '2026-11-01',
     sources: [
       { name: 'Фондовая биржа Узбекистана', url: 'https://uzse.uz' },
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
     ],
     paragraphsRu: [
-      'Калькулятор ROI (Return on Investment — возврат инвестиций) рассчитывает доходность вложений в процентах. Формула: ROI = (Прибыль − Инвестиции) / Инвестиции × 100%. Это ключевой показатель для инвесторов в Узбекистане, позволяющий сравнить различные варианты вложений: от банковских вкладов до бизнеса и недвижимости.',
-      'Инвестиционный ландшафт Узбекистана (ориентировочные диапазоны): банковские вклады в сумах — 22-25% годовых, в долларах — 5-8%; доходность облигаций на бирже UZSE — 18-22%; аренда недвижимости в Ташкенте — 8-12% годовых; средний ROI малого бизнеса — 30-60%; инфляция — около 10%. Реальная доходность = номинальная доходность − инфляция.',
+      'Калькулятор ROI (Return on Investment — возврат инвестиций) рассчитывает доходность вложений в процентах. Формула: ROI = (Доход − Инвестиции) / Инвестиции × 100%, то есть чистая прибыль, делённая на вложения. Это ключевой показатель для инвесторов в Узбекистане, позволяющий сравнить различные варианты вложений: от банковских вкладов до бизнеса и недвижимости.',
+      'Инвестиционный ландшафт Узбекистана (ориентировочные диапазоны): банковские вклады в сумах — 20-26% годовых, в долларах — 4-7%; доходность облигаций на бирже UZSE — 18-22%; аренда недвижимости в Ташкенте — 8-12% годовых; средний ROI малого бизнеса — 30-60%; инфляция — 6,4% (сентябрь 2026). Реальная доходность = номинальная доходность − инфляция.',
       'Пример расчёта: предприниматель вложил 200 млн сум в открытие кафе в Ташкенте, за год чистая прибыль составила 70 млн. ROI = (70 / 200) × 100% = 35%. Для сравнения: та же сумма на депозите принесла бы 200 × 24% = 48 млн (ROI 24%). Инвестиция в кафе выгоднее на 11 процентных пунктов, но несёт больше рисков.',
       'Ограничения ROI: показатель не учитывает фактор времени (ROI 30% за 1 год лучше ROI 30% за 3 года), уровень риска и ликвидность. Для временной корректировки используйте годовой ROI = ROI / Количество лет. Для рисковых инвестиций в Узбекистане (стартапы, криптовалюта) требуйте ROI значительно выше банковской ставки (24%+).',
-      'Калькулятор ROI на нашем сайте поможет быстро оценить любую инвестицию: введите сумму вложений и полученную (или ожидаемую) прибыль — калькулятор покажет ROI в процентах и сравнит с альтернативами (депозит, инфляция). Используйте для оценки бизнес-идей, покупки недвижимости или выбора инвестиционного инструмента на бирже Узбекистана.',
+      'Калькулятор ROI поможет быстро оценить вложение: введите сумму инвестиции, ежемесячный доход и период — он покажет ROI в процентах, чистую прибыль и срок окупаемости. Используйте для оценки бизнес-идей, покупки недвижимости или выбора инвестиционного инструмента.',
     ],
     paragraphsUz: [
       "ROI (Return on Investment — investitsiyalar qaytimi) kalkulyatori mablag' qo'yishning daromadliligini foizda hisoblaydi. Formula: ROI = (Foyda − Investitsiya) / Investitsiya × 100%. Bu O'zbekistondagi investorlar uchun asosiy ko'rsatkich bo'lib, turli mablag' qo'yish variantlarini solishtirish imkonini beradi: bank omonatlaridan tortib biznes va ko'chmas mulkgacha.",
-      "O'zbekistonning investitsiya muhiti (taxminiy diapazonlar): so'mda bank omonatlari — yillik 22-25%, dollarda — 5-8%; UZSE birjasida obligatsiyalar daromadliligi — 18-22%; Toshkentda ko'chmas mulk ijarasi — yillik 8-12%; kichik biznesning o'rtacha ROIsi — 30-60%; inflyatsiya — taxminan 10%. Real daromadlilik = nominal daromadlilik − inflyatsiya.",
+      "O'zbekistonning investitsiya muhiti (taxminiy diapazonlar): so'mda bank omonatlari — yillik 22-25%, dollarda — 5-8%; UZSE birjasida obligatsiyalar daromadliligi — 18-22%; Toshkentda ko'chmas mulk ijarasi — yillik 8-12%; kichik biznesning o'rtacha ROIsi — 30-60%; inflyatsiya — 6,4% (2026-yil sentabr). Real daromadlilik = nominal daromadlilik − inflyatsiya.",
       "Hisoblash misoli: tadbirkor Toshkentda kafe ochishga 200 mln so'm kiritdi, yil davomida sof foyda 70 mln ni tashkil etdi. ROI = (70 / 200) × 100% = 35%. Solishtirish uchun: xuddi shu summa omonatda 200 × 24% = 48 mln keltirar edi (ROI 24%). Kafega investitsiya 11 foiz punktga foydaliroq, lekin ko'proq xavf tashiydi.",
       "ROI cheklovlari: ko'rsatkich vaqt omilini (1 yilda 30% ROI 3 yildagi 30% ROI dan yaxshiroq), xavf darajasini va likvidlikni hisobga olmaydi. Vaqt bo'yicha tuzatish uchun yillik ROI = ROI / Yillar soni dan foydalaning. O'zbekistondagi xavfli investitsiyalar (startaplar, kriptovalyuta) uchun bank stavkasidan (24%+) sezilarli darajada yuqori ROI talab qiling.",
-      "Saytimizda ROI kalkulyatori har qanday investitsiyani tezda baholashga yordam beradi: mablag' qo'yish summasini va olingan (yoki kutilayotgan) foydani kiriting — kalkulyator ROIni foizda ko'rsatadi va alternativalar (omonat, inflyatsiya) bilan solishtiradi. Biznes g'oyalarini baholash, ko'chmas mulk sotib olish yoki O'zbekiston birjasida investitsiya vositasini tanlash uchun foydalaning.",
+      "ROI kalkulyatori mablag' kiritishni tezda baholashga yordam beradi: investitsiya summasi, oylik daromad va davrni kiriting — u ROI foizini, sof foydani va o'zini oqlash muddatini ko'rsatadi. Biznes g'oyalarini baholash, ko'chmas mulk sotib olish yoki investitsiya vositasini tanlash uchun foydalaning.",
     ],
     faqRu: [
       { question: 'Что такое ROI?', answer: 'Return on Investment — показатель доходности инвестиций в процентах. Показывает, сколько вы заработали на каждый вложенный сум.' },
-      { question: 'Как рассчитать ROI?', answer: '(Прибыль − Инвестиции) / Инвестиции × 100%. Например, вложили 100 млн, заработали 130 млн: ROI = 30%.' },
-      { question: 'Какой ROI считается хорошим в Узбекистане?', answer: 'Выше инфляции (~10%) и ставки по вкладам (~24%). ROI >30% — отличный результат для бизнеса.' },
+      { question: 'Как рассчитать ROI?', answer: '(Доход − Инвестиции) / Инвестиции × 100%. Например, вложили 100 млн, получили 130 млн: ROI = 30%.' },
+      { question: 'Какой ROI считается хорошим в Узбекистане?', answer: 'Выше инфляции (6,4%) и ставки по вкладам (~24%). ROI >30% — отличный результат для бизнеса.' },
       { question: 'Чем ROI отличается от прибыли?', answer: 'Прибыль — абсолютная сумма (в сумах). ROI — относительный показатель (в %). ROI позволяет сравнивать инвестиции разного масштаба.' },
-      { question: 'Какова доходность депозитов в Узбекистане?', answer: 'В сумах: 22-25% годовых. В долларах: 5-8%. Реальная доходность (за вычетом инфляции ~10%): 12-15% в сумах.' },
+      { question: 'Какова доходность депозитов в Узбекистане?', answer: 'В сумах: 20-26% годовых. В долларах: 4-7%. Реальная доходность за вычетом инфляции 6,4%: 13,6-19,6% в сумах.' },
     ],
     faqUz: [
       { question: 'ROI nima?', answer: "Return on Investment — investitsiyalar daromadliligining foizdagi ko'rsatkichi. Har bir qo'yilgan so'mga qancha ishlab topganingizni ko'rsatadi." },
-      { question: "ROIni qanday hisoblash mumkin?", answer: "(Foyda − Investitsiya) / Investitsiya × 100%. Masalan, 100 mln kiritildi, 130 mln ishlab topildi: ROI = 30%." },
-      { question: "O'zbekistonda qanday ROI yaxshi hisoblanadi?", answer: "Inflyatsiyadan (~10%) va omonat stavkalaridan (~24%) yuqori. ROI >30% — biznes uchun ajoyib natija." },
+      { question: "ROIni qanday hisoblash mumkin?", answer: "(Daromad − Investitsiya) / Investitsiya × 100%. Masalan, 100 mln kiritildi, 130 mln olindi: ROI = 30%." },
+      { question: "O'zbekistonda qanday ROI yaxshi hisoblanadi?", answer: "Inflyatsiyadan (6,4%) va omonat stavkalaridan (~24%) yuqori. ROI >30% — biznes uchun ajoyib natija." },
       { question: "ROI foydadan nimasi bilan farq qiladi?", answer: "Foyda — mutlaq summa (so'mda). ROI — nisbiy ko'rsatkich (%). ROI turli ko'lamdagi investitsiyalarni solishtirish imkonini beradi." },
-      { question: "O'zbekistonda omonatlar daromadliligi qancha?", answer: "So'mda: yillik 22-25%. Dollarda: 5-8%. Real daromadlilik (inflyatsiya ~10% chegirilganda): so'mda 12-15%." },
+      { question: "O'zbekistonda omonatlar daromadliligi qancha?", answer: "So'mda: yillik 20-26%. Dollarda: 4-7%. Inflyatsiya 6,4% chegirilganda real daromadlilik: so'mda 13,6-19,6%." },
     ],
   },
 
@@ -2302,7 +2302,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'education-loan',
-    lastUpdated: '2025-10-15',
+    lastUpdated: '2026-11-01',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Ipoteka bank — Образовательные кредиты', url: 'https://ipotekabank.uz' },
@@ -2310,26 +2310,26 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     paragraphsRu: [
       'Образовательные кредиты в Узбекистане — специальные банковские продукты с льготными условиями для оплаты обучения в аккредитованных вузах. Ставка: 14-18% годовых (значительно ниже рыночных 22-28%). Срок: до 7 лет с льготным периодом. Основные банки-кредиторы: Ipoteka bank, Kapitalbank, Microcreditbank, Davr bank. Ежегодно более 50 000 студентов пользуются образовательными кредитами.',
       'Условия кредитования (ориентировочно): сумма — до 100% стоимости обучения (максимум зависит от банка, до 200 млн сум); ставка — 14-18% годовых; срок — до 7 лет (4 года обучение + 3 года погашение); льготный период — в течение обучения платятся только проценты (или полная отсрочка у некоторых банков). Обеспечение: поручительство родителей или третьих лиц.',
-      'Пример расчёта: обучение в ТМА (медицинский) — 30 млн/год × 6 лет = 180 млн сум. Кредит под 16% на 9 лет (6 лет учёбы + 3 года погашение). Во время учёбы: проценты ≈ 2 400 000 сум/мес (первый год). После учёбы: аннуитетный платёж ≈ 7 500 000 сум/мес в течение 3 лет. Общая переплата: ~95 млн сум (53%).',
+      'Пример расчёта: обучение в ТМА (медицинский) — 30 млн/год × 6 лет = 180 млн сум. Кредит под 16% на 9 лет (6 лет учёбы + 3 года погашение). Если контракт 30 млн берётся в начале каждого года, во время учёбы платятся только проценты: 400 000 сум/мес в первый год и до 2 400 000 сум/мес в шестой, всего ~100,8 млн. После учёбы: аннуитетный платёж ≈ 6 330 000 сум/мес в течение 3 лет, проценты ~47,9 млн. Общая переплата: ~149 млн сум (83%).',
       'Требования к заёмщику: поступление в аккредитованный вуз Узбекистана (или одобренный зарубежный), возраст 17-30 лет, поручитель (родитель или опекун) со стабильным доходом, чистая кредитная история поручителя. Документы: справка о зачислении, паспорт студента и поручителя, справка о доходах поручителя, договор с вузом.',
-      'Калькулятор образовательного кредита рассчитает ежемесячные платежи в период обучения и после, общую переплату и сравнит условия разных банков. Введите стоимость обучения, срок и ставку — получите подробный график платежей. Не забудьте учесть, что ставки могут меняться: привязка к ставке рефинансирования ЦБ РУз (14% в 2025).',
+      'Калькулятор образовательного кредита считает обычный аннуитет: введите сумму кредита, ставку и срок — получите ежемесячный платёж, общую сумму и проценты. Льготный период в нём не учитывается. Не забудьте, что условия зависят от банка и могут меняться, а основная ставка ЦБ сейчас 14%.',
     ],
     paragraphsUz: [
       "O'zbekistonda ta'lim kreditlari — akkreditatsiyalangan OTMlarda o'qish uchun to'lovni imtiyozli shartlarda taqdim etuvchi maxsus bank mahsulotlari. Stavka: yillik 14-18% (bozor stavkalaridan 22-28% ancha past). Muddat: imtiyozli davr bilan 7 yilgacha. Asosiy kredit beruvchi banklar: Ipoteka bank, Kapitalbank, Mikrokreditbank, Davr bank. Har yili 50 000 dan ortiq talaba ta'lim kreditlaridan foydalanadi.",
       "Kreditlash shartlari (taxminan): summa — o'qish qiymatining 100% gacha (maksimum bankka bog'liq, 200 mln so'mgacha); stavka — yillik 14-18%; muddat — 7 yilgacha (4 yil o'qish + 3 yil qaytarish); imtiyozli davr — o'qish davrida faqat foizlar to'lanadi (yoki ba'zi banklarda to'liq kechiktirish). Ta'minot: ota-onalar yoki uchinchi shaxslarning kafillik.",
-      "Hisoblash misoli: TTAda (tibbiyot) o'qish — yiliga 30 mln × 6 yil = 180 mln so'm. 16% da 9 yilga kredit (6 yil o'qish + 3 yil qaytarish). O'qish davomida: foizlar ≈ oyiga 2 400 000 so'm (birinchi yil). O'qishdan keyin: annuitetli to'lov ≈ 3 yil davomida oyiga 7 500 000 so'm. Umumiy ortiqcha to'lov: ~95 mln so'm (53%).",
+      "Hisoblash misoli: TTAda (tibbiyot) o'qish — yiliga 30 mln × 6 yil = 180 mln so'm. 16% da 9 yilga kredit (6 yil o'qish + 3 yil qaytarish). Agar 30 mln kontrakt har yil boshida olinsa, o'qish davomida faqat foizlar to'lanadi: birinchi yili oyiga 400 000 so'm, oltinchi yili 2 400 000 so'mgacha, jami ~100,8 mln. O'qishdan keyin: annuitetli to'lov ≈ 3 yil davomida oyiga 6 330 000 so'm, foizlar ~47,9 mln. Umumiy ortiqcha to'lov: ~149 mln so'm (83%).",
       "Qarz oluvchiga talablar: O'zbekistonning akkreditatsiyalangan OTMiga (yoki tasdiqlangan xorijiy) qabul qilinish, yoshi 17-30, barqaror daromadli kafil (ota-ona yoki vasiy), kafilning toza kredit tarixi. Hujjatlar: ro'yxatga olish to'g'risida ma'lumotnoma, talaba va kafil pasporti, kafil daromadlari to'g'risida ma'lumotnoma, OTM bilan shartnoma.",
-      "Ta'lim krediti kalkulyatori o'qish davrida va undan keyin oylik to'lovlarni, umumiy ortiqcha to'lovni hisoblaydi va turli banklar shartlarini solishtiradi. O'qish narxi, muddat va stavkani kiriting — batafsil to'lov jadvalini olasiz. Stavkalar o'zgarishi mumkinligini unutmang: O'zbekiston MB qayta moliyalash stavkasiga bog'lanish (2025-yilda 14%).",
+      "Ta'lim krediti kalkulyatori oddiy annuitetni hisoblaydi: kredit summasi, stavka va muddatni kiriting — oylik to'lov, umumiy summa va foizlarni olasiz. Imtiyozli davr unda hisobga olinmaydi. Shartlar bankka bog'liq va o'zgarishi mumkinligini unutmang, MBning asosiy stavkasi hozir 14%.",
     ],
     faqRu: [
-      { question: 'Какие ставки по образовательным кредитам?', answer: '14-18% годовых — значительно ниже рыночных 22-33%. Ставка привязана к ставке ЦБ (14%).' },
-      { question: 'Когда начинать погашение?', answer: 'После окончания учёбы. Во время обучения — только проценты (1-3 млн сум/мес) или полная отсрочка у некоторых банков.' },
+      { question: 'Какие ставки по образовательным кредитам?', answer: '14-18% годовых — значительно ниже рыночных 22-33%. Основная ставка ЦБ — 14%.' },
+      { question: 'Когда начинать погашение?', answer: 'После окончания учёбы. Во время обучения — только проценты, размер зависит от взятой суммы, или полная отсрочка у некоторых банков.' },
       { question: 'Какие документы нужны?', answer: 'Справка о зачислении, паспорт, поручитель с доходами, справка о доходах поручителя, договор с вузом.' },
       { question: 'Какую сумму можно получить?', answer: 'До 100% стоимости обучения, максимум до 200 млн сум в зависимости от банка и вуза.' },
-      { question: 'Какая переплата по кредиту?', answer: 'При ставке 16% и сроке 7 лет — переплата составит около 50-60% от суммы кредита. Используйте калькулятор для точного расчёта.' },
+      { question: 'Какая переплата по кредиту?', answer: 'При ставке 16% и обычном аннуитете на 7 лет переплата составит около 67% от суммы кредита. Льготный период меняет эту цифру. Используйте калькулятор для точного расчёта.' },
     ],
     faqUz: [
-      { question: "Ta'lim kreditlari stavkalari qanday?", answer: "Yillik 14-18% — bozor stavkalaridan 22-33% ancha past. Stavka MB stavkasiga (14%) bog'langan." },
+      { question: "Ta'lim kreditlari stavkalari qanday?", answer: "Yillik 14-18% — bozor stavkalaridan 22-33% ancha past. MBning asosiy stavkasi — 14%." },
       { question: "Qaytarishni qachon boshlash kerak?", answer: "O'qish tugaganidan keyin. O'qish davrida — faqat foizlar (oyiga 1-3 mln so'm) yoki ba'zi banklarda to'liq kechiktirish." },
       { question: "Qanday hujjatlar kerak?", answer: "Ro'yxatga olish ma'lumotnomasi, pasport, daromadli kafil, kafil daromadlari ma'lumotnomasi, OTM bilan shartnoma." },
       { question: "Qancha summa olish mumkin?", answer: "O'qish qiymatining 100% gacha, bank va OTMga qarab maksimum 200 mln so'mgacha." },
@@ -2450,23 +2450,23 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'kurban',
-    lastUpdated: '2025-10-06',
+    lastUpdated: '2026-11-01',
     sources: [{ name: 'Управление мусульман Узбекистана', url: 'https://muslim.uz' }],
         paragraphsRu: [
       'Калькулятор курбана помогает рассчитать стоимость жертвоприношения на праздник Ид аль-Адха (Курбан хайит) — один из главных религиозных праздников в Узбекистане. По данным Управления мусульман Узбекистана, ежегодно миллионы семей совершают обряд курбан. Калькулятор учитывает вид животного (баран, бык, корова), текущие рыночные цены и количество долей, позволяя заранее спланировать бюджет на праздник.',
       'Стоимость жертвенных животных в 2026 году в Узбекистане: баран — от 3 000 000 до 6 000 000 сум в зависимости от породы и веса; бык или корова — от 18 000 000 до 35 000 000 сум. Крупный рогатый скот делится на 7 долей (улушей), поэтому стоимость одной доли быка составляет 2 500 000–5 000 000 сум — сопоставимо с ценой одного барана. Цены варьируются по регионам: в Ферганской долине и Сурхандарье обычно ниже, чем в Ташкенте.',
       'Шариат предъявляет чёткие требования к животному для курбана. Баран (овца) должен быть не младше 6 месяцев и выглядеть годовалым, козёл — от 1 года, бык и корова — от 2 лет, верблюд — от 5 лет. Животное должно быть здоровым, упитанным, без серьёзных дефектов: хромоты, слепоты на один или оба глаза, сломанных рогов с повреждением корня, болезней. Жертвоприношение совершается с 10 по 12 зуль-хиджа.',
       'Мясо курбана по сунне распределяется на три равные части: одна треть остаётся семье, одна треть раздаётся родственникам и соседям, одна треть передаётся нуждающимся (факирам и мискинам). В Узбекистане распространена традиция совместного приготовления курбанного мяса на махаллинских сходах, где блюда из жертвенного мяса (шурпа, плов) раздаются всем жителям махалли.',
-      'Обряд курбана обязателен (ваджиб по ханафитскому мазхабу) для совершеннолетнего мусульманина, чьё имущество превышает нисаб — эквивалент 85 граммов золота или 595 граммов серебра. Наш калькулятор рассчитает стоимость курбана, покажет распределение мяса по долям и поможет организовать совместную покупку быка на 7 семей, что является наиболее экономичным вариантом.',
+      'Обряд курбана обязателен (ваджиб по ханафитскому мазхабу) для совершеннолетнего мусульманина, чьё имущество превышает нисаб — эквивалент 85 граммов золота или 595 граммов серебра. Наш калькулятор рассчитает стоимость курбана и долю при совместной покупке коровы или верблюда, например на 7 семей, а также примерный выход мяса.',
     ],
     paragraphsUz: [
       "Qurbon kalkulyatori Iyd al-Adho (Qurbon hayiti) — O'zbekistondagi eng muhim diniy bayramlardan biri uchun qurbonlik narxini hisoblashga yordam beradi. O'zbekiston musulmonlari boshqarmasi ma'lumotlariga ko'ra, har yili millionlab oilalar qurbon marosimini bajaradi. Kalkulyator hayvon turini (qo'y, buqa, sigir), joriy bozor narxlarini va ulushlar sonini hisobga olib, bayramga byudjetni oldindan rejalashtirish imkonini beradi.",
       "2026-yilda O'zbekistonda qurbonlik hayvonlarining narxi: qo'y — zoti va vazniga qarab 3 000 000 dan 6 000 000 so'mgacha; buqa yoki sigir — 18 000 000 dan 35 000 000 so'mgacha. Yirik shoxli mol 7 ta ulushga bo'linadi, shuning uchun buqaning bir ulushi 2 500 000–5 000 000 so'm — bitta qo'y narxiga teng. Narxlar hududlarga qarab farq qiladi: Farg'ona vodiysi va Surxondaryoda odatda Toshkentga qaraganda arzonroq.",
       "Shariat qurbonlik hayvoniga aniq talablar qo'yadi. Qo'y (sovliq) kamida 6 oylik va bir yoshdek ko'rinishi kerak, echki — 1 yoshdan, buqa va sigir — 2 yoshdan, tuya — 5 yoshdan. Hayvon sog'lom, semiz, jiddiy nuqsonlarsiz bo'lishi shart: oqsoqlik, bir yoki ikkala ko'zdan ko'rlik, ildizi shikastlangan singan shoxlar, kasalliklar bo'lmasligi kerak. Qurbonlik 10-dan 12-zulhijjagacha bajariladi.",
       "Qurbon go'shti sunnatga ko'ra uchta teng qismga taqsimlanadi: uchdan bir qismi oilaga qoladi, uchdan bir qismi qarindosh va qo'shnilarga ulashiladi, uchdan bir qismi muhtojlarga (faqir va miskinlarga) beriladi. O'zbekistonda qurbon go'shtini mahalla yig'inlarida birgalikda tayyorlash an'anasi keng tarqalgan — qurbonlik go'shtidan taomlar (sho'rva, palov) mahalla aholisiga tarqatiladi.",
-      "Qurbon marosimi hanafiy mazhabiga ko'ra balog'atga yetgan, mol-mulki nisob — 85 gramm oltin yoki 595 gramm kumush ekvivalentidan ortiq bo'lgan musulmonga vojib hisoblanadi. Bizning kalkulyatorimiz qurbon narxini hisoblaydi, go'shtni ulushlar bo'yicha taqsimlashni ko'rsatadi va 7 ta oila uchun birgalikda buqa sotib olishni tashkil qilishga yordam beradi — bu eng tejamkor variant.",
+      "Qurbon marosimi hanafiy mazhabiga ko'ra balog'atga yetgan, mol-mulki nisob — 85 gramm oltin yoki 595 gramm kumush ekvivalentidan ortiq bo'lgan musulmonga vojib hisoblanadi. Bizning kalkulyatorimiz qurbon narxini va sigir yoki tuyani birgalikda sotib olishdagi ulushni, masalan 7 oila uchun, hamda taxminiy go'sht miqdorini hisoblaydi.",
     ],
-    faqRu: [{ question: 'Сколько стоит курбан в 2025–2026?', answer: 'Баран: 2,5-5 млн сум. Бык: 15-30 млн (7 долей, ~2,1-4,3 млн за долю).' }, { question: 'Кто обязан резать курбан?', answer: 'Совершеннолетний мусульманин, обладающий нисабом (имущество > 85 г золота).' }, { question: 'Как делится мясо?', answer: '1/3 семье, 1/3 родным/соседям, 1/3 нуждающимся.' }],
+    faqRu: [{ question: 'Сколько стоит курбан в 2025–2026?', answer: 'Баран: 3-6 млн сум. Бык: 18-35 млн (7 долей, 2,5-5 млн за долю).' }, { question: 'Кто обязан резать курбан?', answer: 'Совершеннолетний мусульманин, обладающий нисабом (имущество > 85 г золота).' }, { question: 'Как делится мясо?', answer: '1/3 семье, 1/3 родным/соседям, 1/3 нуждающимся.' }],
     faqUz: [{ question: "2026-yilda qurbon qancha turadi?", answer: "Qo'y: 3-6 mln so'm. Buqa: 18-35 mln (7 ulush, ulushiga ~2,6-5 mln)." }, { question: "Qurbon qilish kimga vojib?", answer: "Nisobga (85 g oltindan ortiq mol-mulk) ega balog'atga yetgan musulmon." }, { question: "Go'sht qanday taqsimlanadi?", answer: "1/3 oilaga, 1/3 qarindosh/qo'shnilarga, 1/3 muhtojlarga." }],
   },
 

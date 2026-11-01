@@ -26,7 +26,7 @@ export default function SeveranceCalculator() {
     ? {
         avgSalary: 'O\'rtacha oylik maosh (UZS)',
         months: 'Kompensatsiya oylari',
-        unusedDays: 'Ishlatilmagan ta\'til kunlari',
+        unusedDays: 'Ishlatilmagan ta\'til kunlari (yakshanbalarsiz)',
         results: 'Natijalar',
         severancePay: 'Ishdan bo\'shatish puli',
         vacationComp: 'Ta\'til kompensatsiyasi',
@@ -36,7 +36,7 @@ export default function SeveranceCalculator() {
     : {
         avgSalary: 'Средняя зарплата (UZS)',
         months: 'Месяцев компенсации',
-        unusedDays: 'Неиспользованных дней отпуска',
+        unusedDays: 'Неиспользованных дней отпуска (без воскресений)',
         results: 'Результаты',
         severancePay: 'Выходное пособие',
         vacationComp: 'Компенсация отпуска',

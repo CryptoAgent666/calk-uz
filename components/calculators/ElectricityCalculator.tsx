@@ -22,13 +22,13 @@ export default function ElectricityCalculator() {
 
   const t = locale === 'uz'
     ? {
-        consumption: 'Iste\'mol (kVt*soat)', electricStove: 'Elektr plita mavjud',
+        consumption: 'Iste\'mol (kVt*soat)', electricStove: "Markazlashgan elektr plitali ko'p kvartirali uy",
         results: 'Natijalar', breakdown: 'Tarif bo\'yicha', from: 'dan', to: 'gacha',
         rate: 'Tarif', cost: 'Summa', discount: 'Chegirma (elektr plita)',
         total: 'Jami to\'lov', placeholder: 'kVt*soatni kiriting', unit: 'kVt·soat', currency: "so'm",
       }
     : {
-        consumption: 'Потребление (кВт*ч)', electricStove: 'Электрическая плита',
+        consumption: 'Потребление (кВт*ч)', electricStove: 'Многоквартирный дом с централизованными электроплитами',
         results: 'Результаты', breakdown: 'По тарифам', from: 'от', to: 'до',
         rate: 'Тариф', cost: 'Сумма', discount: 'Скидка (эл. плита)',
         total: 'Итого к оплате', placeholder: 'Введите кВт*ч', unit: 'кВт·ч', currency: 'сум',
