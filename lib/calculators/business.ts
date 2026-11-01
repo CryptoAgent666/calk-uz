@@ -3,6 +3,7 @@
  */
 
 import { BRV } from '@/lib/constants/brv'
+import { TAX_RATES, VAT_MANDATORY_REGISTRATION_THRESHOLD } from '@/lib/constants/tax-rates'
 
 // IP (Individual Entrepreneur) Calculator
 export interface IPTaxResult {
@@ -75,6 +76,10 @@ export interface LLCTaxResult {
   expenses: number
   profit: number
   corporateTax: number
+  /** Налог с оборота 4% на той же выручке — для сравнения с налогом на прибыль. */
+  simplifiedTax: number
+  /** Упрощёнка доступна только при доходе до порога 12 000 БРВ. */
+  simplifiedAvailable: boolean
   vatAmount: number
   socialTaxOnPayroll: number
   /** Direct cost to the LLC: corporate tax + payroll social tax. VAT is excluded
@@ -94,6 +99,8 @@ export function calculateLLCTax(
   const profit = Math.max(0, revenue - expenses)
 
   const corporateTax = profit * 0.15
+  const simplifiedTax = revenue * TAX_RATES.TURNOVER_TAX
+  const simplifiedAvailable = revenue <= VAT_MANDATORY_REGISTRATION_THRESHOLD
   const vatAmount = isVatPayer ? Math.max(0, (revenue - expenses) * 0.12) : 0
   const socialTaxOnPayroll = payroll * 0.12
 
@@ -106,6 +113,8 @@ export function calculateLLCTax(
     expenses,
     profit,
     corporateTax,
+    simplifiedTax,
+    simplifiedAvailable,
     vatAmount,
     socialTaxOnPayroll,
     totalTaxBurden,

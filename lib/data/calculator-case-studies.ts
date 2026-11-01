@@ -267,7 +267,7 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
           { label: 'Сумма кредита', value: '112 000 000 сум' },
           { label: 'Ежемесячный платёж', value: '~3 224 000 сум' },
           { label: 'Переплата', value: '~81 440 000 сум' },
-          { label: 'ОСАГО за 5 лет (ориентир)', value: '~3 250 000 сум' },
+          { label: 'ОСАГО за 5 лет (Ташкент, без ограничения водителей)', value: '~1 920 000 сум' },
         ],
         stepsUz: [
           { label: "Avto narxi", value: "160 000 000 so'm" },
@@ -275,7 +275,7 @@ const CASE_STUDIES: CalculatorCaseStudies[] = [
           { label: "Kredit summasi", value: "112 000 000 so'm" },
           { label: "Oylik to'lov", value: "~3 224 000 so'm" },
           { label: "Ortiqcha to'lov", value: "~81 440 000 so'm" },
-          { label: "5 yillik OSAGO (taxminiy)", value: "~3 250 000 so'm" },
+          { label: "5 yillik OSAGO (Toshkent, haydovchilar cheklovisiz)", value: "~1 920 000 so'm" },
         ],
         conclusionRu:
           'Закладывайте в бюджет не только платёж, но и ОСАГО с техобслуживанием. Ежегодного транспортного налога в Узбекистане нет — при покупке платятся разовые госпошлины за постановку на учёт. Полная стоимость владения — на 6-8% выше платежа по кредиту.',

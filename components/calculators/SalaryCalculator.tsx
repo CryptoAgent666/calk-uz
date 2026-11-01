@@ -41,7 +41,7 @@ export default function SalaryCalculator() {
         results: 'Natijalar',
         gross: 'Brutto ish haqi',
         ndfl: 'JSHSHS',
-        inps: 'MHTJ',
+        inps: "shu jumladan IJPH (0,1%, JShShS ichida)",
         net: 'Netto ish haqi (qo\'lga)',
         socialTax: 'Ijtimoiy soliq (ish beruvchi)',
         totalCost: 'Ish beruvchi uchun jami xarajat',
@@ -58,7 +58,7 @@ export default function SalaryCalculator() {
         results: 'Результаты',
         gross: 'Зарплата брутто',
         ndfl: 'НДФЛ',
-        inps: 'ИНПС',
+        inps: 'в том числе ИНПС (0,1%, внутри НДФЛ)',
         net: 'Зарплата нетто (на руки)',
         socialTax: 'Социальный налог (работодатель)',
         totalCost: 'Общие затраты работодателя',
@@ -112,7 +112,7 @@ export default function SalaryCalculator() {
           <CardContent className="space-y-3">
             <ResultRow label={t.gross} value={result.grossSalary} locale={locale} />
             <ResultRow label={`${t.ndfl} (${result.ndflRate}%)`} value={-result.ndflAmount} locale={locale} negative />
-            <ResultRow label={`${t.inps} (0.1%)`} value={-result.inpsAmount} locale={locale} negative />
+            <ResultRow label={t.inps} value={result.inpsAmount} locale={locale} />
             <div className="border-t pt-3">
               <ResultRow label={t.net} value={result.netSalary} locale={locale} highlight />
             </div>

@@ -246,14 +246,14 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     totalTimeMinutes: 2,
     stepsRu: [
       { name: 'Введите заработок за 12 месяцев', text: 'Укажите общую сумму заработка за последние 12 месяцев, а не среднемесячную зарплату.' },
-      { name: 'Укажите дни отпуска', text: 'Введите количество дней отпуска — минимум по закону 21 календарный день в году.' },
-      { name: 'Проверьте число рабочих дней', text: 'По умолчанию 247 рабочих дней за 12 месяцев — при другом графике измените.' },
+      { name: 'Укажите дни отпуска', text: 'Введите календарные дни отпуска без праздников — минимум по закону 21 день в году.' },
+      { name: 'Укажите воскресенья', text: 'Введите число воскресений в период отпуска — они не оплачиваются (ст. 233 ТК). В 21 календарном дне их 3.' },
       { name: 'Получите сумму отпускных', text: 'Результат появится сразу: среднедневной заработок, отпускные брутто, НДФЛ и на руки.' },
     ],
     stepsUz: [
       { name: '12 oylik daromadni kiriting', text: 'Oxirgi 12 oydagi umumiy daromadni kiriting — o\'rtacha oylik ish haqini emas.' },
-      { name: 'Ta\'til kunlarini ko\'rsating', text: 'Ta\'til kunlari sonini kiriting — qonun bo\'yicha yiliga kamida 21 taqvim kuni.' },
-      { name: 'Ish kunlari sonini tekshiring', text: 'Standart 12 oyda 247 ish kuni — boshqa grafikda o\'zgartiring.' },
+      { name: 'Ta\'til kunlarini ko\'rsating', text: 'Bayramlarsiz kalendar ta\'til kunlarini kiriting — qonun bo\'yicha yiliga kamida 21 kun.' },
+      { name: 'Yakshanbalarni ko\'rsating', text: 'Ta\'til davridagi yakshanbalar sonini kiriting — ular to\'lanmaydi (MK 233-moddasi). 21 kalendar kunda ular 3 ta.' },
       { name: 'Ta\'til pulini oling', text: 'Natija darhol chiqadi: o\'rtacha kunlik daromad, brutto ta\'til puli, JShShS va qo\'lga tegadigan summa.' },
     ],
   },
@@ -972,12 +972,12 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     totalTimeMinutes: 1,
     stepsRu: [
       { name: 'Укажите количество дней', text: 'Введите число пропущенных дней поста.' },
-      { name: 'Укажите стоимость питания', text: 'Введите стоимость одного приёма пищи в сумах — из неё считается фидия за день.' },
+      { name: 'Укажите сумму за день', text: 'Введите сумму за один день: по фетве 2026 года от 10 000 сум (пшеница) до 200 000 сум (финики).' },
       { name: 'Получите расчёт', text: 'Результат появится сразу — вы узнаете общую сумму фидия-садака.' },
     ],
     stepsUz: [
       { name: "Kunlar sonini ko'rsating", text: "O'tkazib yuborilgan ro'za kunlari sonini kiriting." },
-      { name: "Bir ovqat narxini kiriting", text: "Bir marta ovqatlanish narxini so'mda kiriting — kunlik fidiya shundan hisoblanadi." },
+      { name: "Bir kunlik summani kiriting", text: "Bir kunlik summani kiriting: 2026-yilgi fatvoga ko'ra 10 000 so'm (bug'doy) dan 200 000 so'm (xurmo) gacha." },
       { name: 'Hisobni oling', text: "Natija darhol chiqadi — fidiya-sadaqaning umumiy summasini bilib oling." },
     ],
   },

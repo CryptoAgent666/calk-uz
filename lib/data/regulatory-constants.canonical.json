@@ -5,7 +5,7 @@
     "currency": "UZS (сум)",
     "generated": "2026-06-25",
     "note": "Audit ledger (NOT imported by site). Constants are CENTRALIZED: lib/constants/{brv,tax-rates,utility-tariffs}.ts + inline in lib/calculators/*.ts. Apply fixes there. БРВ=440000 anchors most state duties/fines as BRV-multiples. tax-rates.ts & utility-tariffs.ts headers say 2025 (freshness flag).",
-    "total": 172,
+    "total": 177,
     "gov_regulated": 145,
     "market_or_other": 16,
     "conflicts": 10,
@@ -1891,9 +1891,9 @@
       "source_hint": "Тарифная комиссия / теплоснабжение (Issiqlik ta'minoti)",
       "conflict": false,
       "status": "current",
-      "notes": "Central heating tariff 241.44 UZS per m2 per day. Used in calculateHeatingCost(area × rate × days).  ||  2026-06-30 verify: current (241.44; unchanged in 2026). || 2026-09-01 verify: UNCERTAIN. Тариф отопления в Ташкенте задан в Гкал (139 860 сум/Гкал без НДС) при норме ~0,025 Гкал/м² в месяц: это ≈3 916 сум/м² в месяц с НДС ≈ 130 сум/м² в сутки. Наши 241,44 сум/м²/сутки дают ≈7 243/м² в месяц — расхождение ~1,85x. Прежняя пометка «unchanged in 2026» подтверждала стабильность значения, а не его правильность. НЕ МЕНЯТЬ до сверки с тарифным решением хокимията Ташкента. || 2026-09-10: значение — ставка ТОЛЬКО г. Ташкента. Вода и мусор теперь считаются по региону (utility-regions.ts); отопление и горячая вода остаются ташкентскими по умолчанию, но в калькуляторах есть поле своего тарифа. || tier2 2026-09-13: current. Значение верное. Расхождение в 1,85 раза в notes от 2026-09-01 возникло из-за придуманной нормы 0,025 Гкал/м²/мес: тариф 139 860 сум/Гкал — это тариф для домов с общедомовым учётом, а у населения без учёта своя ставка за м² в сутки (подразумеваемая норма 215,57×30/139 860 ≈ 0,046 Гкал/м²/мес). Горячая вода с тем же решением: 7 972,03 → 8 928,67 с НДС, это WATER_HOT_RATE. ПКМ-243 от 15.05.2026 поменял только электроэнергию и газ; решения на сезон 2026–2027 пока нет, есть только предложение от 30.07.2026 брать полный тариф сверх соцнормы (spot.uz) — перепроверить в октябре–ноябре 2026. Попутно: по п. 90а/94 ПКМ-194 ставка начисляется только за дни отопительного периода, а отапливаемая площадь — это сумма площадей жилых комнат, а не общая площадь квартиры; помесячная оценка «~435 000 сум/мес за 60 м²» в прозе (1917/1924) арифметически верна (60×241,44×30 = 434 592).",
+      "notes": "Central heating tariff 241.44 UZS per m2 per day. Used in calculateHeatingCost(area × rate × days).  ||  2026-06-30 verify: current (241.44; unchanged in 2026). || 2026-09-01 verify: UNCERTAIN. Тариф отопления в Ташкенте задан в Гкал (139 860 сум/Гкал без НДС) при норме ~0,025 Гкал/м² в месяц: это ≈3 916 сум/м² в месяц с НДС ≈ 130 сум/м² в сутки. Наши 241,44 сум/м²/сутки дают ≈7 243/м² в месяц — расхождение ~1,85x. Прежняя пометка «unchanged in 2026» подтверждала стабильность значения, а не его правильность. НЕ МЕНЯТЬ до сверки с тарифным решением хокимията Ташкента. || 2026-09-10: значение — ставка ТОЛЬКО г. Ташкента. Вода и мусор теперь считаются по региону (utility-regions.ts); отопление и горячая вода остаются ташкентскими по умолчанию, но в калькуляторах есть поле своего тарифа. || tier2 2026-09-13: current. Значение верное. Расхождение в 1,85 раза в notes от 2026-09-01 возникло из-за придуманной нормы 0,025 Гкал/м²/мес: тариф 139 860 сум/Гкал — это тариф для домов с общедомовым учётом, а у населения без учёта своя ставка за м² в сутки (подразумеваемая норма 215,57×30/139 860 ≈ 0,046 Гкал/м²/мес). Горячая вода с тем же решением: 7 972,03 → 8 928,67 с НДС, это WATER_HOT_RATE. ПКМ-243 от 15.05.2026 поменял только электроэнергию и газ; решения на сезон 2026–2027 пока нет, есть только предложение от 30.07.2026 брать полный тариф сверх соцнормы (spot.uz) — перепроверить в октябре–ноябре 2026. Попутно: по п. 90а/94 ПКМ-194 ставка начисляется только за дни отопительного периода, а отапливаемая площадь — это сумма площадей жилых комнат, а не общая площадь квартиры; помесячная оценка «~435 000 сум/мес за 60 м²» в прозе (1917/1924) арифметически верна (60×241,44×30 = 434 592).  ||  2026-11-01: проект ПКМ Минстроя — 314 сум с 01.11.2026; на 23.10 не утверждён, принятия не найдено (gazeta.uz 13.10, spot.uz 23.10). Перепроверять.",
       "source_url": "https://www.spot.uz/ru/2025/10/28/heating-services/ ; http://veoliaenergy.uz/tpost/35h7jtn9s1-novie-tarifi-na-uslugi-teplosnabzheniya ; https://lex.uz/ru/docs/2430763 (ПКМ-194, п. 90а, 94)",
-      "last_verified": "2026-09-13",
+      "last_verified": "2026-11-01",
       "source_url_verify": "https://blog.salomuy.uz/ru/articles/5/200312",
       "verify_method": "tier2-2026-09-13-primary",
       "source_url_prev": "https://www.goldenpages.uz/en/komunal-tarifi/",
@@ -2097,14 +2097,17 @@
       "last_updated_hint": null,
       "source_hint": "muslim.uz (Fitr sadaqa annual announcement)",
       "conflict": false,
-      "status": "unverified",
-      "notes": "RELIGIOUS (фитр / fitr sadaqa). Official per-person amounts published yearly by muslim.uz. Note rice is 'market average, not officially listed'. Annual update each Ramadan."
+      "status": "current",
+      "notes": "RELIGIOUS (фитр / fitr sadaqa). Official per-person amounts published yearly by muslim.uz. Note rice is 'market average, not officially listed'. Annual update each Ramadan.  ||  2026-11-01: фетва УМУ 17.02.2026 сверена по пересказу uznews.uz; muslim.uz в поиске не найден. Рис в фетве нет (30 000 — рыночный ориентир кода).",
+      "last_verified": "2026-11-01",
+      "source_url": "https://uznews.uz/ru/news/107442",
+      "verified_date": "2026-11-01"
     },
     {
       "id": "religion.ts__fidiya cost per meal (default)",
       "file": "lib/calculators/religion.ts",
       "key": "fidiya cost per meal (default)",
-      "value": "30000 (×2 meals = 60000/day)",
+      "value": "10000 (за день, FITR_OFFICIAL_2026.wheat)",
       "unit": "UZS per meal",
       "law": "Religious — fidiya (compensation for missed fasts), 2 meals per missed day",
       "theme": "zakat",
@@ -2115,8 +2118,11 @@
       "last_updated_hint": null,
       "source_hint": "muslim.uz / local meal cost",
       "conflict": false,
-      "status": "unverified",
-      "notes": "RELIGIOUS. Default meal cost 30,000 UZS, 2 meals/missed day. Market-based default, user-overridable."
+      "status": "current",
+      "notes": "2026-11-01 calkcheck: умножение ×2 и 30 000 за приём убраны; фетва 2026: фидья за день равна фитр-садаке.",
+      "last_verified": "2026-11-01",
+      "source_url": "https://uznews.uz/ru/news/107442",
+      "verified_date": "2026-11-01"
     },
     {
       "id": "religion.ts__nisab (gold grams)",
@@ -2135,7 +2141,7 @@
       "source_hint": "muslim.uz; market gold price",
       "conflict": false,
       "status": "unverified",
-      "notes": "RELIGIOUS. Nisab threshold = 85 g gold. UZS value depends on market goldPricePerGram (default 1,900,000 UZS/g — market, not gov). Silver valued at goldPrice/80 ratio (line 29)."
+      "notes": "RELIGIOUS. Nisab threshold = 85 g gold. UZS value depends on market goldPricePerGram (default 1,900,000 UZS/g — market, not gov). Silver valued at goldPrice/80 ratio (line 29).  ||  2026-11-01: фетва 2026 — нисаб 100 млн сум (85 г золота 585 пробы); дефолт цены грамма в коде иной, поле редактируемое."
     },
     {
       "id": "religion.ts__zakat rate",
@@ -2206,8 +2212,9 @@
       "last_updated_hint": "No year marker",
       "source_hint": "n/a (производственный календарь РУз, ежегодный)",
       "conflict": false,
-      "status": "unverified",
-      "notes": "Default 247 working days in 12 months, used to derive average daily earnings for vacation pay. Derived from the annual production calendar (varies year to year); a default assumption, not a fixed statutory constant → is_gov_regulated=false."
+      "status": "removed",
+      "notes": "Default 247 working days in 12 months, used to derive average daily earnings for vacation pay. Derived from the annual production calendar (varies year to year); a default assumption, not a fixed statutory constant → is_gov_regulated=false.  ||  2026-11-01 calkcheck: делитель 247 убран, ТК ст. 257: ÷12 ÷25,3; см. VACATION_AVG_DAILY_DIVISOR.",
+      "last_verified": "2026-11-01"
     },
     {
       "id": "social.ts__vacation working-days base (247)",
@@ -2224,8 +2231,9 @@
       "last_updated_hint": null,
       "source_hint": "n/a",
       "conflict": false,
-      "status": "unverified",
-      "notes": "Default working days divisor for vacation pay average; user-overridable parameter, not a gov fee."
+      "status": "removed",
+      "notes": "Default working days divisor for vacation pay average; user-overridable parameter, not a gov fee.  ||  2026-11-01 calkcheck: делитель 247 убран, ТК ст. 257: ÷12 ÷25,3; см. VACATION_AVG_DAILY_DIVISOR.",
+      "last_verified": "2026-11-01"
     },
     {
       "id": "unique.ts__VISA_COSTS_USD",
@@ -2325,7 +2333,7 @@
       "id": "utility-tariffs.ts__HEATING_SEASON_DAYS",
       "file": "lib/constants/utility-tariffs.ts",
       "key": "HEATING_SEASON_DAYS",
-      "value": "180",
+      "value": "140",
       "unit": "days (average heating season duration)",
       "law": "n/a (производная оценка, не нормативная ставка)",
       "theme": "utility_tariff",
@@ -2337,7 +2345,9 @@
       "source_hint": "n/a (derived assumption)",
       "conflict": true,
       "status": "unverified",
-      "notes": "Average heating season duration 180 days. Estimate/assumption (≈6 months), not a gov-published value; flagged is_gov_regulated=false. Used as a planning constant."
+      "notes": "Average heating season duration 180 days. Estimate/assumption (≈6 months), not a gov-published value; flagged is_gov_regulated=false. Used as a planning constant.  ||  2026-11-01 calkcheck: Ташкент 2025-26 — начало ноября, поэтапно с 24 марта, ≈140 дней; критерий +8°C пять дней (gazeta.uz 26.10.2026).",
+      "last_verified": "2026-11-01",
+      "source_url": "https://www.gazeta.uz/ru/2026/03/19/heating/"
     },
     {
       "id": "ApartmentCostCalculator.tsx__apartment_registration_state_duty_brv_multiple",
@@ -2888,7 +2898,7 @@
       "source_hint": "lex.uz/docs/6257288 — минимальный ежегодный отпуск 15 рабочих дней",
       "conflict": false,
       "status": "current",
-      "notes": "Statutory minimum annual paid leave = 15 working days / 21 calendar days; pedagogical staff up to 56 calendar days; harmful-conditions +6 to 36 working days. Ledger has vacation working-days base 247 but NOT the statutory minimum leave duration. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-10-06 перевод источника с norma.uz на первоисточник, значение подтверждено: ТК РУз ст. 217: двадцать один календарный день.",
+      "notes": "Statutory minimum annual paid leave = 15 working days / 21 calendar days; pedagogical staff up to 56 calendar days; harmful-conditions +6 to 36 working days. Ledger has vacation working-days base 247 but NOT the statutory minimum leave duration. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || 2026-10-06 перевод источника с norma.uz на первоисточник, значение подтверждено: ТК РУз ст. 217: двадцать один календарный день.  ||  2026-11-01 calkcheck: «+6 to 36 working days» не подтвердилось, из прозы убрано: длительность по классу условий труда, в календарных днях (ст. 221 ТК).",
       "official_value": "21 calendar days (minimum annual basic leave under the 2023 Labor Code, Art. 217). The old '15 working days' (1995 code, Art. 134) no longer applies.",
       "source_url": "https://lex.uz/ru/docs/6257291",
       "source_title": "Norma.uz — Продолжительность отпусков по новому ТК",
@@ -4364,6 +4374,116 @@
       "verified_date": "2026-09-13",
       "verify_method": "tier2+phase4-2026-09-13-round2-primary",
       "verify_confidence": "high"
+    },
+    {
+      "id": "calkcheck-2026-11-01__VACATION_AVG_DAILY_DIVISOR",
+      "file": "lib/calculators/social.ts",
+      "key": "VACATION_AVG_DAILY_DIVISOR",
+      "value": "25.3",
+      "unit": "days per month",
+      "law": "ТК ст. 257 (ред. ЗРУ-1030)",
+      "theme": "labor",
+      "is_gov_regulated": true,
+      "surfaces": [
+        "lib/calculators/social.ts"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "https://lex.uz/ru/docs/6257291",
+      "conflict": false,
+      "status": "current",
+      "notes": "Средняя = доход за 12 мес ÷ 12; дневная = средняя ÷ 25,3. Воскресенья при оплате отпуска не учитываются (ст. 233).",
+      "official_value": "25.3",
+      "source_url": "https://lex.uz/ru/docs/6257291",
+      "last_verified": "2026-11-01",
+      "verified_date": "2026-11-01"
+    },
+    {
+      "id": "calkcheck-2026-11-01__WAGE_DELAY_COMPENSATION",
+      "file": "lib/data/calculator-articles.ts",
+      "key": "WAGE_DELAY_COMPENSATION",
+      "value": "10% ставки рефинансирования за каждый день (ст. 333 ТК)",
+      "unit": "share of CB rate per day",
+      "law": "ТК ст. 333",
+      "theme": "labor",
+      "is_gov_regulated": true,
+      "surfaces": [
+        "lib/data/calculator-articles.ts"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "https://lex.uz/ru/docs/6257291",
+      "conflict": false,
+      "status": "current",
+      "notes": "Было 1/300 (это пеня по НК). Расчёт по букве — 1,4% в день при 14%; практика спорна, письмо Минзанятости первоисточником не сверено.",
+      "official_value": "10% ставки рефинансирования за каждый день (ст. 333 ТК)",
+      "source_url": "https://lex.uz/ru/docs/6257291",
+      "last_verified": "2026-11-01",
+      "verified_date": "2026-11-01"
+    },
+    {
+      "id": "calkcheck-2026-11-01__IP_MAX_EMPLOYEES",
+      "file": "lib/data/calculator-articles.ts",
+      "key": "IP_MAX_EMPLOYEES",
+      "value": "5",
+      "unit": "employees",
+      "law": "ТК ст. 507; ПКМ № 707",
+      "theme": "labor",
+      "is_gov_regulated": true,
+      "surfaces": [
+        "lib/data/calculator-articles.ts"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "https://lex.uz/ru/docs/5739505",
+      "conflict": false,
+      "status": "current",
+      "notes": "Было «до 10, с 2025 до 25» — акта не найдено.",
+      "official_value": "5",
+      "source_url": "https://lex.uz/ru/docs/5739505",
+      "last_verified": "2026-11-01",
+      "verified_date": "2026-11-01"
+    },
+    {
+      "id": "calkcheck-2026-11-01__IP_REGISTRATION_DUTY",
+      "file": "lib/data/calculator-articles.ts",
+      "key": "IP_REGISTRATION_DUTY",
+      "value": "1 БРВ; через ЕПИГУ 90% (396 000 сум при БРВ 440 000)",
+      "unit": "БРВ",
+      "law": "ЗРУ-600, приложение п. 7, ст. 22¹",
+      "theme": "labor",
+      "is_gov_regulated": true,
+      "surfaces": [
+        "lib/data/calculator-articles.ts"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "https://lex.uz/ru/docs/4680955",
+      "conflict": false,
+      "status": "current",
+      "notes": "Было «бесплатно». Самозанятым со стажем статуса от 6 месяцев не взимается (ст. 15).",
+      "official_value": "1 БРВ; через ЕПИГУ 90% (396 000 сум при БРВ 440 000)",
+      "source_url": "https://lex.uz/ru/docs/4680955",
+      "last_verified": "2026-11-01",
+      "verified_date": "2026-11-01"
+    },
+    {
+      "id": "calkcheck-2026-11-01__LEASING_BALANCE_HOLDER",
+      "file": "lib/data/calculator-articles.ts",
+      "key": "LEASING_BALANCE_HOLDER",
+      "value": "лизингополучатель",
+      "unit": "—",
+      "law": "Закон «О лизинге» № 756-I, ст. 7",
+      "theme": "labor",
+      "is_gov_regulated": true,
+      "surfaces": [
+        "lib/data/calculator-articles.ts"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "https://lex.uz/ru/docs/85248",
+      "conflict": false,
+      "status": "current",
+      "notes": "Было «на балансе лизинговой компании» и «коэффициент амортизации до 3»; коэффициент не найден, из прозы убран.",
+      "official_value": "лизингополучатель",
+      "source_url": "https://lex.uz/ru/docs/85248",
+      "last_verified": "2026-11-01",
+      "verified_date": "2026-11-01"
     }
   ],
   "meta": {
@@ -4378,8 +4498,8 @@
       ]
     },
     "last_reconcile": "2026-09-13",
-    "last_verification_sweep": "2026-09-21",
-    "last_verification_note": "Tier-2 2026-09-13: 35 записей (все uncertain + gov без last_verified + конфликт ОСАГО) по первоисточникам (lex.uz curl: НК, КоАО, ТК, ПКМ-796 узб. оригинал, ЗРУ-1116) + встречная проверка. Итог реестра: {'current': 136, 'stale_confirmed': 9, 'removed': 7, 'unverified': 13, 'uncertain': 1}. Код НЕ правился (tier2).",
+    "last_verification_sweep": "2026-11-01",
+    "last_verification_note": "calkcheck 2026-11-01: выборка 20 страниц, вручную; см. AUDIT-2026-11-01.md. Tier-2 2026-09-13: 35 записей (все uncertain + gov без last_verified + конфликт ОСАГО) по первоисточникам (lex.uz curl: НК, КоАО, ТК, ПКМ-796 узб. оригинал, ЗРУ-1116) + встречная проверка. Итог реестра: {'current': 136, 'stale_confirmed': 9, 'removed': 7, 'unverified': 13, 'uncertain': 1}. Код НЕ правился (tier2).",
     "last_reconciled": "2026-09-13",
     "last_rollover": "УП-115 от 23.06.2026 — БРВ 440000, МРОТ 1360000 с 01.09.2026",
     "total": null

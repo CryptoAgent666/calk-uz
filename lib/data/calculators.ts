@@ -184,9 +184,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Отпускные',
     titleUz: "Ta'til puli",
     descriptionRu:
-      'Рассчитайте сумму отпускных выплат. Учитывает средний заработок, стаж и количество дней отпуска.',
+      'Рассчитайте сумму отпускных выплат. Учитывает средний заработок за 12 месяцев и дни отпуска без воскресений.',
     descriptionUz:
-      "Ta'til to'lovlari summasini hisoblang. O'rtacha ish haqi, ish staji va ta'til kunlari sonini hisobga oladi.",
+      "Ta'til to'lovlari summasini hisoblang. 12 oylik o'rtacha ish haqi va yakshanbalarsiz ta'til kunlarini hisobga oladi.",
     category: 'salary',
     icon: 'Palmtree',
     keywords: ['отпускные', 'ta\'til puli', 'vacation pay', 'отпуск', 'средний заработок'],

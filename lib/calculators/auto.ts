@@ -154,19 +154,22 @@ export function calculateLeasing(
 ): LeasingResult {
   const downPayment = carPrice * downPaymentPercent / 100
   const residualValue = carPrice * residualValuePercent / 100
-  const financedAmount = carPrice - downPayment - residualValue
+  const financedAmount = carPrice - downPayment
 
+  // Остаточная стоимость вносится в конце срока, поэтому весь срок лизингодатель
+  // держит её в обороте и начисляет на неё проценты: аннуитет с «шаром» в конце,
+  // а не обычный аннуитет на (цена − аванс − остаток).
   const monthlyRate = annualRate / 100 / 12
   let monthlyPayment: number
   if (monthlyRate === 0) {
-    monthlyPayment = financedAmount / termMonths
+    monthlyPayment = (financedAmount - residualValue) / termMonths
   } else {
-    monthlyPayment = financedAmount * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) /
-      (Math.pow(1 + monthlyRate, termMonths) - 1)
+    const growth = Math.pow(1 + monthlyRate, termMonths)
+    monthlyPayment = (financedAmount - residualValue / growth) * (monthlyRate * growth) / (growth - 1)
   }
 
   const totalPayments = monthlyPayment * termMonths
-  const totalInterest = totalPayments - financedAmount
+  const totalInterest = totalPayments + residualValue - financedAmount
   const totalCost = downPayment + totalPayments + residualValue
 
   return {

@@ -51,22 +51,28 @@ export function calculateAlimony(monthlyIncome: number, childrenCount: number): 
 export interface VacationPayResult {
   averageDailyEarnings: number
   vacationDays: number
+  paidDays: number
   vacationPay: number
   ndflAmount: number
   netVacationPay: number
 }
 
+// ТК ст. 257: средняя зарплата = 1/12 дохода за 12 месяцев, средняя дневная =
+// средняя ÷ 25,3. Ст. 233 (ред. ЗРУ-1030, с 14.02.2025): воскресенья при оплате
+// отпуска не учитываются; праздники в длительность отпуска не входят (ст. 221).
 export function calculateVacationPay(
   totalEarnings12Months: number,
   vacationDays: number,
-  workingDaysIn12Months: number = 247
+  sundaysInVacation: number = 3
 ): VacationPayResult {
-  const averageDailyEarnings = totalEarnings12Months / workingDaysIn12Months
-  const vacationPay = averageDailyEarnings * vacationDays
+  const averageDailyEarnings = totalEarnings12Months / 12 / BENEFIT_WORKING_DAYS_PER_MONTH
+  const paidDays = Math.max(0, vacationDays - sundaysInVacation)
+  const vacationPay = averageDailyEarnings * paidDays
   const ndflAmount = vacationPay * 0.12
   return {
     averageDailyEarnings,
     vacationDays,
+    paidDays,
     vacationPay,
     ndflAmount,
     netVacationPay: vacationPay - ndflAmount,

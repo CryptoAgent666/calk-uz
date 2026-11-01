@@ -45,7 +45,7 @@ export default function GasCalculator() {
           <CardContent className="space-y-3">
             {result.breakdown.map((tier, i) => (
               <div key={i} className="flex justify-between text-sm">
-                <span className="text-muted-foreground">{formatNumber(tier.from, locale)}–{formatNumber(tier.to, locale)} m\u00B3 ({formatNumber(tier.rate, locale)} UZS)</span>
+                <span className="text-muted-foreground">{formatNumber(tier.from, locale)}–{formatNumber(tier.to, locale)} m³ ({formatNumber(tier.rate, locale)} UZS)</span>
                 <span>{formatCurrency(tier.cost, 'UZS', locale)}</span>
               </div>
             ))}

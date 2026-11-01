@@ -83,7 +83,7 @@ export const HEATING_RATE_PER_M2_DAY = 241.44
 export const HEATING_SEASON_MONTHS = [10, 11, 12, 1, 2, 3]
 
 /** Average heating season duration in days */
-export const HEATING_SEASON_DAYS = 180
+export const HEATING_SEASON_DAYS = 140 // Ташкент 2025-26: начало ноября — поэтапно с 24 марта
 
 // =============================================
 // WASTE DISPOSAL (Мусор / Chiqindi)

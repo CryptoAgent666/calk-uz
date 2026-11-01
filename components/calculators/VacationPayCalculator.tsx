@@ -11,22 +11,23 @@ import { formatCurrency } from '@/lib/utils'
 export default function VacationPayCalculator() {
   const locale = useLocale()
   const [totalEarnings, setTotalEarnings] = useState('')
-  const [vacationDays, setVacationDays] = useState('15')
-  const [workingDays, setWorkingDays] = useState('247')
+  const [vacationDays, setVacationDays] = useState('21')
+  const [sundays, setSundays] = useState('3')
 
   const result = useMemo(() => {
     const earnings = parseFloat(totalEarnings.replace(/\s/g, '')) || 0
     const days = parseInt(vacationDays) || 0
-    const wd = parseInt(workingDays) || 247
+    const sun = parseInt(sundays) || 0
     if (earnings <= 0 || days <= 0) return null
-    return calculateVacationPay(earnings, days, wd)
-  }, [totalEarnings, vacationDays, workingDays])
+    return calculateVacationPay(earnings, days, sun)
+  }, [totalEarnings, vacationDays, sundays])
 
   const t = locale === 'uz'
     ? {
         totalEarnings: '12 oylik jami daromad (UZS)',
-        vacationDays: "Ta'til kunlari (ish kunlari)",
-        workingDays: '12 oydagi ish kunlari',
+        vacationDays: "Ta'til kunlari (kalendar, bayramlarsiz)",
+        sundays: 'Shundan yakshanbalar',
+        paidDays: "To'lanadigan kunlar",
         results: 'Natijalar',
         avgDaily: 'O\'rtacha kunlik daromad',
         vacationPay: 'Ta\'til puli',
@@ -36,8 +37,9 @@ export default function VacationPayCalculator() {
       }
     : {
         totalEarnings: 'Общий заработок за 12 мес. (UZS)',
-        vacationDays: 'Дней отпуска (рабочих)',
-        workingDays: 'Рабочих дней за 12 мес.',
+        vacationDays: 'Дней отпуска (календарных, без праздников)',
+        sundays: 'Из них воскресений',
+        paidDays: 'Оплачиваемых дней',
         results: 'Результаты',
         avgDaily: 'Среднедневной заработок',
         vacationPay: 'Отпускные (брутто)',
@@ -59,8 +61,8 @@ export default function VacationPayCalculator() {
             <Input type="number" value={vacationDays} onChange={(e) => setVacationDays(e.target.value)} className="mt-1" min={1} max={56} />
           </div>
           <div>
-            <Label>{t.workingDays}</Label>
-            <Input type="number" value={workingDays} onChange={(e) => setWorkingDays(e.target.value)} className="mt-1" min={1} max={365} />
+            <Label>{t.sundays}</Label>
+            <Input type="number" value={sundays} onChange={(e) => setSundays(e.target.value)} className="mt-1" min={0} max={9} />
           </div>
         </CardContent>
       </Card>
@@ -74,6 +76,10 @@ export default function VacationPayCalculator() {
             <div className="flex justify-between">
               <span className="text-muted-foreground">{t.avgDaily}</span>
               <span>{formatCurrency(result.averageDailyEarnings, 'UZS', locale)}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">{t.paidDays}</span>
+              <span>{result.paidDays}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">{t.vacationPay}</span>

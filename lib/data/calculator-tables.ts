@@ -1,6 +1,6 @@
 import type { CategoryId } from "@/lib/types/calculator"
 import { LAND_TAX_ZONES_2026, TAX_RATES } from "@/lib/constants/tax-rates"
-import { ELECTRICITY_TIERS, GAS_TIERS_SUMMER, WATER_HOT_RATE } from "@/lib/constants/utility-tariffs"
+import { ELECTRICITY_TIERS, GAS_TIERS_SUMMER, GAS_TIERS_WINTER, WATER_HOT_RATE } from "@/lib/constants/utility-tariffs"
 import { UTILITY_REGIONS } from "@/lib/constants/utility-regions"
 import { coldWaterRatePerM3 } from "@/lib/calculators/utilities"
 import { BANKS } from "@/lib/constants/banks"
@@ -156,11 +156,15 @@ const UTILITIES_TABLES: CalculatorTable[] = [
     ],
     rows: GAS_TIERS_SUMMER.map((tier) => ({
       ru: [
-        tier.upTo !== null ? `До ${tier.upTo} м\u00B3` : `Свыше ${GAS_TIERS_SUMMER[GAS_TIERS_SUMMER.length - 2].upTo} м\u00B3`,
+        tier === GAS_TIERS_SUMMER[0]
+          ? `До ${tier.upTo} м\u00B3 в месяц (март–октябрь), до ${GAS_TIERS_WINTER[0].upTo} м\u00B3 (ноябрь–февраль)`
+          : tier.upTo !== null ? `До ${tier.upTo} м\u00B3` : `Свыше ${GAS_TIERS_SUMMER[GAS_TIERS_SUMMER.length - 2].upTo} м\u00B3`,
         `${tier.pricePerUnit.toLocaleString("ru-RU")} сум`,
       ],
       uz: [
-        tier.upTo !== null ? `${tier.upTo} m\u00B3 gacha` : `${GAS_TIERS_SUMMER[GAS_TIERS_SUMMER.length - 2].upTo} m\u00B3 dan ortiq`,
+        tier === GAS_TIERS_SUMMER[0]
+          ? `Oyiga ${tier.upTo} m\u00B3 gacha (mart–oktyabr), ${GAS_TIERS_WINTER[0].upTo} m\u00B3 gacha (noyabr–fevral)`
+          : tier.upTo !== null ? `${tier.upTo} m\u00B3 gacha` : `${GAS_TIERS_SUMMER[GAS_TIERS_SUMMER.length - 2].upTo} m\u00B3 dan ortiq`,
         `${tier.pricePerUnit.toLocaleString("ru-RU")} so'm`,
       ],
     })),

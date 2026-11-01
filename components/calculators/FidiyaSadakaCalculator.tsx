@@ -5,31 +5,31 @@ import { useLocale } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { calculateFidiyaSadaqa } from '@/lib/calculators/religion'
+import { calculateFidiyaSadaqa, FITR_OFFICIAL_2026 } from '@/lib/calculators/religion'
 import { formatCurrency } from '@/lib/utils'
 
 export default function FidiyaSadakaCalculator() {
   const locale = useLocale()
   const [missedDays, setMissedDays] = useState('')
-  const [costPerMeal, setCostPerMeal] = useState('30000')
+  const [costPerDay, setCostPerDay] = useState(String(FITR_OFFICIAL_2026.wheat.sum))
 
   const result = useMemo(() => {
     const d = parseInt(missedDays) || 0
-    const c = parseFloat(costPerMeal) || 30000
+    const c = parseFloat(costPerDay) || FITR_OFFICIAL_2026.wheat.sum
     if (d <= 0) return null
     return calculateFidiyaSadaqa(d, c)
-  }, [missedDays, costPerMeal])
+  }, [missedDays, costPerDay])
 
   const t = locale === 'uz'
-    ? { missedDays: 'O\'tkazib yuborilgan kunlar', costPerMeal: 'Bir ovqat narxi (UZS)', results: 'Natijalar', costPerDay: 'Kunlik fidiya', totalAmount: 'Jami summa', placeholder: 'Kunlar sonini kiriting' }
-    : { missedDays: 'Пропущенных дней', costPerMeal: 'Стоимость одного приёма пищи (UZS)', results: 'Результаты', costPerDay: 'Фидия за день', totalAmount: 'Общая сумма', placeholder: 'Введите количество дней' }
+    ? { missedDays: 'O\'tkazib yuborilgan kunlar', costPerDayInput: 'Bir kunlik summa (UZS)', results: 'Natijalar', costPerDay: 'Kunlik fidiya', totalAmount: 'Jami summa', placeholder: 'Kunlar sonini kiriting' }
+    : { missedDays: 'Пропущенных дней', costPerDayInput: 'Сумма за один день (UZS)', results: 'Результаты', costPerDay: 'Фидия за день', totalAmount: 'Общая сумма', placeholder: 'Введите количество дней' }
 
   return (
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
           <div><Label>{t.missedDays}</Label><Input type="number" placeholder={t.placeholder} value={missedDays} onChange={(e) => setMissedDays(e.target.value)} className="mt-1 text-lg" min={1} max={30} /></div>
-          <div><Label>{t.costPerMeal}</Label><Input type="number" value={costPerMeal} onChange={(e) => setCostPerMeal(e.target.value)} className="mt-1" min={1000} /></div>
+          <div><Label>{t.costPerDayInput}</Label><Input type="number" value={costPerDay} onChange={(e) => setCostPerDay(e.target.value)} className="mt-1" min={1000} /></div>
         </CardContent>
       </Card>
       {result && (

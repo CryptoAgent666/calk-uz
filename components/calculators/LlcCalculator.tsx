@@ -25,8 +25,8 @@ export default function LlcCalculator() {
   }, [revenue, expenses, payroll, isVatPayer])
 
   const t = locale === 'uz'
-    ? { revenue: 'Daromad (UZS)', expenses: 'Xarajatlar (UZS)', payroll: 'Ish haqi fondi (UZS)', vatPayer: 'QQS to\'lovchisi', results: 'Natijalar', profit: 'Foyda', corporateTax: 'Foyda solig\'i (15%)', vat: 'QQS', socialTax: 'Ijtimoiy soliq', totalBurden: "Jami soliq yuki (foyda solig'i + ijtimoiy soliq)", netProfit: "Foyda solig'idan keyingi foyda", placeholder: 'Summani kiriting' }
-    : { revenue: 'Выручка (UZS)', expenses: 'Расходы (UZS)', payroll: 'ФОТ (UZS)', vatPayer: 'Плательщик НДС', results: 'Результаты', profit: 'Прибыль', corporateTax: 'Налог на прибыль (15%)', vat: 'НДС', socialTax: 'Социальный налог', totalBurden: 'Налоговая нагрузка (прибыль + соцналог)', netProfit: 'Прибыль после налога на прибыль', placeholder: 'Введите сумму' }
+    ? { revenue: 'Daromad (UZS)', expenses: 'Xarajatlar (UZS)', payroll: 'Ish haqi fondi (UZS)', vatPayer: 'QQS to\'lovchisi', results: 'Natijalar', profit: 'Foyda', corporateTax: 'Foyda solig\'i (15%)', vat: 'QQS', socialTax: 'Ijtimoiy soliq', totalBurden: "Jami soliq yuki (foyda solig'i + ijtimoiy soliq)", netProfit: "Foyda solig'idan keyingi foyda", placeholder: 'Summani kiriting', simplifiedTax: "Soddalashtirilgan tizimda aylanma solig'i (4%)", betterGeneral: "Umumiy tizim arzonroq: foyda solig'i aylanma solig'idan kam", betterSimplified: "Soddalashtirilgan tizim arzonroq: aylanma solig'i foyda solig'idan kam", notAvailable: "Tushum 12 000 BHK dan yuqori: soddalashtirilgan tizim mavjud emas" }
+    : { revenue: 'Выручка (UZS)', expenses: 'Расходы (UZS)', payroll: 'ФОТ (UZS)', vatPayer: 'Плательщик НДС', results: 'Результаты', profit: 'Прибыль', corporateTax: 'Налог на прибыль (15%)', vat: 'НДС', socialTax: 'Социальный налог', totalBurden: 'Налоговая нагрузка (прибыль + соцналог)', netProfit: 'Прибыль после налога на прибыль', placeholder: 'Введите сумму', simplifiedTax: 'Налог с оборота на упрощёнке (4%)', betterGeneral: 'Общая система дешевле: налог на прибыль меньше налога с оборота', betterSimplified: 'Упрощёнка дешевле: налог с оборота меньше налога на прибыль', notAvailable: 'Выручка выше 12 000 БРВ: упрощённая система недоступна' }
 
   return (
     <div className="space-y-6">
@@ -48,6 +48,8 @@ export default function LlcCalculator() {
             <div className="flex justify-between"><span className="text-muted-foreground">{t.socialTax}</span><span>{formatCurrency(result.socialTaxOnPayroll, 'UZS', locale)}</span></div>
             <div className="flex justify-between"><span className="text-muted-foreground">{t.totalBurden}</span><span>{formatCurrency(result.totalTaxBurden, 'UZS', locale)}</span></div>
             <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>{t.netProfit}</span><span className="text-primary">{formatCurrency(result.netProfit, 'UZS', locale)}</span></div>
+            <div className="border-t pt-3 flex justify-between"><span className="text-muted-foreground">{t.simplifiedTax}</span><span>{formatCurrency(result.simplifiedTax, 'UZS', locale)}</span></div>
+            <p className="text-sm text-muted-foreground">{!result.simplifiedAvailable ? t.notAvailable : result.corporateTax < result.simplifiedTax ? t.betterGeneral : t.betterSimplified}</p>
           </CardContent>
         </Card>
       )}

@@ -20,6 +20,61 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-11-01",
+    dateLabelRu: "1 ноября 2026",
+    dateLabelUz: "2026-yil 1-noyabr",
+    items: [
+      {
+        titleRu: "Отпускные считаются по статьям 233 и 257 Трудового кодекса",
+        titleUz: "Ta'til puli Mehnat kodeksining 233 va 257-moddalari bo'yicha hisoblanadi",
+        descRu:
+          "Калькулятор делил заработок на рабочие дни (247) и умножал на рабочие дни отпуска. По кодексу средняя зарплата равна 1/12 дохода за 12 месяцев, дневная — средней зарплате, делённой на 25,3, а оплачиваются дни отпуска без воскресений. С заработком 120 000 000 сум за 21 календарный день отпускные стали 7 114 625 сум вместо 6 818 175.",
+        descUz:
+          "Kalkulyator daromadni ish kunlariga (247) bo'lib, ta'tilning ish kunlariga ko'paytirar edi. Kodeksga ko'ra o'rtacha ish haqi 12 oylik daromadning 1/12 qismi, kunligi esa o'rtacha ish haqi ÷ 25,3, ta'til kunlari yakshanbalarsiz to'lanadi. 120 000 000 so'm daromad va 21 kalendar kun uchun ta'til puli 6 818 175 emas, 7 114 625 so'm bo'ldi.",
+      },
+      {
+        titleRu: "Зарплата: компенсация за задержку и пример расчёта",
+        titleUz: "Ish haqi: kechikish kompensatsiyasi va hisob misoli",
+        descRu:
+          "За задержку зарплаты мы указывали 1/300 ставки ЦБ, это норма о налоговой пене. По статье 333 ТК компенсация равна 10% от ставки рефинансирования за каждый день. В примере на 15 000 000 сум ИНПС вычитался сверх НДФЛ, сумма на руки исправлена с 13 185 000 на 13 200 000 сум.",
+        descUz:
+          "Ish haqi kechikishi uchun biz MB stavkasining 1/300 qismini ko'rsatgan edik, bu soliq penyasi normasi. MK 333-moddasiga ko'ra kompensatsiya har bir kun uchun qayta moliyalash stavkasining 10% iga teng. 15 000 000 so'mlik misolda IJPH JShShS ustiga ayirilgan edi, qo'lga tegadigan summa 13 185 000 dan 13 200 000 so'mga tuzatildi.",
+      },
+      {
+        titleRu: "ИП: до 5 работников, госпошлина 1 БРВ, отчётность помесячно",
+        titleUz: "YaTT: 5 tagacha xodim, davlat boji 1 BHK, hisobot har oyda",
+        descRu:
+          "Вместо «до 10 работников, до 25 с 2025 года» теперь до 5 (ст. 507 ТК, ПКМ № 707). Регистрация ИП не бесплатна: 1 БРВ (440 000 сум), через my.gov.uz 396 000 сум (ЗРУ-600). Расчёт налога с оборота подаётся ежемесячно до 15-го числа, а не ежеквартально.",
+        descUz:
+          "«10 tagacha xodim, 2025-yildan 25 tagacha» o'rniga endi 5 tagacha (MK 507-moddasi, VMQ № 707). YaTTni ro'yxatdan o'tkazish bepul emas: 1 BHK (440 000 so'm), my.gov.uz orqali 396 000 so'm (O'RQ-600). Aylanma solig'i hisob-kitobi har chorakda emas, har oyda 15-sanagacha topshiriladi.",
+      },
+      {
+        titleRu: "Лизинг авто: проценты на остаточную стоимость и баланс",
+        titleUz: "Avtolizing: qoldiq qiymatga foizlar va balans",
+        descRu:
+          "Платёж в лизинге не учитывал проценты на остаточную стоимость, которая вносится в конце срока: для 300 млн сум, аванса 20%, 22% годовых, 36 месяцев и остатка 10% платёж стал около 8,57 млн вместо 8,02 млн сум. Также исправлено: автомобиль учитывается на балансе лизингополучателя (ст. 7 Закона «О лизинге»).",
+        descUz:
+          "Lizing to'lovi muddat oxirida to'lanadigan qoldiq qiymatga foizlarni hisobga olmagan: 300 mln so'm, 20% avans, yillik 22%, 36 oy va 10% qoldiq uchun to'lov 8,02 mln emas, taxminan 8,57 mln so'm bo'ldi. Shuningdek tuzatildi: avtomobil lizing oluvchi balansida hisobga olinadi («Lizing to'g'risida»gi Qonunning 7-moddasi).",
+      },
+      {
+        titleRu: "Фидия, фитр-садака и закят по фетве 2026 года",
+        titleUz: "Fidiya, fitr-sadaqa va zakot 2026-yilgi fatvo bo'yicha",
+        descRu:
+          "Калькулятор фидии удваивал стоимость приёма пищи и считал от 30 000 сум за приём. По фетве Управления мусульман фидия за день равна фитр-садаке: от 10 000 сум (пшеница) до 200 000 сум (финики). В текстах обновлены суммы фитра и нисаб закята (100 млн сум).",
+        descUz:
+          "Fidiya kalkulyatori ovqat narxini ikki baravar qilib, 30 000 so'mdan hisoblar edi. Musulmonlar idorasi fatvosiga ko'ra bir kunlik fidiya fitr-sadaqaga teng: 10 000 so'm (bug'doy) dan 200 000 so'm (xurmo) gacha. Matnlarda fitr summalari va zakot nisobi (100 mln so'm) yangilandi.",
+      },
+      {
+        titleRu: "Газ и отопление: примеры по действующим тарифам",
+        titleUz: "Gaz va isitish: amaldagi tariflar bo'yicha misollar",
+        descRu:
+          "Примеры расчёта газа считались по старым тарифам и порогам, теперь по ПКМ-243: 1 100 сум в пределах нормы, 2 000 сум сверх неё. Сезон отопления в Ташкенте уточнён: около 140 дней, а не 180, суммы за сезон пересчитаны. Проект с тарифом 314 сум на 1 ноября не принят, действует 241,44 сума.",
+        descUz:
+          "Gaz hisob misollari eski tariflar va chegaralar bo'yicha edi, endi VMQ-243 bo'yicha: norma doirasida 1 100 so'm, undan ortig'i 2 000 so'm. Toshkentda isitish mavsumi aniqlashtirildi: 180 emas, taxminan 140 kun, mavsum summalari qayta hisoblandi. 314 so'mlik tarif loyihasi 1-noyabr holatiga qabul qilinmagan, 241,44 so'm amal qiladi.",
+      },
+    ],
+  },
+  {
     date: "2026-10-26",
     dateLabelRu: "26 октября 2026",
     dateLabelUz: "2026-yil 26-oktabr",

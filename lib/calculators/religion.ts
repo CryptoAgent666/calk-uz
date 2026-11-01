@@ -111,10 +111,9 @@ export interface FidiyaSadaqaResult {
 
 export function calculateFidiyaSadaqa(
   missedDays: number,
-  costPerMeal: number = 30_000 // cost of one meal for a poor person
+  // Фетва Управления мусульман на 2026 год: фидья за день равна фитр-садаке.
+  costPerDay: number = FITR_OFFICIAL_2026.wheat.sum
 ): FidiyaSadaqaResult {
-  // Fidiya = feeding one poor person for each missed day (2 meals)
-  const costPerDay = costPerMeal * 2
   return {
     missedDays,
     costPerDay,
