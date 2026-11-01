@@ -57,9 +57,9 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
     slug: 'mortgage',
     items: [
       {
-        question: "Yosh oilalar uchun «Ipoteka 7%» dasturi nima va qanday olinadi?",
+        question: "Yosh oilalar uchun imtiyozli ipoteka bormi?",
         answer:
-          "Davlat dasturi: 35 yoshgacha bo'lgan yosh oila yoki yakka tartibdagi onaga yiliga 7% stavkada ipoteka beriladi. Birinchi to'lov 15%, muddat — 20 yilgacha. Shartlar: O'zbekiston fuqarosi, ro'yxatda turish, ilgari uy-joyga ega bo'lmaslik.",
+          "Imtiyozli dasturlar o'zgarib turadi, shuning uchun amaldagi shartlarni bankdan aniqlang. 2026-yilda davlat ipotekasi odatda yillik 17-20%, kam ta'minlanganlarga boshlang'ich to'lov uchun subsidiya berilishi mumkin.",
       },
       {
         question: "Mahalla referensiyasi ipoteka uchun kerakmi?",
@@ -94,7 +94,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Naqd dollar olishda chek beriladimi?",
         answer:
-          "Ha, banklar valyuta ayirboshlashdan keyin spravka beradilar — bu bojxonada $5 000 dan ortiq olib chiqishda kerak bo'ladi. Spravkani kamida 1 yil saqlang.",
+          "Ha, banklar valyuta ayirboshlashdan keyin spravka beradilar. Naqd valyutani deklaratsiyasiz 100 mln so'm ekvivalentigacha olib chiqish mumkin, undan ko'p bo'lsa butun summa deklaratsiya qilinadi, shuning uchun spravkani saqlab qo'ying.",
       },
     ],
   },
@@ -139,7 +139,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Avtomobil rasmiylashtirishda «utilizatsiya yig'imi» qancha?",
         answer:
-          "Yengil avtomobillar uchun yig'im hajm va ishlab chiqarish yiliga bog'liq: yangi avto uchun 5-15 mln so'm, foydalanilgan uchun ko'proq. Aniq summa zip kalkulyatorda hisoblanadi.",
+          "Yengil avtomobillar uchun yig'im dvigatel hajmi va yoshga bog'liq: 30 dan 480 BHK gacha (13 200 000 dan 211 200 000 so'mgacha), elektromobillar uchun 120 yoki 210 BHK. Aniq summani kalkulyator hisoblaydi.",
       },
     ],
   },
@@ -164,7 +164,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Qurbonlik uchun jonzotni qanday tanlash kerak?",
         answer:
-          "Imkon doirasida sog'lom, kamida 2 yoshga to'lgan qoramol (sigir, ho'kiz) yoki 1 yoshga to'lgan mol-qo'y (qo'y, echki) tanlanadi. Qoramol 7 oilaga, mol-qo'y 1 oilaga qurbonlik qilinadi. O'zbekiston Musulmonlari Idorasi tavsiyalariga rioya qiling.",
+          "Sog'lom hayvon tanlanadi: qoramol (sigir, ho'kiz) kamida 2 yoshda, echki kamida 1 yoshda, qo'y kamida 6 oylik va bir yoshlikdek ko'rinadigan bo'lishi kerak. Qoramol 7 oilaga, qo'y yoki echki 1 oilaga qurbonlik qilinadi. O'zbekiston Musulmonlari Idorasi tavsiyalariga rioya qiling.",
       },
     ],
   },
@@ -189,7 +189,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Pensiya qaerda olinadi?",
         answer:
-          "Pensiya bank kartasiga (Uzcard yoki Humo) yoki «Aloqabank», «Xalq banki» ofislariga o'tkaziladi. Ariza my.soliq.uz yoki tuman pensiya jamg'armasi bo'limiga topshiriladi. Tayyor hujjatlar — pasport, mehnat daftarchasi, INPS spravkasi.",
+          "Pensiya bank kartasiga (Uzcard yoki Humo) yoki «Aloqabank», «Xalq banki» ofislariga o'tkaziladi. Ariza tuman pensiya jamg'armasi bo'limiga topshiriladi. Tayyor hujjatlar — pasport, mehnat daftarchasi, INPS spravkasi.",
       },
     ],
   },
