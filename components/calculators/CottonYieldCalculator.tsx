@@ -12,8 +12,8 @@ export default function CottonYieldCalculator() {
   const locale = useLocale()
   const [area, setArea] = useState('')
   const [yieldPerHa, setYieldPerHa] = useState('2800')
-  const [pricePerKg, setPricePerKg] = useState('6000')
-  const [costsPerHa, setCostsPerHa] = useState('8000000')
+  const [pricePerKg, setPricePerKg] = useState('8000')
+  const [costsPerHa, setCostsPerHa] = useState('13500000')
 
   const result = useMemo(() => {
     const a = parseFloat(area) || 0

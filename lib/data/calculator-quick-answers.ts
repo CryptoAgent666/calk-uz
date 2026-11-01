@@ -41,9 +41,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'mortgage',
     textRu:
-      'Ставки по ипотеке в Узбекистане в 2026 году: 17–23% годовых в коммерческих банках, 7% по госпрограмме «Ipoteka 7%» для молодых семей. Первоначальный взнос — от 15%, срок — до 20 лет. Ежемесячный платёж по аннуитету = Сумма × i / (1 − (1 + i)⁻ⁿ).',
+      'Ставки по ипотеке в Узбекистане в 2026 году: обычно 17–23% годовых, государственная ипотека — 17–20%; льготные программы зависят от категории заёмщика. Первоначальный взнос — от 15%, срок — до 20 лет. Ежемесячный платёж по аннуитету = Сумма × i / (1 − (1 + i)⁻ⁿ).',
     textUz:
-      "2026-yilda O'zbekistonda ipoteka stavkalari: tijorat banklarda yillik 17–23%, yosh oilalar uchun davlat «Ipoteka 7%» dasturida 7%. Boshlang'ich to'lov — 15% dan, muddat — 20 yilgacha. Annuitet bo'yicha oylik to'lov = Summa × i / (1 − (1 + i)⁻ⁿ).",
+      "2026-yilda O'zbekistonda ipoteka stavkalari: odatda yillik 17–23%, davlat ipotekasi — 17–20%; imtiyozli dasturlar qarz oluvchi toifasiga bog'liq. Boshlang'ich to'lov — 15% dan, muddat — 20 yilgacha. Annuitet bo'yicha oylik to'lov = Summa × i / (1 − (1 + i)⁻ⁿ).",
   },
   {
     slug: 'credit',
@@ -55,9 +55,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'deposit',
     textRu:
-      'Ставки по сумовым вкладам в банках Узбекистана в 2026 году — 18–22,5% годовых, валютные (USD) — 4–6%. С капитализацией процентов эффективная ставка выше номинальной: при 22% с ежемесячной капитализацией эффективная ставка ~24,4%. Расчёт: FV = PV × (1 + r/n)^(n·t).',
+      'Ставки по сумовым вкладам в банках Узбекистана в 2026 году — 17–22,5% годовых, в среднем 18,4%, валютные (USD) — 4–6%. С капитализацией процентов эффективная ставка выше номинальной: при 22% с ежемесячной капитализацией эффективная ставка ~24,4%. Расчёт: FV = PV × (1 + r/n)^(n·t).',
     textUz:
-      "2026-yilda O'zbekiston banklarida so'mdagi omonatlar stavkalari — yillik 18–22,5%, valyutaviy (USD) — 4–6%. Foizlarning kapitalizatsiyasi bilan samarali stavka nominalidan yuqori: 22% da oylik kapitalizatsiya bilan samarali stavka ~24,4%. Hisoblash: FV = PV × (1 + r/n)^(n·t).",
+      "2026-yilda O'zbekiston banklarida so'mdagi omonatlar stavkalari — yillik 17–22,5%, o'rtacha 18,4%, valyutaviy (USD) — 4–6%. Foizlarning kapitalizatsiyasi bilan samarali stavka nominalidan yuqori: 22% da oylik kapitalizatsiya bilan samarali stavka ~24,4%. Hisoblash: FV = PV × (1 + r/n)^(n·t).",
   },
   {
     slug: 'auto-credit',
@@ -76,16 +76,16 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'utilities-total',
     textRu:
-      'Коммунальные услуги в Узбекистане для семьи из 4 человек в Ташкенте (квартира 70 м²) в 2026 после подорожания 1 июня: зимой около 600 000 сум/мес, летом примерно 400 000. Точная сумма сильно зависит от расхода — посчитайте в калькуляторе. Электричество — 650–2 200 сум/кВт·ч (по тарифным ступеням), газ — 1 100–3 300 сум/м³, холодная вода с канализацией — 3 808 сум/м³ в Ташкенте, в областях от 3 696 до 12 992 сум/м³.',
+      'Коммунальные услуги в Узбекистане для семьи из 4 человек в Ташкенте (квартира 70 м²) в 2026 после подорожания 1 июня: зимой около 600 000 сум/мес, летом примерно 400 000. Точная сумма сильно зависит от расхода — посчитайте в калькуляторе. Электричество — 650–2 200 сум/кВт·ч (по тарифным ступеням), газ — 1 100–3 300 сум/м³, холодная вода с канализацией — 3 808 сум/м³ в Ташкенте, в областях от 4 175 до 12 992 сум/м³.',
     textUz:
-      "2026-yilda O'zbekistonda Toshkentdagi 4 kishilik oila uchun (70 m² kvartira) kommunal xizmatlar 1-iyundagi qimmatlashuvdan keyin: qishda taxminan 600 000 so'm/oy, yozda 400 000 atrofida. Aniq summa sarfga juda bog'liq — kalkulyatorda hisoblang. Elektr — 650–2 200 so'm/kVt·s (tarif bosqichlari bo'yicha), gaz — 1 100–3 300 so'm/m³, kanalizatsiya bilan sovuq suv — Toshkentda 3 808 so'm/m³, viloyatlarda 3 696 dan 12 992 so'm/m³ gacha.",
+      "2026-yilda O'zbekistonda Toshkentdagi 4 kishilik oila uchun (70 m² kvartira) kommunal xizmatlar 1-iyundagi qimmatlashuvdan keyin: qishda taxminan 600 000 so'm/oy, yozda 400 000 atrofida. Aniq summa sarfga juda bog'liq — kalkulyatorda hisoblang. Elektr — 650–2 200 so'm/kVt·s (tarif bosqichlari bo'yicha), gaz — 1 100–3 300 so'm/m³, kanalizatsiya bilan sovuq suv — Toshkentda 3 808 so'm/m³, viloyatlarda 4 175 dan 12 992 so'm/m³ gacha.",
   },
   {
     slug: 'customs',
     textRu:
-      'Растаможка автомобиля в Узбекистане в 2026: таможенная пошлина — процент от стоимости плюс надбавка за см³ объёма двигателя: до 1 года 15% + 0,4–1,0 USD/см³, от 1 до 3 лет 30% + 1,8–3,0, старше 3 лет 40% + 3,0. Отдельного акциза на легковые авто нет. Сверх этого — НДС 12% и утильсбор 6–137 БРВ. Электромобили — 0% пошлины и акциза до 1 января 2030 года (утильсбор платится). На авто $20 000 с двигателем 2 000 см³ — ~$11 000 дополнительно к цене.',
+      'Растаможка автомобиля в Узбекистане в 2026: таможенная пошлина — процент от стоимости плюс надбавка за см³ объёма двигателя: до 1 года 15% + 0,4–1,0 USD/см³, от 1 до 3 лет 30% + 1,8–3,0, старше 3 лет 40% + 3,0. Отдельного акциза на легковые авто нет. Сверх этого — НДС 12% и утильсбор 30–480 БРВ. Электромобили — 0% пошлины и акциза до 1 января 2030 года (утильсбор платится). На новое авто $20 000 с двигателем 2 000 см³ — ~$12 900 дополнительно к цене.',
     textUz:
-      "2026-yilda O'zbekistonda avtomobilni bojxonadan o'tkazish: bojxona boji — narxdan foiz va dvigatel hajmining har bir sm³ i uchun ustama: 1 yilgacha 15% + 0,4–1,0 USD/sm³, 1 yildan 3 yilgacha 30% + 1,8–3,0, 3 yildan katta 40% + 3,0. Yengil avtomobillarga alohida aksiz yo'q. Bundan tashqari — QQS 12% va utilizatsiya yig'imi 6–137 BHK. Elektromobillar — 2030-yil 1-yanvarigacha 0% boj va aksiz (utilizatsiya yig'imi to'lanadi). 2 000 sm³ dvigatelli $20 000 avto uchun — narxga qo'shimcha ~$11 000.",
+      "2026-yilda O'zbekistonda avtomobilni bojxonadan o'tkazish: bojxona boji — narxdan foiz va dvigatel hajmining har bir sm³ i uchun ustama: 1 yilgacha 15% + 0,4–1,0 USD/sm³, 1 yildan 3 yilgacha 30% + 1,8–3,0, 3 yildan katta 40% + 3,0. Yengil avtomobillarga alohida aksiz yo'q. Bundan tashqari — QQS 12% va utilizatsiya yig'imi 30–480 BHK. Elektromobillar — 2030-yil 1-yanvarigacha 0% boj va aksiz (utilizatsiya yig'imi to'lanadi). 2 000 sm³ dvigatelli yangi $20 000 avto uchun — narxga qo'shimcha ~$12 900.",
   },
   {
     slug: 'brv',

@@ -5,7 +5,7 @@
     "currency": "UZS (сум)",
     "generated": "2026-06-25",
     "note": "Audit ledger (NOT imported by site). Constants are CENTRALIZED: lib/constants/{brv,tax-rates,utility-tariffs}.ts + inline in lib/calculators/*.ts. Apply fixes there. БРВ=440000 anchors most state duties/fines as BRV-multiples. tax-rates.ts & utility-tariffs.ts headers say 2025 (freshness flag).",
-    "total": 181,
+    "total": 184,
     "gov_regulated": 145,
     "market_or_other": 16,
     "conflicts": 10,
@@ -2130,7 +2130,7 @@
       "id": "religion.ts__nisab (gold grams)",
       "file": "lib/calculators/religion.ts",
       "key": "nisab (gold grams)",
-      "value": "85 (× goldPricePerGram; default goldPricePerGram=1900000 → nisab ≈ 161,500,000 UZS)",
+      "value": "85 (× goldPricePerGram; default goldPricePerGram=NISAB_FATWA_2026/85 → nisab ≈ 161,500,000 UZS)",
       "unit": "grams of gold (→ UZS via market gold price)",
       "law": "Religious — nisab = value of 85 g of gold",
       "theme": "zakat",
@@ -2142,8 +2142,11 @@
       "last_updated_hint": null,
       "source_hint": "muslim.uz; market gold price",
       "conflict": false,
-      "status": "unverified",
-      "notes": "RELIGIOUS. Nisab threshold = 85 g gold. UZS value depends on market goldPricePerGram (default 1,900,000 UZS/g — market, not gov). Silver valued at goldPrice/80 ratio (line 29).  ||  2026-11-01: фетва 2026 — нисаб 100 млн сум (85 г золота 585 пробы); дефолт цены грамма в коде иной, поле редактируемое."
+      "status": "current",
+      "notes": "RELIGIOUS. Nisab threshold = 85 g gold. UZS value depends on market goldPricePerGram (default 1,900,000 UZS/g — market, not gov). Silver valued at goldPrice/80 ratio (line 29).  ||  2026-11-01: фетва 2026 — нисаб 100 млн сум (85 г золота 585 пробы); дефолт цены грамма в коде иной, поле редактируемое.  ||  2026-11-01: дефолт цены приведён к фетве 2026 (100 млн за 85 г).",
+      "last_verified": "2026-11-01",
+      "verified_date": "2026-11-01",
+      "source_url": "https://uznews.uz/ru/news/107442"
     },
     {
       "id": "religion.ts__zakat rate",
@@ -4573,6 +4576,72 @@
       "notes": "Повышение до $10 000 пока не принято: перепроверять.",
       "official_value": "100000000",
       "source_url": "https://www.spot.uz/ru/2026/09/02/currency-declaring/",
+      "last_verified": "2026-11-01",
+      "verified_date": "2026-11-01"
+    },
+    {
+      "id": "calkcheck-2026-11-01__NISAB_FATWA_2026",
+      "file": "lib/calculators/religion.ts",
+      "key": "NISAB_FATWA_2026",
+      "value": "100000000",
+      "unit": "UZS",
+      "law": "Фетва Управления мусульман, 17.02.2026",
+      "theme": "market",
+      "is_gov_regulated": true,
+      "surfaces": [
+        "lib/calculators/religion.ts"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "https://uznews.uz/ru/news/107442",
+      "conflict": false,
+      "status": "current",
+      "notes": "Обновляется ежегодно перед Рамаданом.",
+      "official_value": "100000000",
+      "source_url": "https://uznews.uz/ru/news/107442",
+      "last_verified": "2026-11-01",
+      "verified_date": "2026-11-01"
+    },
+    {
+      "id": "calkcheck-2026-11-01__DEPOSIT_RATE_UZS_RANGE",
+      "file": "lib/data/calculator-articles.ts",
+      "key": "DEPOSIT_RATE_UZS_RANGE",
+      "value": "17-22.5",
+      "unit": "percent годовых",
+      "law": "Рынок; средняя по вкладам населения 18,4% за август 2026 (ЦБ)",
+      "theme": "market",
+      "is_gov_regulated": false,
+      "surfaces": [
+        "lib/data/calculator-articles.ts"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "https://www.spot.uz/ru/2026/09/24/deposits-aug26",
+      "conflict": false,
+      "status": "current",
+      "notes": "Рыночный ориентир. Был 20-26.",
+      "official_value": "17-22.5",
+      "source_url": "https://www.spot.uz/ru/2026/09/24/deposits-aug26",
+      "last_verified": "2026-11-01",
+      "verified_date": "2026-11-01"
+    },
+    {
+      "id": "calkcheck-2026-11-01__STATE_MORTGAGE_RATE_RANGE",
+      "file": "lib/data/calculator-articles.ts",
+      "key": "STATE_MORTGAGE_RATE_RANGE",
+      "value": "17-20",
+      "unit": "percent годовых",
+      "law": "Рынок: обзор Spot.uz, март 2026; формула ЦБ + 6%",
+      "theme": "market",
+      "is_gov_regulated": false,
+      "surfaces": [
+        "lib/data/calculator-articles.ts"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "https://www.spot.uz/ru/2026/03/26/mortgage",
+      "conflict": false,
+      "status": "current",
+      "notes": "Программа «Ipoteka 7%» как действующая не подтверждена, убрана.",
+      "official_value": "17-20",
+      "source_url": "https://www.spot.uz/ru/2026/03/26/mortgage",
       "last_verified": "2026-11-01",
       "verified_date": "2026-11-01"
     }

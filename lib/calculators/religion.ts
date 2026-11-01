@@ -12,6 +12,9 @@ export interface ZakatResult {
   breakdown: { category: string; amount: number }[]
 }
 
+/** Нисаб по фетве Управления мусульман на 2026 год: 85 г золота 585 пробы. */
+export const NISAB_FATWA_2026 = 100_000_000
+
 export function calculateZakat(assets: {
   cash: number
   bankDeposits: number
@@ -21,7 +24,7 @@ export function calculateZakat(assets: {
   businessInventory: number
   receivables: number
   debtsOwed: number
-}, goldPricePerGram: number = 1_900_000): ZakatResult {
+}, goldPricePerGram: number = NISAB_FATWA_2026 / 85): ZakatResult {
   // Nisab = value of 85 grams of gold
   const nisab = 85 * goldPricePerGram
 

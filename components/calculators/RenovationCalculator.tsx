@@ -39,7 +39,7 @@ export default function RenovationCalculator() {
           <div>
             <Label>{t.level}</Label>
             <select value={level} onChange={(e) => setLevel(e.target.value as typeof level)} className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
-              {Object.entries(levelOptions).map(([k, v]) => <option key={k} value={k}>{v} — {formatCurrency(PRICES[k], 'UZS', locale)}/m\u00B2</option>)}
+              {Object.entries(levelOptions).map(([k, v]) => <option key={k} value={k}>{v} — {formatCurrency(PRICES[k], 'UZS', locale)}/м²</option>)}
             </select>
           </div>
         </CardContent>

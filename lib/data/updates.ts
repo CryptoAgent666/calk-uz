@@ -25,6 +25,38 @@ export const UPDATES: UpdateBlock[] = [
     dateLabelUz: "2026-yil 1-noyabr",
     items: [
       {
+        titleRu: "НДФЛ: компенсация за отпуск и выходное пособие облагаются",
+        titleUz: "JShShS: ta'til kompensatsiyasi va chiqish nafaqasi soliqqa tortiladi",
+        descRu:
+          "В статье о НДФЛ они были перечислены как необлагаемые. По ст. 374 и п. 9 ст. 377 НК это облагаемые доходы. Также уточнено: дивиденды резидентов — 5%, а не общая ставка 12%; взнос ИНПС входит в НДФЛ; социальный налог платит работодатель.",
+        descUz:
+          "JShShS maqolasida ular soliqqa tortilmaydigan sifatida ko'rsatilgan edi. SK 374-moddasi va 377-moddasi 9-bandiga ko'ra bu soliqqa tortiladigan daromadlar. Shuningdek aniqlashtirildi: rezidentlar dividendlari — umumiy 12% emas, 5%; IJPH badali JShShS ichiga kiradi; ijtimoiy soliqni ish beruvchi to'laydi.",
+      },
+      {
+        titleRu: "Вклады: ставки 17–22,5% вместо 20–26%",
+        titleUz: "Omonatlar: 20–26% o'rniga 17–22,5% stavkalar",
+        descRu:
+          "Средняя ставка по сумовым вкладам населения в августе 2026 года — 18,4% (данные ЦБ). Обновлены калькуляторы вкладов, сложного процента и ROI, реальная доходность пересчитана с инфляцией 6,4%.",
+        descUz:
+          "2026-yil avgustida aholining so'mdagi omonatlari bo'yicha o'rtacha stavka 18,4% (MB ma'lumotlari). Omonat, murakkab foiz va ROI kalkulyatorlari yangilandi, real daromadlilik 6,4% inflyatsiya bilan qayta hisoblandi.",
+      },
+      {
+        titleRu: "Закят: нисаб 100 млн сум в калькуляторе",
+        titleUz: "Zakot: kalkulyatorda nisob 100 mln so'm",
+        descRu:
+          "По умолчанию калькулятор считал нисаб от цены 1 900 000 сум за грамм, то есть 161,5 млн сум. Теперь подставлена цена из фетвы Управления мусульман на 2026 год: 100 млн сум за 85 г золота 585 пробы. Цену можно заменить.",
+        descUz:
+          "Standart holda kalkulyator nisobni gramm uchun 1 900 000 so'mdan, ya'ni 161,5 mln so'mdan hisoblar edi. Endi Musulmonlar idorasining 2026-yilgi fatvosidagi narx qo'yilgan: 585-probali 85 g oltin uchun 100 mln so'm. Narxni almashtirish mumkin.",
+      },
+      {
+        titleRu: "Ипотека, кредиты, растаможка: пересчитаны примеры",
+        titleUz: "Ipoteka, kreditlar, bojxona: misollar qayta hisoblandi",
+        descRu:
+          "Исправлены суммы в примерах по кредитам и ипотеке. Убрана неподтверждённая программа «Ipoteka 7%». В растаможке утильсбор теперь указан как 30–480 БРВ вместо 6–137, а дополнительные расходы на авто $20 000 — около $12 900.",
+        descUz:
+          "Kredit va ipoteka misollaridagi summalar tuzatildi. Tasdiqlanmagan «Ipoteka 7%» dasturi olib tashlandi. Bojxonada utilizatsiya yig'imi endi 6–137 emas, 30–480 BHK, $20 000 lik avto uchun qo'shimcha xarajatlar — taxminan $12 900.",
+      },
+      {
         titleRu: "Пенсия: потолок заработка 6 048 000 сум",
         titleUz: "Pensiya: ish haqi chegarasi 6 048 000 so'm",
         descRu:
