@@ -20,6 +20,45 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-11-03",
+    dateLabelRu: "3 ноября 2026",
+    dateLabelUz: "2026-yil 3-noyabr",
+    items: [
+      {
+        titleRu: "Виза: евро и фунты теперь считаются по своему курсу",
+        titleUz: "Viza: yevro va funt endi o'z kursi bo'yicha hisoblanadi",
+        descRu:
+          "Сбор за Шенген и Великобританию считался по курсу доллара, поэтому Шенген выходил дешевле примерно на 12%. Обновлены сбор Великобритании (£135 с 8 апреля 2026), Япония без консульского сбора, Китай без визы до 30 дней. Южная Корея и Сингапур убраны из списка безвизовых стран: виза туда нужна.",
+        descUz:
+          "Shengen va Buyuk Britaniya yig'imi dollar kursi bo'yicha hisoblanar edi, shuning uchun Shengen taxminan 12% arzon chiqardi. Buyuk Britaniya yig'imi yangilandi (2026-yil 8-apreldan £135), Yaponiyada konsullik yig'imi yo'q, Xitoyga 30 kungacha viza kerak emas. Janubiy Koreya va Singapur vizasiz mamlakatlar ro'yxatidan olib tashlandi: u yerga viza kerak.",
+      },
+      {
+        titleRu: "Госпошлины: сверено с законом",
+        titleUz: "Davlat bojlari: qonun bilan solishtirildi",
+        descRu:
+          "По приложению к ЗРУ-600: завещание 22 000 сум, а не 220 000; копия 4 400 сум за страницу, а не 44 000; обычная доверенность 44 000 сум, а не 220 000. Убрана скидка пенсионерам 50% по искам: в законе её нет. Первое свидетельство о рождении бесплатно, повторное стоит 66 000 сум. Через my.gov.uz регистрация ИП и ООО стоит 90% ставки, а не половину.",
+        descUz:
+          "O'RQ-600 ilovasi bo'yicha: vasiyatnoma 220 000 emas, 22 000 so'm; nusxa sahifasiga 44 000 emas, 4 400 so'm; oddiy ishonchnoma 220 000 emas, 44 000 so'm. Da'volar bo'yicha pensionerlarga 50% chegirma olib tashlandi: qonunda u yo'q. Birinchi tug'ilganlik guvohnomasi bepul, takroriysi 66 000 so'm. my.gov.uz orqali YaTT va MChJni ro'yxatdan o'tkazish stavkaning yarmi emas, 90%.",
+      },
+      {
+        titleRu: "Первый класс: в год, когда ребёнку исполняется семь лет",
+        titleUz: "Birinchi sinf: bola yetti yoshga to'ladigan yilda",
+        descRu:
+          "На странице возраста было указано шесть лет к 1 сентября. По Закону «Об образовании» детей принимают в первый класс в год, когда им исполняется семь.",
+        descUz:
+          "Yosh sahifasida 1-sentabrga olti yosh deb ko'rsatilgan edi. «Ta'lim to'g'risida»gi Qonunga ko'ra bolalar birinchi sinfga yetti yoshga to'ladigan yilda qabul qilinadi.",
+      },
+      {
+        titleRu: "Страницы описывают то, что калькуляторы умеют на самом деле",
+        titleUz: "Sahifalar kalkulyatorlar aslida nima qila olishini tasvirlaydi",
+        descRu:
+          "Идеальный вес, БЖУ, площадь, даты, возраст, скидки, конвертер, число прописью, аренда и свадьба обещали функции, которых в них нет. Тексты исправлены. Генератор чисел теперь действительно использует Web Crypto, а калькулятор дат принимает даты в любом порядке.",
+        descUz:
+          "Ideal vazn, OYU, maydon, sanalar, yosh, chegirmalar, konverter, son yozuvda, ijara va to'y kalkulyatorlarda yo'q funksiyalarni va'da qilgan edi. Matnlar tuzatildi. Sonlar generatori endi haqiqatan Web Crypto ishlatadi, sana kalkulyatori esa sanalarni istalgan tartibda qabul qiladi.",
+      },
+    ],
+  },
+  {
     date: "2026-11-01",
     dateLabelRu: "1 ноября 2026",
     dateLabelUz: "2026-yil 1-noyabr",

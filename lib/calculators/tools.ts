@@ -56,8 +56,10 @@ export interface DateDiffResult {
   workingDays: number
 }
 
-export function calculateDateDiff(start: Date, end: Date): DateDiffResult {
-  const diffMs = Math.abs(end.getTime() - start.getTime())
+export function calculateDateDiff(first: Date, second: Date): DateDiffResult {
+  // Даты могут быть введены в обратном порядке: иначе годы уйдут в минус, а рабочие дни в ноль
+  const [start, end] = first <= second ? [first, second] : [second, first]
+  const diffMs = end.getTime() - start.getTime()
   const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24))
 
   let years = end.getFullYear() - start.getFullYear()
@@ -205,20 +207,38 @@ export function calculateAge(birthDate: Date): AgeResult {
 }
 
 // Random Number Generator
-export function generateRandomNumber(min: number, max: number, count: number = 1, allowDuplicates: boolean = true): number[] {
-  const results: number[] = []
-  const range = max - min + 1
+export const RANDOM_MAX_COUNT = 1000
 
-  if (!allowDuplicates && count > range) {
+/** Равномерное целое 0..range-1 из Web Crypto, без смещения от остатка деления. */
+function secureRandomBelow(range: number): number {
+  const limit = Math.floor(2 ** 32 / range) * range
+  const buffer = new Uint32Array(1)
+  do {
+    crypto.getRandomValues(buffer)
+  } while (buffer[0] >= limit)
+  return buffer[0] % range
+}
+
+export function generateRandomNumber(first: number, second: number, count: number = 1, allowDuplicates: boolean = true): number[] {
+  const min = Math.min(first, second)
+  const max = Math.max(first, second)
+  const range = max - min + 1
+  const total = Math.min(Math.max(count, 1), RANDOM_MAX_COUNT)
+
+  if (range > 2 ** 32) {
+    throw new Error('Range is too large')
+  }
+  if (!allowDuplicates && total > range) {
     throw new Error('Cannot generate more unique numbers than the range allows')
   }
 
+  const results: number[] = []
   const used = new Set<number>()
 
-  for (let i = 0; i < count; i++) {
+  for (let i = 0; i < total; i++) {
     let num: number
     do {
-      num = Math.floor(Math.random() * range) + min
+      num = secureRandomBelow(range) + min
     } while (!allowDuplicates && used.has(num))
 
     used.add(num)

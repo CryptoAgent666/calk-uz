@@ -90,9 +90,9 @@ const QUICK_ANSWERS: QuickAnswer[] = [
   {
     slug: 'brv',
     textRu:
-      'БРВ (Базовая расчётная величина) в Узбекистане с 1 сентября 2026 года — 440 000 сум (Указ УП-115 от 23.06.2026); до этого, с августа 2025 года, было 412 000 сум. Используется для расчёта государственных пошлин, штрафов и налоговых порогов. Например: регистрация ООО — 5 БРВ, порог обязательной регистрации по НДС — 12 000 БРВ. Льготы по НДФЛ считаются не в БРВ, а в МРОТ (1 360 000 сум).',
+      'БРВ (Базовая расчётная величина) в Узбекистане с 1 сентября 2026 года — 440 000 сум (Указ УП-115 от 23.06.2026); до этого, с августа 2025 года, было 412 000 сум. Используется для расчёта государственных пошлин, штрафов и налоговых порогов. Например: регистрация ООО — 1 БРВ, порог обязательной регистрации по НДС — 12 000 БРВ. Льготы по НДФЛ считаются не в БРВ, а в МРОТ (1 360 000 сум).',
     textUz:
-      "O'zbekistonda BHK (Bazaviy hisoblash kattaligi) 2026-yil 1-sentabridan — 440 000 so'm (23.06.2026-yildagi PF-115 Farmoni); bundan oldin, 2025-yil avgustdan, 412 000 so'm edi. Davlat bojlari, jarimalar va soliq chegaralarini hisoblash uchun ishlatiladi. Masalan: MChJ ro'yxatdan o'tkazish — 5 BHK, QQS bo'yicha majburiy ro'yxatdan o'tish chegarasi — 12 000 BHK. JShShS imtiyozlari esa BHK da emas, MIH da (1 360 000 so'm) hisoblanadi.",
+      "O'zbekistonda BHK (Bazaviy hisoblash kattaligi) 2026-yil 1-sentabridan — 440 000 so'm (23.06.2026-yildagi PF-115 Farmoni); bundan oldin, 2025-yil avgustdan, 412 000 so'm edi. Davlat bojlari, jarimalar va soliq chegaralarini hisoblash uchun ishlatiladi. Masalan: MChJ ro'yxatdan o'tkazish — 1 BHK, QQS bo'yicha majburiy ro'yxatdan o'tish chegarasi — 12 000 BHK. JShShS imtiyozlari esa BHK da emas, MIH da (1 360 000 so'm) hisoblanadi.",
   },
   {
     slug: 'osago',

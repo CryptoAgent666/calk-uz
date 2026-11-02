@@ -673,9 +673,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Аренда vs покупка',
     titleUz: 'Ijara vs sotib olish',
     descriptionRu:
-      'Что выгоднее: арендовать или покупать жильё? Сравните затраты на аренду и ипотеку за 10-20 лет.',
+      "Рассчитайте стоимость аренды жилья: платёж с коммунальными, депозит и итог за весь срок.",
     descriptionUz:
-      "Nima foydaliroq: uy ijaraga olish yoki sotib olish? 10-20 yil davomida ijara va ipoteka xarajatlarini solishtiring.",
+      "Uy-joy ijarasi narxini hisoblang: kommunal bilan to'lov, depozit va butun muddat uchun jami.",
     category: 'realestate',
     icon: 'Scale',
     keywords: ['аренда', 'ijara', 'rent vs buy', 'покупка квартиры', 'ипотека'],
@@ -846,9 +846,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Идеальный вес',
     titleUz: 'Ideal vazn',
     descriptionRu:
-      'Рассчитайте идеальный вес по нескольким формулам. Учитывает рост, возраст и тип телосложения.',
+      "Рассчитайте идеальный вес по четырём формулам. Учитывает рост и пол.",
     descriptionUz:
-      "Bir nechta formula bo'yicha ideal vaznni hisoblang. Bo'y, yosh va tana tuzilishi turini hisobga oladi.",
+      "Ideal vaznni to'rtta formula bo'yicha hisoblang. Bo'y va jinsni hisobga oladi.",
     category: 'health',
     icon: 'Scale',
     keywords: ['идеальный вес', 'ideal vazn', 'ideal weight', 'рост', 'формула'],
@@ -1023,9 +1023,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Калькулятор скидок',
     titleUz: 'Chegirma kalkulyatori',
     descriptionRu:
-      'Рассчитайте цену со скидкой и сумму экономии. Поддерживает несколько последовательных скидок.',
+      "Рассчитайте цену со скидкой и сумму экономии в сумах.",
     descriptionUz:
-      "Chegirma bilan narx va tejash summasini hisoblang. Bir nechta ketma-ket chegirmalarni qo'llab-quvvatlaydi.",
+      "Chegirmali narxni va so'mdagi tejash summasini hisoblang.",
     category: 'tools',
     icon: 'Tag',
     keywords: ['скидка', 'chegirma', 'discount', 'акция', 'распродажа', 'экономия'],
@@ -1038,9 +1038,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Калькулятор дат',
     titleUz: 'Sana kalkulyatori',
     descriptionRu:
-      'Рассчитайте количество дней между датами, прибавьте или вычтите дни из даты.',
+      "Рассчитайте разницу между двумя датами: годы, месяцы, недели, календарные и рабочие дни.",
     descriptionUz:
-      "Sanalar orasidagi kunlar sonini hisoblang, sanaga kun qo'shing yoki ayiring.",
+      "Ikki sana orasidagi farqni hisoblang: yillar, oylar, haftalar, kalendar va ish kunlari.",
     category: 'tools',
     icon: 'Calendar',
     keywords: ['дата', 'sana', 'date', 'дни между датами', 'разница дат'],
@@ -1053,9 +1053,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Калькулятор площади',
     titleUz: 'Maydon kalkulyatori',
     descriptionRu:
-      'Рассчитайте площадь помещения, участка или фигуры. Поддерживает сотки, гектары и квадратные метры.',
+      "Переведите площадь между квадратными метрами, сотками, гектарами, футами и акрами.",
     descriptionUz:
-      "Xona, yer yoki shakl maydonini hisoblang. Sotix, gektar va kvadrat metrlarni qo'llab-quvvatlaydi.",
+      "Maydonni kvadrat metr, sotix, gektar, fut va akr orasida o'giring.",
     category: 'tools',
     icon: 'Square',
     keywords: ['площадь', 'maydon', 'area', 'квадратные метры', 'сотки', 'гектары'],
@@ -1068,9 +1068,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Конвертер единиц',
     titleUz: 'Birlik konvertori',
     descriptionRu:
-      'Конвертируйте единицы измерения: длина, вес, объём, температура и скорость.',
+      "Конвертируйте единицы измерения: длина, вес, объём и температура.",
     descriptionUz:
-      "O'lchov birliklarini konvertatsiya qiling: uzunlik, og'irlik, hajm, harorat va tezlik.",
+      "O'lchov birliklarini o'giring: uzunlik, og'irlik, hajm va harorat.",
     category: 'tools',
     icon: 'ArrowLeftRight',
     keywords: ['конвертер', 'konvertor', 'unit converter', 'единицы измерения', 'перевод'],
@@ -1098,9 +1098,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Калькулятор возраста',
     titleUz: 'Yosh kalkulyatori',
     descriptionRu:
-      'Рассчитайте точный возраст в годах, месяцах и днях. Узнайте, сколько дней вы прожили.',
+      "Рассчитайте точный возраст в годах, месяцах и днях. Узнайте, сколько дней вы прожили и сколько осталось до дня рождения.",
     descriptionUz:
-      "Yil, oy va kunlarda aniq yoshni hisoblang. Necha kun yashagandligingizni bilib oling.",
+      "Aniq yoshni yillar, oylar va kunlarda hisoblang. Necha kun yashaganingiz va tug'ilgan kungacha qancha qolganini biling.",
     category: 'tools',
     icon: 'Cake',
     keywords: ['возраст', 'yosh', 'age', 'дата рождения', 'сколько лет'],
@@ -1162,9 +1162,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Калькулятор свадьбы',
     titleUz: "To'y kalkulyatori",
     descriptionRu:
-      'Рассчитайте бюджет свадьбы в Узбекистане. Ресторан, одежда, калым и все традиционные расходы.',
+      "Рассчитайте бюджет свадьбы в Узбекистане: зал, угощение, одежда, музыка, фото и другие расходы.",
     descriptionUz:
-      "O'zbekistonda to'y byudjetini hisoblang. Restoran, kiyim-kechak, qalin va barcha an'anaviy xarajatlar.",
+      "O'zbekistonda to'y byudjetini hisoblang: zal, mehmondorchilik, kiyim, musiqa, foto va boshqa xarajatlar.",
     category: 'unique',
     icon: 'Heart',
     keywords: ['свадьба', 'to\'y', 'wedding', 'калым', 'qalin', 'бюджет свадьбы'],

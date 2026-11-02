@@ -76,15 +76,19 @@ export interface StateDutyResult {
   description: string
 }
 
+// Ставки: приложение к Закону «О государственной пошлине» (ЗРУ-600), lex.uz/ru/docs/4680955.
 export const STATE_DUTIES: { type: string; brvMultiplier: number; descriptionRu: string; descriptionUz: string }[] = [
   { type: 'marriage', brvMultiplier: 0.2, descriptionRu: 'Регистрация брака', descriptionUz: 'Nikohni ro\'yxatga olish' },
-  { type: 'divorce', brvMultiplier: 1.5, descriptionRu: 'Расторжение брака', descriptionUz: 'Nikohni bekor qilish' },
-  { type: 'birth_cert', brvMultiplier: 0.1, descriptionRu: 'Свидетельство о рождении', descriptionUz: 'Tug\'ilganlik haqida guvohnoma' },
-  { type: 'court_civil', brvMultiplier: 1, descriptionRu: 'Иск в суд (4% цены иска, мин. 1 БРВ)', descriptionUz: 'Sudga da\'vo (da\'vo qiymatining 4%, min. 1 BHM)' },
-  { type: 'court_divorce', brvMultiplier: 2, descriptionRu: 'Подача иска в суд (развод)', descriptionUz: 'Sudga da\'vo ariza (ajralish)' },
-  { type: 'notary_power', brvMultiplier: 0.5, descriptionRu: 'Нотариальная доверенность', descriptionUz: 'Notarial ishonchnoma' },
-  { type: 'notary_deal', brvMultiplier: 1, descriptionRu: 'Нотариальная сделка', descriptionUz: 'Notarial bitim' },
-  { type: 'name_change', brvMultiplier: 1, descriptionRu: 'Смена имени/фамилии', descriptionUz: 'Ism/familiya o\'zgartirish' },
+  { type: 'divorce', brvMultiplier: 1.5, descriptionRu: 'Расторжение брака в ЗАГСе по взаимному согласию (нет несовершеннолетних детей)', descriptionUz: 'FHDYoda o\'zaro rozilik bilan ajrashish (voyaga yetmagan farzand yo\'q)' },
+  { type: 'repeat_cert', brvMultiplier: 0.15, descriptionRu: 'Повторное свидетельство ЗАГС', descriptionUz: 'FHDYo takroriy guvohnomasi' },
+  { type: 'court_civil', brvMultiplier: 1, descriptionRu: 'Имущественный иск в гражданский суд: 4% цены, показан минимум 1 БРВ', descriptionUz: 'Fuqarolik sudiga mulkiy da\'vo: bahoning 4%, minimum 1 BHK ko\'rsatilgan' },
+  { type: 'court_divorce', brvMultiplier: 2, descriptionRu: 'Иск о расторжении брака', descriptionUz: 'Nikohni bekor qilish haqida da\'vo' },
+  { type: 'court_divorce_repeat', brvMultiplier: 4, descriptionRu: 'Иск о расторжении повторного брака', descriptionUz: 'Takroriy nikohni bekor qilish haqida da\'vo' },
+  { type: 'notary_power', brvMultiplier: 0.1, descriptionRu: 'Нотариальная доверенность, кроме авто и недвижимости', descriptionUz: 'Notarial ishonchnoma (avtomobil va ko\'chmas mulkdan tashqari)' },
+  { type: 'notary_will', brvMultiplier: 0.05, descriptionRu: 'Удостоверение завещания', descriptionUz: 'Vasiyatnomani tasdiqlash' },
+  { type: 'notary_deal', brvMultiplier: 1, descriptionRu: 'Договор о продаже недвижимости (Ташкент, Нукус, облцентры)', descriptionUz: 'Ko\'chmas mulkni sotish shartnomasi (Toshkent, Nukus, viloyat markazlari)' },
+  { type: 'notary_car', brvMultiplier: 3, descriptionRu: 'Договор о продаже автомобиля', descriptionUz: 'Avtomobilni sotish shartnomasi' },
+  { type: 'name_change', brvMultiplier: 1, descriptionRu: 'Смена имени или фамилии (старше 18 лет)', descriptionUz: 'Ism yoki familiyani o\'zgartirish (18 yoshdan katta)' },
   { type: 'ip_registration', brvMultiplier: 1, descriptionRu: 'Регистрация ИП', descriptionUz: 'YaTT ro\'yxatga olish' },
   { type: 'llc_registration', brvMultiplier: 1, descriptionRu: 'Регистрация ООО', descriptionUz: 'MChJ ro\'yxatga olish' },
 ]
@@ -233,44 +237,59 @@ export interface VisaCostResult {
   visaType: string
   consulateFee: number
   serviceFee: number
-  /** Country-specific additional fee (e.g. USA Visa Integrity Fee) in UZS */
-  additionalFee: number
-  additionalFeeNote?: string
+  /** Сбор, который может добавиться (Visa Integrity Fee в США), в сумах. В итог не входит. */
+  possibleFee: number
+  possibleFeeNoteRu?: string
+  possibleFeeNoteUz?: string
   insuranceCost: number
   photoCost: number
   totalCost: number
 }
 
-export const VISA_COSTS_USD: Record<
+export type VisaFeeCurrency = 'USD' | 'EUR' | 'GBP'
+
+/**
+ * Суммы указаны в валюте сбора: сбор за Шенген установлен в евро, за Великобританию в фунтах.
+ * До 03.11.2026 все считались по курсу доллара, и Шенген выходил дешевле на ~12%.
+ * Китай (с 01.06.2025, 30 дней) и ОАЭ (30 дней): виза для туристической поездки не нужна.
+ * Япония: консульского сбора для граждан Узбекистана нет, сервисный сбор — услуги агентства.
+ */
+export const VISA_COSTS: Record<
   string,
-  { consulateFeeUsd: number; serviceFeeUsd: number; additionalFeeUsd?: number; additionalFeeNoteRu?: string; additionalFeeNoteUz?: string }
+  { currency: VisaFeeCurrency; consulateFee: number; serviceFee: number; possibleFee?: number; possibleFeeNoteRu?: string; possibleFeeNoteUz?: string }
 > = {
-  schengen: { consulateFeeUsd: 90, serviceFeeUsd: 30 }, // €80 raised to €90 from June 2024
+  schengen: { currency: 'EUR', consulateFee: 90, serviceFee: 30 },
   usa: {
-    consulateFeeUsd: 185,
-    serviceFeeUsd: 0,
-    additionalFeeUsd: 250,
-    additionalFeeNoteRu: 'Visa Integrity Fee (с октября 2024) — оплачивается при выдаче визы',
-    additionalFeeNoteUz: 'Visa Integrity Fee (2024-yil oktyabrdan) — viza berilganda to\'lanadi',
+    currency: 'USD',
+    consulateFee: 185,
+    serviceFee: 0,
+    possibleFee: 250,
+    possibleFeeNoteRu: 'Visa Integrity Fee: введён законом США в июле 2025 года, начало сбора уточняйте на сайте посольства',
+    possibleFeeNoteUz: 'Visa Integrity Fee: AQSh qonuni bilan 2025-yil iyulida joriy etilgan, undirish boshlanishini elchixona saytidan aniqlang',
   },
-  uk: { consulateFeeUsd: 115, serviceFeeUsd: 50 },
-  south_korea: { consulateFeeUsd: 40, serviceFeeUsd: 20 },
-  japan: { consulateFeeUsd: 30, serviceFeeUsd: 25 },
-  china: { consulateFeeUsd: 45, serviceFeeUsd: 35 },
-  turkey: { consulateFeeUsd: 0, serviceFeeUsd: 0 },
-  uae: { consulateFeeUsd: 0, serviceFeeUsd: 0 },
+  uk: { currency: 'GBP', consulateFee: 135, serviceFee: 40 },
+  south_korea: { currency: 'USD', consulateFee: 40, serviceFee: 20 },
+  japan: { currency: 'USD', consulateFee: 0, serviceFee: 25 },
+  china: { currency: 'USD', consulateFee: 0, serviceFee: 0 },
+  turkey: { currency: 'USD', consulateFee: 0, serviceFee: 0 },
+  uae: { currency: 'USD', consulateFee: 0, serviceFee: 0 },
 }
 
+export function visaFeeCurrency(country: string): VisaFeeCurrency {
+  return VISA_COSTS[country]?.currency ?? 'USD'
+}
+
+/** exchangeRate — сум за 1 единицу валюты сбора, см. visaFeeCurrency. */
 export function calculateVisaCost(
   country: string,
   exchangeRate: number = USD_UZS_FALLBACK,
   insuranceDays: number = 30,
   insuranceRatePerDay: number = 15_000
 ): VisaCostResult {
-  const visa = VISA_COSTS_USD[country] ?? { consulateFeeUsd: 50, serviceFeeUsd: 25 }
-  const consulateFee = visa.consulateFeeUsd * exchangeRate
-  const serviceFee = visa.serviceFeeUsd * exchangeRate
-  const additionalFee = (visa.additionalFeeUsd ?? 0) * exchangeRate
+  const visa = VISA_COSTS[country] ?? { currency: 'USD' as const, consulateFee: 50, serviceFee: 25 }
+  const consulateFee = visa.consulateFee * exchangeRate
+  const serviceFee = visa.serviceFee * exchangeRate
+  const possibleFee = (visa.possibleFee ?? 0) * exchangeRate
   const insuranceCost = insuranceDays * insuranceRatePerDay
   const photoCost = 50_000
 
@@ -279,11 +298,12 @@ export function calculateVisaCost(
     visaType: 'tourist',
     consulateFee,
     serviceFee,
-    additionalFee,
-    additionalFeeNote: visa.additionalFeeNoteRu,
+    possibleFee,
+    possibleFeeNoteRu: visa.possibleFeeNoteRu,
+    possibleFeeNoteUz: visa.possibleFeeNoteUz,
     insuranceCost,
     photoCost,
-    totalCost: consulateFee + serviceFee + additionalFee + insuranceCost + photoCost,
+    totalCost: consulateFee + serviceFee + insuranceCost + photoCost,
   }
 }
 

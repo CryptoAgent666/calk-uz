@@ -870,12 +870,12 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     totalTimeMinutes: 1,
     stepsRu: [
       { name: 'Введите рост', text: 'Укажите ваш рост в сантиметрах.' },
-      { name: 'Выберите пол и возраст', text: 'Укажите пол и возраст для точного расчёта.' },
+      { name: 'Выберите пол', text: 'Укажите пол: формулы для мужчин и женщин разные.' },
       { name: 'Получите результат', text: 'Результат появится сразу — вы узнаете идеальный вес по нескольким формулам.' },
     ],
     stepsUz: [
       { name: "Bo'yingizni kiriting", text: "Bo'yingizni santimetrlarda ko'rsating." },
-      { name: 'Jins va yoshni tanlang', text: "Aniq hisoblash uchun jins va yoshni ko'rsating." },
+      { name: 'Jinsni tanlang', text: "Jinsni ko'rsating: erkak va ayollar uchun formulalar har xil." },
       { name: 'Natijani oling', text: "Natija darhol chiqadi — bir necha formula bo'yicha ideal vaznni bilib oling." },
     ],
   },
@@ -1093,14 +1093,12 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     slug: 'state-duties',
     totalTimeMinutes: 1,
     stepsRu: [
-      { name: 'Выберите вид услуги', text: 'Укажите государственную услугу (регистрация, лицензирование и др.).' },
-      { name: 'Укажите параметры', text: 'Введите дополнительные параметры, если требуется.' },
-      { name: 'Получите сумму пошлины', text: 'Результат появится сразу — вы узнаете размер государственной пошлины.' },
+      { name: 'Выберите вид услуги', text: 'ЗАГС, суд, нотариус или регистрация бизнеса.' },
+            { name: 'Получите сумму пошлины', text: 'Результат появится сразу — вы узнаете размер государственной пошлины.' },
     ],
     stepsUz: [
-      { name: 'Xizmat turini tanlang', text: "Davlat xizmatini ko'rsating (ro'yxatga olish, litsenziyalash va boshq.)." },
-      { name: "Parametrlarni ko'rsating", text: "Agar kerak bo'lsa, qo'shimcha parametrlarni kiriting." },
-      { name: 'Boj summasini oling', text: "Natija darhol chiqadi — davlat boji miqdorini bilib oling." },
+      { name: 'Xizmat turini tanlang', text: "FHDYo, sud, notarius yoki biznesni ro'yxatdan o'tkazish." },
+            { name: 'Boj summasini oling', text: "Natija darhol chiqadi — davlat boji miqdorini bilib oling." },
     ],
   },
   {
@@ -1109,13 +1107,13 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     stepsRu: [
       { name: 'Укажите количество гостей', text: 'Введите ожидаемое число гостей на свадьбу.' },
       { name: 'Выберите формат мероприятия', text: 'Укажите тип: ресторан, банкетный зал, дома.' },
-      { name: 'Отметьте дополнительные расходы', text: 'Добавьте расходы: фото/видео, музыка, декор, транспорт и др.' },
+      { name: 'Укажите цену на гостя', text: 'Стоимость угощения на человека. Музыка, фото, декор и транспорт входят типовыми суммами.' },
       { name: 'Получите смету', text: 'Результат появится сразу: примерный бюджет свадьбы.' },
     ],
     stepsUz: [
       { name: "Mehmonlar sonini ko'rsating", text: "To'yga kutilayotgan mehmonlar sonini kiriting." },
       { name: "Tadbir formatini tanlang", text: "Turini ko'rsating: restoran, banket zali, uyda." },
-      { name: "Qo'shimcha xarajatlarni belgilang", text: "Xarajatlarni qo'shing: foto/video, musiqa, bezak, transport va boshq." },
+      { name: "Mehmonga narxni ko'rsating", text: "Bir kishiga mehmondorchilik narxi. Musiqa, foto, bezak va transport odatiy summalarda kiradi." },
       { name: 'Smetani oling', text: "Natija darhol chiqadi — to'yning taxminiy byudjetini ko'ring." },
     ],
   },
@@ -1151,14 +1149,14 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     slug: 'visa-cost',
     totalTimeMinutes: 2,
     stepsRu: [
-      { name: 'Выберите страну', text: 'Шенген, США, Великобритания, Южная Корея, Япония, Китай; для Турции и ОАЭ виза не нужна.' },
+      { name: 'Выберите страну', text: 'Шенген, США, Великобритания, Южная Корея, Япония; для Турции, ОАЭ и Китая до 30 дней виза не нужна.' },
       { name: 'Укажите срок страховки', text: 'Число дней поездки — от него считается медицинская страховка.' },
-      { name: 'Получите расчёт', text: 'Результат появится сразу: консульский и сервисный сборы по курсу ЦБ, страховка, фото и итог. Для США отдельной строкой идёт Visa Integrity Fee.' },
+      { name: 'Получите расчёт', text: 'Результат появится сразу: консульский и сервисный сборы по курсу ЦБ, страховка, фото и итог. Для США отдельной строкой показан возможный Visa Integrity Fee, в итог он не входит.' },
     ],
     stepsUz: [
-      { name: 'Mamlakatni tanlang', text: 'Shengen, AQSH, Buyuk Britaniya, Janubiy Koreya, Yaponiya, Xitoy; Turkiya va BAAga viza kerak emas.' },
+      { name: 'Mamlakatni tanlang', text: 'Shengen, AQSH, Buyuk Britaniya, Janubiy Koreya, Yaponiya; Turkiya, BAA va 30 kungacha Xitoyga viza kerak emas.' },
       { name: 'Sug\'urta muddatini ko\'rsating', text: 'Safar kunlari soni — tibbiy sug\'urta shundan hisoblanadi.' },
-      { name: 'Hisobni oling', text: 'Natija darhol chiqadi: MB kursi bo\'yicha konsullik va xizmat yig\'imlari, sug\'urta, fotosurat va jami. AQSH uchun Visa Integrity Fee alohida qator bo\'lib chiqadi.' },
+      { name: 'Hisobni oling', text: 'Natija darhol chiqadi: MB kursi bo\'yicha konsullik va xizmat yig\'imlari, sug\'urta, fotosurat va jami. AQSH uchun mumkin bo\'lgan Visa Integrity Fee alohida qatorda ko\'rsatiladi, jamiga kirmaydi.' },
     ],
   },
   {

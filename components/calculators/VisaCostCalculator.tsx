@@ -5,13 +5,10 @@ import { useLocale } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { calculateVisaCost } from '@/lib/calculators/unique'
+import { calculateVisaCost, visaFeeCurrency } from '@/lib/calculators/unique'
+import { FX_FALLBACK_UZS } from '@/lib/constants/fx'
 import { formatCurrency, formatNumber } from '@/lib/utils'
 import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
-import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
-
-// Единый страховочный курс на весь сайт — см. lib/constants/fx.ts
-const FALLBACK_USD_RATE = USD_UZS_FALLBACK
 
 export default function VisaCostCalculator() {
   const locale = useLocale()
@@ -19,23 +16,24 @@ export default function VisaCostCalculator() {
   const [country, setCountry] = useState('schengen')
   const [insuranceDays, setInsuranceDays] = useState('30')
 
-  // Get the live USD rate from CBU
-  const usdRate = useMemo(() => {
-    const usd = liveRates.find((r) => r.code === 'USD')
-    if (usd) return usd.rate / usd.nominal
-    return FALLBACK_USD_RATE
-  }, [liveRates])
+  // Сбор пересчитывается по курсу ЦБ для его валюты: евро, фунта или доллара
+  const feeCurrency = visaFeeCurrency(country)
+  const feeRate = useMemo(() => {
+    const live = liveRates.find((r) => r.code === feeCurrency)
+    if (live) return live.rate / live.nominal
+    return FX_FALLBACK_UZS[feeCurrency]
+  }, [liveRates, feeCurrency])
 
   const usingFallback = liveRates.length === 0 && !loading
 
   const result = useMemo(() => {
     const d = parseInt(insuranceDays) || 30
-    return calculateVisaCost(country, usdRate, d)
-  }, [country, insuranceDays, usdRate])
+    return calculateVisaCost(country, feeRate, d)
+  }, [country, insuranceDays, feeRate])
 
   const countryLabels: Record<string, string> = locale === 'uz'
-    ? { schengen: 'Shengen', usa: 'AQSH', uk: 'Buyuk Britaniya', south_korea: 'Janubiy Koreya', japan: 'Yaponiya', china: 'Xitoy', turkey: 'Turkiya (vizasiz)', uae: 'BAA (vizasiz)' }
-    : { schengen: 'Шенген', usa: 'США', uk: 'Великобритания', south_korea: 'Южная Корея', japan: 'Япония', china: 'Китай', turkey: 'Турция (безвиз)', uae: 'ОАЭ (безвиз)' }
+    ? { schengen: 'Shengen', usa: 'AQSH', uk: 'Buyuk Britaniya', south_korea: 'Janubiy Koreya', japan: 'Yaponiya', china: 'Xitoy (30 kungacha vizasiz)', turkey: 'Turkiya (vizasiz)', uae: 'BAA (vizasiz)' }
+    : { schengen: 'Шенген', usa: 'США', uk: 'Великобритания', south_korea: 'Южная Корея', japan: 'Япония', china: 'Китай (безвиз до 30 дней)', turkey: 'Турция (безвиз)', uae: 'ОАЭ (безвиз)' }
 
   const t = locale === 'uz'
     ? {
@@ -44,7 +42,7 @@ export default function VisaCostCalculator() {
         results: 'Natijalar',
         consulateFee: 'Konsullik yig\'imi',
         serviceFee: 'Xizmat yig\'imi',
-        additionalFee: "Qo'shimcha yig'im",
+        additionalFee: "Mumkin bo'lgan yig'im, jamiga kirmaydi",
         insurance: 'Sug\'urta',
         photo: 'Fotosurat',
         totalCost: 'Jami xarajat',
@@ -61,7 +59,7 @@ export default function VisaCostCalculator() {
         results: 'Результаты',
         consulateFee: 'Консульский сбор',
         serviceFee: 'Сервисный сбор',
-        additionalFee: 'Дополнительный сбор',
+        additionalFee: 'Возможный сбор, не входит в итог',
         insurance: 'Страховка',
         photo: 'Фотография',
         totalCost: 'Общая стоимость',
@@ -92,7 +90,7 @@ export default function VisaCostCalculator() {
 
           {/* Current exchange rate display */}
           <div className="text-sm text-muted-foreground">
-            {t.exchangeRate}: 1 USD = {formatNumber(Math.round(usdRate), locale)} UZS
+            {t.exchangeRate}: 1 {feeCurrency} = {formatNumber(Math.round(feeRate), locale)} UZS
           </div>
 
           {/* Status indicator */}
@@ -113,13 +111,13 @@ export default function VisaCostCalculator() {
         <CardContent className="space-y-3">
           <div className="flex justify-between"><span className="text-muted-foreground">{t.consulateFee}</span><span>{formatCurrency(result.consulateFee, 'UZS', locale)}</span></div>
           <div className="flex justify-between"><span className="text-muted-foreground">{t.serviceFee}</span><span>{formatCurrency(result.serviceFee, 'UZS', locale)}</span></div>
-          {result.additionalFee > 0 && (
+          {result.possibleFee > 0 && (
             <div className="flex justify-between">
               <span className="text-muted-foreground">
                 {t.additionalFee}
-                {result.additionalFeeNote && <span className="block text-xs">{result.additionalFeeNote}</span>}
+                <span className="block text-xs">{locale === 'uz' ? result.possibleFeeNoteUz : result.possibleFeeNoteRu}</span>
               </span>
-              <span>{formatCurrency(result.additionalFee, 'UZS', locale)}</span>
+              <span>{formatCurrency(result.possibleFee, 'UZS', locale)}</span>
             </div>
           )}
           <div className="flex justify-between"><span className="text-muted-foreground">{t.insurance}</span><span>{formatCurrency(result.insuranceCost, 'UZS', locale)}</span></div>

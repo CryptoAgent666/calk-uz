@@ -831,7 +831,7 @@
       "id": "unique.ts__STATE_DUTIES (госпошлины)",
       "file": "lib/calculators/unique.ts",
       "key": "STATE_DUTIES (госпошлины)",
-      "value": "marriage:0.2, divorce:1.5, birth_cert:0.1, court_civil:4% of claim min 1 BRV, court_divorce:2, notary_power:0.5, notary_deal:1, name_change:1, ip_registration:1, llc_registration:1 (BRV-multiples)",
+      "value": "marriage:0.2, divorce_zags:1.5, repeat_cert:0.15, court_civil:4% of claim min 1 BRV, court_divorce:2, court_divorce_repeat:4, notary_power:0.1, notary_will:0.05, notary_deal:1, notary_car:3, name_change:1, ip_registration:1, llc_registration:1 (BRV-multiples)",
       "unit": "BRV-multiples (×440000 UZS)",
       "law": "Госпошлина — ЗАГС, нотариат, суд, регистрация бизнеса (в БРВ); Налоговый кодекс / ПКМ о госпошлине",
       "theme": "state_duty",
@@ -844,11 +844,14 @@
       "source_hint": "lex.uz (ставки государственной пошлины, в БРВ)",
       "conflict": false,
       "status": "current",
-      "notes": "Core госпошлина table as BRV-multiples: marriage 0.5 BRV, divorce 1.5, court civil 3, LLC (МЧЖ) registration 5 BRV, etc. BRV=440000 → e.g. LLC = 2,060,000 UZS. Verify each multiple vs current lex.uz schedule. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: значения в коде (marriage 0.2, divorce 1.5) подтверждены по ставкам госпошлины. Расходилась ПРОЗА: статья и FAQ давали брак 1 БРВ и развод фиксированные 3 БРВ. Уточнено: развод 1,5-3 БРВ (3-4 при повторном браке одного из супругов), регистрация ИП/юрлица 1 БРВ явочно и 0,5 БРВ онлайн. Примечание: «минимальная заработная плата» в тексте закона о госпошлине читается как БРВ (УП-5765 от 01.09.2019 заменил МРЗП на БРВ) — в отличие от льгот по НДФЛ, которые считаются в МРОТ. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано.",
-      "official_value": "marriage 0.2 БРВ (не 0.5); llc_registration 1 БРВ (не 5); court_civil = 4% цены иска, мин. 1 БРВ (имущ.) / 2 БРВ (неимущ.) — не плоские 3 БРВ. Верно: birth_cert 0.1, notary_power 0.5, notary_deal 1 (юрлица), name_change 1 (>18 лет), ip_registration 1, divorce 1.5 (нижняя граница 1.5–3)",
-      "source_url": "https://www.lex.uz/acts/699301",
-      "last_verified": "2026-09-01",
-      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680"
+      "notes": "Core госпошлина table as BRV-multiples: marriage 0.5 BRV, divorce 1.5, court civil 3, LLC (МЧЖ) registration 5 BRV, etc. BRV=440000 → e.g. LLC = 2,060,000 UZS. Verify each multiple vs current lex.uz schedule. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current. || tier2 2026-08-18: значения в коде (marriage 0.2, divorce 1.5) подтверждены по ставкам госпошлины. Расходилась ПРОЗА: статья и FAQ давали брак 1 БРВ и развод фиксированные 3 БРВ. Уточнено: развод 1,5-3 БРВ (3-4 при повторном браке одного из супругов), регистрация ИП/юрлица 1 БРВ явочно и 0,5 БРВ онлайн. Примечание: «минимальная заработная плата» в тексте закона о госпошлине читается как БРВ (УП-5765 от 01.09.2019 заменил МРЗП на БРВ) — в отличие от льгот по НДФЛ, которые считаются в МРОТ. || 2026-09-01 rollover: Указ УП-115 от 23.06.2026 — БРВ 412 000→440 000, МРОТ 1 271 000→1 360 000 (+7%), значение пересчитано. || calkcheck 2026-11-03: birth_cert 0,1 убран (регистрация рождения бесплатна, повторное свидетельство 0,15), notary_power 0,5→0,1; проза исправлена: завещание 0,5→0,05 БРВ, копии 0,1→0,01 БРВ, скидка пенсионерам 50% по искам в законе отсутствует.",
+      "official_value": "marriage:0.2, divorce_zags:1.5, repeat_cert:0.15, court_civil:4% of claim min 1 BRV, court_divorce:2, court_divorce_repeat:4, notary_power:0.1, notary_will:0.05, notary_deal:1, notary_car:3, name_change:1, ip_registration:1, llc_registration:1 (BRV-multiples)",
+      "source_url": "https://lex.uz/ru/docs/4680955",
+      "last_verified": "2026-11-03",
+      "source_url_rollover": "https://www.lex.uz/ru/docs/8283680",
+      "source_title": "Закон «О государственной пошлине» (ЗРУ-600), приложение",
+      "verified_date": "2026-11-03",
+      "verify_note": "Сверено по приложению ЗРУ-600 на lex.uz: п. 1 в, г (иск о разводе 2 и 4 БРВ), п. 4 л (завещание 5% БРВ), п. 4 с (прочие доверенности 10% БРВ), п. 4 о (авто 3 БРВ), п. 4 х (копии 1% БРВ за страницу), п. 5 б, в, д (ЗАГС), п. 7 (регистрация 1 БРВ); ст. 8 и ст. 22² (льготы), ст. 22¹ (90% через ЕПИГУ)."
     },
     {
       "id": "unique.ts__passport fees (BRV-multiples)",
@@ -2040,7 +2043,7 @@
       "id": "auto.ts__FUEL_PRICES",
       "file": "lib/calculators/auto.ts",
       "key": "FUEL_PRICES",
-      "value": "ai-92:13500, ai-95:19500, ai-100:24500, diesel:18500, gas_lpg:8800 (август 2026, растёт вслед за биржей), gas_cng:5750 — Ташкент, сеть «Узбекнефтегаз», 18.09.2026 (autostrada.uz); в калькуляторе есть поле своей цены",
+      "value": "ai-92:13500, ai-95:19500, ai-100:24500, diesel:18500, gas_lpg:8800 (август 2026, растёт вслед за биржей), gas_cng:5750 — Ташкент, сеть «Узбекнефтегаз», 20.10.2026 (autostrada.uz); в калькуляторе есть поле своей цены",
       "unit": "UZS per liter (per m³ for CNG)",
       "law": "n/a (market retail fuel prices, Uzbekneftegas reference, April 2026)",
       "theme": "fuel_price",
@@ -2053,8 +2056,8 @@
       "conflict": true,
       "status": "current",
       "notes": "Market reference fuel prices (not formula). Note comment: AI-80 banned from 1 Dec 2025; AI-91 no longer sold. Fuel is partly liberalized — treat as market, re-verify periodically. || 2026-08-31: цены обновлены по средним ташкентским на 28.08.2026 (avtoelon.uz; метан — autostrada.uz). Прежние были сняты в апреле и отстали на 10-33%. Топливо в РУз НЕ регулируется государством, цена отличается по сетям — это средняя. ПРОПАН НЕ ПОДТВЕРЖДЁН: сводки по автогазу расходятся, значение 5500 оставлено без изменения. ВАЖНО: в калькуляторе нет поля своей цены, поэтому константа = ответ пользователю, держать свежей обязательно. || alert 2026-09-21: stale_confirmed (рынок), ждёт решения по значениям. || applied 2026-09-21: цены UNG на 18.09, пропан 8 800 (август), добавлено поле своей цены; FUEL_PRICES_DATE=2026-09-18.  ||  2026-11-01 calkcheck: сеть UNG/Carvon на 20.10.2026; пропан не подтверждён, оставлен август.",
-      "official_value": "ai-92:13500, ai-95:19500, ai-100:24500, diesel:18500, gas_lpg:8800 (август 2026, растёт вслед за биржей), gas_cng:5750 — Ташкент, сеть «Узбекнефтегаз», 18.09.2026 (autostrada.uz); в калькуляторе есть поле своей цены",
-      "last_verified": "2026-11-01",
+      "official_value": "ai-92:13500, ai-95:19500, ai-100:24500, diesel:18500, gas_lpg:8800 (август 2026, растёт вслед за биржей), gas_cng:5750 — Ташкент, сеть «Узбекнефтегаз», 20.10.2026 (autostrada.uz); в калькуляторе есть поле своей цены",
+      "last_verified": "2026-11-03",
       "source_url_verify": "https://avtoelon.uz/yangiliklar/articles/skol-ko-stoit-benzin-v-taskente/",
       "verify_method": "market-check-2026-09-21",
       "source_url": "https://autostrada.uz/benzin/",
@@ -2242,11 +2245,11 @@
       "last_verified": "2026-11-01"
     },
     {
-      "id": "unique.ts__VISA_COSTS_USD",
+      "id": "unique.ts__VISA_COSTS",
       "file": "lib/calculators/unique.ts",
-      "key": "VISA_COSTS_USD",
-      "value": "schengen:90/30, usa:185/0 +250 integrity fee, uk:115/50, south_korea:40/20, japan:30/25, china:45/35, turkey:0/0, uae:0/0 (consulate/service USD)",
-      "unit": "USD (foreign consular + service fees)",
+      "key": "VISA_COSTS",
+      "value": "schengen €90/€30, usa $185/0 (+$250 Visa Integrity Fee показан отдельно, в итог не входит), uk £135/£40, south_korea $40/$20, japan 0/$25, china, turkey, uae безвиз (consulate/service, валюта сбора)",
+      "unit": "EUR / USD / GBP (валюта сбора)",
       "law": "n/a (foreign government consular fees, not UZ-regulated)",
       "theme": "foreign_fee",
       "is_gov_regulated": false,
@@ -2257,7 +2260,8 @@
       "source_hint": "destination-country embassy fee schedules",
       "conflict": false,
       "status": "unverified",
-      "notes": "FOREIGN consular fees (Schengen €90 from Jun 2024; US Visa Integrity Fee $250 from Oct 2024). Not Uzbek gov fees — set by destination countries. Converted via FX. Includes photoCost 50000 UZS (line 246) and insurance default 15000/day (line 239) which are market."
+      "notes": "FOREIGN consular fees (Schengen €90 from Jun 2024; US Visa Integrity Fee $250 from Oct 2024). Not Uzbek gov fees — set by destination countries. Converted via FX. Includes photoCost 50000 UZS (line 246) and insurance default 15000/day (line 239) which are market. || calkcheck 2026-11-03: евро и фунты считались по курсу доллара; Шенген занижен примерно на 12%. Великобритания £135 с 08.04.2026, Япония без консульского сбора (kun.uz 14.05.2026), Китай без визы с 01.06.2025 (МИД РУз). Начало сбора Visa Integrity Fee не подтверждено: на март 2026 не взимался, travel.state.gov недоступен.",
+      "last_verified": "2026-11-03"
     },
     {
       "id": "unique.ts__cotton yield reference values",
@@ -4658,8 +4662,8 @@
       ]
     },
     "last_reconcile": "2026-09-13",
-    "last_verification_sweep": "2026-11-01",
-    "last_verification_note": "calkcheck 2026-11-01: выборка 20 страниц, вручную; см. AUDIT-2026-11-01.md. Tier-2 2026-09-13: 35 записей (все uncertain + gov без last_verified + конфликт ОСАГО) по первоисточникам (lex.uz curl: НК, КоАО, ТК, ПКМ-796 узб. оригинал, ЗРУ-1116) + встречная проверка. Итог реестра: {'current': 136, 'stale_confirmed': 9, 'removed': 7, 'unverified': 13, 'uncertain': 1}. Код НЕ правился (tier2).",
+    "last_verification_sweep": "2026-11-03",
+    "last_verification_note": "calkcheck 2026-11-03: последние 18 калькуляторов, вручную; см. AUDIT-2026-11-03.md. calkcheck 2026-11-01: выборка 20 страниц, вручную; см. AUDIT-2026-11-01.md. Tier-2 2026-09-13: 35 записей (все uncertain + gov без last_verified + конфликт ОСАГО) по первоисточникам (lex.uz curl: НК, КоАО, ТК, ПКМ-796 узб. оригинал, ЗРУ-1116) + встречная проверка. Итог реестра: {'current': 136, 'stale_confirmed': 9, 'removed': 7, 'unverified': 13, 'uncertain': 1}. Код НЕ правился (tier2).",
     "last_reconciled": "2026-09-13",
     "last_rollover": "УП-115 от 23.06.2026 — БРВ 440000, МРОТ 1360000 с 01.09.2026",
     "total": null
