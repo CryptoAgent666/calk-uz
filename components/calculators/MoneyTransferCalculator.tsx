@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateRemittance } from '@/lib/calculators/unique'
-import { formatCurrency, formatNumber } from '@/lib/utils'
+import { formatCurrency, formatNumber, formatMoney } from '@/lib/utils'
 import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
 import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
 
@@ -130,7 +130,7 @@ export default function MoneyTransferCalculator() {
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-muted-foreground">{t.effectiveRate}</span>
-              <span>{formatNumber(Math.round(result.effectiveRate), locale)} UZS/$</span>
+              <span>{formatMoney(result.effectiveRate, locale)} UZS/$</span>
             </div>
           </CardContent>
         </Card>

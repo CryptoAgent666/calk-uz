@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { Badge } from '@/components/ui/badge'
 import { calculateEmployerCost } from '@/lib/calculators/business'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function EmployerCostCalculator() {
   const locale = useLocale()
@@ -16,7 +16,7 @@ export default function EmployerCostCalculator() {
   const [isBudgetOrg, setIsBudgetOrg] = useState(false)
 
   const result = useMemo(() => {
-    const s = parseFloat(salary.replace(/\s/g, '')) || 0
+    const s = parseNumericInput(salary) || 0
     if (s <= 0) return null
     return calculateEmployerCost(s, isBudgetOrg)
   }, [salary, isBudgetOrg])
@@ -29,7 +29,7 @@ export default function EmployerCostCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
-          <div><Label>{t.salary}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={salary} onChange={(e) => setSalary(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.salary}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={salary} onChange={(e) => setSalary(e.target.value)} className="mt-1 text-lg" /></div>
           <div className="flex items-center justify-between"><Label htmlFor="budget" className="cursor-pointer">{t.budgetOrg}</Label><Switch id="budget" checked={isBudgetOrg} onCheckedChange={setIsBudgetOrg} /></div>
         </CardContent>
       </Card>

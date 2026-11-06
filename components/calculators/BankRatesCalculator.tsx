@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { formatNumber } from '@/lib/utils'
+import { parseNumericInput, formatMoney } from '@/lib/utils'
 import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
 import { USD_UZS_FALLBACK } from '@/lib/constants/fx'
 
@@ -27,7 +27,7 @@ export default function BankRatesCalculator() {
   const usingFallback = liveRates.length === 0 && !loading
 
   const results = useMemo(() => {
-    const a = parseFloat(amount.replace(/\s/g, '')) || 0
+    const a = parseNumericInput(amount) || 0
     if (a <= 0) return null
     return { uzsAmount: a * cbuUsdRate }
   }, [amount, cbuUsdRate])
@@ -66,7 +66,7 @@ export default function BankRatesCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.amount}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
           </div>
 
           {/* Status indicator */}
@@ -96,12 +96,12 @@ export default function BankRatesCalculator() {
         <CardContent className="space-y-3">
           <div className="flex justify-between items-center">
             <span className="text-muted-foreground">1 USD</span>
-            <span className="text-xl font-bold text-primary">{formatNumber(Math.round(cbuUsdRate), locale)} UZS</span>
+            <span className="text-xl font-bold text-primary">{formatMoney(cbuUsdRate, locale)} UZS</span>
           </div>
           {results && (
             <div className="border-t pt-3 flex justify-between items-center">
               <span className="text-muted-foreground">{amount} USD =</span>
-              <span className="text-xl font-bold">{formatNumber(Math.round(results.uzsAmount), locale)} UZS</span>
+              <span className="text-xl font-bold">{formatMoney(results.uzsAmount, locale)} UZS</span>
             </div>
           )}
         </CardContent>

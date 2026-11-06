@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { Slider } from '@/components/ui/slider'
 import { calculateCredit, type CreditResult } from '@/lib/calculators/credit'
-import { formatCurrency, formatNumber } from '@/lib/utils'
+import { formatCurrency, parseNumericInput, formatMoney } from '@/lib/utils'
 
 export default function CreditCalculator() {
   const locale = useLocale()
@@ -20,7 +20,7 @@ export default function CreditCalculator() {
   const [showSchedule, setShowSchedule] = useState(false)
 
   const result = useMemo<CreditResult | null>(() => {
-    const a = parseFloat(amount.replace(/\s/g, '')) || 0
+    const a = parseNumericInput(amount) || 0
     const r = parseFloat(rate) || 0
     const t = parseInt(term) || 0
     if (a <= 0 || r <= 0 || t <= 0) return null
@@ -79,7 +79,7 @@ export default function CreditCalculator() {
             <Label>{t.amount}</Label>
             <Input
               type="text"
-              inputMode="numeric"
+              inputMode="decimal"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               className="mt-1 text-lg"
@@ -176,10 +176,10 @@ export default function CreditCalculator() {
                     {result.schedule.map((row) => (
                       <tr key={row.month} className="border-b border-muted/50">
                         <td className="py-1.5">{row.month}</td>
-                        <td className="py-1.5 text-right">{formatNumber(Math.round(row.payment), locale)}</td>
-                        <td className="py-1.5 text-right">{formatNumber(Math.round(row.principal), locale)}</td>
-                        <td className="py-1.5 text-right text-destructive">{formatNumber(Math.round(row.interest), locale)}</td>
-                        <td className="py-1.5 text-right">{formatNumber(Math.round(row.remainingBalance), locale)}</td>
+                        <td className="py-1.5 text-right">{formatMoney(row.payment, locale)}</td>
+                        <td className="py-1.5 text-right">{formatMoney(row.principal, locale)}</td>
+                        <td className="py-1.5 text-right text-destructive">{formatMoney(row.interest, locale)}</td>
+                        <td className="py-1.5 text-right">{formatMoney(row.remainingBalance, locale)}</td>
                       </tr>
                     ))}
                   </tbody>

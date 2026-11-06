@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateCredit } from '@/lib/calculators/credit'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function RefinancingCalculator() {
   const locale = useLocale()
@@ -17,7 +17,7 @@ export default function RefinancingCalculator() {
   const [newTerm, setNewTerm] = useState('18')
 
   const result = useMemo(() => {
-    const debt = parseFloat(remainingDebt.replace(/\s/g, '')) || 0
+    const debt = parseNumericInput(remainingDebt) || 0
     const cr = parseFloat(currentRate) || 0
     const ct = parseInt(currentTerm) || 0
     const nr = parseFloat(newRate) || 0
@@ -71,7 +71,7 @@ export default function RefinancingCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.remainingDebt}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={remainingDebt} onChange={(e) => setRemainingDebt(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={remainingDebt} onChange={(e) => setRemainingDebt(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>

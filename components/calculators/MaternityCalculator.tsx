@@ -9,7 +9,7 @@ import { Switch } from '@/components/ui/switch'
 import { Badge } from '@/components/ui/badge'
 import { calculateMaternity, parseIsoDateUtc } from '@/lib/calculators/social'
 import { useTodayIso } from '@/lib/hooks/useTodayIso'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 const isoToDisplay = (iso: string) => `${iso.slice(8, 10)}.${iso.slice(5, 7)}.${iso.slice(0, 4)}`
 
@@ -25,7 +25,7 @@ export default function MaternityCalculator() {
   const effectiveStart = startDate || today
 
   const result = useMemo(() => {
-    const earnings = parseFloat(totalEarnings.replace(/\s/g, '')) || 0
+    const earnings = parseNumericInput(totalEarnings) || 0
     const months = parseInt(insuranceMonths) || 0
     if (earnings <= 0 || parseIsoDateUtc(effectiveStart) === null) return null
     return calculateMaternity(earnings, months, isComplicated, isMultiple, effectiveStart)
@@ -90,7 +90,7 @@ export default function MaternityCalculator() {
           <p className="text-xs text-muted-foreground bg-muted/40 rounded-md px-3 py-2">{t.info2026}</p>
           <div>
             <Label>{t.totalEarnings}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={totalEarnings} onChange={(e) => setTotalEarnings(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={totalEarnings} onChange={(e) => setTotalEarnings(e.target.value)} className="mt-1 text-lg" />
             <p className="mt-1 text-xs text-muted-foreground">{t.earningsHint}</p>
           </div>
           <div>

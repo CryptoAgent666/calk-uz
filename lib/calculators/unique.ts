@@ -307,6 +307,109 @@ export function calculateVisaCost(
   }
 }
 
+// Аренда или покупка
+export interface RentVsBuyInput {
+  monthlyRent: number
+  price: number
+  /** Все доли и ставки — годовые, в долях единицы: 0.2 = 20% */
+  downPaymentShare: number
+  mortgageRate: number
+  termYears: number
+  horizonYears: number
+  rentGrowth: number
+  priceGrowth: number
+  depositRate: number
+  /** Налог, страховка и ремонт за год, доля от цены квартиры */
+  ownershipCostShare: number
+  /** Оформление покупки: нотариус, регистрация, оценка, риелтор */
+  closingCostShare?: number
+}
+
+export interface RentVsBuyResult {
+  loanAmount: number
+  upfrontCost: number
+  monthlyPayment: number
+  firstMonthOwnerCost: number
+  firstMonthRent: number
+  rentPaidTotal: number
+  ownerPaidTotal: number
+  propertyValue: number
+  remainingBalance: number
+  buyerWealth: number
+  renterWealth: number
+  /** Больше нуля — выгоднее покупка, меньше нуля — аренда */
+  buyAdvantage: number
+  /** Рост цен в год, при котором варианты сравняются; null, если покупка выгоднее при любом росте */
+  breakEvenPriceGrowth: number | null
+}
+
+/**
+ * Сравнивает капитал к концу срока при одинаковом бюджете: кто в этом месяце платит
+ * меньше, кладёт разницу на вклад. Арендатор кладёт на вклад и то, что покупатель
+ * отдал в начале: взнос и оформление. Коммунальные одинаковы и в расчёт не входят.
+ * Аренда и расходы владельца индексируются раз в год, расходы на продажу не учтены.
+ */
+export function calculateRentVsBuy(input: RentVsBuyInput): RentVsBuyResult {
+  const { monthlyRent, price, downPaymentShare, mortgageRate, termYears, horizonYears, rentGrowth, priceGrowth, depositRate, ownershipCostShare, closingCostShare = 0.02 } = input
+  const downPayment = price * downPaymentShare
+  const loanAmount = Math.max(price - downPayment, 0)
+  const upfrontCost = downPayment + price * closingCostShare
+  const termMonths = Math.round(termYears * 12)
+  const horizonMonths = Math.round(horizonYears * 12)
+  const loanRate = mortgageRate / 12
+  const savingsRate = depositRate / 12
+
+  let monthlyPayment = 0
+  if (loanAmount > 0 && termMonths > 0) {
+    monthlyPayment = loanRate > 0
+      ? (loanAmount * loanRate * Math.pow(1 + loanRate, termMonths)) / (Math.pow(1 + loanRate, termMonths) - 1)
+      : loanAmount / termMonths
+  }
+
+  let balance = loanAmount
+  let renterSavings = upfrontCost
+  let buyerSavings = 0
+  let rentPaidTotal = 0
+  let ownerPaidTotal = upfrontCost
+
+  for (let month = 0; month < horizonMonths; month++) {
+    const indexation = Math.pow(1 + rentGrowth, Math.floor(month / 12))
+    const rent = monthlyRent * indexation
+    const ownership = (price * ownershipCostShare * indexation) / 12
+    const payment = balance > 0 ? monthlyPayment : 0
+    const ownerCost = payment + ownership
+
+    balance = balance > 0 ? Math.max(balance * (1 + loanRate) - payment, 0) : 0
+    renterSavings *= 1 + savingsRate
+    buyerSavings *= 1 + savingsRate
+    if (ownerCost > rent) renterSavings += ownerCost - rent
+    else buyerSavings += rent - ownerCost
+
+    rentPaidTotal += rent
+    ownerPaidTotal += ownerCost
+  }
+
+  const propertyValue = price * Math.pow(1 + priceGrowth, horizonYears)
+  const buyerWealth = propertyValue - balance + buyerSavings
+  const neededValue = renterSavings + balance - buyerSavings
+
+  return {
+    loanAmount,
+    upfrontCost,
+    monthlyPayment,
+    firstMonthOwnerCost: monthlyPayment + (price * ownershipCostShare) / 12,
+    firstMonthRent: monthlyRent,
+    rentPaidTotal,
+    ownerPaidTotal,
+    propertyValue,
+    remainingBalance: balance,
+    buyerWealth,
+    renterWealth: renterSavings,
+    buyAdvantage: buyerWealth - renterSavings,
+    breakEvenPriceGrowth: neededValue > 0 && price > 0 ? Math.pow(neededValue / price, 1 / horizonYears) - 1 : null,
+  }
+}
+
 // BRV Calculator
 export interface BRVResult {
   brvValue: number

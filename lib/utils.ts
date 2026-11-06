@@ -16,8 +16,25 @@ export function formatNumber(num: number, locale: string = 'ru'): string {
   }).format(num)
 }
 
+// Показывать ли тийины в суммах. Режим ставит CalculatorMount перед рендером калькулятора,
+// на сервере и в первой отрисовке он всегда выключен, иначе разойдётся гидрация.
+let tiyinFormatting = false
+
+export function setTiyinFormatting(on: boolean) {
+  tiyinFormatting = on
+}
+
+/** Денежная сумма без валюты: целые сумы или, в режиме тийинов, два знака после запятой. */
+export function formatMoney(amount: number, locale: string = 'ru'): string {
+  if (!tiyinFormatting) return formatNumber(Math.round(amount), locale)
+  return new Intl.NumberFormat('ru-RU', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(amount)
+}
+
 export function formatCurrency(amount: number, currency: string = 'UZS', locale: string = 'ru'): string {
-  const formatted = formatNumber(Math.round(amount), locale)
+  const formatted = formatMoney(amount, locale)
   if (currency === 'UZS') {
     return locale === 'uz' ? `${formatted} so'm` : `${formatted} сум`
   }
@@ -32,9 +49,17 @@ export function formatPercent(value: number): string {
   return `${value.toFixed(2)}%`
 }
 
+/**
+ * Число из поля ввода: «1 500 000», «1500,50» и «1500.50». Последняя запятая или точка
+ * считается десятичной, остальные — разделителями тысяч.
+ */
 export function parseNumericInput(value: string): number {
-  const cleaned = value.replace(/[^\d.,]/g, '').replace(',', '.')
-  return parseFloat(cleaned) || 0
+  const cleaned = value.replace(/[^\d.,-]/g, '')
+  const separator = Math.max(cleaned.lastIndexOf(','), cleaned.lastIndexOf('.'))
+  const normalized = separator < 0
+    ? cleaned
+    : cleaned.slice(0, separator).replace(/[.,]/g, '') + '.' + cleaned.slice(separator + 1)
+  return parseFloat(normalized) || 0
 }
 
 export function numberToWordsUz(num: number): string {

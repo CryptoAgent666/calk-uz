@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateBreakEven } from '@/lib/calculators/business'
-import { formatCurrency, formatNumber } from '@/lib/utils'
+import { formatCurrency, formatNumber, parseNumericInput } from '@/lib/utils'
 
 export default function BreakEvenCalculator() {
   const locale = useLocale()
@@ -15,9 +15,9 @@ export default function BreakEvenCalculator() {
   const [price, setPrice] = useState('')
 
   const result = useMemo(() => {
-    const fc = parseFloat(fixedCosts.replace(/\s/g, '')) || 0
-    const vc = parseFloat(variableCost.replace(/\s/g, '')) || 0
-    const p = parseFloat(price.replace(/\s/g, '')) || 0
+    const fc = parseNumericInput(fixedCosts) || 0
+    const vc = parseNumericInput(variableCost) || 0
+    const p = parseNumericInput(price) || 0
     if (fc <= 0 || p <= 0) return null
     return calculateBreakEven(fc, vc, p)
   }, [fixedCosts, variableCost, price])
@@ -30,9 +30,9 @@ export default function BreakEvenCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
-          <div><Label>{t.fixedCosts}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={fixedCosts} onChange={(e) => setFixedCosts(e.target.value)} className="mt-1 text-lg" /></div>
-          <div><Label>{t.variableCost}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={variableCost} onChange={(e) => setVariableCost(e.target.value)} className="mt-1" /></div>
-          <div><Label>{t.price}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={price} onChange={(e) => setPrice(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.fixedCosts}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={fixedCosts} onChange={(e) => setFixedCosts(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.variableCost}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={variableCost} onChange={(e) => setVariableCost(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.price}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={price} onChange={(e) => setPrice(e.target.value)} className="mt-1" /></div>
         </CardContent>
       </Card>
       {result && (

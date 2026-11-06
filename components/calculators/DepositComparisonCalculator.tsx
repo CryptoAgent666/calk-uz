@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateDeposit } from '@/lib/calculators/deposit'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function DepositComparisonCalculator() {
   const locale = useLocale()
@@ -17,7 +17,7 @@ export default function DepositComparisonCalculator() {
   const [rate3, setRate3] = useState('20')
 
   const results = useMemo(() => {
-    const a = parseFloat(amount.replace(/\s/g, '')) || 0
+    const a = parseNumericInput(amount) || 0
     const t = parseInt(term) || 0
     if (a <= 0 || t <= 0) return null
     const rates = [parseFloat(rate1) || 0, parseFloat(rate2) || 0, parseFloat(rate3) || 0].filter(r => r > 0)
@@ -55,7 +55,7 @@ export default function DepositComparisonCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.amount}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.term}</Label>

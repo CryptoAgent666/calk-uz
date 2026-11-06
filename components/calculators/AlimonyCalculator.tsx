@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateAlimony } from '@/lib/calculators/social'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function AlimonyCalculator() {
   const locale = useLocale()
@@ -14,7 +14,7 @@ export default function AlimonyCalculator() {
   const [children, setChildren] = useState('1')
 
   const result = useMemo(() => {
-    const val = parseFloat(income.replace(/\s/g, '')) || 0
+    const val = parseNumericInput(income) || 0
     const c = parseInt(children) || 1
     if (val <= 0) return null
     return calculateAlimony(val, c)
@@ -48,7 +48,7 @@ export default function AlimonyCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.income}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={income} onChange={(e) => setIncome(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={income} onChange={(e) => setIncome(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.children}</Label>

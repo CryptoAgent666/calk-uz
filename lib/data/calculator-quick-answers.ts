@@ -88,6 +88,11 @@ const QUICK_ANSWERS: QuickAnswer[] = [
       "2026-yilda O'zbekistonda avtomobilni bojxonadan o'tkazish: bojxona boji — narxdan foiz va dvigatel hajmining har bir sm³ i uchun ustama: 1 yilgacha 15% + 0,4–1,0 USD/sm³, 1 yildan 3 yilgacha 30% + 1,8–3,0, 3 yildan katta 40% + 3,0. Yengil avtomobillarga alohida aksiz yo'q. Bundan tashqari — QQS 12% va utilizatsiya yig'imi 30–480 BHK. Elektromobillar — 2030-yil 1-yanvarigacha 0% boj va aksiz (utilizatsiya yig'imi to'lanadi). 2 000 sm³ dvigatelli yangi $20 000 avto uchun — narxga qo'shimcha ~$12 900.",
   },
   {
+    slug: 'rental',
+    textRu: "Аренда или покупка зависит прежде всего от ставок. При квартире за 720 млн сум, аренде 7 млн сум, ипотеке 20% и вкладе 18% через 10 лет выгоднее аренда, а при вкладе 10% выгоднее покупка. Результат сильно зависит от допущений, поэтому введите свои цифры.",
+    textUz: "Ijara yoki sotib olish avvalo stavkalarga bog'liq. Kvartira 720 mln so'm, ijara 7 mln so'm, ipoteka 20% va omonat 18% bo'lsa, 10 yildan keyin ijara foydaliroq, omonat 10% bo'lsa esa sotib olish foydaliroq. Natija taxminlarga kuchli bog'liq, shuning uchun o'z raqamlaringizni kiriting.",
+  },
+  {
     slug: 'brv',
     textRu:
       'БРВ (Базовая расчётная величина) в Узбекистане с 1 сентября 2026 года — 440 000 сум (Указ УП-115 от 23.06.2026); до этого, с августа 2025 года, было 412 000 сум. Используется для расчёта государственных пошлин, штрафов и налоговых порогов. Например: регистрация ООО — 1 БРВ, порог обязательной регистрации по НДС — 12 000 БРВ. Льготы по НДФЛ считаются не в БРВ, а в МРОТ (1 360 000 сум).',

@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { calculateOvertime } from '@/lib/calculators/social'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function OvertimeCalculator() {
   const locale = useLocale()
@@ -16,7 +16,7 @@ export default function OvertimeCalculator() {
   const [isHoliday, setIsHoliday] = useState(false)
 
   const result = useMemo(() => {
-    const sal = parseFloat(salary.replace(/\s/g, '')) || 0
+    const sal = parseNumericInput(salary) || 0
     const h = parseFloat(hours) || 0
     if (sal <= 0 || h <= 0) return null
     return calculateOvertime(sal, h, isHoliday)
@@ -50,7 +50,7 @@ export default function OvertimeCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.salary}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={salary} onChange={(e) => setSalary(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={salary} onChange={(e) => setSalary(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.hours}</Label>

@@ -5,7 +5,6 @@ import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import { CALCULATORS, getCalculatorBySlug } from "@/lib/data/calculators"
 import { CATEGORIES } from "@/lib/data/categories"
-import { CALCULATOR_COMPONENTS } from "@/lib/data/calculator-components"
 import { getCalculatorArticle } from "@/lib/data/calculator-articles"
 import { getCalculatorHowTo } from "@/lib/data/calculator-howto"
 import { getSlugByLocale, getEnglishSlug, getAllLocalizedSlugs } from "@/lib/data/calculator-slugs"
@@ -21,6 +20,7 @@ import { ChevronRight, Home, ArrowRight, Calendar, ExternalLink, ShieldCheck, Fl
 import { Badge } from "@/components/ui/badge"
 import { DynamicIcon } from "@/components/calculator/DynamicIcon"
 import { ErrorBoundary } from "@/components/calculator/ErrorBoundary"
+import { CalculatorMount } from "@/components/calculator/CalculatorMount"
 import { SharePrintButtons } from "@/components/calculator/SharePrintButtons"
 import { LinkifiedParagraph } from "@/components/calculator/LinkifiedParagraph"
 import {
@@ -32,20 +32,6 @@ import {
 
 const BASE_URL = "https://calk.uz"
 
-function CalculatorRenderer({ slug }: { slug: string }) {
-  const Component = CALCULATOR_COMPONENTS[slug]
-
-  if (!Component) {
-    return (
-      <div className="text-center py-12 text-muted-foreground">
-        <DynamicIcon name="Calculator" className="h-12 w-12 mx-auto mb-4 opacity-50" />
-        <p>Calculator component not found for: {slug}</p>
-      </div>
-    )
-  }
-
-  return <Component />
-}
 
 // Only pre-generated slugs are valid; any other slug returns a real 404.
 export const dynamicParams = false
@@ -442,7 +428,7 @@ export default async function CalculatorPage({
             {/* Calculator Component */}
             <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
               <ErrorBoundary locale={locale}>
-                <CalculatorRenderer slug={calc.slug} />
+                <CalculatorMount slug={calc.slug} locale={locale} />
               </ErrorBoundary>
             </div>
 

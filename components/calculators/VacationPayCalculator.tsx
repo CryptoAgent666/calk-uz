@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateVacationPay } from '@/lib/calculators/social'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function VacationPayCalculator() {
   const locale = useLocale()
@@ -15,7 +15,7 @@ export default function VacationPayCalculator() {
   const [sundays, setSundays] = useState('3')
 
   const result = useMemo(() => {
-    const earnings = parseFloat(totalEarnings.replace(/\s/g, '')) || 0
+    const earnings = parseNumericInput(totalEarnings) || 0
     const days = parseInt(vacationDays) || 0
     const sun = parseInt(sundays) || 0
     if (earnings <= 0 || days <= 0) return null
@@ -54,7 +54,7 @@ export default function VacationPayCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.totalEarnings}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={totalEarnings} onChange={(e) => setTotalEarnings(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={totalEarnings} onChange={(e) => setTotalEarnings(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.vacationDays}</Label>

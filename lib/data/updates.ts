@@ -20,6 +20,29 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-11-06",
+    dateLabelRu: "6 ноября 2026",
+    dateLabelUz: "2026-yil 6-noyabr",
+    items: [
+      {
+        titleRu: "Тийины в расчётах",
+        titleUz: "Hisob-kitoblarda tiyinlar",
+        descRu:
+          "Над калькулятором появился переключатель «Показывать тийины»: суммы выводятся с двумя знаками после запятой, выбор запоминается. В поля можно вводить суммы с тийинами через запятую или точку, например 1 500 000,50; раньше часть после запятой отбрасывалась.",
+        descUz:
+          "Kalkulyator ustida «Tiyinlarni ko'rsatish» tugmasi paydo bo'ldi: summalar verguldan keyin ikki xona bilan chiqadi, tanlov eslab qolinadi. Maydonlarga tiyinli summani vergul yoki nuqta bilan kiritish mumkin, masalan 1 500 000,50; ilgari verguldan keyingi qism tashlab yuborilardi.",
+      },
+      {
+        titleRu: "Аренда или покупка: появилось сравнение",
+        titleUz: "Ijara yoki sotib olish: solishtirish qo'shildi",
+        descRu:
+          "Калькулятор аренды теперь сравнивает её с покупкой в ипотеку: кто через выбранный срок окажется с большим капиталом и при каком росте цен варианты сравняются. Все допущения можно менять.",
+        descUz:
+          "Ijara kalkulyatori endi uni ipotekaga sotib olish bilan solishtiradi: tanlangan muddatdan keyin kimning kapitali ko'proq bo'lishi va narx qanday o'sganda variantlar tenglashishi. Barcha taxminlarni o'zgartirish mumkin.",
+      },
+    ],
+  },
+  {
     date: "2026-11-03",
     dateLabelRu: "3 ноября 2026",
     dateLabelUz: "2026-yil 3-noyabr",

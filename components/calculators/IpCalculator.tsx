@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import { calculateIPTax } from '@/lib/calculators/business'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function IpCalculator() {
   const locale = useLocale()
@@ -15,7 +15,7 @@ export default function IpCalculator() {
   const [regime, setRegime] = useState<'turnover' | 'self_employed' | 'general'>('turnover')
 
   const result = useMemo(() => {
-    const r = parseFloat(revenue.replace(/\s/g, '')) || 0
+    const r = parseNumericInput(revenue) || 0
     if (r <= 0) return null
     return calculateIPTax(r, regime)
   }, [revenue, regime])
@@ -30,7 +30,7 @@ export default function IpCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
-          <div><Label>{t.revenue}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.revenue}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" /></div>
           <div>
             <Label>{t.regime}</Label>
             <select value={regime} onChange={(e) => setRegime(e.target.value as typeof regime)} className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">

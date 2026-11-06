@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { addVat, extractVat, type VatResult } from '@/lib/calculators/vat'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function VatCalculator() {
   const locale = useLocale()
@@ -16,7 +16,7 @@ export default function VatCalculator() {
   const [customRate, setCustomRate] = useState('12')
 
   const result = useMemo<VatResult | null>(() => {
-    const a = parseFloat(amount.replace(/\s/g, '')) || 0
+    const a = parseNumericInput(amount) || 0
     const r = parseFloat(customRate) || 12
     if (a <= 0) return null
     return mode === 'add' ? addVat(a, r / 100) : extractVat(a, r / 100)
@@ -39,7 +39,7 @@ export default function VatCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.amount}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.rate}</Label>

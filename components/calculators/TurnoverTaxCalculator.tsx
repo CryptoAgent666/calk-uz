@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateTurnoverTax } from '@/lib/calculators/tax'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function TurnoverTaxCalculator() {
   const locale = useLocale()
@@ -14,7 +14,7 @@ export default function TurnoverTaxCalculator() {
   const [rate, setRate] = useState('4')
 
   const result = useMemo(() => {
-    const val = parseFloat(revenue.replace(/\s/g, '')) || 0
+    const val = parseNumericInput(revenue) || 0
     const r = parseFloat(rate) || 4
     if (val <= 0) return null
     return calculateTurnoverTax(val, r / 100)
@@ -44,7 +44,7 @@ export default function TurnoverTaxCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.revenue}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.rate}</Label>

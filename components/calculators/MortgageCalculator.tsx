@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { calculateCredit } from '@/lib/calculators/credit'
-import { formatCurrency, formatNumber } from '@/lib/utils'
+import { formatCurrency, formatNumber, parseNumericInput } from '@/lib/utils'
 
 export default function MortgageCalculator() {
   const locale = useLocale()
@@ -19,7 +19,7 @@ export default function MortgageCalculator() {
   const [type, setType] = useState<'annuity' | 'differentiated'>('annuity')
 
   const result = useMemo(() => {
-    const price = parseFloat(propertyPrice.replace(/\s/g, '')) || 0
+    const price = parseNumericInput(propertyPrice) || 0
     const dp = parseFloat(downPaymentPercent) || 0
     const r = parseFloat(rate) || 0
     const t = parseInt(term) || 0
@@ -67,7 +67,7 @@ export default function MortgageCalculator() {
         <CardContent className="pt-6 space-y-5">
           <div>
             <Label>{t.propertyPrice}</Label>
-            <Input type="text" inputMode="numeric" value={propertyPrice} onChange={(e) => setPropertyPrice(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" value={propertyPrice} onChange={(e) => setPropertyPrice(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <div className="flex justify-between mb-2">

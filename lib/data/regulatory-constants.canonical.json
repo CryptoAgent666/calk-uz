@@ -5,9 +5,9 @@
     "currency": "UZS (сум)",
     "generated": "2026-06-25",
     "note": "Audit ledger (NOT imported by site). Constants are CENTRALIZED: lib/constants/{brv,tax-rates,utility-tariffs}.ts + inline in lib/calculators/*.ts. Apply fixes there. БРВ=440000 anchors most state duties/fines as BRV-multiples. tax-rates.ts & utility-tariffs.ts headers say 2025 (freshness flag).",
-    "total": 184,
+    "total": 185,
     "gov_regulated": 145,
-    "market_or_other": 16,
+    "market_or_other": 17,
     "conflicts": 10,
     "status_summary": {
       "current": 151,
@@ -1052,9 +1052,9 @@
       "source_hint": "cbu.uz (Основная ставка ЦБ РУз)",
       "conflict": false,
       "status": "current",
-      "notes": "Central Bank key/refinancing rate (14%). Gov-regulated but set by the Central Bank, not a tax law. Used to derive PENALTY_RATE and the tax-penalty daily rate (CB_RATE/300) in tax.ts. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось. || alert 2026-09-21: current, 14% сохранена 16.09.2026, след. заседание 28.10.",
+      "notes": "Central Bank key/refinancing rate (14%). Gov-regulated but set by the Central Bank, not a tax law. Used to derive PENALTY_RATE and the tax-penalty daily rate (CB_RATE/300) in tax.ts. || Дата проставлена задним числом 2026-09-01: константа входит в список «Verified current» в AGENTS.md по итогам свипа 18.08.2026. Значение не менялось. || alert 2026-09-21: current, 14% сохранена 16.09.2026, след. заседание 28.10. || 04.11.2026 (заседание перенесено с 28.10): ставка сохранена 14%, kun.uz/ru/news/2026/11/04 (cbu.uz не открывался). Следующее заседание 16.12.2026.",
       "source_url": "https://cbu.uz/ru/monetary-policy/publications/press-releases/?print=Y",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-11-04",
       "verified_date": "2026-09-21",
       "verify_confidence": "high",
       "verify_method": "tier2-alert-2026-09-21",
@@ -4648,6 +4648,27 @@
       "source_url": "https://www.spot.uz/ru/2026/03/26/mortgage",
       "last_verified": "2026-11-01",
       "verified_date": "2026-11-01"
+    },
+    {
+      "id": "unique.ts__rent vs buy defaults",
+      "file": "components/calculators/RentalCalculator.tsx",
+      "key": "rent vs buy defaults",
+      "value": "цена 720 млн (60 м² × 12 млн), аренда 7 млн, взнос 20%, ипотека CB_RATE+6%, срок 15 лет, сравнение 10 лет, рост аренды и цены 7%, вклад 18%, расходы владельца 1%, оформление 2%",
+      "unit": "UZS / % (market reference)",
+      "law": "n/a (рыночные допущения, все меняются пользователем, кроме оформления 2%)",
+      "theme": "market_reference",
+      "is_gov_regulated": false,
+      "surfaces": [
+        "components/calculators/RentalCalculator.tsx",
+        "lib/calculators/unique.ts",
+        "lib/data/calculator-articles.ts",
+        "lib/data/calculator-quick-answers.ts"
+      ],
+      "last_updated_hint": "2026-11-03",
+      "source_hint": "статьи сайта о квартире и ипотеке; средняя ставка вкладов 18,4% (август 2026); инфляция 6,4%",
+      "conflict": false,
+      "status": "unverified",
+      "notes": "Рост цен 7% — допущение около инфляции, статистики цен на жильё не сверял. Вывод чувствителен к ставке вклада: при 18% выгоднее аренда, при 10% покупка."
     }
   ],
   "meta": {

@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import { calculateZakat, NISAB_FATWA_2026 } from '@/lib/calculators/religion'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function ZakatCalculator() {
   const locale = useLocale()
@@ -20,18 +20,18 @@ export default function ZakatCalculator() {
   const [debtsOwed, setDebtsOwed] = useState('0')
 
   const result = useMemo(() => {
-    const c = parseFloat(cash.replace(/\s/g, '')) || 0
-    const bd = parseFloat(bankDeposits.replace(/\s/g, '')) || 0
+    const c = parseNumericInput(cash) || 0
+    const bd = parseNumericInput(bankDeposits) || 0
     const g = parseFloat(goldGrams) || 0
-    const inv = parseFloat(investments.replace(/\s/g, '')) || 0
-    const bi = parseFloat(businessInventory.replace(/\s/g, '')) || 0
-    const gp = parseFloat(goldPrice.replace(/\s/g, '')) || NISAB_FATWA_2026 / 85
+    const inv = parseNumericInput(investments) || 0
+    const bi = parseNumericInput(businessInventory) || 0
+    const gp = parseNumericInput(goldPrice) || NISAB_FATWA_2026 / 85
     if (c <= 0 && bd <= 0 && g <= 0 && inv <= 0 && bi <= 0) return null
     return calculateZakat({
       cash: c, bankDeposits: bd, goldGrams: parseFloat(goldGrams) || 0,
-      silverGrams: 0, investments: parseFloat(investments.replace(/\s/g, '')) || 0,
-      businessInventory: parseFloat(businessInventory.replace(/\s/g, '')) || 0,
-      receivables: 0, debtsOwed: parseFloat(debtsOwed.replace(/\s/g, '')) || 0,
+      silverGrams: 0, investments: parseNumericInput(investments) || 0,
+      businessInventory: parseNumericInput(businessInventory) || 0,
+      receivables: 0, debtsOwed: parseNumericInput(debtsOwed) || 0,
     }, gp)
   }, [cash, bankDeposits, goldGrams, goldPrice, investments, businessInventory, debtsOwed])
 
@@ -43,13 +43,13 @@ export default function ZakatCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
-          <div><Label>{t.cash}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={cash} onChange={(e) => setCash(e.target.value)} className="mt-1 text-lg" /></div>
-          <div><Label>{t.bank}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={bankDeposits} onChange={(e) => setBankDeposits(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.cash}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={cash} onChange={(e) => setCash(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.bank}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={bankDeposits} onChange={(e) => setBankDeposits(e.target.value)} className="mt-1" /></div>
           <div><Label>{t.gold}</Label><Input type="number" value={goldGrams} onChange={(e) => setGoldGrams(e.target.value)} className="mt-1" min={0} step={0.1} /></div>
-          <div><Label>{t.goldPrice}</Label><Input type="text" inputMode="numeric" value={goldPrice} onChange={(e) => setGoldPrice(e.target.value)} className="mt-1" /></div>
-          <div><Label>{t.investments}</Label><Input type="text" inputMode="numeric" value={investments} onChange={(e) => setInvestments(e.target.value)} className="mt-1" /></div>
-          <div><Label>{t.inventory}</Label><Input type="text" inputMode="numeric" value={businessInventory} onChange={(e) => setBusinessInventory(e.target.value)} className="mt-1" /></div>
-          <div><Label>{t.debts}</Label><Input type="text" inputMode="numeric" value={debtsOwed} onChange={(e) => setDebtsOwed(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.goldPrice}</Label><Input type="text" inputMode="decimal" value={goldPrice} onChange={(e) => setGoldPrice(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.investments}</Label><Input type="text" inputMode="decimal" value={investments} onChange={(e) => setInvestments(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.inventory}</Label><Input type="text" inputMode="decimal" value={businessInventory} onChange={(e) => setBusinessInventory(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.debts}</Label><Input type="text" inputMode="decimal" value={debtsOwed} onChange={(e) => setDebtsOwed(e.target.value)} className="mt-1" /></div>
         </CardContent>
       </Card>
       {result && (

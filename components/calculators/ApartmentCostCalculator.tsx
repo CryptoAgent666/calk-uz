@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 import { BRV } from '@/lib/constants/brv'
 
 export default function ApartmentCostCalculator() {
@@ -15,7 +15,7 @@ export default function ApartmentCostCalculator() {
 
   const result = useMemo(() => {
     const a = parseFloat(area) || 0
-    const p = parseFloat(pricePerM2.replace(/\s/g, '')) || 0
+    const p = parseNumericInput(pricePerM2) || 0
     if (a <= 0 || p <= 0) return null
     const totalPrice = a * p
     // Real-estate registration fee (ПКМ-623): area-tiered for residential
@@ -47,7 +47,7 @@ export default function ApartmentCostCalculator() {
       <Card>
         <CardContent className="pt-6 space-y-4">
           <div><Label>{t.area}</Label><Input type="number" placeholder={t.areaPlaceholder} value={area} onChange={(e) => setArea(e.target.value)} className="mt-1 text-lg" min={1} /></div>
-          <div><Label>{t.pricePerM2}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={pricePerM2} onChange={(e) => setPricePerM2(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.pricePerM2}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={pricePerM2} onChange={(e) => setPricePerM2(e.target.value)} className="mt-1 text-lg" /></div>
         </CardContent>
       </Card>
 

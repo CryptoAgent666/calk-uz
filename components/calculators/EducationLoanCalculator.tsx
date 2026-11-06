@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { calculateCredit } from '@/lib/calculators/credit'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function EducationLoanCalculator() {
   const locale = useLocale()
@@ -16,7 +16,7 @@ export default function EducationLoanCalculator() {
   const [term, setTerm] = useState('48')
 
   const result = useMemo(() => {
-    const a = parseFloat(amount.replace(/\s/g, '')) || 0
+    const a = parseNumericInput(amount) || 0
     const r = parseFloat(rate) || 0
     const t = parseInt(term) || 0
     if (a <= 0 || r <= 0 || t <= 0) return null
@@ -31,7 +31,7 @@ export default function EducationLoanCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-5">
-          <div><Label>{t.amount}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.amount}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" /></div>
           <div>
             <div className="flex justify-between mb-2"><Label>{t.rate}</Label><span className="text-sm font-medium text-primary">{rate}%</span></div>
             <Slider value={[parseFloat(rate) || 0]} onValueChange={(v) => setRate(String(Array.isArray(v) ? v[0] : v))} min={1} max={30} step={0.5} />

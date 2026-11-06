@@ -673,9 +673,9 @@ export const CALCULATORS: CalculatorMeta[] = [
     titleRu: 'Аренда vs покупка',
     titleUz: 'Ijara vs sotib olish',
     descriptionRu:
-      "Рассчитайте стоимость аренды жилья: платёж с коммунальными, депозит и итог за весь срок.",
+      "Что выгоднее: арендовать или покупать жильё? Рассчитайте стоимость аренды и сравните её с ипотекой на срок до 30 лет.",
     descriptionUz:
-      "Uy-joy ijarasi narxini hisoblang: kommunal bilan to'lov, depozit va butun muddat uchun jami.",
+      "Nima foydaliroq: uy-joyni ijaraga olishmi yoki sotib olishmi? Ijara narxini hisoblang va uni 30 yilgacha muddatda ipoteka bilan solishtiring.",
     category: 'realestate',
     icon: 'Scale',
     keywords: ['аренда', 'ijara', 'rent vs buy', 'покупка квартиры', 'ипотека'],

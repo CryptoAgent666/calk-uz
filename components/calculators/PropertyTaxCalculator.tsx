@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { calculatePropertyTax } from '@/lib/calculators/tax'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function PropertyTaxCalculator() {
   const locale = useLocale()
@@ -18,7 +18,7 @@ export default function PropertyTaxCalculator() {
   const [isCity, setIsCity] = useState(true)
 
   const result = useMemo(() => {
-    const val = parseFloat(cadastralValue.replace(/\s/g, '')) || 0
+    const val = parseNumericInput(cadastralValue) || 0
     const a = parseFloat(area) || 0
     if (val <= 0 || a <= 0) return null
     return calculatePropertyTax(val, a, isLegalEntity, isCity)
@@ -58,7 +58,7 @@ export default function PropertyTaxCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.cadastralValue}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={cadastralValue} onChange={(e) => setCadastralValue(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={cadastralValue} onChange={(e) => setCadastralValue(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.area}</Label>

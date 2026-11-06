@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateCottonYield } from '@/lib/calculators/unique'
-import { formatCurrency, formatNumber } from '@/lib/utils'
+import { formatCurrency, formatNumber, parseNumericInput } from '@/lib/utils'
 
 export default function CottonYieldCalculator() {
   const locale = useLocale()
@@ -19,7 +19,7 @@ export default function CottonYieldCalculator() {
     const a = parseFloat(area) || 0
     const y = parseFloat(yieldPerHa) || 0
     const p = parseFloat(pricePerKg) || 0
-    const c = parseFloat(costsPerHa.replace(/\s/g, '')) || 0
+    const c = parseNumericInput(costsPerHa) || 0
     if (a <= 0) return null
     return calculateCottonYield(a, y, p, c)
   }, [area, yieldPerHa, pricePerKg, costsPerHa])
@@ -36,7 +36,7 @@ export default function CottonYieldCalculator() {
           <div className="grid grid-cols-3 gap-4">
             <div><Label>{t.yield}</Label><Input type="number" value={yieldPerHa} onChange={(e) => setYieldPerHa(e.target.value)} className="mt-1" /></div>
             <div><Label>{t.price}</Label><Input type="number" value={pricePerKg} onChange={(e) => setPricePerKg(e.target.value)} className="mt-1" /></div>
-            <div><Label>{t.costs}</Label><Input type="text" inputMode="numeric" value={costsPerHa} onChange={(e) => setCostsPerHa(e.target.value)} className="mt-1" /></div>
+            <div><Label>{t.costs}</Label><Input type="text" inputMode="decimal" value={costsPerHa} onChange={(e) => setCostsPerHa(e.target.value)} className="mt-1" /></div>
           </div>
         </CardContent>
       </Card>

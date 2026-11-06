@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateCorporateTax } from '@/lib/calculators/tax'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function CorporateTaxCalculator() {
   const locale = useLocale()
@@ -15,8 +15,8 @@ export default function CorporateTaxCalculator() {
   const [taxRate, setTaxRate] = useState('15')
 
   const result = useMemo(() => {
-    const r = parseFloat(revenue.replace(/\s/g, '')) || 0
-    const e = parseFloat(expenses.replace(/\s/g, '')) || 0
+    const r = parseNumericInput(revenue) || 0
+    const e = parseNumericInput(expenses) || 0
     const rate = parseFloat(taxRate) || 15
     if (r <= 0) return null
     return calculateCorporateTax(r, e, rate / 100)
@@ -50,11 +50,11 @@ export default function CorporateTaxCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.revenue}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.expenses}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={expenses} onChange={(e) => setExpenses(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={expenses} onChange={(e) => setExpenses(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.taxRate}</Label>

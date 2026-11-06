@@ -1996,30 +1996,36 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
   {
     slug: 'rental',
     lastUpdated: '2026-11-03',
-    sources: [],
+    sources: [
+      { name: "Налоговый кодекс, ст. 422: налог на имущество физлиц", url: "https://lex.uz/ru/docs/4674893" },
+    ],
         paragraphsRu: [
-      'Калькулятор аренды недвижимости рассчитывает ежемесячный платёж за аренду жилья с коммунальными, депозит и итог за весь срок. Покупку и ипотеку он не считает, для них есть ипотечный калькулятор. Средние цены аренды в 2026 году: однокомнатная квартира — 3,5–6 млн сум/мес, двухкомнатная — 5,5–9 млн, трёхкомнатная — 8–14 млн в зависимости от района и состояния.',
+      'Калькулятор аренды недвижимости рассчитывает ежемесячный платёж за аренду жилья с коммунальными, депозит и итог за весь срок, а также сравнивает аренду с покупкой в ипотеку на срок до 30 лет. Средние цены аренды в 2026 году: однокомнатная квартира — 3,5–6 млн сум/мес, двухкомнатная — 5,5–9 млн, трёхкомнатная — 8–14 млн в зависимости от района и состояния.',
       'Помимо арендной платы, необходимо учитывать дополнительные расходы: коммунальные услуги (газ, электричество, вода, отопление) — от 500 000 до 1 500 000 сум в месяц в зависимости от сезона и площади; интернет — 100 000–350 000 сум; обслуживание дома (в новостройках) — 50 000–200 000 сум; вывоз мусора — 30 000–50 000 сум. Летом добавляются расходы на кондиционер (электроэнергия может вырасти на 300 000–600 000 сум).',
       'Стоимость аренды значительно различается по районам Ташкента. Премиальные районы: Мирабад, Юнусабад, Шайхантахур (центр) — самые дорогие, здесь расположены новостройки бизнес-класса. Средний сегмент: Чиланзар, Яккасарай, Мирзо-Улугбекский — хороший баланс цены и качества. Бюджетные районы: Сергели, Бектемир, Олмазор — на 30–50% дешевле центра, но дальше от деловых кварталов.',
       'При аренде в Узбекистане стандартная практика — залоговый депозит в размере 1–2 месячных платежей, который возвращается при выезде за вычетом ущерба. Договор аренды рекомендуется оформлять письменно с указанием срока, суммы, условий расторжения и ответственности сторон. Обязанности сторон по передаче жилья и ремонту стоит прямо прописать в договоре.',
-      "В калькуляторе четыре поля: арендная плата за месяц, коммунальные за месяц, депозит в месячных платах и срок в месяцах. Площадь и район он не спрашивает. Результат помогает сравнить варианты аренды и понять реальный бюджет.",
+      "Сравнение с покупкой показывает, у кого через выбранный срок окажется больше денег при одинаковом бюджете. Покупатель платит взнос, оформление (2% цены), ипотеку, а также налог, страховку и ремонт; его капитал — цена квартиры минус остаток кредита. Арендатор кладёт на вклад деньги, не потраченные на взнос и оформление, и ежемесячную разницу, если аренда дешевле. Пример по умолчанию: квартира 720 млн сум, взнос 20%, ипотека 20% на 15 лет (платёж 10,1 млн сум), аренда 7 млн сум, рост цен и аренды 7% в год, вклад 18%. Через 10 лет аренда выгоднее примерно на 603 млн сум, а сравняются варианты при росте цены около 10,9% в год. Результат сильно зависит от допущений: при вкладе 10% выгоднее уже покупка, примерно на 248 млн сум. Сегодняшние ставки могут снизиться, поэтому проверьте несколько вариантов.",
     ],
     paragraphsUz: [
-      "Ijara kalkulyatori uy-joy ijarasining kommunal bilan oylik to'lovini, depozitni va butun muddat uchun jamini hisoblaydi. Sotib olish va ipotekani hisoblamaydi, ular uchun ipoteka kalkulyatori bor. 2026-yildagi o'rtacha ijara narxlari: bir xonali kvartira — 3,5–6 mln so'm/oy, ikki xonali — 5,5–9 mln, uch xonali — tuman va holatiga qarab 8–14 mln.",
+      "Ijara kalkulyatori uy-joy ijarasining kommunal bilan oylik to'lovini, depozitni va butun muddat uchun jamini hisoblaydi, shuningdek ijarani ipotekaga sotib olish bilan 30 yilgacha muddatda solishtiradi. 2026-yildagi o'rtacha ijara narxlari: bir xonali kvartira — 3,5–6 mln so'm/oy, ikki xonali — 5,5–9 mln, uch xonali — tuman va holatiga qarab 8–14 mln.",
       "Ijara to'lovidan tashqari qo'shimcha xarajatlarni hisobga olish kerak: kommunal xizmatlar (gaz, elektr, suv, isitish) — mavsumga va maydonga qarab oyiga 500 000 dan 1 500 000 so'mgacha; internet — 100 000–350 000 so'm; uy xizmati (yangi qurilishlarda) — 50 000–200 000 so'm; chiqindi chiqarish — 30 000–50 000 so'm. Yozda konditsioner xarajatlari qo'shiladi (elektr energiya 300 000–600 000 so'mga oshishi mumkin).",
       "Ijara narxi Toshkent tumanlari bo'yicha sezilarli farq qiladi. Premium tumanlar: Mirobod, Yunusobod, Shayxontohur (markaz) — eng qimmat, bu yerda biznes-sinf yangi qurilishlar joylashgan. O'rtacha segment: Chilonzor, Yakkasaroy, Mirzo Ulug'bek — narx va sifatning yaxshi muvozanati. Byudjet tumanlar: Sergeli, Bektemir, Olmazor — markazdan 30–50% arzonroq, lekin ishbilarmonlik tumanlaridan uzoqroq.",
       "O'zbekistonda ijaraga olishda standart amaliyot — 1–2 oylik to'lov miqdorida garov depoziti, u chiqib ketishda zarar chegirilgan holda qaytariladi. Ijara shartnomasini yozma ravishda tuzish tavsiya etiladi — muddat, summa, bekor qilish shartlari va tomonlar javobgarligi ko'rsatilishi kerak. Uy-joyni topshirish va ta'mirlash bo'yicha tomonlar majburiyatlarini shartnomada aniq yozib qo'ygan ma'qul.",
-      "Kalkulyatorda to'rtta maydon bor: oylik ijara haqi, oylik kommunal, oylik to'lovlarda depozit va oylarda muddat. Maydon va tumanni so'ramaydi. Natija ijara variantlarini solishtirish va real byudjetni tushunishga yordam beradi.",
+      "Sotib olish bilan solishtirish bir xil byudjetda tanlangan muddatdan keyin kimda ko'proq pul bo'lishini ko'rsatadi. Sotib oluvchi boshlang'ich to'lov, rasmiylashtirish (narxning 2%), ipoteka, shuningdek soliq, sug'urta va ta'mirni to'laydi; uning kapitali — kvartira narxi minus kredit qoldig'i. Ijarachi boshlang'ich to'lov va rasmiylashtirishga sarflanmagan pulni hamda ijara arzonroq bo'lsa, oylik farqni omonatga qo'yadi. Standart misol: kvartira 720 mln so'm, boshlang'ich to'lov 20%, 15 yilga 20% ipoteka (to'lov 10,1 mln so'm), ijara 7 mln so'm, narx va ijara o'sishi yiliga 7%, omonat 18%. 10 yildan keyin ijara taxminan 603 mln so'm foydaliroq, narx yiliga taxminan 10,9% o'sganda variantlar tenglashadi. Natija taxminlarga kuchli bog'liq: omonat 10% bo'lsa, sotib olish taxminan 248 mln so'm foydaliroq bo'ladi. Bugungi stavkalar pasayishi mumkin, shuning uchun bir nechta variantni tekshiring.",
     ],
     faqRu: [
       { question: 'Сколько стоит аренда квартиры в Ташкенте?', answer: "1-комн: 3,5-6 млн, 2-комн: 5,5-9 млн, 3-комн: 8-14 млн сум/мес. Зависит от района и состояния." },
       { question: 'Что включено в арендную плату?', answer: 'Обычно только аренда. Коммунальные, интернет, обслуживание — отдельно (+500 000 − 1 500 000 сум).' },
       { question: 'Какой депозит при аренде?', answer: 'Обычно 1-2 месячных платежа. Возвращается при выезде (минус ущерб).' },
+      { question: "Что выгоднее: аренда или покупка?", answer: "Зависит от ставок. В примере по умолчанию при ипотеке 20% и вкладе 18% через 10 лет выгоднее аренда, а при вкладе 10% уже покупка. Введите свои цифры, калькулятор покажет разницу." },
+      { question: "Зачем в сравнении ставка вклада?", answer: "Деньги, которые арендатор не потратил на взнос и ипотеку, могут приносить доход. Без этого сравнение завышало бы выгоду покупки." },
     ],
     faqUz: [
       { question: "Toshkentda kvartira ijarasi qancha?", answer: "1 xonali: 3,5-6 mln, 2 xonali: 5,5-9 mln, 3 xonali: 8-14 mln so'm/oy. Tuman va holatga bog'liq." },
       { question: "Ijara to'loviga nima kiritilgan?", answer: "Odatda faqat ijara. Kommunal, internet, xizmat — alohida (+500 000 − 1 500 000 so'm)." },
       { question: "Ijarada depozit qancha?", answer: "Odatda 1-2 oylik to'lov. Chiqib ketishda qaytariladi (zarar minus)." },
+      { question: "Nima foydaliroq: ijaraga olishmi yoki sotib olishmi?", answer: "Stavkalarga bog'liq. Standart misolda 20% ipoteka va 18% omonatda 10 yildan keyin ijara foydaliroq, omonat 10% bo'lsa esa sotib olish foydaliroq. O'z raqamlaringizni kiriting, kalkulyator farqni ko'rsatadi." },
+      { question: "Solishtirishda omonat stavkasi nima uchun kerak?", answer: "Ijarachi boshlang'ich to'lov va ipotekaga sarflamagan pul daromad keltirishi mumkin. Busiz solishtirish sotib olish foydasini oshirib ko'rsatgan bo'lardi." },
     ],
   },
 

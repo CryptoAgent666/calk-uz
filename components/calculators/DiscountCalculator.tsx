@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { calculateDiscount } from '@/lib/calculators/tools'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function DiscountCalculator() {
   const locale = useLocale()
@@ -15,7 +15,7 @@ export default function DiscountCalculator() {
   const [discount, setDiscount] = useState('20')
 
   const result = useMemo(() => {
-    const p = parseFloat(price.replace(/\s/g, '')) || 0
+    const p = parseNumericInput(price) || 0
     const d = parseFloat(discount) || 0
     if (p <= 0) return null
     return calculateDiscount(p, d)
@@ -29,7 +29,7 @@ export default function DiscountCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-5">
-          <div><Label>{t.price}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={price} onChange={(e) => setPrice(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.price}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={price} onChange={(e) => setPrice(e.target.value)} className="mt-1 text-lg" /></div>
           <div>
             <div className="flex justify-between mb-2"><Label>{t.discount}</Label><span className="text-sm font-medium text-primary">{discount}%</span></div>
             <Slider value={[parseFloat(discount) || 0]} onValueChange={(v) => setDiscount(String(Array.isArray(v) ? v[0] : v))} min={1} max={90} step={1} />

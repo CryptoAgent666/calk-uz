@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { calculateDeposit, type CapitalizationType } from '@/lib/calculators/deposit'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function DepositCalculator() {
   const locale = useLocale()
@@ -19,10 +19,10 @@ export default function DepositCalculator() {
   const [monthlyTopUp, setMonthlyTopUp] = useState('0')
 
   const result = useMemo(() => {
-    const a = parseFloat(amount.replace(/\s/g, '')) || 0
+    const a = parseNumericInput(amount) || 0
     const r = parseFloat(rate) || 0
     const t = parseInt(term) || 0
-    const topUp = parseFloat(monthlyTopUp.replace(/\s/g, '')) || 0
+    const topUp = parseNumericInput(monthlyTopUp) || 0
     if (a <= 0 || r <= 0 || t <= 0) return null
     return calculateDeposit({ initialAmount: a, annualRate: r, termMonths: t, capitalization, monthlyTopUp: topUp })
   }, [amount, rate, term, capitalization, monthlyTopUp])
@@ -67,7 +67,7 @@ export default function DepositCalculator() {
         <CardContent className="pt-6 space-y-5">
           <div>
             <Label>{t.amount}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <div className="flex justify-between mb-2">
@@ -96,7 +96,7 @@ export default function DepositCalculator() {
           </div>
           <div>
             <Label>{t.monthlyTopUp}</Label>
-            <Input type="text" inputMode="numeric" value={monthlyTopUp} onChange={(e) => setMonthlyTopUp(e.target.value)} className="mt-1" />
+            <Input type="text" inputMode="decimal" value={monthlyTopUp} onChange={(e) => setMonthlyTopUp(e.target.value)} className="mt-1" />
           </div>
         </CardContent>
       </Card>

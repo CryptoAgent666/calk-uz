@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function TuitionCalculator() {
   const locale = useLocale()
@@ -14,7 +14,7 @@ export default function TuitionCalculator() {
   const [annualIncrease, setAnnualIncrease] = useState('10')
 
   const result = useMemo(() => {
-    const tuition = parseFloat(annualTuition.replace(/\s/g, '')) || 0
+    const tuition = parseNumericInput(annualTuition) || 0
     const y = parseInt(years) || 0
     const inc = parseFloat(annualIncrease) || 0
     if (tuition <= 0 || y <= 0) return null
@@ -36,7 +36,7 @@ export default function TuitionCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
-          <div><Label>{t.tuition}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={annualTuition} onChange={(e) => setAnnualTuition(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.tuition}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={annualTuition} onChange={(e) => setAnnualTuition(e.target.value)} className="mt-1 text-lg" /></div>
           <div className="grid grid-cols-2 gap-4">
             <div><Label>{t.years}</Label><Input type="number" value={years} onChange={(e) => setYears(e.target.value)} className="mt-1" min={1} max={8} /></div>
             <div><Label>{t.increase}</Label><Input type="number" value={annualIncrease} onChange={(e) => setAnnualIncrease(e.target.value)} className="mt-1" min={0} max={50} step={1} /></div>

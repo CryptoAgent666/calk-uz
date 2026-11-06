@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { calculateLeasing } from '@/lib/calculators/auto'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function CarLeasingCalculator() {
   const locale = useLocale()
@@ -18,7 +18,7 @@ export default function CarLeasingCalculator() {
   const [residual, setResidual] = useState('10')
 
   const result = useMemo(() => {
-    const p = parseFloat(carPrice.replace(/\s/g, '')) || 0
+    const p = parseNumericInput(carPrice) || 0
     const dp = parseFloat(downPayment) || 0
     const t = parseInt(term) || 0
     const r = parseFloat(rate) || 0
@@ -47,7 +47,7 @@ export default function CarLeasingCalculator() {
         <CardContent className="pt-6 space-y-5">
           <div>
             <Label>{t.carPrice}</Label>
-            <Input type="text" inputMode="numeric" value={carPrice} onChange={(e) => setCarPrice(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" value={carPrice} onChange={(e) => setCarPrice(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <div className="flex justify-between mb-2"><Label>{t.downPayment}</Label><span className="text-sm font-medium text-primary">{downPayment}%</span></div>

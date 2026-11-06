@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateROI } from '@/lib/calculators/business'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function RoiCalculator() {
   const locale = useLocale()
@@ -15,8 +15,8 @@ export default function RoiCalculator() {
   const [period, setPeriod] = useState('12')
 
   const result = useMemo(() => {
-    const inv = parseFloat(investment.replace(/\s/g, '')) || 0
-    const ret = parseFloat(monthlyReturns.replace(/\s/g, '')) || 0
+    const inv = parseNumericInput(investment) || 0
+    const ret = parseNumericInput(monthlyReturns) || 0
     const p = parseInt(period) || 0
     if (inv <= 0 || ret <= 0 || p <= 0) return null
     return calculateROI(inv, ret, p)
@@ -30,8 +30,8 @@ export default function RoiCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
-          <div><Label>{t.investment}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={investment} onChange={(e) => setInvestment(e.target.value)} className="mt-1 text-lg" /></div>
-          <div><Label>{t.monthlyReturns}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={monthlyReturns} onChange={(e) => setMonthlyReturns(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.investment}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={investment} onChange={(e) => setInvestment(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.monthlyReturns}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={monthlyReturns} onChange={(e) => setMonthlyReturns(e.target.value)} className="mt-1" /></div>
           <div><Label>{t.period}</Label><Input type="number" value={period} onChange={(e) => setPeriod(e.target.value)} className="mt-1 w-24" min={1} max={120} /></div>
         </CardContent>
       </Card>

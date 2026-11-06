@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { calculateIncomeTax } from '@/lib/calculators/tax'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function IncomeTaxCalculator() {
   const locale = useLocale()
@@ -15,7 +15,7 @@ export default function IncomeTaxCalculator() {
   const [isITPark, setIsITPark] = useState(false)
 
   const result = useMemo(() => {
-    const val = parseFloat(income.replace(/\s/g, '')) || 0
+    const val = parseNumericInput(income) || 0
     if (val <= 0) return null
     return calculateIncomeTax(val, isITPark)
   }, [income, isITPark])
@@ -46,7 +46,7 @@ export default function IncomeTaxCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.income}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={income} onChange={(e) => setIncome(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={income} onChange={(e) => setIncome(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div className="flex items-center justify-between">
             <Label htmlFor="itpark" className="cursor-pointer">{t.itPark}</Label>

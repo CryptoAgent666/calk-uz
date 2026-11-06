@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { calculateLLCTax } from '@/lib/calculators/business'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function LlcCalculator() {
   const locale = useLocale()
@@ -17,9 +17,9 @@ export default function LlcCalculator() {
   const [isVatPayer, setIsVatPayer] = useState(true)
 
   const result = useMemo(() => {
-    const r = parseFloat(revenue.replace(/\s/g, '')) || 0
-    const e = parseFloat(expenses.replace(/\s/g, '')) || 0
-    const p = parseFloat(payroll.replace(/\s/g, '')) || 0
+    const r = parseNumericInput(revenue) || 0
+    const e = parseNumericInput(expenses) || 0
+    const p = parseNumericInput(payroll) || 0
     if (r <= 0) return null
     return calculateLLCTax(r, e, p, isVatPayer)
   }, [revenue, expenses, payroll, isVatPayer])
@@ -32,9 +32,9 @@ export default function LlcCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
-          <div><Label>{t.revenue}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" /></div>
-          <div><Label>{t.expenses}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={expenses} onChange={(e) => setExpenses(e.target.value)} className="mt-1" /></div>
-          <div><Label>{t.payroll}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={payroll} onChange={(e) => setPayroll(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.revenue}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.expenses}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={expenses} onChange={(e) => setExpenses(e.target.value)} className="mt-1" /></div>
+          <div><Label>{t.payroll}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={payroll} onChange={(e) => setPayroll(e.target.value)} className="mt-1" /></div>
           <div className="flex items-center justify-between"><Label htmlFor="vat" className="cursor-pointer">{t.vatPayer}</Label><Switch id="vat" checked={isVatPayer} onCheckedChange={setIsVatPayer} /></div>
         </CardContent>
       </Card>

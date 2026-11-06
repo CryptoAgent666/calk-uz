@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl'
 import { Card, CardContent } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { formatNumber } from '@/lib/utils'
+import { formatNumber, parseNumericInput, formatMoney } from '@/lib/utils'
 import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
 import { FX_FALLBACK_UZS } from '@/lib/constants/fx'
 
@@ -42,7 +42,7 @@ export default function CurrencyConverterCalculator() {
   const currencyCodes = useMemo(() => Object.keys(ratesMap), [ratesMap])
 
   const result = useMemo(() => {
-    const a = parseFloat(amount.replace(/\s/g, '')) || 0
+    const a = parseNumericInput(amount) || 0
     if (a <= 0) return null
     const entry = ratesMap[currency]
     if (!entry) return null
@@ -83,7 +83,7 @@ export default function CurrencyConverterCalculator() {
             <Label>{t.amount}</Label>
             <Input
               type="text"
-              inputMode="numeric"
+              inputMode="decimal"
               placeholder={t.placeholder}
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
@@ -99,7 +99,7 @@ export default function CurrencyConverterCalculator() {
             >
               {currencyCodes.map((c) => (
                 <option key={c} value={c}>
-                  {c} — {formatNumber(Math.round(ratesMap[c].rate), locale)} UZS
+                  {c} — {formatMoney(ratesMap[c].rate, locale)} UZS
                 </option>
               ))}
             </select>
@@ -126,7 +126,7 @@ export default function CurrencyConverterCalculator() {
               {amount} {currency} =
             </p>
             <p className="text-2xl font-bold text-primary mt-2">
-              {formatNumber(Math.round(result.uzsAmount), locale)} UZS
+              {formatMoney(result.uzsAmount, locale)} UZS
             </p>
             <p className="text-sm text-muted-foreground mt-2">
               {t.rate}: 1 {currency} = {formatNumber(result.rate, locale)} UZS

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateSeverance } from '@/lib/calculators/social'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function SeveranceCalculator() {
   const locale = useLocale()
@@ -15,7 +15,7 @@ export default function SeveranceCalculator() {
   const [unusedDays, setUnusedDays] = useState('0')
 
   const result = useMemo(() => {
-    const sal = parseFloat(avgSalary.replace(/\s/g, '')) || 0
+    const sal = parseNumericInput(avgSalary) || 0
     const m = parseInt(months) || 0
     const d = parseInt(unusedDays) || 0
     if (sal <= 0) return null
@@ -50,7 +50,7 @@ export default function SeveranceCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.avgSalary}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={avgSalary} onChange={(e) => setAvgSalary(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={avgSalary} onChange={(e) => setAvgSalary(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.months}</Label>

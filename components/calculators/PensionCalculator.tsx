@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { Badge } from '@/components/ui/badge'
 import { calculatePension } from '@/lib/calculators/social'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function PensionCalculator() {
   const locale = useLocale()
@@ -19,7 +19,7 @@ export default function PensionCalculator() {
 
   const result = useMemo(() => {
     const a = parseInt(age) || 0
-    const sal = parseFloat(salary.replace(/\s/g, '')) || 0
+    const sal = parseNumericInput(salary) || 0
     const exp = parseInt(experience) || 0
     if (a <= 0 || sal <= 0) return null
     return calculatePension(a, isMale, sal, exp)
@@ -71,7 +71,7 @@ export default function PensionCalculator() {
           </div>
           <div>
             <Label>{t.salary}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={salary} onChange={(e) => setSalary(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={salary} onChange={(e) => setSalary(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.experience}</Label>

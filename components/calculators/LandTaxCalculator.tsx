@@ -9,12 +9,12 @@ import { Switch } from '@/components/ui/switch'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { calculateLandTax, getLandTaxZone, type LandPayer } from '@/lib/calculators/tax'
 import { LAND_TAX_COEFFICIENT_RANGE, LAND_TAX_ZONES_2026 } from '@/lib/constants/tax-rates'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 type AreaUnit = 'm2' | 'sotka' | 'ha'
 const M2_IN: Record<AreaUnit, number> = { m2: 1, sotka: 100, ha: 10_000 }
 
-const parse = (value: string) => parseFloat(value.replace(/\s/g, '').replace(',', '.'))
+const parse = (value: string) => parseNumericInput(value)
 const fmt = (value: number) => value.toLocaleString('ru-RU', { maximumFractionDigits: 2 })
 
 function OptionSelect<T extends string>({
@@ -191,7 +191,7 @@ export default function LandTaxCalculator() {
           {isAgricultural ? (
             <div>
               <Label htmlFor="land-normative">{t.normativeValue}</Label>
-              <Input id="land-normative" type="text" inputMode="numeric" placeholder={t.placeholder} value={normativeValue} onChange={(e) => setNormativeValue(e.target.value)} className="mt-1 text-lg" />
+              <Input id="land-normative" type="text" inputMode="decimal" placeholder={t.placeholder} value={normativeValue} onChange={(e) => setNormativeValue(e.target.value)} className="mt-1 text-lg" />
             </div>
           ) : (
             <>

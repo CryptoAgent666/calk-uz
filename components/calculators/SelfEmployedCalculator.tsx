@@ -6,14 +6,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateSelfEmployedTax } from '@/lib/calculators/tax'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function SelfEmployedCalculator() {
   const locale = useLocale()
   const [revenue, setRevenue] = useState('')
 
   const result = useMemo(() => {
-    const val = parseFloat(revenue.replace(/\s/g, '')) || 0
+    const val = parseNumericInput(revenue) || 0
     if (val <= 0) return null
     return calculateSelfEmployedTax(val)
   }, [revenue])
@@ -44,7 +44,7 @@ export default function SelfEmployedCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.revenue}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={revenue} onChange={(e) => setRevenue(e.target.value)} className="mt-1 text-lg" />
           </div>
         </CardContent>
       </Card>

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateKurban } from '@/lib/calculators/religion'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function KurbanCalculator() {
   const locale = useLocale()
@@ -15,7 +15,7 @@ export default function KurbanCalculator() {
   const [shares, setShares] = useState('1')
 
   const result = useMemo(() => {
-    const p = parseFloat(price.replace(/\s/g, '')) || 0
+    const p = parseNumericInput(price) || 0
     const s = parseInt(shares) || 1
     if (p <= 0) return null
     return calculateKurban(animalType, p, s)
@@ -32,7 +32,7 @@ export default function KurbanCalculator() {
       <Card>
         <CardContent className="pt-6 space-y-4">
           <div><Label>{t.type}</Label><select value={animalType} onChange={(e) => setAnimalType(e.target.value as typeof animalType)} className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">{Object.entries(animalOptions).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select></div>
-          <div><Label>{t.price}</Label><Input type="text" inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.price}</Label><Input type="text" inputMode="decimal" value={price} onChange={(e) => setPrice(e.target.value)} className="mt-1 text-lg" /></div>
           {(animalType === 'cow' || animalType === 'camel') && (
             <div><Label>{t.shares}</Label><Input type="number" value={shares} onChange={(e) => setShares(e.target.value)} className="mt-1" min={1} max={7} /></div>
           )}

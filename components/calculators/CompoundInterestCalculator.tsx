@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function CompoundInterestCalculator() {
   const locale = useLocale()
@@ -16,7 +16,7 @@ export default function CompoundInterestCalculator() {
   const [compoundsPerYear, setCompoundsPerYear] = useState('12')
 
   const result = useMemo(() => {
-    const p = parseFloat(principal.replace(/\s/g, '')) || 0
+    const p = parseNumericInput(principal) || 0
     const r = parseFloat(rate) || 0
     const y = parseInt(years) || 0
     const n = parseInt(compoundsPerYear) || 12
@@ -54,7 +54,7 @@ export default function CompoundInterestCalculator() {
         <CardContent className="pt-6 space-y-5">
           <div>
             <Label>{t.principal}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={principal} onChange={(e) => setPrincipal(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={principal} onChange={(e) => setPrincipal(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <div className="flex justify-between mb-2">

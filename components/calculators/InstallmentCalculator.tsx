@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { calculateCredit } from '@/lib/calculators/credit'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function InstallmentCalculator() {
   const locale = useLocale()
@@ -16,7 +16,7 @@ export default function InstallmentCalculator() {
   const [term, setTerm] = useState('12')
 
   const result = useMemo(() => {
-    const p = parseFloat(price.replace(/\s/g, '')) || 0
+    const p = parseNumericInput(price) || 0
     const r = parseFloat(rate) || 0
     const t = parseInt(term) || 0
     if (p <= 0 || t <= 0) return null
@@ -49,7 +49,7 @@ export default function InstallmentCalculator() {
         <CardContent className="pt-6 space-y-5">
           <div>
             <Label>{t.price}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={price} onChange={(e) => setPrice(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={price} onChange={(e) => setPrice(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <div className="flex justify-between mb-2">

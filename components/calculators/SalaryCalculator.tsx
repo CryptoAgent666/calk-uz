@@ -9,7 +9,7 @@ import { Switch } from '@/components/ui/switch'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { calculateSalaryGrossToNet, calculateSalaryNetToGross, type SalaryResult } from '@/lib/calculators/salary'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function SalaryCalculator() {
   const locale = useLocale()
@@ -20,7 +20,7 @@ export default function SalaryCalculator() {
   const [result, setResult] = useState<SalaryResult | null>(null)
 
   useEffect(() => {
-    const value = parseFloat(amount.replace(/\s/g, '')) || 0
+    const value = parseNumericInput(amount) || 0
     if (value <= 0) { setResult(null); return }
 
     if (mode === 'gross-to-net') {
@@ -82,7 +82,7 @@ export default function SalaryCalculator() {
             <Input
               id="amount"
               type="text"
-              inputMode="numeric"
+              inputMode="decimal"
               placeholder={t.placeholder}
               value={amount}
               onChange={(e) => setAmount(e.target.value)}

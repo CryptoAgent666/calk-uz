@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import { calculateVatThreshold } from '@/lib/calculators/vat'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function VatThresholdCalculator() {
   const locale = useLocale()
@@ -15,7 +15,7 @@ export default function VatThresholdCalculator() {
   const [months, setMonths] = useState('12')
 
   const result = useMemo(() => {
-    const rev = parseFloat(monthlyRevenue.replace(/\s/g, '')) || 0
+    const rev = parseNumericInput(monthlyRevenue) || 0
     const m = parseInt(months) || 12
     if (rev <= 0) return null
     const turnovers = Array(m).fill(rev)
@@ -56,7 +56,7 @@ export default function VatThresholdCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.monthlyRevenue}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={monthlyRevenue} onChange={(e) => setMonthlyRevenue(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={monthlyRevenue} onChange={(e) => setMonthlyRevenue(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.months}</Label>

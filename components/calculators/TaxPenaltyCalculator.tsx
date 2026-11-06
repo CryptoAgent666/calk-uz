@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateTaxPenalty } from '@/lib/calculators/tax'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function TaxPenaltyCalculator() {
   const locale = useLocale()
@@ -14,7 +14,7 @@ export default function TaxPenaltyCalculator() {
   const [days, setDays] = useState('')
 
   const result = useMemo(() => {
-    const d = parseFloat(debt.replace(/\s/g, '')) || 0
+    const d = parseNumericInput(debt) || 0
     const dys = parseInt(days) || 0
     if (d <= 0 || dys <= 0) return null
     return calculateTaxPenalty(d, dys)
@@ -48,7 +48,7 @@ export default function TaxPenaltyCalculator() {
         <CardContent className="pt-6 space-y-4">
           <div>
             <Label>{t.debt}</Label>
-            <Input type="text" inputMode="numeric" placeholder={t.placeholder} value={debt} onChange={(e) => setDebt(e.target.value)} className="mt-1 text-lg" />
+            <Input type="text" inputMode="decimal" placeholder={t.placeholder} value={debt} onChange={(e) => setDebt(e.target.value)} className="mt-1 text-lg" />
           </div>
           <div>
             <Label>{t.days}</Label>

@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateVisaCost, visaFeeCurrency } from '@/lib/calculators/unique'
 import { FX_FALLBACK_UZS } from '@/lib/constants/fx'
-import { formatCurrency, formatNumber } from '@/lib/utils'
+import { formatCurrency, formatMoney } from '@/lib/utils'
 import { useCurrencyRates } from '@/lib/hooks/useCurrencyRates'
 
 export default function VisaCostCalculator() {
@@ -90,7 +90,7 @@ export default function VisaCostCalculator() {
 
           {/* Current exchange rate display */}
           <div className="text-sm text-muted-foreground">
-            {t.exchangeRate}: 1 {feeCurrency} = {formatNumber(Math.round(feeRate), locale)} UZS
+            {t.exchangeRate}: 1 {feeCurrency} = {formatMoney(feeRate, locale)} UZS
           </div>
 
           {/* Status indicator */}

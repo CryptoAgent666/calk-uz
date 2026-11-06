@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { calculateMargin } from '@/lib/calculators/business'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, parseNumericInput } from '@/lib/utils'
 
 export default function MarginCalculator() {
   const locale = useLocale()
@@ -14,8 +14,8 @@ export default function MarginCalculator() {
   const [sellingPrice, setSellingPrice] = useState('')
 
   const result = useMemo(() => {
-    const cost = parseFloat(costPrice.replace(/\s/g, '')) || 0
-    const sell = parseFloat(sellingPrice.replace(/\s/g, '')) || 0
+    const cost = parseNumericInput(costPrice) || 0
+    const sell = parseNumericInput(sellingPrice) || 0
     if (cost <= 0 || sell <= 0) return null
     return calculateMargin(cost, sell)
   }, [costPrice, sellingPrice])
@@ -28,8 +28,8 @@ export default function MarginCalculator() {
     <div className="space-y-6">
       <Card>
         <CardContent className="pt-6 space-y-4">
-          <div><Label>{t.costPrice}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={costPrice} onChange={(e) => setCostPrice(e.target.value)} className="mt-1 text-lg" /></div>
-          <div><Label>{t.sellingPrice}</Label><Input type="text" inputMode="numeric" placeholder={t.placeholder} value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.costPrice}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={costPrice} onChange={(e) => setCostPrice(e.target.value)} className="mt-1 text-lg" /></div>
+          <div><Label>{t.sellingPrice}</Label><Input type="text" inputMode="decimal" placeholder={t.placeholder} value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)} className="mt-1 text-lg" /></div>
         </CardContent>
       </Card>
       {result && (

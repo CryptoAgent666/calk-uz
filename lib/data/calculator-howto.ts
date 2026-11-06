@@ -763,12 +763,14 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
       { name: 'Укажите коммунальные и депозит', text: 'Коммунальные за месяц и размер депозита в месячных платах.' },
       { name: 'Укажите срок аренды', text: 'Введите количество месяцев.' },
       { name: 'Получите расчёт', text: 'Результат появится сразу: платёж в месяц, депозит и итог за весь период.' },
+      { name: 'Сравните с покупкой', text: 'Укажите цену квартиры, условия ипотеки и ставку вклада: калькулятор покажет, что выгоднее за выбранный срок.' },
     ],
     stepsUz: [
       { name: 'Oylik ijarani kiriting', text: 'Oylik ijara haqini so\'mda ko\'rsating.' },
       { name: 'Kommunal va depozitni ko\'rsating', text: 'Oylik kommunal to\'lov va depozit hajmi (oylar hisobida).' },
       { name: 'Ijara muddatini ko\'rsating', text: 'Oylar sonini kiriting.' },
       { name: 'Hisobni oling', text: 'Natija darhol chiqadi: oylik to\'lov, depozit va butun davr uchun jami.' },
+      { name: 'Sotib olish bilan solishtiring', text: 'Kvartira narxi, ipoteka shartlari va omonat stavkasini ko\'rsating: kalkulyator tanlangan muddatda nima foydaliroq ekanini ko\'rsatadi.' },
     ],
   },
   {
