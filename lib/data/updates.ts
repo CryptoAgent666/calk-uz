@@ -28,9 +28,9 @@ export const UPDATES: UpdateBlock[] = [
         titleRu: "Тийины в расчётах",
         titleUz: "Hisob-kitoblarda tiyinlar",
         descRu:
-          "Над калькулятором появился переключатель «Показывать тийины»: суммы выводятся с двумя знаками после запятой, выбор запоминается. В поля можно вводить суммы с тийинами через запятую или точку, например 1 500 000,50; раньше часть после запятой отбрасывалась.",
+          "Над калькулятором появился переключатель «Показывать тийины»: суммы выводятся с двумя знаками после запятой, выбор запоминается. В поля можно вводить суммы с тийинами через запятую или точку, например 1 500 000,50: тогда тийины появятся в результате сами. Раньше часть после запятой отбрасывалась.",
         descUz:
-          "Kalkulyator ustida «Tiyinlarni ko'rsatish» tugmasi paydo bo'ldi: summalar verguldan keyin ikki xona bilan chiqadi, tanlov eslab qolinadi. Maydonlarga tiyinli summani vergul yoki nuqta bilan kiritish mumkin, masalan 1 500 000,50; ilgari verguldan keyingi qism tashlab yuborilardi.",
+          "Kalkulyator ustida «Tiyinlarni ko'rsatish» tugmasi paydo bo'ldi: summalar verguldan keyin ikki xona bilan chiqadi, tanlov eslab qolinadi. Maydonlarga tiyinli summani vergul yoki nuqta bilan kiritish mumkin, masalan 1 500 000,50: shunda tiyinlar natijada o'zi chiqadi. Ilgari verguldan keyingi qism tashlab yuborilardi.",
       },
       {
         titleRu: "Аренда или покупка: появилось сравнение",

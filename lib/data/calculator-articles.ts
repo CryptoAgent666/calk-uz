@@ -446,7 +446,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'osago',
-    lastUpdated: '2026-09-13',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'ПКМ № 141 о мерах по реализации закона об ОСАГО', url: 'https://lex.uz/ru/docs/1366341' },
       { name: 'КоАО РУз, ст. 135 и 135-1 (ред. ЗРУ-1116 от 04.02.2026)', url: 'https://lex.uz/ru/docs/97661' },
@@ -594,7 +594,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'utilities-total',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'Постановление Кабмина № 243 от 15.05.2026 (газ, электроэнергия)', url: 'https://lex.uz/ru/docs/8195731' },
     ],
@@ -630,7 +630,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'apartment-cost',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'Закон о государственной пошлине ЗРУ-600', url: 'https://lex.uz/ru/docs/4680955' },
     ],
@@ -653,14 +653,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Какой район Ташкента самый дорогой?', answer: 'Мирабадский район (13-16 млн сум/м²) и Мирзо-Улугбекский (12-15 млн). Самые доступные: Сергели и Бектемир (7-10 млн).' },
       { question: 'Сколько стоит квадратный метр жилья в регионах?', answer: 'Самарканд: 5-8 млн, Бухара: 4-7 млн, Наманган: 3-6 млн, Андижан/Нукус: 3-5 млн сум/м².' },
       { question: 'Какие дополнительные расходы при покупке квартиры?', answer: 'Нотариус — фикс. 1 БРВ (440 000 сум), госпошлина за регистрацию — 1,25-3 БРВ по площади (до 100 м² — 1,25 БРВ), оценка (до 500 000 сум), риелтор (1-2%). Суммарно: 1-3% от стоимости.' },
-      { question: 'Выгоднее покупать новостройку или вторичку?', answer: 'Новостройки дороже на 20-30%, но не требуют ремонта. Вторичка дешевле, но может потребовать вложений в ремонт (3-8 млн/м²).' },
+      { question: 'Выгоднее покупать новостройку или вторичку?', answer: 'Новостройки дороже на 20-30% и часто продаются без ремонта или с черновой отделкой, его стоимость стоит заложить сразу. Вторичка дешевле, но тоже может потребовать вложений в ремонт (3-8 млн/м²).' },
     ],
     faqUz: [
       { question: "Toshkentda kvartira qancha turadi?", answer: "2 xonali (60 m²): tumanga qarab 480-900 mln so'm. Yunusobod: ~720 mln, Sergeli: ~480 mln, Mirobod: ~900 mln." },
       { question: "Toshkentning qaysi tumani eng qimmat?", answer: "Mirobod tumani (13-16 mln so'm/m²) va Mirzo Ulug'bek (12-15 mln). Eng qulay: Sergeli va Bektemir (7-10 mln)." },
       { question: "Hududlarda uy-joy kvadrat metri qancha turadi?", answer: "Samarqand: 5-8 mln, Buxoro: 4-7 mln, Namangan: 3-6 mln, Andijon/Nukus: 3-5 mln so'm/m²." },
       { question: "Kvartira sotib olishda qo'shimcha xarajatlar qanday?", answer: "Notarius — belgilangan 1 BHK (440 000 so'm), ro'yxatdan o'tish boji — maydon bo'yicha 1,25-3 BHK (100 m² gacha — 1,25 BHK), baholash (500 000 so'mgacha), rieltor (1-2%). Jami: qiymatning 1-3%." },
-      { question: "Yangi qurilish yoki ikkilamchi uy sotib olish foydaliroqmi?", answer: "Yangi qurilishlar 20-30% ga qimmatroq, lekin ta'mir talab qilmaydi. Ikkilamchi arzonroq, lekin ta'mirga sarmoya kerak bo'lishi mumkin." },
+      { question: "Yangi qurilish yoki ikkilamchi uy sotib olish foydaliroqmi?", answer: "Yangi qurilishlar 20-30% ga qimmatroq va ko'pincha ta'mirsiz yoki qora pardoz bilan sotiladi, ta'mir xarajatini darhol hisobga oling. Ikkilamchi arzonroq, lekin unga ham ta'mir kerak bo'lishi mumkin." },
     ],
   },
 
@@ -2456,23 +2456,23 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'kurban',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [{ name: 'Управление мусульман Узбекистана', url: 'https://muslim.uz' }],
         paragraphsRu: [
       'Калькулятор курбана помогает рассчитать стоимость жертвоприношения на праздник Ид аль-Адха (Курбан хайит) — один из главных религиозных праздников в Узбекистане. По данным Управления мусульман Узбекистана, ежегодно миллионы семей совершают обряд курбан. Калькулятор учитывает вид животного (баран, бык, корова), текущие рыночные цены и количество долей, позволяя заранее спланировать бюджет на праздник.',
-      'Стоимость жертвенных животных в 2026 году в Узбекистане: баран — от 3 000 000 до 6 000 000 сум в зависимости от породы и веса; бык или корова — от 18 000 000 до 35 000 000 сум. Крупный рогатый скот делится на 7 долей (улушей), поэтому стоимость одной доли быка составляет 2 500 000–5 000 000 сум — сопоставимо с ценой одного барана. Цены варьируются по регионам: в Ферганской долине и Сурхандарье обычно ниже, чем в Ташкенте.',
+      'Стоимость жертвенных животных в 2026 году в Узбекистане: баран — от 3 000 000 до 6 000 000 сум в зависимости от породы и веса; бык или корова — от 18 000 000 до 35 000 000 сум. Крупный рогатый скот делится на 7 долей (улушей), поэтому стоимость одной доли быка составляет 2 600 000–5 000 000 сум — сопоставимо с ценой одного барана. Цены варьируются по регионам: в Ферганской долине и Сурхандарье обычно ниже, чем в Ташкенте.',
       'Шариат предъявляет чёткие требования к животному для курбана. Баран (овца) должен быть не младше 6 месяцев и выглядеть годовалым, козёл — от 1 года, бык и корова — от 2 лет, верблюд — от 5 лет. Животное должно быть здоровым, упитанным, без серьёзных дефектов: хромоты, слепоты на один или оба глаза, сломанных рогов с повреждением корня, болезней. Жертвоприношение совершается с 10 по 12 зуль-хиджа.',
       'Мясо курбана по сунне распределяется на три равные части: одна треть остаётся семье, одна треть раздаётся родственникам и соседям, одна треть передаётся нуждающимся (факирам и мискинам). В Узбекистане распространена традиция совместного приготовления курбанного мяса на махаллинских сходах, где блюда из жертвенного мяса (шурпа, плов) раздаются всем жителям махалли.',
       'Обряд курбана обязателен (ваджиб по ханафитскому мазхабу) для совершеннолетнего мусульманина, чьё имущество превышает нисаб — эквивалент 85 граммов золота или 595 граммов серебра. Наш калькулятор рассчитает стоимость курбана и долю при совместной покупке коровы или верблюда, например на 7 семей, а также примерный выход мяса.',
     ],
     paragraphsUz: [
       "Qurbon kalkulyatori Iyd al-Adho (Qurbon hayiti) — O'zbekistondagi eng muhim diniy bayramlardan biri uchun qurbonlik narxini hisoblashga yordam beradi. O'zbekiston musulmonlari boshqarmasi ma'lumotlariga ko'ra, har yili millionlab oilalar qurbon marosimini bajaradi. Kalkulyator hayvon turini (qo'y, buqa, sigir), joriy bozor narxlarini va ulushlar sonini hisobga olib, bayramga byudjetni oldindan rejalashtirish imkonini beradi.",
-      "2026-yilda O'zbekistonda qurbonlik hayvonlarining narxi: qo'y — zoti va vazniga qarab 3 000 000 dan 6 000 000 so'mgacha; buqa yoki sigir — 18 000 000 dan 35 000 000 so'mgacha. Yirik shoxli mol 7 ta ulushga bo'linadi, shuning uchun buqaning bir ulushi 2 500 000–5 000 000 so'm — bitta qo'y narxiga teng. Narxlar hududlarga qarab farq qiladi: Farg'ona vodiysi va Surxondaryoda odatda Toshkentga qaraganda arzonroq.",
+      "2026-yilda O'zbekistonda qurbonlik hayvonlarining narxi: qo'y — zoti va vazniga qarab 3 000 000 dan 6 000 000 so'mgacha; buqa yoki sigir — 18 000 000 dan 35 000 000 so'mgacha. Yirik shoxli mol 7 ta ulushga bo'linadi, shuning uchun buqaning bir ulushi 2 600 000–5 000 000 so'm — bitta qo'y narxiga teng. Narxlar hududlarga qarab farq qiladi: Farg'ona vodiysi va Surxondaryoda odatda Toshkentga qaraganda arzonroq.",
       "Shariat qurbonlik hayvoniga aniq talablar qo'yadi. Qo'y (sovliq) kamida 6 oylik va bir yoshdek ko'rinishi kerak, echki — 1 yoshdan, buqa va sigir — 2 yoshdan, tuya — 5 yoshdan. Hayvon sog'lom, semiz, jiddiy nuqsonlarsiz bo'lishi shart: oqsoqlik, bir yoki ikkala ko'zdan ko'rlik, ildizi shikastlangan singan shoxlar, kasalliklar bo'lmasligi kerak. Qurbonlik 10-dan 12-zulhijjagacha bajariladi.",
       "Qurbon go'shti sunnatga ko'ra uchta teng qismga taqsimlanadi: uchdan bir qismi oilaga qoladi, uchdan bir qismi qarindosh va qo'shnilarga ulashiladi, uchdan bir qismi muhtojlarga (faqir va miskinlarga) beriladi. O'zbekistonda qurbon go'shtini mahalla yig'inlarida birgalikda tayyorlash an'anasi keng tarqalgan — qurbonlik go'shtidan taomlar (sho'rva, palov) mahalla aholisiga tarqatiladi.",
       "Qurbon marosimi hanafiy mazhabiga ko'ra balog'atga yetgan, mol-mulki nisob — 85 gramm oltin yoki 595 gramm kumush ekvivalentidan ortiq bo'lgan musulmonga vojib hisoblanadi. Bizning kalkulyatorimiz qurbon narxini va sigir yoki tuyani birgalikda sotib olishdagi ulushni, masalan 7 oila uchun, hamda taxminiy go'sht miqdorini hisoblaydi.",
     ],
-    faqRu: [{ question: 'Сколько стоит курбан в 2025–2026?', answer: 'Баран: 3-6 млн сум. Бык: 18-35 млн (7 долей, 2,5-5 млн за долю).' }, { question: 'Кто обязан резать курбан?', answer: 'Совершеннолетний мусульманин, обладающий нисабом (имущество > 85 г золота).' }, { question: 'Как делится мясо?', answer: '1/3 семье, 1/3 родным/соседям, 1/3 нуждающимся.' }],
+    faqRu: [{ question: 'Сколько стоит курбан в 2026 году?', answer: 'Баран: 3-6 млн сум. Бык: 18-35 млн (7 долей, ~2,6-5 млн за долю).' }, { question: 'Кто обязан резать курбан?', answer: 'Совершеннолетний мусульманин, обладающий нисабом (имущество > 85 г золота).' }, { question: 'Как делится мясо?', answer: '1/3 семье, 1/3 родным/соседям, 1/3 нуждающимся.' }],
     faqUz: [{ question: "2026-yilda qurbon qancha turadi?", answer: "Qo'y: 3-6 mln so'm. Buqa: 18-35 mln (7 ulush, ulushiga ~2,6-5 mln)." }, { question: "Qurbon qilish kimga vojib?", answer: "Nisobga (85 g oltindan ortiq mol-mulk) ega balog'atga yetgan musulmon." }, { question: "Go'sht qanday taqsimlanadi?", answer: "1/3 oilaga, 1/3 qarindosh/qo'shnilarga, 1/3 muhtojlarga." }],
   },
 

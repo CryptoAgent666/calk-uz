@@ -1,6 +1,6 @@
 'use client'
 
-import { useSyncExternalStore } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import { Calculator } from 'lucide-react'
 import { CALCULATOR_COMPONENTS } from '@/lib/data/calculator-components'
 import { Switch } from '@/components/ui/switch'
@@ -65,10 +65,16 @@ const serverSnapshot = () => false
  * Если тийины были включены до открытия страницы, калькулятор при этом монтируется заново через
  * `key`: его серверная разметка могла ещё не гидрироваться. Переключение руками `key` не меняет,
  * поэтому введённые значения остаются.
+ *
+ * Если в поле суммы ввели тийины («125544,33»), они показываются и в результате, без
+ * переключателя: так ожидают бухгалтеры. Это действует до ухода со страницы и не сохраняется,
+ * а если тийины выключить руками, автоматически они больше не включатся.
  */
 export function CalculatorMount({ slug, locale }: { slug: string; locale: string }) {
-  const showTiyin = useSyncExternalStore(subscribe, readStoredTiyin, serverSnapshot)
+  const storedTiyin = useSyncExternalStore(subscribe, readStoredTiyin, serverSnapshot)
   const remount = useSyncExternalStore(subscribeNever, readStoredAtLoad, serverSnapshot)
+  const [typedTiyin, setTypedTiyin] = useState<'none' | 'on' | 'dismissed'>('none')
+  const showTiyin = storedTiyin || typedTiyin === 'on'
 
   const Component = CALCULATOR_COMPONENTS[slug]
   if (!Component) {
@@ -87,10 +93,31 @@ export function CalculatorMount({ slug, locale }: { slug: string; locale: string
       {!NO_MONEY.has(slug) && (
         <label className="mb-4 flex items-center justify-end gap-2 text-sm text-muted-foreground cursor-pointer select-none">
           {locale === 'uz' ? "Tiyinlarni ko'rsatish" : 'Показывать тийины'}
-          <Switch checked={showTiyin} onCheckedChange={(checked) => storeTiyin(checked)} />
+          <Switch
+            checked={showTiyin}
+            onCheckedChange={(checked) => {
+              storeTiyin(checked)
+              if (!checked) setTypedTiyin('dismissed')
+            }}
+          />
         </label>
       )}
-      <Component key={remount ? 'tiyin' : 'plain'} />
+      <div
+        onInputCapture={(event) => {
+          const target = event.target
+          if (
+            typedTiyin === 'none' && !showTiyin &&
+            target instanceof HTMLInputElement && target.inputMode === 'decimal' &&
+            /[.,]\d/.test(target.value)
+          ) {
+            // Не в том же событии: иначе контролируемое поле откатывает символ,
+            // на котором тийины включились («125544,3» → «125544,»)
+            window.setTimeout(() => setTypedTiyin((state) => (state === 'none' ? 'on' : state)), 0)
+          }
+        }}
+      >
+        <Component key={remount ? 'tiyin' : 'plain'} />
+      </div>
     </>
   )
 }

@@ -104,12 +104,12 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Hisoblagichlar yo'q bo'lsa, kommunal qanday hisoblanadi?",
         answer:
-          "Hisoblagich bo'lmagan xonadonlar uchun me'yor bo'yicha hisob ishlatiladi: bir kishiga belgilangan miqdor (suv, gaz, elektr). Tariflar Vazirlar Mahkamasi qarorlari bilan tasdiqlanadi va tashkilotlar veb-saytlarida e'lon qilinadi.",
+          "Hisoblagich bo'lmagan xonadonlar uchun me'yor bo'yicha hisob ishlatiladi: bir kishiga belgilangan miqdor (suv, gaz, elektr). Elektr va gaz tariflarini Vazirlar Mahkamasi, suv va chiqindi olib chiqish tariflarini viloyat kengashlari tasdiqlaydi; ular tashkilotlar veb-saytlarida e'lon qilinadi.",
       },
       {
         question: "Mahallada elektr o'chsa, hisob qaytariladimi?",
         answer:
-          "Yo'q, avtomatik qayta hisob amalga oshmaydi. Lekin uzilish 24 soatdan oshsa, «Hududiy elektr tarmoqlari» ga ariza yozsangiz, qisman kompensatsiya yoki hisobni qayta ko'rib chiqishni so'rashingiz mumkin.",
+          "Hisoblagich bo'yicha hisoblanganda faqat haqiqatda sarflangan energiya uchun to'laysiz, shuning uchun uzilish vaqtida hisob o'smaydi. Uzoq uzilish bo'yicha «Hududiy elektr tarmoqlari» ga ariza yozish mumkin, lekin kompensatsiya avtomatik emas.",
       },
     ],
   },
@@ -119,7 +119,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "OSAGOni qaysi sug'urta kompaniyalaridan xarid qilish mumkin?",
         answer:
-          "O'zbekistondagi yetakchi sug'urtachilar: Kafolat, Uzagrosugurta, Alskom, Apex Insurance, Gross Insurance, Inson, Trust Insurance. Stavkalar O'zbekiston Respublikasi Moliya vazirligi tomonidan tasdiqlangan va bir xil — farq xizmat sifatida.",
+          "O'zbekistondagi yetakchi sug'urtachilar: Kafolat, Uzagrosugurta, Alskom, Apex Insurance, Gross Insurance, Inson, Trust Insurance. Tariflarni Vazirlar Mahkamasi tasdiqlagan (VMQ-458) va ular barcha sug'urtachilarda bir xil — farq xizmat sifatida.",
       },
       {
         question: "OSAGO yo'q haydovchi jarima qancha?",
