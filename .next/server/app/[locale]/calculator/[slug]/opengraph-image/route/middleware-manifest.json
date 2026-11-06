@@ -1,0 +1,56 @@
+{
+  "sorted_middleware": [
+    "/[locale]/calculator/[slug]/opengraph-image/route"
+  ],
+  "middleware": {},
+  "instrumentation": null,
+  "functions": {
+    "/[locale]/calculator/[slug]/opengraph-image/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/[locale]/calculator/[slug]/opengraph-image/route_client-reference-manifest.js",
+        "server/edge/chunks/0zjb_server_app_[locale]_calculator_[slug]_opengraph-image_route_actions_0q4c_id.js",
+        "server/edge/chunks/[root-of-the-server]__0no05sm._.js",
+        "server/edge/chunks/node_modules_next_dist_esm_build_templates_edge-app-route_13~tm_n.js",
+        "server/edge/chunks/node_modules_next_dist_13bv687._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_11csqje._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0iw51r~.js"
+      ],
+      "name": "app/[locale]/calculator/[slug]/opengraph-image/route",
+      "page": "/[locale]/calculator/[slug]/opengraph-image/route",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0iw51r~.js",
+      "matchers": [
+        {
+          "regexp": "^/(?P<nxtPlocale>[^/]+?)/calculator/(?P<nxtPslug>[^/]+?)/opengraph-image(?:/)?$",
+          "originalSource": "/[locale]/calculator/[slug]/opengraph-image"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_10a187050363648b49a36c79d5266d2c",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_yoga_0656eb_.wasm"
+        },
+        {
+          "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_resvg_0656eb_.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf",
+          "filePath": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "FUZAMlDQz4mgj1OfR801R",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "mkmgpKAcf49hSHjDJY1ePU9RTBXj9q0iVamiP1d16lk=",
+        "__NEXT_PREVIEW_MODE_ID": "6742a7088cc687c5b33c81d3cd07578b",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "b5f8a82ed545d43c0d81c82548fb96d2c901f3e5d58196359bd2ad5ee02108cd",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "01abc4cfcfbe8f90c9ff5ab38ed251eefa427b4488acfe49bb4db9cd439ed1c0"
+      }
+    }
+  }
+}

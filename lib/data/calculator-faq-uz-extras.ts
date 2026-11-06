@@ -1,0 +1,200 @@
+/**
+ * Additional Uzbek-locale-only FAQ items that go beyond a 1:1 translation
+ * of the Russian FAQ. These capture culturally and contextually specific
+ * questions (e.g. references to local institutions, mahalla, OTM, qishloq
+ * realities) so the UZ pages don't read like machine translation.
+ *
+ * Rendered after the main faqUz list on calculator pages.
+ */
+
+export interface UzExtraFaqItem {
+  question: string
+  answer: string
+}
+
+export interface UzExtraFaq {
+  slug: string
+  items: UzExtraFaqItem[]
+}
+
+const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
+  {
+    slug: 'income-tax',
+    items: [
+      {
+        question: "Ish haqim mahalla orqali to'lansa, JShShS qanday ushlanadi?",
+        answer:
+          "Mahalla orqali rasmiy ish haqi to'lanadigan bo'lsa (masalan, ijtimoiy ish o'rinlari), to'lovchi tashkilot soliq agenti sifatida ishlaydi va 12% JShShSni o'zi ushlab qoladi. Sizning xatti-harakatingiz talab qilinmaydi.",
+      },
+      {
+        question: "Frilanser bo'lsam, daromad solig'ini qanday to'layman?",
+        answer:
+          "2026-yildan boshlab samozanyat (o'z-o'zini band qilgan) shaxs sifatida ro'yxatdan o'tib, aylanmadan 1% stavkada soliq to'lashingiz mumkin — bu YaTTga o'tishdan ko'ra arzon. Ro'yxatdan o'tish my.soliq.uz orqali bepul.",
+      },
+      {
+        question: "Daromadim 100 mln dan oshsa, qo'shimcha soliq bormi?",
+        answer:
+          "Yo'q — O'zbekistondagi JShShS yagona tekis stavkadir, daromad oshsa ham 12% qoladi (IT Park rezidentlari uchun 7,5%). Bu Rossiya yoki Qozog'istondagi progressiv tizimdan farq qiladi.",
+      },
+    ],
+  },
+  {
+    slug: 'salary',
+    items: [
+      {
+        question: "OTMda o'qiyotgan bo'lsam, ish beruvchi qo'shimcha imtiyoz beradimi?",
+        answer:
+          "OTM (oliy ta'lim muassasasi) talabasi bo'lib ishlasangiz, qonun bo'yicha ish beruvchi sizga maxsus soliq imtiyozi bermaydi. Lekin yiliga 4,22 MIH gacha bo'lgan moddiy yordam JShShSdan ozod (5 739 200 so'm), o'qish to'lovi esa summa cheklovisiz JShShSdan ozod (SK 378-moddasi 16-bandi) — my.soliq.uz dagi deklaratsiyangiz orqali.",
+      },
+      {
+        question: "Qishloqda joylashgan ishxonada ish haqi shaharnikidan farq qiladimi?",
+        answer:
+          "Soliq stavkalari bir xil. Minimal ish haqi Prezident Farmoni bilan barcha hududlar uchun bir xil belgilanadi (2026-yil 1-sentabridan 1 360 000 so'm, PF-115). Tarmoq tarif kelishuvlari ba'zi sohalarda farq qilishi mumkin.",
+      },
+    ],
+  },
+  {
+    slug: 'mortgage',
+    items: [
+      {
+        question: "Yosh oilalar uchun imtiyozli ipoteka bormi?",
+        answer:
+          "Imtiyozli dasturlar o'zgarib turadi, shuning uchun amaldagi shartlarni bankdan aniqlang. 2026-yilda davlat ipotekasi odatda yillik 17-20%, kam ta'minlanganlarga boshlang'ich to'lov uchun subsidiya berilishi mumkin.",
+      },
+      {
+        question: "Mahalla referensiyasi ipoteka uchun kerakmi?",
+        answer:
+          "Ko'pchilik banklar mahalla raisidan tasdiq xatini so'raydi (mahalla referensiyasi). U sizning oilaviy holatingizni va ishonchliligingizni tasdiqlaydi. Ariza topshirishdan oldin tayyorlab qo'ying.",
+      },
+    ],
+  },
+  {
+    slug: 'vat',
+    items: [
+      {
+        question: "Bozorda sotuvchi bo'lsam, QQS to'lashim kerakmi?",
+        answer:
+          "Yo'q, agar soliq davri uchun daromadingiz 12 000 BHK (5 280 000 000 so'm) dan kam bo'lsa, QQS to'lovchisi emassiz. Bozordagi ko'pchilik chakana sotuvchilar bu chegaradan oshmaydi.",
+      },
+      {
+        question: "Faktura.soliq.uz da hisob-faktura qanday rasmiylashtirish?",
+        answer:
+          "Soliq qo'mitasining faktura.soliq.uz portali orqali. EIMZO yoki Faol kalit bilan kiring, kontragent INNni kiriting, mahsulotni tanlang va imzolang. Hisob-faktura avtomatik kontragentga jo'natiladi.",
+      },
+    ],
+  },
+  {
+    slug: 'currency-converter',
+    items: [
+      {
+        question: "MB kursi va bank kursi orasidagi farq nima?",
+        answer:
+          "MB kursi (cbu.uz) — kunlik rasmiy o'rtacha kurs. Tijorat banklar undan ~30-80 so'm farq qiluvchi sotish/sotib olish kursini belgilaydi. Yirik miqdorlar uchun bir nechta bankni taqqoslang yoki bank arizasi orqali ariza qoldiring.",
+      },
+      {
+        question: "Naqd dollar olishda chek beriladimi?",
+        answer:
+          "Ha, banklar valyuta ayirboshlashdan keyin spravka beradilar. Naqd valyutani deklaratsiyasiz 100 mln so'm ekvivalentigacha olib chiqish mumkin, undan ko'p bo'lsa butun summa deklaratsiya qilinadi, 100 mln so'mdan ortig'ini olib chiqish esa faqat alohida hollarda ruxsat etiladi. Spravkani saqlab qo'ying. 2026-yil 27-avgustdagi Farmon bilan chegarani 10 000 dollarga oshiruvchi qonun loyihasini tayyorlash topshirilgan, lekin u hali qabul qilinmagan.",
+      },
+    ],
+  },
+  {
+    slug: 'utilities-total',
+    items: [
+      {
+        question: "Hisoblagichlar yo'q bo'lsa, kommunal qanday hisoblanadi?",
+        answer:
+          "Hisoblagich bo'lmagan xonadonlar uchun me'yor bo'yicha hisob ishlatiladi: bir kishiga belgilangan miqdor (suv, gaz, elektr). Elektr va gaz tariflarini Vazirlar Mahkamasi, suv va chiqindi olib chiqish tariflarini viloyat kengashlari tasdiqlaydi; ular tashkilotlar veb-saytlarida e'lon qilinadi.",
+      },
+      {
+        question: "Mahallada elektr o'chsa, hisob qaytariladimi?",
+        answer:
+          "Hisoblagich bo'yicha hisoblanganda faqat haqiqatda sarflangan energiya uchun to'laysiz, shuning uchun uzilish vaqtida hisob o'smaydi. Uzoq uzilish bo'yicha «Hududiy elektr tarmoqlari» ga ariza yozish mumkin, lekin kompensatsiya avtomatik emas.",
+      },
+    ],
+  },
+  {
+    slug: 'osago',
+    items: [
+      {
+        question: "OSAGOni qaysi sug'urta kompaniyalaridan xarid qilish mumkin?",
+        answer:
+          "O'zbekistondagi yetakchi sug'urtachilar: Kafolat, Uzagrosugurta, Alskom, Apex Insurance, Gross Insurance, Inson, Trust Insurance. Tariflarni Vazirlar Mahkamasi tasdiqlagan (VMQ-458) va ular barcha sug'urtachilarda bir xil — farq xizmat sifatida.",
+      },
+      {
+        question: "OSAGO yo'q haydovchi jarima qancha?",
+        answer:
+          "Polis qamramagan davrda boshqarish uchun Ma'muriy javobgarlik kodeksining 135-1-moddasi bo'yicha ogohlantirish yoki 0,5 BHK jarima (hozir 220 000 so'm). Baxtsiz hodisada zarar o'z hisobingizdan to'lanadi.",
+      },
+    ],
+  },
+  {
+    slug: 'customs',
+    items: [
+      {
+        question: "BAA dan elektronika olib kirish chegarasi qancha?",
+        answer:
+          "Samolyotda kelganda jismoniy shaxs uchun bojsiz olib kirish normasi — 1 000 AQSh dollari, agar chet elda kamida 3 kalendar kun bo'lgan bo'lsangiz. Og'irlik bo'yicha umumiy cheklov yo'q. Normadan ortiq qismiga yagona bojxona to'lovi olinadi — 30%, lekin 1 kg uchun kamida 3 AQSh dollari (2027-yil 1-yanvardan — 20% va 1 kg uchun kamida 2 dollar). Xalqaro kuryerlik jo'natmalari uchun norma — kalendar oy davomida 200 AQSh dollari, xalqaro pochta jo'natmalari uchun — 100 AQSh dollari.",
+      },
+      {
+        question: "Avtomobil rasmiylashtirishda «utilizatsiya yig'imi» qancha?",
+        answer:
+          "Yengil avtomobillar uchun yig'im dvigatel hajmi va yoshga bog'liq: 30 dan 480 BHK gacha (13 200 000 dan 211 200 000 so'mgacha), elektromobillar uchun 120 yoki 210 BHK. Aniq summani kalkulyator hisoblaydi.",
+      },
+    ],
+  },
+  {
+    slug: 'brv',
+    items: [
+      {
+        question: "BHK qachon va kim tomonidan tasdiqlanadi?",
+        answer:
+          "BHK (bazaviy hisoblash kattaligi) Prezident Farmoni bilan belgilanadi. So'nggi yillarda yiliga bir marta indeksatsiya qilinadi. Joriy holat: 2026-yil 1-sentabridan 440 000 so'm (PF-115 Farmoni); bundan oldin 412 000 so'm edi.",
+      },
+      {
+        question: "BHK va minimal ish haqi bir xilmi?",
+        answer:
+          "Yo'q, bu ikki turli ko'rsatkich. BHK — soliq chegaralari, jarimalar va davlat bojlarini hisoblash uchun; JShShS imtiyozlari esa MIHda hisoblanadi. Minimal ish haqi — eng past oylik ish haqi standarti. Ular alohida belgilanadi.",
+      },
+    ],
+  },
+  {
+    slug: 'kurban',
+    items: [
+      {
+        question: "Qurbonlik uchun jonzotni qanday tanlash kerak?",
+        answer:
+          "Sog'lom hayvon tanlanadi: qoramol (sigir, ho'kiz) kamida 2 yoshda, echki kamida 1 yoshda, qo'y kamida 6 oylik va bir yoshlikdek ko'rinadigan bo'lishi kerak. Qoramol 7 oilaga, qo'y yoki echki 1 oilaga qurbonlik qilinadi. O'zbekiston Musulmonlari Idorasi tavsiyalariga rioya qiling.",
+      },
+    ],
+  },
+  {
+    slug: 'fitr-sadaka',
+    items: [
+      {
+        question: "Fitr-sadaqani kimga berish kerak?",
+        answer:
+          "Fitr-sadaqa Ramazon hayitidan oldin kambag'allarga, mahalladagi muhtoj oilalarga yoki vaqf orqali topshiriladi. Mahalla qo'mitasi yoki masjid orqali topshirish — qabul qilingan amaliyot. Hayit namozidan keyin topshirilsa, bu oddiy sadaqa hisoblanadi.",
+      },
+    ],
+  },
+  {
+    slug: 'pension',
+    items: [
+      {
+        question: "Pensiyaga chiqish yoshi va shartlari qanday?",
+        answer:
+          "Erkaklar uchun 60 yosh (kamida 25 yil staj), ayollar uchun 55 yosh (kamida 20 yil staj). 20+ yil staji bo'lgan ayollar 54 yoshda chiqishi mumkin. Imtiyozli kasblar (shaxtyor, kimyogar) uchun yosh kamayadi.",
+      },
+      {
+        question: "Pensiya qaerda olinadi?",
+        answer:
+          "Pensiya bank kartasiga (Uzcard yoki Humo) yoki «Aloqabank», «Xalq banki» ofislariga o'tkaziladi. Ariza tuman pensiya jamg'armasi bo'limiga topshiriladi. Tayyor hujjatlar — pasport, mehnat daftarchasi, INPS spravkasi.",
+      },
+    ],
+  },
+]
+
+export function getUzExtraFaq(slug: string): UzExtraFaqItem[] {
+  return FAQ_UZ_EXTRAS.find((f) => f.slug === slug)?.items ?? []
+}
