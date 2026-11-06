@@ -49,7 +49,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Qishloqda joylashgan ishxonada ish haqi shaharnikidan farq qiladimi?",
         answer:
-          "Soliq stavkalari bir xil. Lekin minimal ish haqi Vazirlar Mahkamasi qarorlari bilan barcha hududlar uchun bir xil belgilanadi. Tarmoq tarif kelishuvlari ba'zi sohalarda farq qilishi mumkin.",
+          "Soliq stavkalari bir xil. Minimal ish haqi Prezident Farmoni bilan barcha hududlar uchun bir xil belgilanadi (2026-yil 1-sentabridan 1 360 000 so'm, PF-115). Tarmoq tarif kelishuvlari ba'zi sohalarda farq qilishi mumkin.",
       },
     ],
   },
@@ -79,7 +79,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Faktura.soliq.uz da hisob-faktura qanday rasmiylashtirish?",
         answer:
-          "Davlat soliq qo'mitasining faktura.soliq.uz portali orqali. EIMZO yoki Faol kalit bilan kiring, kontragent INNni kiriting, mahsulotni tanlang va imzolang. Hisob-faktura avtomatik kontragentga jo'natiladi.",
+          "Soliq qo'mitasining faktura.soliq.uz portali orqali. EIMZO yoki Faol kalit bilan kiring, kontragent INNni kiriting, mahsulotni tanlang va imzolang. Hisob-faktura avtomatik kontragentga jo'natiladi.",
       },
     ],
   },
@@ -94,7 +94,7 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "Naqd dollar olishda chek beriladimi?",
         answer:
-          "Ha, banklar valyuta ayirboshlashdan keyin spravka beradilar. Naqd valyutani deklaratsiyasiz 100 mln so'm ekvivalentigacha olib chiqish mumkin, undan ko'p bo'lsa butun summa deklaratsiya qilinadi, shuning uchun spravkani saqlab qo'ying.",
+          "Ha, banklar valyuta ayirboshlashdan keyin spravka beradilar. Naqd valyutani deklaratsiyasiz 100 mln so'm ekvivalentigacha olib chiqish mumkin, undan ko'p bo'lsa butun summa deklaratsiya qilinadi, 100 mln so'mdan ortig'ini olib chiqish esa faqat alohida hollarda ruxsat etiladi. Spravkani saqlab qo'ying. 2026-yil 27-avgustdagi Farmon bilan chegarani 10 000 dollarga oshiruvchi qonun loyihasini tayyorlash topshirilgan, lekin u hali qabul qilinmagan.",
       },
     ],
   },
@@ -149,12 +149,12 @@ const FAQ_UZ_EXTRAS: UzExtraFaq[] = [
       {
         question: "BHK qachon va kim tomonidan tasdiqlanadi?",
         answer:
-          "BHK (bazaviy hisoblash kattaligi) Prezident Farmoni bilan belgilanadi. Odatda yiliga bir marta avgust-sentabr oylarida indeksatsiya qilinadi. Joriy holat: 2026-yil 1-sentabridan 440 000 so'm (PF-115 Farmoni); bundan oldin 412 000 so'm edi.",
+          "BHK (bazaviy hisoblash kattaligi) Prezident Farmoni bilan belgilanadi. So'nggi yillarda yiliga bir marta indeksatsiya qilinadi. Joriy holat: 2026-yil 1-sentabridan 440 000 so'm (PF-115 Farmoni); bundan oldin 412 000 so'm edi.",
       },
       {
         question: "BHK va minimal ish haqi bir xilmi?",
         answer:
-          "Yo'q, bu ikki turli ko'rsatkich. BHK — soliq, jarima, davlat boji va imtiyozlarni hisoblash uchun. Minimal ish haqi — eng past oylik ish haqi standarti. Ular alohida belgilanadi.",
+          "Yo'q, bu ikki turli ko'rsatkich. BHK — soliq chegaralari, jarimalar va davlat bojlarini hisoblash uchun; JShShS imtiyozlari esa MIHda hisoblanadi. Minimal ish haqi — eng past oylik ish haqi standarti. Ular alohida belgilanadi.",
       },
     ],
   },

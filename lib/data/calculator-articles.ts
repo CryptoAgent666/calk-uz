@@ -335,7 +335,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'currency-converter',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'Центральный банк РУз — курсы валют', url: 'https://cbu.uz/uz/arkhiv-kursov-valyut/' },
     ],
@@ -362,7 +362,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     ],
     faqUz: [
       { question: "O'zbekistonda dollar kursi qancha?", answer: "Dolzarb kurs konverterda ko'rsatilgan va har kuni cbu.uz da e'lon qilinadi; 2026-yil 1-noyabr holatiga 1 dollar uchun 12 023 so'm." },
-      { question: "Valyutani qayerda foydaliroq ayirboshlash mumkin?", answer: "Yirik summalar ($1000 dan) — banklarda kelishilgan kursda. Kichik summalar — ayirboshlash punktlarida. Spred odatda MB kursidan 0,5-1,5%." },
+      { question: "Valyutani qayerda foydaliroq ayirboshlash mumkin?", answer: "Yirik summalar ($1000 dan) — banklarda kelishilgan kursda. Kichik summalar — ayirboshlash punktlarida. Spred odatda MB kursiga nisbatan dollar uchun 30-80 so'm." },
       { question: "MB kursi qachon yangilanadi?", answer: "Har kuni Toshkent vaqti bilan 16:00 gacha cbu.uz saytida." },
       { question: "Valyutani erkin sotib olish mumkinmi?", answer: "Ha, 2017-yildan jismoniy shaxslar xorijiy valyutani cheklovsiz erkin sotib olishi mumkin." },
       { question: "O'zbekistonda qanday valyutalarni ayirboshlash mumkin?", answer: "Asosiy: USD, EUR, RUB, GBP, CNY, KZT. Kamroq tarqalgan valyutalarni yirik banklarda ayirboshlash mumkin." },
@@ -666,7 +666,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'ip-calculator',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
     ],
@@ -697,14 +697,14 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: "YaTT o'z-o'zini band qilgandan nimasi bilan farq qiladi?", answer: "YaTT: 1% soliq, 5 tagacha xodim yollashi mumkin. O'z-o'zini band qilgan (2026-yildan): 1% soliq, xodimsiz. Ikkalasi uchun aylanma solig'i chegarasi — 12 000 BHK." },
       { question: "YaTTga kassa kerakmi?", answer: "Ha, YaTTlar naqd va karta to'lovlarini qabul qilishda NKT yoki virtual kassadan foydalanishi shart." },
       { question: "QQS to'lash uchun chegara qancha?", answer: "12 000 BHK (5 280 000 000 so'm) — soliq davri uchun umumiy daromad. Bu chegaradan past bo'lsa YaTT QQS to'lamaydi." },
-      { question: "YaTTni qanday ro'yxatdan o'tkazish mumkin?", answer: "my.gov.uz yoki soliq inspektsiyasi orqali. Bepul, 1-3 kun. Pasport kerak, STIR avtomatik beriladi." },
-      { question: "YaTT nechta xodim yollashi mumkin?", answer: "10 kishigacha (2025-yildan ayrim faoliyat turlari uchun 25 tagacha)." },
+      { question: "YaTTni qanday ro'yxatdan o'tkazish mumkin?", answer: "my.gov.uz yoki davlat xizmatlari markazi orqali. Davlat boji — 1 BHK (440 000 so'm), my.gov.uz orqali stavkaning 90% i (396 000 so'm). Pasport kerak, STIR avtomatik beriladi." },
+      { question: "YaTT nechta xodim yollashi mumkin?", answer: "VMQ № 707 da belgilangan faoliyat turlari bo'yicha 5 kishigacha (MK 507-moddasi)." },
     ],
   },
 
   {
     slug: 'employer-cost',
-    lastUpdated: '2026-09-13',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
       { name: 'Трудовой кодекс РУз', url: 'https://lex.uz/docs/6257288' },
@@ -719,7 +719,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     paragraphsUz: [
       "O'zbekistonda ish beruvchi uchun xodimning to'liq qiymati hisoblangan ish haqi va majburiy ajratmalardan tashkil topadi: ish haqi fondidan 12% ijtimoiy soliq (byudjet tashkilotlari uchun 25%). Ish beruvchi uchun xodim qiymati kalkulyatori xodimga ketadigan to'liq xarajatlarni va barcha ushlanmalar va hisob-kitoblarning taqsimotini hisoblaydi.",
       "Qo'lga 10 000 000 so'm ish haqili xodimga ish beruvchi xarajatlari tarkibi: hisoblangan ish haqi (gross) = 10 000 000 / 0,88 = 11 363 636 so'm; JShShS: 1 363 636 so'm, shundan 11 364 so'm (0,1%) xodimning IJPHsiga, 1 352 272 so'm byudjetga; ijtimoiy soliq: 1 363 636 so'm; to'liq qiymat: 12 727 273 so'm. Ish beruvchi xodim qo'liga oladigan summadan 27,3% ko'proq to'laydi.",
-      "IT Park rezidentlari uchun xarajatlar pastroq: xuddi shu 10 000 000 so'm qo'lga ish haqida gross = 10 822 511 so'm; ijtimoiy soliq: 1 298 701 so'm; to'liq qiymat: 12 121 212 so'm. Ish beruvchi uchun tejash: oddiy rejimga nisbatan bir xodimga oyiga 620 540 so'm.",
+      "IT Park rezidentlari uchun xarajatlar pastroq: xuddi shu 10 000 000 so'm qo'lga ish haqida gross = 10 000 000 / 0,925 = 10 810 811 so'm; ijtimoiy soliq: 10 810 811 × 12% = 1 297 297 so'm; to'liq qiymat: 12 108 108 so'm. Ish beruvchi uchun tejash: oddiy rejimga nisbatan bir xodimga oyiga 619 165 so'm.",
       "Bevosita soliq xarajatlaridan tashqari ish beruvchi qo'shimcha xarajatlarga duchor bo'ladi: kasallik varag'ini to'lash (kalendar yil davomida birinchi 5 kun — ish beruvchi hisobidan, 6-kundan boshlab — Davlat ijtimoiy sug'urta jamg'armasi); ta'til haqi; ishdan bo'shatishda kompensatsiya; ishlab chiqarishdagi baxtsiz hodisalardan majburiy sug'urta. Bu xarajatlar xodim qiymatini yana 10-20% ga oshiradi.",
       "Rejimlarni solishtirish: oddiy ish beruvchi — grossdan 112% (yoki nettodan 127,3%); IT Park — grossdan 112% (nettodan 121,1%); byudjet tashkilot — grossdan 125%. Xodimlar xarajatlarini optimallashtirish uchun: IT Park rezidenti maqomini olish; noprofilga funksiyalarni autsorsing qilish; oddiy jarayonlarni avtomatlashtirish.",
     ],
@@ -1658,7 +1658,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'early-repayment',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [{ name: 'Закон «О потребительском кредите» ЗРУ-33', url: 'https://lex.uz/ru/docs/1004490' }],
     paragraphsRu: [
       'Калькулятор досрочного погашения кредита показывает, сколько вы сэкономите на процентах при частичном или полном внеочередном внесении средств. Согласно ст. 16 Закона «О потребительском кредите» заёмщик вправе досрочно вернуть кредит, а проценты платит только за фактический срок пользования. Центральный банк не допускает дополнительных платежей за пользование кредитом, но порядок учёта досрочных взносов зависит от договора, и в октябре 2026 года Комитет по конкуренции предложил закрепить его в законе.',
@@ -1670,7 +1670,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     paragraphsUz: [
       "Kreditni muddatidan oldin to'lash kalkulyatori qisman yoki to'liq navbatdan tashqari mablag' kiritganda foizlarda qancha tejashingizni ko'rsatadi. «Iste'mol krediti to'g'risida»gi Qonunning 16-moddasiga ko'ra qarz oluvchi kreditni muddatidan oldin qaytarishi mumkin, foizlarni esa faqat haqiqiy foydalanish muddati uchun to'laydi. Markaziy bank kreditdan foydalanganlik uchun qo'shimcha to'lovlarga yo'l qo'ymaydi, lekin muddatidan oldingi to'lovlarni hisobga olish tartibi shartnomaga bog'liq, 2026-yil oktabrida Raqobat qo'mitasi uni qonunda mustahkamlashni taklif qilgan.",
       "Qisman muddatidan oldin to'lashdan keyin bank jadval bo'yicha ikki variant taklif etadi: oylik to'lov miqdorini saqlab kredit muddatini qisqartirish yoki dastlabki muddatni saqlab to'lovni kamaytirish. Matematik jihatdan muddatni qisqartirish doimo foydaliroq, chunki foiz hisoblash davri qisqaradi va umumiy ortiqcha to'lov ko'proq kamayadi.",
-      "Amaliy misolni ko'rib chiqaylik. 100 mln so'mlik kredit yillik 22% da 5 yilga, annuitet to'lovlari — oyiga taxminan 2 780 000 so'm. 12 oydan keyin 20 mln muddatidan oldin kiritasiz. Muddatni qisqartirishda kredit 15 oy oldin yopiladi, foizlardagi tejash taxminan 21,9 mln so'm. To'lovni kamaytirishda oylik to'lov ~2 130 000 so'mga tushadi, lekin tejash atigi ~10,2 mln.",
+      "Amaliy misolni ko'rib chiqaylik. 100 mln so'mlik kredit yillik 22% da 5 yilga, annuitet to'lovlari — oyiga taxminan 2 760 000 so'm. 12 oydan keyin 20 mln muddatidan oldin kiritasiz. Muddatni qisqartirishda kredit 15 oy oldin yopiladi, foizlardagi tejash taxminan 21,9 mln so'm. To'lovni kamaytirishda oylik to'lov ~2 130 000 so'mga tushadi, lekin tejash atigi ~10,2 mln.",
       "Muddatidan oldin to'lashning optimal strategiyasi maqsadlaringizga bog'liq. Agar ustuvorlik ortiqcha to'lovni minimallashtirish bo'lsa — muddatni qisqartiring va mablag'ni iloji boricha ertaroq kiriting (foiz yuki kreditning dastlabki yillarida eng katta). Agar joriy moliyaviy yukni kamaytirish muhimroq bo'lsa — to'lovni kamaytiring. Ko'p qarz oluvchilar aralashtiradi: avval to'lovni qulay darajaga tushiradi, keyin muddatni qisqartiradi.",
       "Bizning muddatidan oldin to'lash kalkulyatorimiz tanlangan senariyni hisoblaydi: foizlardagi tejashni va yangi muddat yoki yangi to'lovni ko'rsatadi. Kredit parametrlarini, muddatidan oldin to'lov oyi va summasini kiriting. Shartlar va bankni xabardor qilish muddatlarini shartnomangizdan tekshiring.",
     ],
@@ -1680,9 +1680,9 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Нужно ли уведомлять банк?', answer: 'Зависит от договора. Некоторые банки принимают досрочное погашение только в дату платежа.' },
     ],
     faqUz: [
-      { question: "Kreditni jarimasisz muddatidan oldin to'lash mumkinmi?", answer: "Ha, 2020-yildan — jarimalar va komissiyalarsiz." },
+      { question: "Kreditni jarimasisz muddatidan oldin to'lash mumkinmi?", answer: "Ha, bu huquq «Iste'mol krediti to'g'risida»gi Qonunning 16-moddasida belgilangan: foizlar faqat haqiqiy muddat uchun to'lanadi. Badallarni hisobga olish tartibini shartnomadan tekshiring." },
       { question: "Muddatni yoki to'lovni qisqartirish foydaliroqmi?", answer: "Muddat qisqartirish foizlarda ko'proq tejaydi. To'lov kamaytirish joriy yukni kamaytiradi." },
-      { question: "Bankni xabardor qilish kerakmi?", answer: "30 kun oldin tavsiya etiladi. Ba'zi banklar muddatidan oldin to'lovni faqat to'lov sanasida qabul qiladi." },
+      { question: "Bankni xabardor qilish kerakmi?", answer: "Shartnomaga bog'liq. Ba'zi banklar muddatidan oldin to'lovni faqat to'lov sanasida qabul qiladi." },
     ],
   },
 
@@ -1888,7 +1888,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'car-leasing',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'Закон «О лизинге» № 756-I', url: 'https://lex.uz/ru/docs/85248' },
       { name: 'Налоговый кодекс РУз', url: 'https://lex.uz/ru/docs/4674893' },
@@ -1913,7 +1913,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Кому выгоден лизинг?', answer: 'Юрлицам и ИП: амортизация и процентная часть платежей уменьшают налогооблагаемую прибыль.' },
     ],
     faqUz: [
-      { question: "Lizing kreditdan nimasi bilan farq qiladi?", answer: "Avto lizing kompaniyasi mulkida. Afzalliklari: biznes uchun soliq optimallashtirish, tezlashtirilgan amortizatsiya." },
+      { question: "Lizing kreditdan nimasi bilan farq qiladi?", answer: "Sotib olinguncha mulk lizing kompaniyasiniki, avtomobilni balansda lizing oluvchi hisobga oladi («Lizing to'g'risida»gi Qonunning 7-moddasi). Biznes uchun xarajatlarga amortizatsiya va foizlar kiradi." },
       { question: "Avtolizing stavkalari qanday?", answer: "Yillik 18% dan 26% gacha. Avans 20% dan. Muddat 2-7 yil." },
       { question: "Lizing kimga foydali?", answer: "Yuridik shaxslar va YaTTlarga — lizing to'lovlari soliqqa tortiladigan foydani kamaytiradi." },
     ],
@@ -2234,7 +2234,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'pregnancy',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'Министерство здравоохранения РУз', url: 'https://ssv.uz' },
       { name: 'ВОЗ — Материнское здоровье', url: 'https://who.int' },
@@ -2249,7 +2249,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
     paragraphsUz: [
       "Homiladorlik kalkulyatori taxminiy tug'ilish sanasini (TTS), haftalardagi joriy muddatni va trimestrni aniqlaydi. TTS Negele formulasi bo'yicha hisoblanadi: oxirgi hayzning birinchi kuni + 280 kun (40 hafta). O'zbekistonda har yili taxminan 880 000 bola tug'iladi, birinchi marta tug'ayotgan ayollarning o'rtacha yoshi 22-24. Tug'ruqqa yordam ko'rsatish tizimi ayollar maslahatxonalari, tug'ruqxonalar va perinatal markazlarni o'z ichiga oladi.",
       "Homiladorlik trimestrlari: 1-chi (1-12 hafta) — homila organlarining shakllanishi, birinchi UZI 11-14 haftada; 2-chi (13-27 hafta) — faol o'sish, ikkinchi UZI 18-22 haftada; 3-chi (28-40 hafta) — tug'ruqqa tayyorgarlik, uchinchi UZI 30-34 haftada. Kalkulyator joriy haftani, trimestrni va TTSgacha qolgan kunlarni ko'rsatadi.",
-      "O'zbekistonda homiladorlikni kuzatish poliklinikalardagi ayollar maslahatxonalarida amalga oshiriladi (MTS bo'yicha bepul). Tavsiya etilgan tashrif jadvali: 28 haftagacha — oyda 1 marta, 28-36 hafta — oyda 2 marta, 36 haftadan keyin — har hafta. Majburiy tahlillar: umumiy va biokimyoviy qon tahlili, qon guruhi, rezus-omil, OIV, gepatit, 1 va 2-trimestr skrininglari.",
+      "O'zbekistonda homiladorlikni kuzatish poliklinikalardagi ayollar maslahatxonalarida amalga oshiriladi (bepul). Tavsiya etilgan tashrif jadvali: 28 haftagacha — oyda 1 marta, 28-36 hafta — oyda 2 marta, 36 haftadan keyin — har hafta. Majburiy tahlillar: umumiy va biokimyoviy qon tahlili, qon guruhi, rezus-omil, OIV, gepatit, 1 va 2-trimestr skrininglari.",
       "Faqat 5% tug'ilishlar aniq TTSda sodir bo'ladi. Normal tug'ilish — 37-42 hafta. 37 haftagacha tug'ilish muddatidan oldingi, 42 haftadan keyin esa ortiqcha ko'tarilgan hisoblanadi. O'zbekistonda barcha tug'ruqxonalar (tug'ruq majmualari) fuqarolarga bepul yordam ko'rsatadi. Xususiy klinikalar pullik tug'ruq xizmatini taklif etadi: xizmat darajasiga qarab 5 000 000 dan 25 000 000 so'mgacha.",
       "Homiladorlik kalkulyatori barcha bosqichlarni rejalashtirishga yordam beradi: oxirgi hayz birinchi kunini kiriting. Kalkulyator joriy muddatni, trimestrni, taxminiy homiladorlik va tug'ruq sanalarini hamda qolgan kunlarni ko'rsatadi. U shifokor kuzatuvini almashtirmaydi.",
     ],
@@ -2308,7 +2308,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'education-loan',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'Центральный банк РУз', url: 'https://cbu.uz' },
       { name: 'Ipoteka bank — Образовательные кредиты', url: 'https://ipotekabank.uz' },
@@ -2339,7 +2339,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: "Qaytarishni qachon boshlash kerak?", answer: "O'qish tugaganidan keyin. O'qish davrida — faqat foizlar (oyiga 1-3 mln so'm) yoki ba'zi banklarda to'liq kechiktirish." },
       { question: "Qanday hujjatlar kerak?", answer: "Ro'yxatga olish ma'lumotnomasi, pasport, daromadli kafil, kafil daromadlari ma'lumotnomasi, OTM bilan shartnoma." },
       { question: "Qancha summa olish mumkin?", answer: "O'qish qiymatining 100% gacha, bank va OTMga qarab maksimum 200 mln so'mgacha." },
-      { question: "Kredit bo'yicha ortiqcha to'lov qancha?", answer: "16% stavka va 7 yil muddatda ortiqcha to'lov kredit summasining taxminan 50-60% ni tashkil etadi. Aniq hisoblash uchun kalkulyatordan foydalaning." },
+      { question: "Kredit bo'yicha ortiqcha to'lov qancha?", answer: "16% stavka va 7 yillik oddiy annuitetda ortiqcha to'lov kredit summasining taxminan 67% ini tashkil etadi. Imtiyozli davr bu raqamni o'zgartiradi. Aniq hisoblash uchun kalkulyatordan foydalaning." },
     ],
   },
 
@@ -2419,7 +2419,7 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'fidiya-sadaka',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'Управление мусульман Узбекистана', url: 'https://muslim.uz' },
       { name: 'Waqf фонд', url: 'https://vaqf.uz' },
@@ -2446,9 +2446,9 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
       { question: 'Куда передать фидию в Узбекистане?', answer: 'Через мечети, ифтар-хайрия, фонд Вакф (vaqf.uz) или напрямую нуждающимся.' },
     ],
     faqUz: [
-      { question: "Bir kunlik fidiya-sadaqa qancha?", answer: "30 000-50 000 so'm — bitta to'laqonli ovqatlanish narxi. O'zbekiston hududiga bog'liq." },
+      { question: "Bir kunlik fidiya-sadaqa qancha?", answer: "Fitr-sadaqa bilan bir xil: 2026-yilda imkoniyatga qarab 10 000 so'mdan (bug'doy) 200 000 so'mgacha (xurmo)." },
       { question: "Fidiya to'lash kimga majburiy?", answer: "Doimiy ro'za tutolmaydiganlar: surunkali kasallar (diabet, onkologiya), keksalar. Vaqtincha kasallar — ro'zani qazo qiladi." },
-      { question: "Butun Ramazon uchun qancha?", answer: "30 kun × ~40 000 so'm = ~1 200 000 so'm. Guruch bo'yicha minimal hisob: ~337 500 so'm." },
+      { question: "Butun Ramazon uchun qancha?", answer: "30 kun × 10 000 so'm = 300 000 so'mdan (bug'doy bo'yicha) 30 × 200 000 = 6 000 000 so'mgacha (xurmo bo'yicha)." },
       { question: "Fidiya kafforadan nimasi bilan farq qiladi?", answer: "Fidiya — ro'za tuta olmaslik uchun. Kaffora — qasddan buzganlik uchun (60 kun ro'za yoki 60 kambag'alni ovqatlantirish)." },
       { question: "O'zbekistonda fidiyani qayerga uzatish mumkin?", answer: "Masjidlar, iftor-xayriya, Vaqf fondi (vaqf.uz) yoki bevosita muhtojlar orqali." },
     ],
