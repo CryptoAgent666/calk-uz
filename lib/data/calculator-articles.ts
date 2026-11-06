@@ -850,38 +850,38 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'bmi',
-    lastUpdated: '2025-06-20',
+    lastUpdated: '2026-11-07',
     sources: [
       { name: 'ВОЗ — Индекс массы тела', url: 'https://who.int' },
       { name: 'Министерство здравоохранения РУз', url: 'https://ssv.uz' },
     ],
     paragraphsRu: [
-      'Индекс массы тела (ИМТ) — основной показатель соответствия веса и роста, рассчитываемый по формуле: ИМТ = Вес(кг) / Рост(м)². Классификация ВОЗ: менее 18,5 — дефицит массы; 18,5-24,9 — норма; 25-29,9 — избыточный вес; 30-34,9 — ожирение I степени; 35-39,9 — ожирение II степени; 40 и выше — ожирение III степени. По данным исследований в Узбекистане, избыточный вес имеют около 30% взрослого населения, а ожирение — около 15%.',
+      'Индекс массы тела (ИМТ) — основной показатель соответствия веса и роста, рассчитываемый по формуле: ИМТ = Вес(кг) / Рост(м)². Классификация ВОЗ: менее 18,5 — дефицит массы; 18,5-24,9 — норма; 25-29,9 — избыточный вес; 30-34,9 — ожирение I степени; 35-39,9 — ожирение II степени; 40 и выше — ожирение III степени.',
       'Пример расчёта для жителя Узбекистана: мужчина, вес 85 кг, рост 175 см. ИМТ = 85 / 1,75² = 27,8 — избыточный вес. Для нормы при росте 175 см вес должен быть 57-76 кг. Другой пример: женщина, вес 65 кг, рост 162 см. ИМТ = 65 / 1,62² = 24,8 — верхняя граница нормы. Калькулятор ИМТ мгновенно определит ваш показатель и подскажет, в какой категории вы находитесь.',
       'ИМТ имеет ограничения: он не учитывает мышечную массу, костную структуру и распределение жира. Для спортсменов, беременных женщин, людей старше 65 лет и детей до 18 лет ИМТ может давать некорректные результаты. В этих случаях рекомендуется дополнительно измерить обхват талии: для мужчин норма менее 94 см, для женщин — менее 80 см.',
       'По данным Минздрава Узбекистана, основными факторами избыточного веса в республике являются высококалорийная традиционная кухня (плов, самса, жирное мясо), малоподвижный образ жизни и недостаточное потребление овощей и фруктов. Регулярный контроль ИМТ полезен для профилактики сердечно-сосудистых заболеваний, диабета 2 типа и заболеваний суставов.',
-      'Для комплексной оценки состояния здоровья рекомендуется использовать калькулятор ИМТ совместно с калькулятором идеального веса и калькулятором КБЖУ (калории, белки, жиры, углеводы). Здоровый ИМТ в диапазоне 18,5-24,9 снижает риск хронических заболеваний на 30-50%. Введите ваш вес и рост — калькулятор покажет ИМТ, категорию и рекомендации по коррекции веса.',
+      'Для комплексной оценки состояния здоровья рекомендуется использовать калькулятор ИМТ совместно с калькулятором идеального веса и калькулятором КБЖУ (калории, белки, жиры, углеводы). Здоровый ИМТ в диапазоне 18,5-24,9 связан с меньшим риском хронических заболеваний. Введите ваш вес и рост — калькулятор покажет ИМТ, категорию и рекомендации по коррекции веса.',
     ],
     paragraphsUz: [
-      "Tana massasi indeksi (TMI) — vazn va bo'yning mosligining asosiy ko'rsatkichi bo'lib, formula bo'yicha hisoblanadi: TMI = Vazn(kg) / Bo'y(m)². JSST tasnifi: 18,5 dan kam — massa tanqisligi; 18,5-24,9 — norma; 25-29,9 — ortiqcha vazn; 30-34,9 — I darajali semirish; 35-39,9 — II darajali semirish; 40 va undan yuqori — III darajali semirish. O'zbekistondagi tadqiqotlarga ko'ra, katta yoshdagi aholining taxminan 30% ortiqcha vaznli, 15% esa semiz.",
+      "Tana massasi indeksi (TMI) — vazn va bo'yning mosligining asosiy ko'rsatkichi bo'lib, formula bo'yicha hisoblanadi: TMI = Vazn(kg) / Bo'y(m)². JSST tasnifi: 18,5 dan kam — massa tanqisligi; 18,5-24,9 — norma; 25-29,9 — ortiqcha vazn; 30-34,9 — I darajali semirish; 35-39,9 — II darajali semirish; 40 va undan yuqori — III darajali semirish.",
       "O'zbekiston aholisi uchun hisoblash misoli: erkak, vazn 85 kg, bo'y 175 sm. TMI = 85 / 1,75² = 27,8 — ortiqcha vazn. 175 sm bo'yda norma uchun vazn 57-76 kg bo'lishi kerak. Boshqa misol: ayol, vazn 65 kg, bo'y 162 sm. TMI = 65 / 1,62² = 24,8 — normaning yuqori chegarasi. TMI kalkulyatori ko'rsatkichingizni bir zumda aniqlaydi va qaysi toifada ekanligingizni ko'rsatadi.",
       "TMI cheklovlarga ega: u mushak massasini, suyak tuzilishini va yog' taqsimlanishini hisobga olmaydi. Sportchilar, homilador ayollar, 65 yoshdan katta kishilar va 18 yoshgacha bolalar uchun TMI noto'g'ri natijalar berishi mumkin. Bunday hollarda qo'shimcha ravishda bel aylanasini o'lchash tavsiya etiladi: erkaklar uchun norma 94 sm dan kam, ayollar uchun — 80 sm dan kam.",
       "O'zbekiston Sog'liqni saqlash vazirligining ma'lumotlariga ko'ra, respublikada ortiqcha vaznning asosiy omillari yuqori kaloriyali an'anaviy oshxona (osh, somsa, yog'li go'sht), kam harakatli turmush tarzi va sabzavot hamda mevalarning yetarli iste'mol qilinmasligidir. TMIni muntazam nazorat qilish yurak-qon tomir kasalliklari, 2-tip diabet va bo'g'im kasalliklari profilaktikasi uchun foydali.",
-      "Sog'liq holatini to'liq baholash uchun TMI kalkulyatorini ideal vazn kalkulyatori va KBYU kalkulyatori (kaloriyalar, oqsillar, yog'lar, uglevodlar) bilan birgalikda ishlatish tavsiya etiladi. 18,5-24,9 diapazonidagi sog'lom TMI surunkali kasalliklar xavfini 30-50% ga kamaytiradi. Vazn va bo'yingizni kiriting — kalkulyator TMI, toifa va vaznni tuzatish bo'yicha tavsiyalarni ko'rsatadi.",
+      "Sog'liq holatini to'liq baholash uchun TMI kalkulyatorini ideal vazn kalkulyatori va KBYU kalkulyatori (kaloriyalar, oqsillar, yog'lar, uglevodlar) bilan birgalikda ishlatish tavsiya etiladi. 18,5-24,9 diapazonidagi sog'lom TMI surunkali kasalliklar xavfining pastroq bo'lishi bilan bog'liq. Vazn va bo'yingizni kiriting — kalkulyator TMI, toifa va vaznni tuzatish bo'yicha tavsiyalarni ko'rsatadi.",
     ],
     faqRu: [
       { question: 'Как рассчитать ИМТ?', answer: 'ИМТ = Вес(кг) / Рост(м)². Например: 70 кг при росте 170 см → 70 / 1,70² = 24,2. Это верхняя граница нормы.' },
       { question: 'Какой ИМТ считается нормальным?', answer: '18,5-24,9 по классификации ВОЗ. Ниже 18,5 — дефицит, 25-29,9 — избыточный вес, 30+ — ожирение.' },
       { question: 'Точен ли ИМТ для спортсменов?', answer: 'Нет, ИМТ не различает мышечную и жировую массу. Спортсменам лучше использовать измерение процента жира (норма 10-20% для мужчин, 18-28% для женщин).' },
       { question: 'Какой нормальный вес при росте 175 см?', answer: 'По ВОЗ (ИМТ 18,5-24,9): 57-76 кг. Оптимальный диапазон: 63-72 кг.' },
-      { question: 'Какова ситуация с ожирением в Узбекистане?', answer: 'Около 30% взрослого населения имеют избыточный вес, 15% — ожирение. Основные причины: калорийная кухня и малоподвижность.' },
+      { question: 'Какова ситуация с ожирением в Узбекистане?', answer: "Свежей официальной статистики по ИМТ взрослых в открытых источниках мы не нашли, поэтому цифр не приводим. Основные причины лишнего веса — калорийная традиционная кухня и малоподвижный образ жизни." },
     ],
     faqUz: [
       { question: 'TMI qanday hisoblanadi?', answer: "TMI = Vazn(kg) / Bo'y(m)². Masalan: 170 sm bo'yda 70 kg → 70 / 1,70² = 24,2. Bu normaning yuqori chegarasi." },
       { question: 'Qanday TMI normal hisoblanadi?', answer: "JSST tasnifi bo'yicha 18,5-24,9. 18,5 dan past — tanqislik, 25-29,9 — ortiqcha vazn, 30+ — semirish." },
       { question: "TMI sportchilar uchun aniqmi?", answer: "Yo'q, TMI mushak va yog' massasini farqlamaydi. Sportchilarga yog' foizini o'lchash yaxshiroq (erkaklar uchun norma 10-20%, ayollar uchun 18-28%)." },
       { question: "175 sm bo'yda normal vazn qancha?", answer: "JSST bo'yicha (TMI 18,5-24,9): 57-76 kg. Optimal diapazon: 63-72 kg." },
-      { question: "O'zbekistonda semirish holati qanday?", answer: "Katta yoshdagi aholining taxminan 30% ortiqcha vaznli, 15% — semiz. Asosiy sabablar: kaloriyali oshxona va kam harakatlilik." },
+      { question: "O'zbekistonda semirish holati qanday?", answer: "Kattalar TMI bo'yicha yangi rasmiy statistikani ochiq manbalarda topmadik, shuning uchun raqam keltirmaymiz. Ortiqcha vaznning asosiy sabablari — kaloriyali an'anaviy oshxona va kam harakatli turmush tarzi." },
     ],
   },
 
@@ -1858,19 +1858,19 @@ export const CALCULATOR_ARTICLES: CalculatorArticle[] = [
 
   {
     slug: 'trip-cost',
-    lastUpdated: '2026-11-01',
+    lastUpdated: '2026-11-07',
     sources: [],
     paragraphsRu: [
       'Калькулятор стоимости поездки помогает заранее оценить расходы на автомобильное путешествие по Узбекистану. Дорожная сеть страны насчитывает более 180 000 км дорог, связывающих все регионы — от Ташкента до Нукуса. Калькулятор считает топливо, платные дороги и парковку, а также долю на одного пассажира; амортизацию и обслуживание добавляйте по ориентирам ниже.',
       'Структура расходов на автомобильную поездку: топливо составляет 70–80% общей стоимости, амортизация автомобиля — около 15–20% (~300 сум/км для бюджетных моделей Chevrolet Cobalt/Nexia), техническое обслуживание — 5–10% (~100 сум/км). Расход топлива существенно зависит от стиля вождения, загрузки автомобиля, состояния дороги и скоростного режима — на трассе расход ниже, чем в городе.',
-      'Пример расчёта маршрута Ташкент — Бухара (600 км): при расходе 9 л/100 км на бензине АИ-92 (13 500 сум/л) стоимость топлива составит 729 000 сум, амортизация и обслуживание — ещё ~240 000 сум, итого около 969 000 сум. На метане та же поездка обойдётся в ~534 000 сум за топливо (около 93 м³ по 5 750 сум). Для сравнения: билет на поезд «Afrosiyob» — от 400 000 сум, авиабилет — от 800 000 сум.',
+      'Пример расчёта маршрута Ташкент — Бухара (600 км): при расходе 9 л/100 км на бензине АИ-92 (13 500 сум/л) стоимость топлива составит 729 000 сум, амортизация и обслуживание — ещё ~240 000 сум, итого около 969 000 сум. На метане та же поездка обойдётся в ~242 000 сум за топливо (около 42 м³ при расходе 7 м³/100 км, по 5 750 сум). Для сравнения: билет на поезд «Afrosiyob» — от 400 000 сум, авиабилет — от 800 000 сум.',
       'При поездке на автомобиле с пассажирами стоимость на одного человека существенно снижается. Если в машине 4 человека, расходы в ~969 000 сум делятся на четверых — всего ~242 000 сум на каждого, что дешевле любого альтернативного транспорта. Это делает автомобильные поездки особенно выгодными для семей и компаний, путешествующих по популярным маршрутам Узбекистана.',
       'Наш калькулятор стоимости поездки считает по расстоянию, расходу, цене топлива, платным дорогам, парковке и числу пассажиров: покажет общую сумму и долю на человека. Используйте его для планирования отпуска, деловых поездок или регулярных маршрутов между городами.',
     ],
     paragraphsUz: [
       "Sayohat narxi kalkulyatori O'zbekiston bo'ylab avtomobil sayohatining xarajatlarini oldindan baholashga yordam beradi. Mamlakatning yo'l tarmog'i 180 000 km dan ortiq yo'llarni o'z ichiga oladi va barcha hududlarni — Toshkentdan Nukusgacha bog'laydi. Kalkulyator yoqilg'i, pullik yo'llar va to'xtash joyini hamda bir yo'lovchiga ulushni hisoblaydi; amortizatsiya va xizmatni quyidagi mo'ljallar bo'yicha qo'shing.",
       "Avtomobil sayohati xarajatlarining tarkibi: yoqilg'i umumiy qiymatning 70–80% ini tashkil etadi, avtomobil amortizatsiyasi — taxminan 15–20% (~300 so'm/km byudjet Chevrolet Cobalt/Nexia modellari uchun), texnik xizmat — 5–10% (~100 so'm/km). Yoqilg'i sarfi haydash uslubi, avtomobil yuklanishi, yo'l holati va tezlik rejimiga sezilarli bog'liq — trassada sarf shaharga qaraganda pastroq.",
-      "Toshkent — Buxoro marshruti (600 km) hisob-kitobi: 9 l/100 km sarfda AI-92 benzinda (13 500 so'm/l) yoqilg'i narxi 729 000 so'm, amortizatsiya va xizmat — yana ~240 000 so'm, jami taxminan 969 000 so'm. Metanda xuddi shu sayohat yoqilg'iga ~534 000 so'm tushadi (5 750 so'mdan taxminan 93 m³). Solishtirish uchun: «Afrosiyob» poyezd chiptasi — 400 000 so'mdan, aviabilet — 800 000 so'mdan.",
+      "Toshkent — Buxoro marshruti (600 km) hisob-kitobi: 9 l/100 km sarfda AI-92 benzinda (13 500 so'm/l) yoqilg'i narxi 729 000 so'm, amortizatsiya va xizmat — yana ~240 000 so'm, jami taxminan 969 000 so'm. Metanda xuddi shu sayohat yoqilg'iga ~242 000 so'm tushadi (100 km ga 7 m³ sarfda taxminan 42 m³, 5 750 so'mdan). Solishtirish uchun: «Afrosiyob» poyezd chiptasi — 400 000 so'mdan, aviabilet — 800 000 so'mdan.",
       "Avtomobilda yo'lovchilar bilan sayohat qilganda bir kishiga narx sezilarli kamayadi. Mashinada 4 kishi bo'lsa, ~969 000 so'mlik xarajatlar to'rtga bo'linadi — har biriga atigi ~242 000 so'm, bu har qanday muqobil transportdan arzon. Bu avtomobil sayohatlarini O'zbekistonning mashhur marshrutlari bo'ylab sayohat qiluvchi oilalar va guruhlar uchun ayniqsa foydali qiladi.",
       "Bizning sayohat narxi kalkulyatorimiz masofa, sarf, yoqilg'i narxi, pullik yo'llar, to'xtash joyi va yo'lovchilar soni bo'yicha hisoblaydi: umumiy summa va bir kishiga ulushni ko'rsatadi. Uni ta'til rejalashtirish, ishbilarmonlik safarlari yoki shaharlar orasidagi muntazam marshrutlar uchun ishlating.",
     ],
