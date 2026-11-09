@@ -17,6 +17,9 @@
  */
 
 import {
+  ELECTRIC_STOVE_DISCOUNT,
+  ELECTRICITY_BASE_NORM_KWH,
+  ELECTRICITY_BASE_NORM_NO_GAS_HEATING_KWH,
   ELECTRICITY_TIERS as ELECTRICITY_TARIFF,
   GAS_TIERS_SUMMER,
   GAS_TIERS_WINTER,
@@ -68,20 +71,36 @@ export interface ElectricityResult {
   consumption: number
   total: number
   hasElectricStove: boolean
+  /** Базовая норма, кВт·ч в месяц: первая ступень тарифа. */
+  baseNorm: number
   discount: number
   finalTotal: number
   breakdown: { from: number; to: number; amount: number; rate: number; cost: number }[]
 }
 
-export function calculateElectricity(consumptionKwh: number, hasElectricStove: boolean = false): ElectricityResult {
-  const result = calculateTiered(consumptionKwh, ELECTRICITY_TIERS)
-  // ПКМ-243: 325/450/550 сум для домов с централизованными электроплитами —
-  // половина тарифа только на первые 1 000 кВт·ч.
-  const discount = hasElectricStove ? calculateTiered(Math.min(consumptionKwh, 1000), ELECTRICITY_TIERS).total * 0.5 : 0
+/**
+ * @param noGasHeatingSeason дом в утверждённом хокимиятом списке негазифицированных
+ *   или с затруднённой подачей газа, и месяц — отопительный сезон (ноябрь–февраль,
+ *   в Каракалпакстане и Хорезме с октября). Базовая норма 350 кВт·ч вместо 200
+ *   (ПКМ-204, прил. 2 в ред. ПКМ-601 от 31.10.2026, с 01.11.2026).
+ */
+export function calculateElectricity(
+  consumptionKwh: number,
+  hasElectricStove: boolean = false,
+  noGasHeatingSeason: boolean = false,
+): ElectricityResult {
+  // ПКМ-243, прил. 1: первая ступень — «в пределах базовой нормы», вторая — от нормы до 500.
+  const baseNorm = noGasHeatingSeason ? ELECTRICITY_BASE_NORM_NO_GAS_HEATING_KWH : ELECTRICITY_BASE_NORM_KWH
+  const tiers = ELECTRICITY_TIERS.map((tier, i) => (i === 0 ? { ...tier, upTo: baseNorm } : tier))
+  const result = calculateTiered(consumptionKwh, tiers)
+  // ПКМ-243, прил. 1, п. 1.2.1: в многоквартирных домах и общежитиях с централизованными
+  // электроплитами каждая ступень вдвое дешевле — 325/450/550/800/950/1 100 сум.
+  const discount = hasElectricStove ? result.total * ELECTRIC_STOVE_DISCOUNT : 0
   return {
     consumption: consumptionKwh,
     total: result.total,
     hasElectricStove,
+    baseNorm,
     discount,
     finalTotal: result.total - discount,
     breakdown: result.breakdown,
@@ -195,6 +214,8 @@ export interface UtilitiesTotalResult {
 export function calculateUtilitiesTotal(params: {
   electricityKwh: number
   hasElectricStove?: boolean
+  /** Дом без газа по списку хокимията: зимой (isSummer = false) норма электроэнергии 350 кВт·ч. */
+  noGas?: boolean
   gasM3: number
   isSummer?: boolean
   coldWaterM3: number
@@ -208,7 +229,11 @@ export function calculateUtilitiesTotal(params: {
   hotWaterRate?: number
   heatingRatePerM2PerDay?: number
 }): UtilitiesTotalResult {
-  const electricity = calculateElectricity(params.electricityKwh, params.hasElectricStove)
+  const electricity = calculateElectricity(
+    params.electricityKwh,
+    params.hasElectricStove,
+    Boolean(params.noGas) && params.isSummer === false,
+  )
   const gas = calculateGas(params.gasM3, params.isSummer)
   const water = calculateWater(params.coldWaterM3, params.hotWaterM3, {
     regionId: params.regionId,

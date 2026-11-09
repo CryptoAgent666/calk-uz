@@ -2,6 +2,7 @@
  * Utility tariffs for Uzbekistan (2026)
  * Source: Government-regulated tariffs.
  * Electricity + gas raised 1 Jun 2026 per ПКМ-243 (~8-12%).
+ * С 01.11.2026 (ПКМ-601) цены те же, первая ступень привязана к базовой норме ПКМ-204.
  */
 
 export interface TariffTier {
@@ -15,7 +16,29 @@ export interface TariffTier {
 // ELECTRICITY (Электроэнергия / Elektr energiya)
 // =============================================
 
-/** Electricity tiers per month per household (UZS/kWh) */
+/**
+ * Базовая норма электроэнергии, кВт·ч в месяц (ПКМ-204, прил. 2 в ред. ПКМ-601
+ * от 31.10.2026, с 01.11.2026). По ней проходит граница первой ступени тарифа.
+ */
+export const ELECTRICITY_BASE_NORM_KWH = 200
+
+/**
+ * Норма в отопительный сезон (ноябрь–февраль, в Каракалпакстане и Хорезме
+ * октябрь–февраль) для домов из утверждённого хокимиятом списка: газа нет или
+ * его подача затруднена.
+ */
+export const ELECTRICITY_BASE_NORM_NO_GAS_HEATING_KWH = 350
+
+/**
+ * Многоквартирные дома и общежития с централизованными электроплитами: каждая
+ * ступень вдвое дешевле — 325/450/550/800/950/1 100 сум (ПКМ-243, прил. 1, п. 1.2.1).
+ */
+export const ELECTRIC_STOVE_DISCOUNT = 0.5
+
+/**
+ * Electricity tiers per month per household (UZS/kWh). Первая ступень — в пределах
+ * базовой нормы; калькулятор подставляет 350 вместо 200 для домов без газа зимой.
+ */
 export const ELECTRICITY_TIERS: TariffTier[] = [
   { upTo: 200, pricePerUnit: 650 },
   { upTo: 500, pricePerUnit: 900 },

@@ -20,6 +20,29 @@ export interface UpdateBlock {
 
 export const UPDATES: UpdateBlock[] = [
   {
+    date: "2026-11-09",
+    dateLabelRu: "9 ноября 2026",
+    dateLabelUz: "2026-yil 9-noyabr",
+    items: [
+      {
+        titleRu: "Электроэнергия: норма 350 кВт·ч в домах без газа",
+        titleUz: "Elektr energiya: gazsiz uylarda 350 kVt·soat me'yor",
+        descRu:
+          "С 1 ноября 2026 года (постановление Кабмина № 601) в домах без газа или с затруднённой подачей газа по льготному тарифу 650 сум оплачиваются 350 кВт·ч в месяц вместо 200. Норма действует с ноября по февраль, в Каракалпакстане и Хорезме с октября, для домов из списка, который утверждает хокимият. В калькуляторах электроэнергии и коммунальных услуг появился переключатель «Дом без газа». 700 кВт·ч в январе стоят 582 500 сум вместо 620 000.",
+        descUz:
+          "2026-yil 1-noyabrdan (Vazirlar Mahkamasining 601-son qarori) gaz yo'q yoki gaz yetkazish qiyin bo'lgan uylarda imtiyozli 650 so'mlik tarif bo'yicha oyiga 200 emas, 350 kVt·soat to'lanadi. Me'yor noyabrdan fevralgacha, Qoraqalpog'iston va Xorazmda oktabrdan, hokimlik tasdiqlagan ro'yxatdagi uylarga amal qiladi. Elektr energiya va kommunal xizmatlar kalkulyatorlarida «Gazsiz uy» tugmasi paydo bo'ldi. Yanvarda 700 kVt·soat 620 000 emas, 582 500 so'm turadi.",
+      },
+      {
+        titleRu: "Электроплита: скидка на всех ступенях тарифа",
+        titleUz: "Elektr plita: chegirma tarifning barcha bosqichlarida",
+        descRu:
+          "1 ноября мы ограничили льготу для домов с централизованными электроплитами первыми 1 000 кВт·ч. Это была ошибка: по тексту постановления № 243 такие дома платят половину на всех шести ступенях — 325, 450, 550, 800, 950 и 1 100 сум. При потреблении до 1 000 кВт·ч ничего не меняется, а 1 500 кВт·ч снова стоят 875 000 сум, а не 1 275 000.",
+        descUz:
+          "1-noyabrda markazlashgan elektr plitali uylar uchun imtiyozni birinchi 1 000 kVt·soat bilan chekladik. Bu xato edi: 243-son qaror matniga ko'ra bunday uylar barcha olti bosqichda yarim narx to'laydi — 325, 450, 550, 800, 950 va 1 100 so'm. 1 000 kVt·soatgacha iste'molda hech narsa o'zgarmaydi, 1 500 kVt·soat esa yana 1 275 000 emas, 875 000 so'm turadi.",
+      },
+    ],
+  },
+  {
     date: "2026-11-06",
     dateLabelRu: "6 ноября 2026",
     dateLabelUz: "2026-yil 6-noyabr",

@@ -5,17 +5,17 @@
     "currency": "UZS (сум)",
     "generated": "2026-06-25",
     "note": "Audit ledger (NOT imported by site). Constants are CENTRALIZED: lib/constants/{brv,tax-rates,utility-tariffs}.ts + inline in lib/calculators/*.ts. Apply fixes there. БРВ=440000 anchors most state duties/fines as BRV-multiples. tax-rates.ts & utility-tariffs.ts headers say 2025 (freshness flag).",
-    "total": 185,
-    "gov_regulated": 145,
+    "total": 188,
+    "gov_regulated": 168,
     "market_or_other": 17,
     "conflicts": 10,
     "status_summary": {
-      "current": 151,
-      "removed": 8,
-      "unverified": 13
+      "current": 169,
+      "removed": 11,
+      "unverified": 8
     },
     "themes": {
-      "utility_tariff": 30,
+      "utility_tariff": 36,
       "social": 8,
       "social_benefit": 6,
       "property_tax": 5,
@@ -184,9 +184,9 @@
       "source_hint": "customs.uz / Узстандарт (сертификация автотранспорта)",
       "conflict": true,
       "status": "current",
-      "notes": "Было 690 USD (≈8,2 млн сум) как обязательная строка растаможки — завышало итог, в т.ч. для электромобилей, которых ПКМ-597 прямо исключает из оценки экокласса. Исправлено в коде 2026-08-10.",
+      "notes": "Было 690 USD (≈8,2 млн сум) как обязательная строка растаможки — завышало итог, в т.ч. для электромобилей, которых ПКМ-597 прямо исключает из оценки экокласса. Исправлено в коде 2026-08-10.  ||  2026-11-09 алерт: новой редакции документа нет (дифф страницы lex.uz без смены текста нормы).",
       "source_url": "https://lex.uz/docs/7735340",
-      "last_verified": "2026-08-09",
+      "last_verified": "2026-11-09",
       "official_value": "690",
       "verified_date": "2026-07-08",
       "verify_method": "tier2-llm",
@@ -887,7 +887,7 @@
       "key": "ELECTRICITY_TIERS",
       "value": "<=200:650, <=500:900, <=1000:1100, <=5000:1600, <=10000:1900, >10000:2200",
       "unit": "UZS per kWh (tiered by monthly kWh)",
-      "law": "Тарифы на электроэнергию — регулируемые, действуют с 1 мая 2025",
+      "law": "ПКМ-243 от 15.05.2026, прил. 1 (с 01.06.2026; ред. ПКМ-601 с 01.11.2026)",
       "theme": "utility_tariff",
       "is_gov_regulated": true,
       "surfaces": [
@@ -899,11 +899,12 @@
       "source_hint": "lex.uz / Минэнерго РУз (тарифы на электроэнергию)",
       "conflict": true,
       "status": "current",
-      "notes": "Government-regulated tiered electricity tariff (effective 1 May 2025). Duplicated in utilities.ts AND constants/utility-tariffs.ts AND surfaced in UTILITIES_TABLES — 3 copies, keep in sync. 50% discount if electric stove (line 76). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-01: льгота 325/450/550 только для МКД и общежитий с централизованными электроплитами до 1 000 кВт·ч (kun.uz 15.05.2026, ПКМ-243); убрано 50% от всей суммы.",
+      "notes": "Government-regulated tiered electricity tariff (effective 1 May 2025). Duplicated in utilities.ts AND constants/utility-tariffs.ts AND surfaced in UTILITIES_TABLES — 3 copies, keep in sync. 50% discount if electric stove (line 76). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-01: льгота 325/450/550 только для МКД и общежитий с централизованными электроплитами до 1 000 кВт·ч (kun.uz 15.05.2026, ПКМ-243); убрано 50% от всей суммы.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).  ||  2026-11-09: правка 01.11 была регрессией. Текст ПКМ-243 (прил. 1, п. 1.2.1, и в ред. 01.06, и в ред. 01.11) даёт МКД и общежитиям с централизованными электроплитами 325/450/550/800/950/1 100 — половину на ВСЕХ шести ступенях, а не до 1 000 кВт·ч (01.11 сверяли по пересказу kun.uz). Код: скидка 50% со всей суммы только при отметке централизованной плиты; 1 500 кВт·ч = 875 000, а не 1 275 000.",
       "official_value": "<=200:650, <=500:900, <=1000:1100, <=5000:1600, <=10000:1900, >10000:2200",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-11-01",
-      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utilities.ts__GAS_SUMMER_TIERS / GAS_WINTER_TIERS",
@@ -923,11 +924,12 @@
       "source_hint": "lex.uz / Худудгаз (тарифы на газ)",
       "conflict": false,
       "status": "current",
-      "notes": "Government-regulated tiered natural-gas tariff, summer vs winter first-tier threshold differs (100 vs 500 m³). Duplicated across 3 files (summer table surfaced in calculator-tables). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Government-regulated tiered natural-gas tariff, summer vs winter first-tier threshold differs (100 vs 500 m³). Duplicated across 3 files (summer table surfaced in calculator-tables). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "summer: <=100:1100, <=2500:2000, <=5000:2300, <=10000:2700, >10000:3300; winter: <=500:1100, <=2500:2000, <=5000:2300, <=10000:2700, >10000:3300",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utilities.ts__HEATING_RATE_PER_M2_PER_DAY",
@@ -1478,11 +1480,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия (regional energosbyt)",
       "conflict": false,
       "status": "current",
-      "notes": "Full 6-tier monthly electricity tariff table (per household): ≤200 kWh=600, ≤500=800, ≤1000=1000, ≤5000=1500, ≤10000=1750, >10000=2000 UZS/kWh. Consumed by calculateTieredCost(). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Full 6-tier monthly electricity tariff table (per household), с 01.06.2026: в пределах нормы 650, до 500 — 900, 501–1 000 — 1 100, 1 001–5 000 — 1 600, 5 001–10 000 — 1 900, свыше — 2 200 сум/кВт·ч. Consumed by calculateTieredCost(). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "[{upTo:200,pricePerUnit:650},{upTo:500,pricePerUnit:900},{upTo:1000,pricePerUnit:1100},{upTo:5000,pricePerUnit:1600},{upTo:10000,pricePerUnit:1900},{upTo:null,pricePerUnit:2200}]",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[0]",
@@ -1500,11 +1503,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Electricity tier 1: up to 200 kWh/month at 600 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Electricity tier 1: up to 200 kWh/month at 600 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "650",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/30/new-tariffs/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/30/new-tariffs/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[1]",
@@ -1522,11 +1526,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Electricity tier 2: up to 500 kWh/month at 800 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Electricity tier 2: up to 500 kWh/month at 800 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "900",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[2]",
@@ -1544,11 +1549,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Electricity tier 3: up to 1000 kWh/month at 1000 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Electricity tier 3: up to 1000 kWh/month at 1000 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "1100",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://yuz.uz/ru/news/v-uzbekistane-s-1-iyunya-vvodyatsya-nove-tarif-na-elektroenergiyu-i-prirodny-gaz",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[3]",
@@ -1566,11 +1572,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Electricity tier 4: up to 5000 kWh/month at 1500 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Electricity tier 4: up to 5000 kWh/month at 1500 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "1600",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[4]",
@@ -1588,11 +1595,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Electricity tier 5: up to 10000 kWh/month at 1750 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Electricity tier 5: up to 10000 kWh/month at 1750 UZS/kWh. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "1900",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__ELECTRICITY_TIERS[5]",
@@ -1610,11 +1618,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Electricity tier 6 (top): over 10000 kWh/month at 2000 UZS/kWh (upTo: null = unlimited). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Electricity tier 6 (top): over 10000 kWh/month at 2000 UZS/kWh (upTo: null = unlimited). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "2200",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER",
@@ -1632,11 +1641,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия (Hududgaz)",
       "conflict": false,
       "status": "current",
-      "notes": "Full 5-tier SUMMER natural-gas tariff table: ≤100 m3=1000, ≤2500=1800, ≤5000=2100, ≤10000=2500, >10000=3000 UZS/m3. Differs from winter only in the first tier threshold (100 vs 500 m3). Consumed by calculateTieredCost(). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Full 5-tier SUMMER natural-gas tariff table: ≤100 m3=1000, ≤2500=1800, ≤5000=2100, ≤10000=2500, >10000=3000 UZS/m3. Differs from winter only in the first tier threshold (100 vs 500 m3). Consumed by calculateTieredCost(). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "[{upTo:100,pricePerUnit:1100},{upTo:2500,pricePerUnit:2000},{upTo:5000,pricePerUnit:2300},{upTo:10000,pricePerUnit:2700},{upTo:null,pricePerUnit:3300}]",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.ustabor.uz/ru/blog/tablica-tarifov-na-kommunalnye-uslugi-v-2026-godu-svet-gaz-goryachaya-i-holodnaya-voda-musor-otoplenie",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[0]",
@@ -1654,11 +1664,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Summer gas tier 1: up to 100 m3/month at 1000 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Summer gas tier 1: up to 100 m3/month at 1000 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "1100",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/30/new-tariffs/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/30/new-tariffs/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[1]",
@@ -1676,11 +1687,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Summer gas tier 2: up to 2500 m3/month at 1800 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Summer gas tier 2: up to 2500 m3/month at 1800 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "2000",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[2]",
@@ -1698,11 +1710,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Summer gas tier 3: up to 5000 m3/month at 2100 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Summer gas tier 3: up to 5000 m3/month at 2100 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "2300",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[3]",
@@ -1720,11 +1733,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Summer gas tier 4: up to 10000 m3/month at 2500 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Summer gas tier 4: up to 10000 m3/month at 2500 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "2700",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_SUMMER[4]",
@@ -1742,11 +1756,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Summer gas tier 5 (top): over 10000 m3/month at 3000 UZS/m3 (upTo: null). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Summer gas tier 5 (top): over 10000 m3/month at 3000 UZS/m3 (upTo: null). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "3300",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER",
@@ -1764,11 +1779,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия (Hududgaz)",
       "conflict": false,
       "status": "current",
-      "notes": "Full 5-tier WINTER natural-gas tariff table: ≤500 m3=1000, ≤2500=1800, ≤5000=2100, ≤10000=2500, >10000=3000 UZS/m3. First-tier threshold is 500 m3 (vs 100 in summer); prices identical to summer. Header comment notes 'typically same structure, higher consumption'. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Full 5-tier WINTER natural-gas tariff table: ≤500 m3=1000, ≤2500=1800, ≤5000=2100, ≤10000=2500, >10000=3000 UZS/m3. First-tier threshold is 500 m3 (vs 100 in summer); prices identical to summer. Header comment notes 'typically same structure, higher consumption'. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "[{upTo:500,pricePerUnit:1100},{upTo:2500,pricePerUnit:2000},{upTo:5000,pricePerUnit:2300},{upTo:10000,pricePerUnit:2700},{upTo:null,pricePerUnit:3300}]",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[0]",
@@ -1786,11 +1802,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Winter gas tier 1: up to 500 m3/month at 1000 UZS/m3 (threshold differs from summer's 100 m3). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Winter gas tier 1: up to 500 m3/month at 1000 UZS/m3 (threshold differs from summer's 100 m3). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "1100",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/30/new-tariffs/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/30/new-tariffs/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[1]",
@@ -1808,11 +1825,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Winter gas tier 2: up to 2500 m3/month at 1800 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Winter gas tier 2: up to 2500 m3/month at 1800 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "2000",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[2]",
@@ -1830,11 +1848,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Winter gas tier 3: up to 5000 m3/month at 2100 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Winter gas tier 3: up to 5000 m3/month at 2100 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "2300",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[3]",
@@ -1852,11 +1871,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Winter gas tier 4: up to 10000 m3/month at 2500 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Winter gas tier 4: up to 10000 m3/month at 2500 UZS/m3. || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "2700",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__GAS_TIERS_WINTER[4]",
@@ -1874,11 +1894,12 @@
       "source_hint": "Минэнерго РУз / тарифная комиссия",
       "conflict": false,
       "status": "current",
-      "notes": "Winter gas tier 5 (top): over 10000 m3/month at 3000 UZS/m3 (upTo: null). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Winter gas tier 5 (top): over 10000 m3/month at 3000 UZS/m3 (upTo: null). || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-09 алерт монитора: прил. 1 ПКМ-243 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026, lex.uz/docs/8565490) — цены те же; первая ступень теперь «в пределах базовой нормы» ПКМ-204 прил. 2 (электричество 200, зимой в домах без газа 350; газ 500 ноябрь–февраль / 100 март–октябрь, Каракалпакстан и Хорезм с октября).",
       "official_value": "3300",
       "source_url": "https://lex.uz/docs/8195731",
-      "last_verified": "2026-07-03",
-      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/"
+      "last_verified": "2026-11-09",
+      "source_url_prev": "https://www.spot.uz/ru/2026/05/15/energy-tariffs-up/",
+      "verified_date": "2026-11-09"
     },
     {
       "id": "utility-tariffs.ts__HEATING_RATE_PER_M2_DAY",
@@ -2010,9 +2031,9 @@
       "source_hint": "Toshsuvta'minoti / тарифная комиссия (Tashkent водоотведение)",
       "conflict": false,
       "status": "current",
-      "notes": "Решение не начислять канализацию поверх 3808 верное, но формулировка «слита в тариф на воду» неточна. ⚠️ ПКМ-243 от 15.05.2026 поднял электричество и газ, воды НЕ касался — прежняя запись «повышение 1 июня 2026» ошибочна.",
+      "notes": "Решение не начислять канализацию поверх 3808 верное, но формулировка «слита в тариф на воду» неточна. ⚠️ ПКМ-243 от 15.05.2026 поднял электричество и газ, воды НЕ касался — прежняя запись «повышение 1 июня 2026» ошибочна.  ||  2026-11-09: реестр api.uzsuv.uz — стоки г. Ташкента 1000 без НДС с 2023-12-15, без изменений.",
       "source_url": "https://api.uzsuv.uz/media/tariff/2026/04/toshkent_ru.pdf",
-      "last_verified": "2026-08-09",
+      "last_verified": "2026-11-09",
       "official_value": "Питьевая вода 1568 сум/м³, сточные воды 1120 сум/м³ (с НДС). Нетто-тарифы не менялись с 15.12.2023; версия с НДС — с 01.04.2024."
     },
     {
@@ -2055,9 +2076,9 @@
       "source_hint": "Uzbekneftegas / fuel retail price monitoring",
       "conflict": true,
       "status": "current",
-      "notes": "Market reference fuel prices (not formula). Note comment: AI-80 banned from 1 Dec 2025; AI-91 no longer sold. Fuel is partly liberalized — treat as market, re-verify periodically. || 2026-08-31: цены обновлены по средним ташкентским на 28.08.2026 (avtoelon.uz; метан — autostrada.uz). Прежние были сняты в апреле и отстали на 10-33%. Топливо в РУз НЕ регулируется государством, цена отличается по сетям — это средняя. ПРОПАН НЕ ПОДТВЕРЖДЁН: сводки по автогазу расходятся, значение 5500 оставлено без изменения. ВАЖНО: в калькуляторе нет поля своей цены, поэтому константа = ответ пользователю, держать свежей обязательно. || alert 2026-09-21: stale_confirmed (рынок), ждёт решения по значениям. || applied 2026-09-21: цены UNG на 18.09, пропан 8 800 (август), добавлено поле своей цены; FUEL_PRICES_DATE=2026-09-18.  ||  2026-11-01 calkcheck: сеть UNG/Carvon на 20.10.2026; пропан не подтверждён, оставлен август.",
+      "notes": "Market reference fuel prices (not formula). Note comment: AI-80 banned from 1 Dec 2025; AI-91 no longer sold. Fuel is partly liberalized — treat as market, re-verify periodically. || 2026-08-31: цены обновлены по средним ташкентским на 28.08.2026 (avtoelon.uz; метан — autostrada.uz). Прежние были сняты в апреле и отстали на 10-33%. Топливо в РУз НЕ регулируется государством, цена отличается по сетям — это средняя. ПРОПАН НЕ ПОДТВЕРЖДЁН: сводки по автогазу расходятся, значение 5500 оставлено без изменения. ВАЖНО: в калькуляторе нет поля своей цены, поэтому константа = ответ пользователю, держать свежей обязательно. || alert 2026-09-21: stale_confirmed (рынок), ждёт решения по значениям. || applied 2026-09-21: цены UNG на 18.09, пропан 8 800 (август), добавлено поле своей цены; FUEL_PRICES_DATE=2026-09-18.  ||  2026-11-01 calkcheck: сеть UNG/Carvon на 20.10.2026; пропан не подтверждён, оставлен август.  ||  2026-11-09 алерт: таблица UNG на autostrada.uz совпадает с FUEL_PRICES (последняя новость 20.10); дифф — счётчики просмотров.",
       "official_value": "ai-92:13500, ai-95:19500, ai-100:24500, diesel:18500, gas_lpg:8800 (август 2026, растёт вслед за биржей), gas_cng:5750 — Ташкент, сеть «Узбекнефтегаз», 20.10.2026 (autostrada.uz); в калькуляторе есть поле своей цены",
-      "last_verified": "2026-11-03",
+      "last_verified": "2026-11-09",
       "source_url_verify": "https://avtoelon.uz/yangiliklar/articles/skol-ko-stoit-benzin-v-taskente/",
       "verify_method": "market-check-2026-09-21",
       "source_url": "https://autostrada.uz/benzin/",
@@ -4170,14 +4191,14 @@
       "conflict": false,
       "status": "current",
       "official_value": "Ст. 6: «Индивидуальные предприниматели, члены дехканских хозяйств без образования юридического лица, а также другие граждане участвуют в накопительной пенсионной системе на добровольной основе». Ст. 10: взносы производит РАБОТОДАТЕЛЬ от суммы заработной платы и иного дохода работников; добровольные участники «самостоятельно определяют размер и сроки взносов» — ставки 0,1% для них не существует.",
-      "notes": "ИСПРАВЛЕНО 2026-09-10. Проза страницы калькулятора ИП утверждала «ИНПС — 0,1% от дохода» и включала 30 000 сум в пример; код (business.ts inps = 0) был прав, неверна была проза. Правка: структура налогов, worked example (пересчитан на 740 000 сум/мес и 8 880 000 сум/год) и FAQ, RU+UZ. || Подзаконный акт — Положение рег. МЮ № 3577 от 20.11.2024 (действует с 23.11.2024, заменило рег. № 1515), уже по названию адресовано РАБОТОДАТЕЛЯМ. || Смежный вопрос НА ПРОВЕРКЕ, не закрыт: является ли 0,1% частью 12% НДФЛ (тогда удержание 12,0% и «на руки» 88,0%) или удержанием сверх него (12,1% / 87,9%, как сейчас в salary.ts). Ст. 10 говорит «за счёт соответствующего уменьшения суммы начисленного НДФЛ», что указывает на первое, но в updates.ts зафиксирована обратная правка — до завершения встречной сверки калькулятор зарплаты НЕ трогать.",
+      "notes": "ИСПРАВЛЕНО 2026-09-10. Проза страницы калькулятора ИП утверждала «ИНПС — 0,1% от дохода» и включала 30 000 сум в пример; код (business.ts inps = 0) был прав, неверна была проза. Правка: структура налогов, worked example (пересчитан на 740 000 сум/мес и 8 880 000 сум/год) и FAQ, RU+UZ. || Подзаконный акт — Положение рег. МЮ № 3577 от 20.11.2024 (действует с 23.11.2024, заменило рег. № 1515), уже по названию адресовано РАБОТОДАТЕЛЯМ. || Смежный вопрос НА ПРОВЕРКЕ, не закрыт: является ли 0,1% частью 12% НДФЛ (тогда удержание 12,0% и «на руки» 88,0%) или удержанием сверх него (12,1% / 87,9%, как сейчас в salary.ts). Ст. 10 говорит «за счёт соответствующего уменьшения суммы начисленного НДФЛ», что указывает на первое, но в updates.ts зафиксирована обратная правка — до завершения встречной сверки калькулятор зарплаты НЕ трогать.  ||  2026-11-09 алерт: новой редакции документа нет (дифф страницы lex.uz без смены текста нормы).",
       "source_url": "https://lex.uz/ru/docs/391377",
       "source_title": "Закон РУз № 702-II «О накопительном пенсионном обеспечении граждан», ст. 6 и 10 (lex.uz)",
       "verify_note": "Норма прямая, процитирована из первоисточника; подтверждена buxgalter.uz (шпаргалка по налогам ИП: «сами индивидуальные предприниматели участвуют в накопительной пенсионной системе добровольно», взноса 0,1% в перечне налогов ИП нет).",
       "verify_confidence": "high",
       "verified_date": "2026-09-10",
       "verify_method": "tier2-primary-lex.uz-2026-09-10",
-      "last_verified": "2026-09-10"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "utility-regions.ts__UTILITY_REGIONS.water",
@@ -4201,14 +4222,14 @@
       "conflict": false,
       "status": "current",
       "official_value": "Цены — из реестра «Узсувтаъминот». Цена 1 м³ по счётчику: без канализации — вода; с канализацией — вода + стоки; с канализацией и центральным ГВС («4-код») — вода + стоки × k, где k = норматив стоков / норматив воды в «4-код». Сверено с тарифными листами 10 регионов (где лист не старше реестра): 30 из 30 цен совпали до сума. Если реестр отстаёт от решения кенгаша (e-qaror), берётся решение: Ташкентская обл. 3100/1500 с 03.10.2026 (VII-43-127-10-0-K/26); Самаркандская обл. 3600/2250 с 15.10.2026 (VII-37-177-7-0-K/26); Навоийская обл. 4200/2100 с 15.10.2026 (VII-38-111-5-0-K/26); Андижанская обл. 2500/2500 с 01.11.2026 (VII-22-193-1-0-K/26, дата — объявление оператора).",
-      "notes": "Добавлено 2026-09-10 по письму читателя (калькулятор считал коммуналку только по Ташкенту). Город Ташкент — самый дешёвый регион по воде: вода + канализация 2 688 сум/м³ против 11 256 в Сурхандарье (4,2×). || k нет в реестре, снят с листов: 2,0 — Ташкент г., Бухара, Наманган; 1,7 — Ташкентская обл.; 1,5 — Фергана; 1,3 — Самарканд, Хорезм; 1,0 — остальные. Листы Джизака, Навои, Хорезма от 01.04.2024 и Сурхандарьи от 01.06.2025 старше реестра — цены из реестра, k из листов. || Нормативы для квартир без счётчика НЕ моделируются (калькулятор принимает м³): 350/200/50 л/сутки, для воды ×1,5 без счётчика. || Ловушка: «Ташкент — 2 600» у агрегаторов — это Ташкентская ОБЛАСТЬ («Toshkent suv taʼminoti»), не город. || Региональные поддомены api/v1/<регион>/ противоречивы (отменённые тарифы, смешение с НДС и без) — не использовать. || С 01.01.2027 тарифы утверждает Межведомственная тарифная комиссия при КМ — формат публикации может смениться, перепроверить реестр. || 2026-10-13: Ташкентская обл. — Кенгаш VII-43-127-10-0-K/26 от 16.09.2026 (e-qaror, PDF прил. 1): население вода 2600→3100, стоки 1300→1500 без НДС, в силе через 15 дней после опубликования (16.09) — с 01.10.2026. Реестр «Узсувтаъминот» не обновлён. Ожидают ролловера: Самарканд VII-37-177-7-0-K/26 (3600/2250, с 15.10.2026, п. 4), Навои VII-38-111-5-0-K/26 от 30.09 (4200/2100, +15 дней после опубликования), Андижан VII-22-193-1-0-K/26 от 07.10 (2500/2500, +15 дней после опубликования). || 2026-10-15: выкачены Самарканд VII-37-177-7-0-K/26 от 22.09.2026 (PDF, п. 4 «2026-yil 15-oktabrdan e’tiboran kuchga kiradi»; население 2800→3600, 1900→2250 без НДС) и Навои VII-38-111-5-0-K/26 от 30.09.2026 (п. 5 — через 15 дней после опубликования; опубликовано на e-qaror 30.09 → с 15.10.2026; 3500→4200, 1800→2100 без НДС). Таблицы PDF перечитаны, отменяющих/изменяющих решений кенгашей (region_id 7 и 5, стр. 1–5) нет. Реестр «Узсувтаъминот» не обновлён. Ждёт: Андижан VII-22-193-1-0-K/26 (2500/2500, ≈22.10). || 2026-10-20: реестр «Узсувтаъминот» догнал решения — Ташкентская обл. («Toshkent viloyati suv taʼminoti») 3100/1500 с 2026-10-03 (дата уточнена с 01.10), Самарканд 3600/2250 и Навои 4200/2100 с 2026-10-15; Андижан в реестре ещё 1650/1650. || 2026-10-26: Андижан — Кенгаш VII-22-193-1-0-K/26 от 07.10.2026 (e-qaror 07.10, прил.): население 1650→2500 вода и стоки без НДС, в силе через 15 дней после опубликования (≈22.10). Реестр на 26.10 не обновлён; задача-ролловер 22.10 остановилась без правок — выкачено вручную. Решение Навоийского кенгаша VII-39-120-5-0-K/26 от 16.10 касается тарифов НГМК, не «Navoiy suv taʼminoti». || 2026-10-30: дата Андижана исправлена с 22.10 на 01.11.2026. PDF решения перечитан: суммы 2500/2500 без НДС верны, п. 4 — «ommaviy axborot vositalarida eʼlon qilingandan keyin oʻn besh kun oʻtgach», точной даты нет, п. 5 отменяет VII-8-107-1-0-K/25. Объявление «Andijon suv taʼminoti» от 08.10 (uzsuv.uz/uz/posts/yangilik-307, andijon.uzsuv.uz/uz/announcements): «2026-yilning 1-noyabrdan … amalda qoʻllaniladi», 2800/2800 с НДС (=2500×1,12), предоплата 2 месяца по старой цене до 01.11. Прецедент: решение 14.05.2025 → реестр 01.06.2025. Отменяющих решений по типу 279, region_id 1 нет. Реестр на 30.10 ещё 1650/1650 с 2025-06-01 — сверить 01.11+.",
+      "notes": "Добавлено 2026-09-10 по письму читателя (калькулятор считал коммуналку только по Ташкенту). Город Ташкент — самый дешёвый регион по воде: вода + канализация 2 688 сум/м³ против 11 256 в Сурхандарье (4,2×). || k нет в реестре, снят с листов: 2,0 — Ташкент г., Бухара, Наманган; 1,7 — Ташкентская обл.; 1,5 — Фергана; 1,3 — Самарканд, Хорезм; 1,0 — остальные. Листы Джизака, Навои, Хорезма от 01.04.2024 и Сурхандарьи от 01.06.2025 старше реестра — цены из реестра, k из листов. || Нормативы для квартир без счётчика НЕ моделируются (калькулятор принимает м³): 350/200/50 л/сутки, для воды ×1,5 без счётчика. || Ловушка: «Ташкент — 2 600» у агрегаторов — это Ташкентская ОБЛАСТЬ («Toshkent suv taʼminoti»), не город. || Региональные поддомены api/v1/<регион>/ противоречивы (отменённые тарифы, смешение с НДС и без) — не использовать. || С 01.01.2027 тарифы утверждает Межведомственная тарифная комиссия при КМ — формат публикации может смениться, перепроверить реестр. || 2026-10-13: Ташкентская обл. — Кенгаш VII-43-127-10-0-K/26 от 16.09.2026 (e-qaror, PDF прил. 1): население вода 2600→3100, стоки 1300→1500 без НДС, в силе через 15 дней после опубликования (16.09) — с 01.10.2026. Реестр «Узсувтаъминот» не обновлён. Ожидают ролловера: Самарканд VII-37-177-7-0-K/26 (3600/2250, с 15.10.2026, п. 4), Навои VII-38-111-5-0-K/26 от 30.09 (4200/2100, +15 дней после опубликования), Андижан VII-22-193-1-0-K/26 от 07.10 (2500/2500, +15 дней после опубликования). || 2026-10-15: выкачены Самарканд VII-37-177-7-0-K/26 от 22.09.2026 (PDF, п. 4 «2026-yil 15-oktabrdan e’tiboran kuchga kiradi»; население 2800→3600, 1900→2250 без НДС) и Навои VII-38-111-5-0-K/26 от 30.09.2026 (п. 5 — через 15 дней после опубликования; опубликовано на e-qaror 30.09 → с 15.10.2026; 3500→4200, 1800→2100 без НДС). Таблицы PDF перечитаны, отменяющих/изменяющих решений кенгашей (region_id 7 и 5, стр. 1–5) нет. Реестр «Узсувтаъминот» не обновлён. Ждёт: Андижан VII-22-193-1-0-K/26 (2500/2500, ≈22.10). || 2026-10-20: реестр «Узсувтаъминот» догнал решения — Ташкентская обл. («Toshkent viloyati suv taʼminoti») 3100/1500 с 2026-10-03 (дата уточнена с 01.10), Самарканд 3600/2250 и Навои 4200/2100 с 2026-10-15; Андижан в реестре ещё 1650/1650. || 2026-10-26: Андижан — Кенгаш VII-22-193-1-0-K/26 от 07.10.2026 (e-qaror 07.10, прил.): население 1650→2500 вода и стоки без НДС, в силе через 15 дней после опубликования (≈22.10). Реестр на 26.10 не обновлён; задача-ролловер 22.10 остановилась без правок — выкачено вручную. Решение Навоийского кенгаша VII-39-120-5-0-K/26 от 16.10 касается тарифов НГМК, не «Navoiy suv taʼminoti». || 2026-10-30: дата Андижана исправлена с 22.10 на 01.11.2026. PDF решения перечитан: суммы 2500/2500 без НДС верны, п. 4 — «ommaviy axborot vositalarida eʼlon qilingandan keyin oʻn besh kun oʻtgach», точной даты нет, п. 5 отменяет VII-8-107-1-0-K/25. Объявление «Andijon suv taʼminoti» от 08.10 (uzsuv.uz/uz/posts/yangilik-307, andijon.uzsuv.uz/uz/announcements): «2026-yilning 1-noyabrdan … amalda qoʻllaniladi», 2800/2800 с НДС (=2500×1,12), предоплата 2 месяца по старой цене до 01.11. Прецедент: решение 14.05.2025 → реестр 01.06.2025. Отменяющих решений по типу 279, region_id 1 нет. Реестр на 30.10 ещё 1650/1650 с 2025-06-01 — сверить 01.11+.  ||  2026-11-09 алерт: реестр api.uzsuv.uz догнал Андижан — 2500/2500 с 2026-11-01 (как в коде); остальные 13 регионов совпадают.",
       "source_url": "https://api.uzsuv.uz/api/v1/r/service/tariff/",
       "source_title": "Реестр тарифов АО «Узсувтаъминот» (JSON), 16 организаций",
       "verify_note": "Реестр прочитан напрямую (HTTP 200 и с Mac, и с сервера DATA_HUB). Формула сверена с тарифными листами api.uzsuv.uz/media/tariff/2026/04/*.",
       "verify_confidence": "high",
       "verified_date": "2026-09-10",
       "verify_method": "tier2-primary-registry-2026-09-10",
-      "last_verified": "2026-10-30"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "utility-regions.ts__UTILITY_REGIONS.waste",
@@ -4445,10 +4466,10 @@
       "source_hint": "https://lex.uz/ru/docs/5739505",
       "conflict": false,
       "status": "current",
-      "notes": "Было «до 10, с 2025 до 25» — акта не найдено.",
+      "notes": "Было «до 10, с 2025 до 25» — акта не найдено.  ||  2026-11-09 алерт: новой редакции документа нет (дифф страницы lex.uz без смены текста нормы).",
       "official_value": "5",
       "source_url": "https://lex.uz/ru/docs/5739505",
-      "last_verified": "2026-11-01",
+      "last_verified": "2026-11-09",
       "verified_date": "2026-11-01"
     },
     {
@@ -4669,6 +4690,79 @@
       "conflict": false,
       "status": "unverified",
       "notes": "Рост цен 7% — допущение около инфляции, статистики цен на жильё не сверял. Вывод чувствителен к ставке вклада: при 18% выгоднее аренда, при 10% покупка."
+    },
+    {
+      "id": "utility-tariffs.ts__ELECTRICITY_BASE_NORM_KWH",
+      "file": "lib/constants/utility-tariffs.ts",
+      "key": "ELECTRICITY_BASE_NORM_KWH",
+      "value": "200",
+      "unit": "kWh per month",
+      "law": "ПКМ-204 от 16.04.2024, прил. 2 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026)",
+      "theme": "utility_tariff",
+      "is_gov_regulated": true,
+      "surfaces": [
+        "lib/calculators/utilities.ts calculateElectricity",
+        "lib/data/calculator-articles.ts (electricity, heating)"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "lex.uz/docs/6884060 прил. 2",
+      "conflict": false,
+      "status": "current",
+      "notes": "Базовая норма = граница первой ступени ПКМ-243. 200 кВт·ч в газифицированных домах круглый год и везде в марте–октябре.",
+      "official_value": "200",
+      "source_url": "https://lex.uz/docs/6884060",
+      "last_verified": "2026-11-09",
+      "verified_date": "2026-11-09"
+    },
+    {
+      "id": "utility-tariffs.ts__ELECTRICITY_BASE_NORM_NO_GAS_HEATING_KWH",
+      "file": "lib/constants/utility-tariffs.ts",
+      "key": "ELECTRICITY_BASE_NORM_NO_GAS_HEATING_KWH",
+      "value": "350",
+      "unit": "kWh per month",
+      "law": "ПКМ-204 от 16.04.2024, прил. 2 в ред. ПКМ-601 от 31.10.2026 (с 01.11.2026); ПКМ-319 п. 119-1",
+      "theme": "utility_tariff",
+      "is_gov_regulated": true,
+      "surfaces": [
+        "lib/calculators/utilities.ts calculateElectricity(noGasHeatingSeason)",
+        "components/calculators/ElectricityCalculator.tsx",
+        "components/calculators/UtilitiesTotalCalculator.tsx",
+        "lib/data/calculator-articles.ts (electricity, heating)",
+        "lib/data/calculator-howto.ts (electricity)"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "lex.uz/docs/6884060 прил. 2; lex.uz/docs/8565490",
+      "conflict": false,
+      "status": "current",
+      "notes": "Новая норма с 01.11.2026: отопительный сезон (ноябрь–февраль; Каракалпакстан и Хорезм октябрь–февраль), дома без газа или с затруднённой подачей газа по списку, который утверждают хокимияты по предложениям Минэнерго, «Худудгазтаъминот» и РЭС. До 01.11 норма была 200 для всех.",
+      "official_value": "350",
+      "source_url": "https://lex.uz/docs/6884060",
+      "last_verified": "2026-11-09",
+      "verified_date": "2026-11-09"
+    },
+    {
+      "id": "utility-tariffs.ts__ELECTRIC_STOVE_DISCOUNT",
+      "file": "lib/constants/utility-tariffs.ts",
+      "key": "ELECTRIC_STOVE_DISCOUNT",
+      "value": "0.5",
+      "unit": "share of tariff",
+      "law": "ПКМ-243 от 15.05.2026, прил. 1, п. 1.2.1 (ред. ПКМ-601 с 01.11.2026)",
+      "theme": "utility_tariff",
+      "is_gov_regulated": true,
+      "surfaces": [
+        "lib/calculators/utilities.ts calculateElectricity",
+        "lib/data/calculator-articles.ts (electricity)",
+        "lib/data/calculator-case-studies.ts (utilities-total)"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "lex.uz/docs/8195731 прил. 1 п. 1.2.1",
+      "conflict": false,
+      "status": "current",
+      "notes": "МКД и общежития с централизованными электроплитами: 325/450/550/800/950/1 100 сум — ровно половина каждой из шести ступеней. Частные дома и квартиры со своей плитой платят обычный тариф (п. 1.2.2 «остальные бытовые потребители»).",
+      "official_value": "0.5",
+      "source_url": "https://lex.uz/docs/8195731",
+      "last_verified": "2026-11-09",
+      "verified_date": "2026-11-09"
     }
   ],
   "meta": {
@@ -4683,8 +4777,8 @@
       ]
     },
     "last_reconcile": "2026-09-13",
-    "last_verification_sweep": "2026-11-03",
-    "last_verification_note": "calkcheck 2026-11-03: последние 18 калькуляторов, вручную; см. AUDIT-2026-11-03.md. calkcheck 2026-11-01: выборка 20 страниц, вручную; см. AUDIT-2026-11-01.md. Tier-2 2026-09-13: 35 записей (все uncertain + gov без last_verified + конфликт ОСАГО) по первоисточникам (lex.uz curl: НК, КоАО, ТК, ПКМ-796 узб. оригинал, ЗРУ-1116) + встречная проверка. Итог реестра: {'current': 136, 'stale_confirmed': 9, 'removed': 7, 'unverified': 13, 'uncertain': 1}. Код НЕ правился (tier2).",
+    "last_verification_sweep": "2026-11-09",
+    "last_verification_note": "алерт монитора 2026-11-09: ПКМ-243 прил. 1 в ред. ПКМ-601 (базовые нормы ПКМ-204, норма 350 кВт·ч для домов без газа, скидка за централизованную плиту на всех ступенях); вода, топливо, ПКМ-597/707, закон 702-II — без изменений. calkcheck 2026-11-03: последние 18 калькуляторов, вручную; см. AUDIT-2026-11-03.md. calkcheck 2026-11-01: выборка 20 страниц, вручную; см. AUDIT-2026-11-01.md. Tier-2 2026-09-13: 35 записей (все uncertain + gov без last_verified + конфликт ОСАГО) по первоисточникам (lex.uz curl: НК, КоАО, ТК, ПКМ-796 узб. оригинал, ЗРУ-1116) + встречная проверка. Итог реестра: {'current': 136, 'stale_confirmed': 9, 'removed': 7, 'unverified': 13, 'uncertain': 1}. Код НЕ правился (tier2).",
     "last_reconciled": "2026-09-13",
     "last_rollover": "УП-115 от 23.06.2026 — БРВ 440000, МРОТ 1360000 с 01.09.2026",
     "total": null

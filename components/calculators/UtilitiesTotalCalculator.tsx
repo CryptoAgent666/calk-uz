@@ -17,6 +17,7 @@ export default function UtilitiesTotalCalculator() {
   const [regionId, setRegionId] = useState(DEFAULT_REGION_ID)
   const [electricity, setElectricity] = useState('200')
   const [hasStove, setHasStove] = useState(false)
+  const [noGas, setNoGas] = useState(false)
   const [gas, setGas] = useState('50')
   const [isSummer, setIsSummer] = useState(true)
   const [coldWater, setColdWater] = useState('5')
@@ -45,18 +46,18 @@ export default function UtilitiesTotalCalculator() {
     const hr = parseFloat(hotRate.replace(',', '.'))
     const htr = parseFloat(heatingRate.replace(',', '.'))
     return calculateUtilitiesTotal({
-      electricityKwh: elec, hasElectricStove: hasStove, gasM3: g, isSummer,
+      electricityKwh: elec, hasElectricStove: hasStove, noGas, gasM3: g, isSummer,
       coldWaterM3: cw, hotWaterM3: hw, heatingAreaM2: ha, persons: p,
       regionId, hasSewerage, centralHotWater,
       hotWaterRate: Number.isFinite(hr) && hr >= 0 ? hr : WATER_HOT_RATE,
       heatingRatePerM2PerDay: Number.isFinite(htr) && htr >= 0 ? htr : HEATING_RATE_PER_M2_DAY,
     })
-  }, [electricity, hasStove, gas, isSummer, coldWater, hotWater, heatingArea, persons, regionId, hasSewerage, centralHotWater, hotRate, heatingRate])
+  }, [electricity, hasStove, noGas, gas, isSummer, coldWater, hotWater, heatingArea, persons, regionId, hasSewerage, centralHotWater, hotRate, heatingRate])
 
   const t = locale === 'uz'
     ? {
         region: 'Hudud', regionNote: 'Suv va chiqindi olib chiqish hudud tariflari bo\'yicha hisoblanadi. Elektr va gaz tariflari butun mamlakatda bir xil.',
-        electricity: 'Elektr (kVt*soat)', stove: 'Markazlashgan elektr plita', gas: 'Gaz (m³)', summer: 'Yoz',
+        electricity: 'Elektr (kVt*soat)', stove: 'Markazlashgan elektr plita', noGas: "Gazsiz uy (qishda me'yor 350 kVt·soat)", gas: 'Gaz (m³)', summer: 'Yoz',
         coldWater: 'Sovuq suv (m³)', hotWater: 'Issiq suv (m³)', heatingArea: 'Isitish maydoni (m²)',
         sewerage: 'Kanalizatsiyaga ulangan', centralHot: 'Markaziy issiq suv',
         persons: 'Oila a\'zolari', hotRate: 'Issiq suv tarifi (so\'m/m³)', heatingRate: 'Isitish tarifi (so\'m/m² kuniga)',
@@ -66,7 +67,7 @@ export default function UtilitiesTotalCalculator() {
       }
     : {
         region: 'Регион', regionNote: 'Вода и вывоз мусора считаются по тарифам региона. Электричество и газ стоят одинаково по всей стране.',
-        electricity: 'Электричество (кВт*ч)', stove: 'Централизованная электроплита', gas: 'Газ (м³)', summer: 'Лето',
+        electricity: 'Электричество (кВт*ч)', stove: 'Централизованная электроплита', noGas: 'Дом без газа (зимой норма 350 кВт·ч)', gas: 'Газ (м³)', summer: 'Лето',
         coldWater: 'Холодная вода (м³)', hotWater: 'Горячая вода (м³)', heatingArea: 'Площадь отопления (м²)',
         sewerage: 'Канализация', centralHot: 'Центральное ГВС',
         persons: 'Членов семьи', hotRate: 'Тариф горячей воды (сум/м³)', heatingRate: 'Тариф отопления (сум/м² в сутки)',
@@ -98,6 +99,7 @@ export default function UtilitiesTotalCalculator() {
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
             <div className="flex items-center gap-2"><Switch id="stove" checked={hasStove} onCheckedChange={setHasStove} /><Label htmlFor="stove" className="cursor-pointer">{t.stove}</Label></div>
+            <div className="flex items-center gap-2"><Switch id="utilities-no-gas" checked={noGas} onCheckedChange={setNoGas} /><Label htmlFor="utilities-no-gas" className="cursor-pointer">{t.noGas}</Label></div>
             <div className="flex items-center gap-2"><Switch id="summer" checked={isSummer} onCheckedChange={setIsSummer} /><Label htmlFor="summer" className="cursor-pointer">{t.summer}</Label></div>
             <div className="flex items-center gap-2"><Switch id="utilities-sewerage" checked={hasSewerage} onCheckedChange={setHasSewerage} /><Label htmlFor="utilities-sewerage" className="cursor-pointer">{t.sewerage}</Label></div>
             <div className="flex items-center gap-2"><Switch id="utilities-central-hot" checked={hasSewerage && centralHotWater} onCheckedChange={setCentralHotWater} disabled={!hasSewerage} /><Label htmlFor="utilities-central-hot" className="cursor-pointer">{t.centralHot}</Label></div>

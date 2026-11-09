@@ -116,12 +116,12 @@ export const CALCULATOR_HOWTOS: CalculatorHowTo[] = [
     totalTimeMinutes: 1,
     stepsRu: [
       { name: 'Введите потребление', text: 'Укажите расход электроэнергии за месяц в кВт·ч.' },
-      { name: 'Отметьте электроплиту', text: 'При наличии электроплиты действует скидка к тарифу.' },
+      { name: 'Отметьте особенности дома', text: 'В многоквартирном доме с централизованными электроплитами все ступени тарифа вдвое дешевле. Если дом без газа и в списке хокимията, в ноябре–феврале норма 350 кВт·ч вместо 200.' },
       { name: 'Получите сумму оплаты', text: 'Результат появится сразу: разбивка по тарифным ступеням и итог.' },
     ],
     stepsUz: [
       { name: 'Iste\'molni kiriting', text: 'Oylik elektr energiya sarfini kVt·soatda ko\'rsating.' },
-      { name: 'Elektr plitani belgilang', text: 'Elektr plita bo\'lsa tarifga chegirma qo\'llaniladi.' },
+      { name: 'Uy xususiyatlarini belgilang', text: 'Markazlashgan elektr plitali ko\'p kvartirali uyda tarifning barcha bosqichlari ikki baravar arzon. Uy gazsiz va hokimlik ro\'yxatida bo\'lsa, noyabr–fevralda me\'yor 200 emas, 350 kVt·soat.' },
       { name: 'To\'lov summasini oling', text: 'Natija darhol chiqadi: tarif bosqichlari bo\'yicha taqsimot va jami.' },
     ],
   },

@@ -13,22 +13,27 @@ export default function ElectricityCalculator() {
   const locale = useLocale()
   const [consumption, setConsumption] = useState('')
   const [hasElectricStove, setHasElectricStove] = useState(false)
+  const [noGasWinter, setNoGasWinter] = useState(false)
 
   const result = useMemo(() => {
     const c = parseFloat(consumption) || 0
     if (c <= 0) return null
-    return calculateElectricity(c, hasElectricStove)
-  }, [consumption, hasElectricStove])
+    return calculateElectricity(c, hasElectricStove, noGasWinter)
+  }, [consumption, hasElectricStove, noGasWinter])
 
   const t = locale === 'uz'
     ? {
         consumption: 'Iste\'mol (kVt*soat)', electricStove: "Markazlashgan elektr plitali ko'p kvartirali uy",
+        noGas: "Gazsiz uy, noyabr–fevral",
+        noGasNote: "Uy hokimlik tasdiqlagan gaz yo'q yoki gaz yetkazish qiyin hududlar ro'yxatida bo'lsa, birinchi bosqich me'yori 200 emas, 350 kVt·soat (2026-yil 1-noyabrdan). Qoraqalpog'iston va Xorazmda — oktabrdan.",
         results: 'Natijalar', breakdown: 'Tarif bo\'yicha', from: 'dan', to: 'gacha',
         rate: 'Tarif', cost: 'Summa', discount: 'Chegirma (elektr plita)',
         total: 'Jami to\'lov', placeholder: 'kVt*soatni kiriting', unit: 'kVt·soat', currency: "so'm",
       }
     : {
         consumption: 'Потребление (кВт*ч)', electricStove: 'Многоквартирный дом с централизованными электроплитами',
+        noGas: 'Дом без газа, ноябрь–февраль',
+        noGasNote: 'Если дом в утверждённом хокимиятом списке негазифицированных или с затруднённой подачей газа, норма первой ступени — 350 кВт·ч вместо 200 (с 1 ноября 2026 года). В Каракалпакстане и Хорезме — с октября.',
         results: 'Результаты', breakdown: 'По тарифам', from: 'от', to: 'до',
         rate: 'Тариф', cost: 'Сумма', discount: 'Скидка (эл. плита)',
         total: 'Итого к оплате', placeholder: 'Введите кВт*ч', unit: 'кВт·ч', currency: 'сум',
@@ -45,6 +50,13 @@ export default function ElectricityCalculator() {
           <div className="flex items-center justify-between">
             <Label htmlFor="stove" className="cursor-pointer">{t.electricStove}</Label>
             <Switch id="stove" checked={hasElectricStove} onCheckedChange={setHasElectricStove} />
+          </div>
+          <div>
+            <div className="flex items-center justify-between">
+              <Label htmlFor="electricity-no-gas" className="cursor-pointer">{t.noGas}</Label>
+              <Switch id="electricity-no-gas" checked={noGasWinter} onCheckedChange={setNoGasWinter} />
+            </div>
+            <p className="mt-1 text-xs text-muted-foreground">{t.noGasNote}</p>
           </div>
         </CardContent>
       </Card>
