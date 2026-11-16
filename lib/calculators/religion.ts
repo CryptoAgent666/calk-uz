@@ -1,0 +1,156 @@
+/**
+ * Religious calculators: Zakat, Fitr Sadaqa, Fidiya Sadaqa, Kurban
+ */
+
+// Zakat Calculator (2.5% of wealth above nisab)
+export interface ZakatResult {
+  totalWealth: number
+  nisab: number
+  isZakatDue: boolean
+  zakatableAmount: number
+  zakatAmount: number
+  breakdown: { category: string; amount: number }[]
+}
+
+/** Нисаб по фетве Управления мусульман на 2026 год: 85 г золота 585 пробы. */
+export const NISAB_FATWA_2026 = 100_000_000
+
+export function calculateZakat(assets: {
+  cash: number
+  bankDeposits: number
+  goldGrams: number
+  silverGrams: number
+  investments: number
+  businessInventory: number
+  receivables: number
+  debtsOwed: number
+}, goldPricePerGram: number = NISAB_FATWA_2026 / 85): ZakatResult {
+  // Nisab = value of 85 grams of gold
+  const nisab = 85 * goldPricePerGram
+
+  const goldValue = assets.goldGrams * goldPricePerGram
+  const silverValue = assets.silverGrams * (goldPricePerGram / 80) // Approximate ratio
+
+  const totalWealth =
+    assets.cash +
+    assets.bankDeposits +
+    goldValue +
+    silverValue +
+    assets.investments +
+    assets.businessInventory +
+    assets.receivables -
+    assets.debtsOwed
+
+  const isZakatDue = totalWealth >= nisab
+  const zakatableAmount = isZakatDue ? totalWealth : 0
+  const zakatAmount = zakatableAmount * 0.025
+
+  const breakdown = [
+    { category: 'cash', amount: assets.cash },
+    { category: 'bank_deposits', amount: assets.bankDeposits },
+    { category: 'gold', amount: goldValue },
+    { category: 'silver', amount: silverValue },
+    { category: 'investments', amount: assets.investments },
+    { category: 'business_inventory', amount: assets.businessInventory },
+    { category: 'receivables', amount: assets.receivables },
+    { category: 'debts_owed', amount: -assets.debtsOwed },
+  ]
+
+  return { totalWealth, nisab, isZakatDue, zakatableAmount, zakatAmount, breakdown }
+}
+
+// Fitr Sadaqa (Sadaqatul Fitr)
+export interface FitrSadaqaResult {
+  familyMembers: number
+  amountPerPerson: number
+  totalAmount: number
+  inKg: number
+  productType: string
+}
+
+export type FitrProductType = 'wheat' | 'flour' | 'barley' | 'rice' | 'raisins' | 'dates'
+
+/**
+ * Official 2026 per-person amounts from the Uzbekistan Muslims Board (muslim.uz).
+ * Values reflect 2 kg of wheat/flour/raisins, 4 kg of barley/dates, etc.
+ */
+export const FITR_OFFICIAL_2026: Record<FitrProductType, { kg: number; sum: number }> = {
+  wheat:   { kg: 2, sum: 10_000 },
+  flour:   { kg: 2, sum: 12_000 },
+  barley:  { kg: 4, sum: 20_000 },
+  rice:    { kg: 2, sum: 30_000 }, // market average, not officially listed
+  raisins: { kg: 2, sum: 110_000 },
+  dates:   { kg: 4, sum: 200_000 },
+}
+
+export function calculateFitrSadaqa(
+  familyMembers: number,
+  productType: FitrProductType = 'wheat',
+  // If a custom price is not passed, use the official 2026 per-kg rate
+  pricePerKg?: number
+): FitrSadaqaResult {
+  const official = FITR_OFFICIAL_2026[productType] ?? FITR_OFFICIAL_2026.wheat
+  const kgPerPerson = official.kg
+  const effectivePricePerKg = pricePerKg ?? official.sum / official.kg
+  const inKg = kgPerPerson * familyMembers
+  const amountPerPerson = kgPerPerson * effectivePricePerKg
+  const totalAmount = amountPerPerson * familyMembers
+
+  return {
+    familyMembers,
+    amountPerPerson,
+    totalAmount,
+    inKg,
+    productType,
+  }
+}
+
+// Fidiya Sadaqa (compensation for missed fasts)
+export interface FidiyaSadaqaResult {
+  missedDays: number
+  costPerDay: number
+  totalAmount: number
+}
+
+export function calculateFidiyaSadaqa(
+  missedDays: number,
+  // Фетва Управления мусульман на 2026 год: фидья за день равна фитр-садаке.
+  costPerDay: number = FITR_OFFICIAL_2026.wheat.sum
+): FidiyaSadaqaResult {
+  return {
+    missedDays,
+    costPerDay,
+    totalAmount: costPerDay * missedDays,
+  }
+}
+
+// Kurban (Qurbon) Calculator
+export interface KurbanResult {
+  animalType: string
+  pricePerAnimal: number
+  shareCount: number
+  pricePerShare: number
+  totalCost: number
+  meatEstimateKg: number
+}
+
+export function calculateKurban(
+  animalType: 'sheep' | 'goat' | 'cow' | 'camel',
+  pricePerAnimal: number,
+  shares: number = 1
+): KurbanResult {
+  const maxShares: Record<string, number> = { sheep: 1, goat: 1, cow: 7, camel: 7 }
+  const meatEstimate: Record<string, number> = { sheep: 20, goat: 15, cow: 200, camel: 300 }
+
+  const actualShares = Math.min(shares, maxShares[animalType] || 1)
+  const pricePerShare = pricePerAnimal / (maxShares[animalType] || 1)
+
+  return {
+    animalType,
+    pricePerAnimal,
+    shareCount: actualShares,
+    pricePerShare,
+    totalCost: pricePerShare * actualShares,
+    meatEstimateKg: (meatEstimate[animalType] || 0) / (maxShares[animalType] || 1) * actualShares,
+  }
+}

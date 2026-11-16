@@ -1,0 +1,27 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: CCBot
+Disallow: /
+
+User-Agent: Bytespider
+Disallow: /
+
+User-Agent: Google-Extended
+Disallow: /
+
+Sitemap: https://calk.uz/sitemap.xml
