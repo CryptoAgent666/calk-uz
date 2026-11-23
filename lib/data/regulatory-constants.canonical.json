@@ -2076,9 +2076,9 @@
       "source_hint": "Uzbekneftegas / fuel retail price monitoring",
       "conflict": true,
       "status": "current",
-      "notes": "Market reference fuel prices (not formula). Note comment: AI-80 banned from 1 Dec 2025; AI-91 no longer sold. Fuel is partly liberalized — treat as market, re-verify periodically. || 2026-08-31: цены обновлены по средним ташкентским на 28.08.2026 (avtoelon.uz; метан — autostrada.uz). Прежние были сняты в апреле и отстали на 10-33%. Топливо в РУз НЕ регулируется государством, цена отличается по сетям — это средняя. ПРОПАН НЕ ПОДТВЕРЖДЁН: сводки по автогазу расходятся, значение 5500 оставлено без изменения. ВАЖНО: в калькуляторе нет поля своей цены, поэтому константа = ответ пользователю, держать свежей обязательно. || alert 2026-09-21: stale_confirmed (рынок), ждёт решения по значениям. || applied 2026-09-21: цены UNG на 18.09, пропан 8 800 (август), добавлено поле своей цены; FUEL_PRICES_DATE=2026-09-18.  ||  2026-11-01 calkcheck: сеть UNG/Carvon на 20.10.2026; пропан не подтверждён, оставлен август.  ||  2026-11-09 алерт: таблица UNG на autostrada.uz совпадает с FUEL_PRICES (последняя новость 20.10); дифф — счётчики просмотров.  ||  2026-11-17 алерт: таблица UNG без изменений; дифф — счётчики новостей и «19,5%» из меню автокредитов.",
+      "notes": "Market reference fuel prices (not formula). Note comment: AI-80 banned from 1 Dec 2025; AI-91 no longer sold. Fuel is partly liberalized — treat as market, re-verify periodically. || 2026-08-31: цены обновлены по средним ташкентским на 28.08.2026 (avtoelon.uz; метан — autostrada.uz). Прежние были сняты в апреле и отстали на 10-33%. Топливо в РУз НЕ регулируется государством, цена отличается по сетям — это средняя. ПРОПАН НЕ ПОДТВЕРЖДЁН: сводки по автогазу расходятся, значение 5500 оставлено без изменения. ВАЖНО: в калькуляторе нет поля своей цены, поэтому константа = ответ пользователю, держать свежей обязательно. || alert 2026-09-21: stale_confirmed (рынок), ждёт решения по значениям. || applied 2026-09-21: цены UNG на 18.09, пропан 8 800 (август), добавлено поле своей цены; FUEL_PRICES_DATE=2026-09-18.  ||  2026-11-01 calkcheck: сеть UNG/Carvon на 20.10.2026; пропан не подтверждён, оставлен август.  ||  2026-11-09 алерт: таблица UNG на autostrada.uz совпадает с FUEL_PRICES (последняя новость 20.10); дифф — счётчики просмотров.  ||  2026-11-17 алерт: таблица UNG без изменений; дифф — счётчики новостей и «19,5%» из меню автокредитов.  ||  2026-11-23 алерт: таблица UNG без изменений; на бирже АИ-92 до 15,25 млн/т (19.11), розница UNG пока 13 500.",
       "official_value": "ai-92:13500, ai-95:19500, ai-100:24500, diesel:18500, gas_lpg:8800 (август 2026, растёт вслед за биржей), gas_cng:5750 — Ташкент, сеть «Узбекнефтегаз», 20.10.2026 (autostrada.uz); в калькуляторе есть поле своей цены",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-23",
       "source_url_verify": "https://avtoelon.uz/yangiliklar/articles/skol-ko-stoit-benzin-v-taskente/",
       "verify_method": "market-check-2026-09-21",
       "source_url": "https://autostrada.uz/benzin/",
@@ -3597,7 +3597,7 @@
       "source_hint": "lex.uz/ru/docs/4674893 ст. 337 — ставки налога на прибыль (первоисточник; НЕ PwC)",
       "conflict": false,
       "status": "current",
-      "notes": "Art. 337 ч.1 as in force 2026 (ЗРУ-1108): п.1 банки 20; п.2 полиэтиленовые гранулы + мобильная связь 20; п.7 прибыль от услуг рынков и торговых комплексов 20; п.10² высокотехнологичная продукция 0; п.11 дивиденды 5; п.12 остальные 15. Cement was struck by ЗРУ-741 (29.12.2021, retroactive to 01.10.2021); e-commerce п.8 excluded from 01.01.2026. [2026-07-25 primary re-verify: source switched from PwC to lex.uz — PwC (reviewed 16.01.2026) STILL lists cement at 20% and was the origin of our error. Content fixed + deployed, commit 5c12b83.]",
+      "notes": "Art. 337 ч.1 as in force 2026 (ЗРУ-1108): п.1 банки 20; п.2 полиэтиленовые гранулы + мобильная связь 20; п.7 прибыль от услуг рынков и торговых комплексов 20; п.10² высокотехнологичная продукция 0; п.11 дивиденды 5; п.12 остальные 15. Cement was struck by ЗРУ-741 (29.12.2021, retroactive to 01.10.2021); e-commerce п.8 excluded from 01.01.2026. [2026-07-25 primary re-verify: source switched from PwC to lex.uz — PwC (reviewed 16.01.2026) STILL lists cement at 20% and was the origin of our error. Content fixed + deployed, commit 5c12b83.]  ||  2026-11-23 алерт: ст. 337 НК на lex.uz без изменений (20/20/20, 0 высокие технологии, 5 дивиденды, 15 остальные). Дифф шёл от PwC (обзор 27.08.2026, добавлена БРВ 440 000; цемент у PwC по-прежнему 20% — неверно). Источник монитора переведён на НК.",
       "official_value": "20% for banks; polyethylene-granule producers and mobile operators; and profit from services rendered by markets/shopping malls. E-commerce: reduced rate ABOLISHED from 1.01.2026 → base 15%. High-tech output: 0% for 3 years from commissioning, only on income from high-tech products, per a list approved by Presidential decree (ЗРУ-1104, 25.12.2025). Cement producers are NOT at 20% (removed 2021) and insurers were never on the list — both pay the standard 15%.",
       "source_url": "https://lex.uz/ru/docs/4674893",
       "source_title": "Налоговый кодекс РУз, ст. 337 «Налоговые ставки» (консолидированный текст, lex.uz)",
@@ -3605,7 +3605,7 @@
       "verify_confidence": "high",
       "verified_date": "2026-07-25",
       "verify_method": "tier2-primary-lex.uz-2026-07-25",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-11-23"
     },
     {
       "id": "calculator-articles.ts__CORPORATE_TAX_DECLARATION_DEADLINE",
@@ -3642,7 +3642,7 @@
       "key": "CORPORATE_TAX_LOSS_CARRYFORWARD",
       "value": "indefinite carryforward (5-year cap removed), Art. 333 NK",
       "unit": "years",
-      "law": "Налоговый кодекс РУз (lex.uz/ru/docs/4674893)",
+      "law": "Налоговый кодекс РУз, ст. 333 (ч. 4–5 утратили силу ЗРУ-741 от 29.12.2021)",
       "theme": "corporate_tax",
       "is_gov_regulated": true,
       "surfaces": [
@@ -3653,15 +3653,16 @@
       "source_hint": "lex.uz/ru/docs/4674893 — перенос убытков на 5 периодов",
       "conflict": false,
       "status": "current",
-      "notes": "Losses may be carried forward to the next 5 tax periods. Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.",
+      "notes": "Убыток переносится без ограничения срока (ст. 333 НК). Not in ledger. [completeness pass 2026-06-25] || 2026-07-03 phase4-reconcile: fix applied in code/content (commits d916670, 3e2b6b1, defcff0, d69b5ec, 6e874ed + 2026-07-03 UZ/prose pass), status -> current.  ||  2026-11-23: сверено по тексту ст. 333 НК на lex.uz (ч. 3 — уменьшение прибыли на всю сумму убытка, ч. 4–5 с лимитами утратили силу ЗРУ-741). Источник монитора переведён с PwC на НК.",
       "official_value": "Losses carry forward indefinitely / without a year limit (the prior 5-year and 10-year caps were removed; the 10-year/60% limit ended 1 Jan 2022). Art. 333 НК.",
-      "source_url": "https://taxsummaries.pwc.com/republic-of-uzbekistan/corporate/deductions",
+      "source_url": "https://lex.uz/ru/docs/4674893",
       "source_title": "Uzbekistan — Corporate deductions / loss carryforward (PwC Worldwide Tax Summaries)",
       "verify_note": "Tax losses may now be carried forward without a time limit; the '5 tax periods' cap is outdated (the old 10-year limit was abolished from 2022).",
       "verify_confidence": "medium",
-      "verified_date": "2026-06-27",
+      "verified_date": "2026-11-23",
       "verify_method": "tier2-web-2026-06-27",
-      "last_verified": "2026-07-03"
+      "last_verified": "2026-11-23",
+      "source_url_prev": "https://taxsummaries.pwc.com/republic-of-uzbekistan/corporate/deductions"
     },
     {
       "id": "calculator-articles.ts__SIMPLIFIED_TAX_ELIGIBILITY_TURNOVER",
