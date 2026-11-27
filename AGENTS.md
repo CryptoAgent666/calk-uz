@@ -125,8 +125,11 @@ Monitored by DATA_HUB: Tier-1 weekly (`calk-uz-monitor-config.json`) + Tier-2 qu
   (Play UZ — «$1.90»: Google ценит товар для Узбекистана в долларах, сумовой
   цены у Play нет; App Store UZ — «$1.99») — не «синхронизировать». 4 поверхности оффера: кнопка в мобильном меню
   (`RemoveAdsButton`), плашка (`RemoveAdsBar`), тост после 2-го интерстишла
-  (`RemoveAdsToast`), футер (`RemoveAdsFooterLink`). Телеметрия воронки —
-  `lib/telemetry.ts` → `/api/iap-telemetry` → DATA_HUB.
+  (`RemoveAdsToast`), футер (`RemoveAdsFooterLink`). С 27.11.2026 плашка и тост
+  открывают экран предложения `RemoveAdsOffer` (цена и состав до окна Google Play),
+  покупку запускают экран, блок в меню и футер. Телеметрия воронки —
+  `lib/telemetry.ts` → `/api/iap-telemetry` → DATA_HUB; события несут `placement`
+  (bar/toast/menu/footer/offer) и `variant`, открытие экрана — `offer_shown`.
 - **Нативные модули (AdMob/Purchases) едут ТОЛЬКО стор-билдом**, не OTA:
   все UI-поверхности гейтятся `purchasesAvailable()` /
   `isPluginAvailable("Purchases")`, чтобы в старых бинарях не было мёртвых кнопок.

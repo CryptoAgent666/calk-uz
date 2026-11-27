@@ -1,5 +1,5 @@
 import { Capacitor } from "@capacitor/core"
-import { emitIap } from "@/lib/telemetry"
+import { emitIap, type IapPlacement } from "@/lib/telemetry"
 
 /**
  * RevenueCat: разовая покупка «Убрать рекламу» (non-consumable / durable one-time).
@@ -188,23 +188,26 @@ export async function getRemoveAdsPrice(): Promise<string | null> {
  */
 export type BuyResult = "ok" | "cancelled" | "unavailable" | "failed"
 
-/** Купить «Убрать рекламу». */
-export async function buyRemoveAds(): Promise<BuyResult> {
+/**
+ * Купить «Убрать рекламу». `placement` — откуда нажали (для воронки), `variant` —
+ * вариант текста плашки, с которой пришли на экран предложения.
+ */
+export async function buyRemoveAds(placement?: IapPlacement, variant?: string): Promise<BuyResult> {
   if (!purchasesAvailable()) return "unavailable"
   const platform = Capacitor.getPlatform()
-  emitIap("purchase_tapped", { platform })
+  emitIap("purchase_tapped", { platform, placement, variant })
   try {
     const { Purchases } = await loadSdk()
     const product = await fetchRemoveAdsProduct()
     if (!product) {
       // Тап был, а покупать нечего — без отдельного типа этот путь сливался со сбоями.
-      emitIap("purchase_unavailable", { platform, code: "product_not_found" })
+      emitIap("purchase_unavailable", { platform, placement, variant, code: "product_not_found" })
       return "unavailable"
     }
     const { customerInfo } = await Purchases.purchaseStoreProduct({ product })
     const ok = hasEntitlement(customerInfo)
     setAdFree(ok)
-    if (!ok) emitIap("purchase_failed", { platform, code: "no_entitlement_after_purchase" })
+    if (!ok) emitIap("purchase_failed", { platform, placement, variant, code: "no_entitlement_after_purchase" })
     return ok ? "ok" : "failed"
   } catch (e) {
     // Отмена пользователем — не ошибка; различаем её от реального сбоя для воронки.
@@ -212,7 +215,12 @@ export async function buyRemoveAds(): Promise<BuyResult> {
     // закрыл человек, но и когда оно схлопнулось само — 13 из 14 отмен на calk.uz
     // приходили через 1–7 с после тапа, и по голому типу события причину не видно.
     const cancelled = isUserCancelled(e)
-    emitIap(cancelled ? "purchase_cancelled" : "purchase_failed", { platform, code: rcErrorCode(e) })
+    emitIap(cancelled ? "purchase_cancelled" : "purchase_failed", {
+      platform,
+      placement,
+      variant,
+      code: rcErrorCode(e),
+    })
     return cancelled ? "cancelled" : "failed"
   }
 }

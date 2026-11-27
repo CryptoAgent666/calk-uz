@@ -20,6 +20,8 @@
  */
 export type IapFunnelEvent =
   | "paywall_shown"
+  /** Открыт экран предложения (RemoveAdsOffer) — человек тапнул плашку или тост. */
+  | "offer_shown"
   | "purchase_tapped"
   | "purchase_cancelled"
   | "purchase_failed"
@@ -40,7 +42,17 @@ export type IapFunnelEvent =
 export interface IapEventDetail {
   platform?: string
   code?: string
+  /** Где человек увидел оффер или нажал «купить» (те же имена, что на calk.kz). */
+  placement?: IapPlacement
+  /** Вариант текста плашки (price / coffee) — чтобы сравнивать, что продаёт. */
+  variant?: string
 }
+
+/** bar — плашка над баннером, toast — после интерстишела, menu — блок в мобильном
+ *  меню, footer — ссылка в футере, offer — экран предложения (открывается из bar/toast).
+ *  До 27.11.2026 места не было: 45 нажатий «купить» за два месяца нельзя было
+ *  разложить по поверхностям. */
+export type IapPlacement = "bar" | "toast" | "menu" | "footer" | "offer"
 
 export function emitIap(type: IapFunnelEvent, detail?: IapEventDetail): void {
   if (typeof window === "undefined") return
@@ -52,6 +64,8 @@ export function emitIap(type: IapFunnelEvent, detail?: IapEventDetail): void {
         type,
         ...(detail?.platform ? { platform: String(detail.platform).slice(0, 16) } : {}),
         ...(detail?.code ? { code: String(detail.code).slice(0, 64) } : {}),
+        ...(detail?.placement ? { placement: detail.placement } : {}),
+        ...(detail?.variant ? { variant: String(detail.variant).slice(0, 16) } : {}),
       }),
       keepalive: true, // still delivered if the view is navigating away
     }).catch(() => {})

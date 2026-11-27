@@ -55,7 +55,7 @@ export function RemoveAdsFooterLink() {
     if (busy) return
     setBusy("buy")
     setNote(null)
-    const r = await buyRemoveAds()
+    const r = await buyRemoveAds("footer")
     setBusy(null)
     if (r === "failed" || r === "unavailable") setNote(t.failed)
     // "ok" → onAdFreeChange скрывает весь блок; "cancelled" → молчим

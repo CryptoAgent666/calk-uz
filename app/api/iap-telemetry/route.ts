@@ -26,12 +26,17 @@ const DATAHUB_URL = "https://mydatahub.duckdns.org/webhooks/app-telemetry"
 
 const ALLOWED = new Set<string>([
   "paywall_shown",
+  "offer_shown",
   "purchase_tapped",
   "purchase_cancelled",
   "purchase_failed",
   "purchase_unavailable",
 ])
 const PLATFORMS = new Set<string>(["ios", "android", "web"])
+// Место показа и вариант текста плашки (lib/telemetry.ts). Закрытые списки: значение
+// попадает в срезы отчёта DATA_HUB, произвольную строку туда не пускаем.
+const PLACEMENTS = new Set<string>(["bar", "toast", "menu", "footer", "offer"])
+const VARIANTS = new Set<string>(["price", "coffee"])
 
 /** Короткая строка из клиентского тела: только известные скаляры, обрезанные по длине. */
 function shortString(v: unknown, max: number): string | undefined {
@@ -55,6 +60,8 @@ export async function POST(req: Request): Promise<NextResponse> {
   // ожидаемые значения: DATA_HUB всё равно оставляет лишь свой allowlist полей.
   const platform = shortString(body.platform, 16)
   const code = shortString(body.code, 64)
+  const placement = shortString(body.placement, 16)
+  const variant = shortString(body.variant, 16)
 
   const token = process.env.DATAHUB_TELEMETRY_TOKEN
   try {
@@ -72,6 +79,8 @@ export async function POST(req: Request): Promise<NextResponse> {
           ts: Date.now(),
           ...(platform && PLATFORMS.has(platform) ? { platform } : {}),
           ...(code ? { code } : {}),
+          ...(placement && PLACEMENTS.has(placement) ? { placement } : {}),
+          ...(variant && VARIANTS.has(variant) ? { variant } : {}),
         },
       }),
       // Bounded so a slow/down DATA_HUB never holds the request open.

@@ -3,15 +3,11 @@
 import { useEffect, useState } from "react"
 import { X, Sparkles } from "lucide-react"
 import { useLocale } from "next-intl"
-import {
-  isAdFree,
-  onAdFreeChange,
-  buyRemoveAds,
-  purchasesAvailable,
-} from "@/lib/purchases"
+import { isAdFree, onAdFreeChange, purchasesAvailable } from "@/lib/purchases"
 import { useRemoveAdsPrice } from "@/lib/use-remove-ads-price"
 import { emitIap } from "@/lib/telemetry"
 import { Capacitor } from "@capacitor/core"
+import { openRemoveAdsOffer } from "@/lib/remove-ads-offer"
 
 /** Событие «предложить убрать рекламу» — шлётся из NativeAds после интерстишелов. */
 export const SUGGEST_REMOVE_ADS_EVENT = "calk:suggest-remove-ads"
@@ -22,30 +18,26 @@ const AUTO_HIDE_MS = 6000
  * Маленький тост «Надоела реклама? Убрать за …» СВЕРХУ экрана (место 3 из 3).
  * Появляется после интерстишела — в момент, когда реклама только что помешала
  * (лучшая конверсия), но ненавязчиво. Автоскрытие через 6 c. Рендерится только
- * в приложении (Android) и пока реклама не отключена.
+ * в приложении (Android) и пока реклама не отключена. Тап открывает экран
+ * предложения (RemoveAdsOffer), а не сразу окно оплаты.
  */
 export function RemoveAdsToast() {
   const locale = useLocale()
   const [adFree, setAdFree] = useState(isAdFree())
   const [visible, setVisible] = useState(false)
   const price = useRemoveAdsPrice()
-  const [busy, setBusy] = useState(false)
 
   const t =
     locale === "uz"
       ? {
           tired: "Reklama charchatdimi?",
           removeForPrice: (p: string) => `Abadiy olib tashlash — ${p}`,
-          processing: "Bajarilmoqda…",
           close: "Yopish",
-          unavailable: "Xarid hozircha mavjud emas — mahsulot Google Play'da faollashmoqda. Bir necha soatdan keyin qayta urinib ko'ring.",
         }
       : {
           tired: "Надоела реклама?",
           removeForPrice: (p: string) => `Убрать навсегда за ${p}`,
-          processing: "Обработка…",
           close: "Закрыть",
-          unavailable: "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов.",
         }
 
   useEffect(() => onAdFreeChange(setAdFree), [])
@@ -68,21 +60,15 @@ export function RemoveAdsToast() {
 
   // Каждое появление тоста после интерстишела — отдельный показ оффера.
   useEffect(() => {
-    if (visible) emitIap("paywall_shown", { platform: Capacitor.getPlatform() })
+    if (visible) emitIap("paywall_shown", { platform: Capacitor.getPlatform(), placement: "toast" })
   }, [visible])
 
   // Стор не отдал продукт → тост не показываем.
   if (!purchasesAvailable() || adFree || !visible || price.state === "unavailable") return null
 
-  const buy = async () => {
-    setBusy(true)
-    try {
-      const result = await buyRemoveAds()
-      if (result === "ok") setVisible(false)
-      else if (result === "unavailable") window.alert(t.unavailable)
-    } finally {
-      setBusy(false)
-    }
+  const openOffer = () => {
+    setVisible(false)
+    openRemoveAdsOffer("toast")
   }
 
   return (
@@ -95,8 +81,8 @@ export function RemoveAdsToast() {
         <Sparkles className="h-5 w-5 flex-shrink-0 text-amber-400" />
         <div className="flex-1 text-sm">
           <div className="font-semibold">{t.tired}</div>
-          <button onClick={buy} disabled={busy} className="text-blue-300 underline disabled:opacity-70">
-            {busy ? t.processing : t.removeForPrice(price.label)}
+          <button onClick={openOffer} className="text-blue-300 underline">
+            {t.removeForPrice(price.label)}
           </button>
         </div>
         <button onClick={() => setVisible(false)} aria-label={t.close} className="p-1 opacity-70 hover:opacity-100">

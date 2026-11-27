@@ -73,7 +73,9 @@ export function RemoveAdsButton() {
   // Оффер реально показан только когда есть покупки и реклама ещё не отключена
   // (компонент монтируется при открытии мобильного меню).
   useEffect(() => {
-    if (purchasesAvailable() && !isAdFree()) emitIap("paywall_shown", { platform: Capacitor.getPlatform() })
+    if (purchasesAvailable() && !isAdFree()) {
+      emitIap("paywall_shown", { platform: Capacitor.getPlatform(), placement: "menu" })
+    }
   }, [])
 
   // Только в приложении С нативным модулем покупок (не в старых бинарях / не на сайте).
@@ -89,7 +91,7 @@ export function RemoveAdsButton() {
   const buy = async () => {
     setBusy("buy")
     try {
-      if ((await buyRemoveAds()) === "unavailable") window.alert(t.unavailable)
+      if ((await buyRemoveAds("menu")) === "unavailable") window.alert(t.unavailable)
     } finally {
       setBusy(null)
     }

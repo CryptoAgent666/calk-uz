@@ -3,15 +3,11 @@
 import { useEffect, useState } from "react"
 import { X, Sparkles } from "lucide-react"
 import { useLocale } from "next-intl"
-import {
-  isAdFree,
-  onAdFreeChange,
-  buyRemoveAds,
-  purchasesAvailable,
-} from "@/lib/purchases"
+import { isAdFree, onAdFreeChange, purchasesAvailable } from "@/lib/purchases"
 import { useRemoveAdsPrice } from "@/lib/use-remove-ads-price"
 import { emitIap } from "@/lib/telemetry"
 import { Capacitor } from "@capacitor/core"
+import { openRemoveAdsOffer } from "@/lib/remove-ads-offer"
 
 const DISMISS_KEY = "calk_removeads_bar_dismissed"
 const VARIANT_KEY = "calk_removeads_bar_variant"
@@ -38,6 +34,10 @@ function pickBarVariant(): "price" | "coffee" {
  * отступом от низа (фактическая высота баннера в --admob-banner-height +
  * safe-area). Ненавязчивая, с крестиком: скрывается на текущую сессию.
  *
+ * Тап открывает экран предложения (RemoveAdsOffer), а не сразу окно оплаты:
+ * «кофейный» вариант не показывает цену, и до 27.11.2026 по нему жали, чтобы её
+ * узнать, — 40 из 45 нажатий закончились отменой в окне Google Play.
+ *
  * Рендерится ТОЛЬКО в приложении (Android) и пока реклама не отключена.
  */
 export function RemoveAdsBar() {
@@ -50,23 +50,18 @@ export function RemoveAdsBar() {
   const [dismissed, setDismissed] = useState(false)
   const [variant, setVariant] = useState<"price" | "coffee">("price")
   const price = useRemoveAdsPrice()
-  const [busy, setBusy] = useState(false)
 
   const t =
     locale === "uz"
       ? {
           remove: "Reklamani olib tashlash",
           barCoffee: "☕ Abadiy reklamasiz — bir-ikki piyola kofe narxida",
-          processing: "Bajarilmoqda…",
           hide: "Yashirish",
-          unavailable: "Xarid hozircha mavjud emas — mahsulot Google Play'da faollashmoqda. Bir necha soatdan keyin qayta urinib ko'ring.",
         }
       : {
           remove: "Убрать рекламу",
           barCoffee: "☕ Без рекламы навсегда — цена пары кофе",
-          processing: "Обработка…",
           hide: "Скрыть",
-          unavailable: "Покупка пока недоступна — продукт ещё активируется в Google Play. Попробуйте через несколько часов.",
         }
 
   useEffect(() => {
@@ -79,11 +74,19 @@ export function RemoveAdsBar() {
     } catch {
       /* ignore */
     }
+    const picked = pickBarVariant()
+    // Хранилища читаются только после монтирования намеренно: стартовое состояние
+    // обязано совпасть с SSR (см. комментарий у useState). Правило молчало, пока в
+    // компоненте был обработчик с try/finally — анализатор такой компонент пропускал.
+    /* eslint-disable react-hooks/set-state-in-effect */
     setDismissed(wasDismissed)
-    setVariant(pickBarVariant())
+    setVariant(picked)
+    /* eslint-enable react-hooks/set-state-in-effect */
     // Плашка — показ оффера, если она реально видима (есть покупки, не куплено,
     // не скрыта в этой сессии).
-    if (!isAdFree() && !wasDismissed) emitIap("paywall_shown", { platform: Capacitor.getPlatform() })
+    if (!isAdFree() && !wasDismissed) {
+      emitIap("paywall_shown", { platform: Capacitor.getPlatform(), placement: "bar", variant: picked })
+    }
     return onAdFreeChange(compute)
   }, [])
 
@@ -98,15 +101,6 @@ export function RemoveAdsBar() {
     }
     setDismissed(true)
   }
-  const buy = async () => {
-    setBusy(true)
-    try {
-      if ((await buyRemoveAds()) === "unavailable") window.alert(t.unavailable)
-    } finally {
-      setBusy(false)
-    }
-  }
-
   const label = variant === "coffee" ? t.barCoffee : `${t.remove} — ${price.label}`
 
   return (
@@ -116,9 +110,12 @@ export function RemoveAdsBar() {
       role="region"
       aria-label={t.remove}
     >
-      <button onClick={buy} disabled={busy} className="flex flex-1 items-center gap-2 text-sm font-medium disabled:opacity-70">
+      <button
+        onClick={() => openRemoveAdsOffer("bar", variant)}
+        className="flex flex-1 items-center gap-2 text-left text-sm font-medium"
+      >
         {variant === "price" && <Sparkles className="h-4 w-4 flex-shrink-0" />}
-        <span>{busy ? t.processing : label}</span>
+        <span>{label}</span>
       </button>
       <button onClick={dismiss} aria-label={t.hide} className="p-1 opacity-80 hover:opacity-100">
         <X className="h-4 w-4" />
