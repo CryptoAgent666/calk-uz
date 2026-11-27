@@ -37,7 +37,7 @@ export function RemoveAdsButton() {
   const t =
     locale === "uz"
       ? {
-          pitch: "120+ kalkulyator abadiy reklamasiz — bir-ikki piyola kofe narxida ☕",
+          pitch: "120+ kalkulyator abadiy reklamasiz — bir-ikki finjon kofe narxida ☕",
           removeForever: "Reklamani abadiy olib tashlash",
           oneTime: "Bir martalik xarid — abadiy, barcha qurilmalaringizda",
           processing: "Bajarilmoqda…",

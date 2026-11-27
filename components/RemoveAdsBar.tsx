@@ -55,7 +55,7 @@ export function RemoveAdsBar() {
     locale === "uz"
       ? {
           remove: "Reklamani olib tashlash",
-          barCoffee: "☕ Abadiy reklamasiz — bir-ikki piyola kofe narxida",
+          barCoffee: "☕ Abadiy reklamasiz — bir-ikki finjon kofe narxida",
           hide: "Yashirish",
         }
       : {
