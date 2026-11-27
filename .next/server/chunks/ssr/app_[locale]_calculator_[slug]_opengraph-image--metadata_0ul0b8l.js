@@ -1,0 +1,3 @@
+module.exports=[84803,a=>{"use strict";a.i(907997),a.i(599475),a.i(480448),a.i(32915);var b=a.i(352425);let c={alt:"Calk.UZ Calculator",contentType:"image/png",runtime:"edge",size:{width:1200,height:630}};async function d(a){let{__metadata_id__:d,...e}=await a.params,f=(0,b.fillMetadataSegment)("/[locale]/calculator/[slug]",e,"opengraph-image",!1);return[function(a){let b={alt:a.alt,type:a.contentType||"image/png",url:f+"?29658c259e713b6a"},{size:c}=a;return c&&(b.width=c.width,b.height=c.height),b}(c)]}a.s(["default",0,d],84803)},758083,a=>{a.n(a.i(84803))}];
+
+//# sourceMappingURL=app_%5Blocale%5D_calculator_%5Bslug%5D_opengraph-image--metadata_0ul0b8l.js.map
